@@ -10,12 +10,17 @@ export const Background = styled("div")`
   width: 100%;
   height: 100%;
   background-position: center;
-  background-size: 100% 100%;
+  background-size: 100%;
   background-repeat: no-repeat;
-  &.main {
-    background-image: url(../../img/index.svg);
+  &.earth {
+    background-image: url(../../img/earth.svg);
   }
-  &.portfolio {
-    background-image: url(../../img/portfolio.svg);
+  &.russia {
+    background-image: url(../../img/russia.svg);
+    background-size: 200%;
+    background-position: 24%;
+  }
+  &.moscow {
+    background-image: url(../../img/moscow.svg);
   }
 `;

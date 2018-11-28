@@ -1,11 +1,8 @@
 import React from "react";
-import cn from "classnames";
 import { TransitionGroup, Transition as ReactTransition } from "react-transition-group";
 
-import { Background } from "../../components/Background/Background";
-import { Container } from "../../components/Container/Container";
-import { Content } from "../../components/Content/Content";
-import { fade, slideY, scale, transition, enterTimeout, exitTimeout } from "./animation";
+import { Container } from '../../components/Container/Container';
+import { enterTimeout, exitTimeout } from "./animation";
 
 export class Transition extends React.PureComponent {
   render() {
@@ -20,14 +17,7 @@ export class Transition extends React.PureComponent {
             exit: exitTimeout,
           }}
         >
-          {status => (
-            <>
-              <Background main className={cn(scale[status], fade[status], transition[status])} />
-              <Container>
-                <Content className={cn(slideY[status], fade[status], transition[status])}>{children}</Content>
-              </Container>
-            </>
-          )}
+          {status => <Container>{React.cloneElement(children, { status })}</Container>}
         </ReactTransition>
       </TransitionGroup>
     );
