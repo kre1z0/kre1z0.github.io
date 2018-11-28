@@ -2,6 +2,7 @@ import styled, { css } from "astroturf";
 import { Link as GatsbyLink } from "gatsby";
 
 export const Nav = styled("nav")`
+  z-index: 1;
   position: absolute;
   top: 0;
   left: 0;

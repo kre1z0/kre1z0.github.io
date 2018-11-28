@@ -21,10 +21,12 @@ export class Transition extends React.PureComponent {
           }}
         >
           {status => (
-            <Container>
+            <>
               <Background main className={cn(scale[status], fade[status], transition[status])} />
-              <Content className={cn(slideY[status], fade[status], transition[status])}>{children}</Content>
-            </Container>
+              <Container>
+                <Content className={cn(slideY[status], fade[status], transition[status])}>{children}</Content>
+              </Container>
+            </>
           )}
         </ReactTransition>
       </TransitionGroup>
