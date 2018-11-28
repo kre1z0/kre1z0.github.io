@@ -1,35 +1,11 @@
 import React from "react";
 import cn from "classnames";
-import styled, { css } from "astroturf";
 import { TransitionGroup, Transition as ReactTransition } from "react-transition-group";
 
-import { fade } from "./animation";
-
-const enterTimeout = 500;
-const exitTimeout = 1000;
-
-export const transition = css`
-  .entered {
-    transition-duration: ${enterTimeout}ms;
-    transition-timing-function: ease-in-out;
-    transition-property: all;
-  }
-  .exiting {
-    transition-duration: ${exitTimeout}ms;
-    transition-timing-function: ease-in-out;
-    transition-property: all;
-  }
-`;
-
-const Container = styled("div")`
-  position: absolute;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  margin-top: 5.7142rem;
-  height: calc(100vh - 5.7142rem);
-  padding: 0 6.4285rem;
-`;
+import { Background } from "../../components/Background/Background";
+import { Container } from "../../components/Container/Container";
+import { Content } from "../../components/Content/Content";
+import { fade, slideY, scale, transition, enterTimeout, exitTimeout } from "./animation";
 
 export class Transition extends React.PureComponent {
   render() {
@@ -45,10 +21,9 @@ export class Transition extends React.PureComponent {
           }}
         >
           {status => (
-            <Container
-            // className={cn(fade[status], transition[status])}
-            >
-              {React.cloneElement(children, { status })}
+            <Container>
+              <Background main className={cn(scale[status], fade[status], transition[status])} />
+              <Content className={cn(slideY[status], fade[status], transition[status])}>{children}</Content>
             </Container>
           )}
         </ReactTransition>

@@ -1,16 +1,4 @@
-import styled, { css } from "astroturf";
-
-export const styles = css`
-  .entering {
-    transform: scale(0.5);
-  }
-  .entered {
-    transform: scale(1);
-  }
-  .exiting {
-    transform: scale(1.5);
-  }
-`;
+import styled from "astroturf";
 
 export const Background = styled("div")`
   position: absolute;
