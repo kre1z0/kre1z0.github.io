@@ -10,7 +10,7 @@ export const Background = styled("div")`
   width: 100%;
   height: 100%;
   background-position: center;
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
   &.earth {
     background-image: url(../../img/earth.svg);
