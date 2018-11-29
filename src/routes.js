@@ -4,11 +4,17 @@ export const routes = [
     text: "Продукты и Решения",
     route: "/portfolio",
     additionalMenu: [
-      { label: "Продукты", children: [{ text: "EverGIS" }, { text: "EverGIS Online" }, { text: "EverGIS Marketing" }] },
+      {
+        label: "Продукты",
+        children: [{ text: "EverGIS" }, { text: "EverGIS Online" }, { text: "EverGIS Marketing" }],
+      },
       {
         label: "Решения",
         children: [
-          { text: "Малый бизнес", children: [{ text: "Бизнес-навигатор МСП" }, { text: "Мобильный навигатор" }] },
+          {
+            text: "Малый бизнес",
+            children: [{ text: "Бизнес-навигатор МСП" }, { text: "Мобильный навигатор" }],
+          },
           { text: "Банки" },
           { text: "Мониторинг транспорта" },
           { text: "Государственный сектор" },
@@ -18,7 +24,7 @@ export const routes = [
   },
   { text: "СМИ о нас", route: "/about" },
   { text: "Блог", route: "/blog" },
-  { text: "Работа у нас", route: "/jobs" },
+  { text: "Работа у нас", route: "/jobs", scrollable: true },
   { text: "Контакты", route: "/contacts" },
 ];
 

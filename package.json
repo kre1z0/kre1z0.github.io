@@ -34,7 +34,9 @@
     "react": "^16.2.0",
     "react-dom": "^16.4.1",
     "react-helmet": "^5.2.0",
+    "react-smooth-scrollbar": "^8.0.6",
     "react-transition-group": "^2.5.0",
+    "smooth-scrollbar": "^8.3.1",
     "uuid": "^3.2.1"
   },
   "browserslist": "last 2 versions",

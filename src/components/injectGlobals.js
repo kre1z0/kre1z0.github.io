@@ -13,5 +13,15 @@ export const injectGlobals = () => {
       color: #262c37;
       overflow: hidden;
     }
+    :global(.scroll-content) {
+      height: 100vh;
+      will-change: transform;
+    }
+    :global(.scrollbar-track-y) {
+      display: none !important;
+    }
+    :global(.scrollbar-track-x) {
+      display: none !important;
+    }
   `;
 };

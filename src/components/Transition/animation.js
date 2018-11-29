@@ -1,7 +1,7 @@
 import { css } from "astroturf";
 
-export const enterTimeout = 500;
-export const exitTimeout = 1000;
+export const enterTimeout = 200;
+export const exitTimeout = 400;
 
 export const scale = css`
   .entering {
@@ -33,7 +33,7 @@ export const slideY = css`
     transform: translateY(100%);
   }
   .entered {
-    transform: translateY(0);
+    transform: translateY(0px);
   }
   .exiting {
     transform: translateY(-100%);

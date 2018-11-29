@@ -1,26 +1,32 @@
 import React from "react";
-import cn from "classnames";
 
-import { LeftSide } from "../../components/Main/LeftSide";
+import { MainAnimation } from "../../components/MainAnimation/MainAnimation";
 import { H1 } from "../../components/Headlines/Headlines";
 import { Link } from "../../components/Link/Link";
-import { Background } from "../../components/Background/Background";
-import { fade, scale, slideY, transition } from "../../components/Transition/animation";
-import { Content } from "../../components/Content/Content";
 
-export const Portfolio = ({ status }) => {
+export const Portfolio = props => {
   return (
-    <>
-      <Background russia className={cn(scale[status], fade[status], transition[status])} />
-      <Content>
-        <LeftSide className={cn(slideY[status], fade[status], transition[status])}>
+    <MainAnimation
+      {...props}
+      leftSide={
+        <>
           <H1>Продукты</H1>
           <Link>EverGIS</Link>
           <Link>EverGIS Online</Link>
           <Link>EverGIS EverTrack</Link>
-        </LeftSide>
-      </Content>
-    </>
+        </>
+      }
+      rightSide={
+        <div>
+          <h1>rightSide</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate dignissimos est
+            illo in ipsum magnam maxime, molestiae officiis optio, quae quaerat, ratione repellendus
+            sit suscipit tempore totam ullam voluptates! Possimus?
+          </p>
+        </div>
+      }
+    />
   );
 };
 

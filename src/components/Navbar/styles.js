@@ -2,6 +2,7 @@ import styled, { css } from "astroturf";
 import { Link as GatsbyLink } from "gatsby";
 
 export const Nav = styled("nav")`
+  will-change: transform;
   z-index: 1;
   position: absolute;
   top: 0;
@@ -11,6 +12,7 @@ export const Nav = styled("nav")`
   align-items: center;
   padding: 0 6.4285rem;
   min-height: 5.7142rem;
+  transition: background 400ms ease-in, box-shadow 400ms ease-in;
   &.coloredNav {
     box-shadow: 0 8px 8px 0 rgba(10, 18, 33, 0.05);
     background-color: #fff;
