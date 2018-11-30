@@ -5,9 +5,12 @@ import Scrollbar from "react-smooth-scrollbar";
 
 import { navigateTo, routes } from "../../routes";
 
-const Context = React.createContext();
+import "./plugins/disableScrollByDirection";
+import "./plugins/determineScrollingPlugin";
 
-export class ProviderComponent extends Component {
+const ScrollContext = React.createContext();
+
+export class ScrollProviderComponent extends Component {
   constructor(props) {
     super(props);
     this.onNavigateTo = debounce(this.onNavigateTo, 404);
@@ -21,6 +24,7 @@ export class ProviderComponent extends Component {
   };
 
   threshold = 0;
+  scrolling = false;
 
   componentDidMount() {
     this.setCurrentRoute();
@@ -93,6 +97,7 @@ export class ProviderComponent extends Component {
     if (scrollable && scrollTop > 0 && limitY !== scrollTop) {
       return;
     }
+
     this.threshold = 0;
     navigateTo({ navigate, pathname, direction });
   };
@@ -114,8 +119,16 @@ export class ProviderComponent extends Component {
       limitY,
     });
 
-    this.onNavigateTo(direction);
     this.checkNavbarIntoContent();
+
+    // only scroll
+    if (scrollTop === 0 || limitY === 0) {
+      return;
+    }
+
+    if (!this.scrolling) {
+      this.onNavigateTo(direction);
+    }
   };
 
   onWheel = e => {
@@ -142,12 +155,14 @@ export class ProviderComponent extends Component {
     this.setState({ coloredNav: false, scrollTop: 0, limitY: 0 });
   };
 
+  determineScrollingEvent = scrolling => (this.scrolling = scrolling);
+
   render() {
     const { scrollTop, coloredNav } = this.state;
     const { children } = this.props;
 
     return (
-      <Context.Provider
+      <ScrollContext.Provider
         value={{
           scrollTop,
           onRightSideRef: this.onRightSideRef,
@@ -156,26 +171,24 @@ export class ProviderComponent extends Component {
         }}
       >
         <Scrollbar
-          // damping={number}
-          // thumbMinSize={number}
-          // syncCallbacks={boolean}
-          // renderByPixels={boolean}
-          alwaysShowTracks={true}
-          continuousScrolling={true}
-          // wheelEventTarget={element}
-          // plugins={object}
+          plugins={{
+            disableScrollByDirection: { direction: { x: true, y: false } },
+            determineScrollingEvent: { callback: this.determineScrollingEvent },
+          }}
           onScroll={this.onScroll}
           onWheel={this.onWheel}
         >
           {children}
         </Scrollbar>
-      </Context.Provider>
+      </ScrollContext.Provider>
     );
   }
 }
 
-export const Provider = ({ children }) => (
-  <Location>{props => <ProviderComponent {...props}>{children}</ProviderComponent>}</Location>
+export const ScrollProvider = ({ children }) => (
+  <Location>
+    {props => <ScrollProviderComponent {...props}>{children}</ScrollProviderComponent>}
+  </Location>
 );
 
-export const Consumer = Context.Consumer;
+export const ScrollConsumer = ScrollContext.Consumer;

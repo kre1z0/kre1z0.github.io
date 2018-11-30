@@ -1,13 +1,13 @@
 import React from "react";
 import { Link as GatsbyLink } from "gatsby";
 
-import { Consumer } from "../../components/Provider/Provider";
+import { ScrollConsumer } from "../ScrollProvider/ScrollProvider";
 import logo from "../../img/logo.svg";
 import { Nav, Link, Logo, LanguageSwitch, LanguageLink, Menu, styles } from "./styles";
 import { routes } from "../../routes";
 
 export const Navbar = () => (
-  <Consumer>
+  <ScrollConsumer>
     {({ scrollTop, coloredNav }) => {
       const transform = `translateY(${scrollTop}px)`;
 
@@ -22,7 +22,7 @@ export const Navbar = () => (
           </LanguageSwitch>
           <Menu>
             {routes.map(({ text, route }) => (
-              <Link key={text} to={route} activeClassName={styles.activeLink}>
+              <Link key={route} to={route} activeClassName={styles.activeLink}>
                 {text}
               </Link>
             ))}
@@ -30,5 +30,5 @@ export const Navbar = () => (
         </Nav>
       );
     }}
-  </Consumer>
+  </ScrollConsumer>
 );

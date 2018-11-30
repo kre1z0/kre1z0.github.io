@@ -4,7 +4,7 @@ import { Link as GatsbyLink } from "gatsby";
 export const Nav = styled("nav")`
   will-change: transform;
   z-index: 1;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;

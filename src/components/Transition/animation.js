@@ -18,12 +18,12 @@ export const scale = css`
 export const transition = css`
   .entered {
     transition-duration: ${enterTimeout}ms;
-    transition-timing-function: ease-in-out;
+    transition-timing-function: ease;
     transition-property: all;
   }
   .exiting {
     transition-duration: ${exitTimeout}ms;
-    transition-timing-function: ease-in-out;
+    transition-timing-function: ease;
     transition-property: all;
   }
 `;
