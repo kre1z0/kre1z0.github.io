@@ -132,7 +132,12 @@ export class ScrollProviderComponent extends Component {
   };
 
   onWheel = e => {
-    const { deltaY } = e;
+    const isFirefox = navigator.userAgent.toLowerCase().indexOf("firefox") > -1;
+    let deltaY = e.deltaY;
+
+    if (isFirefox) {
+      deltaY = deltaY * 28;
+    }
 
     this.threshold = this.threshold + deltaY;
     let direction = 1;

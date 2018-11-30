@@ -19,9 +19,14 @@ export const Nav = styled("nav")`
   }
 `;
 
-export const Logo = styled("img")`
+export const LogoLink = styled(GatsbyLink)`
   width: 100%;
   max-width: 10.7142rem;
+  display: block;
+`;
+
+export const Logo = styled("img")`
+  width: 100%;
   height: auto;
 `;
 

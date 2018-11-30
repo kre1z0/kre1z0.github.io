@@ -1,9 +1,8 @@
 import React from "react";
-import { Link as GatsbyLink } from "gatsby";
 
 import { ScrollConsumer } from "../ScrollProvider/ScrollProvider";
 import logo from "../../img/logo.svg";
-import { Nav, Link, Logo, LanguageSwitch, LanguageLink, Menu, styles } from "./styles";
+import { Nav, Link, LogoLink, Logo, LanguageSwitch, LanguageLink, Menu, styles } from "./styles";
 import { routes } from "../../routes";
 
 export const Navbar = () => (
@@ -13,9 +12,9 @@ export const Navbar = () => (
 
       return (
         <Nav style={{ transform }} coloredNav={coloredNav}>
-          <GatsbyLink to="/">
+          <LogoLink to="/">
             <Logo as="img" src={logo} alt="logo" />
-          </GatsbyLink>
+          </LogoLink>
           <LanguageSwitch>
             <LanguageLink isActive>ru</LanguageLink>
             <LanguageLink>en</LanguageLink>

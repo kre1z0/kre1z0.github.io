@@ -13,6 +13,9 @@ export const injectGlobals = () => {
       color: #262c37;
       overflow: hidden;
     }
+    img {
+      outline: none;
+    }
     :global(.scroll-content) {
       height: 100vh;
       will-change: transform;
