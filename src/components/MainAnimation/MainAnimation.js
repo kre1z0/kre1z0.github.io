@@ -24,7 +24,7 @@ export const MainAnimation = ({ status, leftSide, rightSide, rightSideClassName,
         <>
           <WillChange style={{ transform }}>
             <Background className={cn(scale[status], fade[status], transition[status])}>
-              <Resizer route={currentRoute.route} />
+              <Resizer route={currentRoute ? currentRoute.route : ""} />
             </Background>
           </WillChange>
           <Content>
