@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import debounce from "lodash/debounce";
 
 import { getBackgroundByIndex } from "./getBackground";
 
-export class Resizer extends Component {
+export class Resizer extends PureComponent {
   constructor(props) {
     super(props);
     this.onResize = debounce(this.onResize, 44);
