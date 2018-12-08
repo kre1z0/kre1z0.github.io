@@ -7,7 +7,7 @@ import { routes } from "../../routes";
 
 export const Navbar = () => (
   <ScrollConsumer>
-    {({ scrollTop, coloredNav }) => {
+    {({ scrollTop, coloredNav, direction, onSetDirection }) => {
       const transform = `translateY(${scrollTop}px)`;
 
       return (
@@ -20,8 +20,13 @@ export const Navbar = () => (
             <LanguageLink>en</LanguageLink>
           </LanguageSwitch>
           <Menu>
-            {routes.map(({ text, route }) => (
-              <Link key={route} to={route} activeClassName={styles.activeLink}>
+            {routes.map(({ text, route }, index) => (
+              <Link
+                key={route}
+                to={route}
+                activeClassName={styles.activeLink}
+                onClick={() => onSetDirection(index > direction ? 1 : -1)}
+              >
                 {text}
               </Link>
             ))}

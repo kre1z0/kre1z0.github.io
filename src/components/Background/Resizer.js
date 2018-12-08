@@ -1,13 +1,14 @@
 import React, { PureComponent } from "react";
 import debounce from "lodash/debounce";
 
-import { getBackgroundByIndex } from "./getBackground";
+import { getSVGBackgroundByIndex } from "./getBackground";
 
 export class Resizer extends PureComponent {
   constructor(props) {
     super(props);
     this.onResize = debounce(this.onResize, 44);
   }
+
   componentDidMount() {
     window.addEventListener("resize", this.onResize);
     this.onResize();
@@ -52,6 +53,6 @@ export class Resizer extends PureComponent {
   render() {
     const { route } = this.props;
 
-    return <div ref={this.onRef}>{getBackgroundByIndex(route)}</div>;
+    return <div ref={this.onRef}>{getSVGBackgroundByIndex(route)}</div>;
   }
 }

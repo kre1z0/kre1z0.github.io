@@ -21,6 +21,7 @@ export class ScrollProviderComponent extends Component {
     limitY: 0,
     coloredNav: false,
     currentRoute: null,
+    direction: 1,
   };
 
   threshold = 0;
@@ -98,6 +99,10 @@ export class ScrollProviderComponent extends Component {
       return;
     }
 
+    this.setState({
+      direction,
+    });
+
     this.threshold = 0;
     navigateTo({ navigate, pathname, direction });
   };
@@ -156,14 +161,13 @@ export class ScrollProviderComponent extends Component {
     }
   };
 
-  onExited = () => {
-    this.setState({ coloredNav: false, scrollTop: 0, limitY: 0 });
-  };
-
+  onExited = () => this.setState({ coloredNav: false, scrollTop: 0, limitY: 0 });
   determineScrollingEvent = scrolling => (this.scrolling = scrolling);
 
+  onSetDirection = direction => this.setState({ direction });
+
   render() {
-    const { scrollTop, coloredNav } = this.state;
+    const { scrollTop, coloredNav, direction } = this.state;
     const { children } = this.props;
 
     return (
@@ -173,6 +177,8 @@ export class ScrollProviderComponent extends Component {
           onRightSideRef: this.onRightSideRef,
           coloredNav,
           onExited: this.onExited,
+          direction,
+          onSetDirection: this.onSetDirection,
         }}
       >
         <Scrollbar

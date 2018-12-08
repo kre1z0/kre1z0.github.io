@@ -1,9 +1,9 @@
 import { css } from "astroturf";
 
-export const enterTimeout = 200;
-export const exitTimeout = 400;
+export const enterTimeout = 400;
+export const exitTimeout = 800;
 
-export const scale = css`
+export const scaleIn = css`
   .entering {
     transform: scale(0.5);
   }
@@ -12,6 +12,18 @@ export const scale = css`
   }
   .exiting {
     transform: scale(1.5);
+  }
+`;
+
+export const scaleOut = css`
+  .entering {
+    transform: scale(1.5);
+  }
+  .entered {
+    transform: scale(1);
+  }
+  .exiting {
+    transform: scale(0.5);
   }
 `;
 
