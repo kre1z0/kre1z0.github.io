@@ -8,16 +8,16 @@ import { ReactComponent as Moscow } from "../../img/moscow.svg";
 // import { ReactComponent as Adress2 } from "../../img/address-2.svg";
 // import { ReactComponent as Adress3 } from "../../img/address-3.svg";
 
-export const getSVGBackgroundByIndex = route => {
+export const getSVGBackgroundByIndex = ({ route, ...props }) => {
   switch (route) {
     case "/portfolio":
-      return <Russia />;
+      return <Russia {...props} />;
     case "/contacts":
-      return <Earth />;
+      return <Earth {...props} />;
     case "/jobs":
-      return <Moscow />;
+      return <Moscow {...props} />;
     default:
-      return <Earth />;
+      return <Earth {...props} />;
   }
 };
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import cn from "classnames";
 
@@ -13,62 +13,74 @@ import { LeftSide } from "../Main/LeftSide";
 import { RightSide } from "../Main/RightSide";
 import { routes } from "../../routes";
 
-// import { Resizer } from "../Background/Resizer";
+import { Resizer } from "../Background/Resizer";
 
-export const MainAnimation = ({ status, leftSide, rightSide, rightSideClassName, location }) => (
-  <ScrollConsumer>
-    {({ scrollTop, onRightSideRef, direction }) => {
-      const currentRoute = routes.find(({ route }) => route === location.pathname);
-      const scrollable = currentRoute && currentRoute.scrollable;
-      const transform = `translateY(${scrollTop}px)`;
-      const route = currentRoute ? currentRoute.route : "";
+export class MainAnimation extends PureComponent {
+  static propTypes = {
+    status: PropTypes.string,
+    rightSideClassName: PropTypes.string,
+    scrollable: PropTypes.bool,
+  };
 
-      return (
-        <>
-          <WillChange style={{ transform }}>
-            <Background
-              className={cn(
-                direction > 0 ? scaleIn[status] : scaleOut[status],
-                fade[status],
-                transition[status],
-                styles.default,
-                getBase64BackgroundByIndex(route),
-              )}
-            />
-            {/*<Background>*/}
-            {/*{status === "entered" && <Resizer route={currentRoute ? currentRoute.route : ""} />}*/}
-            {/*</Background>*/}
-          </WillChange>
-          <Content>
-            <WillChange style={{ transform }}>
-              <LeftSide className={cn(slideY[status], fade[status], transition[status])}>
-                {leftSide}
-              </LeftSide>
-            </WillChange>
-            {rightSide && (
-              <WillChange style={{ transform: scrollable ? "none" : transform }}>
-                <RightSide
-                  ref={onRightSideRef}
-                  className={cn(
-                    slideY[status],
-                    fade[status],
-                    transition[status],
-                    rightSideClassName,
-                  )}
-                >
-                  {rightSide}
-                </RightSide>
+  render() {
+    const { status, leftSide, rightSide, rightSideClassName, location } = this.props;
+
+    return (
+      <ScrollConsumer>
+        {({ scrollTop, onRightSideRef, direction, onTransitionEnd, transitionEnd }) => {
+          const currentRoute = routes.find(({ route }) => route === location.pathname);
+          const scrollable = currentRoute && currentRoute.scrollable;
+          const transform = `translateY(${scrollTop}px)`;
+          const route = currentRoute ? currentRoute.route : "";
+
+          return (
+            <>
+              <WillChange style={{ transform }}>
+                {!transitionEnd && (
+                  <Background
+                    onTransitionEnd={onTransitionEnd}
+                    className={cn(
+                      direction > 0 ? scaleIn[status] : scaleOut[status],
+                      fade[status],
+                      transition[status],
+                      styles.default,
+                      getBase64BackgroundByIndex(route),
+                    )}
+                  />
+                )}
+                <Background>
+                  <Resizer
+                    transitionEnd={transitionEnd}
+                    route={currentRoute ? currentRoute.route : ""}
+                  />
+                </Background>
               </WillChange>
-            )}
-          </Content>
-        </>
-      );
-    }}
-  </ScrollConsumer>
-);
-
-MainAnimation.propTypes = {
-  status: PropTypes.string,
-  rightSideClassName: PropTypes.string,
-  scrollable: PropTypes.bool,
-};
+              <Content>
+                <WillChange style={{ transform }}>
+                  <LeftSide className={cn(slideY[status], fade[status], transition[status])}>
+                    {leftSide}
+                  </LeftSide>
+                </WillChange>
+                {rightSide && (
+                  <WillChange style={{ transform: scrollable ? "none" : transform }}>
+                    <RightSide
+                      ref={onRightSideRef}
+                      className={cn(
+                        slideY[status],
+                        fade[status],
+                        transition[status],
+                        rightSideClassName,
+                      )}
+                    >
+                      {rightSide}
+                    </RightSide>
+                  </WillChange>
+                )}
+              </Content>
+            </>
+          );
+        }}
+      </ScrollConsumer>
+    );
+  }
+}

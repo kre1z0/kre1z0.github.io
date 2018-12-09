@@ -19,8 +19,8 @@ export const styles = css`
   }
   .russia {
     background-image: url(../../img/russia.svg);
-    background-size: 200%;
-    background-position: 24%;
+    //background-size: 200%;
+    //background-position: 24%;
   }
   .moscow {
     background-image: url(../../img/moscow.svg);

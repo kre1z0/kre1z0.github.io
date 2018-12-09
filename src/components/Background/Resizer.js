@@ -1,13 +1,14 @@
-import React, { PureComponent } from "react";
-import debounce from "lodash/debounce";
+import React from "react";
+import PropTypes from "prop-types";
+import { findDOMNode } from "react-dom";
 
 import { getSVGBackgroundByIndex } from "./getBackground";
 
-export class Resizer extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.onResize = debounce(this.onResize, 44);
-  }
+export class Resizer extends React.PureComponent {
+  static propTypes = {
+    transitionEnd: PropTypes.bool,
+    route: PropTypes.string,
+  };
 
   componentDidMount() {
     window.addEventListener("resize", this.onResize);
@@ -19,9 +20,7 @@ export class Resizer extends PureComponent {
   }
 
   onResize = () => {
-    const ref = this.wrapper;
-    if (ref) {
-      const child = ref.firstElementChild || ref.firstChild;
+    if (this.svg) {
       const viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 
       const viewportHeight = Math.max(
@@ -30,29 +29,37 @@ export class Resizer extends PureComponent {
       );
 
       const dispRatio = viewportHeight > 0 ? viewportWidth / viewportHeight : 1.0;
-      const imgW = child.clientWidth;
-      const imgH = child.clientHeight;
+      const imgW = this.svg.clientWidth;
+      const imgH = this.svg.clientHeight;
       const imgRatio = imgH > 0 ? imgW / imgH : 1.0;
 
       if (imgRatio > dispRatio) {
-        child.style.width = "auto";
-        child.style.height = "100%";
+        this.svg.style.width = "auto";
+        this.svg.style.height = "100%";
       } else {
-        child.style.width = "100%";
-        child.style.height = "auto";
+        this.svg.style.width = "100%";
+        this.svg.style.height = "auto";
       }
     }
   };
 
   onRef = ref => {
     if (ref) {
-      this.wrapper = ref;
+      this.svg = findDOMNode(ref);
     }
   };
 
   render() {
-    const { route } = this.props;
+    const { route, transitionEnd } = this.props;
 
-    return <div ref={this.onRef}>{getSVGBackgroundByIndex(route)}</div>;
+    return (
+      <>
+        {getSVGBackgroundByIndex({
+          route,
+          ref: this.onRef,
+          style: { visibility: transitionEnd ? "visible" : "hidden" },
+        })}
+      </>
+    );
   }
 }

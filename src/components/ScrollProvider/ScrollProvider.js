@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { Location } from "@reach/router";
 import debounce from "lodash/debounce";
 import Scrollbar from "react-smooth-scrollbar";
@@ -10,10 +10,10 @@ import "./plugins/determineScrollingPlugin";
 
 const ScrollContext = React.createContext();
 
-export class ScrollProviderComponent extends Component {
+export class ScrollProviderComponent extends PureComponent {
   constructor(props) {
     super(props);
-    this.onNavigateTo = debounce(this.onNavigateTo, 404);
+    this.onNavigateTo = debounce(this.onNavigateTo, 400);
   }
 
   state = {
@@ -22,6 +22,7 @@ export class ScrollProviderComponent extends Component {
     coloredNav: false,
     currentRoute: null,
     direction: 1,
+    transitionEnd: false,
   };
 
   threshold = 0;
@@ -100,6 +101,7 @@ export class ScrollProviderComponent extends Component {
     }
 
     this.setState({
+      transitionEnd: false,
       direction,
     });
 
@@ -162,12 +164,15 @@ export class ScrollProviderComponent extends Component {
   };
 
   onExited = () => this.setState({ coloredNav: false, scrollTop: 0, limitY: 0 });
+
   determineScrollingEvent = scrolling => (this.scrolling = scrolling);
 
-  onSetDirection = direction => this.setState({ direction });
+  onNavLinkClick = ({ direction, transitionEnd }) => this.setState({ direction, transitionEnd });
+
+  onTransitionEnd = (e, transitionEnd = true) => this.setState({ transitionEnd });
 
   render() {
-    const { scrollTop, coloredNav, direction } = this.state;
+    const { scrollTop, coloredNav, direction, transitionEnd } = this.state;
     const { children } = this.props;
 
     return (
@@ -178,7 +183,9 @@ export class ScrollProviderComponent extends Component {
           coloredNav,
           onExited: this.onExited,
           direction,
-          onSetDirection: this.onSetDirection,
+          onNavLinkClick: this.onNavLinkClick,
+          transitionEnd,
+          onTransitionEnd: this.onTransitionEnd,
         }}
       >
         <Scrollbar

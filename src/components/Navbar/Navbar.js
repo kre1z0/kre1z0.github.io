@@ -7,7 +7,7 @@ import { routes } from "../../routes";
 
 export const Navbar = () => (
   <ScrollConsumer>
-    {({ scrollTop, coloredNav, direction, onSetDirection }) => {
+    {({ scrollTop, coloredNav, direction, onNavLinkClick }) => {
       const transform = `translateY(${scrollTop}px)`;
 
       return (
@@ -25,7 +25,9 @@ export const Navbar = () => (
                 key={route}
                 to={route}
                 activeClassName={styles.activeLink}
-                onClick={() => onSetDirection(index > direction ? 1 : -1)}
+                onClick={() =>
+                  onNavLinkClick({ direction: index > direction ? 1 : -1, transitionEnd: false })
+                }
               >
                 {text}
               </Link>
