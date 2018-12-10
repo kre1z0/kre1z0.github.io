@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { findDOMNode } from "react-dom";
 
 import { getSVGBackgroundByIndex } from "./getBackground";
 
@@ -20,7 +19,9 @@ export class Resizer extends React.PureComponent {
   }
 
   onResize = () => {
-    if (this.svg) {
+    const ref = this.wrapper;
+    if (ref) {
+      const child = ref.firstElementChild || ref.firstChild;
       const viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 
       const viewportHeight = Math.max(
@@ -29,23 +30,23 @@ export class Resizer extends React.PureComponent {
       );
 
       const dispRatio = viewportHeight > 0 ? viewportWidth / viewportHeight : 1.0;
-      const imgW = this.svg.clientWidth;
-      const imgH = this.svg.clientHeight;
+      const imgW = child.clientWidth;
+      const imgH = child.clientHeight;
       const imgRatio = imgH > 0 ? imgW / imgH : 1.0;
 
       if (imgRatio > dispRatio) {
-        this.svg.style.width = "auto";
-        this.svg.style.height = "100%";
+        child.style.width = "auto";
+        child.style.height = "100%";
       } else {
-        this.svg.style.width = "100%";
-        this.svg.style.height = "auto";
+        child.style.width = "100%";
+        child.style.height = "auto";
       }
     }
   };
 
   onRef = ref => {
     if (ref) {
-      this.svg = findDOMNode(ref);
+      this.wrapper = ref;
     }
   };
 
@@ -53,13 +54,12 @@ export class Resizer extends React.PureComponent {
     const { route, transitionEnd } = this.props;
 
     return (
-      <>
+      <div ref={this.onRef}>
         {getSVGBackgroundByIndex({
           route,
-          ref: this.onRef,
           style: { visibility: transitionEnd ? "visible" : "hidden" },
         })}
-      </>
+      </div>
     );
   }
 }

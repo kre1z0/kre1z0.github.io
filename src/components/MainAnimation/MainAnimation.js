@@ -49,10 +49,7 @@ export class MainAnimation extends PureComponent {
                   />
                 )}
                 <Background>
-                  <Resizer
-                    transitionEnd={transitionEnd}
-                    route={currentRoute ? currentRoute.route : ""}
-                  />
+                  <Resizer transitionEnd={transitionEnd} route={route} />
                 </Background>
               </WillChange>
               <Content>
