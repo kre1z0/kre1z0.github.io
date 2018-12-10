@@ -5,7 +5,7 @@ import logo from "../../img/logo.svg";
 import { Nav, Link, LogoLink, Logo, LanguageSwitch, LanguageLink, Menu, styles } from "./styles";
 import { routes } from "../../routes";
 
-export const Navbar = () => (
+export const Navbar = ({ location }) => (
   <ScrollConsumer>
     {({ scrollTop, coloredNav, direction, onNavLinkClick }) => {
       const transform = `translateY(${scrollTop}px)`;
@@ -24,6 +24,9 @@ export const Navbar = () => (
               <Link
                 key={route}
                 to={route}
+                className={
+                  location.pathname.includes(route) && route !== "/" ? styles.activeLink : ""
+                }
                 activeClassName={styles.activeLink}
                 onClick={() =>
                   onNavLinkClick({ direction: index > direction ? 1 : -1, transitionEnd: false })

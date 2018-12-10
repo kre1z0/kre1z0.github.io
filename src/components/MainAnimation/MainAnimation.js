@@ -2,6 +2,7 @@ import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import cn from "classnames";
 
+import withRouter from "../../hoc/withRouter";
 import { getBase64BackgroundByIndex } from "../Background/getBackground";
 import { styles } from "../Background/styles";
 import { ScrollConsumer } from "../ScrollProvider/ScrollProvider";
@@ -15,7 +16,7 @@ import { routes } from "../../routes";
 
 import { Resizer } from "../Background/Resizer";
 
-export class MainAnimation extends PureComponent {
+class MainAnimationBase extends PureComponent {
   static propTypes = {
     status: PropTypes.string,
     rightSideClassName: PropTypes.string,
@@ -23,7 +24,7 @@ export class MainAnimation extends PureComponent {
   };
 
   render() {
-    const { status, leftSide, rightSide, rightSideClassName, location } = this.props;
+    const { status, leftSide, rightSide, rightSideClassName, location, ...props } = this.props;
 
     return (
       <ScrollConsumer>
@@ -31,7 +32,6 @@ export class MainAnimation extends PureComponent {
           const currentRoute = routes.find(({ route }) => route === location.pathname);
           const scrollable = currentRoute && currentRoute.scrollable;
           const transform = `translateY(${scrollTop}px)`;
-          const route = currentRoute ? currentRoute.route : "";
 
           return (
             <>
@@ -44,12 +44,12 @@ export class MainAnimation extends PureComponent {
                       fade[status],
                       transition[status],
                       styles.default,
-                      getBase64BackgroundByIndex(route),
+                      getBase64BackgroundByIndex({ ...props }),
                     )}
                   />
                 )}
                 <Background>
-                  <Resizer transitionEnd={transitionEnd} route={route} />
+                  <Resizer transitionEnd={transitionEnd} {...props} />
                 </Background>
               </WillChange>
               <Content>
@@ -81,3 +81,5 @@ export class MainAnimation extends PureComponent {
     );
   }
 }
+
+export const MainAnimation = withRouter(MainAnimationBase);

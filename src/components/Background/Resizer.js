@@ -51,13 +51,13 @@ export class Resizer extends React.PureComponent {
   };
 
   render() {
-    const { route, transitionEnd } = this.props;
+    const { transitionEnd, ...props } = this.props;
 
     return (
       <div ref={this.onRef}>
         {getSVGBackgroundByIndex({
-          route,
           style: { visibility: transitionEnd ? "visible" : "hidden" },
+          ...props,
         })}
       </div>
     );
