@@ -3,29 +3,33 @@ import React from "react";
 import { MainAnimation } from "../../components/MainAnimation/MainAnimation";
 import { H1 } from "../../components/Headlines/Headlines";
 import { Link } from "../../components/Link/Link";
+import { socials } from "../../assets/contacts/social";
 
-export const Contacts = props  => {
+import { SocialBlock, SocialLink } from "../../styles/contacts";
+
+export const Contacts = props => {
   return (
     <MainAnimation
       {...props}
       leftSide={
         <>
-          <H1>Contacts</H1>
-          <Link>test</Link>
-          <Link>test</Link>
-          <Link>test</Link>
+          <H1>Контакты</H1>
+          <Link as="address">127051, Россия, г. Москва, ул. Трубная, д. 25 к. 1</Link>
+          <Link href="tel:+74955060774">+7 (495) 506-07-74</Link>
+          <Link href="mailto:info@everpoint.ru">info@everpoint.ru</Link>
+          <SocialBlock>
+            {socials.map(({ img, link, name }) => (
+              <SocialLink
+                target="_blank"
+                href={link}
+                key={`social-${name}`}
+                style={{ backgroundImage: `url(${img})` }}
+              />
+            ))}
+          </SocialBlock>
         </>
       }
-      rightSide={
-        <div>
-          <h1>rightSide</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate dignissimos est
-            illo in ipsum magnam maxime, molestiae officiis optio, quae quaerat, ratione repellendus
-            sit suscipit tempore totam ullam voluptates! Possimus?
-          </p>
-        </div>
-      }
+      rightSide={<div />}
     />
   );
 };

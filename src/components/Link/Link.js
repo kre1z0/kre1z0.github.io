@@ -7,6 +7,8 @@ export const Link = styled("a")`
   font-size: 1.2857rem;
   color: #262c37;
   font-weight: 500;
+  font-style: normal;
+  text-decoration: none;
   &:last-child {
     margin-bottom: 0;
   }
