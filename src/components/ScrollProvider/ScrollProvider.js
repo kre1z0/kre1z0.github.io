@@ -131,10 +131,15 @@ export class ScrollProviderComponent extends PureComponent {
       });
     }, 400);
 
-    this.setState({
-      scrollTop: offsetY,
-      limitY,
-    });
+    this.setState(
+      {
+        scrollTop: offsetY,
+        limitY,
+      },
+      () => {
+        this.checkNavbarIntoContent();
+      },
+    );
   };
 
   onWheel = e => {
