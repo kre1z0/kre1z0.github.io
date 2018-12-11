@@ -34,10 +34,6 @@ export class ScrollProviderComponent extends PureComponent {
     this.setCurrentRoute();
   }
 
-  componentWillUnmount() {
-    console.log("--> componentWillUnmount <--");
-  }
-
   componentDidUpdate(prevProps) {
     const { location: prevLocation } = prevProps;
     const { location } = this.props;
