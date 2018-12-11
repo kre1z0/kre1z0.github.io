@@ -56,6 +56,7 @@ export const Menu = styled("div")`
 `;
 
 export const Link = styled(GatsbyLink)`
+  outline: none;
   color: #262c37;
   text-decoration: none;
   font-weight: 600;

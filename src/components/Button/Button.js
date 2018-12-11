@@ -10,6 +10,9 @@ export const Button = styled("button")`
   border: 2px solid rgba(144, 197, 61, 0.5);
   border-radius: 1.2857rem;
   transition: all 200ms ease;
+  &:focus {
+    outline: none;
+  }
   &.primary {
     color: #fff;
     background-color: #90c53d;

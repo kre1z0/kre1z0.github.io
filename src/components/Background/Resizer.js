@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import { getElementWidthAndHeight } from "../../utils/dom";
 import { getSVGBackgroundByIndex } from "./getBackground";
 
 export class Resizer extends React.PureComponent {
@@ -22,6 +23,7 @@ export class Resizer extends React.PureComponent {
     const ref = this.wrapper;
     if (ref) {
       const child = ref.firstElementChild || ref.firstChild;
+
       const viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 
       const viewportHeight = Math.max(
@@ -30,9 +32,10 @@ export class Resizer extends React.PureComponent {
       );
 
       const dispRatio = viewportHeight > 0 ? viewportWidth / viewportHeight : 1.0;
-      const imgW = child.clientWidth;
-      const imgH = child.clientHeight;
-      const imgRatio = imgH > 0 ? imgW / imgH : 1.0;
+
+      const { width, height } = getElementWidthAndHeight(child);
+
+      const imgRatio = height > 0 ? width / height : 1.0;
 
       if (imgRatio > dispRatio) {
         child.style.width = "auto";
