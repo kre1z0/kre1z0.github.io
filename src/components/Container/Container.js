@@ -6,6 +6,6 @@ export const Container = styled("div")`
   left: 0;
   right: 0;
   position: absolute;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
 `;

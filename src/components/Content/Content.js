@@ -6,7 +6,7 @@ export const Content = styled("main")`
   align-items: center;
   padding: 0 6.4285rem;
   margin-top: 3.8392rem;
-  width: 100vw;
-  height: calc(100vh - 3.8392rem);
+  width: 100%;
+  height: calc(100% - 3.8392rem);
   justify-content: space-between;
 `;

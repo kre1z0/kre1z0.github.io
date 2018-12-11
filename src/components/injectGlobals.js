@@ -12,13 +12,35 @@ export const injectGlobals = () => {
       font-family: "Montserrat", Tahoma, sans-serif;
       color: #262c37;
       overflow: hidden;
+      > div {
+        width: 100%;
+        height: 100%;
+        > div,
+        section[data-scrollbar] {
+          width: 100%;
+          height: 100%;
+          > div {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
     }
     img {
       outline: none;
     }
     :global(.scroll-content) {
-      height: 100vh;
+      width: 100%;
+      height: 100%;
       will-change: transform;
+      > div {
+        width: 100%;
+        height: 100%;
+        > div {
+          width: 100%;
+          height: 100%;
+        }
+      }
     }
     :global(.scrollbar-track-y) {
       display: none !important;

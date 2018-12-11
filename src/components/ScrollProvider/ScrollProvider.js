@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import { Location } from "@reach/router";
 import debounce from "lodash/debounce";
-import Scrollbar from "react-smooth-scrollbar";
+import { ScrollBar } from "./styles";
 
 import { navigateTo, routes } from "../../routes";
 
@@ -23,13 +23,19 @@ export class ScrollProviderComponent extends PureComponent {
     currentRoute: null,
     direction: 1,
     transitionEnd: false,
+    disableHover: false,
   };
 
   threshold = 0;
   scrolling = false;
+  timer = 0;
 
   componentDidMount() {
     this.setCurrentRoute();
+  }
+
+  componentWillUnmount() {
+    console.log("--> componentWillUnmount <--");
   }
 
   componentDidUpdate(prevProps) {
@@ -110,32 +116,29 @@ export class ScrollProviderComponent extends PureComponent {
   };
 
   onScroll = e => {
-    const { scrollTop } = this.state;
+    const { disableHover } = this.state;
     const { offset, limit } = e;
     const { y: offsetY } = offset;
     const { y: limitY } = limit;
 
-    let direction = 1;
+    clearTimeout(this.timer);
 
-    if (scrollTop > offsetY) {
-      direction = -1;
+    if (!disableHover) {
+      this.setState({
+        disableHover: true,
+      });
     }
+
+    this.timer = setTimeout(() => {
+      this.setState({
+        disableHover: false,
+      });
+    }, 400);
 
     this.setState({
       scrollTop: offsetY,
       limitY,
     });
-
-    this.checkNavbarIntoContent();
-
-    // only scroll
-    if (scrollTop === 0 || limitY === 0) {
-      return;
-    }
-
-    if (!this.scrolling) {
-      this.onNavigateTo(direction);
-    }
   };
 
   onWheel = e => {
@@ -153,8 +156,10 @@ export class ScrollProviderComponent extends PureComponent {
       direction = -1;
     }
 
-    this.onNavigateTo(direction);
+    this.setState({ direction });
+
     this.checkNavbarIntoContent();
+    this.onNavigateTo(direction);
   };
 
   onRightSideRef = ref => {
@@ -172,7 +177,7 @@ export class ScrollProviderComponent extends PureComponent {
   onTransitionEnd = (e, transitionEnd = true) => this.setState({ transitionEnd });
 
   render() {
-    const { scrollTop, coloredNav, direction, transitionEnd } = this.state;
+    const { scrollTop, coloredNav, direction, transitionEnd, disableHover } = this.state;
     const { children } = this.props;
 
     return (
@@ -188,7 +193,8 @@ export class ScrollProviderComponent extends PureComponent {
           onTransitionEnd: this.onTransitionEnd,
         }}
       >
-        <Scrollbar
+        <ScrollBar
+          disableHover={disableHover || !transitionEnd}
           plugins={{
             disableScrollByDirection: { direction: { x: true, y: false } },
             determineScrollingEvent: { callback: this.determineScrollingEvent },
@@ -197,7 +203,7 @@ export class ScrollProviderComponent extends PureComponent {
           onWheel={this.onWheel}
         >
           {children}
-        </Scrollbar>
+        </ScrollBar>
       </ScrollContext.Provider>
     );
   }

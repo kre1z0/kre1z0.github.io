@@ -13,6 +13,7 @@ import { fade, scaleIn, scaleOut, slideY, transition } from "../Transition/anima
 import { Content } from "../Content/Content";
 import { LeftSide } from "../Main/LeftSide";
 import { RightSide } from "../Main/RightSide";
+import { FullViewportContainer } from "../../styles/main";
 import { routes } from "../../routes";
 
 import { Resizer } from "../Background/Resizer";
@@ -44,8 +45,11 @@ class MainAnimationBase extends PureComponent {
           const transform = `translateY(${scrollTop}px)`;
 
           return (
-            <>
-              <WillChange style={{ transform }}>
+            <FullViewportContainer>
+              <WillChange
+                fullViewport
+                style={{ transform, overflow: transitionEnd ? "hidden" : "visible" }}
+              >
                 {!transitionEnd && (
                   <Background
                     onTransitionEnd={onTransitionEnd}
@@ -82,7 +86,7 @@ class MainAnimationBase extends PureComponent {
                   </WillChange>
                 )}
               </Content>
-            </>
+            </FullViewportContainer>
           );
         }}
       </ScrollConsumer>

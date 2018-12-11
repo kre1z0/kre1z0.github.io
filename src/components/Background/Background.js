@@ -1,14 +1,13 @@
 import styled from "astroturf";
 
 export const Background = styled("div")`
-  position: fixed;
+  position: absolute;
   right: 0;
   bottom: 0;
   top: 0;
   left: 0;
-  display: flex;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   svg {
     position: absolute;
     width: 100%;

@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import { SvgWrapper } from "./styles";
 import { getElementWidthAndHeight } from "../../utils/dom";
 import { getSVGBackgroundByIndex } from "./getBackground";
 
@@ -57,12 +58,12 @@ export class Resizer extends React.PureComponent {
     const { transitionEnd, ...props } = this.props;
 
     return (
-      <div ref={this.onRef}>
+      <SvgWrapper ref={this.onRef}>
         {getSVGBackgroundByIndex({
           style: { visibility: transitionEnd ? "visible" : "hidden" },
           ...props,
         })}
-      </div>
+      </SvgWrapper>
     );
   }
 }

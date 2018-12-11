@@ -1,4 +1,6 @@
-import { css } from "astroturf";
+import styled, { css } from "astroturf";
+
+import { FullViewportContainer } from "../../styles/main";
 
 export const styles = css`
   .default {
@@ -8,8 +10,8 @@ export const styles = css`
     bottom: 0;
     right: 0;
     display: flex;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -27,3 +29,5 @@ export const styles = css`
     background-image: url(../../img/address-1.svg);
   }
 `;
+
+export const SvgWrapper = styled(FullViewportContainer)``;
