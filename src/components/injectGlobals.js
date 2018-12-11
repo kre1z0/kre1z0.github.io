@@ -15,38 +15,14 @@ export const injectGlobals = () => {
       > div {
         width: 100%;
         height: 100%;
-        > div,
-        section[data-scrollbar] {
-          width: 100%;
-          height: 100%;
-          > div {
-            width: 100%;
-            height: 100%;
-          }
-        }
-      }
-    }
-    img {
-      outline: none;
-    }
-    :global(.scroll-content) {
-      width: 100%;
-      height: 100%;
-      will-change: transform;
-      > div {
-        width: 100%;
-        height: 100%;
         > div {
           width: 100%;
           height: 100%;
         }
       }
     }
-    :global(.scrollbar-track-y) {
-      display: none !important;
-    }
-    :global(.scrollbar-track-x) {
-      display: none !important;
+    img {
+      outline: none;
     }
   `;
 };
