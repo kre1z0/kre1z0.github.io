@@ -65,8 +65,10 @@ export const Link = styled(GatsbyLink)`
   }
 `;
 
-export const styles = css`
+const styles = css`
   .activeLink {
     color: #90c53d;
   }
 `;
+
+export default styles;

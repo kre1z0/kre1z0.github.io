@@ -9,13 +9,4 @@ export const Content = styled("main")`
   width: 100vw;
   height: calc(100vh - 3.8392rem);
   justify-content: space-between;
-  > section {
-    &:not(:first-child) {
-      display: flex;
-      width: 100%;
-      max-width: 63%;
-      padding-left: 10%;
-      justify-content: flex-end;
-    }
-  }
 `;

@@ -2,8 +2,9 @@ import React from "react";
 
 import { ScrollConsumer } from "../ScrollProvider/ScrollProvider";
 import logo from "../../img/logo.svg";
-import { Nav, Link, LogoLink, Logo, LanguageSwitch, LanguageLink, Menu, styles } from "./styles";
-import { routes } from "../../routes";
+import { Link as OutsideLink } from "../../components/Link/Link";
+import styles, { Nav, Link, LogoLink, Logo, LanguageSwitch, LanguageLink, Menu } from "./styles";
+import { routesWithOutsideLinks } from "../../routes";
 
 export const Navbar = ({ location }) => (
   <ScrollConsumer>
@@ -20,21 +21,30 @@ export const Navbar = ({ location }) => (
             <LanguageLink>en</LanguageLink>
           </LanguageSwitch>
           <Menu>
-            {routes.map(({ text, route }, index) => (
-              <Link
-                key={route}
-                to={route}
-                className={
-                  location.pathname.includes(route) && route !== "/" ? styles.activeLink : ""
-                }
-                activeClassName={styles.activeLink}
-                onClick={() =>
-                  onNavLinkClick({ direction: index > direction ? 1 : -1, transitionEnd: false })
-                }
-              >
-                {text}
-              </Link>
-            ))}
+            {routesWithOutsideLinks.map(({ text, route, outsideLink }, index) => {
+              if (outsideLink)
+                return (
+                  <OutsideLink href={outsideLink} target="_blank" key={outsideLink} navOutside>
+                    Блог
+                  </OutsideLink>
+                );
+
+              return (
+                <Link
+                  key={route}
+                  to={route}
+                  className={
+                    location.pathname.includes(route) && route !== "/" ? styles.activeLink : ""
+                  }
+                  activeClassName={styles.activeLink}
+                  onClick={() =>
+                    onNavLinkClick({ direction: index > direction ? 1 : -1, transitionEnd: false })
+                  }
+                >
+                  {text}
+                </Link>
+              );
+            })}
           </Menu>
         </Nav>
       );

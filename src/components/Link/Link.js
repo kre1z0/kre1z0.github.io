@@ -2,7 +2,7 @@ import styled from "astroturf";
 
 export const Link = styled("a")`
   display: block;
-  margin-bottom: 1.4857rem;
+  margin-bottom: 1rem;
   cursor: pointer;
   font-size: 1.2857rem;
   color: #262c37;
@@ -14,5 +14,12 @@ export const Link = styled("a")`
   }
   &.isActive {
     color: #90c53d;
+  }
+  &.navOutside {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0;
+    display: inline-block;
+    margin-right: 1.4285rem;
   }
 `;

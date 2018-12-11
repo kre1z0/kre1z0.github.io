@@ -4,6 +4,7 @@ import cn from "classnames";
 
 import withRouter from "../../hoc/withRouter";
 import { getBase64BackgroundByIndex } from "../Background/getBackground";
+import { mainAnimation } from "./styles";
 import { styles } from "../Background/styles";
 import { ScrollConsumer } from "../ScrollProvider/ScrollProvider";
 import { WillChange } from "./WillChange";
@@ -19,12 +20,21 @@ import { Resizer } from "../Background/Resizer";
 class MainAnimationBase extends PureComponent {
   static propTypes = {
     status: PropTypes.string,
+    leftSideClassName: PropTypes.string,
     rightSideClassName: PropTypes.string,
     scrollable: PropTypes.bool,
   };
 
   render() {
-    const { status, leftSide, rightSide, rightSideClassName, location, ...props } = this.props;
+    const {
+      status,
+      leftSide,
+      leftSideClassName,
+      rightSide,
+      rightSideClassName,
+      location,
+      ...props
+    } = this.props;
 
     return (
       <ScrollConsumer>
@@ -53,21 +63,19 @@ class MainAnimationBase extends PureComponent {
                 </Background>
               </WillChange>
               <Content>
-                <WillChange style={{ transform }}>
+                <WillChange style={{ transform }} className={leftSideClassName}>
                   <LeftSide className={cn(slideY[status], fade[status], transition[status])}>
                     {leftSide}
                   </LeftSide>
                 </WillChange>
                 {rightSide && (
-                  <WillChange style={{ transform: scrollable ? "none" : transform }}>
+                  <WillChange
+                    className={cn(mainAnimation.rSide, rightSideClassName)}
+                    style={{ transform: scrollable ? "none" : transform }}
+                  >
                     <RightSide
                       ref={onRightSideRef}
-                      className={cn(
-                        slideY[status],
-                        fade[status],
-                        transition[status],
-                        rightSideClassName,
-                      )}
+                      className={cn(slideY[status], fade[status], transition[status])}
                     >
                       {rightSide}
                     </RightSide>

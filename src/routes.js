@@ -23,10 +23,14 @@ export const routes = [
     ],
   },
   { text: "СМИ о нас", route: "/about" },
-  { text: "Блог", route: "/blog", outsideLink: "http://everpoint.ru" },
   { text: "Работа у нас", route: "/jobs", scrollable: true },
   { text: "Контакты", route: "/contacts" },
 ];
+
+const outsideLinks = [{ text: "Блог", outsideLink: "http://everpoint.ru" }];
+
+export const routesWithOutsideLinks = routes.slice();
+routesWithOutsideLinks.splice(2, 0, ...outsideLinks);
 
 export const navigateTo = ({ navigate, pathname, direction }) => {
   const index = routes.findIndex(({ route }) => route === pathname);

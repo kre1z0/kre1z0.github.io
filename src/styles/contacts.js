@@ -16,14 +16,24 @@ export const SocialLink = styled("a")`
 `;
 
 const styles = css`
-  .facebook {
-    background-image: url(../img/fb.svg);
+  .contactsLeftSide {
+    max-width: 60%;
   }
-  .vc {
-    background-image: url(../img/vc.svg);
+  .contactsRightSide {
+    display: flex;
+    padding-top: 1rem;
+    justify-content: flex-start;
+    max-width: 40%;
+    padding-left: 10rem;
+    height: 15.2142rem;
+    button {
+      &:first-child {
+        margin-right: 0.7142rem;
+      }
+    }
   }
-  .instagram {
-    background-image: url(../img/insta.svg);
+  .address {
+    cursor: default;
   }
 `;
 
