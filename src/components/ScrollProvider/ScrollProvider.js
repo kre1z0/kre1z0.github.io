@@ -173,12 +173,28 @@ export class ScrollProviderComponent extends PureComponent {
 
   determineScrollingEvent = scrolling => (this.scrolling = scrolling);
 
-  onNavLinkClick = ({ direction, transitionEnd }) => this.setState({ direction, transitionEnd });
+  onNavLinkClick = ({ direction, transitionEnd, id, event }) => {
+    const { currentRoute } = this.state;
+
+    if (currentRoute && currentRoute.id === id) {
+      event.preventDefault();
+      return;
+    }
+
+    this.setState({ direction, transitionEnd });
+  };
 
   onTransitionEnd = (e, transitionEnd = true) => this.setState({ transitionEnd });
 
   render() {
-    const { scrollTop, coloredNav, direction, transitionEnd, disableHover } = this.state;
+    const {
+      scrollTop,
+      coloredNav,
+      direction,
+      transitionEnd,
+      disableHover,
+      currentRoute,
+    } = this.state;
     const { children } = this.props;
 
     return (
@@ -192,6 +208,7 @@ export class ScrollProviderComponent extends PureComponent {
           onNavLinkClick: this.onNavLinkClick,
           transitionEnd,
           onTransitionEnd: this.onTransitionEnd,
+          currentRoute,
         }}
       >
         <ScrollBar

@@ -11,7 +11,7 @@ export const Nav = styled("nav")`
   right: 0;
   align-items: flex-start;
   padding: 1.4714rem 6.4285rem;
-  transition: background 240ms ease-in, box-shadow 240ms ease-in;
+  transition: box-shadow 240ms ease;
 `;
 
 export const LeftSide = styled("div")`
@@ -75,6 +75,7 @@ export const LinkContainer = styled("div")`
 `;
 
 export const Link = styled(GatsbyLink)`
+  pointer-events: auto !important;
   white-space: nowrap;
   outline: none;
   color: #262c37;
@@ -129,6 +130,9 @@ const styles = css`
   .coloredNav {
     box-shadow: 0 8px 8px 0 rgba(10, 18, 33, 0.05);
     background-color: #fff;
+  }
+  .withoutAdditionalMenuAndIsActive {
+    cursor: default;
   }
 `;
 

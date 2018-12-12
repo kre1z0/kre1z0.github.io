@@ -19,7 +19,6 @@ export const Link = styled("a")`
     font-weight: 600;
     font-size: 1rem;
     margin-bottom: 0;
-    display: inline-block;
     margin-right: 1.4285rem;
   }
 `;

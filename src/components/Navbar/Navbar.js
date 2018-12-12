@@ -40,7 +40,7 @@ export class Navbar extends PureComponent {
 
     return (
       <ScrollConsumer>
-        {({ scrollTop, coloredNav, direction, onNavLinkClick }) => {
+        {({ scrollTop, coloredNav, direction, onNavLinkClick, currentRoute }) => {
           const transform = `translateY(${scrollTop}px)`;
 
           return (
@@ -66,15 +66,16 @@ export class Navbar extends PureComponent {
                   ) => {
                     if (outsideLink)
                       return (
-                        <OutsideLink
-                          href={outsideLink}
-                          target="_blank"
-                          key={outsideLink}
-                          navOutside
-                          onMouseOver={this.onCloseAdditionalMenu}
-                        >
-                          Блог
-                        </OutsideLink>
+                        <LinkContainer key={outsideLink}>
+                          <OutsideLink
+                            href={outsideLink}
+                            target="_blank"
+                            navOutside
+                            onMouseOver={this.onCloseAdditionalMenu}
+                          >
+                            Блог
+                          </OutsideLink>
+                        </LinkContainer>
                       );
 
                     const listIdentifiersWithoutSpecialStyles = ["portfolio"];
@@ -95,16 +96,18 @@ export class Navbar extends PureComponent {
                               : this.onCloseAdditionalMenu
                           }
                           to={route}
-                          className={
-                            location.pathname.includes(route) && route !== "/"
-                              ? styles.activeLink
-                              : ""
-                          }
+                          className={cn({
+                            [styles.activeLink]: location.pathname.includes(route) && route !== "/",
+                            [styles.withoutAdditionalMenuAndIsActive]:
+                              !additionalMenu && currentRoute && currentRoute.id === id,
+                          })}
                           activeClassName={styles.activeLink}
-                          onClick={() =>
+                          onClick={e =>
                             onNavLinkClick({
                               direction: index > direction ? 1 : -1,
                               transitionEnd: false,
+                              id,
+                              event: e,
                             })
                           }
                         >

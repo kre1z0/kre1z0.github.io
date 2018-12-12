@@ -22,7 +22,7 @@ export const ScrollBar = styled(Scrollbar)`
   }
   &.disableHover {
     * {
-      pointer-events: none !important;
+      pointer-events: none;
     }
   }
 `;
