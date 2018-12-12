@@ -22,7 +22,9 @@ const styles = css`
   .russia {
     background-image: url(../../img/russia.svg);
   }
- 
+  .europeRussia {
+    background-image: url(../../img/aboutSlide.svg);
+  }
   .moscow {
     background-image: url(../../img/moscow.svg);
   }

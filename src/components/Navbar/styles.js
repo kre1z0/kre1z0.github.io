@@ -2,21 +2,22 @@ import styled, { css } from "astroturf";
 import { Link as GatsbyLink } from "gatsby";
 
 export const Nav = styled("nav")`
+  display: flex;
   will-change: transform;
   z-index: 1;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
+  align-items: flex-start;
+  padding: 1.4714rem 6.4285rem;
+  transition: background 240ms ease-in, box-shadow 240ms ease-in;
+`;
+
+export const LeftSide = styled("div")`
+  height: 2.5421rem;
   display: flex;
   align-items: center;
-  padding: 0 6.4285rem;
-  min-height: 5.7142rem;
-  transition: background 400ms ease-in, box-shadow 400ms ease-in;
-  &.coloredNav {
-    box-shadow: 0 8px 8px 0 rgba(10, 18, 33, 0.05);
-    background-color: #fff;
-  }
 `;
 
 export const LogoLink = styled(GatsbyLink)`
@@ -26,6 +27,7 @@ export const LogoLink = styled(GatsbyLink)`
 `;
 
 export const Logo = styled("img")`
+  min-width: 10.7142rem;
   width: 100%;
   height: auto;
 `;
@@ -52,23 +54,81 @@ export const LanguageLink = styled("a")`
 `;
 
 export const Menu = styled("div")`
+  display: flex;
+  padding-top: 0.2857rem;
   margin-left: auto;
 `;
 
+export const LinkContainer = styled("div")`
+  align-self: flex-start;
+  &.jobs {
+    menu {
+      margin-right: 1.4285rem;
+      justify-content: flex-end;
+      > section {
+        > div {
+          text-align: right;
+        }
+      }
+    }
+  }
+`;
+
 export const Link = styled(GatsbyLink)`
+  white-space: nowrap;
   outline: none;
   color: #262c37;
   text-decoration: none;
   font-weight: 600;
   margin-right: 1.4285rem;
+  line-height: normal;
   &:last-child {
     margin-right: 0;
+  }
+`;
+
+export const AdditionalMenu = styled("menu")`
+  margin: 0;
+  padding: 2.4rem 0 0 0;
+  display: none;
+  &.isOpen {
+    display: flex;
+  }
+`;
+
+export const Label = styled("div")`
+  color: rgba(38, 44, 55, 0.25);
+  font-size: 0.7142rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  line-height: normal;
+`;
+
+export const MenuSection = styled("section")`
+  margin-right: 2.8571rem;
+  &:last-child {
+    margin-right: 0;
+  }
+`;
+
+export const AdditionalMenuItem = styled("div")`
+  cursor: pointer;
+  white-space: nowrap;
+  line-height: normal;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  &:last-child {
+    margin-bottom: 1.2rem;
   }
 `;
 
 const styles = css`
   .activeLink {
     color: #90c53d;
+  }
+  .coloredNav {
+    box-shadow: 0 8px 8px 0 rgba(10, 18, 33, 0.05);
+    background-color: #fff;
   }
 `;
 

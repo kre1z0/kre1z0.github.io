@@ -1,8 +1,10 @@
 export const routes = [
-  { text: "О компании", route: "/" },
+  { id: "index", text: "О компании", route: "/" },
   {
+    id: "portfolio",
     text: "Продукты и Решения",
     route: "/portfolio",
+    additionalMenuWidth: "13.4rem",
     additionalMenu: [
       {
         label: "Продукты",
@@ -22,9 +24,30 @@ export const routes = [
       },
     ],
   },
-  { text: "СМИ о нас", route: "/about" },
-  { text: "Работа у нас", route: "/jobs", scrollable: true },
-  { text: "Контакты", route: "/contacts" },
+  { id: "about", text: "СМИ о нас", route: "/about" },
+  {
+    id: "jobs",
+    text: "Работа у нас",
+    route: "/jobs",
+    additionalMenuWidth: "8.1714rem",
+    additionalMenu: [
+      {
+        label: "Команда",
+        children: [{ text: "Наши сотрудники" }, { text: "Вакансии" }],
+      },
+      {
+        label: "Как мы работаем",
+        children: [
+          {
+            text: "Рабочий процесс",
+          },
+          { text: "Фото" },
+        ],
+      },
+    ],
+    scrollable: true,
+  },
+  { id: "contacts", text: "Контакты", route: "/contacts" },
 ];
 
 const outsideLinks = [{ text: "Блог", outsideLink: "http://everpoint.ru" }];
