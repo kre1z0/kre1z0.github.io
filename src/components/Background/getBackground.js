@@ -1,6 +1,6 @@
 import React from "react";
 
-import { styles } from "./styles";
+import styles from "./styles";
 import { ReactComponent as Russia } from "../../img/russia.svg";
 import { ReactComponent as Earth } from "../../img/earth.svg";
 import { ReactComponent as Moscow } from "../../img/moscow.svg";
@@ -15,7 +15,8 @@ export const getSVGBackgroundByIndex = ({
   isContactsPage,
   style,
 }) => {
-  if (isPortfolioPage() || isAboutPage()) return <Russia style={style} />;
+  if (isPortfolioPage() || isAboutPage())
+    return <Russia style={style} />;
   else if (isJobsPage()) return <Moscow style={style} />;
   else if (isContactsPage()) return <Adress1 style={style} />;
   else return <Earth style={style} />;

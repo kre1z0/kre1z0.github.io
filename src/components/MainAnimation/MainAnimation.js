@@ -5,7 +5,7 @@ import cn from "classnames";
 import withRouter from "../../hoc/withRouter";
 import { getBase64BackgroundByIndex } from "../Background/getBackground";
 import { mainAnimation } from "./styles";
-import { styles } from "../Background/styles";
+import styles from "../Background/styles";
 import { ScrollConsumer } from "../ScrollProvider/ScrollProvider";
 import { WillChange } from "./WillChange";
 import { Background } from "../Background/Background";

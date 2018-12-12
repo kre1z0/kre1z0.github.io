@@ -2,7 +2,7 @@ import styled, { css } from "astroturf";
 
 import { FullViewportContainer } from "../../styles/main";
 
-export const styles = css`
+const styles = css`
   .default {
     position: absolute;
     top: 0;
@@ -22,6 +22,7 @@ export const styles = css`
   .russia {
     background-image: url(../../img/russia.svg);
   }
+ 
   .moscow {
     background-image: url(../../img/moscow.svg);
   }
@@ -29,5 +30,7 @@ export const styles = css`
     background-image: url(../../img/address-1.svg);
   }
 `;
+
+export default styles;
 
 export const SvgWrapper = styled(FullViewportContainer)``;
