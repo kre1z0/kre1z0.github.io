@@ -3,7 +3,7 @@ import { Location } from "@reach/router";
 import debounce from "lodash/debounce";
 import { ScrollBar } from "./styles";
 
-import { navigateTo, routes } from "../../routes";
+import { navigateTo, getRouteByLocation } from "../../routes";
 
 import "./plugins/disableScrollByDirection";
 import "./plugins/determineScrollingPlugin";
@@ -44,8 +44,8 @@ export class ScrollProviderComponent extends PureComponent {
   }
 
   setCurrentRoute = () => {
-    const { pathname } = this.props.location;
-    const currentRoute = routes.find(({ route }) => route === pathname);
+    const { location } = this.props.location;
+    const currentRoute = getRouteByLocation(location);
     if (currentRoute) {
       this.setState({ currentRoute, coloredNav: false });
     } else {

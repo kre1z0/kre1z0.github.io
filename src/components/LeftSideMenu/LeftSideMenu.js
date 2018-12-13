@@ -1,17 +1,17 @@
-import React, { PureComponent } from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-import { routes } from "../../routes";
+import { getRouteByLocation } from "../../routes";
 import { AdditionalMenu } from "../../components/AdditionalMenu/AdditionalMenu";
 
-export class LeftSideMenu extends PureComponent {
+export class LeftSideMenu extends Component {
   static propTypes = {
     location: PropTypes.object,
   };
 
   render() {
     const { location } = this.props;
-    const currentRoute = routes.find(({ route }) => route === location.pathname);
+    const currentRoute = getRouteByLocation(location);
 
     return (
       <>

@@ -65,3 +65,5 @@ export const navigateTo = ({ navigate, pathname, direction }) => {
     navigate(outsideLinkFilteredRoutes[nextRouteIndex].route);
   }
 };
+
+export const getRouteByLocation = location => routes.find(({ route, id }) => id && location.pathname.includes(id));
