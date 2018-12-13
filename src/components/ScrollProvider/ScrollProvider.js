@@ -44,7 +44,8 @@ export class ScrollProviderComponent extends PureComponent {
   }
 
   setCurrentRoute = () => {
-    const { location } = this.props.location;
+    const { location } = this.props;
+
     const currentRoute = getRouteByLocation(location);
     if (currentRoute) {
       this.setState({ currentRoute, coloredNav: false });

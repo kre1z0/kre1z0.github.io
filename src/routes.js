@@ -66,4 +66,5 @@ export const navigateTo = ({ navigate, pathname, direction }) => {
   }
 };
 
-export const getRouteByLocation = location => routes.find(({ route, id }) => id && location.pathname.includes(id));
+export const getRouteByLocation = location =>
+  routes.find(({ id }) => id && location.pathname.includes(id));
