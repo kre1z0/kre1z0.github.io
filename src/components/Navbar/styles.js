@@ -10,7 +10,7 @@ export const Nav = styled("nav")`
   left: 0;
   right: 0;
   align-items: flex-start;
-  padding: 1.4714rem 6.4285rem;
+  padding: 1.4714rem 6rem;
   transition: box-shadow 240ms ease;
 `;
 
@@ -55,7 +55,7 @@ export const LanguageLink = styled("a")`
 
 export const Menu = styled("div")`
   display: flex;
-  padding-top: 0.2857rem;
+  padding-top: 0.4457rem;
   margin-left: auto;
 `;
 
@@ -65,10 +65,8 @@ export const LinkContainer = styled("div")`
     menu {
       margin-right: 1.4285rem;
       justify-content: flex-end;
-      > section {
-        > div {
-          text-align: right;
-        }
+      > ul {
+        text-align: right;
       }
     }
   }
@@ -85,41 +83,6 @@ export const Link = styled(GatsbyLink)`
   line-height: normal;
   &:last-child {
     margin-right: 0;
-  }
-`;
-
-export const AdditionalMenu = styled("menu")`
-  margin: 0;
-  padding: 2.4rem 0 0 0;
-  display: none;
-  &.isOpen {
-    display: flex;
-  }
-`;
-
-export const Label = styled("div")`
-  color: rgba(38, 44, 55, 0.25);
-  font-size: 0.7142rem;
-  margin-bottom: 1rem;
-  font-weight: bold;
-  line-height: normal;
-`;
-
-export const MenuSection = styled("section")`
-  margin-right: 2.8571rem;
-  &:last-child {
-    margin-right: 0;
-  }
-`;
-
-export const AdditionalMenuItem = styled("div")`
-  cursor: pointer;
-  white-space: nowrap;
-  line-height: normal;
-  font-weight: 500;
-  margin-bottom: 1rem;
-  &:last-child {
-    margin-bottom: 1.2rem;
   }
 `;
 

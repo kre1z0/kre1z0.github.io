@@ -2,8 +2,7 @@ import React from "react";
 
 import { CenterBlock } from "../../components/CenterBlock/CenterBlock";
 import { MainAnimation } from "../../components/MainAnimation/MainAnimation";
-import { H1 } from "../../components/Headlines/Headlines";
-import { Link } from "../../components/Link/Link";
+import { LeftSideMenu } from "../../components/LeftSideMenu/LeftSideMenu";
 
 import styles from "../../styles/jobs";
 
@@ -16,20 +15,12 @@ const LoremIpsum = () => (
 );
 
 const Jobs = props => {
+  const { location } = props;
+
   return (
     <MainAnimation
       {...props}
-      leftSide={
-        <>
-          <H1>Команда</H1>
-          <Link isActive={true}>Наши сотрудники</Link>
-          <br />
-          <H1>Работа у нас</H1>
-          <Link>Как мы работаем</Link>
-          <Link>Фото</Link>
-          <Link>Вакансии</Link>
-        </>
-      }
+      leftSide={<LeftSideMenu location={location} />}
       rightSideClassName={styles.rightSide}
       rightSide={
         <CenterBlock>

@@ -11,4 +11,8 @@ export const WillChange = styled("section")`
     bottom: 0;
     right: 0;
   }
+  &.left {
+    flex-shrink: 0;
+    padding-right: 6rem;
+  }
 `;

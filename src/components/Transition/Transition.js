@@ -2,7 +2,7 @@ import React from "react";
 import { TransitionGroup, Transition as ReactTransition } from "react-transition-group";
 
 import { ScrollConsumer } from "../ScrollProvider/ScrollProvider";
-import { Container } from "../../components/Container/Container";
+import { Container } from "../Main/Container";
 import { enterTimeout, exitTimeout } from "./animation";
 
 export class Transition extends React.PureComponent {

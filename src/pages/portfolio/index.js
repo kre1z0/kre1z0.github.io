@@ -1,21 +1,14 @@
 import React from "react";
 
+import { LeftSideMenu } from "../../components/LeftSideMenu/LeftSideMenu";
 import { MainAnimation } from "../../components/MainAnimation/MainAnimation";
-import { H1 } from "../../components/Headlines/Headlines";
-import { Link } from "../../components/Link/Link";
 
 export const Portfolio = props => {
+  const { location } = props;
   return (
     <MainAnimation
       {...props}
-      leftSide={
-        <>
-          <H1>Продукты</H1>
-          <Link>EverGIS</Link>
-          <Link>EverGIS Online</Link>
-          <Link>EverGIS EverTrack</Link>
-        </>
-      }
+      leftSide={<LeftSideMenu location={location} />}
       rightSide={
         <div>
           <h1>rightSide</h1>

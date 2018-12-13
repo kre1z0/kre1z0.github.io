@@ -7,15 +7,17 @@ export const routes = [
     additionalMenuWidth: "13.4rem",
     additionalMenu: [
       {
-        label: "Продукты",
+        id: "products",
+        title: "Продукты",
         children: [{ text: "EverGIS" }, { text: "EverGIS Online" }, { text: "EverGIS Marketing" }],
       },
       {
-        label: "Решения",
+        id: "solutions",
+        title: "Решения",
         children: [
           {
             text: "Малый бизнес",
-            children: [{ text: "Бизнес-навигатор МСП" }, { text: "Мобильный навигатор" }],
+            secondLevel: [{ text: "Бизнес-навигатор МСП" }, { text: "Мобильный навигатор" }],
           },
           { text: "Банки" },
           { text: "Мониторинг транспорта" },
@@ -24,6 +26,7 @@ export const routes = [
       },
     ],
   },
+  { text: "Блог", outsideLink: "http://everpoint.ru" },
   { id: "about", text: "СМИ о нас", route: "/about" },
   {
     id: "jobs",
@@ -32,11 +35,13 @@ export const routes = [
     additionalMenuWidth: "8.1714rem",
     additionalMenu: [
       {
-        label: "Команда",
-        children: [{ text: "Наши сотрудники" }, { text: "Вакансии" }],
+        id: "team",
+        title: "Команда",
+        children: [{ text: "Наши сотрудники", count: 19 }, { text: "Вакансии", count: 3 }],
       },
       {
-        label: "Как мы работаем",
+        id: "howWeAreWorking",
+        title: "Как мы работаем",
         children: [
           {
             text: "Рабочий процесс",
@@ -50,17 +55,13 @@ export const routes = [
   { id: "contacts", text: "Контакты", route: "/contacts" },
 ];
 
-const outsideLinks = [{ text: "Блог", outsideLink: "http://everpoint.ru" }];
-
-export const routesWithOutsideLinks = routes.slice();
-routesWithOutsideLinks.splice(2, 0, ...outsideLinks);
-
 export const navigateTo = ({ navigate, pathname, direction }) => {
-  const index = routes.findIndex(({ route }) => route === pathname);
-  const length = routes.length;
+  const outsideLinkFilteredRoutes = routes.filter(({ outsideLink }) => !outsideLink);
+  const index = outsideLinkFilteredRoutes.findIndex(({ route }) => route === pathname);
+  const length = outsideLinkFilteredRoutes.length;
   const nextRouteIndex = index + direction;
 
   if (nextRouteIndex >= 0 && nextRouteIndex < length) {
-    navigate(routes[nextRouteIndex].route);
+    navigate(outsideLinkFilteredRoutes[nextRouteIndex].route);
   }
 };

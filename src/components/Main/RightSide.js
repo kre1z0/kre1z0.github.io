@@ -1,3 +1,4 @@
 import styled from "astroturf";
 
-export const RightSide = styled("div")``;
+export const RightSide = styled("div")`
+`;

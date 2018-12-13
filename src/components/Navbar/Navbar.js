@@ -12,14 +12,11 @@ import styles, {
   LanguageSwitch,
   LanguageLink,
   Menu,
-  MenuSection,
-  AdditionalMenu,
   LinkContainer,
   LeftSide,
-  Label,
-  AdditionalMenuItem,
 } from "./styles";
-import { routesWithOutsideLinks } from "../../routes";
+import { AdditionalMenu } from "../AdditionalMenu/AdditionalMenu";
+import { routes } from "../../routes";
 
 export class Navbar extends PureComponent {
   state = {
@@ -59,7 +56,7 @@ export class Navbar extends PureComponent {
                 </LanguageSwitch>
               </LeftSide>
               <Menu>
-                {routesWithOutsideLinks.map(
+                {routes.map(
                   (
                     { text, id, route, outsideLink, additionalMenu, additionalMenuWidth },
                     index,
@@ -102,29 +99,21 @@ export class Navbar extends PureComponent {
                               !additionalMenu && currentRoute && currentRoute.id === id,
                           })}
                           activeClassName={styles.activeLink}
-                          onClick={e =>
+                          onClick={event =>
                             onNavLinkClick({
                               direction: index > direction ? 1 : -1,
                               transitionEnd: false,
                               id,
-                              event: e,
+                              event,
                             })
                           }
                         >
                           {text}
                         </Link>
-                        <AdditionalMenu isOpen={id === additionalMenuIsOpenId}>
-                          {additionalMenu &&
-                            additionalMenu.map(({ label, children }, index) => (
-                              <MenuSection key={index}>
-                                <Label>{label}</Label>
-                                {children &&
-                                  children.map(({ text }, index) => (
-                                    <AdditionalMenuItem key={index}>{text}</AdditionalMenuItem>
-                                  ))}
-                              </MenuSection>
-                            ))}
-                        </AdditionalMenu>
+                        <AdditionalMenu
+                          isOpen={id === additionalMenuIsOpenId}
+                          additionalMenu={additionalMenu}
+                        />
                       </LinkContainer>
                     );
                   },

@@ -17,14 +17,9 @@ export const SocialLink = styled("a")`
 
 const styles = css`
   .contactsLeftSide {
-    max-width: 60%;
   }
   .contactsRightSide {
     display: flex;
-    padding-top: 1rem;
-    justify-content: flex-start;
-    max-width: 40%;
-    padding-left: 10rem;
     height: 15.2142rem;
     button {
       &:first-child {

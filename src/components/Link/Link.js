@@ -9,6 +9,7 @@ export const Link = styled("a")`
   font-weight: 500;
   font-style: normal;
   text-decoration: none;
+  line-height: normal;
   &:last-child {
     margin-bottom: 0;
   }
@@ -20,5 +21,19 @@ export const Link = styled("a")`
     font-size: 1rem;
     margin-bottom: 0;
     margin-right: 1.4285rem;
+  }
+
+  > span {
+    white-space: nowrap;
+    margin-left: 0.6rem;
+    text-align: left;
+    display: inline-block;
+    width: 1.2rem;
+    color: rgba(38, 44, 55, 0.35);
+  }
+
+  &.little {
+    margin: 0.4rem 0 0 0.5rem;
+    font-size: 0.8571rem;
   }
 `;
