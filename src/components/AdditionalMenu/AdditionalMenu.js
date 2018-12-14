@@ -1,6 +1,8 @@
 import React, { PureComponent } from "react";
+import cn from "classnames";
 import PropTypes from "prop-types";
 
+import { fade } from "../../components/Transition/animation";
 import { Link } from "../../components/Link/Link";
 import { Menu, ListItem, ListHeader, MenuList, SecondLevelMenu } from "./styles";
 
@@ -12,10 +14,10 @@ export class AdditionalMenu extends PureComponent {
   };
 
   render() {
-    const { additionalMenu, big } = this.props;
+    const { additionalMenu, big, status } = this.props;
 
     return (
-      <Menu big={big}>
+      <Menu big={big} className={cn(fade[status])}>
         {additionalMenu &&
           additionalMenu.map(({ title, id, children }) => (
             <MenuList key={id}>

@@ -2,6 +2,7 @@ import styled, { css } from "astroturf";
 import { Link as GatsbyLink } from "gatsby";
 
 export const Nav = styled("nav")`
+  pointer-events: auto !important;
   display: flex;
   will-change: transform;
   z-index: 1;
@@ -13,6 +14,9 @@ export const Nav = styled("nav")`
   padding: 1.4714rem 6rem;
   @media (max-width: 1050px) {
     padding: 1.4714rem 2rem;
+  }
+  * {
+    pointer-events: auto !important;
   }
 `;
 
@@ -80,7 +84,6 @@ export const LinkContainer = styled("div")`
 `;
 
 export const Link = styled(GatsbyLink)`
-  pointer-events: auto !important;
   outline: none;
   color: #262c37;
   text-decoration: none;

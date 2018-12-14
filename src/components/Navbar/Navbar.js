@@ -1,4 +1,5 @@
 import React, { PureComponent } from "react";
+import { TransitionGroup, Transition as ReactTransition } from "react-transition-group";
 import cn from "classnames";
 
 import { ScrollConsumer } from "../ScrollProvider/ScrollProvider";
@@ -43,7 +44,9 @@ export class Navbar extends PureComponent {
           return (
             <Nav
               style={{ transform }}
-              className={cn({ [styles.coloredNav]: coloredNav || additionalMenuIsOpenId })}
+              className={cn({
+                [styles.coloredNav]: coloredNav || additionalMenuIsOpenId,
+              })}
               onMouseLeave={this.onCloseAdditionalMenu}
             >
               <LeftSide>
@@ -120,12 +123,24 @@ export class Navbar extends PureComponent {
                         >
                           {text}
                         </Link>
-                        {additionalMenuIsOpenId === id && (
-                          <AdditionalMenu
-                            additionalMenuIsOpenId={additionalMenuIsOpenId}
-                            additionalMenu={additionalMenu}
-                          />
-                        )}
+                        <TransitionGroup>
+                          {additionalMenuIsOpenId === id && (
+                            <ReactTransition
+                              timeout={{
+                                enter: 0,
+                                exit: 0,
+                              }}
+                            >
+                              {status => (
+                                <AdditionalMenu
+                                  status={status}
+                                  additionalMenuIsOpenId={additionalMenuIsOpenId}
+                                  additionalMenu={additionalMenu}
+                                />
+                              )}
+                            </ReactTransition>
+                          )}
+                        </TransitionGroup>
                       </LinkContainer>
                     );
                   },

@@ -4,6 +4,7 @@ export const Menu = styled("menu")`
   display: flex;
   margin: 0;
   padding: 2.4rem 0 0 0;
+  transition: opacity 200ms ease-in;
   li {
     > a {
       white-space: nowrap;
