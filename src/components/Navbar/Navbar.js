@@ -1,22 +1,12 @@
 import React, { PureComponent } from "react";
-import { TransitionGroup, Transition as ReactTransition } from "react-transition-group";
 import cn from "classnames";
 
 import { ScrollConsumer } from "../ScrollProvider/ScrollProvider";
 import logo from "../../img/logo.svg";
-import { Link as OutsideLink } from "../../components/Link/Link";
-import styles, {
-  Nav,
-  Link,
-  LogoLink,
-  Logo,
-  LanguageSwitch,
-  LanguageLink,
-  Menu,
-  LinkContainer,
-  LeftSide,
-} from "./styles";
-import { AdditionalMenu } from "../AdditionalMenu/AdditionalMenu";
+import { Hamburger } from "../../components/Buttons/Hamburger";
+import styles, { Nav, LogoLink, Logo, LanguageSwitch, LanguageLink, LeftSide } from "./styles";
+import { DesktopMenu } from "./DesktopMenu";
+import { MobileMenu } from "./MobileMenu";
 import { routes } from "../../routes";
 
 export class Navbar extends PureComponent {
@@ -38,7 +28,7 @@ export class Navbar extends PureComponent {
 
     return (
       <ScrollConsumer>
-        {({ scrollTop, coloredNav, direction, onNavLinkClick, currentRoute }) => {
+        {({ scrollTop, coloredNav, direction, onNavLinkClick, currentRoute, mobileMenuIsOpen, toggleMobileMenu }) => {
           const transform = `translateY(${scrollTop}px)`;
 
           return (
@@ -47,6 +37,7 @@ export class Navbar extends PureComponent {
               className={cn({
                 [styles.coloredNav]: coloredNav || additionalMenuIsOpenId,
               })}
+              mobileMenuIsOpen={mobileMenuIsOpen}
               onMouseLeave={this.onCloseAdditionalMenu}
             >
               <LeftSide>
@@ -67,85 +58,30 @@ export class Navbar extends PureComponent {
                   <LanguageLink isActive>ru</LanguageLink>
                   <LanguageLink>en</LanguageLink>
                 </LanguageSwitch>
+                <Hamburger
+                  isOpen={mobileMenuIsOpen}
+                  onClick={toggleMobileMenu}
+                  className={styles.hamburger}
+                />
               </LeftSide>
-              <Menu>
-                {routes.map(
-                  (
-                    { text, id, route, outsideLink, additionalMenu, additionalMenuWidth },
-                    index,
-                  ) => {
-                    if (outsideLink)
-                      return (
-                        <LinkContainer key={outsideLink}>
-                          <OutsideLink
-                            href={outsideLink}
-                            target="_blank"
-                            navOutside
-                            onMouseOver={this.onCloseAdditionalMenu}
-                          >
-                            Блог
-                          </OutsideLink>
-                        </LinkContainer>
-                      );
-
-                    const listIdentifiersWithoutSpecialStyles = ["portfolio"];
-
-                    const className =
-                      additionalMenu && !listIdentifiersWithoutSpecialStyles.includes(id)
-                        ? {
-                            [id]: true,
-                          }
-                        : {};
-
-                    return (
-                      <LinkContainer key={id} {...className} style={{ width: additionalMenuWidth }}>
-                        <Link
-                          onMouseOver={
-                            additionalMenu
-                              ? () => this.onOpenAdditionalMenu(id)
-                              : this.onCloseAdditionalMenu
-                          }
-                          to={route}
-                          className={cn({
-                            [styles.activeLink]: location.pathname.includes(route) && route !== "/",
-                            [styles.withoutAdditionalMenuAndIsActive]:
-                              !additionalMenu && currentRoute && currentRoute.id === id,
-                          })}
-                          activeClassName={styles.activeLink}
-                          onClick={event =>
-                            onNavLinkClick({
-                              direction: index > direction ? 1 : -1,
-                              transitionEnd: false,
-                              id,
-                              event,
-                            })
-                          }
-                        >
-                          {text}
-                        </Link>
-                        <TransitionGroup>
-                          {additionalMenuIsOpenId === id && (
-                            <ReactTransition
-                              timeout={{
-                                enter: 0,
-                                exit: 0,
-                              }}
-                            >
-                              {status => (
-                                <AdditionalMenu
-                                  status={status}
-                                  additionalMenuIsOpenId={additionalMenuIsOpenId}
-                                  additionalMenu={additionalMenu}
-                                />
-                              )}
-                            </ReactTransition>
-                          )}
-                        </TransitionGroup>
-                      </LinkContainer>
-                    );
-                  },
-                )}
-              </Menu>
+              <DesktopMenu
+                routes={routes}
+                location={location}
+                direction={direction}
+                additionalMenuIsOpenId={additionalMenuIsOpenId}
+                currentRoute={currentRoute}
+                onNavLinkClick={onNavLinkClick}
+                onOpenAdditionalMenu={this.onOpenAdditionalMenu}
+                onCloseAdditionalMenu={this.onCloseAdditionalMenu}
+              />
+              {mobileMenuIsOpen && (
+                <MobileMenu
+                  routes={routes}
+                  location={location}
+                  direction={direction}
+                  onNavLinkClick={onNavLinkClick}
+                />
+              )}
             </Nav>
           );
         }}

@@ -14,6 +14,7 @@ export class ScrollProviderComponent extends PureComponent {
   constructor(props) {
     super(props);
     this.onNavigateTo = debounce(this.onNavigateTo, 400);
+    this.onResize = debounce(this.onResize, 400);
   }
 
   state = {
@@ -24,6 +25,7 @@ export class ScrollProviderComponent extends PureComponent {
     direction: 1,
     transitionEnd: false,
     disableHover: false,
+    mobileMenuIsOpen: false,
   };
 
   threshold = 0;
@@ -33,6 +35,11 @@ export class ScrollProviderComponent extends PureComponent {
 
   componentDidMount() {
     this.setCurrentRoute();
+    window.addEventListener("resize", this.onResize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.onResize);
   }
 
   componentDidUpdate(prevProps) {
@@ -43,6 +50,14 @@ export class ScrollProviderComponent extends PureComponent {
       this.setCurrentRoute();
     }
   }
+
+  onResize = () => {
+    const viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+
+    if (viewportWidth > 930) {
+      this.setState({ mobileMenuIsOpen: false });
+    }
+  };
 
   setCurrentRoute = () => {
     const { location } = this.props;
@@ -190,7 +205,7 @@ export class ScrollProviderComponent extends PureComponent {
       return;
     }
 
-    this.setState({ direction, transitionEnd });
+    this.setState({ direction, transitionEnd, mobileMenuIsOpen: false });
   };
 
   onTransitionEnd = (e, transitionEnd = true) => this.setState({ transitionEnd });
@@ -201,6 +216,11 @@ export class ScrollProviderComponent extends PureComponent {
     }
   };
 
+  toggleMobileMenu = () =>
+    this.setState(({ mobileMenuIsOpen }) => ({
+      mobileMenuIsOpen: !mobileMenuIsOpen,
+    }));
+
   render() {
     const {
       scrollTop,
@@ -209,6 +229,7 @@ export class ScrollProviderComponent extends PureComponent {
       transitionEnd,
       disableHover,
       currentRoute,
+      mobileMenuIsOpen,
     } = this.state;
     const { children } = this.props;
 
@@ -224,13 +245,15 @@ export class ScrollProviderComponent extends PureComponent {
           transitionEnd,
           onTransitionEnd: this.onTransitionEnd,
           currentRoute,
+          mobileMenuIsOpen,
+          toggleMobileMenu: this.toggleMobileMenu,
         }}
       >
         <ScrollBar
           ref={this.onScrollBarRef}
           disableHover={disableHover || !transitionEnd}
           plugins={{
-            disableScrollByDirection: { direction: { x: true, y: false } },
+            disableScrollByDirection: { direction: { x: true, y: mobileMenuIsOpen } },
             determineScrollingEvent: { callback: this.determineScrollingEvent },
           }}
           onScroll={this.onScroll}

@@ -16,11 +16,6 @@ export const Link = styled("a")`
   &.isActive {
     color: #90c53d;
   }
-  &.navOutside {
-    font-weight: 600;
-    font-size: 1rem;
-  }
-
   > span {
     white-space: nowrap;
     margin-left: 0.6rem;

@@ -1,6 +1,8 @@
 import styled, { css } from "astroturf";
 import { Link as GatsbyLink } from "gatsby";
 
+const mobileMenu = "930px";
+
 export const Nav = styled("nav")`
   pointer-events: auto !important;
   display: flex;
@@ -12,8 +14,19 @@ export const Nav = styled("nav")`
   right: 0;
   align-items: flex-start;
   padding: 1.4714rem 6rem;
-  @media (max-width: 1050px) {
-    padding: 1.4714rem 2rem;
+  @media (max-width: 992px) {
+    padding: 1.4714rem 3.5714rem;
+  }
+  @media (max-width: ${mobileMenu}) {
+    &.mobileMenuIsOpen {
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      background-color: #fff;
+      flex-direction: column;
+    }
   }
   * {
     pointer-events: auto !important;
@@ -25,6 +38,9 @@ export const LeftSide = styled("div")`
   height: 2.5421rem;
   display: flex;
   align-items: center;
+  @media (max-width: ${mobileMenu}) {
+    width: 100%;
+  }
 `;
 
 export const LogoLink = styled(GatsbyLink)`
@@ -60,18 +76,45 @@ export const LanguageLink = styled("a")`
   }
 `;
 
-export const Menu = styled("div")`
+export const Menu = styled("ul")`
   z-index: 1;
+  list-style: none;
   display: flex;
-  padding-top: 0.4457rem;
-  margin-left: auto;
+  padding: 0.4457rem 0 0 0;
+  margin: 0 0 0 auto;
+  @media (max-width: ${mobileMenu}) {
+    display: none;
+  }
 `;
 
-export const LinkContainer = styled("div")`
+export const MobileMenu = styled("ul")`
+  z-index: 1;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  transition: opacity 200ms ease-in;
+  @media (min-width: ${mobileMenu}) {
+    display: none;
+  }
+`;
+
+export const LinkContainer = styled("li")`
   margin-right: 1.4285rem;
   align-self: flex-start;
   &:last-child {
     margin-right: 0;
+  }
+  > a {
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  @media (max-width: ${mobileMenu}) {
+    margin: 0;
+    > a {
+      font-size: 1.7142rem;
+      font-weight: bold;
+    }
   }
   &.jobs {
     menu {
@@ -84,6 +127,7 @@ export const LinkContainer = styled("div")`
 `;
 
 export const Link = styled(GatsbyLink)`
+  white-space: nowrap;
   outline: none;
   color: #262c37;
   text-decoration: none;
@@ -101,6 +145,13 @@ const styles = css`
   }
   .withoutAdditionalMenuAndIsActive {
     cursor: default;
+  }
+  .hamburger {
+    margin-left: auto;
+    display: none;
+    @media (max-width: ${mobileMenu}) {
+      display: block;
+    }
   }
 `;
 
