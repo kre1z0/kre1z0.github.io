@@ -19,8 +19,6 @@ export const Link = styled("a")`
   &.navOutside {
     font-weight: 600;
     font-size: 1rem;
-    margin-bottom: 0;
-    margin-right: 1.4285rem;
   }
 
   > span {

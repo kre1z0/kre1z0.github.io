@@ -14,5 +14,8 @@ export const WillChange = styled("section")`
   &.left {
     flex-shrink: 0;
     padding-right: 6rem;
+    @media (max-width: 1050px) {
+      padding-right: 2rem;
+    }
   }
 `;

@@ -47,7 +47,17 @@ export class Navbar extends PureComponent {
               onMouseLeave={this.onCloseAdditionalMenu}
             >
               <LeftSide>
-                <LogoLink to="/">
+                <LogoLink
+                  onClick={event =>
+                    onNavLinkClick({
+                      direction: -1,
+                      transitionEnd: false,
+                      id: "index",
+                      event,
+                    })
+                  }
+                  to="/"
+                >
                   <Logo as="img" src={logo} alt="logo" />
                 </LogoLink>
                 <LanguageSwitch>
@@ -110,10 +120,12 @@ export class Navbar extends PureComponent {
                         >
                           {text}
                         </Link>
-                        <AdditionalMenu
-                          isOpen={id === additionalMenuIsOpenId}
-                          additionalMenu={additionalMenu}
-                        />
+                        {additionalMenuIsOpenId === id && (
+                          <AdditionalMenu
+                            additionalMenuIsOpenId={additionalMenuIsOpenId}
+                            additionalMenu={additionalMenu}
+                          />
+                        )}
                       </LinkContainer>
                     );
                   },

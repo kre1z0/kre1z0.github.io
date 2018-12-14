@@ -6,16 +6,16 @@ import { Menu, ListItem, ListHeader, MenuList, SecondLevelMenu } from "./styles"
 
 export class AdditionalMenu extends PureComponent {
   static propTypes = {
-    isOpen: PropTypes.bool,
+    additionalMenuIsOpenId: PropTypes.string,
     additionalMenu: PropTypes.array,
     big: PropTypes.bool,
   };
 
   render() {
-    const { isOpen, additionalMenu, big } = this.props;
+    const { additionalMenu, big } = this.props;
 
     return (
-      <Menu isOpen={isOpen} big={big}>
+      <Menu big={big}>
         {additionalMenu &&
           additionalMenu.map(({ title, id, children }) => (
             <MenuList key={id}>

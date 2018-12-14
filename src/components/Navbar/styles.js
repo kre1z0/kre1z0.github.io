@@ -11,10 +11,13 @@ export const Nav = styled("nav")`
   right: 0;
   align-items: flex-start;
   padding: 1.4714rem 6rem;
-  transition: box-shadow 240ms ease;
+  @media (max-width: 1050px) {
+    padding: 1.4714rem 2rem;
+  }
 `;
 
 export const LeftSide = styled("div")`
+  z-index: 1;
   height: 2.5421rem;
   display: flex;
   align-items: center;
@@ -54,13 +57,18 @@ export const LanguageLink = styled("a")`
 `;
 
 export const Menu = styled("div")`
+  z-index: 1;
   display: flex;
   padding-top: 0.4457rem;
   margin-left: auto;
 `;
 
 export const LinkContainer = styled("div")`
+  margin-right: 1.4285rem;
   align-self: flex-start;
+  &:last-child {
+    margin-right: 0;
+  }
   &.jobs {
     menu {
       margin-right: 1.4285rem;
@@ -74,16 +82,11 @@ export const LinkContainer = styled("div")`
 
 export const Link = styled(GatsbyLink)`
   pointer-events: auto !important;
-  white-space: nowrap;
   outline: none;
   color: #262c37;
   text-decoration: none;
   font-weight: 600;
-  margin-right: 1.4285rem;
   line-height: normal;
-  &:last-child {
-    margin-right: 0;
-  }
 `;
 
 const styles = css`

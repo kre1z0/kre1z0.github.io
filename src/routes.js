@@ -4,7 +4,7 @@ export const routes = [
     id: "portfolio",
     text: "Продукты и Решения",
     route: "/portfolio",
-    additionalMenuWidth: "13.4rem",
+    additionalMenuWidth: "12rem",
     additionalMenu: [
       {
         id: "products",
@@ -32,7 +32,7 @@ export const routes = [
     id: "jobs",
     text: "Работа у нас",
     route: "/jobs",
-    additionalMenuWidth: "8.1714rem",
+    additionalMenuWidth: "7rem",
     additionalMenu: [
       {
         id: "team",

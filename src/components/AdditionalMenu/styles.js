@@ -1,12 +1,9 @@
 import styled from "astroturf";
 
 export const Menu = styled("menu")`
+  display: flex;
   margin: 0;
   padding: 2.4rem 0 0 0;
-  display: none;
-  &.isOpen {
-    display: flex;
-  }
   li {
     > a {
       white-space: nowrap;

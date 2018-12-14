@@ -9,4 +9,7 @@ export const Content = styled("main")`
   width: 100%;
   height: calc(100% - 3.8392rem);
   justify-content: space-between;
+  @media (max-width: 1050px) {
+    padding: 0 2rem;
+  }
 `;
