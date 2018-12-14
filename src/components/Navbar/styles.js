@@ -71,7 +71,6 @@ export const LinkContainer = styled("div")`
   }
   &.jobs {
     menu {
-      margin-right: 1.4285rem;
       justify-content: flex-end;
       > ul {
         text-align: right;
