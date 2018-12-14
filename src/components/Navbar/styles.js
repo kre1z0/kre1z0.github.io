@@ -1,7 +1,11 @@
 import styled, { css } from "astroturf";
 import { Link as GatsbyLink } from "gatsby";
 
-const mobileMenu = "930px";
+export const mobileMenu = "930px";
+
+const mobileMenuMiddle = "576px";
+
+const mobileMenuLittle = "320px";
 
 export const Nav = styled("nav")`
   pointer-events: auto !important;
@@ -13,9 +17,9 @@ export const Nav = styled("nav")`
   left: 0;
   right: 0;
   align-items: flex-start;
-  padding: 1.4714rem 6rem;
+  padding: 1.6rem 6rem;
   @media (max-width: 992px) {
-    padding: 1.4714rem 3.5714rem;
+    padding: 1.6rem 3.5714rem;
   }
   @media (max-width: ${mobileMenu}) {
     &.mobileMenuIsOpen {
@@ -27,6 +31,9 @@ export const Nav = styled("nav")`
       background-color: #fff;
       flex-direction: column;
     }
+  }
+  @media (max-width: ${mobileMenuMiddle}) {
+    padding: 1rem 1.7857rem;
   }
   * {
     pointer-events: auto !important;
@@ -46,13 +53,20 @@ export const LeftSide = styled("div")`
 export const LogoLink = styled(GatsbyLink)`
   width: 100%;
   max-width: 10.7142rem;
-  display: block;
+  display: flex;
+  align-items: center;
+  @media (max-width: ${mobileMenuMiddle}) {
+    max-width: 7.1428rem;
+  }
 `;
 
 export const Logo = styled("img")`
   min-width: 10.7142rem;
   width: 100%;
   height: auto;
+  @media (max-width: ${mobileMenuMiddle}) {
+    min-width: 7.1428rem;
+  }
 `;
 
 export const LanguageSwitch = styled("div")`
@@ -88,12 +102,20 @@ export const Menu = styled("ul")`
 `;
 
 export const MobileMenu = styled("ul")`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0;
   z-index: 1;
   list-style: none;
-  padding: 0;
-  margin: 0;
-  text-align: center;
-  transition: opacity 200ms ease-in;
+  padding: 1.4714rem 0 0 0;
+  flex-shrink: 0;
+  flex-grow: 1;
+  width: 100%;
+  @media (max-width: ${mobileMenuMiddle}) {
+    padding: 1rem 0 0 0;
+  }
   @media (min-width: ${mobileMenu}) {
     display: none;
   }
@@ -110,10 +132,26 @@ export const LinkContainer = styled("li")`
     font-size: 1rem;
   }
   @media (max-width: ${mobileMenu}) {
-    margin: 0;
+    align-self: center;
+    margin: 0 0 2.8571rem 0;
     > a {
       font-size: 1.7142rem;
       font-weight: bold;
+    }
+    &:last-child {
+      margin: 0;
+    }
+  }
+  @media (max-width: ${mobileMenuMiddle}) {
+    margin: 0 0 1.4285rem 0;
+    > a {
+      font-size: 1.1428rem;
+    }
+  }
+  @media (max-width: ${mobileMenuLittle}) {
+    margin: 0 0 2.1428rem 0;
+    > a {
+      font-size: 1.2857rem;
     }
   }
   &.jobs {

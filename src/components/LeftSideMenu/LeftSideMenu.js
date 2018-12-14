@@ -16,7 +16,7 @@ export class LeftSideMenu extends Component {
     return (
       <>
         {currentRoute && (
-          <AdditionalMenu big additionalMenu={currentRoute.additionalMenu} isOpen={true} />
+          <AdditionalMenu leftSide additionalMenu={currentRoute.additionalMenu} isOpen={true} />
         )}
       </>
     );

@@ -1,5 +1,9 @@
 import styled, { css } from "astroturf";
 
+import { Link as ContactLink } from "../components/Atoms/Atoms";
+
+export const Link = styled(ContactLink)``;
+
 export const SocialBlock = styled("div")``;
 
 export const SocialLink = styled("a")`
@@ -12,6 +16,10 @@ export const SocialLink = styled("a")`
   background-repeat: no-repeat;
   &:last-child {
     margin-right: 0;
+  }
+  @media (max-width: 992px) and (min-width: 769px) {
+    width: 1.14285rem;
+    height: 1.14285rem;
   }
 `;
 

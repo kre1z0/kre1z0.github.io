@@ -4,32 +4,43 @@ export const Menu = styled("menu")`
   display: flex;
   margin: 0;
   padding: 2.4rem 0 0 0;
-  transition: opacity 200ms ease-in;
   li {
     > a {
       white-space: nowrap;
       font-size: 1rem;
     }
   }
-  &.big {
+  &.leftSide {
     display: block;
-    h2 {
-      text-transform: none;
-      color: #262c37;
-      font-weight: bold;
-      font-size: 3.4285rem;
-      margin-bottom: 2.1428rem;
+    > ul {
+      margin-bottom: 3.9285rem;
+      @media (max-width: 992px) {
+        margin-bottom: 2.8571rem;
+      }
     }
     li {
       > a {
         white-space: normal;
         font-size: 1.2857rem;
+        margin-bottom: 0;
+        @media (max-width: 992px) {
+          font-size: 1.1428rem;
+        }
+        @media (max-width: 768px) {
+          font-size: 1rem;
+        }
+        @media (max-width: 576px) {
+          font-size: 0.8571rem;
+        }
       }
       > menu {
         > a {
           margin: 0.64rem 0 0 1rem;
           font-size: 1rem;
         }
+      }
+      @media (max-width: 768px) {
+        margin-bottom: 0.6rem;
       }
     }
   }
@@ -46,7 +57,10 @@ export const ListItem = styled("li")`
   list-style: none;
   margin-bottom: 1rem;
   &:last-child {
-    margin-bottom: 1.2rem;
+    margin-bottom: 0.4rem;
+    > a {
+      margin-bottom: 0;
+    }
   }
 `;
 

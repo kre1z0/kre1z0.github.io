@@ -7,7 +7,7 @@ export const Hamburger = styled(Button)`
   border: none;
   outline: none;
   width: 1.4285rem;
-  height: 1rem;
+  height: 1.4285rem;
   background: url(../../img/burger-menu.svg) center center no-repeat;
   background-size: 1.4285rem 1rem;
   box-sizing: content-box;

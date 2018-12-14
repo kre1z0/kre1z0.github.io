@@ -28,7 +28,15 @@ export class Navbar extends PureComponent {
 
     return (
       <ScrollConsumer>
-        {({ scrollTop, coloredNav, direction, onNavLinkClick, currentRoute, mobileMenuIsOpen, toggleMobileMenu }) => {
+        {({
+          scrollTop,
+          coloredNav,
+          direction,
+          onNavLinkClick,
+          currentRoute,
+          mobileMenuIsOpen,
+          toggleMobileMenu,
+        }) => {
           const transform = `translateY(${scrollTop}px)`;
 
           return (

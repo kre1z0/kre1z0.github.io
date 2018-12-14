@@ -1,10 +1,9 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
-import { Transition as ReactTransition, TransitionGroup } from "react-transition-group";
 import cn from "classnames";
 
 import { Link, LinkContainer, Menu } from "./styles";
-import { Link as OutsideLink } from "../Link/Link";
+import { Link as OutsideLink } from "../Atoms/Atoms";
 import styles from "./styles";
 import { AdditionalMenu } from "../AdditionalMenu/AdditionalMenu";
 
@@ -81,24 +80,13 @@ export class DesktopMenu extends PureComponent {
                 >
                   {text}
                 </Link>
-                <TransitionGroup>
-                  {additionalMenuIsOpenId === id && (
-                    <ReactTransition
-                      timeout={{
-                        enter: 0,
-                        exit: 0,
-                      }}
-                    >
-                      {status => (
-                        <AdditionalMenu
-                          status={status}
-                          additionalMenuIsOpenId={additionalMenuIsOpenId}
-                          additionalMenu={additionalMenu}
-                        />
-                      )}
-                    </ReactTransition>
-                  )}
-                </TransitionGroup>
+                {additionalMenuIsOpenId === id && (
+                  <AdditionalMenu
+                    fadeIn
+                    additionalMenuIsOpenId={additionalMenuIsOpenId}
+                    additionalMenu={additionalMenu}
+                  />
+                )}
               </LinkContainer>
             );
           },

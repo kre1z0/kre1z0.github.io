@@ -2,8 +2,7 @@ import React from "react";
 
 import { News } from "../../components/Cards/News";
 import { MainAnimation } from "../../components/MainAnimation/MainAnimation";
-import { H1 } from "../../components/Headlines/Headlines";
-import { Link } from "../../components/Link/Link";
+import { H2, Link } from "../../components/Atoms/Atoms";
 
 export const About = props => {
   return (
@@ -11,7 +10,7 @@ export const About = props => {
       {...props}
       leftSide={
         <>
-          <H1>СМИ о нас</H1>
+          <H2 as="h1">СМИ о нас</H2>
           <Link>Все комментарии</Link>
         </>
       }

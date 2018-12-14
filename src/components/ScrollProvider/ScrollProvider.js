@@ -1,8 +1,9 @@
 import React, { PureComponent } from "react";
 import { Location } from "@reach/router";
 import debounce from "lodash/debounce";
-import { ScrollBar } from "./styles";
 
+import { ScrollBar } from "./styles";
+import { mobileMenu } from "../../components/Navbar/styles";
 import { navigateTo, getRouteByLocation } from "../../routes";
 
 import "./plugins/disableScrollByDirection";
@@ -53,8 +54,9 @@ export class ScrollProviderComponent extends PureComponent {
 
   onResize = () => {
     const viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    const mobileMenuWidth = +mobileMenu.replace("px", "");
 
-    if (viewportWidth > 930) {
+    if (viewportWidth > mobileMenuWidth) {
       this.setState({ mobileMenuIsOpen: false });
     }
   };

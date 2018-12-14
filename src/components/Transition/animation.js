@@ -63,3 +63,22 @@ export const fade = css`
     opacity: 0;
   }
 `;
+
+const styles = css`
+  .fadeIn {
+    animation-name: fadeIn;
+    animation-duration: 200ms;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  }
+`;
+
+export default styles;

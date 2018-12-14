@@ -2,11 +2,10 @@ import React, { Component } from "react";
 
 import { RaisedButton } from "../../components/Buttons/RaisedButton";
 import { MainAnimation } from "../../components/MainAnimation/MainAnimation";
-import { H1 } from "../../components/Headlines/Headlines";
-import { Link } from "../../components/Link/Link";
+import { H2 } from "../../components/Atoms/Atoms";
 import { socials } from "../../assets/contacts/social";
 
-import styles, { SocialBlock, SocialLink } from "../../styles/contacts";
+import styles, { SocialBlock, SocialLink, Link } from "../../styles/contacts";
 
 class Contacts extends Component {
   state = {
@@ -23,7 +22,7 @@ class Contacts extends Component {
         rightSideClassName={styles.contactsRightSide}
         leftSide={
           <>
-            <H1>Контакты</H1>
+            <H2 as="h1">Контакты</H2>
             <Link as="address" className={styles.address}>
               127051, Россия, г. Москва, ул. Трубная, д. 25 к. 1
             </Link>

@@ -1,9 +1,8 @@
 import React from "react";
 
 import { MainAnimation } from "../components/MainAnimation/MainAnimation";
-import { HorizontalRule } from "../components/HorizontalRule/HorizontalRule";
-import { BigH1 } from "../components/Headlines/Headlines";
-import { Link } from "../components/Link/Link";
+import { HorizontalRule, Link } from "../components/Atoms/Atoms";
+import { BigH1 } from "../components/Atoms/Atoms";
 
 const IndexPage = props => {
   return (

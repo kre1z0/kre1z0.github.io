@@ -2,8 +2,9 @@ import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import cn from "classnames";
 
+import animation from "../../components/Transition/animation";
 import { Link, LinkContainer, MobileMenu as MobileMenuList } from "./styles";
-import { Link as OutsideLink } from "../Link/Link";
+import { Link as OutsideLink } from "../Atoms/Atoms";
 import styles from "./styles";
 
 export class MobileMenu extends PureComponent {
@@ -18,7 +19,7 @@ export class MobileMenu extends PureComponent {
     const { routes, onNavLinkClick, location, direction } = this.props;
 
     return (
-      <MobileMenuList>
+      <MobileMenuList className={animation.fadeIn}>
         {routes.map(({ text, id, route, outsideLink }, index) => {
           if (outsideLink)
             return (
