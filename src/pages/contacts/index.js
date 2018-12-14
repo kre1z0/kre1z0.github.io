@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { Button } from "../../components/Button/Button";
+import { RaisedButton } from "../../components/Buttons/RaisedButton";
 import { MainAnimation } from "../../components/MainAnimation/MainAnimation";
 import { H1 } from "../../components/Headlines/Headlines";
 import { Link } from "../../components/Link/Link";
@@ -43,12 +43,12 @@ class Contacts extends Component {
         }
         rightSide={
           <div>
-            <Button onClick={() => this.setState({ stope: true })} primary={stope}>
+            <RaisedButton onClick={() => this.setState({ stope: true })} primary={stope}>
               Остановки
-            </Button>
-            <Button onClick={() => this.setState({ stope: false })} primary={!stope}>
+            </RaisedButton>
+            <RaisedButton onClick={() => this.setState({ stope: false })} primary={!stope}>
               Метро
-            </Button>
+            </RaisedButton>
           </div>
         }
       />

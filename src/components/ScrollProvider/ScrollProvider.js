@@ -29,6 +29,7 @@ export class ScrollProviderComponent extends PureComponent {
   threshold = 0;
   scrolling = false;
   timer = 0;
+  scrollbar = null;
 
   componentDidMount() {
     this.setCurrentRoute();
@@ -130,7 +131,7 @@ export class ScrollProviderComponent extends PureComponent {
       this.setState({
         disableHover: false,
       });
-    }, 400);
+    }, 200);
 
     this.setState(
       {
@@ -170,7 +171,14 @@ export class ScrollProviderComponent extends PureComponent {
     }
   };
 
-  onExited = () => this.setState({ coloredNav: false, scrollTop: 0, limitY: 0 });
+  onExited = () => {
+    this.scrollbar.scrollTop = 0;
+    this.setState({
+      coloredNav: false,
+      scrollTop: 0,
+      limitY: 0,
+    });
+  };
 
   determineScrollingEvent = scrolling => (this.scrolling = scrolling);
 
@@ -186,6 +194,12 @@ export class ScrollProviderComponent extends PureComponent {
   };
 
   onTransitionEnd = (e, transitionEnd = true) => this.setState({ transitionEnd });
+
+  onScrollBarRef = ref => {
+    if (ref) {
+      this.scrollbar = ref.scrollbar;
+    }
+  };
 
   render() {
     const {
@@ -213,6 +227,7 @@ export class ScrollProviderComponent extends PureComponent {
         }}
       >
         <ScrollBar
+          ref={this.onScrollBarRef}
           disableHover={disableHover || !transitionEnd}
           plugins={{
             disableScrollByDirection: { direction: { x: true, y: false } },
