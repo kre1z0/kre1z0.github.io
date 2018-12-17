@@ -22,6 +22,8 @@ class MainAnimationBase extends PureComponent {
     leftSideClassName: PropTypes.string,
     rightSideClassName: PropTypes.string,
     scrollable: PropTypes.bool,
+    withSvg: PropTypes.bool,
+    base64styles: PropTypes.string,
   };
 
   render() {
@@ -32,6 +34,9 @@ class MainAnimationBase extends PureComponent {
       rightSide,
       rightSideClassName,
       children,
+      svgClassName,
+      withSvg,
+      base64styles,
       ...props
     } = this.props;
 
@@ -48,13 +53,15 @@ class MainAnimationBase extends PureComponent {
           const scrollable = currentRoute && currentRoute.scrollable;
           const transform = `translateY(${scrollTop}px)`;
 
+          const withChangeBase64ToSvg = withSvg ? !transitionEnd : true;
+
           return (
             <FullViewportContainer>
               <WillChange
                 fullViewport
                 style={{ transform, overflow: transitionEnd ? "hidden" : "visible" }}
               >
-                {!transitionEnd && (
+                {withChangeBase64ToSvg && (
                   <Background
                     onTransitionEnd={onTransitionEnd}
                     className={cn(
@@ -62,13 +69,15 @@ class MainAnimationBase extends PureComponent {
                       fade[status],
                       transition[status],
                       styles.default,
-                      getBase64BackgroundByIndex({ ...props }),
+                      base64styles || getBase64BackgroundByIndex({ ...props }),
                     )}
                   />
                 )}
-                <Background>
-                  <Resizer transitionEnd={transitionEnd} {...props} />
-                </Background>
+                {withSvg && (
+                  <Background>
+                    <Resizer svgClassName={svgClassName} transitionEnd={transitionEnd} {...props} />
+                  </Background>
+                )}
               </WillChange>
               <Content>
                 <WillChange left style={{ transform }}>

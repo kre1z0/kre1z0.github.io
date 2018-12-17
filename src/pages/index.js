@@ -8,6 +8,7 @@ const IndexPage = props => {
   return (
     <MainAnimation
       {...props}
+      withSvg
       leftSide={
         <>
           <HorizontalRule />

@@ -52,7 +52,7 @@ export class Navbar extends PureComponent {
                 <LogoLink
                   onClick={event =>
                     onNavLinkClick({
-                      direction: -1,
+                      index: 0,
                       transitionEnd: false,
                       id: "index",
                       event,
@@ -75,7 +75,6 @@ export class Navbar extends PureComponent {
               <DesktopMenu
                 routes={routes}
                 location={location}
-                direction={direction}
                 additionalMenuIsOpenId={additionalMenuIsOpenId}
                 currentRoute={currentRoute}
                 onNavLinkClick={onNavLinkClick}
@@ -86,7 +85,6 @@ export class Navbar extends PureComponent {
                 <MobileMenu
                   routes={routes}
                   location={location}
-                  direction={direction}
                   onNavLinkClick={onNavLinkClick}
                 />
               )}

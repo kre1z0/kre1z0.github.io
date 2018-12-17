@@ -4,7 +4,7 @@ import debounce from "lodash/debounce";
 
 import { ScrollBar } from "./styles";
 import { mobileMenu } from "../../components/Navbar/styles";
-import { navigateTo, getRouteByLocation } from "../../routes";
+import { navigateTo, getRouteByLocation, routes } from "../../routes";
 
 import "./plugins/disableScrollByDirection";
 import "./plugins/determineScrollingPlugin";
@@ -63,8 +63,8 @@ export class ScrollProviderComponent extends PureComponent {
 
   setCurrentRoute = () => {
     const { location } = this.props;
-
     const currentRoute = getRouteByLocation(location);
+
     if (currentRoute) {
       this.setState({ currentRoute, coloredNav: false });
     } else {
@@ -199,8 +199,11 @@ export class ScrollProviderComponent extends PureComponent {
 
   determineScrollingEvent = scrolling => (this.scrolling = scrolling);
 
-  onNavLinkClick = ({ direction, transitionEnd, id, event }) => {
+  onNavLinkClick = ({ transitionEnd, id, event }) => {
     const { currentRoute } = this.state;
+    const prevIndex = routes.findIndex(route => route.id === currentRoute.id);
+    const currentIndex = routes.findIndex(route => route.id === id);
+    const direction = currentIndex > prevIndex ? 1 : -1;
 
     if (currentRoute && currentRoute.id === id) {
       event.preventDefault();

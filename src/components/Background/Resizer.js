@@ -9,6 +9,7 @@ export class Resizer extends React.PureComponent {
   static propTypes = {
     transitionEnd: PropTypes.bool,
     route: PropTypes.string,
+    svgClassName: PropTypes.string,
   };
 
   componentDidMount() {
@@ -55,13 +56,16 @@ export class Resizer extends React.PureComponent {
   };
 
   render() {
-    const { transitionEnd, ...props } = this.props;
+    const {
+      transitionEnd,
+      svgClassName,
+    } = this.props;
 
     return (
       <SvgWrapper ref={this.onRef}>
         {getSVGBackgroundByIndex({
+          className: svgClassName,
           style: { visibility: transitionEnd ? "visible" : "hidden" },
-          ...props,
         })}
       </SvgWrapper>
     );

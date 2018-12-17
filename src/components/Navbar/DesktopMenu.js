@@ -10,7 +10,6 @@ import { AdditionalMenu } from "../AdditionalMenu/AdditionalMenu";
 export class DesktopMenu extends PureComponent {
   static propTypes = {
     location: PropTypes.object,
-    direction: PropTypes.number,
     additionalMenuIsOpenId: PropTypes.string,
     onCloseAdditionalMenu: PropTypes.func,
     onOpenAdditionalMenu: PropTypes.func,
@@ -27,13 +26,12 @@ export class DesktopMenu extends PureComponent {
       currentRoute,
       additionalMenuIsOpenId,
       location,
-      direction,
     } = this.props;
 
     return (
       <Menu>
         {routes.map(
-          ({ text, id, route, outsideLink, additionalMenu, additionalMenuWidth }, index) => {
+          ({ text, id, route, outsideLink, additionalMenu, additionalMenuWidth }) => {
             if (outsideLink)
               return (
                 <LinkContainer key={outsideLink}>
@@ -71,7 +69,6 @@ export class DesktopMenu extends PureComponent {
                   activeClassName={styles.activeLink}
                   onClick={event =>
                     onNavLinkClick({
-                      direction: index > direction ? 1 : -1,
                       transitionEnd: false,
                       id,
                       event,

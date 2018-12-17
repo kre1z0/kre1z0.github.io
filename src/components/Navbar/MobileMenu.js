@@ -10,17 +10,16 @@ import styles from "./styles";
 export class MobileMenu extends PureComponent {
   static propTypes = {
     location: PropTypes.object,
-    direction: PropTypes.number,
     onNavLinkClick: PropTypes.func,
     routes: PropTypes.array,
   };
 
   render() {
-    const { routes, onNavLinkClick, location, direction } = this.props;
+    const { routes, onNavLinkClick, location } = this.props;
 
     return (
       <MobileMenuList className={animation.fadeIn}>
-        {routes.map(({ text, id, route, outsideLink }, index) => {
+        {routes.map(({ text, id, route, outsideLink }) => {
           if (outsideLink)
             return (
               <LinkContainer key={outsideLink}>
@@ -40,11 +39,9 @@ export class MobileMenu extends PureComponent {
                 activeClassName={styles.activeLink}
                 onClick={event =>
                   onNavLinkClick({
-                    direction: index > direction ? 1 : -1,
                     transitionEnd: false,
                     id,
                     event,
-                    isMobile: true,
                   })
                 }
               >

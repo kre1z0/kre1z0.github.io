@@ -39,6 +39,19 @@ const styles = css`
   .address {
     cursor: default;
   }
+  .svgClassName {
+    :global {
+      // stop
+      .address_svg__st12 {
+        display: none;
+      }
+      .st4,
+      .st5,
+      .st6 {
+        display: none;
+      }
+    }
+  }
 `;
 
 export default styles;

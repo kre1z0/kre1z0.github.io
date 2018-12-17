@@ -66,5 +66,10 @@ export const navigateTo = ({ navigate, pathname, direction }) => {
   }
 };
 
-export const getRouteByLocation = location =>
-  routes.find(({ id }) => id && location.pathname.includes(id));
+export const getRouteByLocation = location => {
+  if (location.pathname === "/") {
+    return routes.find(({ id }) => id === "index");
+  } else {
+    return routes.find(({ id }) => id && location.pathname.includes(id));
+  }
+};

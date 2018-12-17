@@ -31,7 +31,7 @@ export const transition = css`
   .entered {
     transition-duration: ${enterTimeout}ms;
     transition-timing-function: ease;
-    transition-property: all;
+    transition-property: transform, opacity;
   }
   .exiting {
     transition-duration: ${exitTimeout}ms;

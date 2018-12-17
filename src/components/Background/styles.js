@@ -28,8 +28,11 @@ const styles = css`
   .moscow {
     background-image: url(../../img/moscow.svg);
   }
+  .bus {
+    background-image: url(../../img/bus.svg);
+  }
   .metro {
-    background-image: url(../../img/address-1.svg);
+    background-image: url(../../img/metro.svg);
   }
 `;
 

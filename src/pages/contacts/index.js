@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 
+import bg from "../../components/Background/styles";
 import { TelegramButton } from "../../components/Buttons/TelegramButton";
 import { RaisedButton } from "../../components/Buttons/RaisedButton";
 import { MainAnimation } from "../../components/MainAnimation/MainAnimation";
@@ -19,6 +20,8 @@ class Contacts extends Component {
     return (
       <MainAnimation
         {...this.props}
+        base64styles={!stope ? bg.metro : ""}
+        svgClassName={styles.svgClassName}
         leftSideClassName={styles.contactsLeftSide}
         rightSideClassName={styles.contactsRightSide}
         leftSide={
