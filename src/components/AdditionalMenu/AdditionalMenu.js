@@ -10,7 +10,6 @@ export class AdditionalMenu extends PureComponent {
   static propTypes = {
     additionalMenuIsOpenId: PropTypes.string,
     additionalMenu: PropTypes.array,
-    big: PropTypes.bool,
     fadeIn: PropTypes.bool,
   };
 

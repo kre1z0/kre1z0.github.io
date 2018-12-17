@@ -9,7 +9,7 @@ export const routes = [
       {
         id: "products",
         title: "Продукты",
-        children: [{ text: "EverGIS" }, { text: "EverGIS Online" }, { text: "EverGIS Marketing" }],
+        children: [{ text: "EverGIS" }, { text: "EverGIS Online" }, { text: "EverTrack" }],
       },
       {
         id: "solutions",
@@ -17,16 +17,13 @@ export const routes = [
         children: [
           {
             text: "Малый бизнес",
-            secondLevel: [{ text: "Бизнес-навигатор МСП" }, { text: "Мобильный навигатор" }],
+            secondLevel: [{ text: "Бизнес-навигатор МСП" }, { text: "Мобильный бизнес-навигатор" }],
           },
-          { text: "Банки" },
-          { text: "Мониторинг транспорта" },
-          { text: "Государственный сектор" },
+          { text: "Банковский сектор" },
         ],
       },
     ],
   },
-  { text: "Блог", outsideLink: "http://everpoint.ru" },
   { id: "about", text: "СМИ о нас", route: "/about" },
   {
     id: "jobs",
@@ -53,6 +50,7 @@ export const routes = [
     scrollable: true,
   },
   { id: "contacts", text: "Контакты", route: "/contacts" },
+  { text: "Блог", outsideLink: "http://everpoint.ru" },
 ];
 
 export const navigateTo = ({ navigate, pathname, direction }) => {

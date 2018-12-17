@@ -34,7 +34,7 @@ export class MobileMenu extends PureComponent {
               <Link
                 to={route}
                 className={cn({
-                  [styles.activeLink]: location.pathname.includes(route) && route !== "/",
+                  [styles.mobileActiveLink]: location.pathname.includes(route) && route !== "/",
                 })}
                 activeClassName={styles.activeLink}
                 onClick={event =>

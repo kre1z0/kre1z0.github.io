@@ -51,6 +51,14 @@ export const MenuList = styled("ul")`
   &:last-child {
     margin-right: 0;
   }
+  > li {
+    a {
+      transition: color 200ms ease;
+      &:hover {
+        color: #90c53d;
+      }
+    }
+  }
 `;
 
 export const ListItem = styled("li")`

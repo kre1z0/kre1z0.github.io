@@ -30,64 +30,58 @@ export class DesktopMenu extends PureComponent {
 
     return (
       <Menu>
-        {routes.map(
-          ({ text, id, route, outsideLink, additionalMenu, additionalMenuWidth }) => {
-            if (outsideLink)
-              return (
-                <LinkContainer key={outsideLink}>
-                  <OutsideLink
-                    href={outsideLink}
-                    target="_blank"
-                    onMouseOver={onCloseAdditionalMenu}
-                  >
-                    {text}
-                  </OutsideLink>
-                </LinkContainer>
-              );
-
-            const listIdentifiersWithoutSpecialStyles = ["portfolio"];
-
-            const className =
-              additionalMenu && !listIdentifiersWithoutSpecialStyles.includes(id)
-                ? {
-                    [id]: true,
-                  }
-                : {};
-
+        {routes.map(({ text, id, route, outsideLink, additionalMenu, additionalMenuWidth }) => {
+          if (outsideLink)
             return (
-              <LinkContainer key={id} {...className} style={{ width: additionalMenuWidth }}>
-                <Link
-                  onMouseOver={
-                    additionalMenu ? () => onOpenAdditionalMenu(id) : onCloseAdditionalMenu
-                  }
-                  to={route}
-                  className={cn({
-                    [styles.activeLink]: location.pathname.includes(route) && route !== "/",
-                    [styles.withoutAdditionalMenuAndIsActive]:
-                      !additionalMenu && currentRoute && currentRoute.id === id,
-                  })}
-                  activeClassName={styles.activeLink}
-                  onClick={event =>
-                    onNavLinkClick({
-                      transitionEnd: false,
-                      id,
-                      event,
-                    })
-                  }
-                >
+              <LinkContainer key={outsideLink}>
+                <OutsideLink href={outsideLink} target="_blank" onMouseOver={onCloseAdditionalMenu}>
                   {text}
-                </Link>
-                {additionalMenuIsOpenId === id && (
-                  <AdditionalMenu
-                    fadeIn
-                    additionalMenuIsOpenId={additionalMenuIsOpenId}
-                    additionalMenu={additionalMenu}
-                  />
-                )}
+                </OutsideLink>
               </LinkContainer>
             );
-          },
-        )}
+
+          const listIdentifiersWithoutSpecialStyles = ["portfolio"];
+
+          const className =
+            additionalMenu && !listIdentifiersWithoutSpecialStyles.includes(id)
+              ? {
+                  [id]: true,
+                }
+              : {};
+
+          return (
+            <LinkContainer key={id} {...className} style={{ width: additionalMenuWidth }}>
+              <Link
+                onMouseOver={
+                  additionalMenu ? () => onOpenAdditionalMenu(id) : onCloseAdditionalMenu
+                }
+                to={route}
+                className={cn({
+                  [styles.activeLink]: location.pathname.includes(route) && route !== "/",
+                  [styles.withoutAdditionalMenuAndIsActive]:
+                    !additionalMenu && currentRoute && currentRoute.id === id,
+                })}
+                activeClassName={styles.activeLink}
+                onClick={event =>
+                  onNavLinkClick({
+                    transitionEnd: false,
+                    id,
+                    event,
+                  })
+                }
+              >
+                <span>{text}</span>
+              </Link>
+              {additionalMenuIsOpenId === id && (
+                <AdditionalMenu
+                  fadeIn
+                  additionalMenuIsOpenId={additionalMenuIsOpenId}
+                  additionalMenu={additionalMenu}
+                />
+              )}
+            </LinkContainer>
+          );
+        })}
       </Menu>
     );
   }

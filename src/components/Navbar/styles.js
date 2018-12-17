@@ -99,6 +99,14 @@ export const Menu = styled("ul")`
   @media (max-width: ${mobileMenu}) {
     display: none;
   }
+  > li {
+    > a {
+      transition: color 200ms ease;
+      &:hover {
+        color: #90c53d;
+      }
+    }
+  }
 `;
 
 export const MobileMenu = styled("ul")`
@@ -175,6 +183,24 @@ export const Link = styled(GatsbyLink)`
 
 const styles = css`
   .activeLink {
+    color: #90c53d;
+    > span {
+      position: relative;
+      &:before {
+        left: 50%;
+        transform: translate(-50%, 200%);
+        bottom: 0;
+        position: absolute;
+        display: block;
+        content: "";
+        width: 0.2857rem;
+        height: 0.2857rem;
+        background-color: #90c53d;
+        border-radius: 50%;
+      }
+    }
+  }
+  .mobileActiveLink {
     color: #90c53d;
   }
   .coloredNav {
