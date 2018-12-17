@@ -29,6 +29,7 @@ const styles = css`
   .contactsRightSide {
     display: flex;
     height: 15.2142rem;
+    align-items: flex-start;
     button {
       &:first-child {
         margin-right: 0.7142rem;

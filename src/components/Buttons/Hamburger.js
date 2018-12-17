@@ -4,8 +4,6 @@ import { Button } from "./Button";
 
 export const Hamburger = styled(Button)`
   padding: 0.4rem;
-  border: none;
-  outline: none;
   width: 1.4285rem;
   height: 1.4285rem;
   background: url(../../img/burger-menu.svg) center center no-repeat;

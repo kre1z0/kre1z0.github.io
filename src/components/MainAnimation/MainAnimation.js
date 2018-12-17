@@ -31,6 +31,7 @@ class MainAnimationBase extends PureComponent {
       leftSideClassName,
       rightSide,
       rightSideClassName,
+      children,
       ...props
     } = this.props;
 
@@ -98,6 +99,7 @@ class MainAnimationBase extends PureComponent {
                     </RightSide>
                   </WillChange>
                 )}
+                {children}
               </Content>
             </FullViewportContainer>
           );

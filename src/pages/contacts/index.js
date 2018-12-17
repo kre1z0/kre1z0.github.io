@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 
+import { TelegramButton } from "../../components/Buttons/TelegramButton";
 import { RaisedButton } from "../../components/Buttons/RaisedButton";
 import { MainAnimation } from "../../components/MainAnimation/MainAnimation";
 import { H2 } from "../../components/Atoms/Atoms";
@@ -41,16 +42,18 @@ class Contacts extends Component {
           </>
         }
         rightSide={
-          <div>
+          <>
             <RaisedButton onClick={() => this.setState({ stope: true })} primary={stope}>
               Остановки
             </RaisedButton>
             <RaisedButton onClick={() => this.setState({ stope: false })} primary={!stope}>
               Метро
             </RaisedButton>
-          </div>
+          </>
         }
-      />
+      >
+        <TelegramButton as="a" target="_blank" href="https://telegram.me/redditr" />
+      </MainAnimation>
     );
   }
 }
