@@ -1,7 +1,7 @@
 import React from "react";
 import { TransitionGroup, Transition as ReactTransition } from "react-transition-group";
 
-import { ScrollConsumer } from "../ScrollProvider/ScrollProvider";
+import { MainLayoutConsumer } from "../MainLayoutProvider/MainLayoutProvider";
 import { Container } from "../Main/Container";
 import { enterTimeout, exitTimeout } from "./animation";
 
@@ -10,7 +10,7 @@ export class Transition extends React.PureComponent {
     const { children, location } = this.props;
 
     return (
-      <ScrollConsumer>
+      <MainLayoutConsumer>
         {({ onExited }) => (
           <TransitionGroup appear>
             <ReactTransition
@@ -27,7 +27,7 @@ export class Transition extends React.PureComponent {
             </ReactTransition>
           </TransitionGroup>
         )}
-      </ScrollConsumer>
+      </MainLayoutConsumer>
     );
   }
 }

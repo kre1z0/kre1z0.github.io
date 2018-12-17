@@ -11,7 +11,7 @@ import "./plugins/determineScrollingPlugin";
 
 const ScrollContext = React.createContext();
 
-export class ScrollProviderComponent extends PureComponent {
+export class MainLayoutProviderComponent extends PureComponent {
   constructor(props) {
     super(props);
     this.onNavigateTo = debounce(this.onNavigateTo, 400);
@@ -271,10 +271,10 @@ export class ScrollProviderComponent extends PureComponent {
   }
 }
 
-export const ScrollProvider = ({ children }) => (
+export const MainLayoutProvider = ({ children }) => (
   <Location>
-    {props => <ScrollProviderComponent {...props}>{children}</ScrollProviderComponent>}
+    {props => <MainLayoutProviderComponent {...props}>{children}</MainLayoutProviderComponent>}
   </Location>
 );
 
-export const ScrollConsumer = ScrollContext.Consumer;
+export const MainLayoutConsumer = ScrollContext.Consumer;

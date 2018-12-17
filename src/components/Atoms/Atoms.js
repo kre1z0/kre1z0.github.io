@@ -77,6 +77,9 @@ export const Link = styled("a")`
   font-style: normal;
   text-decoration: none;
   line-height: normal;
+  &.title {
+    cursor: default;
+  }
   &.isActive {
     color: #90c53d;
   }

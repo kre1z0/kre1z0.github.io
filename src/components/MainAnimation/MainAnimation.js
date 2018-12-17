@@ -5,7 +5,7 @@ import cn from "classnames";
 import withRouter from "../../hoc/withRouter";
 import { getBase64BackgroundByIndex } from "../Background/getBackground";
 import styles from "../Background/styles";
-import { ScrollConsumer } from "../ScrollProvider/ScrollProvider";
+import { MainLayoutConsumer } from "../MainLayoutProvider/MainLayoutProvider";
 import { WillChange } from "./WillChange";
 import { Background } from "../Background/Background";
 import { fade, scaleIn, scaleOut, slideY, transition } from "../Transition/animation";
@@ -41,7 +41,7 @@ class MainAnimationBase extends PureComponent {
     } = this.props;
 
     return (
-      <ScrollConsumer>
+      <MainLayoutConsumer>
         {({
           scrollTop,
           onRightSideRef,
@@ -113,7 +113,7 @@ class MainAnimationBase extends PureComponent {
             </FullViewportContainer>
           );
         }}
-      </ScrollConsumer>
+      </MainLayoutConsumer>
     );
   }
 }

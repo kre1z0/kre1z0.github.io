@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import cn from "classnames";
 
-import { ScrollConsumer } from "../ScrollProvider/ScrollProvider";
+import { MainLayoutConsumer } from "../MainLayoutProvider/MainLayoutProvider";
 import logo from "../../img/logo.svg";
 import { Hamburger } from "../../components/Buttons/Hamburger";
 import styles, { Nav, LogoLink, Logo, LanguageSwitch, LanguageLink, LeftSide } from "./styles";
@@ -27,7 +27,7 @@ export class Navbar extends PureComponent {
     const { location } = this.props;
 
     return (
-      <ScrollConsumer>
+      <MainLayoutConsumer>
         {({
           scrollTop,
           coloredNav,
@@ -87,7 +87,7 @@ export class Navbar extends PureComponent {
             </Nav>
           );
         }}
-      </ScrollConsumer>
+      </MainLayoutConsumer>
     );
   }
 }

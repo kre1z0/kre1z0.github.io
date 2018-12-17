@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Helmet from "react-helmet";
 
-import { ScrollProvider } from "../components/ScrollProvider/ScrollProvider";
+import { MainLayoutProvider } from "../components/MainLayoutProvider/MainLayoutProvider";
 import { injectGlobals } from "../components/injectGlobals";
 import { Transition } from "../components/Transition/Transition";
 import favicon from "../img/favicon.png";
@@ -14,14 +14,14 @@ class Layout extends Component {
     const { children, location } = this.props;
 
     return (
-      <ScrollProvider>
+      <MainLayoutProvider>
         <Helmet
           title="Everpoint"
           link={[{ rel: "shortcut icon", type: "image/png", href: `${favicon}` }]}
         />
         <Navbar location={location} />
         <Transition location={location}>{children}</Transition>
-      </ScrollProvider>
+      </MainLayoutProvider>
     );
   }
 }
