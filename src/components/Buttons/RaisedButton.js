@@ -9,7 +9,8 @@ export const RaisedButton = styled(Button)`
   background-color: transparent;
   border: 2px solid rgba(144, 197, 61, 0.5);
   border-radius: 1.2857rem;
-  &.primary {
+  &.isActive {
+    cursor: default;
     color: #fff;
     background-color: #90c53d;
   }

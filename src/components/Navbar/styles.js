@@ -106,6 +106,12 @@ export const Menu = styled("ul")`
         color: #90c53d;
       }
     }
+
+    > menu {
+      a {
+        white-space: nowrap;
+      }
+    }
   }
 `;
 

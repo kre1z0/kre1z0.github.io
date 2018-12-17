@@ -82,11 +82,7 @@ export class Navbar extends PureComponent {
                 onCloseAdditionalMenu={this.onCloseAdditionalMenu}
               />
               {mobileMenuIsOpen && (
-                <MobileMenu
-                  routes={routes}
-                  location={location}
-                  onNavLinkClick={onNavLinkClick}
-                />
+                <MobileMenu routes={routes} location={location} onNavLinkClick={onNavLinkClick} />
               )}
             </Nav>
           );

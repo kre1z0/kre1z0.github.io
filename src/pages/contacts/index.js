@@ -46,10 +46,10 @@ class Contacts extends Component {
         }
         rightSide={
           <>
-            <RaisedButton onClick={() => this.setState({ stope: true })} primary={stope}>
+            <RaisedButton onClick={() => this.setState({ stope: true })} isActive={stope}>
               Остановки
             </RaisedButton>
-            <RaisedButton onClick={() => this.setState({ stope: false })} primary={!stope}>
+            <RaisedButton onClick={() => this.setState({ stope: false })} isActive={!stope}>
               Метро
             </RaisedButton>
           </>
