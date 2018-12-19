@@ -24,12 +24,21 @@ export class PortfolioSlide extends PureComponent {
     onSectionChange: PropTypes.func,
   };
 
+  state = {
+    hovered: false,
+  };
+
   render() {
+    const { hovered } = this.state;
     const { bgColor, text, description, textColor, onSectionChange } = this.props;
 
     return (
-      <Container style={{ color: textColor || "#fff" }}>
-        <Background style={{ backgroundColor: bgColor }} />
+      <Container
+        onMouseOver={() => this.setState({ hovered: true })}
+        onMouseOut={() => this.setState({ hovered: false })}
+        style={{ color: textColor || "#fff" }}
+      >
+        <Background hovered={hovered} style={{ backgroundColor: bgColor }} />
         {getScreenshot(this.props)}
         <Content>
           <Title>{text}</Title>
@@ -38,7 +47,7 @@ export class PortfolioSlide extends PureComponent {
               "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam eaque eligendi iusto labore nisi quas recusandae reiciendis reprehenderit. Ab consectetur enim excepturi facere modi neque, repudiandae rerum soluta. Beatae, consequuntur."}
           </Description>
         </Content>
-        <ControlBlock>
+        <ControlBlock onMouseOver={e => e.stopPropagation()} onMouseOut={e => e.stopPropagation()}>
           <PrevBtn
             onClick={e => {
               e.stopPropagation();

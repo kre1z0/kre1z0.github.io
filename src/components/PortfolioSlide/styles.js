@@ -9,13 +9,6 @@ export const Container = styled("div")`
   justify-content: space-between;
   width: 100%;
   height: 100%;
-  &:hover {
-    > div:first-child {
-      top: -1.1428rem;
-      width: calc(100% + 1.1428rem);
-      height: calc(100% + 1.1428rem * 2);
-    }
-  }
 `;
 
 export const Background = styled("div")`
@@ -25,6 +18,11 @@ export const Background = styled("div")`
   width: 100%;
   height: 100%;
   transition: all 100ms ease-out;
+  &.hovered {
+    top: -1.1428rem;
+    width: calc(100% + 1.1428rem);
+    height: calc(100% + 1.1428rem * 2);
+  }
 `;
 
 export const Title = styled("h2")`
