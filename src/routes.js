@@ -1,3 +1,5 @@
+import msp from "./img/msp.png";
+
 export const routes = [
   { id: "index", text: "О компании", route: "/" },
   {
@@ -17,15 +19,22 @@ export const routes = [
         children: [
           {
             title: "Малый бизнес",
+            id: "smallBusiness",
             secondLevel: [
               {
                 text: "Бизнес-навигатор МСП",
-                color: "green",
+                bgColor: "#387bc7",
                 id: "msp",
                 description:
                   "Бесплатный сервис для предпринимателей. Найдите лучшее место для открытия бизнеса и получите готовый бизнес-план.",
+                screenshot: msp,
               },
-              { text: "Мобильный бизнес-навигатор", id: "mobileMsp", color: "red" },
+              {
+                text: "Мобильный бизнес-навигатор",
+                id: "mobileMsp",
+                bgColor: "red",
+                description: "lorem ipsum",
+              },
             ],
           },
           { text: "Банковский сектор" },

@@ -11,10 +11,11 @@ export class AdditionalMenu extends PureComponent {
     additionalMenuIsOpenId: PropTypes.string,
     additionalMenu: PropTypes.array,
     fadeIn: PropTypes.bool,
+    selectedId: PropTypes.string,
   };
 
   render() {
-    const { additionalMenu, leftSide, fadeIn } = this.props;
+    const { additionalMenu, leftSide, fadeIn, selectedId } = this.props;
 
     return (
       <Menu leftSide={leftSide} className={cn({ [animation.fadeIn]: fadeIn })}>
@@ -26,7 +27,13 @@ export class AdditionalMenu extends PureComponent {
                 children.map(({ text, title, secondLevel, count }, index) => (
                   <ListItem key={`${text}-${index}`}>
                     {title ? (
-                      <Link as="div" title>{title}</Link>
+                      <Link
+                        isActive={secondLevel && secondLevel.some(({ id }) => selectedId === id)}
+                        as="div"
+                        title
+                      >
+                        {title}
+                      </Link>
                     ) : (
                       <Link>
                         {text}
@@ -36,7 +43,11 @@ export class AdditionalMenu extends PureComponent {
                     <SecondLevelMenu>
                       {secondLevel &&
                         secondLevel.map((item, index) => (
-                          <Link little key={`${item.text}-${index}`}>
+                          <Link
+                            isActive={selectedId === item.id}
+                            little
+                            key={`${item.text}-${index}`}
+                          >
                             {item.text}
                           </Link>
                         ))}

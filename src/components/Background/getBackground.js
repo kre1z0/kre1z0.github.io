@@ -13,7 +13,7 @@ export const getBase64BackgroundByIndex = ({
   isJobsPage,
   isContactsPage,
 }) => {
-  if (isPortfolioPage()) return styles.russia;
+  if (isPortfolioPage()) return styles.portfolio;
   else if (isAboutPage()) return styles.europeRussia;
   else if (isJobsPage()) return styles.moscow;
   else if (isContactsPage()) return styles.bus;

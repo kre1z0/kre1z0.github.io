@@ -7,16 +7,22 @@ import { AdditionalMenu } from "../../components/AdditionalMenu/AdditionalMenu";
 export class LeftSideMenu extends Component {
   static propTypes = {
     location: PropTypes.object,
+    selectedId: PropTypes.string,
   };
 
   render() {
-    const { location } = this.props;
+    const { location, selectedId } = this.props;
     const currentRoute = getRouteByLocation(location);
 
     return (
       <>
         {currentRoute && (
-          <AdditionalMenu leftSide additionalMenu={currentRoute.additionalMenu} isOpen={true} />
+          <AdditionalMenu
+            selectedId={selectedId}
+            leftSide
+            additionalMenu={currentRoute.additionalMenu}
+            isOpen={true}
+          />
         )}
       </>
     );

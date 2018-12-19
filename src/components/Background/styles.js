@@ -19,8 +19,8 @@ const styles = css`
   .earth {
     background-image: url(../../img/earth.svg);
   }
-  .russia {
-    background-image: url(../../img/russia.svg);
+  .portfolio {
+    background-image: url(../../img/portfolio.svg);
   }
   .europeRussia {
     background-image: url(../../img/aboutSlide.svg);

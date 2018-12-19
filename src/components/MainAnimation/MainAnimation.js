@@ -24,6 +24,7 @@ class MainAnimationBase extends PureComponent {
     scrollable: PropTypes.bool,
     withSvg: PropTypes.bool,
     base64styles: PropTypes.string,
+    containerClassName: PropTypes.string,
   };
 
   render() {
@@ -37,6 +38,7 @@ class MainAnimationBase extends PureComponent {
       svgClassName,
       withSvg,
       base64styles,
+      containerClassName,
       ...props
     } = this.props;
 
@@ -79,7 +81,7 @@ class MainAnimationBase extends PureComponent {
                   </Background>
                 )}
               </WillChange>
-              <Content>
+              <Content className={cn(containerClassName)}>
                 <WillChange left style={{ transform }}>
                   <LeftSide
                     className={cn(
