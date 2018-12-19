@@ -9,7 +9,6 @@ export const Container = styled("div")`
   justify-content: space-between;
   width: 100%;
   height: 100%;
-  color: #fff;
   &:hover {
     > div:first-child {
       top: -1.1428rem;
@@ -39,6 +38,7 @@ export const Description = styled("p")`
 `;
 
 export const Content = styled("div")`
+  margin-top: auto;
   z-index: 1;
   padding: 0 3.5714rem 3.5714rem 3.5714rem;
 `;

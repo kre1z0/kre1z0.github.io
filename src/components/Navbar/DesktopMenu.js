@@ -14,7 +14,9 @@ export class DesktopMenu extends PureComponent {
     onCloseAdditionalMenu: PropTypes.func,
     onOpenAdditionalMenu: PropTypes.func,
     onNavLinkClick: PropTypes.func,
+    onSectionChange: PropTypes.func,
     routes: PropTypes.array,
+    selectedId: PropTypes.string,
   };
 
   render() {
@@ -22,10 +24,12 @@ export class DesktopMenu extends PureComponent {
       routes,
       onCloseAdditionalMenu,
       onOpenAdditionalMenu,
-      onNavLinkClick,
       currentRoute,
       additionalMenuIsOpenId,
       location,
+      selectedId,
+      onNavLinkClick,
+      onSectionChange,
     } = this.props;
 
     return (
@@ -74,6 +78,10 @@ export class DesktopMenu extends PureComponent {
               </Link>
               {additionalMenuIsOpenId === id && (
                 <AdditionalMenu
+                  onSectionChange={({ id: sectionId }) =>
+                    onSectionChange({ pageId: id, id: sectionId })
+                  }
+                  selectedId={selectedId}
                   fadeIn
                   additionalMenuIsOpenId={additionalMenuIsOpenId}
                   additionalMenu={additionalMenu}

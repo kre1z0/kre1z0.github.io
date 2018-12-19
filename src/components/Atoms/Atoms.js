@@ -81,6 +81,7 @@ export const Link = styled("a")`
     cursor: default;
   }
   &.isActive {
+    cursor: default;
     color: #90c53d;
   }
   > span {

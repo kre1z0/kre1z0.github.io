@@ -6,7 +6,7 @@ const styles = css`
       width: 100%;
       max-width: 42.1428rem;
       max-height: 51.1428rem;
-      height: 100%;
+      height: calc(100% - 4rem);
       > div {
         width: 100%;
         height: 100%;

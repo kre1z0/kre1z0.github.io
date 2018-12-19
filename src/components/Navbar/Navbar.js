@@ -36,8 +36,12 @@ export class Navbar extends PureComponent {
           currentRoute,
           mobileMenuIsOpen,
           toggleMobileMenu,
+          selectedSectionIndex,
+          sections,
+          onSectionChange,
         }) => {
           const transform = `translateY(${scrollTop}px)`;
+          const section = sections[selectedSectionIndex];
 
           return (
             <Nav
@@ -74,9 +78,11 @@ export class Navbar extends PureComponent {
               </LeftSide>
               <DesktopMenu
                 routes={routes}
+                selectedId={section && section.id}
                 location={location}
                 additionalMenuIsOpenId={additionalMenuIsOpenId}
                 currentRoute={currentRoute}
+                onSectionChange={onSectionChange}
                 onNavLinkClick={onNavLinkClick}
                 onOpenAdditionalMenu={this.onOpenAdditionalMenu}
                 onCloseAdditionalMenu={this.onCloseAdditionalMenu}

@@ -1,37 +1,40 @@
 import React, { PureComponent } from "react";
 
-import styles from "../../styles/portfolio";
-import { LeftSideMenu } from "../../components/LeftSideMenu/LeftSideMenu";
+import { MainLayoutConsumer } from "../../components/MainLayoutProvider/MainLayoutProvider";
 import { MainAnimation } from "../../components/MainAnimation/MainAnimation";
 import { getRouteByLocation } from "../../routes";
+import { AdditionalMenu } from "../../components/AdditionalMenu/AdditionalMenu";
+import styles from "../../styles/portfolio";
 import { PortfolioSlide } from "../../components/PortfolioSlide/PortfolioSlide";
 
 class Portfolio extends PureComponent {
-  state = {
-    selectedId: "msp",
-  };
-
   render() {
-    const { selectedId } = this.state;
     const { location } = this.props;
     const currentRoute = getRouteByLocation(location);
 
     return (
-      <MainAnimation
-        {...this.props}
-        leftSide={<LeftSideMenu selectedId={selectedId} location={location} />}
-        containerClassName={styles.portfolioContainer}
-        rightSide={
-          <>
-            {currentRoute &&
-              currentRoute.additionalMenu
-                .find(({ id }) => id === "solutions")
-                .children[0].secondLevel.map(
-                  item => item.id === selectedId && <PortfolioSlide {...item} key={item.id} />,
-                )}
-          </>
-        }
-      />
+      <MainLayoutConsumer>
+        {({ selectedSectionIndex, sections, onSectionChange }) => {
+          const section = sections[selectedSectionIndex];
+
+          return (
+            <MainAnimation
+              {...this.props}
+              leftSide={
+                <AdditionalMenu
+                  selectedId={section && section.id}
+                  onSectionChange={onSectionChange}
+                  leftSide
+                  additionalMenu={currentRoute.additionalMenu}
+                  isOpen={true}
+                />
+              }
+              containerClassName={styles.portfolioContainer}
+              rightSide={<PortfolioSlide onSectionChange={onSectionChange} {...section} />}
+            />
+          );
+        }}
+      </MainLayoutConsumer>
     );
   }
 }

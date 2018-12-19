@@ -4,7 +4,7 @@ import debounce from "lodash/debounce";
 
 import { ScrollBar } from "./styles";
 import { mobileMenu } from "../../components/Navbar/styles";
-import { navigateTo, getRouteByLocation, routes } from "../../routes";
+import { navigateTo, getRouteByLocation, getRouteById, routes } from "../../routes";
 
 import "./plugins/disableScrollByDirection";
 import "./plugins/determineScrollingPlugin";
@@ -27,6 +27,8 @@ export class MainLayoutProviderComponent extends PureComponent {
     transitionEnd: false,
     disableHover: false,
     mobileMenuIsOpen: false,
+    selectedSectionIndex: null,
+    sections: [],
   };
 
   threshold = 0;
@@ -61,12 +63,30 @@ export class MainLayoutProviderComponent extends PureComponent {
     }
   };
 
+  sectionsFromAdditionalMenu = additionalMenu => {
+    const sliderIdArray = [];
+    additionalMenu &&
+      additionalMenu.forEach(({ children }) => children.forEach(item => sliderIdArray.push(item)));
+    return sliderIdArray;
+  };
+
   setCurrentRoute = () => {
+    const { selectedSectionIndex } = this.state;
     const { location } = this.props;
     const currentRoute = getRouteByLocation(location);
 
     if (currentRoute) {
-      this.setState({ currentRoute, coloredNav: false });
+      const { slider, additionalMenu, scrollable } = currentRoute;
+
+      const sliderState =
+        slider || scrollable
+          ? {
+              selectedSectionIndex: selectedSectionIndex || 0,
+              sections: this.sectionsFromAdditionalMenu(additionalMenu),
+            }
+          : { selectedSectionIndex: null, sections: [] };
+
+      this.setState({ currentRoute, coloredNav: false, ...sliderState });
     } else {
       this.setState({ currentRoute: null, coloredNav: false });
     }
@@ -199,18 +219,31 @@ export class MainLayoutProviderComponent extends PureComponent {
 
   determineScrollingEvent = scrolling => (this.scrolling = scrolling);
 
-  onNavLinkClick = ({ transitionEnd, id, event }) => {
+  onNavLinkClick = ({ transitionEnd, id, event, navigate, selectedSectionIndex }) => {
     const { currentRoute } = this.state;
     const prevIndex = routes.findIndex(route => route.id === currentRoute.id);
     const currentIndex = routes.findIndex(route => route.id === id);
     const direction = currentIndex > prevIndex ? 1 : -1;
 
     if (currentRoute && currentRoute.id === id) {
-      event.preventDefault();
+      event && event.preventDefault();
       return;
     }
 
-    this.setState({ direction, transitionEnd, mobileMenuIsOpen: false });
+    this.setState(
+      {
+        selectedSectionIndex: selectedSectionIndex || null,
+        direction,
+        transitionEnd,
+        mobileMenuIsOpen: false,
+      },
+      () => {
+        const page = routes[currentIndex];
+        if (navigate && page) {
+          navigate(page.route);
+        }
+      },
+    );
   };
 
   onTransitionEnd = (e, transitionEnd = true) => this.setState({ transitionEnd });
@@ -226,6 +259,36 @@ export class MainLayoutProviderComponent extends PureComponent {
       mobileMenuIsOpen: !mobileMenuIsOpen,
     }));
 
+  onSectionChange = ({ value, id, pageId }) => {
+    const { navigate } = this.props;
+    const { selectedSectionIndex, sections, currentRoute } = this.state;
+
+    const pageIsChanged = pageId && currentRoute.id !== pageId;
+
+    const nextValue = id
+      ? sections.findIndex(item => item.id === id)
+      : selectedSectionIndex + value;
+
+    if (pageIsChanged) {
+      const { additionalMenu } = getRouteById(pageId);
+      const sectionFromMenu = this.sectionsFromAdditionalMenu(additionalMenu);
+      const index = sectionFromMenu.findIndex(item => item.id === id);
+
+      this.onNavLinkClick({
+        selectedSectionIndex: index,
+        transitionEnd: false,
+        id: pageId,
+        navigate,
+      });
+    } else {
+      if (nextValue >= sections.length || nextValue < 0) return;
+
+      this.setState({
+        selectedSectionIndex: nextValue,
+      });
+    }
+  };
+
   render() {
     const {
       scrollTop,
@@ -235,6 +298,8 @@ export class MainLayoutProviderComponent extends PureComponent {
       disableHover,
       currentRoute,
       mobileMenuIsOpen,
+      selectedSectionIndex,
+      sections,
     } = this.state;
     const { children } = this.props;
 
@@ -252,6 +317,11 @@ export class MainLayoutProviderComponent extends PureComponent {
           currentRoute,
           mobileMenuIsOpen,
           toggleMobileMenu: this.toggleMobileMenu,
+
+          // sections
+          onSectionChange: this.onSectionChange,
+          selectedSectionIndex,
+          sections,
         }}
       >
         <ScrollBar

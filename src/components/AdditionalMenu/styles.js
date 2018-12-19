@@ -5,7 +5,8 @@ export const Menu = styled("menu")`
   margin: 0;
   padding: 2.4rem 0 0 0;
   li {
-    > a {
+    > a,
+    > h4 {
       white-space: nowrap;
       font-size: 1rem;
     }
@@ -23,7 +24,8 @@ export const Menu = styled("menu")`
       }
     }
     li {
-      > a {
+      > a,
+      h4 {
         white-space: normal;
         font-size: 1.2857rem;
         margin-bottom: 0;
