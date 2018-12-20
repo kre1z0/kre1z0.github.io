@@ -1,4 +1,5 @@
-import msp from "./img/msp.png";
+import bank from "./img/portfolio/bank.png";
+import msp from "./img/portfolio/msp.png";
 
 export const routes = [
   { id: "index", text: "О компании", route: "/" },
@@ -13,7 +14,7 @@ export const routes = [
         title: "Продукты",
         children: [
           { text: "EverGIS", id: "evergis", bgColor: "#f8a717", screenshot: msp },
-          { text: "EverGIS Online", id: "evergisOnline", bgColor: "#6c30d7", screenshot: msp },
+          { text: "EverGIS Online", id: "evergisOnline", bgColor: "#6c30d7", screenshot: bank },
           { text: "EverTrack", id: "evertrack", bgColor: "#0fa5f6", screenshot: msp },
         ],
       },
@@ -39,7 +40,15 @@ export const routes = [
             description:
               "Приложение для расчёта бизнес-планов и справочник мер поддержки предпринимателей",
           },
-          { text: "Банковский сектор", id: "bankingSector", bgColor: "#45aac3", screenshot: msp },
+          {
+            title: "Геомониторинг недвижимости",
+            text: "Банковский сектор",
+            id: "bankingSector",
+            bgColor: "#45aac3",
+            screenshot: bank,
+            description:
+              "Аналитическая система управления залоговым имуществом банка. Планирование выездных проверок и оценка стоимости объектов.",
+          },
         ],
       },
     ],

@@ -5,7 +5,7 @@ import { MainLayoutConsumer } from "../MainLayoutProvider/MainLayoutProvider";
 import { Container } from "../Main/Container";
 import { enterTimeout, exitTimeout } from "./animation";
 
-export class Transition extends React.PureComponent {
+export class PageTransition extends React.PureComponent {
   render() {
     const { children, location } = this.props;
 

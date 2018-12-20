@@ -1,4 +1,4 @@
-import styled from "astroturf";
+import styled, { css } from "astroturf";
 
 import { Button } from "../../components/Buttons/Button";
 
@@ -17,7 +17,7 @@ export const Background = styled("div")`
   right: 0;
   width: 100%;
   height: 100%;
-  transition: all 100ms ease-out;
+  transition: all 140ms ease;
   &.hovered {
     top: -1.1428rem;
     width: calc(100% + 1.1428rem);
@@ -36,9 +36,12 @@ export const Description = styled("p")`
 `;
 
 export const Content = styled("div")`
-  margin-top: auto;
   z-index: 1;
   padding: 0 3.5714rem 3.5714rem 3.5714rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
 `;
 
 export const ControlBlock = styled("div")`
@@ -92,12 +95,35 @@ export const NextBtn = styled(ControlBtn)`
 `;
 
 export const Screenshot = styled("img")`
-  align-self: flex-end;
+  position: absolute;
   border-radius: 0.1428rem;
   margin-top: 14%;
   max-width: none;
-  width: calc(100% + 4.2857rem);
-  height: auto;
-  transform: translateX(-3.5714rem);
+  right: 3.125rem;
   box-shadow: 1.1428rem 1.1428rem 2.2857rem 0 rgba(50, 57, 69, 0.25);
+`;
+
+export const transition = css`
+  .entered {
+    transition-duration: 500ms;
+    transition-timing-function: ease-in;
+    transition-property: transform, opacity;
+  }
+  .exiting {
+    transition-duration: 1000ms;
+    transition-timing-function: ease-out;
+    transition-property: transform, opacity;
+  }
+`;
+
+export const slideDown = css`
+  .entering {
+    transform: translateY(-100%);
+  }
+  .entered {
+    transform: translateY(0px);
+  }
+  .exiting {
+    transform: translateY(100%);
+  }
 `;

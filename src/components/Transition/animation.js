@@ -30,17 +30,17 @@ export const scaleOut = css`
 export const transition = css`
   .entered {
     transition-duration: ${enterTimeout}ms;
-    transition-timing-function: ease;
+    transition-timing-function: ease-in;
     transition-property: transform, opacity;
   }
   .exiting {
     transition-duration: ${exitTimeout}ms;
-    transition-timing-function: ease;
+    transition-timing-function: ease-out;
     transition-property: transform, opacity;
   }
 `;
 
-export const slideY = css`
+export const slideUp = css`
   .entering {
     transform: translateY(100%);
   }
@@ -49,6 +49,18 @@ export const slideY = css`
   }
   .exiting {
     transform: translateY(-100%);
+  }
+`;
+
+export const slideX = css`
+  .entering {
+    transform: translateX(100%);
+  }
+  .entered {
+    transform: translateX(0px);
+  }
+  .exiting {
+    transform: translateX(-100%);
   }
 `;
 

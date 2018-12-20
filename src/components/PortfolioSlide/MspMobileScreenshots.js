@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "astroturf";
 
-import mobileMsp1 from "../../img/mobileMsp/mobile-1.png";
-import mobileMsp2 from "../../img/mobileMsp/mobile-2.png";
-import mobileMsp3 from "../../img/mobileMsp/mobile-3.png";
+import mobileMsp1 from "../../img/portfolio/mobileMsp/mobile-1.png";
+import mobileMsp2 from "../../img/portfolio/mobileMsp/mobile-2.png";
+import mobileMsp3 from "../../img/portfolio/mobileMsp/mobile-3.png";
 
 export const MspMobileScreenshots = styled("div")`
   display: flex;

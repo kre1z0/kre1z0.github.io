@@ -1,15 +1,24 @@
 import React from "react";
-import { Screenshot } from "./styles";
+import cn from "classnames";
 
 import { MspMobileScreenshotsBlock } from "./MspMobileScreenshots";
+import { fade, slideX } from "../Transition/animation";
+
+import { Screenshot, transition } from "./styles";
 
 export const getScreenshot = props => {
-  const { id, screenshot, text } = props;
+  const { id, screenshot, text, status } = props;
 
   switch (id) {
     case "mobileMsp":
       return <MspMobileScreenshotsBlock />;
     default:
-      return <Screenshot src={screenshot} alt={text} />;
+      return (
+        <Screenshot
+          className={cn(slideX[status], fade[status], transition[status])}
+          src={screenshot}
+          alt={text}
+        />
+      );
   }
 };

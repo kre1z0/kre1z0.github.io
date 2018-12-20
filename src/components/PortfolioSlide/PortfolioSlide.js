@@ -1,17 +1,9 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 
-import { getScreenshot } from "./getScreenshot";
-import {
-  Container,
-  Background,
-  Title,
-  Description,
-  Content,
-  ControlBlock,
-  PrevBtn,
-  NextBtn,
-} from "./styles";
+import { Container, Background, ControlBlock, PrevBtn, NextBtn } from "./styles";
+import { Content } from "./Content";
+import { Screenshot } from "./Screenshot";
 
 export class PortfolioSlide extends PureComponent {
   static propTypes = {
@@ -24,14 +16,33 @@ export class PortfolioSlide extends PureComponent {
     onSectionChange: PropTypes.func,
     selectedSectionIndex: PropTypes.number,
     sections: PropTypes.arrayOf(PropTypes.object),
+    title: PropTypes.string,
   };
 
   state = {
     hovered: false,
+    direction: 1,
   };
 
+  componentDidUpdate(prevProps, prevState) {
+    const { selectedSectionIndex: prevSelectedSectionIndex } = prevProps;
+    const { selectedSectionIndex } = this.props;
+
+    if (selectedSectionIndex !== prevSelectedSectionIndex) {
+      const direction =
+        (!prevSelectedSectionIndex && prevSelectedSectionIndex !== 0) ||
+        selectedSectionIndex > prevSelectedSectionIndex
+          ? 1
+          : -1;
+
+      this.setState({
+        direction,
+      });
+    }
+  }
+
   render() {
-    const { hovered } = this.state;
+    const { hovered, direction } = this.state;
     const {
       bgColor,
       text,
@@ -40,23 +51,26 @@ export class PortfolioSlide extends PureComponent {
       onSectionChange,
       selectedSectionIndex,
       sections,
+      id,
+      title,
+      screenshot,
     } = this.props;
 
     return (
       <Container
-        onMouseOver={() => this.setState({ hovered: true })}
-        onMouseOut={() => this.setState({ hovered: false })}
+        onMouseEnter={() => this.setState({ hovered: true })}
+        onMouseLeave={() => this.setState({ hovered: false })}
         style={{ color: textColor || "#fff" }}
       >
         <Background hovered={hovered} style={{ backgroundColor: bgColor }} />
-        {getScreenshot(this.props)}
-        <Content>
-          <Title>{text}</Title>
-          <Description>
-            {description ||
-              "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam eaque eligendi iusto labore nisi quas recusandae reiciendis reprehenderit. Ab consectetur enim excepturi facere modi neque, repudiandae rerum soluta. Beatae, consequuntur."}
-          </Description>
-        </Content>
+        <Screenshot id={id} text={text} screenshot={screenshot} />
+        <Content
+          direction={direction}
+          id={id}
+          title={title}
+          text={text}
+          description={description}
+        />
         <ControlBlock onMouseOver={e => e.stopPropagation()} onMouseOut={e => e.stopPropagation()}>
           <PrevBtn
             disabled={selectedSectionIndex === 0}

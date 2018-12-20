@@ -8,7 +8,7 @@ import styles from "../Background/styles";
 import { MainLayoutConsumer } from "../MainLayoutProvider/MainLayoutProvider";
 import { WillChange } from "./WillChange";
 import { Background } from "../Background/Background";
-import { fade, scaleIn, scaleOut, slideY, transition } from "../Transition/animation";
+import { fade, scaleIn, scaleOut, slideUp, transition } from "../Transition/animation";
 import { Content } from "../Main/Content";
 import { LeftSide } from "../Main/LeftSide";
 import { RightSide } from "../Main/RightSide";
@@ -86,7 +86,7 @@ class MainAnimationBase extends PureComponent {
                   <LeftSide
                     className={cn(
                       leftSideClassName,
-                      slideY[status],
+                      slideUp[status],
                       fade[status],
                       transition[status],
                     )}
@@ -101,7 +101,7 @@ class MainAnimationBase extends PureComponent {
                       ref={onRightSideRef}
                       className={cn(
                         rightSideClassName,
-                        slideY[status],
+                        slideUp[status],
                         fade[status],
                         transition[status],
                       )}
