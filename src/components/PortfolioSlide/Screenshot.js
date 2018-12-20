@@ -11,8 +11,8 @@ export class Screenshot extends PureComponent {
         <Transition
           key={`${id}-screenshot`}
           timeout={{
-            enter: 500,
-            exit: 1000,
+            enter: 100,
+            exit: 200,
           }}
         >
           {status => getScreenshot({ status, screenshot, text, id })}

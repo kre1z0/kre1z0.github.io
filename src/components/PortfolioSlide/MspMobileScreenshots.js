@@ -28,9 +28,9 @@ export const MspMobileScreenshots = styled("div")`
   }
 `;
 
-export const MspMobileScreenshotsBlock = () => {
+export const MspMobileScreenshotsBlock = props => {
   return (
-    <MspMobileScreenshots>
+    <MspMobileScreenshots {...props}>
       <img src={mobileMsp1} alt="img-1" />
       <img src={mobileMsp2} alt="img-2" />
       <img src={mobileMsp3} alt="img-3" />

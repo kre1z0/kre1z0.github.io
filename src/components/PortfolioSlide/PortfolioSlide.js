@@ -42,8 +42,8 @@ export class PortfolioSlide extends PureComponent {
 
     return (
       <Container
-        onMouseEnter={() => this.setState({ hovered: true })}
-        onMouseLeave={() => this.setState({ hovered: false })}
+        onMouseOver={() => this.setState({ hovered: true })}
+        onMouseOut={() => this.setState({ hovered: false })}
         style={{ color: textColor || "#fff" }}
       >
         <Background hovered={hovered} style={{ backgroundColor: bgColor }} />

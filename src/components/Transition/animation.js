@@ -52,18 +52,6 @@ export const slideUp = css`
   }
 `;
 
-export const slideX = css`
-  .entering {
-    transform: translateX(100%);
-  }
-  .entered {
-    transform: translateX(0px);
-  }
-  .exiting {
-    transform: translateX(-100%);
-  }
-`;
-
 export const fade = css`
   .entering {
     opacity: 0;

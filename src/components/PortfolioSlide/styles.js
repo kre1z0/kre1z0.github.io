@@ -17,7 +17,8 @@ export const Background = styled("div")`
   right: 0;
   width: 100%;
   height: 100%;
-  transition: all 140ms ease;
+  will-change: top, background-color;
+  transition: all 200ms ease;
   &.hovered {
     top: -1.1428rem;
     width: calc(100% + 1.1428rem);
@@ -105,25 +106,49 @@ export const Screenshot = styled("img")`
 
 export const transition = css`
   .entered {
-    transition-duration: 500ms;
-    transition-timing-function: ease-in;
+    transition-duration: 200ms;
+    transition-timing-function: linear;
     transition-property: transform, opacity;
   }
   .exiting {
-    transition-duration: 1000ms;
-    transition-timing-function: ease-out;
+    transition-duration: 200ms;
+    transition-timing-function: linear;
     transition-property: transform, opacity;
   }
 `;
 
-export const slideDown = css`
+export const slideUp = css`
   .entering {
-    transform: translateY(-100%);
+    transform: translateY(40%);
   }
   .entered {
     transform: translateY(0px);
   }
   .exiting {
-    transform: translateY(100%);
+    transform: translateY(-40%);
+  }
+`;
+
+export const slideDown = css`
+  .entering {
+    transform: translateY(-40%);
+  }
+  .entered {
+    transform: translateY(0px);
+  }
+  .exiting {
+    transform: translateY(40%);
+  }
+`;
+
+export const slideLeft = css`
+  .entering {
+    transform: translateX(20%);
+  }
+  .entered {
+    transform: translateX(0px);
+  }
+  .exiting {
+    transform: translateX(-20%);
   }
 `;
