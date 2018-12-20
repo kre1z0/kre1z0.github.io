@@ -27,8 +27,11 @@ export class MainLayoutProviderComponent extends PureComponent {
     transitionEnd: false,
     disableHover: false,
     mobileMenuIsOpen: false,
+
+    // sections
     selectedSectionIndex: null,
     sections: [],
+    sectionDirection: 1,
   };
 
   threshold = 0;
@@ -81,10 +84,11 @@ export class MainLayoutProviderComponent extends PureComponent {
       const sliderState =
         slider || scrollable
           ? {
+              sliderDirection: 1,
               selectedSectionIndex: selectedSectionIndex || 0,
               sections: this.sectionsFromAdditionalMenu(additionalMenu),
             }
-          : { selectedSectionIndex: null, sections: [] };
+          : { selectedSectionIndex: null, sections: [], sliderDirection: 1 };
 
       this.setState({ currentRoute, coloredNav: false, ...sliderState });
     } else {
@@ -295,7 +299,10 @@ export class MainLayoutProviderComponent extends PureComponent {
     } else {
       if (nextValue >= sections.length || nextValue < 0) return;
 
+      const sectionDirection = selectedSectionIndex > nextValue ? -1 : 1;
+
       this.setState({
+        sectionDirection,
         selectedSectionIndex: nextValue,
       });
     }
@@ -310,8 +317,11 @@ export class MainLayoutProviderComponent extends PureComponent {
       disableHover,
       currentRoute,
       mobileMenuIsOpen,
+
+      // sections
       selectedSectionIndex,
       sections,
+      sectionDirection,
     } = this.state;
     const { children } = this.props;
 
@@ -334,6 +344,7 @@ export class MainLayoutProviderComponent extends PureComponent {
           onSectionChange: this.onSectionChange,
           selectedSectionIndex,
           sections,
+          sectionDirection,
         }}
       >
         <ScrollBar

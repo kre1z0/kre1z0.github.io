@@ -17,32 +17,15 @@ export class PortfolioSlide extends PureComponent {
     selectedSectionIndex: PropTypes.number,
     sections: PropTypes.arrayOf(PropTypes.object),
     title: PropTypes.string,
+    sectionDirection: PropTypes.number,
   };
 
   state = {
     hovered: false,
-    direction: 1,
   };
 
-  componentDidUpdate(prevProps, prevState) {
-    const { selectedSectionIndex: prevSelectedSectionIndex } = prevProps;
-    const { selectedSectionIndex } = this.props;
-
-    if (selectedSectionIndex !== prevSelectedSectionIndex) {
-      const direction =
-        (!prevSelectedSectionIndex && prevSelectedSectionIndex !== 0) ||
-        selectedSectionIndex > prevSelectedSectionIndex
-          ? 1
-          : -1;
-
-      this.setState({
-        direction,
-      });
-    }
-  }
-
   render() {
-    const { hovered, direction } = this.state;
+    const { hovered } = this.state;
     const {
       bgColor,
       text,
@@ -54,6 +37,7 @@ export class PortfolioSlide extends PureComponent {
       id,
       title,
       screenshot,
+      sectionDirection,
     } = this.props;
 
     return (
@@ -65,7 +49,7 @@ export class PortfolioSlide extends PureComponent {
         <Background hovered={hovered} style={{ backgroundColor: bgColor }} />
         <Screenshot id={id} text={text} screenshot={screenshot} />
         <Content
-          direction={direction}
+          direction={sectionDirection}
           id={id}
           title={title}
           text={text}

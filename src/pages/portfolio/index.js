@@ -14,7 +14,7 @@ class Portfolio extends PureComponent {
 
     return (
       <MainLayoutConsumer>
-        {({ selectedSectionIndex, sections, onSectionChange }) => {
+        {({ selectedSectionIndex, sections, onSectionChange, sectionDirection }) => {
           const section = sections[selectedSectionIndex];
 
           return (
@@ -32,6 +32,7 @@ class Portfolio extends PureComponent {
               containerClassName={styles.portfolioContainer}
               rightSide={
                 <PortfolioSlide
+                  sectionDirection={sectionDirection}
                   sections={sections}
                   selectedSectionIndex={selectedSectionIndex}
                   onSectionChange={onSectionChange}

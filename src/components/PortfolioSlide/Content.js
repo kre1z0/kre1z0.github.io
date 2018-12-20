@@ -23,7 +23,7 @@ export class Content extends PureComponent {
     return (
       <TransitionGroup appear>
         <Transition
-          key={`${id}-content`}
+          key={`${id}-content-${direction}`}
           timeout={{
             enter: 500,
             exit: 1000,
