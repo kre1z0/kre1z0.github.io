@@ -29,6 +29,7 @@ export const Menu = styled("menu")`
         white-space: normal;
         font-size: 1.2857rem;
         margin-bottom: 0;
+        display: inline-block;
         @media (max-width: 992px) {
           font-size: 1.1428rem;
         }

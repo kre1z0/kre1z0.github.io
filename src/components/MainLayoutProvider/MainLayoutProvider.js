@@ -151,7 +151,10 @@ export class MainLayoutProviderComponent extends PureComponent {
     const down = nextIndex === sections.length;
 
     if (slider && !up && !down) {
+      const sectionDirection = selectedSectionIndex > nextIndex ? -1 : 1;
+
       this.setState({
+        sectionDirection,
         selectedSectionIndex: nextIndex,
       });
     } else {

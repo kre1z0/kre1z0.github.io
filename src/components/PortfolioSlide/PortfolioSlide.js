@@ -47,7 +47,7 @@ export class PortfolioSlide extends PureComponent {
         style={{ color: textColor || "#fff" }}
       >
         <Background hovered={hovered} style={{ backgroundColor: bgColor }} />
-        <Screenshot id={id} text={text} screenshot={screenshot} />
+        <Screenshot direction={sectionDirection} id={id} text={text} screenshot={screenshot} />
         <Content
           direction={sectionDirection}
           id={id}

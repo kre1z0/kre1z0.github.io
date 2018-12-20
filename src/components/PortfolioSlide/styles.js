@@ -119,36 +119,56 @@ export const transition = css`
 
 export const slideUp = css`
   .entering {
+    pointer-events: none;
     transform: translateY(40%);
   }
   .entered {
     transform: translateY(0px);
   }
   .exiting {
+    pointer-events: none;
     transform: translateY(-40%);
   }
 `;
 
 export const slideDown = css`
   .entering {
+    pointer-events: none;
     transform: translateY(-40%);
   }
   .entered {
     transform: translateY(0px);
   }
   .exiting {
+    pointer-events: none;
     transform: translateY(40%);
   }
 `;
 
 export const slideLeft = css`
   .entering {
+    pointer-events: none;
     transform: translateX(20%);
   }
   .entered {
     transform: translateX(0px);
   }
   .exiting {
+    pointer-events: none;
     transform: translateX(-20%);
+  }
+`;
+
+export const slideRight = css`
+  .entering {
+    pointer-events: none;
+    transform: translateX(-20%);
+  }
+  .entered {
+    transform: translateX(0px);
+  }
+  .exiting {
+    pointer-events: none;
+    transform: translateX(20%);
   }
 `;

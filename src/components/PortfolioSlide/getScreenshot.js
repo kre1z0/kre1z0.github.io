@@ -4,22 +4,25 @@ import cn from "classnames";
 import { MspMobileScreenshotsBlock } from "./MspMobileScreenshots";
 import { fade } from "../Transition/animation";
 
-import { Screenshot, transition, slideLeft } from "./styles";
+import { Screenshot, transition, slideLeft, slideRight } from "./styles";
 
 export const getScreenshot = props => {
-  const { id, screenshot, text, status } = props;
+  const { id, screenshot, text, status, direction } = props;
+
+  const animation = direction > 0 ? slideLeft[status] : slideRight[status];
 
   switch (id) {
     case "mobileMsp":
       return (
         <MspMobileScreenshotsBlock
-          className={cn(slideLeft[status], fade[status], transition[status])}
+          className={cn(animation, fade[status], transition[status])}
+          alt={text}
         />
       );
     default:
       return (
         <Screenshot
-          className={cn(slideLeft[status], fade[status], transition[status])}
+          className={cn(animation, fade[status], transition[status])}
           src={screenshot}
           alt={text}
         />
