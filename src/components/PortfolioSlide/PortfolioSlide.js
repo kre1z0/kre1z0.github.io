@@ -22,6 +22,8 @@ export class PortfolioSlide extends PureComponent {
     screenshot: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.string), PropTypes.string]),
     id: PropTypes.string,
     onSectionChange: PropTypes.func,
+    selectedSectionIndex: PropTypes.number,
+    sections: PropTypes.arrayOf(PropTypes.object),
   };
 
   state = {
@@ -30,7 +32,15 @@ export class PortfolioSlide extends PureComponent {
 
   render() {
     const { hovered } = this.state;
-    const { bgColor, text, description, textColor, onSectionChange } = this.props;
+    const {
+      bgColor,
+      text,
+      description,
+      textColor,
+      onSectionChange,
+      selectedSectionIndex,
+      sections,
+    } = this.props;
 
     return (
       <Container
@@ -49,12 +59,14 @@ export class PortfolioSlide extends PureComponent {
         </Content>
         <ControlBlock onMouseOver={e => e.stopPropagation()} onMouseOut={e => e.stopPropagation()}>
           <PrevBtn
+            disabled={selectedSectionIndex === 0}
             onClick={e => {
               e.stopPropagation();
               onSectionChange({ value: -1 });
             }}
           />
           <NextBtn
+            disabled={sections.length === selectedSectionIndex + 1}
             onClick={e => {
               e.stopPropagation();
               onSectionChange({ value: 1 });

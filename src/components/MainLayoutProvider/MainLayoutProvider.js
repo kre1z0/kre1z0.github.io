@@ -120,7 +120,7 @@ export class MainLayoutProviderComponent extends PureComponent {
   onNavigateTo = direction => {
     const { navigate, location } = this.props;
     const { pathname } = location;
-    const { currentRoute, scrollTop, limitY } = this.state;
+    const { currentRoute, scrollTop, limitY, selectedSectionIndex, sections } = this.state;
 
     const scrollable = currentRoute && currentRoute.scrollable;
 
@@ -141,13 +141,25 @@ export class MainLayoutProviderComponent extends PureComponent {
       return;
     }
 
-    this.setState({
-      transitionEnd: false,
-      direction,
-    });
+    const slider = currentRoute && currentRoute.slider;
+    const up = selectedSectionIndex === 0 && direction < 0;
+    const nextIndex = selectedSectionIndex + direction;
+    const down = nextIndex === sections.length;
 
-    this.threshold = 0;
-    navigateTo({ navigate, pathname, direction });
+    if (slider && !up && !down) {
+      this.setState({
+        selectedSectionIndex: nextIndex,
+      });
+    } else {
+      this.setState({
+        transitionEnd: false,
+        direction,
+      });
+
+      this.threshold = 0;
+
+      navigateTo({ navigate, pathname, direction });
+    }
   };
 
   onScroll = e => {

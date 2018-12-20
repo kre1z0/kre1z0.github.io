@@ -51,16 +51,33 @@ export const ControlBlock = styled("div")`
 `;
 
 const ControlBtn = styled(Button)`
+  position: relative;
   width: 4rem;
   height: 4rem;
-  transition: background-color 100ms ease;
-  background-size: 34% 34%;
-  background-repeat: no-repeat;
-  background-position: center center;
+  transition: all 100ms ease;
   background-color: #262c37;
-  background-image: url("../../img/arrow.svg");
+
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    background-size: 34% 34%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("../../img/arrow.svg");
+  }
   &:hover {
     background-color: #90c53d;
+  }
+  &.disabled {
+    background-color: #262c37;
+    cursor: default;
+    &:after {
+      opacity: 0.25;
+    }
   }
 `;
 
@@ -69,7 +86,9 @@ export const PrevBtn = styled(ControlBtn)`
 `;
 
 export const NextBtn = styled(ControlBtn)`
-  transform: rotate(180deg);
+  &:after {
+    transform: rotate(180deg);
+  }
 `;
 
 export const Screenshot = styled("img")`

@@ -4,8 +4,8 @@ import { MainLayoutConsumer } from "../../components/MainLayoutProvider/MainLayo
 import { MainAnimation } from "../../components/MainAnimation/MainAnimation";
 import { getRouteByLocation } from "../../routes";
 import { AdditionalMenu } from "../../components/AdditionalMenu/AdditionalMenu";
-import styles from "../../styles/portfolio";
 import { PortfolioSlide } from "../../components/PortfolioSlide/PortfolioSlide";
+import styles from "../../styles/portfolio";
 
 class Portfolio extends PureComponent {
   render() {
@@ -30,7 +30,14 @@ class Portfolio extends PureComponent {
                 />
               }
               containerClassName={styles.portfolioContainer}
-              rightSide={<PortfolioSlide onSectionChange={onSectionChange} {...section} />}
+              rightSide={
+                <PortfolioSlide
+                  sections={sections}
+                  selectedSectionIndex={selectedSectionIndex}
+                  onSectionChange={onSectionChange}
+                  {...section}
+                />
+              }
             />
           );
         }}
