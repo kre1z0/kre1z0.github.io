@@ -5,6 +5,23 @@ const tablet = "768px";
 const middle = "576px";
 const mobile = "320px";
 
+export const Title = styled("a")`
+  font-size: 1.2857rem;
+  font-weight: 500;
+  font-style: normal;
+  text-decoration: none;
+  line-height: normal;
+  @media (max-width: ${large}) {
+    font-size: 1.1428rem;
+  }
+  @media (max-width: ${tablet}) {
+    font-size: 1rem;
+  }
+  @media (max-width: ${middle}) {
+    font-size: 0.8571rem;
+  }
+`;
+
 export const H1 = styled("h1")`
   font-size: 3.4285rem;
   margin-bottom: 2.1428rem;
@@ -67,16 +84,10 @@ export const HorizontalRule = styled("hr")`
   }
 `;
 
-export const Link = styled("a")`
+export const Link = styled(Title)`
   display: block;
   margin-bottom: 1rem;
   cursor: pointer;
-  font-size: 1.2857rem;
-  color: #262c37;
-  font-weight: 500;
-  font-style: normal;
-  text-decoration: none;
-  line-height: normal;
   &.title {
     cursor: default;
   }
@@ -101,14 +112,16 @@ export const Link = styled("a")`
   &:last-child {
     margin-bottom: 0;
   }
+`;
 
+export const Text = styled("p")`
+  line-height: normal;
+  margin: 0;
+  font-size: 1.1428rem;
   @media (max-width: ${large}) {
-    font-size: 1.1428rem;
-  }
-  @media (max-width: ${tablet}) {
     font-size: 1rem;
   }
-  @media (max-width: ${middle}) {
-    font-size: 0.8571rem;
+  @media (max-width: ${tablet}) {
+    font-size: 0.85714rem;
   }
 `;

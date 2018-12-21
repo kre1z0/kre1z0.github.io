@@ -26,6 +26,9 @@ export const MspMobileScreenshots = styled("div")`
       left: -11.5rem;
     }
   }
+  @media all and (max-height: 777px), (max-width: 992px) {
+    top: calc(2.4285rem - 1.1428rem);
+  }
 `;
 
 export class MspMobileScreenshotsBlock extends PureComponent {

@@ -19,10 +19,10 @@ export class Crutch extends PureComponent {
           transition[status],
         )}
       >
-        <Title>{title || text}</Title>
+        <Title as="h2">{title || text}</Title>
         <Description>
           {description ||
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam eaque eligendi iusto labore nisi quas recusandae reiciendis reprehenderit. Ab consectetur enim excepturi facere modi neque, repudiandae rerum soluta. Beatae, consequuntur."}
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam eaque eligendi iusto labore nisi quas. Lorem ipsum dolor sit amet. Consectetur adi. "}
         </Description>
       </ContentBlock>
     );

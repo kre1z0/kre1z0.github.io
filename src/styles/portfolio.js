@@ -11,6 +11,14 @@ const styles = css`
         width: 100%;
         height: 100%;
       }
+      @media all and (max-height: 777px), (max-width: 992px) {
+        max-width: 32.1428rem;
+        max-height: 33.7857rem;
+      }
+      @media all and (max-height: 600px), (max-width: 768px) {
+        max-width: 26.2857rem;
+        max-height: 33.7857rem;
+      }
     }
   }
 `;

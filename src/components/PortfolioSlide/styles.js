@@ -1,5 +1,6 @@
 import styled, { css } from "astroturf";
 
+import { Title as H2, Text } from "../../components/Atoms/Atoms";
 import { Button } from "../../components/Buttons/Button";
 
 export const Container = styled("div")`
@@ -23,17 +24,25 @@ export const Background = styled("div")`
     top: -1.1428rem;
     width: calc(100% + 1.1428rem);
     height: calc(100% + 1.1428rem * 2);
+    @media all and (max-height: 777px), (max-width: 992px) {
+      top: -0.9rem;
+      width: calc(100% + 0.9rem);
+      height: calc(100% + 0.9em * 2);
+    }
   }
 `;
 
-export const Title = styled("h2")`
+export const Title = styled(H2)`
   font-weight: 600;
-  font-size: 1.2857rem;
+  margin-bottom: 0.84rem;
 `;
 
-export const Description = styled("p")`
-  font-size: 1.1428rem;
-  margin: 0;
+export const Description = styled(Text)`
+  color: #fff;
+  @media all and (max-height: 600px) {
+    max-height: 5.4rem;
+    overflow: hidden;
+  }
 `;
 
 export const Content = styled("div")`
@@ -43,6 +52,9 @@ export const Content = styled("div")`
   left: 0;
   right: 0;
   bottom: 0;
+  @media all and (max-height: 777px), (max-width: 992px) {
+    padding: 0 2.1428rem 2.1428rem 2.1428rem;
+  }
 `;
 
 export const ControlBlock = styled("div")`
@@ -50,8 +62,11 @@ export const ControlBlock = styled("div")`
   position: absolute;
   height: 4rem;
   right: 0;
-  bottom: 0;
+  bottom: -1rem;
   transform: translate(1.1428rem, 1.1428rem);
+  @media all and (max-height: 777px), (max-width: 992px) {
+    bottom: -2rem;
+  }
 `;
 
 const ControlBtn = styled(Button)`
@@ -83,6 +98,13 @@ const ControlBtn = styled(Button)`
       opacity: 0.25;
     }
   }
+  @media all and (max-height: 777px), (max-width: 992px) {
+    width: 2.8571rem;
+    height: 2.8571rem;
+  }
+  @media all and (max-height: 600px), (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const PrevBtn = styled(ControlBtn)`
@@ -98,10 +120,26 @@ export const NextBtn = styled(ControlBtn)`
 export const Screenshot = styled("img")`
   position: absolute;
   border-radius: 0.1428rem;
-  margin-top: 14%;
+  margin-top: 7.1428rem;
+  width: 46.4285rem;
+  height: auto;
   max-width: none;
   right: 3.125rem;
   box-shadow: 1.1428rem 1.1428rem 2.2857rem 0 rgba(50, 57, 69, 0.25);
+  @media all and (max-height: 777px), (max-width: 992px) {
+    margin-top: 2.1428rem;
+    width: 37.1428rem;
+    right: 2.1428rem;
+  }
+  @media all and (max-height: 600px), (max-width: 768px) {
+    margin-top: 5.2857rem;
+    right: 2.8571rem;
+    width: 26.2857rem;
+  }
+`;
+
+export const BulletsContainer = styled("div")`
+  display: flex;
 `;
 
 export const transition = css`
