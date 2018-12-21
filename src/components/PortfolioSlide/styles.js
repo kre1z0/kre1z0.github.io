@@ -90,9 +90,13 @@ const ControlBtn = styled(Button)`
     background-position: center center;
     background-image: url("../../img/arrow.svg");
   }
-  &:hover {
-    background-color: #90c53d;
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: #90c53d;
+    }
   }
+
   &.disabled {
     background-color: #262c37;
     cursor: default;

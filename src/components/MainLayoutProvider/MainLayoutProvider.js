@@ -1,4 +1,5 @@
 import React, { PureComponent } from "react";
+import { Swiper } from "../../components/Swiper/Swiper";
 import { Location } from "@reach/router";
 import debounce from "lodash/debounce";
 
@@ -311,6 +312,14 @@ export class MainLayoutProviderComponent extends PureComponent {
     }
   };
 
+  onSwiped = ({ isUp, isDown, yRatio }) => {
+    if (isUp && yRatio > 25) {
+      console.info("--> UP ggwp");
+    } else if (isDown && yRatio > 25) {
+      console.info("--> UP down");
+    }
+  };
+
   render() {
     const {
       scrollTop,
@@ -350,18 +359,20 @@ export class MainLayoutProviderComponent extends PureComponent {
           sectionDirection,
         }}
       >
-        <ScrollBar
-          ref={this.onScrollBarRef}
-          disableHover={disableHover || !transitionEnd}
-          plugins={{
-            disableScrollByDirection: { direction: { x: true, y: mobileMenuIsOpen } },
-            determineScrollingEvent: { callback: this.determineScrollingEvent },
-          }}
-          onScroll={this.onScroll}
-          onWheel={this.onWheel}
-        >
-          {children}
-        </ScrollBar>
+        <Swiper onSwiped={this.onSwiped}>
+          <ScrollBar
+            ref={this.onScrollBarRef}
+            disableHover={disableHover || !transitionEnd}
+            plugins={{
+              disableScrollByDirection: { direction: { x: true, y: mobileMenuIsOpen } },
+              determineScrollingEvent: { callback: this.determineScrollingEvent },
+            }}
+            onScroll={this.onScroll}
+            onWheel={this.onWheel}
+          >
+            {children}
+          </ScrollBar>
+        </Swiper>
       </ScrollContext.Provider>
     );
   }

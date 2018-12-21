@@ -8,6 +8,8 @@ const mobileMenuMiddle = "576px";
 const mobileMenuLittle = "320px";
 
 export const Nav = styled("nav")`
+  margin: 0 auto;
+  max-width: 114.2857rem;
   pointer-events: auto !important;
   display: flex;
   will-change: transform;
@@ -102,8 +104,10 @@ export const Menu = styled("ul")`
   > li {
     > a {
       transition: color 200ms ease;
-      &:hover {
-        color: #90c53d;
+      @media (hover: hover) {
+        &:hover {
+          color: #90c53d;
+        }
       }
     }
 

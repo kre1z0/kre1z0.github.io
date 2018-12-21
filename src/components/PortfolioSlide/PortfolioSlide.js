@@ -37,9 +37,9 @@ export class PortfolioSlide extends PureComponent {
     const { onSectionChange } = this.props;
 
     if (isLeft && xRatio > 25) {
-      onSectionChange({ value: -1 });
-    } else if (isRight && xRatio > 25) {
       onSectionChange({ value: 1 });
+    } else if (isRight && xRatio > 25) {
+      onSectionChange({ value: -1 });
     }
   };
 

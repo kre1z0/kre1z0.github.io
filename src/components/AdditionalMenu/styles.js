@@ -61,8 +61,10 @@ export const MenuList = styled("ul")`
   > li {
     a {
       transition: color 200ms ease;
-      &:hover {
-        color: #90c53d;
+      @media (hover: hover) {
+        &:hover {
+          color: #90c53d;
+        }
       }
     }
   }
