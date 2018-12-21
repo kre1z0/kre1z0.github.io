@@ -122,7 +122,7 @@ export class MainLayoutProviderComponent extends PureComponent {
     }
   };
 
-  onNavigateTo = direction => {
+  onNavigateTo = (direction, routeSwipeUpAndDown = false) => {
     const { navigate, location } = this.props;
     const { pathname } = location;
     const { currentRoute, scrollTop, limitY, selectedSectionIndex, sections } = this.state;
@@ -151,7 +151,7 @@ export class MainLayoutProviderComponent extends PureComponent {
     const nextIndex = selectedSectionIndex + direction;
     const down = nextIndex === sections.length;
 
-    if (slider && !up && !down) {
+    if (slider && !up && !down && !routeSwipeUpAndDown) {
       const sectionDirection = selectedSectionIndex > nextIndex ? -1 : 1;
 
       this.setState({
@@ -314,9 +314,9 @@ export class MainLayoutProviderComponent extends PureComponent {
 
   onSwiped = ({ isUp, isDown, yRatio }) => {
     if (isUp && yRatio > 25) {
-      console.info("--> UP ggwp");
+      this.onNavigateTo(-1, true);
     } else if (isDown && yRatio > 25) {
-      console.info("--> UP down");
+      this.onNavigateTo(1, true);
     }
   };
 
