@@ -1,5 +1,6 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
+import { Swiper } from "../../components/Swiper/Swiper";
 
 import {
   Container,
@@ -32,6 +33,16 @@ export class PortfolioSlide extends PureComponent {
     hovered: false,
   };
 
+  onSwiped = ({ isLeft, isRight, xRatio }) => {
+    const { onSectionChange } = this.props;
+
+    if (isLeft && xRatio > 25) {
+      onSectionChange({ value: -1 });
+    } else if (isRight && xRatio > 25) {
+      onSectionChange({ value: 1 });
+    }
+  };
+
   render() {
     const { hovered } = this.state;
     const {
@@ -49,43 +60,48 @@ export class PortfolioSlide extends PureComponent {
     } = this.props;
 
     return (
-      <Container
-        onMouseOver={() => this.setState({ hovered: true })}
-        onMouseOut={() => this.setState({ hovered: false })}
-        style={{ color: textColor || "#fff" }}
-      >
-        <Background hovered={hovered} style={{ backgroundColor: bgColor }} />
-        <Screenshot direction={sectionDirection} id={id} text={text} screenshot={screenshot} />
-        <Content
-          direction={sectionDirection}
-          id={id}
-          title={title}
-          text={text}
-          description={description}
-        />
-        <ControlBlock onMouseOver={e => e.stopPropagation()} onMouseOut={e => e.stopPropagation()}>
-          <PrevBtn
-            disabled={selectedSectionIndex === 0}
-            onClick={e => {
-              e.stopPropagation();
-              onSectionChange({ value: -1 });
-            }}
+      <Swiper onSwiped={this.onSwiped}>
+        <Container
+          onMouseOver={() => this.setState({ hovered: true })}
+          onMouseOut={() => this.setState({ hovered: false })}
+          style={{ color: textColor || "#fff" }}
+        >
+          <Background hovered={hovered} style={{ backgroundColor: bgColor }} />
+          <Screenshot direction={sectionDirection} id={id} text={text} screenshot={screenshot} />
+          <Content
+            direction={sectionDirection}
+            id={id}
+            title={title}
+            text={text}
+            description={description}
           />
-          <NextBtn
-            disabled={sections.length === selectedSectionIndex + 1}
-            onClick={e => {
-              e.stopPropagation();
-              onSectionChange({ value: 1 });
-            }}
-          />
-        </ControlBlock>
-        <BulletsContainer />
-        <BulletsContainer>
-          {sections.map(({ id }, index) => (
-            <Bullet key={`${id}-bullet`} isActive={index === selectedSectionIndex} />
-          ))}
-        </BulletsContainer>
-      </Container>
+          <ControlBlock
+            onMouseOver={e => e.stopPropagation()}
+            onMouseOut={e => e.stopPropagation()}
+          >
+            <PrevBtn
+              disabled={selectedSectionIndex === 0}
+              onClick={e => {
+                e.stopPropagation();
+                onSectionChange({ value: -1 });
+              }}
+            />
+            <NextBtn
+              disabled={sections.length === selectedSectionIndex + 1}
+              onClick={e => {
+                e.stopPropagation();
+                onSectionChange({ value: 1 });
+              }}
+            />
+          </ControlBlock>
+          <BulletsContainer />
+          <BulletsContainer>
+            {sections.map(({ id }, index) => (
+              <Bullet key={`${id}-bullet`} isActive={index === selectedSectionIndex} />
+            ))}
+          </BulletsContainer>
+        </Container>
+      </Swiper>
     );
   }
 }

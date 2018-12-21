@@ -10,6 +10,10 @@ const styles = css`
       > div {
         width: 100%;
         height: 100%;
+        > div {
+          width: 100%;
+          height: 100%;
+        }
       }
       @media all and (max-height: 777px), (max-width: 992px) {
         max-width: 32.1428rem;
