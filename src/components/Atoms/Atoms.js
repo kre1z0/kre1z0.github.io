@@ -85,6 +85,7 @@ export const HorizontalRule = styled("hr")`
 `;
 
 export const Link = styled(Title)`
+  color: #262c37;
   display: block;
   margin-bottom: 1rem;
   cursor: pointer;

@@ -1,7 +1,15 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 
-import { Container, Background, ControlBlock, PrevBtn, NextBtn } from "./styles";
+import {
+  Container,
+  Background,
+  ControlBlock,
+  PrevBtn,
+  NextBtn,
+  BulletsContainer,
+  Bullet,
+} from "./styles";
 import { Content } from "./Content";
 import { Screenshot } from "./Screenshot";
 
@@ -71,6 +79,12 @@ export class PortfolioSlide extends PureComponent {
             }}
           />
         </ControlBlock>
+        <BulletsContainer />
+        <BulletsContainer>
+          {sections.map(({ id }, index) => (
+            <Bullet key={`${id}-bullet`} isActive={index === selectedSectionIndex} />
+          ))}
+        </BulletsContainer>
       </Container>
     );
   }

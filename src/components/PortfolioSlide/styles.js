@@ -20,14 +20,16 @@ export const Background = styled("div")`
   height: 100%;
   will-change: top, background-color;
   transition: all 200ms ease;
-  &.hovered {
-    top: -1.1428rem;
-    width: calc(100% + 1.1428rem);
-    height: calc(100% + 1.1428rem * 2);
-    @media all and (max-height: 777px), (max-width: 992px) {
-      top: -0.9rem;
-      width: calc(100% + 0.9rem);
-      height: calc(100% + 0.9em * 2);
+  @media (min-width: 769px) {
+    &.hovered {
+      top: -1.1428rem;
+      width: calc(100% + 1.1428rem);
+      height: calc(100% + 1.1428rem * 2);
+      @media all and (max-height: 777px), (max-width: 992px) {
+        top: -0.9rem;
+        width: calc(100% + 0.9rem);
+        height: calc(100% + 0.9em * 2);
+      }
     }
   }
 `;
@@ -139,7 +141,29 @@ export const Screenshot = styled("img")`
 `;
 
 export const BulletsContainer = styled("div")`
-  display: flex;
+  display: none;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  bottom: -1.4285rem;
+  @media (max-width: 768px) {
+    display: flex;
+  }
+`;
+
+export const Bullet = styled("div")`
+  background-color: rgba(38, 44, 55, 0.25);
+  transition: background-color 100ms linear;
+  width: 0.4285rem;
+  height: 0.4285rem;
+  border-radius: 50%;
+  margin-right: 0.4285rem;
+  &:last-child {
+    margin-right: 0;
+  }
+  &.isActive {
+    background-color: rgba(38, 44, 55, 0.75);
+  }
 `;
 
 export const transition = css`
