@@ -314,9 +314,9 @@ export class MainLayoutProviderComponent extends PureComponent {
 
   onSwiped = ({ isUp, isDown, yRatio }) => {
     if (isUp && yRatio > 25) {
-      this.onNavigateTo(-1, true);
-    } else if (isDown && yRatio > 25) {
       this.onNavigateTo(1, true);
+    } else if (isDown && yRatio > 25) {
+      this.onNavigateTo(-1, true);
     }
   };
 
