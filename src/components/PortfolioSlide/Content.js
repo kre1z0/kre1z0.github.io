@@ -10,7 +10,7 @@ import { transition } from "./styles";
 
 export class Crutch extends PureComponent {
   render() {
-    const { status, direction, description, title, text } = this.props;
+    const { status, direction, description, title, text, textColor } = this.props;
     return (
       <ContentBlock
         className={cn(
@@ -20,7 +20,7 @@ export class Crutch extends PureComponent {
         )}
       >
         <Title as="h2">{title || text}</Title>
-        <Description>
+        <Description style={{ color: textColor || "#fff" }}>
           {description ||
             "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam eaque eligendi iusto labore nisi quas. Lorem ipsum dolor sit amet. Consectetur adi. "}
         </Description>
@@ -36,10 +36,11 @@ export class Content extends PureComponent {
     direction: PropTypes.number,
     title: PropTypes.string,
     id: PropTypes.string,
+    textColor: PropTypes.string,
   };
 
   render() {
-    const { text, description, title, direction, id } = this.props;
+    const { text, textColor, description, title, direction, id } = this.props;
 
     return (
       <TransitionGroup appear>
@@ -53,6 +54,7 @@ export class Content extends PureComponent {
           {status => (
             <Crutch
               {...this.props}
+              textColor={textColor}
               status={status}
               text={text}
               title={title}

@@ -71,6 +71,7 @@ export class PortfolioSlide extends PureComponent {
           </Middle>
           <Screenshot direction={sectionDirection} id={id} text={text} screenshot={screenshot} />
           <Content
+            textColor={textColor}
             direction={sectionDirection}
             id={id}
             title={title}

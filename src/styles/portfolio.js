@@ -30,7 +30,7 @@ const styles = css`
       @media (max-width: 414px) {
         left: 1.7857rem;
         position: absolute;
-        width: 19.2857rem;
+        width: calc(100vw - 1.7857rem * 2);
         max-width: none;
         max-height: 16.0714rem;
         bottom: 2.8571rem;

@@ -207,7 +207,6 @@ export const Screenshot = styled("img")`
     right: 2.1428rem;
   }
   @media all and (max-height: 600px), (max-width: 768px) {
-    top: 0;
     margin-top: 5.2857rem;
     right: 2.8571rem;
     width: 26.2857rem;
