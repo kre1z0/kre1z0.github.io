@@ -8,7 +8,7 @@ import { getScreenshot } from "./getScreenshot";
 export class Screenshot extends PureComponent {
   static propTypes = {
     id: PropTypes.string,
-    screenshot: PropTypes.string,
+    screenshot: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.string), PropTypes.string]),
     text: PropTypes.string,
     direction: PropTypes.number,
   };

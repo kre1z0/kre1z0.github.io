@@ -1,11 +1,7 @@
 import React, { PureComponent } from "react";
 import styled from "astroturf";
 
-import mobileMsp1 from "../../img/portfolio/mobileMsp/mobile-1.png";
-import mobileMsp2 from "../../img/portfolio/mobileMsp/mobile-2.png";
-import mobileMsp3 from "../../img/portfolio/mobileMsp/mobile-3.png";
-
-export const MspMobileScreenshots = styled("div")`
+const MultiScreenshotsContainer = styled("div")`
   top: 6.4%;
   left: -22%;
   position: absolute;
@@ -87,24 +83,25 @@ export const MspMobileScreenshots = styled("div")`
   }
 `;
 
-export class MspMobileScreenshotsBlock extends PureComponent {
+export class MultiScreenshots extends PureComponent {
   state = {
     transitionEnd: false,
   };
 
   render() {
     const { transitionEnd } = this.state;
+    const { screenshot } = this.props;
 
     return (
-      <MspMobileScreenshots
+      <MultiScreenshotsContainer
         {...this.props}
         transitionEnd={transitionEnd}
         onTransitionEnd={() => this.setState({ transitionEnd: true })}
       >
-        <img src={mobileMsp1} alt="img-1" />
-        <img src={mobileMsp2} alt="img-2" />
-        <img src={mobileMsp3} alt="img-3" />
-      </MspMobileScreenshots>
+        {screenshot.map((img, index) => (
+          <img key={`img-${index}`} src={img} alt={`img-${index}`} />
+        ))}
+      </MultiScreenshotsContainer>
     );
   }
 }

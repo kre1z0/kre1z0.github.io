@@ -1,5 +1,9 @@
 import bank from "./img/portfolio/bank.png";
+
 import msp from "./img/portfolio/msp.png";
+import mobileMsp1 from "./img/portfolio/mobileMsp/mobile-1.png";
+import mobileMsp2 from "./img/portfolio/mobileMsp/mobile-2.png";
+import mobileMsp3 from "./img/portfolio/mobileMsp/mobile-3.png";
 
 export const routes = [
   { id: "index", text: "О компании", route: "/" },
@@ -37,6 +41,7 @@ export const routes = [
             text: "Мобильный бизнес-навигатор",
             bgColor: "#e0f0f6",
             textColor: "#0a2342",
+            screenshot: [mobileMsp1, mobileMsp2, mobileMsp3],
             description:
               "Приложение для расчёта бизнес-планов и справочник мер поддержки предпринимателей",
           },
