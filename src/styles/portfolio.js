@@ -1,18 +1,4 @@
-import styled, { css } from "astroturf";
-
-export const MobileTitle = styled("h1")`
-  color: #262c37;
-  font-size: 1.2857rem;
-  position: absolute;
-  margin: 0;
-  top: 0;
-  transform: translateY(-100%);
-  @media (max-width: 320px) {
-    top: auto;
-    bottom: 26.4rem;
-    transform: translateY(0);
-  }
-`;
+import { css } from "astroturf";
 
 const styles = css`
   .portfolioContainer {
@@ -41,7 +27,7 @@ const styles = css`
         max-width: 48vw;
         max-height: 14.3571rem;
       }
-      @media (max-width: 320px) {
+      @media (max-width: 414px) {
         left: 1.7857rem;
         position: absolute;
         width: 19.2857rem;
@@ -52,7 +38,7 @@ const styles = css`
     }
   }
   .portfolioLeftSide {
-    @media screen and (max-width: 576px) and (min-width: 321px) {
+    @media screen and (max-width: 576px) and (min-width: 415px) {
       width: 100%;
       height: 100%;
       max-width: 48vw;
@@ -62,8 +48,14 @@ const styles = css`
         height: 100%;
       }
     }
-    @media (max-width: 320px) {
+    @media (max-width: 414px) {
+      width: 100%;
+      height: 100%;
       align-self: flex-end;
+      > div {
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 `;

@@ -2,11 +2,12 @@ import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import { Swiper } from "../../components/Swiper/Swiper";
 
-import { Container, Background, ControlBlock, PrevBtn, NextBtn } from "./styles";
+import { Container, Background, ControlBlock, PrevBtn, NextBtn, MobileTitle } from "./styles";
 import { Content } from "./Content";
 import { Screenshot } from "./Screenshot";
 import { Backend } from "./Backend";
 import { Bullets } from "./Bullets";
+import { Middle } from "../Responsive/Responsive";
 
 export class PortfolioSlide extends PureComponent {
   static propTypes = {
@@ -20,6 +21,7 @@ export class PortfolioSlide extends PureComponent {
     selectedSectionIndex: PropTypes.number,
     sections: PropTypes.arrayOf(PropTypes.object),
     title: PropTypes.string,
+    parentTitle: PropTypes.string,
     sectionDirection: PropTypes.number,
   };
 
@@ -51,6 +53,7 @@ export class PortfolioSlide extends PureComponent {
       title,
       screenshot,
       sectionDirection,
+      parentTitle,
     } = this.props;
 
     return (
@@ -62,6 +65,9 @@ export class PortfolioSlide extends PureComponent {
         >
           <Backend sections={sections} selectedSectionIndex={selectedSectionIndex} />
           <Background hovered={hovered} style={{ backgroundColor: bgColor }} />
+          <Middle>
+            <MobileTitle>{parentTitle}</MobileTitle>
+          </Middle>
           <Screenshot direction={sectionDirection} id={id} text={text} screenshot={screenshot} />
           <Content
             direction={sectionDirection}

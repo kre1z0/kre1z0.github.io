@@ -6,8 +6,7 @@ import { MainAnimation } from "../../components/MainAnimation/MainAnimation";
 import { getRouteByLocation } from "../../routes";
 import { AdditionalMenu } from "../../components/AdditionalMenu/AdditionalMenu";
 import { PortfolioSlide } from "../../components/PortfolioSlide/PortfolioSlide";
-import { Middle } from "../../components/Responsive/Responsive";
-import styles, { MobileTitle } from "../../styles/portfolio";
+import styles from "../../styles/portfolio";
 
 class Portfolio extends PureComponent {
   render() {
@@ -24,20 +23,15 @@ class Portfolio extends PureComponent {
               {...this.props}
               leftSideWillChangeClassName={styles.portfolioLeftSide}
               leftSide={
-                <>
-                  <Responsive minWidth={577}>
-                    <AdditionalMenu
-                      selectedId={section && section.id}
-                      onSectionChange={onSectionChange}
-                      leftSide
-                      additionalMenu={currentRoute.additionalMenu}
-                      isOpen={true}
-                    />
-                  </Responsive>
-                  <Middle>
-                    <MobileTitle>{(section && section.parentTitle) || ""}</MobileTitle>
-                  </Middle>
-                </>
+                <Responsive minWidth={577}>
+                  <AdditionalMenu
+                    selectedId={section && section.id}
+                    onSectionChange={onSectionChange}
+                    leftSide
+                    additionalMenu={currentRoute.additionalMenu}
+                    isOpen={true}
+                  />
+                </Responsive>
               }
               containerClassName={styles.portfolioContainer}
               rightSide={
