@@ -2,6 +2,7 @@ import React, { PureComponent } from "react";
 import styled from "astroturf";
 
 const MultiScreenshotsContainer = styled("div")`
+  will-change: opacity, transform;
   top: 6.4%;
   left: -22%;
   position: absolute;

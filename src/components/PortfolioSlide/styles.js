@@ -41,13 +41,14 @@ export const SliderBackground = styled("div")`
 `;
 
 export const Backend = styled("div")`
+  will-change: background-color;
   top: 0;
   left: 0;
   position: absolute;
   width: 100%;
   height: 100%;
   border-radius: 0.2857rem;
-  transition: background-color 200ms ease;
+  transition: background-color 200ms ease, box-shadow 200ms ease;
   &:nth-child(2) {
     top: 1rem;
     height: calc(100% - 2rem);
@@ -77,6 +78,7 @@ export const Description = styled(Text)`
 `;
 
 export const Content = styled("div")`
+  will-change: opacity, transform;
   z-index: 1;
   padding: 0 3.5714rem 3.5714rem 3.5714rem;
   position: absolute;
@@ -201,6 +203,7 @@ export const ScreenshotTransitionGroup = styled(TransitionGroup)`
 `;
 
 export const Screenshot = styled("img")`
+  will-change: opacity, transform;
   position: absolute;
   border-radius: 0.1428rem;
   margin-top: 7.1428rem;
