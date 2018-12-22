@@ -13,7 +13,7 @@ export const Container = styled("div")`
   height: 100%;
 `;
 
-export const Background = styled("div")`
+export const SliderBackground = styled("div")`
   position: absolute;
   top: 0;
   right: 0;

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Swiper } from "../../components/Swiper/Swiper";
 import Responsive from "react-responsive";
 
-import { Container, Background, ControlBlock, PrevBtn, NextBtn, MobileTitle } from "./styles";
+import { Container, SliderBackground, ControlBlock, PrevBtn, NextBtn, MobileTitle } from "./styles";
 import { Content } from "./Content";
 import { Screenshot } from "./Screenshot";
 import { Backend } from "./Backend";
@@ -65,7 +65,7 @@ export class PortfolioSlide extends PureComponent {
           style={{ color: textColor || "#fff" }}
         >
           <Backend sections={sections} selectedSectionIndex={selectedSectionIndex} />
-          <Background hovered={hovered} style={{ backgroundColor: bgColor }} />
+          <SliderBackground hovered={hovered} style={{ backgroundColor: bgColor }} />
           <Middle>
             <MobileTitle>{parentTitle}</MobileTitle>
           </Middle>
