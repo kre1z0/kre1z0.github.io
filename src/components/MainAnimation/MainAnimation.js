@@ -25,6 +25,7 @@ class MainAnimationBase extends PureComponent {
     withSvg: PropTypes.bool,
     base64styles: PropTypes.string,
     containerClassName: PropTypes.string,
+    leftSideWillChangeClassName: PropTypes.string,
   };
 
   render() {
@@ -39,6 +40,7 @@ class MainAnimationBase extends PureComponent {
       withSvg,
       base64styles,
       containerClassName,
+      leftSideWillChangeClassName,
       ...props
     } = this.props;
 
@@ -82,7 +84,9 @@ class MainAnimationBase extends PureComponent {
                 )}
               </WillChange>
               <Content className={cn(containerClassName)}>
-                <WillChange left style={{ transform }}>
+                <WillChange
+                  className={leftSideWillChangeClassName}
+                  left style={{ transform }}>
                   <LeftSide
                     className={cn(
                       leftSideClassName,

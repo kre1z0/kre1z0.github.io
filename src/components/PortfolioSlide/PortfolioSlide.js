@@ -2,17 +2,11 @@ import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import { Swiper } from "../../components/Swiper/Swiper";
 
-import {
-  Container,
-  Background,
-  ControlBlock,
-  PrevBtn,
-  NextBtn,
-  BulletsContainer,
-  Bullet,
-} from "./styles";
+import { Container, Background, ControlBlock, PrevBtn, NextBtn } from "./styles";
 import { Content } from "./Content";
 import { Screenshot } from "./Screenshot";
+import { Backend } from "./Backend";
+import { Bullets } from "./Bullets";
 
 export class PortfolioSlide extends PureComponent {
   static propTypes = {
@@ -66,6 +60,7 @@ export class PortfolioSlide extends PureComponent {
           onMouseOut={() => this.setState({ hovered: false })}
           style={{ color: textColor || "#fff" }}
         >
+          <Backend sections={sections} selectedSectionIndex={selectedSectionIndex} />
           <Background hovered={hovered} style={{ backgroundColor: bgColor }} />
           <Screenshot direction={sectionDirection} id={id} text={text} screenshot={screenshot} />
           <Content
@@ -94,12 +89,7 @@ export class PortfolioSlide extends PureComponent {
               }}
             />
           </ControlBlock>
-          <BulletsContainer />
-          <BulletsContainer>
-            {sections.map(({ id }, index) => (
-              <Bullet key={`${id}-bullet`} isActive={index === selectedSectionIndex} />
-            ))}
-          </BulletsContainer>
+          <Bullets sections={sections} selectedSectionIndex={selectedSectionIndex} />
         </Container>
       </Swiper>
     );

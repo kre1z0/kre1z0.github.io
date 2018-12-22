@@ -1,12 +1,12 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
+import { Transition, TransitionGroup } from "react-transition-group";
 import cn from "classnames";
 
 import { Content as ContentBlock, Description, slideDown, slideUp, Title } from "./styles";
 import { fade } from "../Transition/animation";
 
 import { transition } from "./styles";
-import { Transition, TransitionGroup } from "react-transition-group";
 
 export class Crutch extends PureComponent {
   render() {

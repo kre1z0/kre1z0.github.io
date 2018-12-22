@@ -70,7 +70,9 @@ export class MainLayoutProviderComponent extends PureComponent {
   sectionsFromAdditionalMenu = additionalMenu => {
     const sliderIdArray = [];
     additionalMenu &&
-      additionalMenu.forEach(({ children }) => children.forEach(item => sliderIdArray.push(item)));
+      additionalMenu.forEach(({ children, title }) =>
+        children.forEach(item => sliderIdArray.push({ ...item, parentTitle: title })),
+      );
     return sliderIdArray;
   };
 

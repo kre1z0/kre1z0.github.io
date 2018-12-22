@@ -1,4 +1,5 @@
 import styled, { css } from "astroturf";
+import { TransitionGroup } from "react-transition-group";
 
 import { Title as H2, Text } from "../../components/Atoms/Atoms";
 import { Button } from "../../components/Buttons/Button";
@@ -20,17 +21,42 @@ export const Background = styled("div")`
   height: 100%;
   will-change: top, background-color;
   transition: all 200ms ease;
-  @media (min-width: 769px) {
-    &.hovered {
-      top: -1.1428rem;
-      width: calc(100% + 1.1428rem);
-      height: calc(100% + 1.1428rem * 2);
-      @media all and (max-height: 777px), (max-width: 992px) {
-        top: -0.9rem;
-        width: calc(100% + 0.9rem);
-        height: calc(100% + 0.9em * 2);
+  @media (hover: hover) {
+    @media (min-width: 769px) {
+      &.hovered {
+        top: -1.1428rem;
+        width: calc(100% + 1.1428rem);
+        height: calc(100% + 1.1428rem * 2);
+        @media all and (max-height: 777px), (max-width: 1144px) {
+          top: -0.9rem;
+          width: calc(100% + 0.9rem);
+          height: calc(100% + 0.9em * 2);
+        }
       }
     }
+  }
+  @media (max-width: 768px) {
+    border-radius: 0.2857rem;
+  }
+`;
+
+export const Backend = styled("div")`
+  position: absolute;
+  width: 100%;
+  border-radius: 0.2857rem;
+  transition: background-color 200ms ease;
+  &:nth-child(2) {
+    top: 1rem;
+    height: calc(100% - 2rem);
+    z-index: -2;
+    left: 1rem;
+  }
+
+  &:nth-child(1) {
+    top: 0.5rem;
+    height: calc(100% - 1rem);
+    z-index: -1;
+    left: 0.5rem;
   }
 `;
 
@@ -54,8 +80,25 @@ export const Content = styled("div")`
   left: 0;
   right: 0;
   bottom: 0;
-  @media all and (max-height: 777px), (max-width: 992px) {
+  @media all and (max-height: 777px), (max-width: 1144px) {
     padding: 0 2.1428rem 2.1428rem 2.1428rem;
+  }
+  @media screen and (max-width: 576px) and (min-width: 321px) {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 2vw 0 11vw;
+    h2 {
+      font-size: 1rem;
+    }
+  }
+  @media (max-width: 320px) {
+    padding: 0 1.4285rem 1.4285rem 1.4285rem;
+    h2 {
+      font-size: 1rem;
+    }
   }
 `;
 
@@ -66,7 +109,7 @@ export const ControlBlock = styled("div")`
   right: 0;
   bottom: -1rem;
   transform: translate(1.1428rem, 1.1428rem);
-  @media all and (max-height: 777px), (max-width: 992px) {
+  @media all and (max-height: 777px), (max-width: 1144px) {
     bottom: -2rem;
   }
 `;
@@ -104,7 +147,7 @@ const ControlBtn = styled(Button)`
       opacity: 0.25;
     }
   }
-  @media all and (max-height: 777px), (max-width: 992px) {
+  @media all and (max-height: 777px), (max-width: 1144px) {
     width: 2.8571rem;
     height: 2.8571rem;
   }
@@ -123,6 +166,15 @@ export const NextBtn = styled(ControlBtn)`
   }
 `;
 
+export const ScreenshotTransitionGroup = styled(TransitionGroup)`
+  @media screen and (max-width: 576px) and (min-width: 321px) {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+`;
+
 export const Screenshot = styled("img")`
   position: absolute;
   border-radius: 0.1428rem;
@@ -132,7 +184,7 @@ export const Screenshot = styled("img")`
   max-width: none;
   right: 3.125rem;
   box-shadow: 1.1428rem 1.1428rem 2.2857rem 0 rgba(50, 57, 69, 0.25);
-  @media all and (max-height: 777px), (max-width: 992px) {
+  @media all and (max-height: 777px), (max-width: 1144px) {
     margin-top: 2.1428rem;
     width: 37.1428rem;
     right: 2.1428rem;
@@ -141,6 +193,18 @@ export const Screenshot = styled("img")`
     margin-top: 5.2857rem;
     right: 2.8571rem;
     width: 26.2857rem;
+  }
+  @media (max-width: 576px) {
+    right: 40vw;
+    margin: auto 0;
+    width: 52vw;
+  }
+  @media (max-width: 320px) {
+    left: 6.4vw;
+    right: auto;
+    bottom: 9.5714rem;
+    margin: 0;
+    width: 100vw;
   }
 `;
 

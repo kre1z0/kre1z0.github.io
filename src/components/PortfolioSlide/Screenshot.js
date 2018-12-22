@@ -1,7 +1,8 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
+import { Transition } from "react-transition-group";
 
-import { Transition, TransitionGroup } from "react-transition-group";
+import { ScreenshotTransitionGroup } from "./styles";
 import { getScreenshot } from "./getScreenshot";
 
 export class Screenshot extends PureComponent {
@@ -16,7 +17,7 @@ export class Screenshot extends PureComponent {
     const { id, screenshot, text } = this.props;
 
     return (
-      <TransitionGroup appear>
+      <ScreenshotTransitionGroup appear>
         <Transition
           key={`${id}-screenshot`}
           timeout={{
@@ -26,7 +27,7 @@ export class Screenshot extends PureComponent {
         >
           {status => getScreenshot({ ...this.props, status, screenshot, text, id })}
         </Transition>
-      </TransitionGroup>
+      </ScreenshotTransitionGroup>
     );
   }
 }
