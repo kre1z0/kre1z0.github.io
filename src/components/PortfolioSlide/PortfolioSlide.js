@@ -3,10 +3,17 @@ import PropTypes from "prop-types";
 import { Swiper } from "../../components/Swiper/Swiper";
 import Responsive from "react-responsive";
 
-import { Container, SliderBackground, ControlBlock, PrevBtn, NextBtn, MobileTitle } from "./styles";
+import {
+  PortfolioSlideContainer,
+  SliderBackground,
+  ControlBlock,
+  PrevBtn,
+  NextBtn,
+  MobileTitle,
+} from "./styles";
 import { Content } from "./Content";
 import { Screenshot } from "./Screenshot";
-import { Backend } from "./Backend";
+import { BackendComponent } from "./Backend";
 import { Bullets } from "./Bullets";
 import { Middle } from "../Responsive/Responsive";
 
@@ -59,12 +66,12 @@ export class PortfolioSlide extends PureComponent {
 
     return (
       <Swiper onSwiped={this.onSwiped}>
-        <Container
+        <PortfolioSlideContainer
           onMouseOver={() => this.setState({ hovered: true })}
           onMouseOut={() => this.setState({ hovered: false })}
           style={{ color: textColor || "#fff" }}
         >
-          <Backend sections={sections} selectedSectionIndex={selectedSectionIndex} />
+          <BackendComponent sections={sections} selectedSectionIndex={selectedSectionIndex} />
           <SliderBackground hovered={hovered} style={{ backgroundColor: bgColor }} />
           <Middle>
             <MobileTitle>{parentTitle}</MobileTitle>
@@ -100,7 +107,7 @@ export class PortfolioSlide extends PureComponent {
             </ControlBlock>
           </Responsive>
           <Bullets sections={sections} selectedSectionIndex={selectedSectionIndex} />
-        </Container>
+        </PortfolioSlideContainer>
       </Swiper>
     );
   }

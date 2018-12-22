@@ -4,7 +4,7 @@ import { TransitionGroup } from "react-transition-group";
 import { Title as H2, Text } from "../../components/Atoms/Atoms";
 import { Button } from "../../components/Buttons/Button";
 
-export const Container = styled("div")`
+export const PortfolioSlideContainer = styled("div")`
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -41,8 +41,11 @@ export const SliderBackground = styled("div")`
 `;
 
 export const Backend = styled("div")`
+  top: 0;
+  left: 0;
   position: absolute;
   width: 100%;
+  height: 100%;
   border-radius: 0.2857rem;
   transition: background-color 200ms ease;
   &:nth-child(2) {
@@ -184,6 +187,11 @@ export const NextBtn = styled(ControlBtn)`
 `;
 
 export const ScreenshotTransitionGroup = styled(TransitionGroup)`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   @media screen and (max-width: 576px) and (min-width: 321px) {
     display: flex;
     align-items: center;
