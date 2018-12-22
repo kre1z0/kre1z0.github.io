@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import { Swiper } from "../../components/Swiper/Swiper";
+import Responsive from "react-responsive";
 
 import { Container, Background, ControlBlock, PrevBtn, NextBtn, MobileTitle } from "./styles";
 import { Content } from "./Content";
@@ -76,25 +77,27 @@ export class PortfolioSlide extends PureComponent {
             text={text}
             description={description}
           />
-          <ControlBlock
-            onMouseOver={e => e.stopPropagation()}
-            onMouseOut={e => e.stopPropagation()}
-          >
-            <PrevBtn
-              disabled={selectedSectionIndex === 0}
-              onClick={e => {
-                e.stopPropagation();
-                onSectionChange({ value: -1 });
-              }}
-            />
-            <NextBtn
-              disabled={sections.length === selectedSectionIndex + 1}
-              onClick={e => {
-                e.stopPropagation();
-                onSectionChange({ value: 1 });
-              }}
-            />
-          </ControlBlock>
+          <Responsive minWidth={769}>
+            <ControlBlock
+              onMouseOver={e => e.stopPropagation()}
+              onMouseOut={e => e.stopPropagation()}
+            >
+              <PrevBtn
+                disabled={selectedSectionIndex === 0}
+                onClick={e => {
+                  e.stopPropagation();
+                  onSectionChange({ value: -1 });
+                }}
+              />
+              <NextBtn
+                disabled={sections.length === selectedSectionIndex + 1}
+                onClick={e => {
+                  e.stopPropagation();
+                  onSectionChange({ value: 1 });
+                }}
+              />
+            </ControlBlock>
+          </Responsive>
           <Bullets sections={sections} selectedSectionIndex={selectedSectionIndex} />
         </Container>
       </Swiper>
