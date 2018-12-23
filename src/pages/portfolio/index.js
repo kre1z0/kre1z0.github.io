@@ -21,7 +21,7 @@ class Portfolio extends PureComponent {
           return (
             <MainAnimation
               {...this.props}
-              leftSideWillChangeClassName={styles.portfolioLeftSide}
+              willChangeLeftSideClassName={styles.portfolioLeftSide}
               leftSide={
                 <Responsive minWidth={577}>
                   <AdditionalMenu

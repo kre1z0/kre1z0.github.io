@@ -29,9 +29,11 @@ const styles = css`
     background-image: url(../../img/main-slides/moscow.svg);
   }
   .bus {
+    background-position: 75% center;
     background-image: url(../../img/main-slides/bus.svg);
   }
   .metro {
+    background-position: 75% center;
     background-image: url(../../img/main-slides/metro.svg);
   }
 `;

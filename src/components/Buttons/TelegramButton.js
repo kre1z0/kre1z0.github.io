@@ -16,7 +16,13 @@ export const TelegramButton = styled(Button)`
   @media (max-width: 992px) {
     right: 3.5714rem;
   }
-  @media (max-width: 576px) {
+  @media (max-width: 768px) {
+    background-size: 1.25rem 1.1rem;
+    width: 2.5714rem;
+    height: 2.5714rem;
+  }
+  @media (max-width: 666px) {
     right: 1.7857rem;
+    bottom: 1.4142rem;
   }
 `;

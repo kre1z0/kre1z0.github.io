@@ -2,9 +2,32 @@ import styled, { css } from "astroturf";
 
 import { Link as ContactLink } from "../components/Atoms/Atoms";
 
-export const Link = styled(ContactLink)``;
+export const ContactsLeftSide = styled("div")`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+`;
+
+export const Link = styled(ContactLink)`
+  @media (max-width: 991px) {
+    margin-bottom: 0.2rem;
+  }
+`;
 
 export const SocialBlock = styled("div")``;
+
+export const BtnGroup = styled("div")`
+  display: flex;
+  position: absolute;
+  top: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  button {
+    &:first-child {
+      margin-right: 0.7142rem;
+    }
+  }
+`;
 
 export const SocialLink = styled("a")`
   opacity: 0.25;
@@ -21,10 +44,21 @@ export const SocialLink = styled("a")`
     width: 1.14285rem;
     height: 1.14285rem;
   }
+  @media (max-width: 991px) {
+    margin-top: 1.7142rem;
+  }
 `;
 
 const styles = css`
   .contactsLeftSide {
+  }
+  .willChangeContactsLeftSideClassName {
+    @media (max-width: 768px) {
+      flex-shrink: 1;
+    }
+    @media (max-width: 666px) {
+      align-self: flex-end;
+    }
   }
   .contactsRightSide {
     position: relative;
@@ -40,6 +74,14 @@ const styles = css`
   }
   .address {
     cursor: default;
+    @media (min-width: 992px) {
+      br {
+        display: none;
+      }
+    }
+    @media (max-width: 991px) {
+      margin-bottom: 0.4rem;
+    }
   }
 `;
 
