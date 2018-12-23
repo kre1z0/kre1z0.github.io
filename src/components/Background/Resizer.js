@@ -10,11 +10,20 @@ export class Resizer extends React.PureComponent {
     transitionEnd: PropTypes.bool,
     route: PropTypes.string,
     svgClassName: PropTypes.string,
+    svgIndex: PropTypes.number,
   };
 
   componentDidMount() {
     window.addEventListener("resize", this.onResize);
     this.onResize();
+  }
+
+  componentDidUpdate({ svgIndex: prevSvgIndex }, prevState) {
+    const { svgIndex } = this.props;
+
+    if (prevSvgIndex !== svgIndex) {
+      this.onResize();
+    }
   }
 
   componentWillUnmount() {
@@ -56,15 +65,15 @@ export class Resizer extends React.PureComponent {
   };
 
   render() {
-    const {
-      transitionEnd,
-      svgClassName,
-    } = this.props;
+    const { transitionEnd, svgClassName, isContactsPage, isAboutPage, svgIndex } = this.props;
 
     return (
       <SvgWrapper ref={this.onRef}>
         {getSVGBackgroundByIndex({
           className: svgClassName,
+          isAboutPage,
+          isContactsPage,
+          svgIndex,
           style: { visibility: transitionEnd ? "visible" : "hidden" },
         })}
       </SvgWrapper>

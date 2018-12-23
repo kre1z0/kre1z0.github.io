@@ -17,22 +17,22 @@ const styles = css`
     background-repeat: no-repeat;
   }
   .earth {
-    background-image: url(../../img/earth.svg);
+    background-image: url(../../img/main-slides/earth.svg);
   }
   .portfolio {
-    background-image: url(../../img/portfolio.svg);
+    background-image: url(../../img/main-slides/portfolio.svg);
   }
   .europeRussia {
-    background-image: url(../../img/aboutSlide.svg);
+    background-image: url(../../img/main-slides/aboutSlide.svg);
   }
   .moscow {
-    background-image: url(../../img/moscow.svg);
+    background-image: url(../../img/main-slides/moscow.svg);
   }
   .bus {
-    background-image: url(../../img/bus.svg);
+    background-image: url(../../img/main-slides/bus.svg);
   }
   .metro {
-    background-image: url(../../img/metro.svg);
+    background-image: url(../../img/main-slides/metro.svg);
   }
 `;
 

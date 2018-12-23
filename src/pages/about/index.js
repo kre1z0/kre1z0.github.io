@@ -7,6 +7,7 @@ import { H2, Link } from "../../components/Atoms/Atoms";
 export const About = props => {
   return (
     <MainAnimation
+      withSvg
       {...props}
       leftSide={
         <>

@@ -7,17 +7,20 @@ const mobileMenuMiddle = "576px";
 
 const mobileMenuLittle = "320px";
 
-export const Nav = styled("nav")`
-  margin: 0 auto;
-  max-width: 114.2857rem;
-  pointer-events: auto !important;
-  display: flex;
-  will-change: transform;
+export const NavbarContainer = styled("nav")`
   z-index: 1;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
+  will-change: transform;
+`;
+
+export const Nav = styled("div")`
+  margin: 0 auto;
+  max-width: 114.2857rem;
+  pointer-events: auto !important;
+  display: flex;
   align-items: flex-start;
   padding: 1.6rem 6rem;
   @media (max-width: 992px) {

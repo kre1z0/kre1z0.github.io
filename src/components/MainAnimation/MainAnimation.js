@@ -26,6 +26,8 @@ class MainAnimationBase extends PureComponent {
     base64styles: PropTypes.string,
     containerClassName: PropTypes.string,
     leftSideWillChangeClassName: PropTypes.string,
+    willChangeRightSideClassName: PropTypes.string,
+    svgIndex: PropTypes.number,
   };
 
   render() {
@@ -41,6 +43,8 @@ class MainAnimationBase extends PureComponent {
       base64styles,
       containerClassName,
       leftSideWillChangeClassName,
+      willChangeRightSideClassName,
+      svgIndex,
       ...props
     } = this.props;
 
@@ -79,14 +83,12 @@ class MainAnimationBase extends PureComponent {
                 )}
                 {withSvg && (
                   <Background>
-                    <Resizer svgClassName={svgClassName} transitionEnd={transitionEnd} {...props} />
+                    <Resizer svgIndex={svgIndex} svgClassName={svgClassName} transitionEnd={transitionEnd} {...props} />
                   </Background>
                 )}
               </WillChange>
               <Content className={cn(containerClassName)}>
-                <WillChange
-                  className={leftSideWillChangeClassName}
-                  left style={{ transform }}>
+                <WillChange className={leftSideWillChangeClassName} left style={{ transform }}>
                   <LeftSide
                     className={cn(
                       leftSideClassName,
@@ -100,7 +102,10 @@ class MainAnimationBase extends PureComponent {
                 </WillChange>
 
                 {rightSide && (
-                  <WillChange style={{ transform: scrollable ? "none" : transform }}>
+                  <WillChange
+                    className={cn(willChangeRightSideClassName)}
+                    style={{ transform: scrollable ? "none" : transform }}
+                  >
                     <RightSide
                       ref={onRightSideRef}
                       className={cn(
