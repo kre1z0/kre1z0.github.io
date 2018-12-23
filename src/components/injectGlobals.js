@@ -12,7 +12,7 @@ export const injectGlobals = () => {
       font-family: "Montserrat", Tahoma, sans-serif;
       color: #262c37;
       overflow: hidden;
-      > div {
+      > div:first-child {
         width: 100%;
         height: 100%;
         > div {

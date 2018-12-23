@@ -27,9 +27,11 @@ const styles = css`
   .contactsLeftSide {
   }
   .contactsRightSide {
+    position: relative;
+    z-index: 2;
     display: flex;
-    height: 15.2142rem;
-    align-items: flex-start;
+    height: 15rem;
+    align-items: flex-end;
     button {
       &:first-child {
         margin-right: 0.7142rem;
@@ -38,19 +40,6 @@ const styles = css`
   }
   .address {
     cursor: default;
-  }
-  .svgClassName {
-    :global {
-      // stop
-      .address_svg__st12 {
-        display: none;
-      }
-      .st4,
-      .st5,
-      .st6 {
-        display: none;
-      }
-    }
   }
 `;
 

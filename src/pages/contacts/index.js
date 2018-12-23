@@ -20,10 +20,7 @@ class Contacts extends Component {
     return (
       <MainAnimation
         {...this.props}
-        withSvg
-        svgIndex={stope ? 1 : 0}
         base64styles={!stope ? bg.metro : ""}
-        svgClassName={styles.svgClassName}
         leftSideClassName={styles.contactsLeftSide}
         rightSideClassName={styles.contactsRightSide}
         leftSide={

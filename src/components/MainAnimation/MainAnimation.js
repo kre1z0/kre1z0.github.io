@@ -27,7 +27,6 @@ class MainAnimationBase extends PureComponent {
     containerClassName: PropTypes.string,
     leftSideWillChangeClassName: PropTypes.string,
     willChangeRightSideClassName: PropTypes.string,
-    svgIndex: PropTypes.number,
   };
 
   render() {
@@ -44,7 +43,6 @@ class MainAnimationBase extends PureComponent {
       containerClassName,
       leftSideWillChangeClassName,
       willChangeRightSideClassName,
-      svgIndex,
       ...props
     } = this.props;
 
@@ -83,7 +81,7 @@ class MainAnimationBase extends PureComponent {
                 )}
                 {withSvg && (
                   <Background>
-                    <Resizer svgIndex={svgIndex} svgClassName={svgClassName} transitionEnd={transitionEnd} {...props} />
+                    <Resizer svgClassName={svgClassName} transitionEnd={transitionEnd} {...props} />
                   </Background>
                 )}
               </WillChange>
