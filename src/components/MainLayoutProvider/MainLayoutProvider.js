@@ -366,7 +366,7 @@ export class MainLayoutProviderComponent extends PureComponent {
           sectionDirection,
         }}
       >
-        <Swiper onSwiped={this.onSwiped}>
+        <Swiper preventDefaultTouchmoveEvent={true} onSwiped={this.onSwiped}>
           <ScrollBar
             ref={this.onScrollBarRef}
             disableHover={disableHover || !transitionEnd}

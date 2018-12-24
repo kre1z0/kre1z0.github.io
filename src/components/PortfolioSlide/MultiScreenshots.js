@@ -86,7 +86,7 @@ const MultiScreenshotsContainer = styled("div")`
     top: auto;
     left: 6.4vw;
     right: auto;
-    bottom: 6.9rem;
+    bottom: 8rem;
     margin: 0;
     width: 75vw;
     > img {

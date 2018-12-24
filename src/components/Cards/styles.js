@@ -1,7 +1,7 @@
 import styled from "astroturf";
 import { Blank } from "../Blank/Blank";
 
-export const Container = styled(Blank)`
+export const AboutCardContainer = styled(Blank)`
   will-change: transform, opacity;
   position: absolute;
   top: 0;

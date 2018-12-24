@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Transition, TransitionGroup } from "react-transition-group";
 
 import { Swiper } from "../../components/Swiper/Swiper";
-import { Container, Title, Date, Description, Logo, Read } from "./styles";
+import { AboutCardContainer, Title, Date, Description, Logo, Read } from "./styles";
 import cn from "classnames";
 import { slideDown, slideLeft, slideRight, slideUp, transition } from "../PortfolioSlide/styles";
 import { fade } from "../../components/Transition/animation";
@@ -21,14 +21,14 @@ export class Crutch extends PureComponent {
         : slideDown[status];
 
     return (
-      <Container className={cn(animation, fade[status], transition[status])}>
+      <AboutCardContainer className={cn(animation, fade[status], transition[status])}>
         <Title>{title}</Title>
         <Date>{date}</Date>
         <Description>
           {description} <Read>Читать</Read>
         </Description>
         <Logo src={logo} alt="logo" />
-      </Container>
+      </AboutCardContainer>
     );
   }
 }

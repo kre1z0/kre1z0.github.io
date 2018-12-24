@@ -27,19 +27,19 @@ export const About = props => {
             containerClassName={styles.aboutContainer}
             rightSide={
               <NewsContainer>
+                <ConstellationPoints selectedSectionIndex={selectedSectionIndex} />
                 <BackendComponent sections={sections} selectedSectionIndex={selectedSectionIndex} />
                 <News
                   isSwipeEvent={isSwipeEvent}
                   onSectionChange={onSectionChange}
-                  {...section}
                   direction={sectionDirection}
+                  {...section}
                 />
                 <Bullets
                   className={styles.newBullets}
                   sections={sections}
                   selectedSectionIndex={selectedSectionIndex}
                 />
-                <ConstellationPoints selectedSectionIndex={selectedSectionIndex} />
               </NewsContainer>
             }
           />

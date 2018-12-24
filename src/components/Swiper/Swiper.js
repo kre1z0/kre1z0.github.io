@@ -58,11 +58,6 @@ export class Swiper extends Component {
       });
   };
 
-  onSwiping = e => {
-    e.preventDefault();
-    e.stopPropagation();
-  };
-
   onSwiperRef = ref => {
     if (ref) {
       this.swipeableNode = ref;
@@ -70,10 +65,14 @@ export class Swiper extends Component {
   };
 
   render() {
-    const { children } = this.props;
+    const { children, ...props } = this.props;
 
     return (
-      <Swipeable onSwiping={this.onSwiping} innerRef={this.onSwiperRef} onSwiped={this.swiped}>
+      <Swipeable
+        {...props}
+        innerRef={this.onSwiperRef}
+        onSwiped={this.swiped}
+      >
         {children}
       </Swipeable>
     );
