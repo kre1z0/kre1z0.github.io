@@ -30,6 +30,7 @@ export class MainLayoutProviderComponent extends PureComponent {
     mobileMenuIsOpen: false,
 
     // sections
+    isSwipeEvent: false,
     selectedSectionIndex: 0,
     sections: [],
     sectionDirection: 1,
@@ -218,7 +219,7 @@ export class MainLayoutProviderComponent extends PureComponent {
       direction = -1;
     }
 
-    this.setState({ direction });
+    this.setState({ direction, isSwipeEvent: false });
 
     this.checkNavbarIntoContent();
     this.onNavigateTo(direction);
@@ -281,7 +282,7 @@ export class MainLayoutProviderComponent extends PureComponent {
       mobileMenuIsOpen: !mobileMenuIsOpen,
     }));
 
-  onSectionChange = ({ value, id, pageId }) => {
+  onSectionChange = ({ value, id, pageId, isSwipeEvent = false }) => {
     const { navigate } = this.props;
     const { selectedSectionIndex, sections, currentRoute } = this.state;
 
@@ -297,6 +298,7 @@ export class MainLayoutProviderComponent extends PureComponent {
       const index = sectionFromMenu.findIndex(item => item.id === id);
 
       this.onNavLinkClick({
+        isSwipeEvent,
         selectedSectionIndex: index,
         transitionEnd: false,
         id: pageId,
@@ -308,6 +310,7 @@ export class MainLayoutProviderComponent extends PureComponent {
       const sectionDirection = selectedSectionIndex > nextValue ? -1 : 1;
 
       this.setState({
+        isSwipeEvent,
         sectionDirection,
         selectedSectionIndex: nextValue,
       });
@@ -333,6 +336,7 @@ export class MainLayoutProviderComponent extends PureComponent {
       mobileMenuIsOpen,
 
       // sections
+      isSwipeEvent,
       selectedSectionIndex,
       sections,
       sectionDirection,
@@ -355,6 +359,7 @@ export class MainLayoutProviderComponent extends PureComponent {
           toggleMobileMenu: this.toggleMobileMenu,
 
           // sections
+          isSwipeEvent,
           onSectionChange: this.onSectionChange,
           selectedSectionIndex,
           sections,

@@ -11,7 +11,7 @@ import styles, { NewsContainer } from "../../styles/about";
 export const About = props => {
   return (
     <MainLayoutConsumer>
-      {({ selectedSectionIndex, sections, onSectionChange, sectionDirection }) => {
+      {({ selectedSectionIndex, sections, onSectionChange, sectionDirection, isSwipeEvent }) => {
         const section = sections[selectedSectionIndex];
 
         return (
@@ -28,7 +28,12 @@ export const About = props => {
             rightSide={
               <NewsContainer>
                 <BackendComponent sections={sections} selectedSectionIndex={selectedSectionIndex} />
-                <News onSectionChange={onSectionChange} {...section} direction={sectionDirection} />
+                <News
+                  isSwipeEvent={isSwipeEvent}
+                  onSectionChange={onSectionChange}
+                  {...section}
+                  direction={sectionDirection}
+                />
                 <Bullets
                   className={styles.newBullets}
                   sections={sections}
