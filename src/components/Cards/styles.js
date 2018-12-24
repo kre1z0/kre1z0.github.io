@@ -11,10 +11,10 @@ export const Container = styled(Blank)`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  @media (max-width: 414px) {
-    top: auto;
-    bottom: 2.4rem;
-  }
+  //@media (max-width: 414px) {
+  //  top: auto;
+  //  bottom: 2.4rem;
+  //}
 `;
 
 export const Title = styled("h4")`

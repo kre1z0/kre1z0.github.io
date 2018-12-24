@@ -4,10 +4,6 @@ export const NewsContainer = styled("div")`
   width: 28.5714rem;
   height: 26rem;
   position: relative;
-  > div:first-child {
-    width: 100%;
-    height: 100%;
-  }
   @media (max-width: 768px) {
     width: 22.8571rem;
     height: 24.3571rem;
@@ -36,11 +32,14 @@ const styles = css`
     @media (max-width: 414px) {
       flex-direction: column;
       align-items: flex-start;
+      > section:last-child {
+        margin-bottom: 1.4rem;
+      }
     }
   }
   .newBullets {
     @media (max-width: 414px) {
-      bottom: 0.4rem;
+      bottom: -1.4rem;
     }
   }
 `;
