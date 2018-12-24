@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Backend as BackendBackground } from "./styles";
+import { BackendContainer } from "./styles";
 import { hexToRGB } from "../../utils/color";
 import { Tablet } from "../Responsive/Responsive";
 
@@ -11,8 +11,8 @@ export const BackendComponent = ({ sections, selectedSectionIndex }) => {
 
   return (
     <Tablet>
-      <div>
-        <BackendBackground
+      <BackendContainer>
+        <div
           style={{
             backgroundColor: first && (first.bgColor ? first.bgColor : "#fff"),
             boxShadow:
@@ -22,7 +22,7 @@ export const BackendComponent = ({ sections, selectedSectionIndex }) => {
                 : "0 8px 8px 0 rgba(10, 18, 33, 0.1)"),
           }}
         />
-        <BackendBackground
+        <div
           style={{
             backgroundColor: second && (second.bgColor ? second.bgColor : "#fff"),
             boxShadow:
@@ -32,7 +32,7 @@ export const BackendComponent = ({ sections, selectedSectionIndex }) => {
                 : "0 8px 8px 0 rgba(10, 18, 33, 0.1)"),
           }}
         />
-      </div>
+      </BackendContainer>
     </Tablet>
   );
 };
