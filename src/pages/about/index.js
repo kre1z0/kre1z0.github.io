@@ -6,6 +6,7 @@ import { News } from "../../components/Cards/News";
 import { MainAnimation } from "../../components/MainAnimation/MainAnimation";
 import { H2, Link } from "../../components/Atoms/Atoms";
 import { MainLayoutConsumer } from "../../components/MainLayoutProvider/MainLayoutProvider";
+import { ConstellationPoints } from "../../components/ConstellationPoints/ConstellationPoints";
 import styles, { NewsContainer } from "../../styles/about";
 
 export const About = props => {
@@ -16,7 +17,6 @@ export const About = props => {
 
         return (
           <MainAnimation
-            withSvg
             {...props}
             leftSide={
               <>
@@ -39,6 +39,7 @@ export const About = props => {
                   sections={sections}
                   selectedSectionIndex={selectedSectionIndex}
                 />
+                <ConstellationPoints selectedSectionIndex={selectedSectionIndex} />
               </NewsContainer>
             }
           />

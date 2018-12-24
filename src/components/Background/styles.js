@@ -19,11 +19,14 @@ const styles = css`
   .earth {
     background-image: url(../../img/main-slides/earth.svg);
   }
-  .portfolio {
-    background-image: url(../../img/main-slides/portfolio.svg);
-  }
   .europeRussia {
-    background-image: url(../../img/main-slides/aboutSlide.svg);
+    background-image: url(../../img/main-slides/russia.svg);
+    @media (max-width: 1250px) {
+      background-size: 144% 400%;
+    }
+    @media (max-width: 414px) {
+      background-size: 544% 508%;
+    }
   }
   .moscow {
     background-image: url(../../img/main-slides/moscow.svg);

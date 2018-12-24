@@ -10,7 +10,7 @@ export const Content = styled("main")`
   max-width: 114.2857rem;
   height: calc(100% - 5.7971rem);
   justify-content: space-between;
-  @media (max-width: 992px) {
+  @media (max-width: 1024px) {
     padding: 0 3.5714rem 1rem 3.5714rem;
   }
   @media (max-width: 576px) {

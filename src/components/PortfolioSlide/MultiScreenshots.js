@@ -30,7 +30,7 @@ const MultiScreenshotsContainer = styled("div")`
   }
   &.transitionEnd {
     > img {
-      transition: left 70ms cubic-bezier(0.2, 1, 0.6, 1) 0s;
+      transition: left 500ms cubic-bezier(0.2, 1, 0.6, 1) 0s;
       &:nth-child(2) {
         left: 38%;
       }
