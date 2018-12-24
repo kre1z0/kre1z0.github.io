@@ -30,17 +30,39 @@ const MultiScreenshotsContainer = styled("div")`
   }
   &.transitionEnd {
     > img {
-      transition: left 140ms cubic-bezier(0.2, 1, 0.6, 1) 0s;
+      transition: left 70ms cubic-bezier(0.2, 1, 0.6, 1) 0s;
       &:nth-child(2) {
         left: 38%;
       }
       &:nth-child(3) {
         left: 64.4%;
       }
+      @media all and (max-height: 777px), (max-width: 1144px) {
+        &:nth-child(2) {
+          left: 33%;
+        }
+        &:nth-child(3) {
+          left: 55%;
+        }
+      }
     }
   }
   @media all and (max-height: 777px), (max-width: 1144px) {
-    top: -8%;
+    top: 4%;
+    left: -14%;
+    > img {
+      &:nth-child(1) {
+        width: 42%;
+      }
+      &:nth-child(2) {
+        width: 34%;
+        top: 7%;
+      }
+      &:nth-child(3) {
+        width: 30%;
+        top: 10%;
+      }
+    }
   }
   @media (max-height: 600px), (max-width: 768px) {
     top: 8%;
@@ -74,11 +96,11 @@ const MultiScreenshotsContainer = styled("div")`
       }
       &:nth-child(2) {
         top: auto;
-        bottom: 1rem;
+        bottom: 1.2rem;
       }
       &:nth-child(3) {
         top: auto;
-        bottom: 1.55rem;
+        bottom: 1.75rem;
       }
     }
   }

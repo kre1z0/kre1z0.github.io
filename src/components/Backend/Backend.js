@@ -14,14 +14,22 @@ export const BackendComponent = ({ sections, selectedSectionIndex }) => {
       <div>
         <BackendBackground
           style={{
-            backgroundColor: first && first.bgColor,
-            boxShadow: `0 8px 8px 0 ${hexToRGB(first && first.bgColor, 0.1)}`,
+            backgroundColor: first && (first.bgColor ? first.bgColor : "#fff"),
+            boxShadow:
+              first &&
+              (first.bgColor
+                ? `0 8px 8px 0 ${hexToRGB(first && first.bgColor, 0.1)}`
+                : "0 8px 8px 0 rgba(10, 18, 33, 0.1)"),
           }}
         />
         <BackendBackground
           style={{
-            backgroundColor: second && second.bgColor,
-            boxShadow: `0 8px 8px 0 ${hexToRGB(second && second.bgColor, 0.1)}`,
+            backgroundColor: second && (second.bgColor ? second.bgColor : "#fff"),
+            boxShadow:
+              second &&
+              (second.bgColor
+                ? `0 8px 8px 0 ${hexToRGB(second && second.bgColor, 0.1)}`
+                : "0 8px 8px 0 rgba(10, 18, 33, 0.1)"),
           }}
         />
       </div>

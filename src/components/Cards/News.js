@@ -1,55 +1,81 @@
-import React from "react";
+import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
-import styled from "astroturf";
+import { Transition, TransitionGroup } from "react-transition-group";
 
-import { Blank } from "../Blank/Blank";
+import { Swiper } from "../../components/Swiper/Swiper";
+import { Container, Title, Date, Description, Logo, Read } from "./styles";
+import cn from "classnames";
+import { slideDown, slideUp, transition } from "../PortfolioSlide/styles";
+import { fade } from "../../components/Transition/animation";
 
-const Container = styled(Blank)`
-  max-width: 28.5714rem;
-`;
+export class Crutch extends PureComponent {
+  render() {
+    const { status, direction, description, title, date, logo } = this.props;
+    return (
+      <Container
+        className={cn(
+          direction > 0 ? slideUp[status] : slideDown[status],
+          fade[status],
+          transition[status],
+        )}
+      >
+        <Title>{title}</Title>
+        <Date>{date}</Date>
+        <Description>
+          {description} <Read>Читать</Read>
+        </Description>
+        <Logo src={logo} alt="logo" />
+      </Container>
+    );
+  }
+}
 
-const Title = styled("h4")`
-  font-size: 1.2857rem;
-  color: #90c53d;
-  font-weight: 600;
-  margin-bottom: 0.8rem;
-`;
+export class News extends PureComponent {
+  static propTypes = {
+    title: PropTypes.string,
+    date: PropTypes.string,
+    description: PropTypes.string,
+    logo: PropTypes.string,
+    id: PropTypes.string,
+    direction: PropTypes.number,
+  };
 
-const Date = styled("span")`
-  font-weight: 500;
-  color: rgba(38, 44, 55, 0.25);
-`;
+  onSwiped = ({ isLeft, isRight, xRatio }) => {
+    const { onSectionChange } = this.props;
 
-const Description = styled("p")`
-  margin: 1.74rem 0;
-`;
+    if (isLeft && xRatio > 25) {
+      onSectionChange({ value: 1 });
+    } else if (isRight && xRatio > 25) {
+      onSectionChange({ value: -1 });
+    }
+  };
 
-const ReadMore = styled("span")`
-  cursor: pointer;
-  color: #90c53d;
-`;
+  render() {
+    const { direction, title, date, description, logo, id } = this.props;
 
-const Logo = styled("img")`
-  width: auto;
-  height: 1.4285rem;
-`;
-
-export const News = ({ title, date, description, logo }) => {
-  return (
-    <Container>
-      <Title>{title}</Title>
-      <Date>{date}</Date>
-      <Description>
-        {description} <ReadMore>Читать дальше…</ReadMore>
-      </Description>
-      <Logo src={logo} alt="logo" />
-    </Container>
-  );
-};
-
-News.propTypes = {
-  title: PropTypes.string,
-  date: PropTypes.string,
-  description: PropTypes.string,
-  logo: PropTypes.string,
-};
+    return (
+      <Swiper onSwiped={this.onSwiped}>
+        <TransitionGroup appear>
+          <Transition
+            key={`${id}-news-${direction}`}
+            timeout={{
+              enter: 100,
+              exit: 200,
+            }}
+          >
+            {status => (
+              <Crutch
+                {...this.props}
+                status={status}
+                date={date}
+                logo={logo}
+                title={title}
+                description={description}
+              />
+            )}
+          </Transition>
+        </TransitionGroup>
+      </Swiper>
+    );
+  }
+}

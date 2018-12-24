@@ -30,7 +30,7 @@ export class MainLayoutProviderComponent extends PureComponent {
     mobileMenuIsOpen: false,
 
     // sections
-    selectedSectionIndex: null,
+    selectedSectionIndex: 0,
     sections: [],
     sectionDirection: 1,
   };
@@ -73,25 +73,25 @@ export class MainLayoutProviderComponent extends PureComponent {
       additionalMenu.forEach(({ children, title }) =>
         children.forEach(item => sliderIdArray.push({ ...item, parentTitle: title })),
       );
+
     return sliderIdArray;
   };
 
   setCurrentRoute = () => {
-    const { selectedSectionIndex } = this.state;
     const { location } = this.props;
     const currentRoute = getRouteByLocation(location);
 
     if (currentRoute) {
-      const { slider, additionalMenu, scrollable } = currentRoute;
+      const { slider, additionalMenu, scrollable, news } = currentRoute;
 
       const sliderState =
-        slider || scrollable
+        slider || scrollable || news
           ? {
               sliderDirection: 1,
-              selectedSectionIndex: selectedSectionIndex || 0,
-              sections: this.sectionsFromAdditionalMenu(additionalMenu),
+              selectedSectionIndex: 0,
+              sections: slider ? this.sectionsFromAdditionalMenu(additionalMenu) : news || [],
             }
-          : { selectedSectionIndex: null, sections: [], sliderDirection: 1 };
+          : { selectedSectionIndex: 0, sections: [], sliderDirection: 1 };
 
       this.setState({ currentRoute, coloredNav: false, ...sliderState });
     } else {
@@ -148,7 +148,7 @@ export class MainLayoutProviderComponent extends PureComponent {
       return;
     }
 
-    const slider = currentRoute && currentRoute.slider;
+    const slider = currentRoute && (currentRoute.slider || currentRoute.news);
     const up = selectedSectionIndex === 0 && direction < 0;
     const nextIndex = selectedSectionIndex + direction;
     const down = nextIndex === sections.length;
@@ -254,7 +254,7 @@ export class MainLayoutProviderComponent extends PureComponent {
 
     this.setState(
       {
-        selectedSectionIndex: selectedSectionIndex || null,
+        selectedSectionIndex: selectedSectionIndex || 0,
         direction,
         transitionEnd,
         mobileMenuIsOpen: false,

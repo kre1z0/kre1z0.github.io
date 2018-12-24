@@ -1,6 +1,6 @@
 import styled from "astroturf";
 
-import { Button } from "./Button";
+import { Button } from "./Buttons";
 
 export const TelegramButton = styled(Button)`
   transition: none;

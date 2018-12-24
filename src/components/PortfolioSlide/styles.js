@@ -2,7 +2,7 @@ import styled, { css } from "astroturf";
 import { TransitionGroup } from "react-transition-group";
 
 import { Title as H2, Text } from "../../components/Atoms/Atoms";
-import { Button } from "../../components/Buttons/Button";
+import { Button } from "../../components/Buttons/Buttons";
 
 export const PortfolioSlideContainer = styled("div")`
   cursor: pointer;
@@ -37,30 +37,6 @@ export const SliderBackground = styled("div")`
   }
   @media (max-width: 768px) {
     border-radius: 0.2857rem;
-  }
-`;
-
-export const Backend = styled("div")`
-  will-change: background-color;
-  top: 0;
-  left: 0;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 0.2857rem;
-  transition: background-color 200ms ease, box-shadow 200ms ease;
-  &:nth-child(2) {
-    top: 1rem;
-    height: calc(100% - 2rem);
-    z-index: -2;
-    left: 1rem;
-  }
-
-  &:nth-child(1) {
-    top: 0.5rem;
-    height: calc(100% - 1rem);
-    z-index: -1;
-    left: 0.5rem;
   }
 `;
 
@@ -233,32 +209,6 @@ export const Screenshot = styled("img")`
     bottom: 9.5714rem;
     margin: 0;
     width: 100vw;
-  }
-`;
-
-export const BulletsContainer = styled("div")`
-  display: none;
-  left: 50%;
-  transform: translateX(-50%);
-  position: absolute;
-  bottom: -1.4285rem;
-  @media (max-width: 768px) {
-    display: flex;
-  }
-`;
-
-export const Bullet = styled("div")`
-  background-color: rgba(38, 44, 55, 0.25);
-  transition: background-color 100ms linear;
-  width: 0.4285rem;
-  height: 0.4285rem;
-  border-radius: 50%;
-  margin-right: 0.4285rem;
-  &:last-child {
-    margin-right: 0;
-  }
-  &.isActive {
-    background-color: rgba(38, 44, 55, 0.75);
   }
 `;
 

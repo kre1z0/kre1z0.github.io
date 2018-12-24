@@ -13,8 +13,8 @@ import {
 } from "./styles";
 import { Content } from "./Content";
 import { Screenshot } from "./Screenshot";
-import { BackendComponent } from "./Backend";
-import { Bullets } from "./Bullets";
+import { BackendComponent } from "../Backend/Backend";
+import { Bullets } from "../Bullets/Bullets";
 import { Middle } from "../Responsive/Responsive";
 
 export class PortfolioSlide extends PureComponent {

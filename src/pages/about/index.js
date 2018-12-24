@@ -1,31 +1,45 @@
 import React from "react";
 
+import { BackendComponent } from "../../components/Backend/Backend";
+import { Bullets } from "../../components/Bullets/Bullets";
 import { News } from "../../components/Cards/News";
 import { MainAnimation } from "../../components/MainAnimation/MainAnimation";
 import { H2, Link } from "../../components/Atoms/Atoms";
+import { MainLayoutConsumer } from "../../components/MainLayoutProvider/MainLayoutProvider";
+import styles, { NewsContainer } from "../../styles/about";
 
 export const About = props => {
   return (
-    <MainAnimation
-      withSvg
-      {...props}
-      leftSide={
-        <>
-          <H2 as="h1">СМИ о нас</H2>
-          <Link>Все комментарии</Link>
-        </>
-      }
-      rightSide={
-        <>
-          <News
-            title="Бизнес-план на основе Big Data"
-            date="23.07.2018"
-            description="Бесплатный геомаркетинговый сервис «Бизнес-навигатор МСП» рассчитывает и создает типовой бизнес-план для предпринимателей и для тех, кто мечтает открыть свое дело. Помогает в поисках наиболее привлекательного местоположения будущего бизнеса в конкретном городе."
-            logo="https://www.e-xecutive.ru/assets/logo-b5985edca6b1ff92f4b3261e6a2665fc.svg"
+    <MainLayoutConsumer>
+      {({ selectedSectionIndex, sections, onSectionChange, sectionDirection }) => {
+        const section = sections[selectedSectionIndex];
+
+        return (
+          <MainAnimation
+            withSvg
+            {...props}
+            leftSide={
+              <>
+                <H2 as="h1">СМИ о нас</H2>
+                <Link>Все комментарии</Link>
+              </>
+            }
+            containerClassName={styles.aboutContainer}
+            rightSide={
+              <NewsContainer>
+                <BackendComponent sections={sections} selectedSectionIndex={selectedSectionIndex} />
+                <News onSectionChange={onSectionChange} {...section} direction={sectionDirection} />
+                <Bullets
+                  className={styles.newBullets}
+                  sections={sections}
+                  selectedSectionIndex={selectedSectionIndex}
+                />
+              </NewsContainer>
+            }
           />
-        </>
-      }
-    />
+        );
+      }}
+    </MainLayoutConsumer>
   );
 };
 

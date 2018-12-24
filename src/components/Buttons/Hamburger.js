@@ -1,6 +1,6 @@
 import styled from "astroturf";
 
-import { Button } from "./Button";
+import { Button } from "./Buttons";
 
 export const Hamburger = styled(Button)`
   padding: 0.4rem;

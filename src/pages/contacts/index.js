@@ -6,7 +6,7 @@ import { Portal } from "../../components/Portal/Portal";
 import { Tablet } from "../../components/Responsive/Responsive";
 import bg from "../../components/Background/styles";
 import { TelegramButton } from "../../components/Buttons/TelegramButton";
-import { RaisedButton } from "../../components/Buttons/RaisedButton";
+import { Button } from "../../components/Buttons/Buttons";
 import { MainAnimation } from "../../components/MainAnimation/MainAnimation";
 import { H2 } from "../../components/Atoms/Atoms";
 import { socials } from "../../assets/contacts/social";
@@ -23,12 +23,12 @@ import styles, {
 export const ButtonGroup = ({ stope, onClickBus, onClickMetro }) => {
   return (
     <>
-      <RaisedButton onClick={onClickBus} isActive={stope}>
+      <Button raisedButton onClick={onClickBus} isActive={stope}>
         Остановки
-      </RaisedButton>
-      <RaisedButton onClick={onClickMetro} isActive={!stope}>
+      </Button>
+      <Button raisedButton onClick={onClickMetro} isActive={!stope}>
         Метро
-      </RaisedButton>
+      </Button>
     </>
   );
 };
