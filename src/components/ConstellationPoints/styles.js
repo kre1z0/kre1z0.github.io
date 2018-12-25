@@ -2,16 +2,16 @@ import styled from "astroturf";
 
 export const ConstellationPointsContainer = styled("div")`
   position: absolute;
-  width: 50vw;
+  width: 40vw;
   height: 100%;
   top: 0;
   left: 0;
   transform: translateX(-100%);
-  @media (max-width: 1400px) {
-    width: 40vw;
+  @media (max-width: 1250px) {
+    width: 30vw;
   }
-  @media (max-width: 1024px) {
-    width: 34vw;
+  @media (max-width: 1100px) {
+    width: 24vw;
   }
   @media (max-width: 414px) {
     width: 100%;
@@ -20,13 +20,35 @@ export const ConstellationPointsContainer = styled("div")`
   }
 `;
 
-export const Point = styled("div")`
+export const TransformContainer = styled("div")`
+  will-change: transform;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: transform 500ms cubic-bezier(0.2, 1, 0.6, 1) 0s;
+`;
+
+export const PointMain = styled("div")`
   position: absolute;
   background-color: #212224;
   width: 0.8571rem;
   height: 0.8571rem;
   border-radius: 50%;
   box-shadow: 0 0 0 0.7142rem rgba(33, 34, 36, 0.25);
+`;
+
+export const FakePoint = styled(PointMain)`
+  opacity: 0;
+  top: 50%;
+  right: 0;
+  transform: translate(calc(-50% - 1.8rem), -50%);
+`;
+
+export const Point = styled(PointMain)`
   transition-property: background-color, box-shadow;
   transition-duration: 200ms;
   transition-timing-function: cubic-bezier(0.2, 1, 0.6, 1);
@@ -59,8 +81,12 @@ export const Point = styled("div")`
     }
   }
   &:nth-child(5) {
-    top: 89%;
+    top: 93%;
     left: 30%;
+    @media (max-width: 1100px) {
+      top: 74%;
+      left: 10%;
+    }
     @media (max-width: 414px) {
       top: 61%;
       left: 4%;

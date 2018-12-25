@@ -42,6 +42,14 @@ const styles = css`
       bottom: -1.4rem;
     }
   }
+  .isAboutSlide {
+    will-change: transform;
+    bottom: auto;
+    right: auto;
+    top: -13rem;
+    left: 0;
+    height: calc(100% + 26rem);
+  }
 `;
 
 export default styles;

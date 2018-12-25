@@ -28,6 +28,9 @@ class MainAnimationBase extends PureComponent {
     leftSideWillChangeClassName: PropTypes.string,
     willChangeLeftSideClassName: PropTypes.string,
     willChangeRightSideClassName: PropTypes.string,
+    x: PropTypes.number,
+    y: PropTypes.number,
+    backgroundClassName: PropTypes.string,
   };
 
   render() {
@@ -44,6 +47,9 @@ class MainAnimationBase extends PureComponent {
       containerClassName,
       willChangeLeftSideClassName,
       willChangeRightSideClassName,
+      backgroundClassName,
+      x,
+      y,
       ...props
     } = this.props;
 
@@ -60,16 +66,30 @@ class MainAnimationBase extends PureComponent {
           const scrollable = currentRoute && currentRoute.scrollable;
           const transform = `translateY(${scrollTop}px)`;
 
+          // about page slider
+          const transformToPoints = `translate(${x}px, ${y}px)`;
+          const aboutBgStyle = transitionEnd
+            ? {
+                transform: transformToPoints,
+                transition: "transform 500ms cubic-bezier(0.2, 1, 0.6, 1) 0s",
+              }
+            : {};
           const withChangeBase64ToSvg = withSvg ? !transitionEnd : true;
 
           return (
             <FullViewportContainer>
               <WillChange
                 fullViewport
-                style={{ transform, overflow: transitionEnd ? "hidden" : "visible" }}
+                style={{
+                  transform,
+                  overflow: transitionEnd ? "hidden" : "visible",
+                }}
               >
                 {withChangeBase64ToSvg && (
                   <Background
+                    style={{
+                      ...aboutBgStyle,
+                    }}
                     onTransitionEnd={onTransitionEnd}
                     className={cn(
                       direction > 0 ? scaleIn[status] : scaleOut[status],
@@ -77,6 +97,7 @@ class MainAnimationBase extends PureComponent {
                       transition[status],
                       styles.default,
                       base64styles || getBase64BackgroundByIndex({ ...props }),
+                      backgroundClassName,
                     )}
                   />
                 )}
