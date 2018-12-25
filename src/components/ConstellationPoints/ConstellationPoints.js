@@ -1,4 +1,5 @@
 import React, { PureComponent } from "react";
+import debounce from "lodash/debounce";
 import PropTypes from "prop-types";
 
 import { ConstellationPointsContainer, TransformContainer, Point, FakePoint } from "./styles";
@@ -11,6 +12,11 @@ export class ConstellationPoints extends PureComponent {
     y: PropTypes.number,
   };
 
+  constructor(props) {
+    super(props);
+    this.debouncedTransform = debounce(this.transform, 200);
+  }
+
   static defaultProps = {
     pointsAmount: 5,
     x: 0,
@@ -19,6 +25,14 @@ export class ConstellationPoints extends PureComponent {
 
   points = [];
   fakePoint = null;
+
+  componentDidMount() {
+    window.addEventListener("orientationchange", this.debouncedTransform);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("orientationchange", this.debouncedTransform);
+  }
 
   componentDidUpdate({ selectedSectionIndex: prevSelectedSectionIndex }, prevState) {
     const { selectedSectionIndex } = this.props;

@@ -21,12 +21,6 @@ const styles = css`
   }
   .europeRussia {
     background-image: url(../../img/main-slides/russia.svg);
-    //@media (max-width: 1250px) {
-    //  background-size: 144% 400%;
-    //}
-    //@media (max-width: 414px) {
-    //  background-size: 544% 508%;
-    //}
   }
   .moscow {
     background-image: url(../../img/main-slides/moscow.svg);

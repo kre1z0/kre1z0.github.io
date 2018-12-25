@@ -49,6 +49,12 @@ const styles = css`
     top: -13rem;
     left: 0;
     height: calc(100% + 26rem);
+    @media (max-width: 1100px) {
+      top: -20rem;
+      left: -82rem;
+      width: calc(100% + 100rem);
+      height: calc(100% + 51rem);
+    }
   }
 `;
 
