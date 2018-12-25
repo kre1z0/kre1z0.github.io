@@ -15,6 +15,10 @@ export const NewsContainer = styled("div")`
   @media (max-width: 414px) {
     width: calc(100vw - 1.7857rem * 2);
   }
+  @media (max-height: 440px) {
+    width: 24rem;
+    max-height: 65vh;
+  }
 `;
 
 export const WillChangeNews = styled("div")`
@@ -39,6 +43,9 @@ const styles = css`
     }
     > section:last-child {
       max-height: calc(100% - 4rem);
+      @media (max-height: 440px) {
+        align-self: flex-start;
+      }
     }
     @media (max-width: 414px) {
       flex-direction: column;
@@ -46,6 +53,9 @@ const styles = css`
       > section:last-child {
         margin-bottom: 1.4rem;
       }
+    }
+    @media (max-height: 440px) {
+      margin: 4.4rem auto 0 auto;
     }
   }
   .newBullets {
