@@ -31,6 +31,11 @@ class MainAnimationBase extends PureComponent {
     x: PropTypes.number,
     y: PropTypes.number,
     backgroundClassName: PropTypes.string,
+    withRightSideAnimation: PropTypes.bool,
+  };
+
+  static defaultProps = {
+    withRightSideAnimation: true,
   };
 
   render() {
@@ -48,6 +53,7 @@ class MainAnimationBase extends PureComponent {
       willChangeLeftSideClassName,
       willChangeRightSideClassName,
       backgroundClassName,
+      withRightSideAnimation,
       x,
       y,
       ...props
@@ -130,9 +136,9 @@ class MainAnimationBase extends PureComponent {
                       ref={onRightSideRef}
                       className={cn(
                         rightSideClassName,
-                        slideUp[status],
-                        fade[status],
-                        transition[status],
+                        withRightSideAnimation && slideUp[status],
+                        withRightSideAnimation && fade[status],
+                        withRightSideAnimation && transition[status],
                       )}
                     >
                       {rightSide}

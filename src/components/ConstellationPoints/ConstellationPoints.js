@@ -3,6 +3,8 @@ import debounce from "lodash/debounce";
 import PropTypes from "prop-types";
 
 import { ConstellationPointsContainer, TransformContainer, Point, FakePoint } from "./styles";
+import cn from "classnames";
+import { fade, transition } from "../Transition/animation";
 
 export class ConstellationPoints extends PureComponent {
   static propTypes = {
@@ -10,6 +12,8 @@ export class ConstellationPoints extends PureComponent {
     onTransform: PropTypes.func,
     x: PropTypes.number,
     y: PropTypes.number,
+    status: PropTypes.string,
+    transitionEnd: PropTypes.bool,
   };
 
   constructor(props) {
@@ -27,20 +31,21 @@ export class ConstellationPoints extends PureComponent {
   fakePoint = null;
 
   componentDidMount() {
-    window.addEventListener("orientationchange", this.debouncedTransform);
+    window.addEventListener("resize", this.debouncedTransform);
   }
 
   componentWillUnmount() {
-    window.removeEventListener("orientationchange", this.debouncedTransform);
+    window.removeEventListener("resize", this.debouncedTransform);
   }
 
   componentDidUpdate({ selectedSectionIndex: prevSelectedSectionIndex }, prevState) {
-    const { selectedSectionIndex } = this.props;
+    const { selectedSectionIndex, transitionEnd } = this.props;
 
     if (
       selectedSectionIndex !== prevSelectedSectionIndex &&
       this.points[selectedSectionIndex] &&
-      this.fakePoint
+      this.fakePoint &&
+      transitionEnd
     ) {
       this.transform();
     }
@@ -69,10 +74,10 @@ export class ConstellationPoints extends PureComponent {
   };
 
   render() {
-    const { selectedSectionIndex, pointsAmount, x, y } = this.props;
+    const { selectedSectionIndex, pointsAmount, x, y, status } = this.props;
 
     return (
-      <ConstellationPointsContainer>
+      <ConstellationPointsContainer className={cn(fade[status], transition[status])}>
         <FakePoint ref={this.onFakePointRef} />
         <TransformContainer style={{ transform: `translate(${x}px, ${y}px)` }}>
           {Array.from({ length: pointsAmount }, (_, index) => (

@@ -14,9 +14,9 @@ export const ConstellationPointsContainer = styled("div")`
     width: 100vw;
   }
   @media (max-width: 414px) {
-    width: 100%;
-    height: 400%;
-    transform: translate(0, calc(-100% - 2rem));
+    width: 400vw;
+    left: 50%;
+    transform: translate(-50%, calc(-100% - 2rem));
   }
 `;
 
@@ -46,6 +46,13 @@ export const FakePoint = styled(PointMain)`
   top: 50%;
   right: 0;
   transform: translate(calc(-50% - 1.8rem), -50%);
+  @media (max-width: 414px) {
+    top: auto;
+    right: auto;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 0);
+  }
 `;
 
 export const Point = styled(PointMain)`
@@ -71,6 +78,10 @@ export const Point = styled(PointMain)`
       top: 93%;
       left: 63%;
     }
+    @media (max-width: 414px) {
+      top: 5%;
+      left: 31%;
+    }
   }
   &:nth-child(3) {
     top: 32%;
@@ -78,6 +89,10 @@ export const Point = styled(PointMain)`
     @media (max-width: 1100px) {
       top: 30%;
       left: 49%;
+    }
+    @media (max-width: 414px) {
+      top: 89%;
+      left: 20%;
     }
   }
   &:nth-child(4) {
@@ -88,8 +103,8 @@ export const Point = styled(PointMain)`
       left: 25%;
     }
     @media (max-width: 414px) {
-      top: 55%;
-      left: 25%;
+      top: 15%;
+      left: 10%;
     }
   }
   &:nth-child(5) {
@@ -100,7 +115,7 @@ export const Point = styled(PointMain)`
       left: 4%;
     }
     @media (max-width: 414px) {
-      top: 61%;
+      top: 88%;
       left: 4%;
     }
   }

@@ -7,7 +7,9 @@ import { MainAnimation } from "../../components/MainAnimation/MainAnimation";
 import { H2, Link } from "../../components/Atoms/Atoms";
 import { MainLayoutConsumer } from "../../components/MainLayoutProvider/MainLayoutProvider";
 import { ConstellationPoints } from "../../components/ConstellationPoints/ConstellationPoints";
-import styles, { NewsContainer } from "../../styles/about";
+import { fade, slideUp, transition } from "../../components/Transition/animation";
+import styles, { NewsContainer, WillChangeNews } from "../../styles/about";
+import cn from "classnames";
 
 export class About extends PureComponent {
   state = {
@@ -18,16 +20,18 @@ export class About extends PureComponent {
   onTransform = coordinates => this.setState(coordinates);
 
   render() {
+    const { status } = this.props;
     const { x, y } = this.state;
 
     return (
       <MainLayoutConsumer>
-        {({ selectedSectionIndex, sections, onSectionChange, sectionDirection, isSwipeEvent }) => {
+        {({ selectedSectionIndex, sections, onSectionChange, sectionDirection, isSwipeEvent, transitionEnd }) => {
           const section = sections[selectedSectionIndex];
 
           return (
             <MainAnimation
               {...this.props}
+              withRightSideAnimation={false}
               x={x}
               y={y}
               backgroundClassName={styles.isAboutSlide}
@@ -41,26 +45,30 @@ export class About extends PureComponent {
               rightSide={
                 <NewsContainer>
                   <ConstellationPoints
+                    transitionEnd={transitionEnd}
+                    status={status}
                     x={x}
                     y={y}
                     onTransform={this.onTransform}
                     selectedSectionIndex={selectedSectionIndex}
                   />
-                  <BackendComponent
-                    sections={sections}
-                    selectedSectionIndex={selectedSectionIndex}
-                  />
-                  <News
-                    isSwipeEvent={isSwipeEvent}
-                    onSectionChange={onSectionChange}
-                    direction={sectionDirection}
-                    {...section}
-                  />
-                  <Bullets
-                    className={styles.newBullets}
-                    sections={sections}
-                    selectedSectionIndex={selectedSectionIndex}
-                  />
+                  <WillChangeNews className={cn(slideUp[status], fade[status], transition[status])}>
+                    <BackendComponent
+                      sections={sections}
+                      selectedSectionIndex={selectedSectionIndex}
+                    />
+                    <News
+                      isSwipeEvent={isSwipeEvent}
+                      onSectionChange={onSectionChange}
+                      direction={sectionDirection}
+                      {...section}
+                    />
+                    <Bullets
+                      className={styles.newBullets}
+                      sections={sections}
+                      selectedSectionIndex={selectedSectionIndex}
+                    />
+                  </WillChangeNews>
                 </NewsContainer>
               }
             />

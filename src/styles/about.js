@@ -17,6 +17,17 @@ export const NewsContainer = styled("div")`
   }
 `;
 
+export const WillChangeNews = styled("div")`
+  will-change: transform, opacity;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+`;
+
 const styles = css`
   .aboutContainer {
     > section:first-child {
@@ -54,6 +65,12 @@ const styles = css`
       left: -82rem;
       width: calc(100% + 100rem);
       height: calc(100% + 51rem);
+    }
+    @media (max-width: 414px) {
+      top: -43rem;
+      left: -84rem;
+      width: calc(100% + 93rem);
+      height: calc(100% + 79rem);
     }
   }
 `;
