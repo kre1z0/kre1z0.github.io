@@ -67,12 +67,12 @@ const MultiScreenshotsContainer = styled("div")`
   @media (max-height: 600px), (max-width: 768px) {
     top: 8%;
   }
-  @media screen and (max-width: 576px) and (min-width: 481px) {
+  @media screen and (min-width: 320px) and (max-width: 840px) and (orientation: landscape) {
     left: auto;
-    top: 0;
-    right: 30vw;
+    right: -10vw;
+    top: 5%;
     margin: auto 0;
-    width: 52vw;
+    width: 50vw;
     > img {
       &:nth-child(2) {
         top: 10%;
@@ -84,11 +84,11 @@ const MultiScreenshotsContainer = styled("div")`
   }
   @media (max-width: 480px) {
     top: auto;
-    left: 6.4vw;
+    left: 1.4vw;
     right: auto;
     bottom: 8rem;
     margin: 0;
-    width: 75vw;
+    width: 100vw;
     > img {
       &:nth-child(1) {
         top: auto;

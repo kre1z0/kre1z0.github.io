@@ -64,7 +64,7 @@ export const Content = styled("div")`
   @media all and (max-height: 777px), (max-width: 1144px) {
     padding: 0 2.1428rem 2.1428rem 2.1428rem;
   }
-  @media screen and (max-width: 576px) and (min-width: 481px) {
+  @media screen and (min-width: 320px) and (max-width: 840px) and (orientation: landscape) {
     display: flex;
     width: 100%;
     height: 100%;
@@ -100,9 +100,6 @@ export const MobileTitle = styled("h1")`
   font-size: 1.2857rem;
   margin: 0;
   left: 0;
-  @media (max-height: 480px) {
-    margin-top: 0;
-  }
 `;
 
 const ControlBtn = styled(Button)`
@@ -160,11 +157,12 @@ export const ScreenshotTransitionGroup = styled(TransitionGroup)`
   left: 0;
   width: 100%;
   height: 100%;
-  @media screen and (max-width: 576px) and (min-width: 481px) {
+  @media screen and (min-width: 320px) and (max-width: 840px) and (orientation: landscape) {
     display: flex;
     align-items: center;
     width: 100%;
     height: 100%;
+    transform: translateX(calc(-100% + 4vw));
   }
 `;
 
@@ -188,10 +186,13 @@ export const Screenshot = styled("img")`
     right: 2.8571rem;
     width: 26.2857rem;
   }
-  @media (max-width: 576px) {
-    right: 40vw;
+  @media screen and (min-width: 320px) and (max-width: 840px) and (orientation: landscape) {
+    right: 0;
     margin: auto 0;
-    width: 52vw;
+    width: 48vw;
+    @media (max-width: 576px) {
+      width: 51vw;
+    }
   }
   @media (max-width: 480px) {
     left: 6.4vw;

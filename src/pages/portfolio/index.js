@@ -25,7 +25,9 @@ class Portfolio extends PureComponent {
               willChangeLeftSideClassName={styles.portfolioLeftSide}
               leftSide={
                 <>
-                  <MobileTitle>{section && section.parentTitle}</MobileTitle>
+                  <Responsive maxWidth={767}>
+                    <MobileTitle>{section && section.parentTitle}</MobileTitle>
+                  </Responsive>
                   <Responsive minWidth={577}>
                     <AdditionalMenu
                       selectedId={section && section.id}

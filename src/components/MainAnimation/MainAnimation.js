@@ -13,6 +13,7 @@ import { Content } from "../Main/Content";
 import { LeftSide } from "../Main/LeftSide";
 import { RightSide } from "../Main/RightSide";
 import { FullViewportContainer } from "../../styles/main";
+import { common } from "../../styles/common";
 
 import { Resizer } from "../Background/Resizer";
 
@@ -113,7 +114,7 @@ class MainAnimationBase extends PureComponent {
                   </Background>
                 )}
               </WillChange>
-              <Content className={cn(containerClassName)}>
+              <Content className={cn(containerClassName, common.container)}>
                 <WillChange className={willChangeLeftSideClassName} left style={{ transform }}>
                   <LeftSide
                     className={cn(

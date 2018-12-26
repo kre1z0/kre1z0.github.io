@@ -20,6 +20,7 @@ class Layout extends Component {
           title="Everpoint"
           link={[{ rel: "shortcut icon", type: "image/png", href: `${favicon}` }]}
         />
+
         <Navbar location={location} />
         <PageTransition location={location}>{children}</PageTransition>
       </MainLayoutProvider>

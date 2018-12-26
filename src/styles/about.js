@@ -8,7 +8,7 @@ export const NewsContainer = styled("div")`
     width: 22.8571rem;
     height: 24.3571rem;
   }
-  @media (max-width: 576px) {
+  @media (max-width: 767px) {
     width: 19.4285rem;
     height: 15.9285rem;
   }
@@ -17,7 +17,6 @@ export const NewsContainer = styled("div")`
   }
   @media (max-height: 440px) {
     width: 24rem;
-    max-height: 65vh;
   }
 `;
 
@@ -44,15 +43,12 @@ const styles = css`
     }
     > section:last-child {
       max-height: calc(100% - 4rem);
-      @media (max-height: 440px) {
-        align-self: flex-start;
-      }
     }
     @media (max-width: 480px) {
       flex-direction: column;
       align-items: flex-start;
       > section:last-child {
-        margin-bottom: 1.4rem;
+        margin-bottom: 3.4rem;
       }
     }
     @media (max-height: 440px) {
@@ -61,7 +57,7 @@ const styles = css`
   }
   .newBullets {
     @media (max-width: 480px) {
-      bottom: -1.4rem;
+      bottom: -2rem;
     }
   }
   .isAboutSlide {

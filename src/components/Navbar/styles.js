@@ -18,13 +18,12 @@ export const NavbarContainer = styled("nav")`
 
 export const Nav = styled("div")`
   margin: 0 auto;
-  max-width: 114.2857rem;
   pointer-events: auto !important;
   display: flex;
   align-items: flex-start;
-  padding: 1.6rem 6rem;
+  padding: 1.6rem 0;
   @media (max-width: 992px) {
-    padding: 1.6rem 3.5714rem;
+    padding: 1.6rem 0;
   }
   @media (max-width: ${mobileMenu}) {
     &.mobileMenuIsOpen {
@@ -38,7 +37,7 @@ export const Nav = styled("div")`
     }
   }
   @media (max-width: ${mobileMenuMiddle}) {
-    padding: 1rem 1.7857rem;
+    padding: 1rem 0;
   }
   * {
     pointer-events: auto !important;

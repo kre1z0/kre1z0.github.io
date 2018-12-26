@@ -23,7 +23,11 @@ const styles = css`
         max-width: 26.2857rem;
         max-height: 33.7857rem;
       }
-      @media (max-width: 576px) {
+      @media (max-width: 767px) {
+        max-width: 48vw;
+        max-height: 14.3571rem;
+      }
+      @media screen and (min-width: 320px) and (max-width: 840px) and (orientation: landscape) {
         max-width: 48vw;
         max-height: 14.3571rem;
       }
@@ -38,22 +42,20 @@ const styles = css`
     }
   }
   .portfolioLeftSide {
-    //@media screen and (max-width: 576px) and (min-width: 415px) {
-    //  width: 100%;
-    //  height: 100%;
-    //  max-width: 48vw;
-    //  max-height: 14.3571rem;
-    //  > div {
-    //    width: 100%;
-    //    height: 100%;
-    //  }
-    //}
-    @media (max-width: 576px) {
+    @media (max-width: 767px) {
       width: 100%;
       height: 100%;
       align-self: flex-end;
       > div {
         width: 100%;
+      }
+    }
+    @media screen and (min-width: 320px) and (max-width: 840px) and (orientation: landscape) {
+      > div {
+        width: 100%;
+        > menu {
+          display: none !important;
+        }
       }
     }
   }

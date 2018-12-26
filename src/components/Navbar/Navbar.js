@@ -13,6 +13,7 @@ import styles, {
   LanguageLink,
   LeftSide,
 } from "./styles";
+import { common } from "../../styles/common";
 import { DesktopMenu } from "./DesktopMenu";
 import { MobileMenu } from "./MobileMenu";
 import { routes } from "../../routes";
@@ -59,7 +60,7 @@ export class Navbar extends PureComponent {
               })}
               onMouseLeave={this.onCloseAdditionalMenu}
             >
-              <Nav mobileMenuIsOpen={mobileMenuIsOpen}>
+              <Nav className={common.container} mobileMenuIsOpen={mobileMenuIsOpen}>
                 <LeftSide>
                   <LogoLink
                     onClick={event =>

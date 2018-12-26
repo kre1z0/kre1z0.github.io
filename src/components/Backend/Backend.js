@@ -1,16 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Responsive from "react-responsive";
 
 import { BackendContainer } from "./styles";
 import { hexToRGB } from "../../utils/color";
-import { Tablet } from "../Responsive/Responsive";
 
 export const BackendComponent = ({ sections, selectedSectionIndex }) => {
   const first = sections[selectedSectionIndex + 1];
   const second = sections[selectedSectionIndex + 2];
 
   return (
-    <Tablet>
+    <Responsive maxWidth={768}>
       <BackendContainer>
         <div
           style={{
@@ -33,7 +33,7 @@ export const BackendComponent = ({ sections, selectedSectionIndex }) => {
           }}
         />
       </BackendContainer>
-    </Tablet>
+    </Responsive>
   );
 };
 

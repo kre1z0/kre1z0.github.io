@@ -1,8 +1,8 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
-import { Swiper } from "../../components/Swiper/Swiper";
 import Responsive from "react-responsive";
 
+import { Swiper } from "../../components/Swiper/Swiper";
 import {
   PortfolioSlideContainer,
   SliderBackground,

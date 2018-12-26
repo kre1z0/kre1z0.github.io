@@ -22,7 +22,7 @@ export const Title = styled("h4")`
     font-size: 1.1428rem;
     margin-bottom: 0.4rem;
   }
-  @media (max-width: 576px) {
+  @media (max-width: 767px) {
     font-size: 0.8571rem;
   }
 `;
@@ -41,7 +41,7 @@ export const Description = styled("p")`
     font-size: 0.8571rem;
     margin: 0.8rem 0;
   }
-  @media (max-width: 576px) {
+  @media (max-width: 767px) {
     font-size: 0.7142rem;
     line-height: 1.4;
   }
@@ -56,7 +56,7 @@ export const Logo = styled("img")`
   margin-top: auto;
   width: auto;
   height: 1.4285rem;
-  @media (max-width: 576px) {
+  @media (max-width: 767px) {
     height: 1rem;
   }
 `;

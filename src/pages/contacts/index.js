@@ -3,7 +3,6 @@ import Responsive from "react-responsive";
 
 import { MainLayoutConsumer } from "../../components/MainLayoutProvider/MainLayoutProvider";
 import { Portal } from "../../components/Portal/Portal";
-import { Tablet } from "../../components/Responsive/Responsive";
 import bg from "../../components/Background/styles";
 import { TelegramButton } from "../../components/Buttons/TelegramButton";
 import { Button } from "../../components/Buttons/Buttons";
@@ -60,9 +59,9 @@ class Contacts extends Component {
             <Link as="address" className={styles.address}>
               127051, Россия, <br /> г. Москва, ул. Трубная, д. 25 к. 1
             </Link>
-            <Tablet>
+            <Responsive maxWidth={768}>
               <AddressWindow />
-            </Tablet>
+            </Responsive>
             <Link href="tel:+74955060774">+7 (495) 506-07-74</Link>
             <Link href="mailto:info@everpoint.ru">info@everpoint.ru</Link>
             <SocialBlock>

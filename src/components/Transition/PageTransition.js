@@ -2,7 +2,7 @@ import React from "react";
 import { TransitionGroup, Transition as ReactTransition } from "react-transition-group";
 
 import { MainLayoutConsumer } from "../MainLayoutProvider/MainLayoutProvider";
-import { Container } from "../Main/Container";
+import { MainTransitionContainer } from "../Main/MainTransitionContainer";
 import { enterTimeout, exitTimeout } from "./animation";
 
 export class PageTransition extends React.PureComponent {
@@ -22,7 +22,9 @@ export class PageTransition extends React.PureComponent {
               onExited={onExited}
             >
               {status => (
-                <Container>{React.cloneElement(children, { status, location })}</Container>
+                <MainTransitionContainer>
+                  {React.cloneElement(children, { status, location })}
+                </MainTransitionContainer>
               )}
             </ReactTransition>
           </TransitionGroup>
