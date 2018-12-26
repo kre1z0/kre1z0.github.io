@@ -7,6 +7,8 @@ import { getRouteByLocation } from "../../routes";
 import { AdditionalMenu } from "../../components/AdditionalMenu/AdditionalMenu";
 import { PortfolioSlide } from "../../components/PortfolioSlide/PortfolioSlide";
 import styles from "../../styles/portfolio";
+import { MobileTitle } from "../../components/PortfolioSlide/styles";
+import { Middle } from "../../components/Responsive/Responsive";
 
 class Portfolio extends PureComponent {
   render() {
@@ -23,25 +25,35 @@ class Portfolio extends PureComponent {
               {...this.props}
               willChangeLeftSideClassName={styles.portfolioLeftSide}
               leftSide={
-                <Responsive minWidth={577}>
-                  <AdditionalMenu
-                    selectedId={section && section.id}
-                    onSectionChange={onSectionChange}
-                    leftSide
-                    additionalMenu={currentRoute.additionalMenu}
-                    isOpen={true}
-                  />
-                </Responsive>
+                <>
+                  <Responsive minWidth={577}>
+                    <AdditionalMenu
+                      selectedId={section && section.id}
+                      onSectionChange={onSectionChange}
+                      leftSide
+                      additionalMenu={currentRoute.additionalMenu}
+                      isOpen={true}
+                    />
+                  </Responsive>
+                  <Responsive maxWidth={480}>
+                    <MobileTitle>{section && section.parentTitle}</MobileTitle>
+                  </Responsive>
+                </>
               }
               containerClassName={styles.portfolioContainer}
               rightSide={
-                <PortfolioSlide
-                  sectionDirection={sectionDirection}
-                  sections={sections}
-                  selectedSectionIndex={selectedSectionIndex}
-                  onSectionChange={onSectionChange}
-                  {...section}
-                />
+                <>
+                  <Middle minWidth={415}>
+                    <MobileTitle>{section && section.parentTitle}</MobileTitle>
+                  </Middle>
+                  <PortfolioSlide
+                    sectionDirection={sectionDirection}
+                    sections={sections}
+                    selectedSectionIndex={selectedSectionIndex}
+                    onSectionChange={onSectionChange}
+                    {...section}
+                  />
+                </>
               }
             />
           );

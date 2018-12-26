@@ -54,7 +54,6 @@ const styles = css`
       align-self: flex-end;
       > div {
         width: 100%;
-        height: 100%;
       }
     }
   }

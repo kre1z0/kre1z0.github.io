@@ -1,4 +1,5 @@
 import styled from "astroturf";
+import { Link as GLink } from "gatsby";
 
 export const large = "992px";
 const tablet = "768px";
@@ -89,6 +90,12 @@ export const Link = styled(Title)`
   display: block;
   margin-bottom: 1rem;
   cursor: pointer;
+  transition: color 200ms ease;
+  @media (hover: hover) {
+    &:hover {
+      color: #90c53d;
+    }
+  }
   &.title {
     cursor: default;
   }
@@ -112,6 +119,32 @@ export const Link = styled(Title)`
 
   &:last-child {
     margin-bottom: 0;
+  }
+`;
+
+export const GatsbyLink = styled(GLink)`
+  font-size: 1.2857rem;
+  font-weight: 500;
+  font-style: normal;
+  text-decoration: none;
+  color: #262c37;
+  display: block;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: color 200ms ease;
+  @media (hover: hover) {
+    &:hover {
+      color: #90c53d;
+    }
+  }
+  @media (max-width: ${large}) {
+    font-size: 1.1428rem;
+  }
+  @media (max-width: ${tablet}) {
+    font-size: 1rem;
+  }
+  @media (max-width: ${middle}) {
+    font-size: 0.8571rem;
   }
 `;
 

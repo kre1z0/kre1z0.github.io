@@ -105,13 +105,12 @@ export const MobileTitle = styled("h1")`
   width: 100vw;
   transform: translateY(-100%);
   @media (max-width: 414px) {
-    top: 0;
+    position: relative;
+    margin-top: 1.4rem;
     left: 0;
-    right: auto;
-    bottom: 9.5714rem;
-    margin: 0;
-    width: 100vw;
-    height: calc(100vw / 2.5);
+  }
+  @media (max-height: 480px) {
+    margin-top: 0;
   }
 `;
 

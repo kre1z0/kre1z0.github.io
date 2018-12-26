@@ -4,7 +4,7 @@ import { BackendComponent } from "../../components/Backend/Backend";
 import { Bullets } from "../../components/Bullets/Bullets";
 import { News } from "../../components/Cards/News";
 import { MainAnimation } from "../../components/MainAnimation/MainAnimation";
-import { H2, Link } from "../../components/Atoms/Atoms";
+import { H2, GatsbyLink } from "../../components/Atoms/Atoms";
 import { MainLayoutConsumer } from "../../components/MainLayoutProvider/MainLayoutProvider";
 import { ConstellationPoints } from "../../components/ConstellationPoints/ConstellationPoints";
 import { fade, slideUp, transition } from "../../components/Transition/animation";
@@ -25,7 +25,14 @@ export class About extends PureComponent {
 
     return (
       <MainLayoutConsumer>
-        {({ selectedSectionIndex, sections, onSectionChange, sectionDirection, isSwipeEvent, transitionEnd }) => {
+        {({
+          selectedSectionIndex,
+          sections,
+          onSectionChange,
+          sectionDirection,
+          isSwipeEvent,
+          transitionEnd,
+        }) => {
           const section = sections[selectedSectionIndex];
 
           return (
@@ -38,7 +45,7 @@ export class About extends PureComponent {
               leftSide={
                 <>
                   <H2 as="h1">СМИ о нас</H2>
-                  <Link>Все комментарии</Link>
+                  <GatsbyLink to="/news">Все комментарии</GatsbyLink>
                 </>
               }
               containerClassName={styles.aboutContainer}

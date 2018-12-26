@@ -9,13 +9,11 @@ import {
   ControlBlock,
   PrevBtn,
   NextBtn,
-  MobileTitle,
 } from "./styles";
 import { Content } from "./Content";
 import { Screenshot } from "./Screenshot";
 import { BackendComponent } from "../Backend/Backend";
 import { Bullets } from "../Bullets/Bullets";
-import { Middle } from "../Responsive/Responsive";
 
 export class PortfolioSlide extends PureComponent {
   static propTypes = {
@@ -61,7 +59,6 @@ export class PortfolioSlide extends PureComponent {
       title,
       screenshot,
       sectionDirection,
-      parentTitle,
     } = this.props;
 
     return (
@@ -73,9 +70,6 @@ export class PortfolioSlide extends PureComponent {
         >
           <BackendComponent sections={sections} selectedSectionIndex={selectedSectionIndex} />
           <SliderBackground hovered={hovered} style={{ backgroundColor: bgColor }} />
-          <Middle>
-            <MobileTitle>{parentTitle}</MobileTitle>
-          </Middle>
           <Screenshot direction={sectionDirection} id={id} text={text} screenshot={screenshot} />
           <Content
             textColor={textColor}

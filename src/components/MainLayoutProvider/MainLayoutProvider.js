@@ -15,7 +15,7 @@ const ScrollContext = React.createContext();
 export class MainLayoutProviderComponent extends PureComponent {
   constructor(props) {
     super(props);
-    this.onNavigateTo = debounce(this.onNavigateTo, 400);
+    this.onDebouncedNavigateTo = debounce(this.onNavigateTo, 400);
     this.onResize = debounce(this.onResize, 400);
   }
 
@@ -79,6 +79,7 @@ export class MainLayoutProviderComponent extends PureComponent {
   };
 
   setCurrentRoute = () => {
+    const { selectedSectionIndex } = this.state;
     const { location } = this.props;
     const currentRoute = getRouteByLocation(location);
 
@@ -89,7 +90,7 @@ export class MainLayoutProviderComponent extends PureComponent {
         slider || scrollable || news
           ? {
               sliderDirection: 1,
-              selectedSectionIndex: 0,
+              selectedSectionIndex: selectedSectionIndex || 0,
               sections: slider ? this.sectionsFromAdditionalMenu(additionalMenu) : news || [],
             }
           : { selectedSectionIndex: 0, sections: [], sliderDirection: 1 };
@@ -222,7 +223,7 @@ export class MainLayoutProviderComponent extends PureComponent {
     this.setState({ direction, isSwipeEvent: false });
 
     this.checkNavbarIntoContent();
-    this.onNavigateTo(direction);
+    this.onDebouncedNavigateTo(direction);
   };
 
   onRightSideRef = ref => {

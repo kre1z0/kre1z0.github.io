@@ -47,7 +47,7 @@ export const Description = styled("p")`
   }
 `;
 
-export const Read = styled("span")`
+export const Read = styled("a")`
   cursor: pointer;
   color: #90c53d;
 `;

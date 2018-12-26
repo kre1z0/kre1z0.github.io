@@ -8,7 +8,7 @@ const mobileMenuMiddle = "576px";
 const mobileMenuLittle = "320px";
 
 export const NavbarContainer = styled("nav")`
-  z-index: 1;
+  z-index: 4;
   position: fixed;
   top: 0;
   left: 0;
@@ -52,6 +52,9 @@ export const LeftSide = styled("div")`
   align-items: center;
   @media (max-width: ${mobileMenu}) {
     width: 100%;
+  }
+  @media (max-height: 480px) {
+    flex-shrink: 0;
   }
 `;
 
@@ -173,6 +176,18 @@ export const LinkContainer = styled("li")`
     margin: 0 0 2.1428rem 0;
     > a {
       font-size: 1.2857rem;
+    }
+  }
+  @media (max-height: 480px) {
+    margin: 0 0 1rem 0;
+    > a {
+      font-size: 1.1428rem;
+    }
+  }
+  @media (max-height: 270px) {
+    margin: 0 0 0.4rem 0;
+    > a {
+      font-size: 1rem;
     }
   }
   &.jobs {

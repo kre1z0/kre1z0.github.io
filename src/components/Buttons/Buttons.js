@@ -7,6 +7,7 @@ export const Button = styled("button")`
   outline: none;
   border: none;
   transition: all 200ms ease;
+  background: none;
   &:focus {
     outline: none;
   }

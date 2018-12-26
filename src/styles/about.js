@@ -35,6 +35,7 @@ export const WillChangeNews = styled("div")`
 const styles = css`
   .aboutContainer {
     > section:first-child {
+      z-index: 1;
       h1 {
         @media (max-width: 414px) {
           margin-bottom: 0.4rem;

@@ -3,7 +3,7 @@ import styled from "astroturf";
 
 import { Portal } from "../../components/Portal/Portal";
 import { H2 } from "../../components/Atoms/Atoms";
-import { Hamburger } from "../../components/Buttons/Hamburger";
+import { Hamburger } from "../../components/Buttons/IconButtons";
 import { Link } from "../../styles/contacts";
 import styles from "../../components/Transition/animation";
 

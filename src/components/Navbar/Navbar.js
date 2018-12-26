@@ -3,7 +3,7 @@ import cn from "classnames";
 
 import { MainLayoutConsumer } from "../MainLayoutProvider/MainLayoutProvider";
 import logo from "../../img/logo.svg";
-import { Hamburger } from "../../components/Buttons/Hamburger";
+import { Hamburger } from "../../components/Buttons/IconButtons";
 import styles, {
   NavbarContainer,
   Nav,
