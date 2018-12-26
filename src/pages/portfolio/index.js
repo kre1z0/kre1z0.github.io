@@ -8,7 +8,6 @@ import { AdditionalMenu } from "../../components/AdditionalMenu/AdditionalMenu";
 import { PortfolioSlide } from "../../components/PortfolioSlide/PortfolioSlide";
 import styles from "../../styles/portfolio";
 import { MobileTitle } from "../../components/PortfolioSlide/styles";
-import { Middle } from "../../components/Responsive/Responsive";
 
 class Portfolio extends PureComponent {
   render() {
@@ -26,6 +25,7 @@ class Portfolio extends PureComponent {
               willChangeLeftSideClassName={styles.portfolioLeftSide}
               leftSide={
                 <>
+                  <MobileTitle>{section && section.parentTitle}</MobileTitle>
                   <Responsive minWidth={577}>
                     <AdditionalMenu
                       selectedId={section && section.id}
@@ -35,25 +35,17 @@ class Portfolio extends PureComponent {
                       isOpen={true}
                     />
                   </Responsive>
-                  <Responsive maxWidth={480}>
-                    <MobileTitle>{section && section.parentTitle}</MobileTitle>
-                  </Responsive>
                 </>
               }
               containerClassName={styles.portfolioContainer}
               rightSide={
-                <>
-                  <Middle minWidth={481}>
-                    <MobileTitle>{section && section.parentTitle}</MobileTitle>
-                  </Middle>
-                  <PortfolioSlide
-                    sectionDirection={sectionDirection}
-                    sections={sections}
-                    selectedSectionIndex={selectedSectionIndex}
-                    onSectionChange={onSectionChange}
-                    {...section}
-                  />
-                </>
+                <PortfolioSlide
+                  sectionDirection={sectionDirection}
+                  sections={sections}
+                  selectedSectionIndex={selectedSectionIndex}
+                  onSectionChange={onSectionChange}
+                  {...section}
+                />
               }
             />
           );

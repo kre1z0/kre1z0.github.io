@@ -38,17 +38,17 @@ const styles = css`
     }
   }
   .portfolioLeftSide {
-    @media screen and (max-width: 576px) and (min-width: 415px) {
-      width: 100%;
-      height: 100%;
-      max-width: 48vw;
-      max-height: 14.3571rem;
-      > div {
-        width: 100%;
-        height: 100%;
-      }
-    }
-    @media (max-width: 480px) {
+    //@media screen and (max-width: 576px) and (min-width: 415px) {
+    //  width: 100%;
+    //  height: 100%;
+    //  max-width: 48vw;
+    //  max-height: 14.3571rem;
+    //  > div {
+    //    width: 100%;
+    //    height: 100%;
+    //  }
+    //}
+    @media (max-width: 576px) {
       width: 100%;
       height: 100%;
       align-self: flex-end;

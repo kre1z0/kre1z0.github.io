@@ -98,17 +98,8 @@ export const ControlBlock = styled("div")`
 export const MobileTitle = styled("h1")`
   color: #262c37;
   font-size: 1.2857rem;
-  position: absolute;
   margin: 0;
-  right: -8vw;
-  top: -0.4rem;
-  width: 100vw;
-  transform: translateY(-100%);
-  @media (max-width: 480px) {
-    position: relative;
-    margin-top: 1.4rem;
-    left: 0;
-  }
+  left: 0;
   @media (max-height: 480px) {
     margin-top: 0;
   }

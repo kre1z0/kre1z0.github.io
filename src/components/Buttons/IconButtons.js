@@ -20,7 +20,7 @@ export const Hamburger = styled(IconButton)`
   }
 `;
 
-export const GGWP = styled(Button)`
+export const Btn = styled(Button)`
   width: 1.6rem;
   height: 1.6rem;
   display: flex;
