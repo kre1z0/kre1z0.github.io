@@ -58,6 +58,7 @@ const styles = css`
     }
     @media (max-width: 767px) {
       align-self: flex-end;
+      padding-bottom: 1rem;
     }
   }
   .contactsRightSide {
