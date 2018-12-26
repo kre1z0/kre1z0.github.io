@@ -56,7 +56,7 @@ const styles = css`
     @media (max-width: 768px) {
       flex-shrink: 1;
     }
-    @media (max-width: 666px) {
+    @media (max-width: 767px) {
       align-self: flex-end;
     }
   }
