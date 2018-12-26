@@ -39,6 +39,10 @@ export const Nav = styled("div")`
   @media (max-width: ${mobileMenuMiddle}) {
     padding: 1rem 0;
   }
+  @media (max-height: 344px) {
+    padding: 1rem 0;
+  }
+
   * {
     pointer-events: auto !important;
   }
@@ -72,6 +76,9 @@ export const Logo = styled("img")`
   width: 100%;
   height: auto;
   @media (max-width: ${mobileMenuMiddle}) {
+    min-width: 7.1428rem;
+  }
+  @media (max-height: 344px) {
     min-width: 7.1428rem;
   }
 `;

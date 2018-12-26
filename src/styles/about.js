@@ -19,7 +19,7 @@ export const NewsContainer = styled("div")`
     width: 24rem;
   }
   @media (max-height: 344px) {
-    height: calc(100vh - 10rem);
+    height: 100%;
     width: 54vw;
   }
 `;
@@ -47,6 +47,13 @@ const styles = css`
     }
     > section:last-child {
       max-height: calc(100% - 4rem);
+      @media (max-height: 344px) {
+        max-height: calc(100% - 1.4rem);
+        height: 100%;
+        > div {
+          height: 100%;
+        }
+      }
     }
     @media (max-width: 480px) {
       flex-direction: column;
@@ -57,6 +64,9 @@ const styles = css`
     }
     @media (max-height: 440px) {
       margin: 4.4rem auto 0 auto;
+    }
+    @media (max-height: 344px) {
+      margin: 3rem auto 0 auto;
     }
   }
   .newBullets {
