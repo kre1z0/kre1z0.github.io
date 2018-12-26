@@ -50,7 +50,6 @@ class Contacts extends Component {
       <MainAnimation
         {...this.props}
         base64styles={!stope ? bg.metro : ""}
-        leftSideClassName={styles.contactsLeftSide}
         rightSideClassName={styles.contactsRightSide}
         willChangeLeftSideClassName={styles.willChangeContactsLeftSideClassName}
         leftSide={
