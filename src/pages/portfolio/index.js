@@ -43,7 +43,7 @@ class Portfolio extends PureComponent {
               containerClassName={styles.portfolioContainer}
               rightSide={
                 <>
-                  <Middle minWidth={415}>
+                  <Middle minWidth={481}>
                     <MobileTitle>{section && section.parentTitle}</MobileTitle>
                   </Middle>
                   <PortfolioSlide

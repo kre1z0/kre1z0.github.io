@@ -27,7 +27,7 @@ const styles = css`
         max-width: 48vw;
         max-height: 14.3571rem;
       }
-      @media (max-width: 414px) {
+      @media (max-width: 480px) {
         left: 1.7857rem;
         position: absolute;
         width: calc(100vw - 1.7857rem * 2);
@@ -48,7 +48,7 @@ const styles = css`
         height: 100%;
       }
     }
-    @media (max-width: 414px) {
+    @media (max-width: 480px) {
       width: 100%;
       height: 100%;
       align-self: flex-end;

@@ -12,7 +12,7 @@ export const NewsContainer = styled("div")`
     width: 19.4285rem;
     height: 15.9285rem;
   }
-  @media (max-width: 414px) {
+  @media (max-width: 480px) {
     width: calc(100vw - 1.7857rem * 2);
   }
   @media (max-height: 440px) {
@@ -37,7 +37,7 @@ const styles = css`
     > section:first-child {
       z-index: 1;
       h1 {
-        @media (max-width: 414px) {
+        @media (max-width: 480px) {
           margin-bottom: 0.4rem;
         }
       }
@@ -48,7 +48,7 @@ const styles = css`
         align-self: flex-start;
       }
     }
-    @media (max-width: 414px) {
+    @media (max-width: 480px) {
       flex-direction: column;
       align-items: flex-start;
       > section:last-child {
@@ -60,7 +60,7 @@ const styles = css`
     }
   }
   .newBullets {
-    @media (max-width: 414px) {
+    @media (max-width: 480px) {
       bottom: -1.4rem;
     }
   }
@@ -77,7 +77,7 @@ const styles = css`
       width: calc(100% + 100rem);
       height: calc(100% + 51rem);
     }
-    @media (max-width: 414px) {
+    @media (max-width: 480px) {
       top: -43rem;
       left: -84rem;
       width: calc(100% + 93rem);

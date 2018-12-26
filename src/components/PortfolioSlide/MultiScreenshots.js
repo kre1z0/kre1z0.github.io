@@ -67,10 +67,10 @@ const MultiScreenshotsContainer = styled("div")`
   @media (max-height: 600px), (max-width: 768px) {
     top: 8%;
   }
-  @media screen and (max-width: 576px) and (min-width: 321px) {
+  @media screen and (max-width: 576px) and (min-width: 481px) {
     left: auto;
     top: 0;
-    right: 40vw;
+    right: 30vw;
     margin: auto 0;
     width: 52vw;
     > img {
@@ -82,7 +82,7 @@ const MultiScreenshotsContainer = styled("div")`
       }
     }
   }
-  @media (max-width: 414px) {
+  @media (max-width: 480px) {
     top: auto;
     left: 6.4vw;
     right: auto;

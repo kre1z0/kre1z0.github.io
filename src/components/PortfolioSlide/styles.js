@@ -64,18 +64,18 @@ export const Content = styled("div")`
   @media all and (max-height: 777px), (max-width: 1144px) {
     padding: 0 2.1428rem 2.1428rem 2.1428rem;
   }
-  @media screen and (max-width: 576px) and (min-width: 415px) {
+  @media screen and (max-width: 576px) and (min-width: 481px) {
     display: flex;
     width: 100%;
     height: 100%;
     flex-direction: column;
     justify-content: center;
-    padding: 0 2vw 0 11vw;
+    padding: 0 2vw 0 7vw;
     h2 {
       font-size: 1rem;
     }
   }
-  @media (max-width: 414px) {
+  @media (max-width: 480px) {
     padding: 0 1.4285rem 1.4285rem 1.4285rem;
     h2 {
       font-size: 1rem;
@@ -104,7 +104,7 @@ export const MobileTitle = styled("h1")`
   top: -0.4rem;
   width: 100vw;
   transform: translateY(-100%);
-  @media (max-width: 414px) {
+  @media (max-width: 480px) {
     position: relative;
     margin-top: 1.4rem;
     left: 0;
@@ -169,7 +169,7 @@ export const ScreenshotTransitionGroup = styled(TransitionGroup)`
   left: 0;
   width: 100%;
   height: 100%;
-  @media screen and (max-width: 576px) and (min-width: 321px) {
+  @media screen and (max-width: 576px) and (min-width: 481px) {
     display: flex;
     align-items: center;
     width: 100%;
@@ -202,7 +202,7 @@ export const Screenshot = styled("img")`
     margin: auto 0;
     width: 52vw;
   }
-  @media (max-width: 414px) {
+  @media (max-width: 480px) {
     left: 6.4vw;
     right: auto;
     bottom: 9.5714rem;
