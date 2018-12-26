@@ -18,6 +18,10 @@ export const NewsContainer = styled("div")`
   @media (max-height: 440px) {
     width: 24rem;
   }
+  @media (max-height: 344px) {
+    height: calc(100vh - 10rem);
+    width: 54vw;
+  }
 `;
 
 export const WillChangeNews = styled("div")`

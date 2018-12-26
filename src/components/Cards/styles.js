@@ -11,6 +11,9 @@ export const AboutCardContainer = styled(Blank)`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  @media (max-height: 344px) {
+    padding: 1rem;
+  }
 `;
 
 export const Title = styled("h4")`
