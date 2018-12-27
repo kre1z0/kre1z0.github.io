@@ -13,19 +13,19 @@ export const TeamMemberCard = ({
   name,
   position,
   descrition,
+  control,
 }) => {
   return (
     <TeamMemberCardContainer
       style={{ height, marginBottom: margin, marginTop: withMarginTop && top }}
     >
-      <Avatar
-        source={
-          avatar ||
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKiwmc2NEcgZPrLXCtMJsnoK8odjFNXOEfnmO8sH3EQfSqpkc-"
-        }
-        className={styles.avatarBlock}
+      <Avatar source={avatar} className={styles.avatarBlock} />
+      <Name
+        dangerouslySetInnerHTML={{
+          __html: name,
+        }}
       />
-      <Name>{name}</Name>
+      {control}
       <Position>{position}</Position>
       <Description>{descrition}</Description>
     </TeamMemberCardContainer>
@@ -40,4 +40,5 @@ TeamMemberCard.propTypes = {
   top: PropTypes.number,
   margin: PropTypes.number,
   avatar: PropTypes.string,
+  control: PropTypes.element,
 };

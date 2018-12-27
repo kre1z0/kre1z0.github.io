@@ -1,5 +1,8 @@
 import React, { PureComponent } from "react";
 
+import vacancy from "../../assets/vacancy";
+import employees from "../../assets/employees";
+import { GoNextLink } from "../../components/GoNextLink/GoNextLink";
 import { MainLayoutConsumer } from "../../components/MainLayoutProvider/MainLayoutProvider";
 import { CenterBlock } from "../../components/CenterBlock/CenterBlock";
 import { MainAnimation } from "../../components/MainAnimation/MainAnimation";
@@ -33,7 +36,15 @@ export class Jobs extends PureComponent {
               }
               rightSide={
                 <CenterBlock>
-                  <TeamMembers />
+                  <TeamMembers
+                    id="employees"
+                    items={employees}
+                    control={<GoNextLink>Наши вакансии</GoNextLink>}
+                  />
+                  <TeamMembers
+                    id="vacancy"
+                    items={vacancy}
+                  />
                 </CenterBlock>
               }
             />

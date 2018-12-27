@@ -15,7 +15,7 @@ import natalya from "../img/team-members/natalya.png";
 import mariana from "../img/team-members/mariana.jpg";
 import yevgeniy from "../img/team-members/yevgeniy.jpg";
 import ekaterina from "../img/team-members/ekaterina.jpg";
-import dsgn from "../img/vacancy/dsgn.svg";
+import designer from "../img/vacancy/designer.svg";
 
 export default [
   {
@@ -69,7 +69,7 @@ export default [
   },
   {
     id: "8",
-    avatar: dsgn,
+    avatar: designer,
     name: "Алексей",
     position: "UX/UI-дизайнер",
     descrition: "Рисую интерфейсы попиксельно",

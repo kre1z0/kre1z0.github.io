@@ -119,7 +119,7 @@ const ControlBtn = styled(Button)`
     background-size: 34% 34%;
     background-repeat: no-repeat;
     background-position: center center;
-    background-image: url("../../img/arrow.svg");
+    background-image: url("../../img/icons/arrow.svg");
   }
 
   @media (hover: hover) {

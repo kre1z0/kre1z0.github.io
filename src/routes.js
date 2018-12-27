@@ -1,10 +1,11 @@
-import bank from "./img/portfolio/bank.png";
-
 import employees from "./assets/employees";
+import vacancy from './assets/vacancy';
+
 import msp from "./img/portfolio/msp.png";
 import mobileMsp1 from "./img/portfolio/mobileMsp/mobile-1.png";
 import mobileMsp2 from "./img/portfolio/mobileMsp/mobile-2.png";
 import mobileMsp3 from "./img/portfolio/mobileMsp/mobile-3.png";
+import bank from "./img/portfolio/bank.png";
 
 export const routes = [
   { id: "index", text: "О компании", route: "/" },
@@ -118,7 +119,7 @@ export const routes = [
         title: "Команда",
         children: [
           { id: "employees", text: "Наши сотрудники", count: employees.length, employees },
-          { id: "jobs", text: "Вакансии", count: 3 },
+          { id: "vacancy", text: "Вакансии", count: vacancy.length, vacancy },
         ],
       },
       {
