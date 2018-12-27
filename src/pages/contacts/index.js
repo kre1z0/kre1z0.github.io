@@ -8,7 +8,7 @@ import { TelegramButton } from "../../components/Buttons/TelegramButton";
 import { Button } from "../../components/Buttons/Buttons";
 import { MainAnimation } from "../../components/MainAnimation/MainAnimation";
 import { H2 } from "../../components/Atoms/Atoms";
-import { socials } from "../../assets/contacts/social";
+import { socials } from "../../assets/social";
 import { AddressWindow } from "../../components/AddressWindow/AddressWindow";
 
 import styles, {

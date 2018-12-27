@@ -1,5 +1,6 @@
 import bank from "./img/portfolio/bank.png";
 
+import employees from "./assets/employees";
 import msp from "./img/portfolio/msp.png";
 import mobileMsp1 from "./img/portfolio/mobileMsp/mobile-1.png";
 import mobileMsp2 from "./img/portfolio/mobileMsp/mobile-2.png";
@@ -116,8 +117,8 @@ export const routes = [
         id: "team",
         title: "Команда",
         children: [
-          { text: "Наши сотрудники", count: 19, id: "employees" },
-          { text: "Вакансии", count: 3, id: "jobs" },
+          { id: "employees", text: "Наши сотрудники", count: employees.length, employees },
+          { id: "jobs", text: "Вакансии", count: 3 },
         ],
       },
       {

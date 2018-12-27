@@ -1,0 +1,52 @@
+import kre1z0 from "../img/team-members/Kre1z0.jpg";
+
+export default [
+  {
+    id: "1",
+    avatar: "",
+    name: "Эльдар",
+    position: "Директор по развитию бизнеса",
+    descrition: "",
+  },
+  { id: "2", avatar: "", name: "Евгения", position: "Офис-менеджер", descrition: "" },
+  { id: "3", avatar: "", name: "Наталья", position: "Главный бухгалтер", descrition: "" },
+  {
+    id: "4",
+    avatar: "",
+    name: "Юлия",
+    position: "Руководитель проектной группы",
+    descrition: "",
+  },
+  { id: "5", avatar: "", name: "Марьяна", position: "Менеджер проектов", descrition: "" },
+  { id: "6", avatar: "", name: "Екатерина", position: "Бизнес-аналитик", descrition: "" },
+  { id: "7", avatar: "", name: "Антон", position: "UX/UI-дизайнер", descrition: "" },
+  { id: "8", avatar: "", name: "Алексей", position: "UX/UI-дизайнер", descrition: "" },
+  {
+    id: "9",
+    avatar: "",
+    name: "Пётр",
+    position: "Python разработчик / ГИС-специалист",
+    descrition: "",
+  },
+  { id: "10", avatar: "", name: "Пётр", position: "Python / Django разработчик", descrition: "" },
+  { id: "11", avatar: "", name: "Яков", position: "Python разработчик", descrition: "" },
+  { id: "12", avatar: "", name: "Тимофей", position: "Техлид front-end", descrition: "" },
+  { id: "13", avatar: kre1z0, name: "Игорь", position: "Front-end разработчик", descrition: "" },
+  { id: "14", avatar: "", name: "Алла", position: "Front-end разработчик", descrition: "" },
+  {
+    id: "15",
+    avatar: "",
+    name: "Максим",
+    position: "Архитектор / Техлид back-end",
+    descrition: "",
+  },
+  { id: "16", avatar: "", name: "Павел", position: "Back-end разработчик", descrition: "" },
+  { id: "17", avatar: "", name: "Евгений", position: "Back-end разработчик", descrition: "" },
+  {
+    id: "18",
+    avatar: "",
+    name: "Борис",
+    position: "ГИС-специалист / Системный администратор",
+    descrition: "",
+  },
+];
