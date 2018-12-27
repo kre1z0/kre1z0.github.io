@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 import noVacancy from "../../img/vacancy/no-vacancy.svg";
@@ -25,7 +25,7 @@ function getColumns({ items, id }) {
   return firstCol.concat(lastCol);
 }
 
-export class TeamMembers extends PureComponent {
+export class TeamMembers extends Component {
   static propTypes = {
     items: PropTypes.arrayOf(PropTypes.object),
     id: PropTypes.string.isRequired,
@@ -35,6 +35,12 @@ export class TeamMembers extends PureComponent {
     items: [],
   };
 
+  shouldComponentUpdate({ items: nextItems, id: nextId }, nextState) {
+    const { items, id } = this.props;
+
+    return items.length !== nextItems.length || id !== nextId;
+  }
+
   render() {
     const { items, id } = this.props;
 
@@ -43,7 +49,7 @@ export class TeamMembers extends PureComponent {
     const height = 320;
     const margin = 30;
     const half = Math.round(data.length / 2);
-    const containerHeight = height * half + margin * half + top;
+    const containerHeight = height * half + margin * half + (data.length % 2 ? 0 : 160);
 
     return (
       <TeamMembersContainer style={{ height: containerHeight + "px" }}>

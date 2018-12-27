@@ -8,6 +8,7 @@ export const TeamMembersContainer = styled("div")`
   flex-wrap: wrap;
   align-content: flex-start;
   align-items: flex-start;
+  margin-bottom: 24vh;
   > article {
     &:first-child {
       margin-right: 2.1428rem;
