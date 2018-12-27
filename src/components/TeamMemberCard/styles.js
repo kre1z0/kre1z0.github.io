@@ -22,7 +22,7 @@ export const Position = styled("div")`
   font-weight: 500;
   font-size: 0.8571rem;
   color: rgba(33, 34, 36, 0.25);
-  margin-bottom: 1rem;
+  margin-bottom: 1.1rem;
 `;
 
 export const Description = styled("div")`

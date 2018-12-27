@@ -12,7 +12,7 @@ export class TeamMembers extends PureComponent {
 
   render() {
     const top = 160;
-    const height = 317;
+    const height = 320;
     const margin = 30;
     const half = Math.round(employees.length / 2);
     const containerHeight = height * half + margin * half + top;
