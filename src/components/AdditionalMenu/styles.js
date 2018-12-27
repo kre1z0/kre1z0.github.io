@@ -73,6 +73,11 @@ export const MenuList = styled("ul")`
 export const ListItem = styled("li")`
   list-style: none;
   margin-bottom: 1rem;
+  > h4 {
+    &:hover {
+      color: #262c37;
+    }
+  }
   &:last-child {
     margin-bottom: 0.4rem;
     > a {

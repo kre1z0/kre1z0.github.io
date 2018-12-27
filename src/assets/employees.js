@@ -114,7 +114,7 @@ export default [
     avatar: alla,
     name: "Алла",
     position: "Front-end разработчик",
-    descrition: "Прокидываю пропсы Сравниваю с NaN",
+    descrition: "Оживляю интерфейсы",
   },
   {
     id: "15",

@@ -50,12 +50,12 @@ export class MainLayoutProviderComponent extends PureComponent {
     window.removeEventListener("resize", this.onResize);
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps) {
     const { location: prevLocation } = prevProps;
     const { location } = this.props;
 
     if (prevLocation.pathname !== location.pathname) {
-      this.setCurrentRoute(prevState);
+      this.setCurrentRoute();
     }
   }
 
@@ -78,8 +78,7 @@ export class MainLayoutProviderComponent extends PureComponent {
     return sliderIdArray;
   };
 
-  setCurrentRoute = prevState => {
-    const { selectedSectionIndex } = this.state;
+  setCurrentRoute = () => {
     const { location } = this.props;
     const currentRoute = getRouteByLocation(location);
 
@@ -90,10 +89,6 @@ export class MainLayoutProviderComponent extends PureComponent {
         slider || scrollable || news
           ? {
               sliderDirection: 1,
-              selectedSectionIndex:
-                prevState && prevState.selectedSectionIndex === selectedSectionIndex
-                  ? 0
-                  : selectedSectionIndex,
               sections: slider ? this.sectionsFromAdditionalMenu(additionalMenu) : news || [],
             }
           : { selectedSectionIndex: 0, sections: [], sliderDirection: 1 };
@@ -160,13 +155,13 @@ export class MainLayoutProviderComponent extends PureComponent {
 
     if (slider && !up && !down && !routeSwipeUpAndDown) {
       const sectionDirection = selectedSectionIndex > nextIndex ? -1 : 1;
-
       this.setState({
         sectionDirection,
         selectedSectionIndex: nextIndex,
       });
     } else {
       this.setState({
+        selectedSectionIndex: 0,
         transitionEnd: false,
         direction,
       });
