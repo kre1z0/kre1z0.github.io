@@ -9,6 +9,9 @@ const styles = css`
     > section:last-child {
       height: 24rem;
       flex-shrink: 1;
+      > div {
+        height: 100%;
+      }
     }
   }
 `;
