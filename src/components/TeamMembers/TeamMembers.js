@@ -5,6 +5,13 @@ import employees from "../../assets/employees";
 import { TeamMembersContainer } from "./styles";
 import { TeamMemberCard } from "../../components/TeamMemberCard/TeamMemberCard";
 
+function getColumns(array) {
+  const firstCol = [];
+  const lastCol = [];
+  array.forEach((item, i) => (i % 2 ? lastCol.push(item) : firstCol.push(item)));
+  return firstCol.concat(lastCol);
+}
+
 export class TeamMembers extends PureComponent {
   static propTypes = {
     employees: PropTypes.arrayOf(PropTypes.object),
@@ -19,7 +26,7 @@ export class TeamMembers extends PureComponent {
 
     return (
       <TeamMembersContainer style={{ height: containerHeight + "px" }}>
-        {employees.map((item, index) => (
+        {getColumns(employees).map((item, index) => (
           <TeamMemberCard
             withMarginTop={index === half}
             height={height}

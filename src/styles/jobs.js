@@ -7,11 +7,9 @@ const styles = css`
       padding-right: 1rem;
     }
     > section:last-child {
+      height: 24rem;
       flex-shrink: 1;
     }
-  }
-  .rightSide {
-    height: 23.1444rem;
   }
 `;
 

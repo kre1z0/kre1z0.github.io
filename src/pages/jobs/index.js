@@ -31,7 +31,6 @@ export class Jobs extends PureComponent {
                   isOpen={true}
                 />
               }
-              rightSideClassName={styles.rightSide}
               rightSide={
                 <CenterBlock>
                   <TeamMembers />

@@ -4,7 +4,16 @@ import PropTypes from "prop-types";
 import { Avatar } from "../../components/Avatar/Avatar";
 import styles, { TeamMemberCardContainer, Name, Position, Description } from "./styles";
 
-export const TeamMemberCard = ({ avatar, height, top, margin, withMarginTop, name, position }) => {
+export const TeamMemberCard = ({
+  avatar,
+  height,
+  top,
+  margin,
+  withMarginTop,
+  name,
+  position,
+  descrition,
+}) => {
   return (
     <TeamMemberCardContainer
       style={{ height, marginBottom: margin, marginTop: withMarginTop && top }}
@@ -18,7 +27,7 @@ export const TeamMemberCard = ({ avatar, height, top, margin, withMarginTop, nam
       />
       <Name>{name}</Name>
       <Position>{position}</Position>
-      <Description>aaaaAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</Description>
+      <Description>{descrition}</Description>
     </TeamMemberCardContainer>
   );
 };

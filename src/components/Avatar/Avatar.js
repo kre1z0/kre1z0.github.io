@@ -9,6 +9,7 @@ const Container = styled("div")`
   height: 100%;
   border-radius: 50%;
   overflow: hidden;
+  background-color: rgba(33, 34, 36, 0.1);
 `;
 
 const Img = styled("img")`
