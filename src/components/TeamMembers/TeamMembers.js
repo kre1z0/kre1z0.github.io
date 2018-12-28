@@ -16,7 +16,9 @@ function getColumns({ items, id, onSectionChange }) {
       name: "Стать частью </br> команды",
       id: "nobody",
       control: (
-        <GoNextLink onClick={() => onSectionChange({ id: "vacancy" })}>Наши вакансии</GoNextLink>
+        <GoNextLink onClick={() => onSectionChange({ id: "vacancy", isClickEvent: true })}>
+          Наши вакансии
+        </GoNextLink>
       ),
     });
   }

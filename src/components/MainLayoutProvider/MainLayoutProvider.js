@@ -18,7 +18,8 @@ export class MainLayoutProviderComponent extends PureComponent {
     super(props);
     this.onDebouncedNavigateTo = debounce(this.onNavigateTo, 400);
     this.onResize = debounce(this.onResize, 400);
-    this.checkBlockIsCenter = throttle(this.checkBlockIsCenter, 200);
+    this.checkBlockIsCenter = throttle(this.checkBlockIsCenter, 100);
+    this.checkNavbarIntoContent = throttle(this.checkNavbarIntoContent, 100);
   }
 
   state = {
@@ -30,6 +31,7 @@ export class MainLayoutProviderComponent extends PureComponent {
     transitionEnd: false,
     disableHover: false,
     mobileMenuIsOpen: false,
+    damping: 0.1,
 
     // sections
     isSwipeEvent: false,
@@ -38,6 +40,7 @@ export class MainLayoutProviderComponent extends PureComponent {
     sectionDirection: 1,
   };
 
+  defaultDamping = 0.1;
   threshold = 0;
   scrolling = false;
   timer = 0;
@@ -48,10 +51,12 @@ export class MainLayoutProviderComponent extends PureComponent {
   componentDidMount() {
     this.setCurrentRoute();
     window.addEventListener("resize", this.onResize);
+    window.addEventListener("keydown", this.onKeyDown);
   }
 
   componentWillUnmount() {
     window.removeEventListener("resize", this.onResize);
+    window.removeEventListener("keydown", this.onKeyDown);
   }
 
   componentDidUpdate(prevProps) {
@@ -62,6 +67,16 @@ export class MainLayoutProviderComponent extends PureComponent {
       this.setCurrentRoute();
     }
   }
+
+  onKeyDown = () => {
+    const { damping } = this.state;
+
+    if (damping !== this.defaultDamping) {
+      this.setState({
+        damping: this.defaultDamping,
+      });
+    }
+  };
 
   onResize = () => {
     const viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
@@ -105,9 +120,13 @@ export class MainLayoutProviderComponent extends PureComponent {
   };
 
   checkNavbarIntoContent = () => {
-    const { currentRoute, selectedSectionIndex } = this.state;
+    const { currentRoute, selectedSectionIndex, damping } = this.state;
 
-    if (this.scrollable && this.scrollable.children[selectedSectionIndex]) {
+    if (
+      this.scrollable &&
+      this.scrollable.children[selectedSectionIndex] &&
+      damping === this.defaultDamping
+    ) {
       const headerHeight = 82;
       const { top } = this.scrollable.children[selectedSectionIndex].getBoundingClientRect();
 
@@ -255,7 +274,7 @@ export class MainLayoutProviderComponent extends PureComponent {
       direction = -1;
     }
 
-    this.setState({ direction, isSwipeEvent: false });
+    this.setState({ direction, isSwipeEvent: false, damping: this.defaultDamping });
 
     this.checkNavbarIntoContent();
     this.onDebouncedNavigateTo(direction);
@@ -328,10 +347,17 @@ export class MainLayoutProviderComponent extends PureComponent {
         offsetTop = this.lefsideSection.getBoundingClientRect().top;
       }
 
-      this.scrollbar.scrollIntoView(this.scrollable.children[index], {
-        offsetTop,
-        onlyScrollIfNeeded,
-      });
+      this.setState(
+        {
+          damping: 0.4,
+        },
+        () => {
+          this.scrollbar.scrollIntoView(this.scrollable.children[index], {
+            offsetTop,
+            onlyScrollIfNeeded,
+          });
+        },
+      );
     }
   };
 
@@ -374,6 +400,10 @@ export class MainLayoutProviderComponent extends PureComponent {
     }
   };
 
+  swiping = () => {
+    this.setState({ damping: this.defaultDamping });
+  };
+
   onSwiped = ({ isUp, isDown, yRatio }) => {
     if (isUp && yRatio > 25) {
       this.onNavigateTo(1, true);
@@ -397,6 +427,7 @@ export class MainLayoutProviderComponent extends PureComponent {
       disableHover,
       currentRoute,
       mobileMenuIsOpen,
+      damping,
 
       // sections
       isSwipeEvent,
@@ -431,9 +462,14 @@ export class MainLayoutProviderComponent extends PureComponent {
           sectionDirection,
         }}
       >
-        <Swiper preventDefaultTouchmoveEvent={true} onSwiped={this.onSwiped}>
+        <Swiper
+          preventDefaultTouchmoveEvent={true}
+          onSwiping={this.swiping}
+          onSwiped={this.onSwiped}
+        >
           <ScrollBar
             ref={this.onScrollBarRef}
+            damping={damping}
             disableHover={disableHover || !transitionEnd}
             plugins={{
               disableScrollByDirection: { direction: { x: true, y: mobileMenuIsOpen } },

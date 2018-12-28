@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+// https://github.com/dogfessional/react-swipeable
 import Swipeable from "react-swipeable";
 
 import { getElementWidthAndHeight } from "../../utils/dom";
@@ -68,11 +69,7 @@ export class Swiper extends Component {
     const { children, ...props } = this.props;
 
     return (
-      <Swipeable
-        {...props}
-        innerRef={this.onSwiperRef}
-        onSwiped={this.swiped}
-      >
+      <Swipeable {...props} innerRef={this.onSwiperRef} onSwiped={this.swiped}>
         {children}
       </Swipeable>
     );

@@ -22,7 +22,7 @@ export class Jobs extends PureComponent {
           onScrollableRef,
           onLeftSideSectionRef,
           scrollToBlock,
-            transitionEnd,
+          transitionEnd,
         }) => {
           const section = sections[selectedSectionIndex];
           const selectedId = section && section.id;
