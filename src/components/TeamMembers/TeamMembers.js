@@ -7,7 +7,7 @@ import { TeamMemberCard } from "../../components/TeamMemberCard/TeamMemberCard";
 import { getVacancyAvatarByType } from "./getVacancyAvatarByType";
 import { TeamMembersContainer, NoVacancyDescription, PhotoContainer } from "./styles";
 
-function getColumns({ items, id }) {
+function getColumns({ items, id, onSectionChange }) {
   const newArray = items.slice();
 
   if (id === "employees") {
@@ -15,7 +15,9 @@ function getColumns({ items, id }) {
       avatar: noVacancy,
       name: "Стать частью </br> команды",
       id: "nobody",
-      control: <GoNextLink>Наши вакансии</GoNextLink>,
+      control: (
+        <GoNextLink onClick={() => onSectionChange({ id: "vacancy" })}>Наши вакансии</GoNextLink>
+      ),
     });
   }
 
@@ -32,23 +34,24 @@ export class TeamMembers extends Component {
       PropTypes.arrayOf(PropTypes.string),
     ]),
     id: PropTypes.string.isRequired,
+    onSectionChange: PropTypes.func,
+    selectedId: PropTypes.string,
   };
 
   static defaultProps = {
     items: [],
   };
 
-  shouldComponentUpdate({ items: nextItems, id: nextId }, nextState) {
-    const { items, id } = this.props;
+  shouldComponentUpdate({ items: nextItems, id: nextId, selectedId: nextSelectedId }, nextState) {
+    const { items, id, selectedId } = this.props;
 
-    return items.length !== nextItems.length || id !== nextId;
+    return items.length !== nextItems.length || id !== nextId || nextSelectedId !== selectedId;
   }
 
   render() {
-    const { items, id } = this.props;
-
+    const { items, id, children, onSectionChange, selectedId } = this.props;
     const isPhoto = id === "photo";
-    const data = getColumns({ items, id });
+    const data = getColumns({ items, id, onSectionChange });
     const height = isPhoto ? 225 : 320;
     const top = height / 2;
     const margin = isPhoto ? 15 : 30;
@@ -57,8 +60,16 @@ export class TeamMembers extends Component {
 
     const noVacancies = id === "vacancy" && items.length === 0;
 
+    if (children) {
+      return <TeamMembersContainer>{children}</TeamMembersContainer>;
+    }
+
     return (
-      <TeamMembersContainer oneItem={data.length <= 1} style={{ height: containerHeight + "px" }}>
+      <TeamMembersContainer
+        isVisible={id === selectedId}
+        oneItem={data.length <= 1}
+        style={{ height: containerHeight + "px" }}
+      >
         {noVacancies ? (
           <TeamMemberCard
             height={375}
@@ -79,8 +90,11 @@ export class TeamMembers extends Component {
             if (isPhoto) {
               const key = `photo-${index + 1}`;
               return (
-                <PhotoContainer style={{ marginTop: index === half && top }} key={key}>
-                  <img style={{ marginBottom: margin }} src={item} alt={key} />
+                <PhotoContainer
+                  style={{ marginTop: index === half && top, height, marginBottom: margin }}
+                  key={key}
+                >
+                  <img src={item} alt={key} />
                 </PhotoContainer>
               );
             }

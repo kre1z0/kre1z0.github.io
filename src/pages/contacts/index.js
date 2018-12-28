@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import Responsive from "react-responsive";
 
 import { MainLayoutConsumer } from "../../components/MainLayoutProvider/MainLayoutProvider";
@@ -32,7 +32,7 @@ export const ButtonGroup = ({ stope, onClickBus, onClickMetro }) => {
   );
 };
 
-class Contacts extends Component {
+class Contacts extends PureComponent {
   state = {
     stope: true,
   };

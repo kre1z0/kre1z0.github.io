@@ -8,8 +8,11 @@ export const TeamMembersContainer = styled("div")`
   flex-wrap: wrap;
   align-content: flex-start;
   align-items: flex-start;
-  margin-bottom: 23.8vh;
   min-height: 26.7857rem;
+  opacity: 0;
+  &.isVisible {
+    opacity: 1;
+  }
   > article {
     &:first-child {
       margin-right: 2.1428rem;
@@ -29,11 +32,18 @@ export const NoVacancyDescription = styled("p")`
 `;
 
 export const PhotoContainer = styled("div")`
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
   width: 100%;
   max-width: 21.4285rem;
-  text-align: center;
   line-height: normal;
   &:first-child {
     margin-right: 2.1428rem;
+  }
+  > img {
+    max-width: none;
+    width: auto;
+    height: 100%;
   }
 `;

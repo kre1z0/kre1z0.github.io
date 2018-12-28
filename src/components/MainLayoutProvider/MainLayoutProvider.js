@@ -89,7 +89,8 @@ export class MainLayoutProviderComponent extends PureComponent {
         slider || scrollable || news
           ? {
               sliderDirection: 1,
-              sections: slider ? this.sectionsFromAdditionalMenu(additionalMenu) : news || [],
+              sections:
+                slider || scrollable ? this.sectionsFromAdditionalMenu(additionalMenu) : news || [],
             }
           : { selectedSectionIndex: 0, sections: [], sliderDirection: 1 };
 

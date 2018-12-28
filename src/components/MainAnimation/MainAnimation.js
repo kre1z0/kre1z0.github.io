@@ -62,15 +62,7 @@ class MainAnimationBase extends PureComponent {
 
     return (
       <MainLayoutConsumer>
-        {({
-          scrollTop,
-          onRightSideRef,
-          direction,
-          onTransitionEnd,
-          transitionEnd,
-          currentRoute,
-        }) => {
-          const scrollable = currentRoute && currentRoute.scrollable;
+        {({ scrollTop, onRightSideRef, direction, onTransitionEnd, transitionEnd }) => {
           const transform = `translateY(${scrollTop}px)`;
 
           // about page slider
@@ -129,10 +121,7 @@ class MainAnimationBase extends PureComponent {
                 </WillChange>
 
                 {rightSide && (
-                  <WillChange
-                    className={willChangeRightSideClassName}
-                    style={{ transform: scrollable ? "none" : transform }}
-                  >
+                  <WillChange className={willChangeRightSideClassName}>
                     <RightSide
                       ref={onRightSideRef}
                       className={cn(

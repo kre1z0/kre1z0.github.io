@@ -3,7 +3,6 @@ import React, { PureComponent } from "react";
 import employees from "../../assets/employees";
 import vacancy from "../../assets/vacancy";
 import photo from "../../assets/photo";
-import { GoNextLink } from "../../components/GoNextLink/GoNextLink";
 import { MainLayoutConsumer } from "../../components/MainLayoutProvider/MainLayoutProvider";
 import { CenterBlock } from "../../components/CenterBlock/CenterBlock";
 import { MainAnimation } from "../../components/MainAnimation/MainAnimation";
@@ -21,6 +20,7 @@ export class Jobs extends PureComponent {
       <MainLayoutConsumer>
         {({ selectedSectionIndex, sections, onSectionChange }) => {
           const section = sections[selectedSectionIndex];
+          const selectedId = section && section.id;
 
           return (
             <MainAnimation
@@ -38,12 +38,20 @@ export class Jobs extends PureComponent {
               rightSide={
                 <CenterBlock>
                   <TeamMembers
+                    selectedId={selectedId}
                     id="employees"
                     items={employees}
-                    control={<GoNextLink>Наши вакансии</GoNextLink>}
+                    onSectionChange={onSectionChange}
                   />
-                  <TeamMembers id="vacancy" items={vacancy} />
-                  <TeamMembers id="photo" items={photo} />
+                  <TeamMembers selectedId={selectedId} id="vacancy" items={vacancy} />
+                  <TeamMembers selectedId={selectedId} id="process">
+                    <img
+                      style={{ margin: "0 auto 30px auto" }}
+                      src="http://odkb76.ru/pic/userfile/images/razrabotka.png"
+                      alt="in developing"
+                    />
+                  </TeamMembers>
+                  <TeamMembers selectedId={selectedId} id="photo" items={photo} />
                 </CenterBlock>
               }
             />

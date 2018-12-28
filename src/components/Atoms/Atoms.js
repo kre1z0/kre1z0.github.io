@@ -102,6 +102,10 @@ export const Link = styled(Title)`
   &.isActive {
     cursor: default;
     color: #90c53d;
+    > span {
+      cursor: default;
+      color: #90c53d;
+    }
   }
   > span {
     white-space: nowrap;

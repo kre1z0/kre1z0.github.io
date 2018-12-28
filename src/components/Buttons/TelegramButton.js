@@ -3,7 +3,6 @@ import styled from "astroturf";
 import { Button } from "./Buttons";
 
 export const TelegramButton = styled(Button)`
-  transition: none;
   position: absolute;
   right: 6rem;
   bottom: 4.5714rem;
