@@ -3,7 +3,7 @@ import styled from "astroturf";
 
 import { ReactComponent as ArrowNext } from "../../img/icons/arrow-next-more.svg";
 
-export const GoNextLinkContainer = styled("div")`
+export const GoNextLinkContainer = styled("a")`
   margin-top: 1rem;
   cursor: pointer;
   color: #90c53d;
@@ -17,11 +17,11 @@ export const GoNextLinkContainer = styled("div")`
   }
 `;
 
-export const GoNextLink = ({ children, ...props }) => {
+export const GoNextLink = ({ children, withArrow = true , ...props }) => {
   return (
     <GoNextLinkContainer {...props}>
       {children}
-      <ArrowNext />
+      {withArrow && <ArrowNext />}
     </GoNextLinkContainer>
   );
 };

@@ -5,7 +5,7 @@ import noVacancy from "../../img/vacancy/no-vacancy.svg";
 import { GoNextLink } from "../../components/GoNextLink/GoNextLink";
 import { TeamMemberCard } from "../../components/TeamMemberCard/TeamMemberCard";
 import { getVacancyAvatarByType } from "./getVacancyAvatarByType";
-import { TeamMembersContainer } from "./styles";
+import { TeamMembersContainer, NoVacancyDescription } from "./styles";
 
 function getColumns({ items, id }) {
   const newArray = items.slice();
@@ -51,20 +51,39 @@ export class TeamMembers extends Component {
     const half = Math.round(data.length / 2);
     const containerHeight = height * half + margin * half + (data.length % 2 ? 0 : 160);
 
+    const noVacancies = id === "vacancy" && items.length === 0;
+
     return (
-      <TeamMembersContainer style={{ height: containerHeight + "px" }}>
-        {data.map((item, index) => (
+      <TeamMembersContainer oneItem={data.length <= 1} style={{ height: containerHeight + "px" }}>
+        {noVacancies ? (
           <TeamMemberCard
-            control={id === "vacancy" ? <GoNextLink>Описание вакансии</GoNextLink> : null}
-            avatar={item.type ? getVacancyAvatarByType(item.type) : item.avatar}
-            withMarginTop={index === half}
-            height={height}
-            top={top}
-            margin={margin}
-            key={item.id}
-            {...item}
+            height={375}
+            id="noVacancies"
+            avatar={noVacancy}
+            name="В настоящее время вакансий нет"
+            control={
+              <NoVacancyDescription>
+                Но если вы отличный специалист, напишите нам в{" "}
+                <GoNextLink withArrow={false}>чат</GoNextLink>.<br />
+                <br />
+                Возможно, мы еще не знаем, что вы нам нужны!
+              </NoVacancyDescription>
+            }
           />
-        ))}
+        ) : (
+          data.map((item, index) => (
+            <TeamMemberCard
+              control={id === "vacancy" ? <GoNextLink>Описание вакансии</GoNextLink> : null}
+              avatar={item.type ? getVacancyAvatarByType(item.type) : item.avatar}
+              withMarginTop={index === half}
+              height={height}
+              top={top}
+              margin={data.length > 1 ? margin : 0}
+              key={item.id}
+              {...item}
+            />
+          ))
+        )}
       </TeamMembersContainer>
     );
   }

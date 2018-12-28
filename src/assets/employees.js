@@ -23,7 +23,7 @@ export default [
     avatar: eldar,
     name: "Эльдар",
     position: "Директор по развитию бизнеса",
-    descrition: "Уточняется...",
+    descrition: "",
   },
   {
     id: "2",

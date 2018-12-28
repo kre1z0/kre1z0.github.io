@@ -8,10 +8,22 @@ export const TeamMembersContainer = styled("div")`
   flex-wrap: wrap;
   align-content: flex-start;
   align-items: flex-start;
-  margin-bottom: 24vh;
+  margin-bottom: 23.8vh;
+  min-height: 26.7857rem;
   > article {
     &:first-child {
       margin-right: 2.1428rem;
     }
   }
+  &.oneItem {
+    align-items: center;
+    > article {
+      margin-right: 0;
+    }
+  }
+`;
+
+export const NoVacancyDescription = styled("p")`
+  font-size: 0.8571rem;
+  font-weight: 500;
 `;
