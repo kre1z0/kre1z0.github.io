@@ -15,7 +15,7 @@ export class Jobs extends PureComponent {
 
     return (
       <MainLayoutConsumer>
-        {({ selectedSectionIndex, sections, onSectionChange }) => {
+        {({ selectedSectionIndex, sections, onSectionChange, onScrollableRef }) => {
           const section = sections[selectedSectionIndex];
           const selectedId = section && section.id;
 
@@ -33,11 +33,8 @@ export class Jobs extends PureComponent {
                 />
               }
               rightSide={
-                <CenterBlock>
-                  <Scrollable
-                    selectedId={selectedId}
-                    onSectionChange={onSectionChange}
-                  />
+                <CenterBlock ref={onScrollableRef}>
+                  <Scrollable selectedId={selectedId} onSectionChange={onSectionChange} />
                 </CenterBlock>
               }
             />

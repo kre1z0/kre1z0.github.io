@@ -30,9 +30,9 @@ export class Scrollable extends PureComponent {
           id="vacancy"
           items={vacancy}
         />
-        <TeamMembers sectionDirection={sectionDirection} selectedId={selectedId} id="process">
+        <TeamMembers id="process" sectionDirection={sectionDirection} selectedId={selectedId}>
           <img
-            style={{ margin: "0 auto 30px auto" }}
+            style={{ margin: "0 auto" }}
             src="http://odkb76.ru/pic/userfile/images/razrabotka.png"
             alt="in developing"
           />

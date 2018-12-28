@@ -62,7 +62,7 @@ class MainAnimationBase extends PureComponent {
 
     return (
       <MainLayoutConsumer>
-        {({ scrollTop, onRightSideRef, direction, onTransitionEnd, transitionEnd }) => {
+        {({ scrollTop, direction, onTransitionEnd, transitionEnd }) => {
           const transform = `translateY(${scrollTop}px)`;
 
           // about page slider
@@ -123,7 +123,6 @@ class MainAnimationBase extends PureComponent {
                 {rightSide && (
                   <WillChange className={willChangeRightSideClassName}>
                     <RightSide
-                      ref={onRightSideRef}
                       className={cn(
                         rightSideClassName,
                         withRightSideAnimation && slideUp[status],

@@ -2,6 +2,7 @@ import React, { PureComponent } from "react";
 import { Swiper } from "../../components/Swiper/Swiper";
 import { Location } from "@reach/router";
 import debounce from "lodash/debounce";
+import throttle from "lodash/throttle";
 
 import { ScrollBar } from "./styles";
 import { mobileMenu } from "../../components/Navbar/styles";
@@ -17,6 +18,7 @@ export class MainLayoutProviderComponent extends PureComponent {
     super(props);
     this.onDebouncedNavigateTo = debounce(this.onNavigateTo, 400);
     this.onResize = debounce(this.onResize, 400);
+    this.checkBlockIsCenter = throttle(this.checkBlockIsCenter, 200);
   }
 
   state = {
@@ -40,6 +42,7 @@ export class MainLayoutProviderComponent extends PureComponent {
   scrolling = false;
   timer = 0;
   scrollbar = null;
+  scrollable = null;
 
   componentDidMount() {
     this.setCurrentRoute();
@@ -101,11 +104,11 @@ export class MainLayoutProviderComponent extends PureComponent {
   };
 
   checkNavbarIntoContent = () => {
-    const { currentRoute } = this.state;
+    const { currentRoute, selectedSectionIndex } = this.state;
 
-    if (this.rightSide) {
+    if (this.scrollable && this.scrollable.children[selectedSectionIndex]) {
       const headerHeight = 80;
-      const { top } = this.rightSide.getBoundingClientRect();
+      const { top } = this.scrollable.children[selectedSectionIndex].getBoundingClientRect();
 
       const scrollable = currentRoute && currentRoute.scrollable;
 
@@ -173,8 +176,37 @@ export class MainLayoutProviderComponent extends PureComponent {
     }
   };
 
+  checkBlockIsCenter = (direction, divider = 2) => {
+    const { selectedSectionIndex } = this.state;
+    const value = selectedSectionIndex + direction;
+    const currentBlock = this.scrollable.children[value];
+
+    if (currentBlock) {
+      const viewportHeight = Math.max(
+        document.documentElement.clientHeight,
+        window.innerHeight || 0,
+      );
+
+      const { top, bottom } = currentBlock.getBoundingClientRect();
+
+      if (direction > 0) {
+        const blockIsCenter = top < viewportHeight / divider;
+        if (blockIsCenter) {
+          this.onSectionChange({ value: 1 });
+        }
+      }
+
+      if (direction < 0) {
+        const blockIsCenter = bottom > viewportHeight / divider;
+        if (blockIsCenter) {
+          this.onSectionChange({ value: -1 });
+        }
+      }
+    }
+  };
+
   onScroll = e => {
-    const { disableHover } = this.state;
+    const { disableHover, scrollTop } = this.state;
     const { offset, limit } = e;
     const { y: offsetY } = offset;
     const { y: limitY } = limit;
@@ -199,6 +231,9 @@ export class MainLayoutProviderComponent extends PureComponent {
         limitY,
       },
       () => {
+        const direction = offsetY > scrollTop ? 1 : -1;
+
+        this.checkBlockIsCenter(direction);
         this.checkNavbarIntoContent();
       },
     );
@@ -225,9 +260,9 @@ export class MainLayoutProviderComponent extends PureComponent {
     this.onDebouncedNavigateTo(direction);
   };
 
-  onRightSideRef = ref => {
+  onScrollableRef = ref => {
     if (ref) {
-      this.rightSide = ref;
+      this.scrollable = ref;
     }
   };
 
@@ -347,7 +382,7 @@ export class MainLayoutProviderComponent extends PureComponent {
       <ScrollContext.Provider
         value={{
           scrollTop,
-          onRightSideRef: this.onRightSideRef,
+          onScrollableRef: this.onScrollableRef,
           coloredNav,
           onExited: this.onExited,
           direction,
