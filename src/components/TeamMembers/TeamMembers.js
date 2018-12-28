@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 
 import noVacancy from "../../img/vacancy/no-vacancy.svg";
@@ -27,7 +27,7 @@ function getColumns({ items, id, onSectionChange }) {
   return firstCol.concat(lastCol);
 }
 
-export class TeamMembers extends Component {
+export class TeamMembers extends PureComponent {
   static propTypes = {
     items: PropTypes.oneOfType([
       PropTypes.arrayOf(PropTypes.object),
@@ -36,20 +36,19 @@ export class TeamMembers extends Component {
     id: PropTypes.string.isRequired,
     onSectionChange: PropTypes.func,
     selectedId: PropTypes.string,
+    sectionDirection: PropTypes.number,
+    className: PropTypes.string,
   };
 
   static defaultProps = {
     items: [],
   };
 
-  shouldComponentUpdate({ items: nextItems, id: nextId, selectedId: nextSelectedId }, nextState) {
-    const { items, id, selectedId } = this.props;
-
-    return items.length !== nextItems.length || id !== nextId || nextSelectedId !== selectedId;
-  }
-
   render() {
-    const { items, id, children, onSectionChange, selectedId } = this.props;
+    const { items, id, children, onSectionChange, selectedId, className } = this.props;
+
+    const isVisible = id === selectedId;
+
     const isPhoto = id === "photo";
     const data = getColumns({ items, id, onSectionChange });
     const height = isPhoto ? 225 : 320;
@@ -61,12 +60,16 @@ export class TeamMembers extends Component {
     const noVacancies = id === "vacancy" && items.length === 0;
 
     if (children) {
-      return <TeamMembersContainer>{children}</TeamMembersContainer>;
+      return (
+        <TeamMembersContainer className={className} isVisible={isVisible}>
+          {children}
+        </TeamMembersContainer>
+      );
     }
 
     return (
       <TeamMembersContainer
-        isVisible={id === selectedId}
+        isVisible={isVisible}
         oneItem={data.length <= 1}
         style={{ height: containerHeight + "px" }}
       >

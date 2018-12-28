@@ -108,6 +108,7 @@ export const Link = styled(Title)`
     }
   }
   > span {
+    transition: color 200ms ease;
     white-space: nowrap;
     margin-left: 0.6rem;
     text-align: left;

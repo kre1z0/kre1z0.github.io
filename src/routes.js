@@ -131,7 +131,7 @@ export const routes = [
             id: "process",
             text: "Рабочий процесс",
           },
-          { id: "photos", text: "Фото", photo },
+          { id: "photo", text: "Фото", photo },
         ],
       },
     ],

@@ -1,6 +1,7 @@
 import styled from "astroturf";
 
 export const TeamMembersContainer = styled("div")`
+  position: relative;
   margin-left: auto;
   width: calc(21.4285rem * 2 + 2.1428rem);
   display: flex;
@@ -10,7 +11,10 @@ export const TeamMembersContainer = styled("div")`
   align-items: flex-start;
   min-height: 26.7857rem;
   opacity: 0;
+  visibility: hidden;
+  transition: all 500ms cubic-bezier(0.2, 1, 0.6, 1);
   &.isVisible {
+    visibility: visible;
     opacity: 1;
   }
   > article {
