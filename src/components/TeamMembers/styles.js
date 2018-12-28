@@ -27,3 +27,13 @@ export const NoVacancyDescription = styled("p")`
   font-size: 0.8571rem;
   font-weight: 500;
 `;
+
+export const PhotoContainer = styled("div")`
+  width: 100%;
+  max-width: 21.4285rem;
+  text-align: center;
+  line-height: normal;
+  &:first-child {
+    margin-right: 2.1428rem;
+  }
+`;

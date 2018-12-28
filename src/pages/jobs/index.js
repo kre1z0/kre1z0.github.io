@@ -1,7 +1,8 @@
 import React, { PureComponent } from "react";
 
-import vacancy from "../../assets/vacancy";
 import employees from "../../assets/employees";
+import vacancy from "../../assets/vacancy";
+import photo from "../../assets/photo";
 import { GoNextLink } from "../../components/GoNextLink/GoNextLink";
 import { MainLayoutConsumer } from "../../components/MainLayoutProvider/MainLayoutProvider";
 import { CenterBlock } from "../../components/CenterBlock/CenterBlock";
@@ -41,10 +42,8 @@ export class Jobs extends PureComponent {
                     items={employees}
                     control={<GoNextLink>Наши вакансии</GoNextLink>}
                   />
-                  <TeamMembers
-                    id="vacancy"
-                    items={vacancy}
-                  />
+                  <TeamMembers id="vacancy" items={vacancy} />
+                  <TeamMembers id="photo" items={photo} />
                 </CenterBlock>
               }
             />

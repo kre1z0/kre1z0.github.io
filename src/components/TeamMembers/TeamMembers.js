@@ -5,7 +5,7 @@ import noVacancy from "../../img/vacancy/no-vacancy.svg";
 import { GoNextLink } from "../../components/GoNextLink/GoNextLink";
 import { TeamMemberCard } from "../../components/TeamMemberCard/TeamMemberCard";
 import { getVacancyAvatarByType } from "./getVacancyAvatarByType";
-import { TeamMembersContainer, NoVacancyDescription } from "./styles";
+import { TeamMembersContainer, NoVacancyDescription, PhotoContainer } from "./styles";
 
 function getColumns({ items, id }) {
   const newArray = items.slice();
@@ -27,7 +27,10 @@ function getColumns({ items, id }) {
 
 export class TeamMembers extends Component {
   static propTypes = {
-    items: PropTypes.arrayOf(PropTypes.object),
+    items: PropTypes.oneOfType([
+      PropTypes.arrayOf(PropTypes.object),
+      PropTypes.arrayOf(PropTypes.string),
+    ]),
     id: PropTypes.string.isRequired,
   };
 
@@ -44,10 +47,11 @@ export class TeamMembers extends Component {
   render() {
     const { items, id } = this.props;
 
+    const isPhoto = id === "photo";
     const data = getColumns({ items, id });
-    const top = 160;
-    const height = 320;
-    const margin = 30;
+    const height = isPhoto ? 225 : 320;
+    const top = height / 2;
+    const margin = isPhoto ? 15 : 30;
     const half = Math.round(data.length / 2);
     const containerHeight = height * half + margin * half + (data.length % 2 ? 0 : 160);
 
@@ -71,18 +75,29 @@ export class TeamMembers extends Component {
             }
           />
         ) : (
-          data.map((item, index) => (
-            <TeamMemberCard
-              control={id === "vacancy" ? <GoNextLink>Описание вакансии</GoNextLink> : null}
-              avatar={item.type ? getVacancyAvatarByType(item.type) : item.avatar}
-              withMarginTop={index === half}
-              height={height}
-              top={top}
-              margin={data.length > 1 ? margin : 0}
-              key={item.id}
-              {...item}
-            />
-          ))
+          data.map((item, index) => {
+            if (isPhoto) {
+              const key = `photo-${index + 1}`;
+              return (
+                <PhotoContainer style={{ marginTop: index === half && top }} key={key}>
+                  <img style={{ marginBottom: margin }} src={item} alt={key} />
+                </PhotoContainer>
+              );
+            }
+
+            return (
+              <TeamMemberCard
+                control={id === "vacancy" ? <GoNextLink>Описание вакансии</GoNextLink> : null}
+                avatar={item.type ? getVacancyAvatarByType(item.type) : item.avatar}
+                withMarginTop={index === half}
+                height={height}
+                top={top}
+                margin={data.length > 1 ? margin : 0}
+                key={item.id}
+                {...item}
+              />
+            );
+          })
         )}
       </TeamMembersContainer>
     );
