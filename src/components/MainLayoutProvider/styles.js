@@ -1,5 +1,6 @@
 import styled from "astroturf";
 // https://github.com/idiotWu/react-smooth-scrollbar
+// API https://github.com/idiotWu/smooth-scrollbar/blob/develop/docs/api.md
 import Scrollbar from "react-smooth-scrollbar";
 
 export const ScrollBar = styled(Scrollbar)`

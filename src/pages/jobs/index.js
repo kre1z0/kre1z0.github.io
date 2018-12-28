@@ -15,13 +15,22 @@ export class Jobs extends PureComponent {
 
     return (
       <MainLayoutConsumer>
-        {({ selectedSectionIndex, sections, onSectionChange, onScrollableRef }) => {
+        {({
+          selectedSectionIndex,
+          sections,
+          onSectionChange,
+          onScrollableRef,
+          onLeftSideSectionRef,
+          scrollToBlock,
+            transitionEnd,
+        }) => {
           const section = sections[selectedSectionIndex];
           const selectedId = section && section.id;
 
           return (
             <MainAnimation
               {...this.props}
+              onLeftSideSectionRef={onLeftSideSectionRef}
               containerClassName={styles.jobsContainer}
               leftSide={
                 <AdditionalMenu
@@ -34,7 +43,13 @@ export class Jobs extends PureComponent {
               }
               rightSide={
                 <CenterBlock ref={onScrollableRef}>
-                  <Scrollable selectedId={selectedId} onSectionChange={onSectionChange} />
+                  <Scrollable
+                    transitionEnd={transitionEnd}
+                    selectedSectionIndex={selectedSectionIndex}
+                    scrollToBlock={scrollToBlock}
+                    selectedId={selectedId}
+                    onSectionChange={onSectionChange}
+                  />
                 </CenterBlock>
               }
             />

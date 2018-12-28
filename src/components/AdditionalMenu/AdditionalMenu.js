@@ -9,7 +9,7 @@ import { Menu, ListItem, ListHeader, MenuList, SecondLevelMenu } from "./styles"
 
 export const LinkComponent = ({ text, little = false, count, id, selectedId, onSectionChange }) => {
   return (
-    <Link onClick={() => onSectionChange({ id })} little={little} isActive={selectedId === id}>
+    <Link onClick={() => onSectionChange({ id, isClickEvent: true })} little={little} isActive={selectedId === id}>
       {text}
       {count && <span>{count}</span>}
     </Link>

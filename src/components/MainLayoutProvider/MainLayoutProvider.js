@@ -43,6 +43,7 @@ export class MainLayoutProviderComponent extends PureComponent {
   timer = 0;
   scrollbar = null;
   scrollable = null;
+  lefsideSection = null;
 
   componentDidMount() {
     this.setCurrentRoute();
@@ -107,7 +108,7 @@ export class MainLayoutProviderComponent extends PureComponent {
     const { currentRoute, selectedSectionIndex } = this.state;
 
     if (this.scrollable && this.scrollable.children[selectedSectionIndex]) {
-      const headerHeight = 80;
+      const headerHeight = 82;
       const { top } = this.scrollable.children[selectedSectionIndex].getBoundingClientRect();
 
       const scrollable = currentRoute && currentRoute.scrollable;
@@ -317,7 +318,24 @@ export class MainLayoutProviderComponent extends PureComponent {
       mobileMenuIsOpen: !mobileMenuIsOpen,
     }));
 
-  onSectionChange = ({ value, id, pageId, isSwipeEvent = false }) => {
+  scrollToBlock = (index, onlyScrollIfNeeded = false) => {
+    const viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+
+    if (this.scrollable && this.scrollable.children[index]) {
+      let offsetTop = viewportHeight / 2;
+
+      if (this.lefsideSection) {
+        offsetTop = this.lefsideSection.getBoundingClientRect().top;
+      }
+
+      this.scrollbar.scrollIntoView(this.scrollable.children[index], {
+        offsetTop,
+        onlyScrollIfNeeded,
+      });
+    }
+  };
+
+  onSectionChange = ({ value, id, pageId, isSwipeEvent = false, isClickEvent = false }) => {
     const { navigate } = this.props;
     const { selectedSectionIndex, sections, currentRoute } = this.state;
 
@@ -344,6 +362,10 @@ export class MainLayoutProviderComponent extends PureComponent {
 
       const sectionDirection = selectedSectionIndex > nextValue ? -1 : 1;
 
+      if (currentRoute.scrollable && isClickEvent) {
+        this.scrollToBlock(nextValue);
+      }
+
       this.setState({
         isSwipeEvent,
         sectionDirection,
@@ -357,6 +379,12 @@ export class MainLayoutProviderComponent extends PureComponent {
       this.onNavigateTo(1, true);
     } else if (isDown && yRatio > 25) {
       this.onNavigateTo(-1, true);
+    }
+  };
+
+  onLeftSideSectionRef = ref => {
+    if (ref) {
+      this.lefsideSection = ref;
     }
   };
 
@@ -394,6 +422,8 @@ export class MainLayoutProviderComponent extends PureComponent {
           toggleMobileMenu: this.toggleMobileMenu,
 
           // sections
+          scrollToBlock: this.scrollToBlock,
+          onLeftSideSectionRef: this.onLeftSideSectionRef,
           isSwipeEvent,
           onSectionChange: this.onSectionChange,
           selectedSectionIndex,

@@ -10,7 +10,17 @@ export class Scrollable extends PureComponent {
   static propTypes = {
     selectedId: PropTypes.string,
     onSectionChange: PropTypes.func,
+    scrollToBlock: PropTypes.func.isRequired,
+    selectedSectionIndex: PropTypes.number,
+    transitionEnd: PropTypes.bool,
   };
+
+  componentDidUpdate({ transitionEnd: prevTransitionEnd }, prevState) {
+    const { transitionEnd, selectedSectionIndex, scrollToBlock } = this.props;
+    if (prevTransitionEnd !== transitionEnd) {
+      scrollToBlock(selectedSectionIndex, true);
+    }
+  }
 
   render() {
     const { selectedId, onSectionChange, sectionDirection } = this.props;

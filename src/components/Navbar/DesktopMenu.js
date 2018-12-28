@@ -79,7 +79,7 @@ export class DesktopMenu extends PureComponent {
               {additionalMenuIsOpenId === id && (
                 <AdditionalMenu
                   onSectionChange={({ id: sectionId }) =>
-                    onSectionChange({ pageId: id, id: sectionId })
+                    onSectionChange({ pageId: id, id: sectionId, isClickEvent: true })
                   }
                   selectedId={selectedId}
                   fadeIn

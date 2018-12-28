@@ -24,6 +24,7 @@ export const Title = styled("a")`
 `;
 
 export const H1 = styled("h1")`
+  line-height: normal;
   font-size: 3.4285rem;
   margin-bottom: 2.1428rem;
   @media (max-width: ${large}) {
@@ -35,6 +36,7 @@ export const H1 = styled("h1")`
 `;
 
 export const H2 = styled("h2")`
+  line-height: normal;
   font-size: 3.4285rem;
   margin-bottom: 2.1428rem;
   @media (max-width: ${large}) {
