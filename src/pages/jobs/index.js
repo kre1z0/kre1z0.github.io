@@ -5,19 +5,19 @@ import { CenterBlock } from "../../components/CenterBlock/CenterBlock";
 import { MainAnimation } from "../../components/MainAnimation/MainAnimation";
 import { AdditionalMenu } from "../../components/AdditionalMenu/AdditionalMenu";
 import { Scrollable } from "../../components/Scrollable/Scrollable";
-import { getRouteByLocation } from "../../routes";
+import { getRouteByLocation, sectionsFromAdditionalMenu } from "../../routes";
 import styles from "../../styles/jobs";
 
 export class Jobs extends PureComponent {
   render() {
     const { location } = this.props;
     const currentRoute = getRouteByLocation(location);
+    const sections = sectionsFromAdditionalMenu(currentRoute.additionalMenu);
 
     return (
       <MainLayoutConsumer>
         {({
           selectedSectionIndex,
-          sections,
           onSectionChange,
           onScrollableRef,
           onLeftSideSectionRef,
@@ -44,6 +44,7 @@ export class Jobs extends PureComponent {
               rightSide={
                 <CenterBlock ref={onScrollableRef}>
                   <Scrollable
+                    sections={sections}
                     transitionEnd={transitionEnd}
                     selectedSectionIndex={selectedSectionIndex}
                     scrollToBlock={scrollToBlock}

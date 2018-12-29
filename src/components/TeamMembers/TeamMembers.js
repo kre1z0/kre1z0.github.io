@@ -6,6 +6,7 @@ import { GoNextLink } from "../../components/GoNextLink/GoNextLink";
 import { TeamMemberCard } from "../../components/TeamMemberCard/TeamMemberCard";
 import { getVacancyAvatarByType } from "./getVacancyAvatarByType";
 import { TeamMembersContainer, NoVacancyDescription, PhotoContainer } from "./styles";
+import { HowWeAreWorking } from "../HowWeAreWorking/HowWeAreWorking";
 
 function getColumns({ items, id, onSectionChange }) {
   const newArray = items.slice();
@@ -35,10 +36,9 @@ export class TeamMembers extends Component {
       PropTypes.arrayOf(PropTypes.object),
       PropTypes.arrayOf(PropTypes.string),
     ]),
-    id: PropTypes.string.isRequired,
+    id: PropTypes.string,
     onSectionChange: PropTypes.func,
     selectedId: PropTypes.string,
-    className: PropTypes.string,
   };
 
   state = {
@@ -54,9 +54,10 @@ export class TeamMembers extends Component {
     window.removeEventListener("resize", this.onResize);
   }
 
-  shouldComponentUpdate({ selectedId: nextSelectedId }, nextState) {
-    const { selectedId } = this.props;
-    return selectedId !== nextSelectedId;
+  shouldComponentUpdate({ selectedId: nextSelectedId, sections: nextSections }, nextState) {
+    const { selectedId, id } = this.props;
+
+    return selectedId !== nextSelectedId && (nextSelectedId === id || selectedId === id);
   }
 
   static defaultProps = {
@@ -74,14 +75,7 @@ export class TeamMembers extends Component {
 
   render() {
     const { cardHeight } = this.state;
-    const {
-      items,
-      id,
-      children,
-      onSectionChange,
-      className,
-      selectedId,
-    } = this.props;
+    const { items, id, onSectionChange, selectedId } = this.props;
     const isVisible = id === selectedId;
 
     const isPhoto = id === "photo";
@@ -94,10 +88,10 @@ export class TeamMembers extends Component {
 
     const noVacancies = id === "vacancy" && items.length === 0;
 
-    if (children) {
+    if (id === "process") {
       return (
-        <TeamMembersContainer className={className} isVisible={isVisible}>
-          {children}
+        <TeamMembersContainer isVisible={isVisible}>
+          <HowWeAreWorking items={items} />
         </TeamMembersContainer>
       );
     }

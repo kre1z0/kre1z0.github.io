@@ -120,8 +120,8 @@ export const routes = [
         id: "team",
         title: "Команда",
         children: [
-          { id: "employees", text: "Наши сотрудники", count: employees.length, employees },
-          { id: "vacancy", text: "Вакансии", count: vacancy.length, vacancy },
+          { id: "employees", text: "Наши сотрудники", items: employees, count: true },
+          { id: "vacancy", text: "Вакансии", items: vacancy, count: true },
         ],
       },
       {
@@ -131,9 +131,9 @@ export const routes = [
           {
             id: "process",
             text: "Рабочий процесс",
-            principles,
+            items: principles,
           },
-          { id: "photo", text: "Фото", photo },
+          { id: "photo", text: "Фото", items: photo },
         ],
       },
     ],
@@ -163,3 +163,13 @@ export const getRouteByLocation = location => {
 };
 
 export const getRouteById = id => routes.find(route => route.id === id);
+
+export const sectionsFromAdditionalMenu = additionalMenu => {
+  const sliderIdArray = [];
+  additionalMenu &&
+  additionalMenu.forEach(({ children, title }) =>
+    children.forEach(item => sliderIdArray.push({ ...item, parentTitle: title })),
+  );
+
+  return sliderIdArray;
+};

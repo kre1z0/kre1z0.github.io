@@ -1,10 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import principles from "../../assets/principles";
 import { Title, Paragraph, PrinciplesContainer, Principle, Badge, Link } from "./styles";
 
-export const HowWeAreWorking = () => {
+export const HowWeAreWorking = ({ items }) => {
   return (
     <>
       <Title>Как мы работаем</Title>
@@ -22,7 +21,7 @@ export const HowWeAreWorking = () => {
       <br />
       <Title>Наши принципы:</Title>
       <PrinciplesContainer>
-        {principles.map(({ icon, title }) => (
+        {items.map(({ icon, title }) => (
           <Principle key={title}>
             <Badge style={{ backgroundImage: `url(${icon})` }} />
             <span>{title}</span>
@@ -35,5 +34,5 @@ export const HowWeAreWorking = () => {
 };
 
 HowWeAreWorking.propTypes = {
-  component: PropTypes.bool,
+  items: PropTypes.arrayOf(PropTypes.object),
 };

@@ -1,11 +1,7 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 
-import { HowWeAreWorking } from "../../components/HowWeAreWorking/HowWeAreWorking";
 import { TeamMembers } from "../TeamMembers/TeamMembers";
-import employees from "../../assets/employees";
-import vacancy from "../../assets/vacancy";
-import photo from "../../assets/photo";
 
 export class Scrollable extends PureComponent {
   static propTypes = {
@@ -14,6 +10,7 @@ export class Scrollable extends PureComponent {
     scrollToBlock: PropTypes.func.isRequired,
     selectedSectionIndex: PropTypes.number,
     transitionEnd: PropTypes.bool,
+    sections: PropTypes.arrayOf(PropTypes.object),
   };
 
   componentDidUpdate({ transitionEnd: prevTransitionEnd }, prevState) {
@@ -24,21 +21,19 @@ export class Scrollable extends PureComponent {
   }
 
   render() {
-    const { selectedId, onSectionChange } = this.props;
+    const { selectedId, onSectionChange, sections } = this.props;
 
     return (
       <>
-        <TeamMembers
-          selectedId={selectedId}
-          id="employees"
-          items={employees}
-          onSectionChange={onSectionChange}
-        />
-        <TeamMembers selectedId={selectedId} id="vacancy" items={vacancy} />
-        <TeamMembers id="process" selectedId={selectedId}>
-          <HowWeAreWorking />
-        </TeamMembers>
-        <TeamMembers selectedId={selectedId} id="photo" items={photo} />
+        {sections.map(item => (
+          <TeamMembers
+            key={item.id}
+            sections={sections}
+            selectedId={selectedId}
+            onSectionChange={onSectionChange}
+            {...item}
+          />
+        ))}
       </>
     );
   }
