@@ -155,7 +155,7 @@ export class MainLayoutProviderComponent extends PureComponent {
 
     const scrollable = currentRoute && currentRoute.scrollable;
 
-    if (scrollable && (scrollTop === 0 || limitY === scrollTop)) {
+    if (scrollable && (scrollTop === 0 || limitY === scrollTop) && !routeSwipeUpAndDown) {
       const viewportHeight = Math.max(
         document.documentElement.clientHeight,
         window.innerHeight || 0,
@@ -280,12 +280,6 @@ export class MainLayoutProviderComponent extends PureComponent {
     this.onDebouncedNavigateTo(direction);
   };
 
-  onScrollableRef = ref => {
-    if (ref) {
-      this.scrollable = ref;
-    }
-  };
-
   onExited = () => {
     this.scrollbar.scrollTop = 0;
     this.setState({
@@ -326,9 +320,21 @@ export class MainLayoutProviderComponent extends PureComponent {
 
   onTransitionEnd = (e, transitionEnd = true) => this.setState({ transitionEnd });
 
+  onScrollableRef = ref => {
+    if (ref) {
+      this.scrollable = ref;
+    }
+  };
+
   onScrollBarRef = ref => {
     if (ref) {
       this.scrollbar = ref.scrollbar;
+    }
+  };
+
+  onLeftSideSectionRef = ref => {
+    if (ref) {
+      this.lefsideSection = ref;
     }
   };
 
@@ -400,10 +406,6 @@ export class MainLayoutProviderComponent extends PureComponent {
     }
   };
 
-  swiping = () => {
-    this.setState({ damping: this.defaultDamping });
-  };
-
   onSwiped = ({ isUp, isDown, yRatio }) => {
     if (isUp && yRatio > 25) {
       this.onNavigateTo(1, true);
@@ -412,9 +414,13 @@ export class MainLayoutProviderComponent extends PureComponent {
     }
   };
 
-  onLeftSideSectionRef = ref => {
-    if (ref) {
-      this.lefsideSection = ref;
+  onSwiping = () => {
+    const { damping } = this.state;
+
+    if (damping !== this.defaultDamping) {
+      this.setState({
+        damping: this.defaultDamping,
+      });
     }
   };
 
@@ -464,7 +470,7 @@ export class MainLayoutProviderComponent extends PureComponent {
       >
         <Swiper
           preventDefaultTouchmoveEvent={true}
-          onSwiping={this.swiping}
+          onSwiping={this.onSwiping}
           onSwiped={this.onSwiped}
         >
           <ScrollBar
