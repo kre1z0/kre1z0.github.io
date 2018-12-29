@@ -17,7 +17,7 @@ export class Scrollable extends PureComponent {
 
   componentDidUpdate({ transitionEnd: prevTransitionEnd }, prevState) {
     const { transitionEnd, scrollToBlock, selectedSectionIndex } = this.props;
-    if (prevTransitionEnd !== transitionEnd) {
+    if (prevTransitionEnd !== transitionEnd && transitionEnd) {
       scrollToBlock(selectedSectionIndex, true);
     }
   }
@@ -33,26 +33,15 @@ export class Scrollable extends PureComponent {
           items={employees}
           onSectionChange={onSectionChange}
         />
-        <TeamMembers
-          selectedId={selectedId}
-          id="vacancy"
-          items={vacancy}
-        />
-        <TeamMembers
-          id="process"
-          selectedId={selectedId}
-        >
+        <TeamMembers selectedId={selectedId} id="vacancy" items={vacancy} />
+        <TeamMembers id="process" selectedId={selectedId}>
           <img
             style={{ margin: "0 auto" }}
             src="http://odkb76.ru/pic/userfile/images/razrabotka.png"
             alt="in developing"
           />
         </TeamMembers>
-        <TeamMembers
-          selectedId={selectedId}
-          id="photo"
-          items={photo}
-        />
+        <TeamMembers selectedId={selectedId} id="photo" items={photo} />
       </>
     );
   }

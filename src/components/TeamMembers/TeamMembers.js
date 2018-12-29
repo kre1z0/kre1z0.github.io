@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 import noVacancy from "../../img/vacancy/no-vacancy.svg";
@@ -29,7 +29,7 @@ function getColumns({ items, id, onSectionChange }) {
   return firstCol.concat(lastCol);
 }
 
-export class TeamMembers extends PureComponent {
+export class TeamMembers extends Component {
   static propTypes = {
     items: PropTypes.oneOfType([
       PropTypes.arrayOf(PropTypes.object),
@@ -54,6 +54,11 @@ export class TeamMembers extends PureComponent {
     window.removeEventListener("resize", this.onResize);
   }
 
+  shouldComponentUpdate({ selectedId: nextSelectedId }, nextState) {
+    const { selectedId } = this.props;
+    return selectedId !== nextSelectedId;
+  }
+
   static defaultProps = {
     items: [],
   };
@@ -69,7 +74,14 @@ export class TeamMembers extends PureComponent {
 
   render() {
     const { cardHeight } = this.state;
-    const { items, id, children, onSectionChange, className, selectedId } = this.props;
+    const {
+      items,
+      id,
+      children,
+      onSectionChange,
+      className,
+      selectedId,
+    } = this.props;
     const isVisible = id === selectedId;
 
     const isPhoto = id === "photo";
