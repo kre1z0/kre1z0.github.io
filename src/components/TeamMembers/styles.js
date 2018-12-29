@@ -11,13 +11,13 @@ export const TeamMembersContainer = styled("div")`
   align-items: flex-start;
   min-height: 26.7857rem;
   opacity: 0;
-  visibility: hidden;
-  transition: opacity 200ms linear;
+  pointer-events: none;
+  transition: opacity 400ms linear;
   @media (max-width: 1024px) {
     width: calc(20rem * 2 + 2.1428rem);
   }
   &.isVisible {
-    visibility: visible;
+    pointer-events: auto;
     opacity: 1;
   }
   > article {

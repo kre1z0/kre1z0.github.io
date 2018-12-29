@@ -76,7 +76,7 @@ export class TeamMembers extends PureComponent {
     const data = getColumns({ items, id, onSectionChange });
     const height = isPhoto ? 225 : cardHeight;
     const top = height / 2;
-    const margin = isPhoto ? 15 : 30;
+    const margin = 30;
     const half = Math.round(data.length / 2);
     const containerHeight = height * half + margin * half + (data.length % 2 ? 0 : 160);
 

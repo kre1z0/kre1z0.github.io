@@ -355,7 +355,7 @@ export class MainLayoutProviderComponent extends PureComponent {
 
       this.setState(
         {
-          damping: 0.5,
+          damping: 0.2,
         },
         () => {
           this.scrollbar.scrollIntoView(this.scrollable.children[index], {
