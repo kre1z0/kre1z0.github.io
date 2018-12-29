@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 
+import { HowWeAreWorking } from "../../components/HowWeAreWorking/HowWeAreWorking";
 import { TeamMembers } from "../TeamMembers/TeamMembers";
 import employees from "../../assets/employees";
 import vacancy from "../../assets/vacancy";
@@ -35,11 +36,7 @@ export class Scrollable extends PureComponent {
         />
         <TeamMembers selectedId={selectedId} id="vacancy" items={vacancy} />
         <TeamMembers id="process" selectedId={selectedId}>
-          <img
-            style={{ margin: "0 auto" }}
-            src="http://odkb76.ru/pic/userfile/images/razrabotka.png"
-            alt="in developing"
-          />
+          <HowWeAreWorking />
         </TeamMembers>
         <TeamMembers selectedId={selectedId} id="photo" items={photo} />
       </>

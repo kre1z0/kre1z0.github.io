@@ -32,6 +32,7 @@ export class MainLayoutProviderComponent extends PureComponent {
     disableHover: false,
     mobileMenuIsOpen: false,
     damping: 0.1,
+    thresholdIsActive: false,
 
     // sections
     isSwipeEvent: false,
@@ -161,9 +162,8 @@ export class MainLayoutProviderComponent extends PureComponent {
         window.innerHeight || 0,
       );
       const ratio = viewportHeight / 3;
-      const diff = Math.abs(this.threshold) - scrollTop;
 
-      if (diff < ratio) {
+      if (Math.abs(this.threshold) < ratio) {
         return;
       }
     }
@@ -199,7 +199,7 @@ export class MainLayoutProviderComponent extends PureComponent {
   checkBlockIsCenter = (direction, divider = 2) => {
     const { selectedSectionIndex } = this.state;
     const value = selectedSectionIndex + direction;
-    const currentBlock = this.scrollable.children[value];
+    const currentBlock = this.scrollable && this.scrollable.children[value];
 
     if (currentBlock) {
       const viewportHeight = Math.max(
@@ -249,17 +249,23 @@ export class MainLayoutProviderComponent extends PureComponent {
       {
         scrollTop: offsetY,
         limitY,
+        thresholdIsActive: offsetY >= limitY || offsetY === 0,
       },
       () => {
         const direction = offsetY > scrollTop ? 1 : -1;
 
         this.checkBlockIsCenter(direction);
         this.checkNavbarIntoContent();
+
+        if (offsetY >= limitY || offsetY === 0) {
+          this.threshold = 0;
+        }
       },
     );
   };
 
   onWheel = e => {
+    const { thresholdIsActive, scrollTop } = this.state;
     const isFirefox = navigator.userAgent.toLowerCase().indexOf("firefox") > -1;
     let deltaY = e.deltaY;
 
@@ -267,11 +273,14 @@ export class MainLayoutProviderComponent extends PureComponent {
       deltaY = deltaY * 28;
     }
 
-    this.threshold = this.threshold + deltaY;
     let direction = 1;
 
     if (deltaY < 0) {
       direction = -1;
+    }
+
+    if (thresholdIsActive || (scrollTop === 0 && direction < 0)) {
+      this.threshold = this.threshold + deltaY;
     }
 
     this.setState({ direction, isSwipeEvent: false, damping: this.defaultDamping });
