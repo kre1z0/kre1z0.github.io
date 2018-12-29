@@ -3,16 +3,16 @@ import PropTypes from "prop-types";
 
 import { InDevelop } from "../../components/InDevelop/InDevelop";
 
-export const News = () => {
+export const Work = () => {
   return (
     <div>
-      <InDevelop to="about" />
+      <InDevelop to="jobs" />
     </div>
   );
 };
 
-News.propTypes = {
+Work.propTypes = {
   component: PropTypes.bool,
 };
 
-export default News;
+export default Work;

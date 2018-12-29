@@ -1,10 +1,12 @@
 const { createFilePath } = require("gatsby-source-filesystem");
 const { fmImagesToRelative } = require("gatsby-remark-relative-images");
 
+const longreadPages = ["news", "work"];
+
 exports.onCreatePage = ({ page, actions }) => {
   const { createPage } = actions;
 
-  if (page.path.match(/news/)) {
+  if (longreadPages.some(route => page.path.match(route))) {
     page.context.layout = "longread";
     createPage(page);
   }

@@ -1,11 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Title, Paragraph } from "./styles";
+import principles from "../../assets/principles";
+import { Title, Paragraph, PrinciplesContainer, Principle, Badge, Link } from "./styles";
 
 export const HowWeAreWorking = () => {
   return (
-    <div>
+    <>
       <Title>Как мы работаем</Title>
       <Paragraph>
         Мы считаем, что успех любого дела зависит от команды, поэтому создали атмосферу, комфортную
@@ -20,7 +21,16 @@ export const HowWeAreWorking = () => {
       </Paragraph>
       <br />
       <Title>Наши принципы:</Title>
-    </div>
+      <PrinciplesContainer>
+        {principles.map(({ icon, title }) => (
+          <Principle key={title}>
+            <Badge style={{ backgroundImage: `url(${icon})` }} />
+            <span>{title}</span>
+          </Principle>
+        ))}
+      </PrinciplesContainer>
+      <Link to="/work">Подробнее о работе в Everpoint</Link>
+    </>
   );
 };
 

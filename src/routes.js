@@ -1,5 +1,6 @@
 import employees from "./assets/employees";
 import vacancy from "./assets/vacancy";
+import principles from "./assets/principles";
 import photo from "./assets/photo";
 
 import msp from "./img/portfolio/msp.png";
@@ -130,6 +131,7 @@ export const routes = [
           {
             id: "process",
             text: "Рабочий процесс",
+            principles,
           },
           { id: "photo", text: "Фото", photo },
         ],

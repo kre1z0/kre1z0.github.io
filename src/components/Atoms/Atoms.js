@@ -135,7 +135,7 @@ export const GatsbyLink = styled(GLink)`
   font-style: normal;
   text-decoration: none;
   color: #262c37;
-  display: block;
+  display: inline-block;
   margin-bottom: 1rem;
   cursor: pointer;
   transition: color 200ms ease;
