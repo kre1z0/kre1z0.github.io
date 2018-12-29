@@ -38,22 +38,43 @@ export class TeamMembers extends PureComponent {
     id: PropTypes.string.isRequired,
     onSectionChange: PropTypes.func,
     selectedId: PropTypes.string,
-    sectionDirection: PropTypes.number,
     className: PropTypes.string,
   };
+
+  state = {
+    cardHeight: 320,
+  };
+
+  componentDidMount() {
+    window.addEventListener("resize", this.onResize);
+    this.onResize();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.onResize);
+  }
 
   static defaultProps = {
     items: [],
   };
 
-  render() {
-    const { items, id, children, onSectionChange, selectedId, className } = this.props;
+  onResize = () => {
+    const viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    if (viewportWidth <= 1024) {
+      this.setState({ cardHeight: 297 });
+    } else {
+      this.setState({ cardHeight: 320 });
+    }
+  };
 
+  render() {
+    const { cardHeight } = this.state;
+    const { items, id, children, onSectionChange, className, selectedId } = this.props;
     const isVisible = id === selectedId;
 
     const isPhoto = id === "photo";
     const data = getColumns({ items, id, onSectionChange });
-    const height = isPhoto ? 225 : 320;
+    const height = isPhoto ? 225 : cardHeight;
     const top = height / 2;
     const margin = isPhoto ? 15 : 30;
     const half = Math.round(data.length / 2);
@@ -77,7 +98,7 @@ export class TeamMembers extends PureComponent {
       >
         {noVacancies ? (
           <TeamMemberCard
-            height={375}
+            height={cardHeight * 1.1718}
             id="noVacancies"
             avatar={noVacancy}
             name="В настоящее время вакансий нет"

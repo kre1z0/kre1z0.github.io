@@ -7,13 +7,16 @@ export const TeamMemberCardContainer = styled(Blank)`
   max-width: 21.4285rem;
   text-align: center;
   line-height: normal;
+  @media (max-width: 1024px) {
+    max-width: 20rem;
+  }
 `;
 
 export const Name = styled("div")`
   font-size: 1.2857rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
-  @media (max-width: 576px) {
+  @media (max-width: 1024px) {
     font-size: 1.1428rem;
   }
 `;
@@ -27,11 +30,17 @@ export const Position = styled("div")`
 
 export const Description = styled("div")`
   font-weight: 500;
+  @media (max-width: 1024px) {
+    font-size: 0.8571rem;
+  }
 `;
 
 const styles = css`
   .avatarBlock {
     margin: 1.5rem auto;
+    @media (max-width: 1024px) {
+      margin: 0.5rem auto 1.5rem auto;
+    }
   }
 `;
 

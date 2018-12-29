@@ -3,8 +3,11 @@ import { css } from "astroturf";
 const styles = css`
   .jobsContainer {
     > section:first-child {
-      flex-shrink: 0;
-      padding-right: 1rem;
+      flex-shrink: 1;
+      padding-right: 4rem;
+      @media (max-width: 910px) {
+        padding-right: 2rem;
+      }
     }
     > section:last-child {
       height: 24rem;

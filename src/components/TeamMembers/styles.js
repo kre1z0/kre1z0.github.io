@@ -12,7 +12,10 @@ export const TeamMembersContainer = styled("div")`
   min-height: 26.7857rem;
   opacity: 0;
   visibility: hidden;
-  transition: all 500ms cubic-bezier(0.2, 1, 0.6, 1);
+  transition: opacity 200ms linear;
+  @media (max-width: 1024px) {
+    width: calc(20rem * 2 + 2.1428rem);
+  }
   &.isVisible {
     visibility: visible;
     opacity: 1;
@@ -42,6 +45,9 @@ export const PhotoContainer = styled("div")`
   width: 100%;
   max-width: 21.4285rem;
   line-height: normal;
+  @media (max-width: 1024px) {
+    max-width: 20rem;
+  }
   &:first-child {
     margin-right: 2.1428rem;
   }

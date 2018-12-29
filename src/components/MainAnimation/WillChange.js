@@ -14,7 +14,7 @@ export const WillChange = styled("section")`
   &.left {
     flex-shrink: 0;
     padding-right: 6rem;
-    @media (max-width: 992px) {
+    @media (max-width: 1024px) {
       padding-right: 3.5714rem;
     }
     @media (max-width: 767px) {

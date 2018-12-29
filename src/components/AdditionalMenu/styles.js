@@ -16,7 +16,7 @@ export const Menu = styled("menu")`
     display: block;
     > ul {
       margin-bottom: 3.9285rem;
-      @media (max-width: 992px) {
+      @media (max-width: 1024px) {
         margin-bottom: 2.8571rem;
       }
       &:last-child {
@@ -30,7 +30,7 @@ export const Menu = styled("menu")`
         font-size: 1.2857rem;
         margin-bottom: 0;
         display: inline-block;
-        @media (max-width: 992px) {
+        @media (max-width: 1024px) {
           font-size: 1.1428rem;
         }
         @media (max-width: 768px) {

@@ -12,7 +12,7 @@ export const TelegramButton = styled(Button)`
   background: url(../../img/icons/telegram.svg) #90c53d center center no-repeat;
   background-size: 1.7rem 1.5285rem;
   box-shadow: 0 8px 8px 0 rgba(10, 18, 33, 0.1);
-  @media (max-width: 992px) {
+  @media (max-width: 1024px) {
     right: 3.5714rem;
   }
   @media (max-width: 768px) {

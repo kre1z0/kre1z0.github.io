@@ -40,7 +40,7 @@ export const SocialLink = styled("a")`
   &:last-child {
     margin-right: 0;
   }
-  @media (max-width: 992px) and (min-width: 769px) {
+  @media (max-width: 1024px) and (min-width: 769px) {
     width: 1.14285rem;
     height: 1.14285rem;
   }

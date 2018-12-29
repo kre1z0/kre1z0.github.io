@@ -13,7 +13,9 @@ export const NavbarContainer = styled("nav")`
   top: 0;
   left: 0;
   right: 0;
-  will-change: transform;
+  will-change: transform, background;
+  background: rgba(255, 255, 255, 0);
+  transition: background 500ms linear;
 `;
 
 export const Nav = styled("div")`
@@ -22,7 +24,7 @@ export const Nav = styled("div")`
   display: flex;
   align-items: flex-start;
   padding: 1.6rem 0;
-  @media (max-width: 992px) {
+  @media (max-width: 1024px) {
     padding: 1.6rem 0;
   }
   @media (max-width: ${mobileMenu}) {
@@ -239,7 +241,7 @@ const styles = css`
   }
   .coloredNav {
     box-shadow: 0 8px 8px 0 rgba(10, 18, 33, 0.05);
-    background-color: #fff;
+    background: rgba(255, 255, 255, 1);
   }
   .withoutAdditionalMenuAndIsActive {
     cursor: default;
