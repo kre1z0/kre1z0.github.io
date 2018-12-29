@@ -1,4 +1,5 @@
 import React, { PureComponent } from "react";
+import cn from "classnames";
 
 import { BackendComponent } from "../../components/Backend/Backend";
 import { Bullets } from "../../components/Bullets/Bullets";
@@ -9,7 +10,7 @@ import { MainLayoutConsumer } from "../../components/MainLayoutProvider/MainLayo
 import { ConstellationPoints } from "../../components/ConstellationPoints/ConstellationPoints";
 import { fade, slideUp, transition } from "../../components/Transition/animation";
 import styles, { NewsContainer, WillChangeNews } from "../../styles/about";
-import cn from "classnames";
+import { getRouteByLocation } from "../../routes";
 
 export class About extends PureComponent {
   state = {
@@ -20,6 +21,9 @@ export class About extends PureComponent {
   onTransform = coordinates => this.setState(coordinates);
 
   render() {
+    const { location } = this.props;
+    const { news } = getRouteByLocation(location);
+
     const { status } = this.props;
     const { x, y } = this.state;
 
@@ -27,13 +31,12 @@ export class About extends PureComponent {
       <MainLayoutConsumer>
         {({
           selectedSectionIndex,
-          sections,
           onSectionChange,
           sectionDirection,
           isSwipeEvent,
           transitionEnd,
         }) => {
-          const section = sections[selectedSectionIndex];
+          const section = news[selectedSectionIndex];
 
           return (
             <MainAnimation
@@ -60,10 +63,7 @@ export class About extends PureComponent {
                     selectedSectionIndex={selectedSectionIndex}
                   />
                   <WillChangeNews className={cn(slideUp[status], fade[status], transition[status])}>
-                    <BackendComponent
-                      sections={sections}
-                      selectedSectionIndex={selectedSectionIndex}
-                    />
+                    <BackendComponent sections={news} selectedSectionIndex={selectedSectionIndex} />
                     <News
                       isSwipeEvent={isSwipeEvent}
                       onSectionChange={onSectionChange}
@@ -72,7 +72,7 @@ export class About extends PureComponent {
                     />
                     <Bullets
                       className={styles.newBullets}
-                      sections={sections}
+                      sections={news}
                       selectedSectionIndex={selectedSectionIndex}
                     />
                   </WillChangeNews>
