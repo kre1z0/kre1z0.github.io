@@ -18,7 +18,6 @@ import { Bullets } from "../Bullets/Bullets";
 export class PortfolioSlide extends PureComponent {
   static propTypes = {
     bgColor: PropTypes.string,
-    textColor: PropTypes.string,
     text: PropTypes.string,
     description: PropTypes.string,
     screenshot: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.string), PropTypes.string]),
@@ -51,7 +50,6 @@ export class PortfolioSlide extends PureComponent {
       bgColor,
       text,
       description,
-      textColor,
       onSectionChange,
       selectedSectionIndex,
       sections,
@@ -66,13 +64,11 @@ export class PortfolioSlide extends PureComponent {
         <PortfolioSlideContainer
           onMouseOver={() => this.setState({ hovered: true })}
           onMouseOut={() => this.setState({ hovered: false })}
-          style={{ color: textColor || "#fff" }}
         >
           <BackendComponent sections={sections} selectedSectionIndex={selectedSectionIndex} />
           <SliderBackground hovered={hovered} style={{ backgroundColor: bgColor }} />
           <Screenshot direction={sectionDirection} id={id} text={text} screenshot={screenshot} />
           <Content
-            textColor={textColor}
             direction={sectionDirection}
             id={id}
             title={title}
