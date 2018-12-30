@@ -1,15 +1,14 @@
-import React from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 import { SvgWrapper } from "./styles";
 import { getElementWidthAndHeight } from "../../utils/dom";
 import { getSVGBackgroundByIndex } from "./getBackground";
 
-export class Resizer extends React.PureComponent {
+export class Resizer extends Component {
   static propTypes = {
     transitionEnd: PropTypes.bool,
-    route: PropTypes.string,
-    svgClassName: PropTypes.string,
+    isAboutPage: PropTypes.func,
   };
 
   componentDidMount() {
@@ -17,12 +16,10 @@ export class Resizer extends React.PureComponent {
     this.onResize();
   }
 
-  componentDidUpdate({ svgIndex: prevSvgIndex }, prevState) {
-    const { svgIndex } = this.props;
+  shouldComponentUpdate({ transitionEnd: nextSransitionEnd }, nextState) {
+    const { transitionEnd } = this.props;
 
-    if (prevSvgIndex !== svgIndex) {
-      this.onResize();
-    }
+    return transitionEnd !== nextSransitionEnd;
   }
 
   componentWillUnmount() {
@@ -64,12 +61,11 @@ export class Resizer extends React.PureComponent {
   };
 
   render() {
-    const { transitionEnd, svgClassName, isAboutPage } = this.props;
+    const { transitionEnd, isAboutPage } = this.props;
 
     return (
       <SvgWrapper ref={this.onRef}>
         {getSVGBackgroundByIndex({
-          className: svgClassName,
           isAboutPage,
           style: { visibility: transitionEnd ? "visible" : "hidden" },
         })}

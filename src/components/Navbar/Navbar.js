@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React, { Component } from "react";
 import cn from "classnames";
 
 import { MainLayoutConsumer } from "../MainLayoutProvider/MainLayoutProvider";
@@ -18,7 +18,7 @@ import { DesktopMenu } from "./DesktopMenu";
 import { MobileMenu } from "./MobileMenu";
 import { routes } from "../../routes";
 
-export class Navbar extends PureComponent {
+export class Navbar extends Component {
   state = {
     additionalMenuIsOpenId: null,
   };

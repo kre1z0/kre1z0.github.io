@@ -54,7 +54,7 @@ export class TeamMembers extends Component {
     window.removeEventListener("resize", this.onResize);
   }
 
-  shouldComponentUpdate({ selectedId: nextSelectedId, sections: nextSections }, nextState) {
+  shouldComponentUpdate({ selectedId: nextSelectedId }, nextState) {
     const { selectedId, id } = this.props;
 
     return selectedId !== nextSelectedId && (nextSelectedId === id || selectedId === id);

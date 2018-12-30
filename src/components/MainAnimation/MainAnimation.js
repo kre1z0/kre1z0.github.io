@@ -48,7 +48,6 @@ class MainAnimationBase extends Component {
       rightSide,
       rightSideClassName,
       children,
-      svgClassName,
       withSvg,
       base64styles,
       containerClassName,
@@ -104,7 +103,7 @@ class MainAnimationBase extends Component {
                 )}
                 {withSvg && (
                   <Background>
-                    <Resizer svgClassName={svgClassName} transitionEnd={transitionEnd} {...props} />
+                    <Resizer transitionEnd={transitionEnd} {...props} />
                   </Background>
                 )}
               </WillChange>

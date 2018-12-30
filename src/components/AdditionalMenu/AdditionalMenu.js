@@ -5,38 +5,8 @@ import cn from "classnames";
 
 import { H2, Link } from "../../components/Atoms/Atoms";
 import animation from "../../components/Transition/animation";
+import { LinkComponent } from "./LinkComponent";
 import { Menu, ListItem, ListHeader, MenuList, SecondLevelMenu } from "./styles";
-
-export const LinkComponent = ({
-  text,
-  little = false,
-  items,
-  count,
-  id,
-  selectedId,
-  onSectionChange,
-}) => {
-  return (
-    <Link
-      onClick={() => onSectionChange({ id, isClickEvent: true })}
-      little={little}
-      isActive={selectedId === id}
-    >
-      {text}
-      {items && count && <span>{items.length}</span>}
-    </Link>
-  );
-};
-
-LinkComponent.propTypes = {
-  text: PropTypes.string,
-  count: PropTypes.bool,
-  little: PropTypes.bool,
-  items: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.object),
-    PropTypes.arrayOf(PropTypes.string),
-  ]),
-};
 
 export class AdditionalMenu extends PureComponent {
   static propTypes = {

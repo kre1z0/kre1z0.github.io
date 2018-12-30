@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 import cn from "classnames";
 
@@ -7,7 +7,7 @@ import { Link as OutsideLink } from "../Atoms/Atoms";
 import styles from "./styles";
 import { AdditionalMenu } from "../AdditionalMenu/AdditionalMenu";
 
-export class DesktopMenu extends PureComponent {
+export class DesktopMenu extends Component {
   static propTypes = {
     location: PropTypes.object,
     additionalMenuIsOpenId: PropTypes.string,
@@ -18,6 +18,15 @@ export class DesktopMenu extends PureComponent {
     routes: PropTypes.array,
     selectedId: PropTypes.string,
   };
+
+  shouldComponentUpdate(
+    { selectedId: nextSelectedId, additionalMenuIsOpenId: nextAdditionalMenuIsOpenId },
+    nextState,
+  ) {
+    const { selectedId, additionalMenuIsOpenId } = this.props;
+
+    return selectedId !== nextSelectedId || additionalMenuIsOpenId !== nextAdditionalMenuIsOpenId;
+  }
 
   render() {
     const {
