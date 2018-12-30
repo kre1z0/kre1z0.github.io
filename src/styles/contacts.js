@@ -73,6 +73,9 @@ const styles = css`
   }
   .address {
     cursor: default;
+    &:hover {
+      color: #262c37;
+    }
     @media (min-width: 992px) {
       br {
         display: none;

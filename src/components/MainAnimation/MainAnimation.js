@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import cn from "classnames";
 
@@ -17,7 +17,7 @@ import { common } from "../../styles/common";
 
 import { Resizer } from "../Background/Resizer";
 
-class MainAnimationBase extends Component {
+class MainAnimationBase extends PureComponent {
   static propTypes = {
     status: PropTypes.string,
     leftSideClassName: PropTypes.string,

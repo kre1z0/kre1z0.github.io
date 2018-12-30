@@ -8,6 +8,7 @@ export const scaleIn = css`
     transform: scale(0.5);
   }
   .entered {
+    will-change: auto !important;
     transform: scale(1);
   }
   .exiting {
@@ -46,6 +47,7 @@ export const slideUp = css`
   }
   .entered {
     transform: translateY(0px);
+    will-change: auto !important;
   }
   .exiting {
     transform: translateY(-100%);
@@ -57,6 +59,7 @@ export const fade = css`
     opacity: 0;
   }
   .entered {
+    will-change: auto !important;
     opacity: 1;
   }
   .exiting {

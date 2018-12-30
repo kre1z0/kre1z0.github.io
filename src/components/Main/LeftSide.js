@@ -1,3 +1,5 @@
 import styled from "astroturf";
 
-export const LeftSide = styled("div")``;
+export const LeftSide = styled("div")`
+  will-change: transform, opacity;
+`;

@@ -1,6 +1,7 @@
 import styled from "astroturf";
 
 export const Background = styled("div")`
+  will-change: transform;
   position: absolute;
   right: 0;
   bottom: 0;
