@@ -7,7 +7,6 @@ module.exports = {
     "gatsby-plugin-postcss",
     "gatsby-plugin-sass",
     "gatsby-plugin-layout",
-    "gatsby-plugin-ngrok-tunneling",
     {
       resolve: "gatsby-plugin-svgr",
       options: {

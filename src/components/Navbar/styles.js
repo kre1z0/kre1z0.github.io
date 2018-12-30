@@ -160,6 +160,7 @@ export const LinkContainer = styled("li")`
     margin-right: 0;
   }
   > a {
+    display: inline-block;
     font-weight: 600;
     font-size: 1rem;
   }

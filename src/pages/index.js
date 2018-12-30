@@ -3,6 +3,7 @@ import React, { PureComponent } from "react";
 import { MainAnimation } from "../components/MainAnimation/MainAnimation";
 import { HorizontalRule, GatsbyLink } from "../components/Atoms/Atoms";
 import { BigH1 } from "../components/Atoms/Atoms";
+import styles from "../styles/index";
 
 export class IndexPage extends PureComponent {
   render() {
@@ -10,6 +11,7 @@ export class IndexPage extends PureComponent {
       <MainAnimation
         {...this.props}
         withSvg
+        containerClassName={styles.indexPageContainer}
         leftSide={
           <>
             <HorizontalRule />
