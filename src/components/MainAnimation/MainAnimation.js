@@ -82,6 +82,7 @@ class MainAnimationBase extends PureComponent {
                 fullViewport
                 style={{
                   transform,
+                  willChange: transitionEnd && "transform",
                   overflow: transitionEnd ? "hidden" : "visible",
                 }}
               >
@@ -108,7 +109,11 @@ class MainAnimationBase extends PureComponent {
                 )}
               </WillChange>
               <Content className={cn(containerClassName, common.container)}>
-                <WillChange className={willChangeLeftSideClassName} left style={{ transform }}>
+                <WillChange
+                  className={willChangeLeftSideClassName}
+                  left
+                  style={{ transform, willChange: transitionEnd && "transform" }}
+                >
                   <LeftSide
                     ref={onLeftSideSectionRef}
                     className={cn(

@@ -48,6 +48,7 @@ export class Navbar extends Component {
           selectedSectionIndex,
           sections,
           onSectionChange,
+          transitionEnd,
         }) => {
           const transform = `translateY(${scrollTop}px)`;
           const section = sections[selectedSectionIndex];
@@ -86,6 +87,7 @@ export class Navbar extends Component {
                   />
                 </LeftSide>
                 <DesktopMenu
+                  transitionEnd={transitionEnd}
                   routes={routes}
                   selectedId={section && section.id}
                   location={location}

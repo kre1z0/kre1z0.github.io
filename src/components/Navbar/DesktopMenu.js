@@ -17,15 +17,24 @@ export class DesktopMenu extends Component {
     onSectionChange: PropTypes.func,
     routes: PropTypes.array,
     selectedId: PropTypes.string,
+    transitionEnd: PropTypes.bool,
   };
 
   shouldComponentUpdate(
-    { selectedId: nextSelectedId, additionalMenuIsOpenId: nextAdditionalMenuIsOpenId },
+    {
+      selectedId: nextSelectedId,
+      additionalMenuIsOpenId: nextAdditionalMenuIsOpenId,
+      transitionEnd: nextTransitionEnd,
+    },
     nextState,
   ) {
-    const { selectedId, additionalMenuIsOpenId } = this.props;
+    const { selectedId, additionalMenuIsOpenId, transitionEnd } = this.props;
 
-    return selectedId !== nextSelectedId || additionalMenuIsOpenId !== nextAdditionalMenuIsOpenId;
+    return (
+      selectedId !== nextSelectedId ||
+      additionalMenuIsOpenId !== nextAdditionalMenuIsOpenId ||
+      transitionEnd !== nextTransitionEnd
+    );
   }
 
   render() {
@@ -39,6 +48,7 @@ export class DesktopMenu extends Component {
       selectedId,
       onNavLinkClick,
       onSectionChange,
+      transitionEnd,
     } = this.props;
 
     return (
@@ -65,6 +75,7 @@ export class DesktopMenu extends Component {
           return (
             <LinkContainer key={id} {...className} style={{ width: additionalMenuWidth }}>
               <Link
+                style={{ willChange: transitionEnd && "color" }}
                 onMouseOver={
                   additionalMenu ? () => onOpenAdditionalMenu(id) : onCloseAdditionalMenu
                 }
