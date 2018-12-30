@@ -36,11 +36,6 @@ class MainAnimationBase extends Component {
     onLeftSideSectionRef: PropTypes.func,
   };
 
-  // shouldComponentUpdate({ status: nextStatus }, nextState) {
-  //   const { status } = this.props;
-  //   return status !== nextStatus;
-  // }
-
   static defaultProps = {
     withRightSideAnimation: true,
   };
