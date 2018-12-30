@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 import cn from "classnames";
 
@@ -17,7 +17,7 @@ import { common } from "../../styles/common";
 
 import { Resizer } from "../Background/Resizer";
 
-class MainAnimationBase extends PureComponent {
+class MainAnimationBase extends Component {
   static propTypes = {
     status: PropTypes.string,
     leftSideClassName: PropTypes.string,
@@ -35,6 +35,11 @@ class MainAnimationBase extends PureComponent {
     withRightSideAnimation: PropTypes.bool,
     onLeftSideSectionRef: PropTypes.func,
   };
+
+  // shouldComponentUpdate({ status: nextStatus }, nextState) {
+  //   const { status } = this.props;
+  //   return status !== nextStatus;
+  // }
 
   static defaultProps = {
     withRightSideAnimation: true,
