@@ -8,7 +8,10 @@ export const TeamMemberCardContainer = styled(Blank)`
   text-align: center;
   line-height: normal;
   @media (max-width: 1024px) {
-    max-width: 20rem;
+    width: 20rem;
+  }
+  @media (max-width: 768px) {
+    will-change: opacity, transform;
   }
 `;
 

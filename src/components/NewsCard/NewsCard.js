@@ -33,7 +33,7 @@ export class Crutch extends PureComponent {
   }
 }
 
-export class News extends PureComponent {
+export class NewsCard extends PureComponent {
   static propTypes = {
     title: PropTypes.string,
     date: PropTypes.string,

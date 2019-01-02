@@ -49,6 +49,9 @@ export const Menu = styled("menu")`
       @media (max-width: 768px) {
         margin-bottom: 0.6rem;
       }
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 `;

@@ -14,9 +14,11 @@ export const TeamMemberCard = ({
   position,
   descrition,
   control,
+  className,
 }) => {
   return (
     <TeamMemberCardContainer
+      className={className}
       style={{ height, marginBottom: margin, marginTop: withMarginTop && top }}
     >
       <Avatar source={avatar} className={styles.avatarBlock} />
@@ -33,6 +35,7 @@ export const TeamMemberCard = ({
 };
 
 TeamMemberCard.propTypes = {
+  className: PropTypes.string,
   name: PropTypes.string,
   position: PropTypes.string,
   withMarginTop: PropTypes.bool,

@@ -69,11 +69,6 @@ const styles = css`
       margin: 3rem auto 0 auto;
     }
   }
-  .newBullets {
-    @media (max-width: 480px) {
-      bottom: -2rem;
-    }
-  }
   .isAboutSlide {
     will-change: transform;
     bottom: auto;

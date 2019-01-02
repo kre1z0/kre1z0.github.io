@@ -56,4 +56,15 @@ export const PhotoContainer = styled("div")`
     width: auto;
     height: 100%;
   }
+  @media (max-width: 768px) {
+    will-change: opacity, transform;
+    border-radius: 0.1428rem;
+    box-shadow: 0 0.8571rem 0.8571rem 0 rgba(10, 18, 33, 0.1);
+    &:first-child {
+      margin-right: 0;
+    }
+    > img {
+      height: 21.2142rem;
+    }
+  }
 `;

@@ -2,13 +2,41 @@ import styled from "astroturf";
 
 import { GatsbyLink } from "../../components/Atoms/Atoms";
 
+export const HowWeAreWorkingContainer = styled("div")`
+  display: flex;
+  flex-direction: column;
+  @media (max-width: 768px) {
+    will-change: opacity, transform;
+    padding: 1.7142rem;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.1428rem;
+    box-shadow: 0 0.8571rem 0.8571rem 0 rgba(10, 18, 33, 0.1);
+    background-color: #fff;
+  }
+`;
+
 export const Title = styled("h4")`
   font-size: 1.2857rem;
   font-weight: 600;
+  @media (max-width: 768px) {
+    font-size: 1.1428rem;
+    &:nth-child(4) {
+      display: none;
+    }
+  }
 `;
 
 export const Paragraph = styled("p")`
   font-size: 1.1428rem;
+  line-height: normal;
+  @media (max-width: 768px) {
+    font-size: 0.7142rem;
+    margin-bottom: 0.8rem;
+    ~ br {
+      display: none;
+    }
+  }
 `;
 
 export const PrinciplesContainer = styled("div")`
@@ -44,4 +72,8 @@ export const Link = styled(GatsbyLink)`
   align-self: flex-end;
   font-size: 1.1428rem;
   color: #90c53d;
+  @media (max-width: 768px) {
+    align-self: flex-start;
+    font-size: 0.7142rem;
+  }
 `;

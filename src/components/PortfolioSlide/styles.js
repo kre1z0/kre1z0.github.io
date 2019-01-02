@@ -205,12 +205,12 @@ export const Screenshot = styled("img")`
 
 export const transition = css`
   .entered {
-    transition-duration: 200ms;
+    transition-duration: 2000ms;
     transition-timing-function: linear;
     transition-property: transform, opacity;
   }
   .exiting {
-    transition-duration: 200ms;
+    transition-duration: 2000ms;
     transition-timing-function: linear;
     transition-property: transform, opacity;
   }

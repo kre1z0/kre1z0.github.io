@@ -3,7 +3,7 @@ import cn from "classnames";
 
 import { BackendComponent } from "../../components/Backend/Backend";
 import { Bullets } from "../../components/Bullets/Bullets";
-import { News } from "../../components/Cards/News";
+import { NewsCard } from "../../components/NewsCard/NewsCard";
 import { MainAnimation } from "../../components/MainAnimation/MainAnimation";
 import { H2, GatsbyLink } from "../../components/Atoms/Atoms";
 import { MainLayoutConsumer } from "../../components/MainLayoutProvider/MainLayoutProvider";
@@ -64,17 +64,13 @@ export class About extends PureComponent {
                   />
                   <WillChangeNews className={cn(slideUp[status], fade[status], transition[status])}>
                     <BackendComponent sections={news} selectedSectionIndex={selectedSectionIndex} />
-                    <News
+                    <NewsCard
                       isSwipeEvent={isSwipeEvent}
                       onSectionChange={onSectionChange}
                       direction={sectionDirection}
                       {...section}
                     />
-                    <Bullets
-                      className={styles.newBullets}
-                      sections={news}
-                      selectedSectionIndex={selectedSectionIndex}
-                    />
+                    <Bullets sections={news} selectedSectionIndex={selectedSectionIndex} />
                   </WillChangeNews>
                 </NewsContainer>
               }

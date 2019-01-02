@@ -23,8 +23,8 @@ export class Bullets extends Component {
     return (
       <Responsive maxWidth={768}>
         <BulletsContainer className={className}>
-          {sections.map(({ id }, index) => (
-            <Bullet key={`${id}-bullet`} isActive={index === selectedSectionIndex} />
+          {sections.map((_, index) => (
+            <Bullet key={`${index}-bullet`} isActive={index === selectedSectionIndex} />
           ))}
         </BulletsContainer>
       </Responsive>
