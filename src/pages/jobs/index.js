@@ -27,6 +27,7 @@ export class Jobs extends PureComponent {
           transitionEnd,
           isSwipeEvent,
           sectionDirection,
+          setPreventDefaultTouchmoveEvent,
         }) => {
           const section = sections[selectedSectionIndex];
           const selectedId = section && section.id;
@@ -37,13 +38,18 @@ export class Jobs extends PureComponent {
               onLeftSideSectionRef={onLeftSideSectionRef}
               containerClassName={styles.jobsContainer}
               leftSide={
-                <AdditionalMenu
-                  selectedId={section && section.id}
-                  onSectionChange={onSectionChange}
-                  leftSide
-                  additionalMenu={currentRoute.additionalMenu}
-                  isOpen={true}
-                />
+                <div
+                  onTouchStart={() => setPreventDefaultTouchmoveEvent(false)}
+                  onTouchEnd={() => setPreventDefaultTouchmoveEvent(true)}
+                >
+                  <AdditionalMenu
+                    selectedId={section && section.id}
+                    onSectionChange={onSectionChange}
+                    leftSide
+                    additionalMenu={currentRoute.additionalMenu}
+                    isOpen={true}
+                  />
+                </div>
               }
               rightSide={
                 <CenterBlock ref={onScrollableRef}>

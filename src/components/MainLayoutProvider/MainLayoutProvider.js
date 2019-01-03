@@ -20,6 +20,7 @@ export class MainLayoutProviderComponent extends PureComponent {
     this.onResize = debounce(this.onResize, 400);
     this.checkBlockIsCenter = throttle(this.checkBlockIsCenter, 100);
     this.checkNavbarIntoContent = throttle(this.checkNavbarIntoContent, 100);
+    this.onOrientationChange = debounce(this.onOrientationChange, 100);
   }
 
   state = {
@@ -33,6 +34,7 @@ export class MainLayoutProviderComponent extends PureComponent {
     mobileMenuIsOpen: false,
     damping: 0.1,
     thresholdIsActive: false,
+    preventDefaultTouchmoveEvent: true,
 
     // sections
     isSwipeEvent: false,
@@ -53,11 +55,13 @@ export class MainLayoutProviderComponent extends PureComponent {
     this.setCurrentRoute();
     window.addEventListener("resize", this.onResize);
     window.addEventListener("keydown", this.onKeyDown);
+    window.addEventListener("orientationchange", this.onOrientationChange);
   }
 
   componentWillUnmount() {
     window.removeEventListener("resize", this.onResize);
     window.removeEventListener("keydown", this.onKeyDown);
+    window.removeEventListener("orientationchange", this.onOrientationChange);
   }
 
   componentDidUpdate(prevProps) {
@@ -69,6 +73,17 @@ export class MainLayoutProviderComponent extends PureComponent {
     }
   }
 
+  onOrientationChange = () => {
+    const { currentRoute, selectedSectionIndex } = this.state;
+    if (currentRoute && currentRoute.scrollable) {
+      if (this.getViewportWidth() <= 768) {
+        this.setState({ scrollTop: 0 });
+      } else {
+        this.scrollToBlock(selectedSectionIndex, true);
+      }
+    }
+  };
+
   onKeyDown = () => {
     const { damping } = this.state;
 
@@ -79,11 +94,15 @@ export class MainLayoutProviderComponent extends PureComponent {
     }
   };
 
+  getViewportWidth = () => Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+
+  getViewportHeight = () =>
+    Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+
   onResize = () => {
-    const viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     const mobileMenuWidth = +mobileMenu.replace("px", "");
 
-    if (viewportWidth > mobileMenuWidth) {
+    if (this.getViewportWidth() > mobileMenuWidth) {
       this.setState({ mobileMenuIsOpen: false });
     }
   };
@@ -157,11 +176,7 @@ export class MainLayoutProviderComponent extends PureComponent {
     const scrollable = currentRoute && currentRoute.scrollable;
 
     if (scrollable && (scrollTop === 0 || limitY === scrollTop) && !routeSwipeUpAndDown) {
-      const viewportHeight = Math.max(
-        document.documentElement.clientHeight,
-        window.innerHeight || 0,
-      );
-      const ratio = viewportHeight / 3;
+      const ratio = this.getViewportHeight() / 3;
 
       if (Math.abs(this.threshold) < ratio) {
         return;
@@ -202,10 +217,7 @@ export class MainLayoutProviderComponent extends PureComponent {
     const currentBlock = this.scrollable && this.scrollable.children[value];
 
     if (currentBlock) {
-      const viewportHeight = Math.max(
-        document.documentElement.clientHeight,
-        window.innerHeight || 0,
-      );
+      const viewportHeight = this.getViewportHeight();
 
       const { top, bottom } = currentBlock.getBoundingClientRect();
 
@@ -353,10 +365,8 @@ export class MainLayoutProviderComponent extends PureComponent {
     }));
 
   scrollToBlock = (index, onlyScrollIfNeeded = false) => {
-    const viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-
     if (this.scrollable && this.scrollable.children[index]) {
-      let offsetTop = viewportHeight / 2;
+      let offsetTop = this.getViewportHeight() / 2;
 
       if (this.lefsideSection) {
         offsetTop = this.lefsideSection.getBoundingClientRect().top;
@@ -403,7 +413,7 @@ export class MainLayoutProviderComponent extends PureComponent {
 
       const sectionDirection = selectedSectionIndex > nextValue ? -1 : 1;
 
-      if (currentRoute.scrollable && isClickEvent) {
+      if (currentRoute.scrollable && isClickEvent && this.getViewportWidth() >= 768) {
         this.scrollToBlock(nextValue);
       }
 
@@ -433,6 +443,9 @@ export class MainLayoutProviderComponent extends PureComponent {
     }
   };
 
+  setPreventDefaultTouchmoveEvent = preventDefaultTouchmoveEvent =>
+    this.setState({ preventDefaultTouchmoveEvent });
+
   render() {
     const {
       scrollTop,
@@ -443,6 +456,7 @@ export class MainLayoutProviderComponent extends PureComponent {
       currentRoute,
       mobileMenuIsOpen,
       damping,
+      preventDefaultTouchmoveEvent,
 
       // sections
       isSwipeEvent,
@@ -466,6 +480,7 @@ export class MainLayoutProviderComponent extends PureComponent {
           currentRoute,
           mobileMenuIsOpen,
           toggleMobileMenu: this.toggleMobileMenu,
+          setPreventDefaultTouchmoveEvent: this.setPreventDefaultTouchmoveEvent,
 
           // sections
           scrollToBlock: this.scrollToBlock,
@@ -478,7 +493,7 @@ export class MainLayoutProviderComponent extends PureComponent {
         }}
       >
         <Swiper
-          preventDefaultTouchmoveEvent={true}
+          preventDefaultTouchmoveEvent={preventDefaultTouchmoveEvent}
           onSwiping={this.onSwiping}
           onSwiped={this.onSwiped}
         >

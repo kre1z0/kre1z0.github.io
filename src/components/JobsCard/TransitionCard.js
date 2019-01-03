@@ -58,8 +58,8 @@ export class TransitionCard extends PureComponent {
         <Transition
           key={`${card.id}-jobs-card-${direction}`}
           timeout={{
-            enter: 1000,
-            exit: 2000,
+            enter: 100,
+            exit: 200,
           }}
         >
           {status => {

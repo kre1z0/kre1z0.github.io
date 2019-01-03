@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 import { TransitionCard } from "./TransitionCard";
@@ -30,7 +30,7 @@ const flattenItems = sections => {
   return array;
 };
 
-export class JobsCard extends PureComponent {
+export class JobsCard extends Component {
   static propTypes = {
     sections: PropTypes.arrayOf(PropTypes.object),
     selectedSectionIndex: PropTypes.number,
@@ -54,6 +54,19 @@ export class JobsCard extends PureComponent {
     selectedItemsIndex: 0,
     direction: 1,
   };
+
+  shouldComponentUpdate(
+    { selectedSectionIndex: nextSelectedSectionIndex },
+    { selectedItemsIndex: nextSelectedItemsIndex },
+  ) {
+    const { selectedItemsIndex } = this.state;
+    const { selectedSectionIndex } = this.props;
+
+    return (
+      selectedItemsIndex !== nextSelectedItemsIndex ||
+      selectedSectionIndex !== nextSelectedSectionIndex
+    );
+  }
 
   componentDidUpdate({ selectedSectionIndex: prevSelectedSectionIndex }, prevState) {
     const { selectedSectionIndex, sections, isSwipeEvent, sectionDirection } = this.props;
