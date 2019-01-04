@@ -238,10 +238,15 @@ export class MainLayoutProviderComponent extends Component {
   };
 
   onScroll = e => {
-    const { disableHover, scrollTop } = this.state;
+    const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    const { disableHover, scrollTop, currentRoute } = this.state;
     const { offset, limit } = e;
     const { y: offsetY } = offset;
     const { y: limitY } = limit;
+
+    if (vw <= 1000 && currentRoute && currentRoute.scrollable) {
+      return;
+    }
 
     clearTimeout(this.timer);
 
