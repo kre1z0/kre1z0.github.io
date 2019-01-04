@@ -20,7 +20,6 @@ export class MainLayoutProviderComponent extends Component {
     this.onResize = debounce(this.onResize, 400);
     this.checkBlockIsCenter = throttle(this.checkBlockIsCenter, 100);
     this.checkNavbarIntoContent = throttle(this.checkNavbarIntoContent, 100);
-    this.onOrientationChange = debounce(this.onOrientationChange, 200);
   }
 
   state = {
@@ -55,13 +54,11 @@ export class MainLayoutProviderComponent extends Component {
     this.setCurrentRoute();
     window.addEventListener("resize", this.onResize);
     window.addEventListener("keydown", this.onKeyDown);
-    window.addEventListener("orientationchange", this.onOrientationChange);
   }
 
   componentWillUnmount() {
     window.removeEventListener("resize", this.onResize);
     window.removeEventListener("keydown", this.onKeyDown);
-    window.removeEventListener("orientationchange", this.onOrientationChange);
   }
 
   componentDidUpdate(prevProps) {
@@ -72,17 +69,6 @@ export class MainLayoutProviderComponent extends Component {
       this.setCurrentRoute();
     }
   }
-
-  onOrientationChange = () => {
-    const { currentRoute, selectedSectionIndex } = this.state;
-    if (currentRoute && currentRoute.scrollable) {
-      if (this.getViewportWidth() <= 1000) {
-        this.setState({ scrollTop: 0 });
-      } else {
-        this.scrollToBlock(selectedSectionIndex, true);
-      }
-    }
-  };
 
   onKeyDown = () => {
     const { damping } = this.state;
@@ -104,6 +90,14 @@ export class MainLayoutProviderComponent extends Component {
 
     if (this.getViewportWidth() > mobileMenuWidth) {
       this.setState({ mobileMenuIsOpen: false });
+    }
+
+    if (currentRoute && currentRoute.scrollable) {
+      if (this.getViewportWidth() <= mobileMenuWidth) {
+        this.setState({ scrollTop: 0 });
+      } else {
+        this.scrollToBlock(selectedSectionIndex, true);
+      }
     }
   };
 
