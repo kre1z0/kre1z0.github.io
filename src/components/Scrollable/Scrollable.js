@@ -1,7 +1,14 @@
 import React, { PureComponent } from "react";
+import styled from "astroturf";
 import PropTypes from "prop-types";
 
 import { TeamMembers } from "../TeamMembers/TeamMembers";
+
+export const ScrollableContainer = styled("div")`
+  @media (max-width: 1000px) {
+    display: none;
+  }
+`;
 
 export class Scrollable extends PureComponent {
   static propTypes = {
@@ -24,7 +31,7 @@ export class Scrollable extends PureComponent {
     const { selectedId, onSectionChange, sections } = this.props;
 
     return (
-      <>
+      <ScrollableContainer>
         {sections.map(item => (
           <TeamMembers
             key={item.id}
@@ -34,7 +41,7 @@ export class Scrollable extends PureComponent {
             {...item}
           />
         ))}
-      </>
+      </ScrollableContainer>
     );
   }
 }
