@@ -167,9 +167,9 @@ export const getRouteById = id => routes.find(route => route.id === id);
 export const sectionsFromAdditionalMenu = additionalMenu => {
   const sliderIdArray = [];
   additionalMenu &&
-  additionalMenu.forEach(({ children, title }) =>
-    children.forEach(item => sliderIdArray.push({ ...item, parentTitle: title })),
-  );
+    additionalMenu.forEach(({ children, title }) =>
+      children.forEach(item => sliderIdArray.push({ ...item, parentTitle: title })),
+    );
 
   return sliderIdArray;
 };

@@ -20,6 +20,7 @@ import styles, {
   ContactsLeftSide,
   BtnGroup,
 } from "../../styles/contacts";
+import { getRouteByLocation } from "../../routes";
 
 export const ButtonGroup = ({ stope, onClickBus, onClickMetro }) => {
   return (
@@ -40,7 +41,8 @@ class Contacts extends PureComponent {
   };
 
   render() {
-    const { status } = this.props;
+    const { status, location } = this.props;
+    const { text } = getRouteByLocation(location);
     const { stope } = this.state;
 
     const btnGroupProps = {
@@ -58,7 +60,7 @@ class Contacts extends PureComponent {
         willChangeLeftSideClassName={styles.willChangeContactsLeftSideClassName}
         leftSide={
           <ContactsLeftSide>
-            <H2 as="h1">Контакты</H2>
+            <H2 as="h1">{text}</H2>
             <Link as="address" className={styles.address}>
               127051, Россия, <br /> г. Москва, ул. Трубная, д. 25 к. 1
             </Link>

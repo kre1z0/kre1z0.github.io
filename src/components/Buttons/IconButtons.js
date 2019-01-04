@@ -1,5 +1,6 @@
 import React from "react";
-import styled from "astroturf";
+import cn from "classnames";
+import styled, { css } from "astroturf";
 
 import { Button } from "./Buttons";
 
@@ -29,9 +30,15 @@ export const Btn = styled(Button)`
   transition: all 200ms ease;
 `;
 
+const styles = css`
+  .iconBtn {
+    background: none;
+  }
+`;
+
 export const IconBtn = ({ children, className, ...props }) => {
   return (
-    <Button className={className} {...props}>
+    <Button className={cn(styles.iconBtn, className)} {...props}>
       {children}
     </Button>
   );

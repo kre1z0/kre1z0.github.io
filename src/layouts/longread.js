@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import Helmet from "react-helmet";
 
-// import { CloseButton } from "../components/Buttons/CloseButton";
+import { CloseButton } from "../components/Buttons/CloseButton";
 import favicon from "../img/favicon.png";
-import { LongreadContainer, LongreadHeader } from "../styles/longread";
+import styles, { LongreadContainer, LongreadHeader } from "../styles/longread";
 
 class LongredLayout extends Component {
   render() {
@@ -15,7 +15,9 @@ class LongredLayout extends Component {
           title="Everpoint"
           link={[{ rel: "shortcut icon", type: "image/png", href: `${favicon}` }]}
         />
-        <LongreadHeader>{/*<CloseButton />*/}</LongreadHeader>
+        <LongreadHeader>
+          <CloseButton className={styles.longreadCloseBtn} />
+        </LongreadHeader>
         {children}
       </LongreadContainer>
     );

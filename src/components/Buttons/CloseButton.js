@@ -6,7 +6,6 @@ import { ReactComponent as Close } from "../../img/icons/close.svg";
 
 const styles = css`
   .svg {
-    fill: green;
   }
 `;
 

@@ -22,7 +22,7 @@ export class About extends PureComponent {
 
   render() {
     const { location } = this.props;
-    const { news } = getRouteByLocation(location);
+    const { news, text } = getRouteByLocation(location);
 
     const { status } = this.props;
     const { x, y } = this.state;
@@ -47,7 +47,7 @@ export class About extends PureComponent {
               backgroundClassName={styles.isAboutSlide}
               leftSide={
                 <>
-                  <H2 as="h1">СМИ о нас</H2>
+                  <H2 as="h1">{text}</H2>
                   <GatsbyLink to="/news">Все комментарии</GatsbyLink>
                 </>
               }
