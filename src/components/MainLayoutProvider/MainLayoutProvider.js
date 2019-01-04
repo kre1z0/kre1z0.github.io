@@ -20,7 +20,6 @@ export class MainLayoutProviderComponent extends Component {
     this.onResize = debounce(this.onResize, 200);
     this.checkBlockIsCenter = throttle(this.checkBlockIsCenter, 100);
     this.checkNavbarIntoContent = throttle(this.checkNavbarIntoContent, 100);
-    this.onOrientationChange = debounce(this.onOrientationChange, 200);
   }
 
   state = {
@@ -55,13 +54,11 @@ export class MainLayoutProviderComponent extends Component {
     this.setCurrentRoute();
     window.addEventListener("resize", this.onResize);
     window.addEventListener("keydown", this.onKeyDown);
-    window.addEventListener("orientationchange", this.onOrientationChange);
   }
 
   componentWillUnmount() {
     window.removeEventListener("resize", this.onResize);
     window.removeEventListener("keydown", this.onKeyDown);
-    window.removeEventListener("orientationchange", this.onOrientationChange);
   }
 
   componentDidUpdate(prevProps) {
@@ -83,26 +80,29 @@ export class MainLayoutProviderComponent extends Component {
     }
   };
 
-  onOrientationChange = () => {
-    const mobileMenuWidth = +mobileMenu.replace("px", "");
-    const { currentRoute, selectedSectionIndex } = this.state;
-
-    if (currentRoute && currentRoute.scrollable) {
-      const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-      if (vw <= mobileMenuWidth) {
-        this.setState({ scrollTop: 0 });
-      } else {
-        this.scrollToBlock(selectedSectionIndex, true);
-      }
-    }
-  };
-
   onResize = () => {
+    const { currentRoute, selectedSectionIndex } = this.state;
     const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     const mobileMenuWidth = +mobileMenu.replace("px", "");
 
     if (vw > mobileMenuWidth) {
       this.setState({ mobileMenuIsOpen: false });
+    }
+
+    if (currentRoute && currentRoute.scrollable) {
+      const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+      if (vw <= mobileMenuWidth) {
+        this.setState(
+          {
+            scrollTop: 0,
+          },
+          () => {
+            this.scrollbar.scrollTo(0, 0, 0);
+          },
+        );
+      } else {
+        this.scrollToBlock(selectedSectionIndex, true);
+      }
     }
   };
 
