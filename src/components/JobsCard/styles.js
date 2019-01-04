@@ -17,6 +17,9 @@ export const JobsCardSwiper = styled(Swiper)`
 
 const styles = css`
   .jobsCardBullets {
+    max-width: 20rem;
+    display: flex;
+    flex-wrap: wrap;
     @media only screen and (max-device-height: 360px) {
       display: none;
     }

@@ -66,7 +66,7 @@ export const PhotoContainer = styled("div")`
     width: auto;
     height: 100%;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     will-change: opacity, transform;
     border-radius: 0.1428rem;
     box-shadow: 0 0.8571rem 0.8571rem 0 rgba(10, 18, 33, 0.1);

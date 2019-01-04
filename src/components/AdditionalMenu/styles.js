@@ -33,7 +33,7 @@ export const Menu = styled("menu")`
         @media (max-width: 1024px) {
           font-size: 1.1428rem;
         }
-        @media (max-width: 768px) {
+        @media (max-width: 1000px) {
           font-size: 1rem;
         }
         @media (max-width: 576px) {
@@ -46,7 +46,7 @@ export const Menu = styled("menu")`
           font-size: 1rem;
         }
       }
-      @media (max-width: 768px) {
+      @media (max-width: 1000px) {
         margin-bottom: 0.6rem;
       }
       &:last-child {

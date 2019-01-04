@@ -24,7 +24,7 @@ export class BackendComponent extends Component {
 
     return (
       <div>
-        <Responsive maxWidth={768}>
+        <Responsive maxWidth={1000}>
           <BackendContainer>
             <div
               style={{

@@ -5,7 +5,7 @@ import { GatsbyLink } from "../../components/Atoms/Atoms";
 export const HowWeAreWorkingContainer = styled("div")`
   display: flex;
   flex-direction: column;
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     will-change: opacity, transform;
     padding: 1.7142rem;
     width: 100%;
@@ -22,7 +22,7 @@ export const HowWeAreWorkingContainer = styled("div")`
 export const Title = styled("h4")`
   font-size: 1.2857rem;
   font-weight: 600;
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     font-size: 1.1428rem;
     &:nth-child(4) {
       display: none;
@@ -36,7 +36,7 @@ export const Title = styled("h4")`
 export const Paragraph = styled("p")`
   font-size: 1.1428rem;
   line-height: normal;
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     font-size: 0.7142rem;
     margin-bottom: 0.8rem;
     ~ br {
@@ -81,7 +81,7 @@ export const Link = styled(GatsbyLink)`
   align-self: flex-end;
   font-size: 1.1428rem;
   color: #90c53d;
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     align-self: flex-start;
     font-size: 0.7142rem;
   }

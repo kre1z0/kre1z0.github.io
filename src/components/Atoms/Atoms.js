@@ -2,7 +2,7 @@ import styled from "astroturf";
 import { Link as GLink } from "gatsby";
 
 export const large = "1024px";
-const tablet = "768px";
+const tablet = "1000px";
 const middle = "576px";
 const mobile = "320px";
 

@@ -58,7 +58,7 @@ class Contacts extends PureComponent {
             <Link as="address" className={styles.address}>
               127051, Россия, <br /> г. Москва, ул. Трубная, д. 25 к. 1
             </Link>
-            <Responsive maxWidth={768}>
+            <Responsive maxWidth={1000}>
               <AddressWindow />
             </Responsive>
             <Link href="tel:+74955060774">+7 (495) 506-07-74</Link>

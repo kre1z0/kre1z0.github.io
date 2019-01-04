@@ -64,7 +64,7 @@ const MultiScreenshotsContainer = styled("div")`
       }
     }
   }
-  @media (max-height: 600px), (max-width: 768px) {
+  @media (max-height: 600px), (max-width: 1000px) {
     top: 8%;
   }
   @media screen and (min-width: 320px) and (max-width: 840px) and (orientation: landscape) {

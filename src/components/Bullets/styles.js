@@ -7,7 +7,7 @@ export const BulletsContainer = styled("div")`
   transform: translate(-50%, calc(100% + 1rem));
   position: absolute;
   bottom: 0;
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     padding: 0 1rem;
     display: flex;
     justify-content: center;

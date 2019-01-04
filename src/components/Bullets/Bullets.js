@@ -9,6 +9,7 @@ export class Bullets extends Component {
     className: PropTypes.string,
     selectedSectionIndex: PropTypes.number,
     sections: PropTypes.arrayOf(PropTypes.object),
+    maxWidth: PropTypes.number,
   };
 
   shouldComponentUpdate({ selectedSectionIndex: nextSelectedSectionIndex }, nextState) {
@@ -21,7 +22,7 @@ export class Bullets extends Component {
     const { sections, selectedSectionIndex, className } = this.props;
 
     return (
-      <Responsive maxWidth={768}>
+      <Responsive maxWidth={1000}>
         <BulletsContainer className={className}>
           {sections.map((_, index) => (
             <Bullet key={`${index}-bullet`} isActive={index === selectedSectionIndex} />

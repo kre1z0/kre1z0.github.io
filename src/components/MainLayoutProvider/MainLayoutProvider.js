@@ -76,7 +76,7 @@ export class MainLayoutProviderComponent extends Component {
   onOrientationChange = () => {
     const { currentRoute, selectedSectionIndex } = this.state;
     if (currentRoute && currentRoute.scrollable) {
-      if (this.getViewportWidth() <= 768) {
+      if (this.getViewportWidth() <= 1000) {
         this.setState({ scrollTop: 0 });
       } else {
         this.scrollToBlock(selectedSectionIndex, true);
@@ -243,7 +243,7 @@ export class MainLayoutProviderComponent extends Component {
     const { y: offsetY } = offset;
     const { y: limitY } = limit;
 
-    if (this.getViewportWidth() <= 768 && currentRoute && currentRoute.scrollable) {
+    if (this.getViewportWidth() <= 1000 && currentRoute && currentRoute.scrollable) {
       return;
     }
 
@@ -417,7 +417,7 @@ export class MainLayoutProviderComponent extends Component {
 
       const sectionDirection = selectedSectionIndex > nextValue ? -1 : 1;
 
-      if (currentRoute.scrollable && isClickEvent && this.getViewportWidth() >= 768) {
+      if (currentRoute.scrollable && isClickEvent && this.getViewportWidth() >= 1000) {
         this.scrollToBlock(nextValue);
       }
 

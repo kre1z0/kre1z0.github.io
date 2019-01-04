@@ -19,9 +19,9 @@ const styles = css`
         max-width: 32.1428rem;
         max-height: 33.7857rem;
       }
-      @media all and (max-height: 600px), (max-width: 768px) {
+      @media all and (max-height: 600px), (max-width: 1000px) {
         max-width: 26.2857rem;
-        max-height: 33.7857rem;
+        max-height: 30.4857rem;
       }
       @media (max-width: 767px) {
         max-width: 48vw;

@@ -4,7 +4,7 @@ export const NewsContainer = styled("div")`
   width: 28.5714rem;
   height: 26rem;
   position: relative;
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     width: 22.8571rem;
     height: 24.3571rem;
   }

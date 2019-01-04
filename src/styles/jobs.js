@@ -11,10 +11,7 @@ const styles = css`
           white-space: nowrap;
         }
       }
-      @media (max-width: 910px) {
-        padding-right: 0;
-      }
-      @media (max-width: 768px) {
+      @media (max-width: 1000px) {
         width: 16rem;
         padding-right: 0;
         h2 {
@@ -44,7 +41,7 @@ const styles = css`
       @media (max-width: 1024px) {
         height: 22.8571rem;
       }
-      @media (max-width: 768px) {
+      @media (max-width: 1000px) {
         justify-content: center;
         flex-grow: 1;
         display: flex;

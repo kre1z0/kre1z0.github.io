@@ -75,7 +75,7 @@ export class PortfolioSlide extends PureComponent {
             text={text}
             description={description}
           />
-          <Responsive minWidth={769}>
+          <Responsive minWidth={1001}>
             <ControlBlock
               onMouseOver={e => e.stopPropagation()}
               onMouseOut={e => e.stopPropagation()}

@@ -15,7 +15,7 @@ export const TelegramButton = styled(Button)`
   @media (max-width: 1024px) {
     right: 3.5714rem;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     background-size: 1.25rem 1.1rem;
     width: 2.5714rem;
     height: 2.5714rem;
