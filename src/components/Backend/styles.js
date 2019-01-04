@@ -6,6 +6,9 @@ export const BackendContainer = styled("div")`
   position: absolute;
   width: 100%;
   height: 100%;
+  @media (min-width: 1001px) {
+    display: none;
+  }
   > div {
     will-change: background-color;
     transition: background-color 200ms ease, box-shadow 200ms ease;

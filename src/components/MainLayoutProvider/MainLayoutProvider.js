@@ -20,7 +20,7 @@ export class MainLayoutProviderComponent extends Component {
     this.onResize = debounce(this.onResize, 400);
     this.checkBlockIsCenter = throttle(this.checkBlockIsCenter, 100);
     this.checkNavbarIntoContent = throttle(this.checkNavbarIntoContent, 100);
-    this.onOrientationChange = debounce(this.onOrientationChange, 100);
+    this.onOrientationChange = debounce(this.onOrientationChange, 200);
   }
 
   state = {
