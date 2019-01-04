@@ -11,7 +11,7 @@ import { Background } from "../Background/Background";
 import { fade, scaleIn, scaleOut, slideUp, transition } from "../Transition/animation";
 import { Content } from "../Main/Content";
 import { LeftSide } from "../Main/LeftSide";
-import { RightSide } from "../Main/RightSide";
+import { RightSide } from "./RightSide";
 import { FullViewportContainer } from "../../styles/main";
 import { common } from "../../styles/common";
 
@@ -63,7 +63,7 @@ class MainAnimationBase extends PureComponent {
 
     return (
       <MainLayoutConsumer>
-        {({ scrollTop, direction, onTransitionEnd, transitionEnd }) => {
+        {({ scrollTop, direction, onTransitionEnd, transitionEnd, selectedSectionIndex }) => {
           const transform = `translateY(${scrollTop}px)`;
 
           // about page slider
@@ -128,18 +128,16 @@ class MainAnimationBase extends PureComponent {
                 </WillChange>
 
                 {rightSide && (
-                  <WillChange className={willChangeRightSideClassName}>
-                    <RightSide
-                      className={cn(
-                        rightSideClassName,
-                        withRightSideAnimation && slideUp[status],
-                        withRightSideAnimation && fade[status],
-                        withRightSideAnimation && transition[status],
-                      )}
-                    >
-                      {rightSide}
-                    </RightSide>
-                  </WillChange>
+                  <RightSide
+                    transitionEnd={transitionEnd}
+                    selectedSectionIndex={selectedSectionIndex}
+                    status={status}
+                    willChangeRightSideClassName={willChangeRightSideClassName}
+                    withRightSideAnimation={withRightSideAnimation}
+                    rightSideClassName={rightSideClassName}
+                  >
+                    {rightSide}
+                  </RightSide>
                 )}
                 {children}
               </Content>

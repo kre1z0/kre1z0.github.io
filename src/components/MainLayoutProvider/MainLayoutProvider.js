@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React, { Component } from "react";
 import { Swiper } from "../../components/Swiper/Swiper";
 import { Location } from "@reach/router";
 import debounce from "lodash/debounce";
@@ -13,7 +13,7 @@ import "./plugins/determineScrollingPlugin";
 
 const ScrollContext = React.createContext();
 
-export class MainLayoutProviderComponent extends PureComponent {
+export class MainLayoutProviderComponent extends Component {
   constructor(props) {
     super(props);
     this.onDebouncedNavigateTo = debounce(this.onNavigateTo, 400);

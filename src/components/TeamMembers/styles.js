@@ -36,6 +36,16 @@ export const TeamMembersContainer = styled("div")`
 export const NoVacancyDescription = styled("p")`
   font-size: 0.8571rem;
   font-weight: 500;
+  @media only screen and (max-device-height: 440px) {
+    br {
+      display: none;
+    }
+  }
+  @media only screen and (max-device-height: 360px) {
+    br {
+      display: block;
+    }
+  }
 `;
 
 export const PhotoContainer = styled("div")`
