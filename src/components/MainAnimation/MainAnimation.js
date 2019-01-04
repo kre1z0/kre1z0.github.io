@@ -3,19 +3,15 @@ import PropTypes from "prop-types";
 import cn from "classnames";
 
 import withRouter from "../../hoc/withRouter";
-import { getBase64BackgroundByIndex } from "../Background/getBackground";
-import styles from "../Background/styles";
+import { Background } from "./Background";
 import { MainLayoutConsumer } from "../MainLayoutProvider/MainLayoutProvider";
 import { WillChange } from "./WillChange";
-import { Background } from "../Background/Background";
-import { fade, scaleIn, scaleOut, slideUp, transition } from "../Transition/animation";
+import { fade, slideUp, transition } from "../Transition/animation";
 import { Content } from "../Main/Content";
 import { LeftSide } from "../Main/LeftSide";
 import { RightSide } from "./RightSide";
 import { FullViewportContainer } from "../../styles/main";
 import { common } from "../../styles/common";
-
-import { Resizer } from "../Background/Resizer";
 
 class MainAnimationBase extends PureComponent {
   static propTypes = {
@@ -48,33 +44,20 @@ class MainAnimationBase extends PureComponent {
       rightSide,
       rightSideClassName,
       children,
-      withSvg,
       base64styles,
       containerClassName,
       willChangeLeftSideClassName,
       willChangeRightSideClassName,
-      backgroundClassName,
       withRightSideAnimation,
       onLeftSideSectionRef,
       x,
       y,
-      ...props
     } = this.props;
 
     return (
       <MainLayoutConsumer>
         {({ scrollTop, direction, onTransitionEnd, transitionEnd, selectedSectionIndex }) => {
           const transform = `translateY(${scrollTop}px)`;
-
-          // about page slider
-          const transformToPoints = `translate(${x}px, ${y}px)`;
-          const aboutBgStyle = transitionEnd
-            ? {
-                transform: transformToPoints,
-                transition: "transform 500ms cubic-bezier(0.2, 1, 0.6, 1) 0s",
-              }
-            : {};
-          const withChangeBase64ToSvg = withSvg ? !transitionEnd : true;
 
           return (
             <FullViewportContainer>
@@ -86,27 +69,12 @@ class MainAnimationBase extends PureComponent {
                   overflow: transitionEnd ? "hidden" : "visible",
                 }}
               >
-                {withChangeBase64ToSvg && (
-                  <Background
-                    style={{
-                      ...aboutBgStyle,
-                    }}
-                    onTransitionEnd={onTransitionEnd}
-                    className={cn(
-                      direction > 0 ? scaleIn[status] : scaleOut[status],
-                      fade[status],
-                      transition[status],
-                      styles.default,
-                      base64styles || getBase64BackgroundByIndex({ ...props }),
-                      backgroundClassName,
-                    )}
-                  />
-                )}
-                {withSvg && (
-                  <Background>
-                    <Resizer transitionEnd={transitionEnd} {...props} />
-                  </Background>
-                )}
+                <Background
+                  {...this.props}
+                  transitionEnd={transitionEnd}
+                  onTransitionEnd={onTransitionEnd}
+                  direction={direction}
+                />
               </WillChange>
               <Content className={cn(containerClassName, common.container)}>
                 <WillChange
