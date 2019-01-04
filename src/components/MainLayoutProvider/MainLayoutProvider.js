@@ -86,6 +86,7 @@ export class MainLayoutProviderComponent extends Component {
     Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 
   onResize = () => {
+    const { currentRoute, selectedSectionIndex } = this.state;
     const mobileMenuWidth = +mobileMenu.replace("px", "");
 
     if (this.getViewportWidth() > mobileMenuWidth) {
