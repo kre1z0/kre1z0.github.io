@@ -81,6 +81,13 @@ export const PhotoContainer = styled("div")`
       @media (max-height: 440px) {
         height: 18rem;
       }
+      @media (max-height: 360px) {
+        height: calc(100vh - 4.5rem);
+      }
     }
+  }
+  @media (max-height: 360px) {
+    max-width: none;
+    background: #fff;
   }
 `;

@@ -20,6 +20,7 @@ export class MainLayoutProviderComponent extends Component {
     this.onResize = debounce(this.onResize, 200);
     this.checkBlockIsCenter = throttle(this.checkBlockIsCenter, 100);
     this.checkNavbarIntoContent = throttle(this.checkNavbarIntoContent, 100);
+    this.onOrientationChange = debounce(this.onOrientationChange, 200);
   }
 
   state = {
@@ -54,11 +55,13 @@ export class MainLayoutProviderComponent extends Component {
     this.setCurrentRoute();
     window.addEventListener("resize", this.onResize);
     window.addEventListener("keydown", this.onKeyDown);
+    window.addEventListener("orientationchange", this.onOrientationChange);
   }
 
   componentWillUnmount() {
     window.removeEventListener("resize", this.onResize);
     window.removeEventListener("keydown", this.onKeyDown);
+    window.removeEventListener("orientationchange", this.onOrientationChange);
   }
 
   componentDidUpdate(prevProps) {
@@ -85,20 +88,24 @@ export class MainLayoutProviderComponent extends Component {
   getViewportHeight = () =>
     Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 
-  onResize = () => {
-    const { currentRoute, selectedSectionIndex } = this.state;
+  onOrientationChange = () => {
     const mobileMenuWidth = +mobileMenu.replace("px", "");
-
-    if (this.getViewportWidth() > mobileMenuWidth) {
-      this.setState({ mobileMenuIsOpen: false });
-    }
+    const { currentRoute, selectedSectionIndex } = this.state;
 
     if (currentRoute && currentRoute.scrollable) {
       if (this.getViewportWidth() <= mobileMenuWidth) {
         this.setState({ scrollTop: 0 });
       } else {
-        this.scrollToBlock(selectedSectionIndex, false);
+        this.scrollToBlock(selectedSectionIndex, true);
       }
+    }
+  };
+
+  onResize = () => {
+    const mobileMenuWidth = +mobileMenu.replace("px", "");
+
+    if (this.getViewportWidth() > mobileMenuWidth) {
+      this.setState({ mobileMenuIsOpen: false });
     }
   };
 
