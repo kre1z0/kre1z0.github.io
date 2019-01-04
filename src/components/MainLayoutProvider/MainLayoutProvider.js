@@ -83,17 +83,13 @@ export class MainLayoutProviderComponent extends Component {
     }
   };
 
-  getViewportWidth = () => Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-
-  getViewportHeight = () =>
-    Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-
   onOrientationChange = () => {
     const mobileMenuWidth = +mobileMenu.replace("px", "");
     const { currentRoute, selectedSectionIndex } = this.state;
 
     if (currentRoute && currentRoute.scrollable) {
-      if (this.getViewportWidth() <= mobileMenuWidth) {
+      const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+      if (vw <= mobileMenuWidth) {
         this.setState({ scrollTop: 0 });
       } else {
         this.scrollToBlock(selectedSectionIndex, true);
@@ -102,9 +98,10 @@ export class MainLayoutProviderComponent extends Component {
   };
 
   onResize = () => {
+    const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     const mobileMenuWidth = +mobileMenu.replace("px", "");
 
-    if (this.getViewportWidth() > mobileMenuWidth) {
+    if (vw > mobileMenuWidth) {
       this.setState({ mobileMenuIsOpen: false });
     }
   };
@@ -171,6 +168,7 @@ export class MainLayoutProviderComponent extends Component {
   };
 
   onNavigateTo = (direction, routeSwipeUpAndDown = false) => {
+    const vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
     const { navigate, location } = this.props;
     const { pathname } = location;
     const { currentRoute, scrollTop, limitY, selectedSectionIndex, sections } = this.state;
@@ -178,7 +176,7 @@ export class MainLayoutProviderComponent extends Component {
     const scrollable = currentRoute && currentRoute.scrollable;
 
     if (scrollable && (scrollTop === 0 || limitY === scrollTop) && !routeSwipeUpAndDown) {
-      const ratio = this.getViewportHeight() / 3;
+      const ratio = vh / 3;
 
       if (Math.abs(this.threshold) < ratio) {
         return;
@@ -219,19 +217,19 @@ export class MainLayoutProviderComponent extends Component {
     const currentBlock = this.scrollable && this.scrollable.children[value];
 
     if (currentBlock) {
-      const viewportHeight = this.getViewportHeight();
+      const vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 
       const { top, bottom } = currentBlock.getBoundingClientRect();
 
       if (direction > 0) {
-        const blockIsCenter = top < viewportHeight / divider;
+        const blockIsCenter = top < vh / divider;
         if (blockIsCenter) {
           this.onSectionChange({ value: 1 });
         }
       }
 
       if (direction < 0) {
-        const blockIsCenter = bottom > viewportHeight / divider;
+        const blockIsCenter = bottom > vh / divider;
         if (blockIsCenter) {
           this.onSectionChange({ value: -1 });
         }
@@ -240,12 +238,13 @@ export class MainLayoutProviderComponent extends Component {
   };
 
   onScroll = e => {
+    const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     const { disableHover, scrollTop, currentRoute } = this.state;
     const { offset, limit } = e;
     const { y: offsetY } = offset;
     const { y: limitY } = limit;
 
-    if (this.getViewportWidth() <= 1000 && currentRoute && currentRoute.scrollable) {
+    if (vw <= 1000 && currentRoute && currentRoute.scrollable) {
       return;
     }
 
@@ -372,7 +371,8 @@ export class MainLayoutProviderComponent extends Component {
 
   scrollToBlock = (index, onlyScrollIfNeeded = false) => {
     if (this.scrollable && this.scrollable.children[index]) {
-      let offsetTop = this.getViewportHeight() / 2;
+      const vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+      let offsetTop = vh / 2;
 
       if (this.lefsideSection) {
         offsetTop = this.lefsideSection.getBoundingClientRect().top;
@@ -393,6 +393,7 @@ export class MainLayoutProviderComponent extends Component {
   };
 
   onSectionChange = ({ value, id, pageId, isSwipeEvent = false, isClickEvent = false }) => {
+    const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     const { navigate } = this.props;
     const { selectedSectionIndex, sections, currentRoute } = this.state;
 
@@ -419,7 +420,7 @@ export class MainLayoutProviderComponent extends Component {
 
       const sectionDirection = selectedSectionIndex > nextValue ? -1 : 1;
 
-      if (currentRoute.scrollable && isClickEvent && this.getViewportWidth() >= 1000) {
+      if (currentRoute.scrollable && isClickEvent && vw >= 1000) {
         this.scrollToBlock(nextValue);
       }
 
