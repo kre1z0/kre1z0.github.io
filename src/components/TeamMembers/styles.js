@@ -16,6 +16,9 @@ export const TeamMembersContainer = styled("div")`
   @media (max-width: 1024px) {
     width: calc(20rem * 2 + 2.1428rem);
   }
+  @media (max-width: 1000px) {
+    display: none;
+  }
   &.isVisible {
     pointer-events: auto;
     opacity: 1;
