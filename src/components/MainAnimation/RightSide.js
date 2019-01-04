@@ -14,6 +14,9 @@ export class RightSide extends Component {
     withRightSideAnimation: PropTypes.bool,
     selectedSectionIndex: PropTypes.number,
     transitionEnd: PropTypes.bool,
+    x: PropTypes.number,
+    y: PropTypes.number,
+    base64styles: PropTypes.string,
   };
 
   shouldComponentUpdate(
@@ -21,15 +24,21 @@ export class RightSide extends Component {
       status: nextStatus,
       selectedSectionIndex: nextSelectedSectionIndex,
       transitionEnd: nextTransitionEnd,
+      x: nextX,
+      y: nextY,
+      base64styles: nextBase64styles,
     },
     nextState,
   ) {
-    const { status, selectedSectionIndex, transitionEnd } = this.props;
+    const { status, selectedSectionIndex, transitionEnd, x, y, base64styles } = this.props;
 
     return (
       status !== nextStatus ||
       selectedSectionIndex !== nextSelectedSectionIndex ||
-      transitionEnd !== nextTransitionEnd
+      transitionEnd !== nextTransitionEnd ||
+      x !== nextX ||
+      y !== nextY ||
+      base64styles !== nextBase64styles
     );
   }
 

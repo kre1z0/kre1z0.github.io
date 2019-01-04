@@ -129,6 +129,9 @@ class MainAnimationBase extends PureComponent {
 
                 {rightSide && (
                   <RightSide
+                    base64styles={base64styles}
+                    x={x}
+                    y={y}
                     transitionEnd={transitionEnd}
                     selectedSectionIndex={selectedSectionIndex}
                     status={status}
