@@ -9,6 +9,9 @@ export const JobsCardContainer = styled("section")`
   width: 100%;
   height: 100%;
   z-index: 2;
+  @media (min-width: 1001px) {
+    display: none;
+  }
 `;
 
 export const JobsCardSwiper = styled(Swiper)`
