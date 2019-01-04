@@ -8,6 +8,7 @@ export const JobsCardContainer = styled("section")`
   top: 0;
   width: 100%;
   height: 100%;
+  z-index: 2;
 `;
 
 export const JobsCardSwiper = styled(Swiper)`

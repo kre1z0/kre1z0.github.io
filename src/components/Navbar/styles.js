@@ -1,7 +1,7 @@
 import styled, { css } from "astroturf";
 import { Link as GatsbyLink } from "gatsby";
 
-export const mobileMenu = "1001px";
+export const mobileMenu = "1000px";
 
 const mobileMenuMiddle = "576px";
 

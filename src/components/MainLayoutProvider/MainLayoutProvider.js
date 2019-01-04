@@ -97,7 +97,7 @@ export class MainLayoutProviderComponent extends Component {
       if (this.getViewportWidth() <= mobileMenuWidth) {
         this.setState({ scrollTop: 0 });
       } else {
-        this.scrollToBlock(selectedSectionIndex, true);
+        this.scrollToBlock(selectedSectionIndex, false);
       }
     }
   };

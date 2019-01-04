@@ -1,6 +1,5 @@
 import styled from "astroturf";
-
-import { GatsbyLink } from "../../components/Atoms/Atoms";
+import { Link as GLink } from "gatsby";
 
 export const HowWeAreWorkingContainer = styled("div")`
   display: flex;
@@ -77,9 +76,11 @@ export const Badge = styled("div")`
   margin-bottom: 0.5rem;
 `;
 
-export const HowWeAreWorkingLink = styled(GatsbyLink)`
+export const HowWeAreWorkingLink = styled(GLink)`
+  text-decoration: none;
   align-self: flex-end;
   font-size: 1.1428rem;
+  font-weight: 500;
   color: #90c53d;
   @media (max-width: 1000px) {
     align-self: flex-start;
