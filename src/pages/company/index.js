@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class Company extends Component {
   render() {
-    return <div>Company ggwp 4444</div>;
+    return <div>Company</div>;
   }
 }
 

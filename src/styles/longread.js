@@ -3,7 +3,6 @@ import styled, { css } from "astroturf";
 export const LongreadContainer = styled("div")`
   width: 100%;
   margin: 0 auto;
-  background-color: green;
 `;
 
 export const LongreadHeader = styled("header")``;
