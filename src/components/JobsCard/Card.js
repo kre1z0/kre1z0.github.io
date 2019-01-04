@@ -1,5 +1,6 @@
 import React from "react";
 
+import { NoVacancyCard } from "../../components/TeamMembers/NoVacancyCard";
 import { getVacancyAvatarByType } from "../../components/TeamMembers/getVacancyAvatarByType";
 import { HowWeAreWorking } from "../../components/HowWeAreWorking/HowWeAreWorking";
 import { TeamMemberCard } from "../../components/TeamMemberCard/TeamMemberCard";
@@ -7,8 +8,12 @@ import { PhotoContainer } from "../../components/TeamMembers/styles";
 import { GoNextLink } from "../GoNextLink/GoNextLink";
 
 export const Card = props => {
-  const { id, card, className } = props;
+  const { id, card, className, items } = props;
   const { photo, type, avatar } = card;
+
+  if (id === "vacancy" && items.length === 0) {
+    return <NoVacancyCard />;
+  }
 
   switch (id) {
     case "employees":
@@ -18,7 +23,6 @@ export const Card = props => {
           {...card}
           className={className}
           control={id === "vacancy" ? <GoNextLink>Описание вакансии</GoNextLink> : null}
-          height={297}
           avatar={type ? getVacancyAvatarByType(type) : avatar}
         />
       );

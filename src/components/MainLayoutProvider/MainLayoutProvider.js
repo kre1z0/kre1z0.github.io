@@ -238,10 +238,14 @@ export class MainLayoutProviderComponent extends PureComponent {
   };
 
   onScroll = e => {
-    const { disableHover, scrollTop } = this.state;
+    const { disableHover, scrollTop, currentRoute } = this.state;
     const { offset, limit } = e;
     const { y: offsetY } = offset;
     const { y: limitY } = limit;
+
+    if (this.getViewportWidth() <= 768 && currentRoute && currentRoute.scrollable) {
+      return;
+    }
 
     clearTimeout(this.timer);
 

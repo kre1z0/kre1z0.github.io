@@ -10,7 +10,7 @@ const flattenItems = sections => {
   const array = [];
   sections &&
     sections.forEach(({ items, id }) => {
-      if (id === "process") {
+      if (id === "process" || items.length === 0) {
         array.push({
           parentId: id,
           id: id,
@@ -54,6 +54,19 @@ export class JobsCard extends Component {
     selectedItemsIndex: 0,
     direction: 1,
   };
+
+  componentDidMount() {
+    const { items } = this.state;
+    const { sections, selectedSectionIndex } = this.props;
+    const section = sections[selectedSectionIndex];
+
+    if (section) {
+      const index = items.findIndex(({ parentId }) => parentId === section.id);
+      this.setState({
+        selectedItemsIndex: index,
+      });
+    }
+  }
 
   shouldComponentUpdate(
     { selectedSectionIndex: nextSelectedSectionIndex },

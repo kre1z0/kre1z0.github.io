@@ -48,7 +48,28 @@ const styles = css`
         }
       }
       @media only screen and (max-device-width: 480px) {
-        height: 24rem;
+        width: 100%;
+        height: auto;
+        margin-bottom: 3.4rem;
+        > div {
+          width: 19.4285rem;
+          height: 18rem;
+        }
+      }
+      @media only screen and (max-device-height: 440px) {
+        width: 100%;
+        height: auto;
+        margin-bottom: 3.4rem;
+        > div {
+          width: 19.4285rem;
+          height: 18rem;
+        }
+      }
+      @media only screen and (max-device-height: 360px) {
+        margin-bottom: 0;
+        > div {
+          height: calc(100vh - 4rem);
+        }
       }
     }
     @media only screen and (max-device-width: 480px) {
@@ -84,6 +105,27 @@ const styles = css`
       }
       > section:last-child {
         flex-grow: 0;
+      }
+    }
+    @media only screen and (max-device-height: 360px) {
+      margin: 2rem auto 0 auto;
+      width: 100%;
+      height: calc(100% - 2rem);
+      overflow: hidden;
+      > section:first-child {
+        menu {
+          h2 {
+            margin-bottom: 1rem;
+          }
+          ul {
+            &:first-child {
+              margin-bottom: 1.4571rem;
+            }
+            li {
+              margin-bottom: 0.4rem;
+            }
+          }
+        }
       }
     }
   }

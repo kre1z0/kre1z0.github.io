@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
+import { NoVacancyCard } from "./NoVacancyCard";
 import noVacancy from "../../img/vacancy/no-vacancy.svg";
 import { GoNextLink } from "../../components/GoNextLink/GoNextLink";
 import { TeamMemberCard } from "../../components/TeamMemberCard/TeamMemberCard";
 import { getVacancyAvatarByType } from "./getVacancyAvatarByType";
-import { TeamMembersContainer, NoVacancyDescription, PhotoContainer } from "./styles";
+import { TeamMembersContainer, PhotoContainer } from "./styles";
 import { HowWeAreWorking } from "../HowWeAreWorking/HowWeAreWorking";
 
 function getColumns({ items, id, onSectionChange }) {
@@ -103,20 +104,7 @@ export class TeamMembers extends Component {
         style={{ height: containerHeight + "px" }}
       >
         {noVacancies ? (
-          <TeamMemberCard
-            height={cardHeight * 1.1718}
-            id="noVacancies"
-            avatar={noVacancy}
-            name="В настоящее время вакансий нет"
-            control={
-              <NoVacancyDescription>
-                Но если вы отличный специалист, напишите нам в{" "}
-                <GoNextLink withArrow={false}>чат</GoNextLink>.<br />
-                <br />
-                Возможно, мы еще не знаем, что вы нам нужны!
-              </NoVacancyDescription>
-            }
-          />
+          <NoVacancyCard height={cardHeight * 1.1718} />
         ) : (
           data.map((item, index) => {
             if (isPhoto) {

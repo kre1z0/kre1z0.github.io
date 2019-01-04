@@ -65,6 +65,12 @@ export const PhotoContainer = styled("div")`
     }
     > img {
       height: 21.2142rem;
+      @media only screen and (max-device-width: 480px) {
+        height: 18rem;
+      }
+      @media only screen and (max-device-height: 440px) {
+        height: 18rem;
+      }
     }
   }
 `;
