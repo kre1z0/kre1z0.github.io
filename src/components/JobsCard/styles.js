@@ -21,7 +21,7 @@ const styles = css`
     max-width: 20rem;
     display: flex;
     flex-wrap: wrap;
-    @media only screen and (max-device-height: 360px) {
+    @media (max-height: 360px) {
       display: none;
     }
   }

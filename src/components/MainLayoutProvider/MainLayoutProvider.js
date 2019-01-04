@@ -17,7 +17,7 @@ export class MainLayoutProviderComponent extends Component {
   constructor(props) {
     super(props);
     this.onDebouncedNavigateTo = debounce(this.onNavigateTo, 400);
-    this.onResize = debounce(this.onResize, 400);
+    this.onResize = debounce(this.onResize, 200);
     this.checkBlockIsCenter = throttle(this.checkBlockIsCenter, 100);
     this.checkNavbarIntoContent = throttle(this.checkNavbarIntoContent, 100);
   }

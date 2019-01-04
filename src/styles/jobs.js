@@ -22,7 +22,7 @@ const styles = css`
           margin-right: 0;
         }
       }
-      @media only screen and (max-device-height: 360px) {
+      @media (max-height: 360px) {
         width: 14rem;
         h2 {
           white-space: normal;
@@ -51,7 +51,7 @@ const styles = css`
           height: 21.2142rem;
         }
       }
-      @media only screen and (max-device-width: 480px) {
+      @media (max-width: 480px) {
         width: 100%;
         height: auto;
         margin-bottom: 3.4rem;
@@ -60,7 +60,7 @@ const styles = css`
           height: 18rem;
         }
       }
-      @media only screen and (max-device-height: 440px) {
+      @media (max-height: 440px) {
         width: 100%;
         height: auto;
         margin-bottom: 3.4rem;
@@ -69,7 +69,7 @@ const styles = css`
           height: 18rem;
         }
       }
-      @media only screen and (max-device-height: 360px) {
+      @media (max-height: 360px) {
         margin-bottom: 0;
         > div {
           width: 100%;
@@ -77,7 +77,7 @@ const styles = css`
         }
       }
     }
-    @media only screen and (max-device-width: 480px) {
+    @media (max-width: 480px) {
       flex-direction: column;
       > section:first-child {
         position: relative;
@@ -112,7 +112,7 @@ const styles = css`
         flex-grow: 0;
       }
     }
-    @media only screen and (max-device-height: 360px) {
+    @media (max-height: 360px) {
       margin: 2rem auto 0 auto;
       width: 100%;
       height: calc(100% - 2rem);

@@ -14,15 +14,15 @@ export const TeamMemberCardContainer = styled(Blank)`
     height: 21.2142rem;
     will-change: opacity, transform;
   }
-  @media only screen and (max-device-width: 480px) {
+  @media (max-width: 440px) {
     width: 19.4285rem;
     height: 100%;
   }
-  @media only screen and (max-device-height: 440px) {
+  @media (max-height: 440px) {
     width: 19.4285rem;
     height: 100%;
   }
-  @media only screen and (max-device-height: 360px) {
+  @media (max-height: 360px) {
     width: 100%;
     max-width: none;
   }
@@ -42,7 +42,7 @@ export const Position = styled("div")`
   font-size: 0.8571rem;
   color: rgba(33, 34, 36, 0.25);
   margin-bottom: 1rem;
-  @media only screen and (max-device-width: 480px) {
+  @media (max-width: 440px) {
     margin-bottom: 0.6rem;
   }
 `;
@@ -60,10 +60,10 @@ const styles = css`
     @media (max-width: 1024px) {
       margin: 0.5rem auto 1.5rem auto;
     }
-    @media only screen and (max-device-width: 480px) {
+    @media (max-width: 440px) {
       margin: 0 auto 1rem auto;
     }
-    @media only screen and (max-device-height: 360px) {
+    @media (max-height: 360px) {
       margin: 0 auto 0.6rem auto;
     }
   }

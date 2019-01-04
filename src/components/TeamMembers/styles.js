@@ -36,12 +36,12 @@ export const TeamMembersContainer = styled("div")`
 export const NoVacancyDescription = styled("p")`
   font-size: 0.8571rem;
   font-weight: 500;
-  @media only screen and (max-device-height: 440px) {
+  @media (max-height: 440px) {
     br {
       display: none;
     }
   }
-  @media only screen and (max-device-height: 360px) {
+  @media (max-height: 360px) {
     br {
       display: block;
     }
@@ -75,10 +75,10 @@ export const PhotoContainer = styled("div")`
     }
     > img {
       height: 21.2142rem;
-      @media only screen and (max-device-width: 480px) {
+      @media (max-width: 440px) {
         height: 18rem;
       }
-      @media only screen and (max-device-height: 440px) {
+      @media (max-height: 440px) {
         height: 18rem;
       }
     }
