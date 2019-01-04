@@ -77,7 +77,7 @@ export const Badge = styled("div")`
   margin-bottom: 0.5rem;
 `;
 
-export const Link = styled(GatsbyLink)`
+export const HowWeAreWorkingLink = styled(GatsbyLink)`
   align-self: flex-end;
   font-size: 1.1428rem;
   color: #90c53d;

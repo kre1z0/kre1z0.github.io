@@ -1,7 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { HowWeAreWorkingContainer, Title, Paragraph, PrinciplesContainer, Principle, Badge, Link } from "./styles";
+import {
+  HowWeAreWorkingContainer,
+  Title,
+  Paragraph,
+  PrinciplesContainer,
+  Principle,
+  Badge,
+  HowWeAreWorkingLink,
+} from "./styles";
 
 export const HowWeAreWorking = ({ items, className }) => {
   return (
@@ -30,12 +38,12 @@ export const HowWeAreWorking = ({ items, className }) => {
           ))}
         </PrinciplesContainer>
       )}
-      <Link to="/work">Подробнее о работе в Everpoint</Link>
+      <HowWeAreWorkingLink to="/work">Подробнее о работе в Everpoint</HowWeAreWorkingLink>
     </HowWeAreWorkingContainer>
   );
 };
 
 HowWeAreWorking.propTypes = {
   items: PropTypes.arrayOf(PropTypes.object),
-  className: PropTypes.string
+  className: PropTypes.string,
 };

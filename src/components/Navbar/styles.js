@@ -1,7 +1,7 @@
 import styled, { css } from "astroturf";
 import { Link as GatsbyLink } from "gatsby";
 
-export const mobileMenu = "1000px";
+export const mobileMenu = "1001px";
 
 const mobileMenuMiddle = "576px";
 
@@ -148,7 +148,7 @@ export const MobileMenu = styled("ul")`
   @media (max-width: ${mobileMenuMiddle}) {
     padding: 1rem 0 0 0;
   }
-  @media (min-width: ${mobileMenu}) {
+  @media (min-width: 1001px) {
     display: none;
   }
 `;
