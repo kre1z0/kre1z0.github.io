@@ -1,6 +1,8 @@
 import React, { PureComponent } from "react";
+import cn from "classnames";
 import Responsive from "react-responsive";
 
+import { fade, transition } from "../../components/Transition/animation";
 import { MainLayoutConsumer } from "../../components/MainLayoutProvider/MainLayoutProvider";
 import { Portal } from "../../components/Portal/Portal";
 import bg from "../../components/Background/styles";
@@ -38,10 +40,12 @@ class Contacts extends PureComponent {
   };
 
   render() {
+    const { status } = this.props;
     const { stope } = this.state;
 
     const btnGroupProps = {
       stope,
+      status,
       onClickBus: () => this.setState({ stope: true }),
       onClickMetro: () => this.setState({ stope: false }),
     };
@@ -86,7 +90,7 @@ class Contacts extends PureComponent {
                   <>
                     {!mobileMenuIsOpen && (
                       <Portal>
-                        <BtnGroup>
+                        <BtnGroup className={cn(fade[status], transition[status])}>
                           <ButtonGroup {...btnGroupProps} />
                         </BtnGroup>
                       </Portal>

@@ -13,11 +13,15 @@ export class Background extends Component {
     x: PropTypes.number,
     y: PropTypes.number,
     direction: PropTypes.number,
+    base64styles: PropTypes.string,
   };
 
-  shouldComponentUpdate({ status: nextStatus, x: nextX, y: nextY }, nextState) {
-    const { status, x, y } = this.props;
-    return status !== nextStatus || x !== nextX || y !== nextY;
+  shouldComponentUpdate(
+    { status: nextStatus, x: nextX, y: nextY, base64styles: nextBase64styles },
+    nextState,
+  ) {
+    const { status, x, y, base64styles } = this.props;
+    return status !== nextStatus || x !== nextX || y !== nextY || base64styles !== nextBase64styles;
   }
 
   render() {
