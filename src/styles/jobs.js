@@ -6,7 +6,8 @@ const styles = css`
       flex-shrink: 1;
       padding-right: 4rem;
       @media (max-width: 1024px) {
-        a {
+        a,
+        h2 {
           white-space: nowrap;
         }
       }
@@ -22,6 +23,12 @@ const styles = css`
         ul {
           padding-right: 0;
           margin-right: 0;
+        }
+      }
+      @media only screen and (max-device-height: 360px) {
+        width: 14rem;
+        h2 {
+          white-space: normal;
         }
       }
     }
@@ -68,6 +75,7 @@ const styles = css`
       @media only screen and (max-device-height: 360px) {
         margin-bottom: 0;
         > div {
+          width: 100%;
           height: calc(100vh - 4rem);
         }
       }
@@ -113,6 +121,7 @@ const styles = css`
       height: calc(100% - 2rem);
       overflow: hidden;
       > section:first-child {
+        padding-right: 2rem;
         menu {
           h2 {
             margin-bottom: 1rem;

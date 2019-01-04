@@ -14,6 +14,9 @@ export const HowWeAreWorkingContainer = styled("div")`
     box-shadow: 0 0.8571rem 0.8571rem 0 rgba(10, 18, 33, 0.1);
     background-color: #fff;
   }
+  @media only screen and (max-device-height: 360px) {
+    padding: 1.2rem;
+  }
 `;
 
 export const Title = styled("h4")`
@@ -24,6 +27,9 @@ export const Title = styled("h4")`
     &:nth-child(4) {
       display: none;
     }
+  }
+  @media only screen and (max-device-height: 360px) {
+    margin-bottom: 0.8rem;
   }
 `;
 
@@ -36,6 +42,9 @@ export const Paragraph = styled("p")`
     ~ br {
       display: none;
     }
+  }
+  @media only screen and (max-device-height: 360px) {
+    margin-bottom: 0.4rem;
   }
 `;
 

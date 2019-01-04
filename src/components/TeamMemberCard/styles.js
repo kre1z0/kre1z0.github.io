@@ -22,6 +22,10 @@ export const TeamMemberCardContainer = styled(Blank)`
     width: 19.4285rem;
     height: 100%;
   }
+  @media only screen and (max-device-height: 360px) {
+    width: 100%;
+    max-width: none;
+  }
 `;
 
 export const Name = styled("div")`
@@ -58,6 +62,9 @@ const styles = css`
     }
     @media only screen and (max-device-width: 480px) {
       margin: 0 auto 1rem auto;
+    }
+    @media only screen and (max-device-height: 360px) {
+      margin: 0 auto 0.6rem auto;
     }
   }
 `;
