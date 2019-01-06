@@ -199,15 +199,17 @@ export class MainLayoutProviderComponent extends Component {
         selectedSectionIndex: nextIndex,
       });
     } else {
-      this.setState({
-        selectedSectionIndex: 0,
-        transitionEnd: false,
-        direction,
-      });
+      const jumped = navigateTo({ navigate, pathname, direction });
 
-      this.threshold = 0;
+      if (jumped) {
+        this.setState({
+          selectedSectionIndex: 0,
+          transitionEnd: false,
+          direction,
+        });
 
-      navigateTo({ navigate, pathname, direction });
+        this.threshold = 0;
+      }
     }
   };
 

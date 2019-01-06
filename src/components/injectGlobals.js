@@ -7,24 +7,9 @@ export const injectGlobals = () => {
     html,
     body {
       -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-      width: 100%;
-      height: 100%;
       font-size: 14px;
       font-family: "Montserrat", Tahoma, sans-serif;
       color: #262c37;
-      overflow: hidden;
-      > div:first-child {
-        width: 100%;
-        height: 100%;
-        > div {
-          width: 100%;
-          height: 100%;
-          > div {
-            width: 100%;
-            height: 100%;
-          }
-        }
-      }
     }
     img {
       outline: none;

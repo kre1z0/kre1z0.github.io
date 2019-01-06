@@ -151,6 +151,7 @@ export const navigateTo = ({ navigate, pathname, direction }) => {
 
   if (nextRouteIndex >= 0 && nextRouteIndex < length) {
     navigate(outsideLinkFilteredRoutes[nextRouteIndex].route);
+    return true;
   }
 };
 

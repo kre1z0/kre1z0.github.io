@@ -3,14 +3,14 @@ import Helmet from "react-helmet";
 
 import { CloseButton } from "../components/Buttons/CloseButton";
 import favicon from "../img/favicon.png";
-import styles, { LongreadContainer, LongreadHeader } from "../styles/longread";
+import styles, { LongreadScrollBar, LongreadHeader } from "../styles/longread";
 
 class LongredLayout extends Component {
   render() {
     const { children } = this.props;
 
     return (
-      <LongreadContainer>
+      <LongreadScrollBar>
         <Helmet
           title="Everpoint"
           link={[{ rel: "shortcut icon", type: "image/png", href: `${favicon}` }]}
@@ -19,7 +19,7 @@ class LongredLayout extends Component {
           <CloseButton className={styles.longreadCloseBtn} />
         </LongreadHeader>
         {children}
-      </LongreadContainer>
+      </LongreadScrollBar>
     );
   }
 }
