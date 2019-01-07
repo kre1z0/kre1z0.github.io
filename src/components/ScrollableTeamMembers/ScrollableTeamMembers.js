@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import { TeamMembers } from "../TeamMembers/TeamMembers";
 
-export class Scrollable extends PureComponent {
+export class ScrollableTeamMembers extends PureComponent {
   static propTypes = {
     selectedId: PropTypes.string,
     onSectionChange: PropTypes.func,

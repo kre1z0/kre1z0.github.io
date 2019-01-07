@@ -5,7 +5,7 @@ import { MainLayoutConsumer } from "../../components/MainLayoutProvider/MainLayo
 import { CenterBlock } from "../../components/CenterBlock/CenterBlock";
 import { MainAnimation } from "../../components/MainAnimation/MainAnimation";
 import { AdditionalMenu } from "../../components/AdditionalMenu/AdditionalMenu";
-import { Scrollable } from "../../components/Scrollable/Scrollable";
+import { ScrollableTeamMembers } from "../../components/ScrollableTeamMembers/ScrollableTeamMembers";
 import { getRouteByLocation, sectionsFromAdditionalMenu } from "../../routes";
 import { JobsCard } from "../../components/JobsCard/JobsCard";
 import styles from "../../styles/jobs";
@@ -54,7 +54,7 @@ export class Jobs extends PureComponent {
               rightSide={
                 <CenterBlock ref={onScrollableRef}>
                   <Responsive minWidth={1001}>
-                    <Scrollable
+                    <ScrollableTeamMembers
                       sections={sections}
                       transitionEnd={transitionEnd}
                       selectedSectionIndex={selectedSectionIndex}

@@ -1,25 +1,29 @@
 import React, { Component } from "react";
+import { Link } from "gatsby";
 import Helmet from "react-helmet";
 
+import { Scrollbar } from "../components/Scrollbar/Scrollbar";
 import { CloseButton } from "../components/Buttons/CloseButton";
 import favicon from "../img/favicon.png";
-import styles, { LongreadScrollBar, LongreadHeader } from "../styles/longread";
+import styles, { LongreadHeader } from "../styles/longread";
 
 class LongredLayout extends Component {
   render() {
     const { children } = this.props;
 
     return (
-      <LongreadScrollBar>
+      <Scrollbar>
         <Helmet
           title="Everpoint"
           link={[{ rel: "shortcut icon", type: "image/png", href: `${favicon}` }]}
         />
         <LongreadHeader>
-          <CloseButton className={styles.longreadCloseBtn} />
+          <Link to="/">
+            <CloseButton className={styles.longreadCloseBtn} />
+          </Link>
         </LongreadHeader>
         {children}
-      </LongreadScrollBar>
+      </Scrollbar>
     );
   }
 }

@@ -1,16 +1,4 @@
 import styled, { css } from "astroturf";
-import Scrollbar from "react-smooth-scrollbar";
-
-export const LongreadScrollBar = styled(Scrollbar)`
-  width: 100vw;
-  height: 100vh;
-  :global(.scroll-content) {
-    will-change: transform;
-  }
-  :global(.scrollbar-track) {
-    display: none !important;
-  }
-`;
 
 export const LongreadHeader = styled("header")``;
 
