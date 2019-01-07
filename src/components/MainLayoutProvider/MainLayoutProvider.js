@@ -8,8 +8,8 @@ import { ScrollBar } from "./styles";
 import { mobileMenu } from "../../components/Navbar/styles";
 import { navigateTo, getRouteByLocation, getRouteById, routes } from "../../routes";
 
-import "./plugins/disableScrollByDirection";
-import "./plugins/determineScrollingPlugin";
+import "../Scrollbar/plugins/disableScrollByDirection";
+import "../Scrollbar/plugins/determineScrollingPlugin";
 
 const ScrollContext = React.createContext();
 

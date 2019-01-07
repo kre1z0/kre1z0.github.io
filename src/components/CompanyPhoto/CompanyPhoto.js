@@ -6,6 +6,17 @@ import { HorizontalRule } from "../../components/Atoms/Atoms";
 import { getRandomElements } from "../../utils/array";
 import { CompanyPhotoContainer, CompanyPhotoBlock, CompanyHeader } from "./styles";
 
+const getNeedElements = () => {
+  const viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+  if (viewportWidth <= 440) {
+    return 6;
+  } else if (viewportWidth <= 1000) {
+    return 12;
+  } else {
+    return 15;
+  }
+};
+
 export class CompanyPhoto extends PureComponent {
   static propTypes = {
     needElements: PropTypes.number,
@@ -13,13 +24,22 @@ export class CompanyPhoto extends PureComponent {
     photo: PropTypes.arrayOf(PropTypes.string),
   };
 
+  static getDerivedStateFromProps(nextProps, { needElements }) {
+    if (!needElements) {
+      return {
+        needElements: getNeedElements(),
+      };
+    }
+
+    return null;
+  }
+
   state = {
-    needElements: 15,
+    needElements: null,
   };
 
   componentDidMount() {
     window.addEventListener("resize", this.onResize);
-    this.onResize();
   }
 
   componentWillUnmount() {
@@ -27,14 +47,11 @@ export class CompanyPhoto extends PureComponent {
   }
 
   onResize = () => {
-    const viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    const { needElements } = this.state;
+    const nextNeedElements = getNeedElements();
 
-    if (viewportWidth <= 440) {
-      this.setState({ needElements: 6 });
-    } else if (viewportWidth <= 1000) {
-      this.setState({ needElements: 12 });
-    } else {
-      this.setState({ needElements: 15 });
+    if (needElements !== nextNeedElements) {
+      this.setState({ needElements: nextNeedElements });
     }
   };
 

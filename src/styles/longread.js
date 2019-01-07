@@ -10,6 +10,10 @@ const styles = css`
     left: 50%;
     transform: translateX(-50%);
   }
+  .scrollbar {
+    width: 100vw;
+    height: 100vh;
+  }
 `;
 
 export default styles;

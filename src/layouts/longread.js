@@ -12,7 +12,7 @@ class LongredLayout extends Component {
     const { children } = this.props;
 
     return (
-      <Scrollbar>
+      <Scrollbar className={styles.scrollbar}>
         <Helmet
           title="Everpoint"
           link={[{ rel: "shortcut icon", type: "image/png", href: `${favicon}` }]}
