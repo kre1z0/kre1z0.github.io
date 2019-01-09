@@ -19,10 +19,10 @@ export const CompanyPhotoBlockTransitionGroup = styled("div")`
 `;
 
 export const CompanyPhotoBlock = styled("div")`
+  will-change: opacity;
   position: absolute;
   top: 0;
   left: 0;
-  will-change: opacity;
   display: flex;
   align-items: flex-start;
   justify-content: center;

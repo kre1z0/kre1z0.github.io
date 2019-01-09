@@ -9,6 +9,12 @@ const styles = css`
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    @media (max-width: 992px) {
+      top: 1.7142rem;
+    }
+    @media (max-width: 576px) {
+      top: 1.1428rem;
+    }
   }
   .scrollbar {
     width: 100vw;
