@@ -27,12 +27,25 @@ export class Development extends Component {
   };
 
   componentDidMount() {
+    this.onResize();
     window.addEventListener("mousemove", this.onMouseMove);
+    window.addEventListener("resize", this.onResize);
   }
 
   componentWillUnmount() {
     window.removeEventListener("mousemove", this.onMouseMove);
+    window.removeEventListener("resize", this.onResize);
   }
+
+  onResize = () => {
+    const viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+
+    if (viewportWidth <= 576) {
+      this.setState({
+        sectionWidth: 260,
+      });
+    }
+  };
 
   onMouseMove = e => {
     const { items } = this.props;

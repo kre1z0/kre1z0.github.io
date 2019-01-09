@@ -3,6 +3,7 @@ import styled from "astroturf";
 export const DevelopmentContainer = styled("div")`
   display: flex;
   margin-bottom: 9.2857rem;
+  will-change: margin-left;
   @media (max-width: 992px) {
     margin-bottom: 6rem;
   }
