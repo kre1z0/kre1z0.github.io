@@ -1,24 +1,43 @@
 import styled from "astroturf";
 
+export const CompanyPhotoBlockTransitionGroup = styled("div")`
+  position: relative;
+  will-change: opacity;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: calc(100vw / 5);
+  height: calc(100vw / 5);
+  @media (max-width: 768px) {
+    width: calc(100vw / 4);
+    height: calc(100vw / 4);
+  }
+  @media (max-width: 440px) {
+    width: calc(100vw / 2);
+    height: calc(100vw / 2);
+  }
+`;
+
+export const CompanyPhotoBlock = styled("div")`
+  position: absolute;
+  top: 0;
+  left: 0;
+  will-change: opacity;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+`;
+
 export const CompanyPhotoContainer = styled("section")`
   display: flex;
   flex-wrap: wrap;
   width: 100vw;
-  &:after {
-    content: "";
-    top: 0;
-    left: 0;
-    position: absolute;
-    width: 100vw;
-    height: calc(100vw / 5 * 3);
-    background: rgba(38, 44, 55, 0.7);
-    @media (max-width: 768px) {
-      height: calc(100vw / 4 * 3);
-    }
-    @media (max-width: 440px) {
-      height: calc(100vw / 2 * 3);
-    }
-  }
+  background-color: rgba(38, 44, 55, 0.7);
 `;
 
 export const CompanyHeader = styled("header")`
@@ -61,25 +80,5 @@ export const CompanyHeader = styled("header")`
     hr {
       width: 8rem;
     }
-  }
-`;
-
-export const CompanyPhotoBlock = styled("div")`
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  width: calc(100vw / 5);
-  height: calc(100vw / 5);
-  filter: grayscale(100%);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top center;
-  @media (max-width: 768px) {
-    width: calc(100vw / 4);
-    height: calc(100vw / 4);
-  }
-  @media (max-width: 440px) {
-    width: calc(100vw / 2);
-    height: calc(100vw / 2);
   }
 `;

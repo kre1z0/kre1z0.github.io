@@ -81,9 +81,9 @@ export class Development extends Component {
                   <DevelopmentTitle
                     style={{
                       backgroundColor: development
-                        ? "rgba(144,197,61, 0.25)"
-                        : "rgba(53,61,70, 0.15)",
-                      color: development ? "#90c53d" : "#353d46",
+                        ? "rgba(53,61,70, 0.15)"
+                        : "rgba(144,197,61, 0.25)",
+                      color: development ? "#353d46" : "#90c53d",
                     }}
                   >
                     {title}

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 
+import { getPixelRatioPropName } from "../../utils/utils";
 import { TelegramButton } from "../../components/Buttons/TelegramButton";
 import { H2, Section, Article, Paragraph } from "../../components/LongreadAtoms/Longread";
 import { CompanyPhoto } from "../../components/CompanyPhoto/CompanyPhoto";
@@ -18,7 +19,9 @@ class Company extends Component {
         <CompanyPhoto
           title="Everpoint - это мы!"
           // add designer photo
-          photo={employees.filter(({ id }) => id !== "8").map(({ avatar }) => avatar)}
+          items={employees
+            .filter(({ id }) => id !== "8")
+            .map(({ portret, id }) => ({ avatar: portret[getPixelRatioPropName()], id }))}
         />
         <Section className={styles.whoAreWe}>
           <Article>

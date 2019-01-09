@@ -79,6 +79,20 @@ const styles = css`
       }
     }
   }
+  .fadeOut {
+    animation-name: fadeOut;
+    animation-duration: 200ms;
+    animation-timing-function: ease-out;
+    animation-iteration-count: 1;
+    @keyframes fadeOut {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
+      }
+    }
+  }
 `;
 
 export default styles;

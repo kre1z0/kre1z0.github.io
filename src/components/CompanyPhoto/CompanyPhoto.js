@@ -1,9 +1,11 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import throttle from "lodash/throttle";
+import random from "lodash/random";
 
 import { HorizontalRule } from "../../components/Atoms/Atoms";
-import { CompanyPhotoContainer, CompanyPhotoBlock, CompanyHeader } from "./styles";
+import { CompanyPhotoTransition } from "./CompanyPhotoTransition";
+import { CompanyPhotoContainer, CompanyHeader } from "./styles";
 
 const getNeedElements = () => {
   const viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
@@ -20,7 +22,7 @@ export class CompanyPhoto extends PureComponent {
   static propTypes = {
     needElements: PropTypes.number,
     title: PropTypes.string,
-    photo: PropTypes.arrayOf(PropTypes.string),
+    items: PropTypes.arrayOf(PropTypes.object),
   };
 
   static getDerivedStateFromProps(nextProps, { needElements }) {
@@ -42,7 +44,22 @@ export class CompanyPhoto extends PureComponent {
     needElements: null,
     visibleItems: [],
     hiddenItems: [],
+    item: null,
   };
+
+  componentDidMount() {
+    const { needElements } = this.state;
+    const { items } = this.props;
+    window.addEventListener("resize", this.onResize);
+
+    this.setState({ ...this.getRandomElements(items, needElements) });
+    this.interval = setInterval(() => this.updatePhoto(), 1000);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.onResize);
+    clearInterval(this.interval);
+  }
 
   getRandomElements = (sourceArray, neededElements) => {
     const copyArray = sourceArray.slice();
@@ -54,27 +71,40 @@ export class CompanyPhoto extends PureComponent {
     };
   };
 
-  componentDidMount() {
-    const { needElements } = this.state;
-    const { photo } = this.props;
-    window.addEventListener("resize", this.onResize);
+  updatePhoto = () => {
+    const { visibleItems, hiddenItems } = this.state;
+    const newVisibleItems = visibleItems.slice();
+    const newHiddenItems = hiddenItems.slice();
+    const randomIndex = random(newVisibleItems.length - 1);
+    const randomHiddenItemsElement = newHiddenItems.splice(random(newHiddenItems.length - 1), 1)[0];
 
-    this.setState({ ...this.getRandomElements(photo, needElements) });
-  }
+    const randomVisibleItemsElement = newVisibleItems.splice(
+      randomIndex,
+      1,
+      randomHiddenItemsElement,
+    )[0];
 
-  componentWillUnmount() {
-    window.removeEventListener("resize", this.onResize);
-  }
+    newHiddenItems.push(randomVisibleItemsElement);
+
+    this.setState({
+      visibleItems: newVisibleItems,
+      hiddenItems: newHiddenItems,
+      item: {
+        prev: randomVisibleItemsElement,
+        next: randomHiddenItemsElement,
+      },
+    });
+  };
 
   onResize = () => {
-    const { photo } = this.props;
+    const { items } = this.props;
     const nextNeedElements = getNeedElements();
 
-    this.setState({ items: this.getRandomElements(photo, nextNeedElements) });
+    this.setState({ ...this.getRandomElements(items, nextNeedElements) });
   };
 
   render() {
-    const { visibleItems } = this.state;
+    const { visibleItems, item } = this.state;
     const { title } = this.props;
 
     return (
@@ -85,9 +115,7 @@ export class CompanyPhoto extends PureComponent {
             <h1>{title}</h1>
           </CompanyHeader>
         )}
-        {visibleItems.map((url, index) => (
-          <CompanyPhotoBlock key={`photo-${index}`} style={{ backgroundImage: `url(${url})` }} />
-        ))}
+        <CompanyPhotoTransition visibleItems={visibleItems} item={item} />
       </CompanyPhotoContainer>
     );
   }
