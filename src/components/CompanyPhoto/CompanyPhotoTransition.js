@@ -11,9 +11,9 @@ import styles from "../Transition/animation";
 
 class PhotoComponent extends Component {
   shouldComponentUpdate({ item: nextItem }, nextState) {
-    const { id } = this.props;
+    const { id, item } = this.props;
 
-    return nextItem && nextItem.id === id;
+    return (nextItem && nextItem.next.id === id) || (item && item.next.id === id);
   }
 
   render() {
