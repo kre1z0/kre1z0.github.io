@@ -13,7 +13,7 @@ class PhotoComponent extends Component {
   shouldComponentUpdate({ item: nextItem }, nextState) {
     const { id } = this.props;
 
-    return nextItem.id === id;
+    return nextItem && nextItem.id === id;
   }
 
   render() {

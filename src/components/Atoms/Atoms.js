@@ -98,9 +98,6 @@ export const Link = styled(Title)`
       color: #90c53d;
     }
   }
-  &.title {
-    cursor: default;
-  }
   &.isActive {
     cursor: default;
     color: #90c53d;
@@ -126,6 +123,21 @@ export const Link = styled(Title)`
 
   &:last-child {
     margin-bottom: 0;
+  }
+  &.title {
+    cursor: default;
+    @media (hover: hover) {
+      &:hover {
+        color: #262c37;
+      }
+    }
+    &.isActive {
+      @media (hover: hover) {
+        &:hover {
+          color: #90c53d;
+        }
+      }
+    }
   }
 `;
 

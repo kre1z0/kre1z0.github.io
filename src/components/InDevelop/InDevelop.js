@@ -6,13 +6,12 @@ export const InDevelop = ({ to }) => {
   return (
     <div
       style={{
+        width: "100vw",
+        height: "100vh",
         display: "flex",
         flexDirection: "column",
-        position: "absolute",
         alignItems: "center",
-        top: "50%",
-        left: "50%",
-        transform: "translate(-50%, -50%)",
+        justifyContent: "center",
       }}
     >
       <img src="http://odkb76.ru/pic/userfile/images/razrabotka.png" alt="in developing" />

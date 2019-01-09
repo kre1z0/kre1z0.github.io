@@ -174,3 +174,8 @@ export const sectionsFromAdditionalMenu = additionalMenu => {
 
   return sliderIdArray;
 };
+
+export const getBackRouteByLocationPathName = pathname => {
+  if (pathname.includes("company")) return "/";
+  else return "/";
+};
