@@ -104,7 +104,7 @@ class Contacts extends PureComponent {
           </>
         }
       >
-        <TelegramButton as="a" target="_blank" href="https://telegram.me/redditr" />
+        <TelegramButton as="a" className={styles.telegramBtn} target="_blank" href="https://telegram.me/redditr" />
       </MainAnimation>
     );
   }

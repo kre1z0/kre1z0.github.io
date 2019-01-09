@@ -7,8 +7,9 @@ import employees from "../../assets/employees";
 import { OurClients } from "../../components/OurClients/OurClients";
 import { Development } from "../../components/Development/Development";
 import development from "../../assets/development";
+import ourClients from "../../assets/our-clients";
 
-import styles, { CompanyContainer, Footer } from "../../styles/company";
+import styles, { CompanyContainer, Footer, ChatRow } from "../../styles/company";
 
 class Company extends Component {
   render() {
@@ -76,7 +77,9 @@ class Company extends Component {
             </Paragraph>
           </Article>
         </Section>
-        <OurClients />
+        <Section className={styles.ourClientsLogos}>
+          <OurClients items={ourClients} />
+        </Section>
         <Section className={styles.development}>
           <Article>
             <H2>Развитие</H2>
@@ -91,9 +94,11 @@ class Company extends Component {
               3-5 лет вперед. Everpoint - это профессиональная команда с большим опытом внедрения
               ГИС в разных отраслях. Мы открыты для общения, готовы помочь и рады сотрудничеству.
             </Paragraph>
-            <Paragraph>Есть задача? Напишите нам в чат, отвечаем быстро!</Paragraph>
-            <TelegramButton />
           </Article>
+          <ChatRow>
+            <Paragraph>Есть задача? Напишите нам в чат, отвечаем быстро!</Paragraph>
+            <TelegramButton className={styles.companyTelegramBtn} />
+          </ChatRow>
         </Footer>
       </CompanyContainer>
     );

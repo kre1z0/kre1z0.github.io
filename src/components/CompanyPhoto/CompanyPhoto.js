@@ -1,7 +1,6 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 
-import { BigH1 } from "../../components/Atoms/Atoms";
 import { HorizontalRule } from "../../components/Atoms/Atoms";
 import { getRandomElements } from "../../utils/array";
 import { CompanyPhotoContainer, CompanyPhotoBlock, CompanyHeader } from "./styles";
@@ -64,7 +63,7 @@ export class CompanyPhoto extends PureComponent {
         {title && (
           <CompanyHeader>
             <HorizontalRule />
-            <BigH1>{title}</BigH1>
+            <h1>{title}</h1>
           </CompanyHeader>
         )}
         {getRandomElements(photo, needElements).map((url, index) => (

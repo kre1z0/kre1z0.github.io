@@ -85,6 +85,19 @@ const styles = css`
       margin-bottom: 0.4rem;
     }
   }
+  .telegramBtn {
+    background-color: #90c53d;
+    position: absolute;
+    right: 6rem;
+    bottom: 4.5714rem;
+    @media (max-width: 1024px) {
+      right: 3.5714rem;
+    }
+    @media (max-width: 767px) {
+      right: 1.7857rem;
+      bottom: 1.4142rem;
+    }
+  }
 `;
 
 export default styles;

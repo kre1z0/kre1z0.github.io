@@ -25,13 +25,22 @@ export const CompanyHeader = styled("header")`
   position: absolute;
   color: #fff;
   > h1 {
+    font-size: 4.5714rem;
     line-height: 100%;
     margin: 0 0 2.4571rem 0;
-    @media (max-width: 1024px) {
+    @media (max-width: 992px) {
+      font-size: 3.4285rem;
       margin: 0 0 2rem 0;
     }
+    @media (max-width: 768px) {
+      font-size: 2.5714rem;
+    }
     @media (max-width: 576px) {
+      font-size: 2.2857rem;
       margin: 0 0 1.4571rem 0;
+    }
+    @media (max-width: 440px) {
+      font-size: 1.7142rem;
     }
   }
 `;
