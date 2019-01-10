@@ -68,7 +68,7 @@ export class Development extends Component {
   render() {
     const { sectionWidth, padding } = this.state;
     const { items } = this.props;
-    console.info("--> dev ggwp up");
+
     return (
       <Scrollbar onScrollbarRef={this.onScrollbarRef}>
         <DevelopmentContainer style={{ width: items.length * sectionWidth + padding }}>
