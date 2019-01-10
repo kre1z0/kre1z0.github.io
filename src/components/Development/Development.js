@@ -20,8 +20,9 @@ export class Development extends Component {
     items: [],
   };
 
+  scrollbar = null;
+
   state = {
-    marginLeft: 0,
     sectionWidth: 330,
     padding: 30,
   };
@@ -54,16 +55,23 @@ export class Development extends Component {
     const containerWidth = items.length * sectionWidth + padding;
     const viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     const ratio = (containerWidth - viewportWidth) / viewportWidth;
-    this.setState({ marginLeft: -e.clientX * ratio });
+
+    this.scrollbar.scrollTo(e.clientX * ratio, 0, 0);
+  };
+
+  onScrollbarRef = ref => {
+    if (ref) {
+      this.scrollbar = ref.scrollbar;
+    }
   };
 
   render() {
-    const { marginLeft, sectionWidth, padding } = this.state;
+    const { sectionWidth, padding } = this.state;
     const { items } = this.props;
-
+    console.info("--> dev ggwp up");
     return (
-      <Scrollbar>
-        <DevelopmentContainer style={{ marginLeft, width: items.length * sectionWidth + padding }}>
+      <Scrollbar onScrollbarRef={this.onScrollbarRef}>
+        <DevelopmentContainer style={{ width: items.length * sectionWidth + padding }}>
           {items.map(({ title, description, development }, index) => {
             const firstChild = index === 0;
             const additional = firstChild ? padding : 0;

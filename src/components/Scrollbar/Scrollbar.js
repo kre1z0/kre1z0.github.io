@@ -7,12 +7,16 @@ import { ScrollBarContainer } from "./styles";
 
 export class Scrollbar extends Component {
   static propTypes = {
-    className: PropTypes.string,
+    onScrollbarRef: PropTypes.func,
   };
 
   render() {
-    const { children, className } = this.props;
+    const { children, onScrollbarRef, ...props } = this.props;
 
-    return <ScrollBarContainer className={className}>{children}</ScrollBarContainer>;
+    return (
+      <ScrollBarContainer {...props} ref={onScrollbarRef}>
+        {children}
+      </ScrollBarContainer>
+    );
   }
 }
