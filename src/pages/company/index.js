@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 
 import { getPixelRatioPropName } from "../../utils/utils";
 import { TelegramButton } from "../../components/Buttons/TelegramButton";
@@ -12,7 +12,7 @@ import ourClients from "../../assets/our-clients";
 
 import styles, { CompanyContainer, Footer, ChatRow } from "../../styles/company";
 
-class Company extends Component {
+class Company extends PureComponent {
   render() {
     return (
       <CompanyContainer>

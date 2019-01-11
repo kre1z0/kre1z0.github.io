@@ -8,6 +8,10 @@ export const Footer = styled(Section)`
   padding-top: 5.3571rem;
   padding-bottom: 3.1428rem;
   background-color: #90c53d;
+  background-image: url(../img/backgrounds/companyFooter.png);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: contain;
   color: #fff;
   @media (max-width: 992px) {
     padding-top: 4.2857rem;
@@ -61,8 +65,10 @@ const styles = css`
     padding-top: 7.4285rem;
     padding-bottom: 6.8571rem;
     color: #fff;
-    background-image: linear-gradient(to bottom, #19191d, #3c3b41),
+    background: url(../img/backgrounds/whatAreWeDoing.png) top no-repeat,
+      linear-gradient(to bottom, #19191d, #3c3b41),
       linear-gradient(to bottom, rgba(0, 170, 255, 0.05), rgba(0, 170, 255, 0.05));
+    background-size: contain;
     @media (max-width: 992px) {
       padding-top: 4.5714rem;
       padding-bottom: 3.8571rem;
@@ -103,9 +109,13 @@ const styles = css`
       padding-top: 3.5714rem;
     }
     @media (max-width: 576px) {
+      padding-top: 2.4rem;
       h2 {
         margin-bottom: 2rem;
       }
+    }
+    @media (max-width: 440px) {
+      padding-top: 2rem;
     }
   }
   .companyTelegramBtn {
