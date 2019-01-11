@@ -2,12 +2,11 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import cn from "classnames";
 
-import {
+import styles, {
   CompanyPhotoBlockTransitionGroup,
   CompanyPhotoBlock,
   CompanyPhotoContainer,
 } from "./styles";
-import styles from "../Transition/animation";
 
 class PhotoComponent extends Component {
   shouldComponentUpdate({ item: nextItem }, nextState) {

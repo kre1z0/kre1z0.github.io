@@ -7,37 +7,11 @@ import { HorizontalRule } from "../../components/Atoms/Atoms";
 import { CompanyPhotoTransition } from "./CompanyPhotoTransition";
 import { CompanyPhotoContainer, CompanyHeader } from "./styles";
 
-const getNeedElements = () => {
-  if (typeof window !== "object") {
-    return;
-  }
-
-  const viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-  if (viewportWidth <= 440) {
-    return 6;
-  } else if (viewportWidth <= 768) {
-    return 12;
-  } else {
-    return 15;
-  }
-};
-
 export class CompanyPhoto extends PureComponent {
   static propTypes = {
-    needElements: PropTypes.number,
     title: PropTypes.string,
     items: PropTypes.arrayOf(PropTypes.object),
   };
-
-  static getDerivedStateFromProps(nextProps, { needElements }) {
-    if (!needElements) {
-      return {
-        needElements: getNeedElements(),
-      };
-    }
-
-    return null;
-  }
 
   constructor(props) {
     super(props);
@@ -45,19 +19,17 @@ export class CompanyPhoto extends PureComponent {
   }
 
   state = {
-    needElements: null,
     visibleItems: [],
     hiddenItems: [],
     item: null,
   };
 
   componentDidMount() {
-    const { needElements } = this.state;
     const { items } = this.props;
     window.addEventListener("resize", this.onResize);
 
-    this.setState({ ...this.getRandomElements(items, needElements) });
-    this.interval = setInterval(() => this.updatePhoto(), 1000);
+    this.setState({ ...this.getRandomElements(items) });
+    this.interval = setInterval(() => this.updatePhoto(), 2000);
   }
 
   componentWillUnmount() {
@@ -65,7 +37,20 @@ export class CompanyPhoto extends PureComponent {
     clearInterval(this.interval);
   }
 
-  getRandomElements = (sourceArray, neededElements) => {
+  getNeededElements = () => {
+    const viewportWidth = document.documentElement.clientWidth;
+
+    if (viewportWidth <= 440) {
+      return 6;
+    } else if (viewportWidth <= 768) {
+      return 12;
+    } else {
+      return 15;
+    }
+  };
+
+  getRandomElements = sourceArray => {
+    const neededElements = this.getNeededElements();
     const copyArray = sourceArray.slice();
     const shuffled = copyArray.sort(() => 0.5 - Math.random());
 
@@ -102,9 +87,8 @@ export class CompanyPhoto extends PureComponent {
 
   onResize = () => {
     const { items } = this.props;
-    const nextNeedElements = getNeedElements();
 
-    this.setState({ ...this.getRandomElements(items, nextNeedElements) });
+    this.setState({ ...this.getRandomElements(items) });
   };
 
   render() {

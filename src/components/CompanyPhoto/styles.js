@@ -1,4 +1,4 @@
-import styled from "astroturf";
+import styled, { css } from "astroturf";
 
 export const CompanyPhotoBlockTransitionGroup = styled("div")`
   position: relative;
@@ -82,3 +82,36 @@ export const CompanyHeader = styled("header")`
     }
   }
 `;
+
+const styles = css`
+  .fadeIn {
+    animation-name: fadeIn;
+    animation-duration: 400ms;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  }
+  .fadeOut {
+    animation-name: fadeOut;
+    animation-duration: 400ms;
+    animation-timing-function: ease-out;
+    animation-iteration-count: 1;
+    @keyframes fadeOut {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
+      }
+    }
+  }
+`;
+
+export default styles;
