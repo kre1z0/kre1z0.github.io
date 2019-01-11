@@ -25,6 +25,8 @@ export const DevelopmentHeader = styled("header")`
 `;
 
 export const DevelopmentTitle = styled("div")`
+  background-color: rgba(144,197,61, 0.25);
+  color: #90c53d;
   height: 1.7142rem;
   display: flex;
   justify-content: center;

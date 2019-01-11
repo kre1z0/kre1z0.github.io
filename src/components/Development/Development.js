@@ -51,12 +51,13 @@ export class Development extends Component {
   onMouseMove = e => {
     const { items } = this.props;
     const { sectionWidth, padding } = this.state;
+    const offset = sectionWidth + padding;
 
     const containerWidth = items.length * sectionWidth + padding;
     const viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-    const ratio = (containerWidth - viewportWidth) / viewportWidth;
+    const ratio = (containerWidth - viewportWidth) / (viewportWidth - offset);
 
-    this.scrollbar.scrollTo(e.clientX * ratio, 0, 0);
+    this.scrollbar.scrollTo((e.clientX - offset / 2) * ratio, 0, 0);
   };
 
   onScrollbarRef = ref => {
@@ -72,7 +73,7 @@ export class Development extends Component {
     return (
       <Scrollbar onScrollbarRef={this.onScrollbarRef}>
         <DevelopmentContainer style={{ width: items.length * sectionWidth + padding }}>
-          {items.map(({ title, description, development }, index) => {
+          {items.map(({ title, description }, index) => {
             const firstChild = index === 0;
             const additional = firstChild ? padding : 0;
 
@@ -86,16 +87,7 @@ export class Development extends Component {
                 }}
               >
                 <DevelopmentHeader>
-                  <DevelopmentTitle
-                    style={{
-                      backgroundColor: development
-                        ? "rgba(53,61,70, 0.15)"
-                        : "rgba(144,197,61, 0.25)",
-                      color: development ? "#353d46" : "#90c53d",
-                    }}
-                  >
-                    {title}
-                  </DevelopmentTitle>
+                  <DevelopmentTitle>{title}</DevelopmentTitle>
                   <HorizontalRule />
                 </DevelopmentHeader>
                 <DevelopmentDescription>{description}</DevelopmentDescription>
