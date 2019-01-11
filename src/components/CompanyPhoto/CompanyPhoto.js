@@ -8,6 +8,10 @@ import { CompanyPhotoTransition } from "./CompanyPhotoTransition";
 import { CompanyPhotoContainer, CompanyHeader } from "./styles";
 
 const getNeedElements = () => {
+  if (typeof window !== "object") {
+    return;
+  }
+
   const viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
   if (viewportWidth <= 440) {
     return 6;
