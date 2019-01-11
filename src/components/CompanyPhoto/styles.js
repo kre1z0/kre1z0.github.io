@@ -29,8 +29,8 @@ export const CompanyPhotoBlock = styled("div")`
   width: 100%;
   height: 100%;
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top center;
+  background-size: calc(100% + 2px);
+  background-position: center;
 `;
 
 export const CompanyPhotoContainer = styled("section")`
