@@ -399,7 +399,7 @@ export class MainLayoutProviderComponent extends Component {
     const { navigate } = this.props;
     const { selectedSectionIndex, sections, currentRoute } = this.state;
 
-    const pageIsChanged = pageId && currentRoute.id !== pageId;
+    const pageIsChanged = pageId && currentRoute && currentRoute.id !== pageId;
 
     const nextValue = id
       ? sections.findIndex(item => item.id === id)
