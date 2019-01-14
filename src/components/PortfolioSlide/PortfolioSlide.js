@@ -28,6 +28,7 @@ export class PortfolioSlide extends PureComponent {
     title: PropTypes.string,
     parentTitle: PropTypes.string,
     sectionDirection: PropTypes.number,
+    navigate: PropTypes.func,
   };
 
   state = {
@@ -57,10 +58,11 @@ export class PortfolioSlide extends PureComponent {
       title,
       screenshot,
       sectionDirection,
+      navigate,
     } = this.props;
 
     return (
-      <Swiper onSwiped={this.onSwiped}>
+      <Swiper onSwiped={this.onSwiped} onClick={() => navigate(`/${id}`)}>
         <PortfolioSlideContainer
           onMouseOver={() => this.setState({ hovered: true })}
           onMouseOut={() => this.setState({ hovered: false })}

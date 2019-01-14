@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import cn from 'classnames';
+import cn from "classnames";
 import { Link } from "gatsby";
 import Helmet from "react-helmet";
 
@@ -41,7 +41,7 @@ class LongredLayout extends Component {
         />
         <LongreadHeader style={{ transform }} withBg={withBg}>
           <Link to={getBackRouteByLocationPathName(pathname)}>
-            <CloseButton className={cn(styles.longreadCloseBtn, { [styles.withBg]: withBg})} />
+            <CloseButton className={cn(styles.longreadCloseBtn, { [styles.withBg]: withBg })} />
           </Link>
         </LongreadHeader>
         {children}

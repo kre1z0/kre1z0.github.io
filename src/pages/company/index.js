@@ -23,7 +23,7 @@ class Company extends PureComponent {
             .filter(({ id }) => id !== "8")
             .map(({ portret, id }) => ({ avatar: portret[getPixelRatioPropName()], id }))}
         />
-        <Section className={styles.whoAreWe}>
+        <Section>
           <Article>
             <H2>Кто мы</H2>
             <Paragraph>

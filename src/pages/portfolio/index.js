@@ -11,7 +11,7 @@ import { MobileTitle } from "../../components/PortfolioSlide/styles";
 
 class Portfolio extends PureComponent {
   render() {
-    const { location } = this.props;
+    const { location, navigate } = this.props;
     const currentRoute = getRouteByLocation(location);
     const sections = sectionsFromAdditionalMenu(currentRoute.additionalMenu);
 
@@ -47,6 +47,7 @@ class Portfolio extends PureComponent {
                   sections={sections}
                   selectedSectionIndex={selectedSectionIndex}
                   onSectionChange={onSectionChange}
+                  navigate={navigate}
                   {...section}
                 />
               }

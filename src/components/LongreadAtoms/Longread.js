@@ -2,15 +2,18 @@ import styled from "astroturf";
 
 export const Section = styled("section")`
   width: 100vw;
-  padding: 0 8.1428rem;
+  padding: 8.4rem 8.1428rem 9rem 8.1428rem;
   @media (max-width: 992px) {
-    padding: 0 7.8571rem;
+    padding: 6rem 7.8571rem 6.4rem 7.8571rem;
   }
   @media (max-width: 768px) {
-    padding: 0 3.1428rem;
+    padding: 4.7rem 3.1428rem 5.1rem 3.1428rem;
   }
   @media (max-width: 576px) {
-    padding: 0 1.4285rem;
+    padding: 3.2rem 1.4285rem 3.6rem 1.4285rem;
+  }
+  @media (max-width: 440px) {
+    padding: 2rem 1.4285rem 2.4rem 1.4285rem;
   }
 `;
 

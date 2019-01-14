@@ -1,13 +1,13 @@
-import employees from "./assets/employees";
-import vacancy from "./assets/vacancy";
-import principles from "./assets/principles";
-import photo from "./assets/photo";
+import employees from "../assets/employees";
+import vacancy from "../assets/vacancy";
+import principles from "../assets/principles";
+import photo from "../assets/photo";
 
-import msp from "./img/portfolio/msp.png";
-import mobileMsp1 from "./img/portfolio/mobileMsp/mobile-1.png";
-import mobileMsp2 from "./img/portfolio/mobileMsp/mobile-2.png";
-import mobileMsp3 from "./img/portfolio/mobileMsp/mobile-3.png";
-import bank from "./img/portfolio/bank.png";
+import msp from "../img/portfolio/msp/msp-screen.png";
+import mobileMsp1 from "../img/portfolio/mobileMsp/mobile-1.png";
+import mobileMsp2 from "../img/portfolio/mobileMsp/mobile-2.png";
+import mobileMsp3 from "../img/portfolio/mobileMsp/mobile-3.png";
+import bank from "../img/portfolio/bank.png";
 
 export const routes = [
   { id: "index", text: "О компании", route: "/" },
@@ -173,6 +173,12 @@ export const sectionsFromAdditionalMenu = additionalMenu => {
     );
 
   return sliderIdArray;
+};
+
+export const getProject = (projectId, parentId = "portfolio") => {
+  const { additionalMenu } = getRouteById(parentId);
+
+  return sectionsFromAdditionalMenu(additionalMenu).find(({ id }) => id === projectId);
 };
 
 export const getBackRouteByLocationPathName = pathname => {

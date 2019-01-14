@@ -42,80 +42,39 @@ export const ChatRow = styled("div")`
 `;
 
 const styles = css`
-  .whoAreWe {
-    padding-top: 10rem;
-    padding-bottom: 10rem;
-    @media (max-width: 992px) {
-      padding-top: 7.1428rem;
-      padding-bottom: 4.5714rem;
-    }
-    @media (max-width: 768px) {
-      padding-top: 5rem;
-    }
-    @media (max-width: 576px) {
-      padding-top: 3.5714rem;
-      padding-bottom: 2.2857rem;
-    }
-    @media (max-width: 440px) {
-      padding-top: 2.5rem;
-      padding-bottom: 1.7142rem;
-    }
-  }
   .whatAreWeDoing {
-    padding-top: 7.4285rem;
-    padding-bottom: 6.8571rem;
     color: #fff;
     background: url(../img/backgrounds/whatAreWeDoing.png) top no-repeat,
       linear-gradient(to bottom, #19191d, #3c3b41),
       linear-gradient(to bottom, rgba(0, 170, 255, 0.05), rgba(0, 170, 255, 0.05));
     background-size: contain;
-    @media (max-width: 992px) {
-      padding-top: 4.5714rem;
-      padding-bottom: 3.8571rem;
-    }
-    @media (max-width: 768px) {
-      padding-top: 2.8571rem;
-      padding-bottom: 2.1428rem;
-    }
   }
   .ourClients {
-    padding-top: 10rem;
     padding-bottom: 3.5714rem;
     @media (max-width: 992px) {
-      padding-top: 6.4285rem;
       padding-bottom: 2.4285rem;
     }
     @media (max-width: 768px) {
-      padding-top: 2.8571rem;
       padding-bottom: 2.1428rem;
     }
     @media (max-width: 576px) {
-      padding-top: 2.1428rem;
       padding-bottom: 1.4285rem;
     }
   }
   .ourClientsLogos {
+    padding-top: 0;
+    padding-bottom: 0;
     background-color: #f3f4f7;
   }
   .development {
-    padding-top: 10rem;
+    padding-bottom: 0;
     h2 {
       margin-bottom: 4.2857rem;
     }
-    @media (max-width: 992px) {
-      padding-top: 5rem;
-    }
-    @media (max-width: 768px) {
-      padding-top: 3.5714rem;
-    }
     @media (max-width: 576px) {
-      padding-top: 2.4rem;
       h2 {
         margin-bottom: 2rem;
       }
-    }
-    @media (max-width: 440px) {
-      padding-top: 2rem;
     }
   }
   .companyTelegramBtn {
