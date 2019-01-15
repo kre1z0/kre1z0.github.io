@@ -6,12 +6,7 @@ import { Link } from "../Atoms/Atoms";
 export class LinkComponent extends Component {
   static propTypes = {
     text: PropTypes.string,
-    count: PropTypes.bool,
     little: PropTypes.bool,
-    items: PropTypes.oneOfType([
-      PropTypes.arrayOf(PropTypes.object),
-      PropTypes.arrayOf(PropTypes.string),
-    ]),
   };
 
   shouldComponentUpdate({ selectedId: nextSelectedId }, nextState) {
@@ -21,7 +16,7 @@ export class LinkComponent extends Component {
   }
 
   render() {
-    const { text, little = false, items, count, id, selectedId, onSectionChange } = this.props;
+    const { text, little = false, id, selectedId, onSectionChange } = this.props;
 
     return (
       <Link
@@ -30,7 +25,6 @@ export class LinkComponent extends Component {
         isActive={selectedId === id}
       >
         {text}
-        {items && count && <span>{items.length}</span>}
       </Link>
     );
   }

@@ -9,11 +9,13 @@ import {
   ControlBlock,
   PrevBtn,
   NextBtn,
+  LongreadBackground,
 } from "./styles";
 import { Content } from "./Content";
 import { Screenshot } from "./Screenshot";
 import { BackendComponent } from "../Backend/Backend";
 import { Bullets } from "../Bullets/Bullets";
+import { Portal } from "../../components/Portal/Portal";
 
 export class PortfolioSlide extends PureComponent {
   static propTypes = {
@@ -33,6 +35,7 @@ export class PortfolioSlide extends PureComponent {
 
   state = {
     hovered: false,
+    goToLongread: false,
   };
 
   onSwiped = ({ isLeft, isRight, xRatio }) => {
@@ -45,8 +48,22 @@ export class PortfolioSlide extends PureComponent {
     }
   };
 
+  goToLongread = () => {
+    const { navigate, id } = this.props;
+    this.setState(
+      {
+        goToLongread: true,
+      },
+      () => {
+        setTimeout(() => {
+          navigate(`/${id}`);
+        }, 200);
+      },
+    );
+  };
+
   render() {
-    const { hovered } = this.state;
+    const { hovered, goToLongread } = this.state;
     const {
       bgColor,
       text,
@@ -58,11 +75,10 @@ export class PortfolioSlide extends PureComponent {
       title,
       screenshot,
       sectionDirection,
-      navigate,
     } = this.props;
 
     return (
-      <Swiper onSwiped={this.onSwiped} onClick={() => navigate(`/${id}`)}>
+      <Swiper onSwiped={this.onSwiped} onClick={this.goToLongread}>
         <PortfolioSlideContainer
           onMouseOver={() => this.setState({ hovered: true })}
           onMouseOut={() => this.setState({ hovered: false })}
@@ -99,6 +115,11 @@ export class PortfolioSlide extends PureComponent {
             </ControlBlock>
           </Responsive>
           <Bullets sections={sections} selectedSectionIndex={selectedSectionIndex} />
+          {goToLongread && (
+            <Portal>
+              <LongreadBackground style={{ backgroundColor: bgColor }} />
+            </Portal>
+          )}
         </PortfolioSlideContainer>
       </Swiper>
     );

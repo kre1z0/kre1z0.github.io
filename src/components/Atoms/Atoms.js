@@ -106,15 +106,6 @@ export const Link = styled(Title)`
       color: #90c53d;
     }
   }
-  > span {
-    transition: color 200ms ease;
-    white-space: nowrap;
-    margin-left: 0.6rem;
-    text-align: left;
-    display: inline-block;
-    width: 1.2rem;
-    color: rgba(38, 44, 55, 0.35);
-  }
 
   &.little {
     margin: 0.4rem 0 0 0.5rem;

@@ -203,6 +203,31 @@ export const Screenshot = styled("img")`
   }
 `;
 
+export const LongreadBackground = styled("div")`
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  z-index: 999999;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  animation-name: scaleIn;
+  animation-duration: 200ms;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 1;
+  transform-origin: right;
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+`;
+
 export const transition = css`
   .entered {
     transition-duration: 200ms;

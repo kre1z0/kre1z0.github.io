@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Responsive from "react-responsive";
 
-import { Bullet, BulletsContainer } from "./styles";
+import { BulletsContainer } from "./styles";
 
 export class Bullets extends Component {
   static propTypes = {
@@ -24,9 +24,7 @@ export class Bullets extends Component {
     return (
       <Responsive maxWidth={1000}>
         <BulletsContainer className={className}>
-          {sections.map((_, index) => (
-            <Bullet key={`${index}-bullet`} isActive={index === selectedSectionIndex} />
-          ))}
+          {`${selectedSectionIndex + 1}/${sections.length}`}
         </BulletsContainer>
       </Responsive>
     );

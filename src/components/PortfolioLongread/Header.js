@@ -1,14 +1,18 @@
 import React, { Component } from "react";
-import styled from "astroturf";
+import PropTypes from "prop-types";
 
-export const HeaderBlock = styled("header")`
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.14);
-`;
+import { HeaderBlock } from "./styles";
 
 export class Header extends Component {
+  static propTypes = {
+    project: PropTypes.object,
+  };
+
   render() {
-    return <HeaderBlock>header</HeaderBlock>;
+    const {
+      project: { bgColor },
+    } = this.props;
+
+    return <HeaderBlock style={{ backgroundColor: bgColor }}>header</HeaderBlock>;
   }
 }
