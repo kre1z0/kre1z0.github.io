@@ -27,6 +27,23 @@ export const Article = styled("article")`
   }
 `;
 
+export const H1 = styled("h1")`
+  line-height: normal;
+  font-size: 3.4285rem;
+  margin-bottom: 1.5rem;
+  @media (max-width: 992px) {
+    font-size: 2.5714rem;
+  }
+  @media (max-width: 768px) {
+    font-size: 1.7142rem;
+    margin-bottom: 1.2rem;
+  }
+  @media (max-width: 576px) {
+    font-size: 1.4285rem;
+    margin-bottom: 1rem;
+  }
+`;
+
 export const H2 = styled("h2")`
   line-height: normal;
   font-size: 3rem;

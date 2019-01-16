@@ -13,13 +13,10 @@ export const IconButtonContainer = styled(Button)`
   height: 1.4285rem;
   box-sizing: content-box;
   transition: all 200ms ease;
-  > svg {
-    width: 1.2857rem;
-    height: 1.2857rem;
-  }
+  background: none;
 `;
 
-export const IconButton = props => {
+export const IconButton = ({ children, ...props }) => {
   return <IconButtonContainer {...props}>{children}</IconButtonContainer>;
 };
 

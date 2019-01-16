@@ -120,13 +120,18 @@ export const sectionsFromAdditionalMenu = additionalMenu => {
   return sliderIdArray;
 };
 
-export const getProject = (projectId, parentId = "portfolio") => {
+export const getProject = ({ projectId, parentId = "portfolio", allProject = false }) => {
   const { additionalMenu } = getRouteById(parentId);
+  const projects = sectionsFromAdditionalMenu(additionalMenu) || [];
 
-  return sectionsFromAdditionalMenu(additionalMenu).find(({ id }) => id === projectId);
+  if (allProject) {
+    return projects;
+  } else {
+    return projects.find(({ id }) => id === projectId);
+  }
 };
 
 export const getBackRouteByLocationPathName = pathname => {
-  if (pathname.includes("company")) return "/";
+  if (getProject({ allProject: true }).some(({ id }) => pathname.includes(id))) return "/portfolio";
   else return "/";
 };

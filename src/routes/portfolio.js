@@ -25,15 +25,19 @@ export default {
       children: [
         {
           id: "msp",
+          type: "Малый бизнес",
           groupName: "Малый бизнес",
           text: "Бизнес-навигатор МСП",
           bgColor: "#387bc7",
           description:
             "Бесплатный сервис для предпринимателей. Найдите лучшее место для открытия бизнеса и получите готовый бизнес-план.",
           screenshot: msp,
+          link: "navigator.smbn.ru",
+          linkText: "",
         },
         {
           id: "mobileMsp",
+          type: "Малый бизнес",
           groupName: "Малый бизнес",
           text: "Мобильный бизнес-навигатор",
           bgColor: "#e0f0f6",
@@ -55,4 +59,4 @@ export default {
     },
   ],
   slider: true,
-}
+};
