@@ -38,9 +38,14 @@ export const H1 = styled("h1")`
     font-size: 1.7142rem;
     margin-bottom: 1.2rem;
   }
+
   @media (max-width: 576px) {
     font-size: 1.4285rem;
     margin-bottom: 1rem;
+  }
+  &.portfolio {
+    font-size: 2.2857rem;
+    margin-bottom: 3.5rem;
   }
 `;
 

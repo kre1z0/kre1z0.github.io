@@ -3,6 +3,8 @@ import bank from "../img/portfolio/bank.png";
 import mobileMsp1 from "../img/portfolio/mobileMsp/mobile-1.png";
 import mobileMsp2 from "../img/portfolio/mobileMsp/mobile-2.png";
 import mobileMsp3 from "../img/portfolio/mobileMsp/mobile-3.png";
+import rrIcon from "../img/portfolio/msp/rr.svg";
+import bankIcon from "../img/portfolio/msp/bank.svg";
 
 export default {
   id: "portfolio",
@@ -34,6 +36,17 @@ export default {
           screenshot: msp,
           link: "navigator.smbn.ru",
           linkText: "",
+          achievements: [
+            {
+              amount: "172",
+              text: "Столиц субъектов РФ и городов с населением более 100 тыс. чел.",
+            },
+            { amount: "103", text: "Концепций бизнеса доступны для расчёта бизнес-плана" },
+            { amount: "450 000", text: "Пользователей воспользовались сервисом за два года" },
+            { amount: "270 000", text: "Предпринимателей зарегистрированы в бизнес-навигаторе" },
+            { icon: rrIcon, text: "Подключена публичная кадастровая карта Росреестра" },
+            { icon: bankIcon, text: "Бизнес-планы принимаются банками-партнёрами Корпорации МСП" },
+          ],
         },
         {
           id: "mobileMsp",

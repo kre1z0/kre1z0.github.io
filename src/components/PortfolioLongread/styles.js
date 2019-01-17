@@ -66,6 +66,7 @@ const styles = css`
     color: rgba(255, 255, 255, 0.5);
   }
   .scrollDownButton {
+    font-weight: 500;
     position: absolute;
     bottom: 0;
     left: 50%;

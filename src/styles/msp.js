@@ -1,4 +1,6 @@
-import { css } from "astroturf";
+import styled, { css } from "astroturf";
+
+export const MspContainer = styled("div")``;
 
 const styles = css``;
 

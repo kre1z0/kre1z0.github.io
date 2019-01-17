@@ -3,7 +3,7 @@ import styled from "astroturf";
 import PropTypes from "prop-types";
 
 const Link = styled("a")`
-  font-weight: 500;
+  color: #387bc7;
   text-decoration: none;
 `;
 
