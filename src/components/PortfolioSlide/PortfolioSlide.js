@@ -143,18 +143,20 @@ export class PortfolioSlide extends PureComponent {
           </Responsive>
           <Bullets sections={sections} selectedSectionIndex={selectedSectionIndex} />
         </PortfolioSlideContainer>
-        <Portal>
-          <LongreadBackground
-            goToLongread={goToLongread}
-            style={{
-              backgroundColor: bgColor,
-              top: goToLongread ? 0 : top,
-              left: goToLongread ? 0 : left,
-              width: goToLongread ? "100vw" : width,
-              height: goToLongread ? "100vh" : height,
-            }}
-          />
-        </Portal>
+        {typeof window === "object" && (
+          <Portal>
+            <LongreadBackground
+              goToLongread={goToLongread}
+              style={{
+                backgroundColor: bgColor,
+                top: goToLongread ? 0 : top,
+                left: goToLongread ? 0 : left,
+                width: goToLongread ? "100vw" : width,
+                height: goToLongread ? "100vh" : height,
+              }}
+            />
+          </Portal>
+        )}
       </Swiper>
     );
   }

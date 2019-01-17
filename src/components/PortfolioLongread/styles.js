@@ -33,7 +33,7 @@ export const LeftSide = styled(Section)`
 `;
 
 export const LeftSideContent = styled("div")`
-  margin-right: 2.4rem;
+  margin-right: 4rem;
 `;
 
 export const RightSide = styled(Section)`

@@ -4,9 +4,9 @@ import ReactDOM from "react-dom";
 const PORTAL_ROOT_ID = "portal-root";
 
 const getPortalRoot = () => {
-  let root = typeof window !== "undefined" && document.getElementById(PORTAL_ROOT_ID);
+  let root = typeof window === "object" && document.getElementById(PORTAL_ROOT_ID);
 
-  if (!root && typeof window !== "undefined") {
+  if (!root && typeof window === "object") {
     root = document.createElement("div");
     root.id = PORTAL_ROOT_ID;
     document.body.appendChild(root);
