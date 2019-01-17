@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import cn from "classnames";
 
 import { Background as BackgroundBlock } from "../Background/Background";
-import { fade, scaleIn, scaleOut, transition } from "../../styles/animation";
+import { fade, scaleIn, scaleOut, transition } from "../Transition/animation";
 import styles from "../Background/styles";
 import { getBase64BackgroundByIndex } from "../Background/getBackground";
 import { Resizer } from "../Background/Resizer";

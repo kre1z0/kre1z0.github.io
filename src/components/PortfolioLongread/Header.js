@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import cn from "classnames";
 
-import animation from "../../styles/animation";
+import animation from "../../components/Transition/animation";
 import { ScrollDownButton } from "../../components/Buttons/ScrollDownButton";
 import { OutsideLink } from "../../components/OutsideLink/OutsideLink";
 

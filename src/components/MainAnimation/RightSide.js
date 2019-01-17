@@ -4,7 +4,7 @@ import cn from "classnames";
 
 import { RightSide as RightSideBlock } from "../Main/RightSide";
 import { WillChange } from "./WillChange";
-import { fade, slideUp, transition } from "../../styles/animation";
+import { fade, slideUp, transition } from "../Transition/animation";
 
 export class RightSide extends Component {
   static propTypes = {

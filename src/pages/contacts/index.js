@@ -2,7 +2,7 @@ import React, { PureComponent } from "react";
 import cn from "classnames";
 import Responsive from "react-responsive";
 
-import { fade, transition } from "../../styles/animation";
+import { fade, transition } from "../../components/Transition/animation";
 import { MainLayoutConsumer } from "../../components/MainLayoutProvider/MainLayoutProvider";
 import { Portal } from "../../components/Portal/Portal";
 import bg from "../../components/Background/styles";

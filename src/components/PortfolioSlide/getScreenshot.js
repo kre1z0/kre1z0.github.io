@@ -2,7 +2,7 @@ import React from "react";
 import cn from "classnames";
 
 import { MultiScreenshots } from "./MultiScreenshots";
-import { fade } from "../../styles/animation";
+import { fade } from "../Transition/animation";
 
 import { Screenshot, transition, slideLeft, slideRight } from "./styles";
 

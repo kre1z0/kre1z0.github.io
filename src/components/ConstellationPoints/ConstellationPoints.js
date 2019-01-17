@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 import { ConstellationPointsContainer, TransformContainer, Point, FakePoint } from "./styles";
 import cn from "classnames";
-import { fade, transition } from "../../styles/animation";
+import { fade, transition } from "../Transition/animation";
 
 export class ConstellationPoints extends PureComponent {
   static propTypes = {

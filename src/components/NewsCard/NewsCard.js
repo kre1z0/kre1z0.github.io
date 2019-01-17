@@ -6,7 +6,7 @@ import { Swiper } from "../../components/Swiper/Swiper";
 import { AboutCardContainer, Title, Date, Description, Logo, Read } from "./styles";
 import cn from "classnames";
 import { slideDown, slideLeft, slideRight, slideUp, transition } from "../PortfolioSlide/styles";
-import { fade } from "../../styles/animation";
+import { fade } from "../../components/Transition/animation";
 
 export class Crutch extends PureComponent {
   render() {
