@@ -14,12 +14,10 @@ export const HeaderContainer = styled("header")`
 export const HeaderBlock = styled("div")`
   position: relative;
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  height: 100%;
   width: 100%;
-  @media (max-width: 1366px) {
-    max-width: 114.2857rem;
-  }
+  max-width: 114.2857rem;
 `;
 
 const Section = styled("section")`
@@ -27,7 +25,6 @@ const Section = styled("section")`
   justify-content: center;
   align-items: flex-end;
   flex-direction: column;
-  height: 100%;
   width: 50%;
 `;
 
@@ -36,14 +33,10 @@ export const LeftSide = styled(Section)`
 `;
 
 export const LeftSideContent = styled("div")`
-  max-width: 38.5714rem;
-  margin-right: 6.4rem;
+  margin-right: 2.4rem;
 `;
 
 export const RightSide = styled(Section)`
-  flex-shrink: 0;
-  flex-grow: 1;
-  width: 50vw;
   position: relative;
 `;
 

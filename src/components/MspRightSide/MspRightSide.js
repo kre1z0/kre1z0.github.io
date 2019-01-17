@@ -22,6 +22,7 @@ export class MspRightSide extends PureComponent {
     return (
       <>
         <LayersBlock>
+          <img src={layer1} alt="fake-layer" className={styles.fakeLayer} />
           <img src={layer1} alt="layer1" className={animation.fadeIn} />
           <img src={layer2} alt="layer2" className={animation.fadeIn} />
           <img src={layer3} alt="layer3" className={animation.fadeIn} />

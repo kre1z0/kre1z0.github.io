@@ -4,31 +4,38 @@ export const LayersBlock = styled("div")`
   width: 100%;
   height: 100%;
   > img {
-    opacity: 0;
-    animation-fill-mode: forwards;
+    width: 129%;
     max-width: none;
-    position: absolute;
-    top: 50%;
-    left: 61%;
-    transform: translate(-50%, -50%);
-    width: 122%;
-    height: auto;
-    &:nth-child(2) {
-      animation-delay: 400ms;
+    &:first-child {
+      opacity: 0;
     }
-    &:nth-child(3) {
-      animation-delay: 600ms;
+    &:not(:first-child) {
+      opacity: 0;
+      animation-fill-mode: forwards;
+      position: absolute;
+      top: 50%;
+      left: -0.7vw;
+      transform: translateY(-50%);
+      height: auto;
+      &:nth-child(3) {
+        animation-duration: 400ms;
+        animation-delay: 400ms;
+      }
+      &:nth-child(4) {
+        animation-duration: 400ms;
+        animation-delay: 800ms;
+      }
     }
   }
 `;
 
 export const CardsBlock = styled("div")`
-  top: calc(50% + 1vw);
+  top: 50.8%;
   transform: translateY(-50%);
-  left: 8.8%;
   display: flex;
-  width: 44.4vw;
-  height: calc(44.4vw / 1.77);
+  left: 7.2%;
+  width: 93.7%;
+  height: 41%;
   position: absolute;
   align-items: flex-start;
   justify-content: space-between;
@@ -40,35 +47,34 @@ export const CardsBlock = styled("div")`
 `;
 
 const Col = styled("div")`
+  top: 4.3%;
+  left: 1.4%;
+  width: 36%;
+  position: relative;
   height: 100%;
   > img {
     opacity: 0;
     animation-fill-mode: forwards;
     vertical-align: top;
     &:nth-child(1) {
-      animation-delay: 800ms;
-    }
-    &:nth-child(2) {
-      animation-delay: 1000ms;
-    }
-    &:nth-child(3) {
       animation-delay: 1200ms;
     }
-    &:nth-child(4) {
+    &:nth-child(2) {
       animation-delay: 1400ms;
+    }
+    &:nth-child(3) {
+      animation-delay: 1600ms;
+    }
+    &:nth-child(4) {
+      animation-delay: 1800ms;
     }
   }
 `;
 
-export const LeftCol = styled(Col)`
-  width: 32%;
-`;
+export const LeftCol = styled(Col)``;
 
 export const RightCol = styled(Col)`
-  width: 35%;
-  position: relative;
-  margin-top: -7.44vw;
-  left: 0.28vw;
+  margin-top: -18.34%;
   display: flex;
   justify-content: flex-end;
   flex-direction: column-reverse;
@@ -106,6 +112,9 @@ const styles = css`
         transform: translateY(0);
       }
     }
+  }
+  .fakeLayer {
+    opacity: 0;
   }
 `;
 
