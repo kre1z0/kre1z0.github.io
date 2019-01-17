@@ -204,28 +204,28 @@ export const Screenshot = styled("img")`
 `;
 
 export const LongreadBackground = styled("div")`
+  opacity: 0;
   pointer-events: none;
-  top: 0;
-  left: 0;
-  z-index: 999999;
+  z-index: 999;
   position: absolute;
-  width: 100vw;
-  height: 100vh;
-  animation-name: scaleIn;
-  animation-duration: 200ms;
-  animation-timing-function: ease-in;
-  animation-iteration-count: 1;
-  transform-origin: right;
-  @keyframes scaleIn {
-    from {
-      opacity: 0;
-      transform: scale(0);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
+  transition: width 200ms ease-out, height 200ms ease-out, top 200ms ease-out, left 200ms ease-out;
+  //animation-name: scaleIn;
+  //animation-duration: 200ms;
+  //animation-timing-function: ease-in;
+  //animation-iteration-count: 1;
+  &.goToLongread {
+    opacity: 1;
   }
+  //@keyframes scaleIn {
+  //  from {
+  //    width: 100%;
+  //    height: 100%;
+  //  }
+  //  to {
+  //    width: 100vw;
+  //    height: 100vh;
+  //  }
+  //}
 `;
 
 export const transition = css`

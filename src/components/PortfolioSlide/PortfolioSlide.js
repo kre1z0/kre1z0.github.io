@@ -36,6 +36,26 @@ export class PortfolioSlide extends PureComponent {
   state = {
     hovered: false,
     goToLongread: false,
+    top: 0,
+    left: 0,
+    width: 0,
+    height: 0,
+  };
+
+  componentDidMount() {
+    this.onResize();
+    window.addEventListener("resize", this.onResize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.onResize);
+  }
+
+  onResize = () => {
+    if (this.slide) {
+      const { top, left, width, height } = this.slide.getBoundingClientRect();
+      this.setState({ top, left, width, height });
+    }
   };
 
   onSwiped = ({ isLeft, isRight, xRatio }) => {
@@ -62,8 +82,14 @@ export class PortfolioSlide extends PureComponent {
     );
   };
 
+  onContainerRef = ref => {
+    if (ref) {
+      this.slide = ref;
+    }
+  };
+
   render() {
-    const { hovered, goToLongread } = this.state;
+    const { hovered, top, left, width, height, goToLongread } = this.state;
     const {
       bgColor,
       text,
@@ -80,6 +106,7 @@ export class PortfolioSlide extends PureComponent {
     return (
       <Swiper onSwiped={this.onSwiped} onClick={this.goToLongread}>
         <PortfolioSlideContainer
+          ref={this.onContainerRef}
           onMouseOver={() => this.setState({ hovered: true })}
           onMouseOut={() => this.setState({ hovered: false })}
         >
@@ -115,12 +142,19 @@ export class PortfolioSlide extends PureComponent {
             </ControlBlock>
           </Responsive>
           <Bullets sections={sections} selectedSectionIndex={selectedSectionIndex} />
-          {goToLongread && (
-            <Portal>
-              <LongreadBackground style={{ backgroundColor: bgColor }} />
-            </Portal>
-          )}
         </PortfolioSlideContainer>
+        <Portal>
+          <LongreadBackground
+            goToLongread={goToLongread}
+            style={{
+              backgroundColor: bgColor,
+              top: goToLongread ? 0 : top,
+              left: goToLongread ? 0 : left,
+              width: goToLongread ? "100vw" : width,
+              height: goToLongread ? "100vh" : height,
+            }}
+          />
+        </Portal>
       </Swiper>
     );
   }
