@@ -209,23 +209,9 @@ export const LongreadBackground = styled("div")`
   z-index: 999;
   position: absolute;
   transition: width 200ms ease-out, height 200ms ease-out, top 200ms ease-out, left 200ms ease-out;
-  //animation-name: scaleIn;
-  //animation-duration: 200ms;
-  //animation-timing-function: ease-in;
-  //animation-iteration-count: 1;
   &.goToLongread {
     opacity: 1;
   }
-  //@keyframes scaleIn {
-  //  from {
-  //    width: 100%;
-  //    height: 100%;
-  //  }
-  //  to {
-  //    width: 100vw;
-  //    height: 100vh;
-  //  }
-  //}
 `;
 
 export const transition = css`
