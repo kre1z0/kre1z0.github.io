@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 
 import layer1 from "../../img/portfolio/msp/layer-1.png";
-import animation from "../Transition/animation";
+import animation from "../../styles/animation";
 import layer2 from "../../img/portfolio/msp/layer-2.png";
 import layer3 from "../../img/portfolio/msp/layer-3.png";
 

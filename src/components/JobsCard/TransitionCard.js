@@ -5,7 +5,7 @@ import cn from "classnames";
 import { slideLeft, slideRight, transition } from "../PortfolioSlide/styles";
 import { JobsCardContainer } from "./styles";
 import { Card } from "./Card";
-import { fade } from "../Transition/animation";
+import { fade } from "../../styles/animation";
 
 export class Crutch extends Component {
   static getDerivedStateFromProps(nextProps, prevState) {

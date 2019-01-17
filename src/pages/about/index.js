@@ -8,7 +8,7 @@ import { MainAnimation } from "../../components/MainAnimation/MainAnimation";
 import { H2, GatsbyLink } from "../../components/Atoms/Atoms";
 import { MainLayoutConsumer } from "../../components/MainLayoutProvider/MainLayoutProvider";
 import { ConstellationPoints } from "../../components/ConstellationPoints/ConstellationPoints";
-import { fade, slideUp, transition } from "../../components/Transition/animation";
+import { fade, slideUp, transition } from "../../styles/animation";
 import styles, { NewsContainer, WillChangeNews } from "../../styles/about";
 import { getRouteByLocation } from "../../routes";
 
@@ -24,12 +24,12 @@ export class About extends PureComponent {
     const { location } = this.props;
     const { news, text } = getRouteByLocation(location);
 
-    const { status } = this.props;
     const { x, y } = this.state;
 
     return (
       <MainLayoutConsumer>
         {({
+          status,
           selectedSectionIndex,
           onSectionChange,
           sectionDirection,

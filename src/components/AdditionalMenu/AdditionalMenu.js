@@ -4,7 +4,7 @@ import groupBy from "lodash/groupBy";
 import cn from "classnames";
 
 import { H2, Link } from "../../components/Atoms/Atoms";
-import animation from "../../components/Transition/animation";
+import animation from "../../styles/animation";
 import { LinkComponent } from "./LinkComponent";
 import { Menu, ListItem, ListHeader, MenuList, SecondLevelMenu } from "./styles";
 

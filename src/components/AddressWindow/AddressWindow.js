@@ -5,7 +5,7 @@ import { Portal } from "../../components/Portal/Portal";
 import { H2 } from "../../components/Atoms/Atoms";
 import { Hamburger } from "../../components/Buttons/IconButtons";
 import { Link } from "../../styles/contacts";
-import styles from "../../components/Transition/animation";
+import styles from "../../styles/animation";
 
 export const ModalLink = styled(Link)`
   margin-bottom: 1.4285rem;

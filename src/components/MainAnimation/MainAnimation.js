@@ -6,7 +6,7 @@ import withRouter from "../../hoc/withRouter";
 import { Background } from "./Background";
 import { MainLayoutConsumer } from "../MainLayoutProvider/MainLayoutProvider";
 import { WillChange } from "./WillChange";
-import { fade, slideUp, transition } from "../Transition/animation";
+import { fade, slideUp, transition } from "../../styles/animation";
 import { Content } from "../Main/Content";
 import { LeftSide } from "../Main/LeftSide";
 import { RightSide } from "./RightSide";
@@ -38,7 +38,6 @@ class MainAnimationBase extends PureComponent {
 
   render() {
     const {
-      status,
       leftSide,
       leftSideClassName,
       rightSide,
@@ -56,7 +55,14 @@ class MainAnimationBase extends PureComponent {
 
     return (
       <MainLayoutConsumer>
-        {({ scrollTop, direction, onTransitionEnd, transitionEnd, selectedSectionIndex }) => {
+        {({
+          scrollTop,
+          direction,
+          onTransitionEnd,
+          transitionEnd,
+          selectedSectionIndex,
+          status,
+        }) => {
           const transform = `translateY(${scrollTop}px)`;
 
           return (
@@ -71,6 +77,7 @@ class MainAnimationBase extends PureComponent {
               >
                 <Background
                   {...this.props}
+                  status={status}
                   transitionEnd={transitionEnd}
                   onTransitionEnd={onTransitionEnd}
                   direction={direction}

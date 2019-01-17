@@ -2,7 +2,7 @@ import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import cn from "classnames";
 
-import animation from "../../components/Transition/animation";
+import animation from "../../styles/animation";
 import { Link, LinkContainer, MobileMenu as MobileMenuList } from "./styles";
 import { Link as OutsideLink } from "../Atoms/Atoms";
 import styles from "./styles";

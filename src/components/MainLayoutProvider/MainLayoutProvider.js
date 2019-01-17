@@ -1,12 +1,16 @@
 import React, { Component } from "react";
-import { Swiper } from "../../components/Swiper/Swiper";
+import { TransitionGroup, Transition as ReactTransition } from "react-transition-group";
 import { Location } from "@reach/router";
 import debounce from "lodash/debounce";
 import throttle from "lodash/throttle";
 
-import { ScrollBar } from "./styles";
+import { enterTimeout, exitTimeout } from "../../styles/animation";
+import { MainTransitionContainer } from "../Main/MainTransitionContainer";
+import { Swiper } from "../../components/Swiper/Swiper";
 import { mobileMenu } from "../../components/Navbar/styles";
 import { navigateTo, getRouteByLocation, getRouteById, routes } from "../../routes";
+
+import { ScrollBar } from "./styles";
 
 import "../ScrollbarProvider/plugins/disableScrollByDirection";
 import "../ScrollbarProvider/plugins/determineScrollingPlugin";
@@ -473,54 +477,69 @@ export class MainLayoutProviderComponent extends Component {
       sections,
       sectionDirection,
     } = this.state;
-    const { children } = this.props;
+    const { children, location } = this.props;
 
     return (
-      <ScrollContext.Provider
-        value={{
-          scrollTop,
-          onScrollableRef: this.onScrollableRef,
-          coloredNav,
-          onExited: this.onExited,
-          direction,
-          onNavLinkClick: this.onNavLinkClick,
-          transitionEnd,
-          onTransitionEnd: this.onTransitionEnd,
-          currentRoute,
-          mobileMenuIsOpen,
-          toggleMobileMenu: this.toggleMobileMenu,
-          setPreventDefaultTouchmoveEvent: this.setPreventDefaultTouchmoveEvent,
-
-          // sections
-          scrollToBlock: this.scrollToBlock,
-          onLeftSideSectionRef: this.onLeftSideSectionRef,
-          isSwipeEvent,
-          onSectionChange: this.onSectionChange,
-          selectedSectionIndex,
-          sections,
-          sectionDirection,
-        }}
-      >
-        <Swiper
-          preventDefaultTouchmoveEvent={preventDefaultTouchmoveEvent}
-          onSwiping={this.onSwiping}
-          onSwiped={this.onSwiped}
+      <TransitionGroup appear>
+        <ReactTransition
+          key={location.pathname}
+          timeout={{
+            enter: enterTimeout,
+            exit: exitTimeout,
+          }}
+          onExited={this.onExited}
         >
-          <ScrollBar
-            ref={this.onScrollBarRef}
-            damping={damping}
-            disableHover={disableHover || !transitionEnd}
-            plugins={{
-              disableScrollByDirection: { direction: { x: true, y: mobileMenuIsOpen } },
-              determineScrollingEvent: { callback: this.determineScrollingEvent },
-            }}
-            onScroll={this.onScroll}
-            onWheel={this.onWheel}
-          >
-            {children}
-          </ScrollBar>
-        </Swiper>
-      </ScrollContext.Provider>
+          {status => (
+            <MainTransitionContainer>
+              <ScrollContext.Provider
+                value={{
+                  status,
+                  scrollTop,
+                  onScrollableRef: this.onScrollableRef,
+                  coloredNav,
+                  direction,
+                  onNavLinkClick: this.onNavLinkClick,
+                  transitionEnd,
+                  onTransitionEnd: this.onTransitionEnd,
+                  currentRoute,
+                  mobileMenuIsOpen,
+                  toggleMobileMenu: this.toggleMobileMenu,
+                  setPreventDefaultTouchmoveEvent: this.setPreventDefaultTouchmoveEvent,
+
+                  // sections
+                  scrollToBlock: this.scrollToBlock,
+                  onLeftSideSectionRef: this.onLeftSideSectionRef,
+                  isSwipeEvent,
+                  onSectionChange: this.onSectionChange,
+                  selectedSectionIndex,
+                  sections,
+                  sectionDirection,
+                }}
+              >
+                <Swiper
+                  preventDefaultTouchmoveEvent={preventDefaultTouchmoveEvent}
+                  onSwiping={this.onSwiping}
+                  onSwiped={this.onSwiped}
+                >
+                  <ScrollBar
+                    ref={this.onScrollBarRef}
+                    damping={damping}
+                    disableHover={disableHover || !transitionEnd}
+                    plugins={{
+                      disableScrollByDirection: { direction: { x: true, y: mobileMenuIsOpen } },
+                      determineScrollingEvent: { callback: this.determineScrollingEvent },
+                    }}
+                    onScroll={this.onScroll}
+                    onWheel={this.onWheel}
+                  >
+                    {children}
+                  </ScrollBar>
+                </Swiper>
+              </ScrollContext.Provider>
+            </MainTransitionContainer>
+          )}
+        </ReactTransition>
+      </TransitionGroup>
     );
   }
 }

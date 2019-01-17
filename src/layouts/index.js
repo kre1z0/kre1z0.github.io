@@ -4,7 +4,6 @@ import Helmet from "react-helmet";
 import LongreadLayout from "./longread";
 import { MainLayoutProvider } from "../components/MainLayoutProvider/MainLayoutProvider";
 import { injectGlobals } from "../components/injectGlobals";
-import { PageTransition } from "../components/Transition/PageTransition";
 import favicon from "../img/favicon.png";
 import { Navbar } from "../components/Navbar/Navbar";
 
@@ -21,7 +20,7 @@ class Layout extends Component {
           link={[{ rel: "shortcut icon", type: "image/png", href: `${favicon}` }]}
         />
         <Navbar location={location} />
-        <PageTransition location={location}>{children}</PageTransition>
+        {children}
       </MainLayoutProvider>
     );
   }
