@@ -5,15 +5,15 @@ import animation from "../Transition/animation";
 import layer2 from "../../img/portfolio/msp/layer-2.png";
 import layer3 from "../../img/portfolio/msp/layer-3.png";
 
-import cardLeft1 from "../../img/portfolio/msp/cards/Left-1.png";
-import cardLeft2 from "../../img/portfolio/msp/cards/Left-2.png";
-import cardLeft3 from "../../img/portfolio/msp/cards/Left-3.png";
-import cardLeft4 from "../../img/portfolio/msp/cards/Left-4.png";
+import cardLeft1 from "../../img/portfolio/msp/cards/Left-1@2x.png";
+import cardLeft2 from "../../img/portfolio/msp/cards/Left-2@2x.png";
+import cardLeft3 from "../../img/portfolio/msp/cards/Left-3@2x.png";
+import cardLeft4 from "../../img/portfolio/msp/cards/Left-4@2x.png";
 
-import cardRight1 from "../../img/portfolio/msp/cards/Right-1.png";
-import cardRight2 from "../../img/portfolio/msp/cards/Right-2.png";
-import cardRight3 from "../../img/portfolio/msp/cards/Right-3.png";
-import cardRight4 from "../../img/portfolio/msp/cards/Right-4.png";
+import cardRight1 from "../../img/portfolio/msp/cards/Right-1@2x.png";
+import cardRight2 from "../../img/portfolio/msp/cards/Right-2@2x.png";
+import cardRight3 from "../../img/portfolio/msp/cards/Right-3@2x.png";
+import cardRight4 from "../../img/portfolio/msp/cards/Right-4@2x.png";
 
 import styles, { LayersBlock, CardsBlock, LeftCol, RightCol } from "./styles";
 

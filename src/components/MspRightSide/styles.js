@@ -47,7 +47,7 @@ export const CardsBlock = styled("div")`
 `;
 
 const Col = styled("div")`
-  top: 4.3%;
+  top: 4%;
   left: 1.4%;
   width: 36%;
   position: relative;
@@ -74,7 +74,8 @@ const Col = styled("div")`
 export const LeftCol = styled(Col)``;
 
 export const RightCol = styled(Col)`
-  margin-top: -18.34%;
+  left: 0.68%;
+  margin-top: -16.44%;
   display: flex;
   justify-content: flex-end;
   flex-direction: column-reverse;
