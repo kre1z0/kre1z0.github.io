@@ -14,6 +14,7 @@ export class ScrollbarProvider extends Component {
 
   state = {
     scrollTop: 0,
+    scrollbar: null,
   };
 
   onScroll = e => {
@@ -25,13 +26,25 @@ export class ScrollbarProvider extends Component {
     });
   };
 
+  onScrollBarRef = ref => {
+    if (ref) {
+      this.setState({
+        scrollbar: ref.scrollbar,
+      });
+    }
+  };
+
   render() {
-    const { scrollTop } = this.state;
+    const { scrollTop, scrollbar } = this.state;
     const { children, className } = this.props;
 
     return (
-      <ScrollBarContext.Provider value={{ scrollTop }}>
-        <Scrollbar onScroll={this.onScroll} className={className}>
+      <ScrollBarContext.Provider value={{ scrollTop, scrollbar }}>
+        <Scrollbar
+          onScrollbarRef={this.onScrollBarRef}
+          onScroll={this.onScroll}
+          className={className}
+        >
           {children}
         </Scrollbar>
       </ScrollBarContext.Provider>

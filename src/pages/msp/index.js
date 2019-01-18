@@ -7,18 +7,19 @@ import { getProject } from "../../routes";
 import { Section, Article, H1, Paragraph } from "../../components/LongreadAtoms/Longread";
 import { TaglineAwards } from "../../components/TaglineAwards/TaglineAwards";
 import { MspRegionMap } from "../../components/MspRegionMap/MspRegionMap";
+import { MspVideo } from "../../components/MspVideo/MspVideo";
 
 // import styles from "../../styles/msp";
 
 class Msp extends PureComponent {
   render() {
     const msp = getProject({ projectId: "msp" });
-    const { link, achievements } = msp;
+    const { link, achievements, videos } = msp;
 
     return (
       <div>
         <Header {...msp} rightSide={<MspRightSide />} />
-        <Section>
+        <Section withoutPaddingBottom>
           <Article>
             <H1 portfolio>Предыстория</H1>
             <Paragraph>
@@ -31,7 +32,7 @@ class Msp extends PureComponent {
               В 2018 году сервис получил премию{" "}
               <OutsideLink href="https://tagline.ru/cases/razrabotka-veb-servisa-dlya-poiska-mesta-dlya-biznesa-i-rascheta-biznes-plana--biznes-navigator-msp/">
                 Tagline Awards
-              </OutsideLink>
+              </OutsideLink>{" "}
               - 3 место в категории лучший инновационный сервис и лучший сервис для
               digital-маркетинга.
             </Paragraph>
@@ -55,61 +56,11 @@ class Msp extends PureComponent {
               приложении. Получить детализированный типовой бизнес-план возможно после выполнения 5
               простых шагов.
             </Paragraph>
-            <Paragraph>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam dolorum
-              exercitationem harum, ipsa iste iure iusto magnam molestiae numquam odio quibusdam
-              quidem totam vero voluptas? Cupiditate nobis optio soluta.
-            </Paragraph>
-            <Paragraph>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam dolorum
-              exercitationem harum, ipsa iste iure iusto magnam molestiae numquam odio quibusdam
-              quidem totam vero voluptas? Cupiditate nobis optio soluta.
-            </Paragraph>
-            <Paragraph>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam dolorum
-              exercitationem harum, ipsa iste iure iusto magnam molestiae numquam odio quibusdam
-              quidem totam vero voluptas? Cupiditate nobis optio soluta.
-            </Paragraph>
-            <Paragraph>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam dolorum
-              exercitationem harum, ipsa iste iure iusto magnam molestiae numquam odio quibusdam
-              quidem totam vero voluptas? Cupiditate nobis optio soluta.
-            </Paragraph>
-            <Paragraph>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam dolorum
-              exercitationem harum, ipsa iste iure iusto magnam molestiae numquam odio quibusdam
-              quidem totam vero voluptas? Cupiditate nobis optio soluta.
-            </Paragraph>
-            <Paragraph>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam dolorum
-              exercitationem harum, ipsa iste iure iusto magnam molestiae numquam odio quibusdam
-              quidem totam vero voluptas? Cupiditate nobis optio soluta.
-            </Paragraph>
-            <Paragraph>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam dolorum
-              exercitationem harum, ipsa iste iure iusto magnam molestiae numquam odio quibusdam
-              quidem totam vero voluptas? Cupiditate nobis optio soluta.
-            </Paragraph>
-            <Paragraph>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam dolorum
-              exercitationem harum, ipsa iste iure iusto magnam molestiae numquam odio quibusdam
-              quidem totam vero voluptas? Cupiditate nobis optio soluta.
-            </Paragraph>
-            <Paragraph>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam dolorum
-              exercitationem harum, ipsa iste iure iusto magnam molestiae numquam odio quibusdam
-              quidem totam vero voluptas? Cupiditate nobis optio soluta.
-            </Paragraph>
-            <Paragraph>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam dolorum
-              exercitationem harum, ipsa iste iure iusto magnam molestiae numquam odio quibusdam
-              quidem totam vero voluptas? Cupiditate nobis optio soluta.
-            </Paragraph>
-            <Paragraph>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam dolorum
-              exercitationem harum, ipsa iste iure iusto magnam molestiae numquam odio quibusdam
-              quidem totam vero voluptas? Cupiditate nobis optio soluta.
-            </Paragraph>
+          </Article>
+        </Section>
+        <Section>
+          <Article>
+            <MspVideo videos={videos} />
           </Article>
         </Section>
       </div>

@@ -16,13 +16,29 @@ import styles, {
   Title,
   Description,
 } from "./styles";
+import { ScrollbarConsumer } from "../ScrollbarProvider/ScrollbarProvider";
 
-export class Header extends Component {
+export class HeaderBase extends Component {
   static propTypes = {
     bgColor: PropTypes.string,
     type: PropTypes.string,
     text: PropTypes.string,
     rightSide: PropTypes.element,
+    scrollbar: PropTypes.object,
+  };
+
+  shouldComponentUpdate({ scrollbar: nextScrollbar }, nextState) {
+    const { scrollbar } = this.props;
+
+    return scrollbar !== nextScrollbar;
+  }
+
+  onScrollDown = () => {
+    const { scrollbar } = this.props;
+
+    const viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+
+    scrollbar.scrollTo(0, viewportHeight, 400);
   };
 
   render() {
@@ -42,9 +58,15 @@ export class Header extends Component {
             </LeftSideContent>
           </LeftSide>
           <RightSide>{rightSide}</RightSide>
-          <ScrollDownButton className={styles.scrollDownButton} />
+          <ScrollDownButton className={styles.scrollDownButton} onClick={this.onScrollDown} />
         </HeaderBlock>
       </HeaderContainer>
     );
   }
 }
+
+export const Header = props => (
+  <ScrollbarConsumer>
+    {({ scrollbar }) => <HeaderBase scrollbar={scrollbar} {...props} />}
+  </ScrollbarConsumer>
+);

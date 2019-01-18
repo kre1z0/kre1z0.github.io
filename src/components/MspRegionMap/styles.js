@@ -1,4 +1,4 @@
-import styled from "astroturf";
+import styled, { css } from "astroturf";
 
 export const MspRegionMapContainer = styled("div")`
   position: relative;
@@ -31,7 +31,7 @@ export const Achievement = styled("div")`
   align-items: center;
   justify-content: flex-end;
   width: calc(100% / 3);
-  padding-bottom: 1.6rem;
+  padding-bottom: 1.8rem;
   > span {
     white-space: nowrap;
     font-size: 4rem;
@@ -50,6 +50,33 @@ export const Achievement = styled("div")`
     margin-bottom: 0;
   }
   &:nth-child(n + 4) {
+    padding-bottom: 1rem;
     align-self: flex-start;
   }
 `;
+
+export const MapWraper = styled("div")`
+  width: 100%;
+  height: 84.4%;
+  svg {
+    width: 100%;
+    height: auto;
+  }
+  path {
+    fill: #f0f4f7;
+    stroke: #fff;
+  }
+`;
+
+const styles = css`
+  path.isFull {
+    fill: #fff;
+    stroke: #e6ebf0;
+    ~ path {
+      fill: #fff;
+      stroke: #e6ebf0;
+    }
+  }
+`;
+
+export default styles;

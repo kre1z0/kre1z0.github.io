@@ -5,6 +5,9 @@ import mobileMsp2 from "../img/portfolio/mobileMsp/mobile-2.png";
 import mobileMsp3 from "../img/portfolio/mobileMsp/mobile-3.png";
 import rrIcon from "../img/portfolio/msp/rr.svg";
 import bankIcon from "../img/portfolio/msp/bank.svg";
+import mspVideo1 from "../videos/msp/1_1.webm";
+import mspVideo2 from "../videos/msp/1_2.webm";
+import mspVideo3 from "../videos/msp/1_3.webm";
 
 export default {
   id: "portfolio",
@@ -46,6 +49,11 @@ export default {
             { amount: "270 000", text: "Предпринимателей зарегистрированы в бизнес-навигаторе" },
             { icon: rrIcon, text: "Подключена публичная кадастровая карта Росреестра" },
             { icon: bankIcon, text: "Бизнес-планы принимаются банками-партнёрами Корпорации МСП" },
+          ],
+          videos: [
+            { title: "Новичок", source: mspVideo1 },
+            { title: "Предприниматель со стартовым капиталом", source: mspVideo2 },
+            { title: "Опытный предприниматель", source: mspVideo3 },
           ],
         },
         {

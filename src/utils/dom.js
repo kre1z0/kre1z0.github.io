@@ -4,7 +4,7 @@ export const getElementWidthAndHeight = element => {
     return {
       width: 0,
       height: 0,
-    }
+    };
   }
 
   const box = element.getBoundingClientRect();
