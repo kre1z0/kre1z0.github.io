@@ -15,7 +15,7 @@ export const SelectorItem = styled("div")`
   background-color: rgba(56, 123, 199, 0.1);
   color: #387bc7;
   border-radius: 0.2857rem;
-  transition: all 200ms linear;
+  transition: background-color 200ms linear, color 200ms linear;
   &.isActive {
     cursor: default;
     color: #fff;

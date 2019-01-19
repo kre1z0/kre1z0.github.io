@@ -15,6 +15,11 @@ export const Section = styled("section")`
   @media (max-width: 440px) {
     padding: 2rem 1.4285rem 2.4rem 1.4285rem;
   }
+  
+  &.withoutPaddingTop {
+    padding-top: 0;
+  }
+  
   &.withoutPaddingBottom {
     padding-bottom: 0;
   }

@@ -8,18 +8,32 @@ export class Video extends Component {
 
   static defaultProps = {
     video: "",
+    play: true,
   };
 
   video = null;
 
-  shouldComponentUpdate(prevProps) {
-    return prevProps.video !== this.props.video;
+  shouldComponentUpdate({ video: prevVideo, play: prevPlay }) {
+    const { video, play } = this.props;
+    return prevVideo !== video || prevPlay !== play;
   }
 
-  componentDidUpdate() {
-    if (!!this.video) {
-      this.video.load();
-      this.video.play();
+  componentDidUpdate({ video: prevVideo, play: prevPlay }) {
+    const { play, video } = this.props;
+
+    if (this.video) {
+      if (prevVideo !== video) {
+        this.video.load();
+        this.video.play();
+      }
+
+      if (prevPlay !== play) {
+        if (play) {
+          this.video.play();
+        } else {
+          this.video.pause();
+        }
+      }
     }
   }
 
@@ -30,9 +44,10 @@ export class Video extends Component {
   };
 
   render() {
-    const { video, className, ...props } = this.props;
+    const { video, play, className, ...props } = this.props;
+
     return (
-      <video autoPlay muted loop ref={this.onVideoRef} className={className} {...props}>
+      <video autoPlay={play} muted loop ref={this.onVideoRef} className={className} {...props}>
         <source src={video} type="video/mp4" />
       </video>
     );
