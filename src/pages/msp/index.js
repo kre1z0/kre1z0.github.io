@@ -3,16 +3,24 @@ import React, { PureComponent } from "react";
 import { OutsideLink } from "../../components/OutsideLink/OutsideLink";
 import { MspRightSide } from "../../components/MspRightSide/MspRightSide";
 import { Header } from "../../components/PortfolioLongread/Header";
+import { Paragraph } from "../../components/PortfolioLongread/Paragraph";
 import { getProject } from "../../routes";
-import { Section, Article, H1, Paragraph } from "../../components/LongreadAtoms/Longread";
+import { Section, Article, H1 } from "../../components/LongreadAtoms/Longread";
 import { TaglineAwards } from "../../components/TaglineAwards/TaglineAwards";
 import { MspRegionMap } from "../../components/MspRegionMap/MspRegionMap";
 import { MspVideo } from "../../components/MspVideo/MspVideo";
+import { UnorderedList } from "../../components/LongreadAtoms/UnorderedList";
+import { Selector } from "../../components/Selector/Selector";
 
-// import styles from "../../styles/msp";
+import styles, { Step } from "../../styles/msp";
 
 class Msp extends PureComponent {
+  state = {
+    selectedVideoIndex: 0,
+  };
+
   render() {
+    const { selectedVideoIndex } = this.state;
     const msp = getProject({ projectId: "msp" });
     const { link, achievements, videos } = msp;
 
@@ -60,9 +68,32 @@ class Msp extends PureComponent {
         </Section>
         <Section>
           <Article>
-            <MspVideo videos={videos} />
+            <MspVideo selectedVideoIndex={selectedVideoIndex} videos={videos} />
+            <Step>
+              <span>Шаг 1</span>Выбор территории для ведения бизнеса
+            </Step>
+            <UnorderedList aria-label="Сначала пользователь должен выбрать:">
+              <li>Город, в котором собирается открывать или развивать бизнес</li>
+              <li>Одну из 103 отраслевых концепций бизнеса из каталога сервиса</li>
+            </UnorderedList>
+            <UnorderedList aria-label="Сначала пользователь должен выбрать:" />
+            <Selector
+              className={styles.selectorContainer}
+              items={videos}
+              selectedIndex={selectedVideoIndex}
+              onChange={index => this.setState({ selectedVideoIndex: index })}
+            />
+            <Paragraph>
+              Карта привлекательности районов города для открытия малого бизнеса покажет начинающим
+              предпринимателям, в каком районе, какой вид бизнеса более востребован.
+            </Paragraph>
           </Article>
         </Section>
+        {/*<Section>*/}
+        {/*<Article>*/}
+        {/**/}
+        {/*</Article>*/}
+        {/*</Section>*/}
       </div>
     );
   }

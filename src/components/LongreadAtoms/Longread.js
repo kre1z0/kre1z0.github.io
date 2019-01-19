@@ -47,8 +47,17 @@ export const H1 = styled("h1")`
     margin-bottom: 1rem;
   }
   &.portfolio {
-    font-size: 2.2857rem;
+    font-size: 2.5714rem;
     margin-bottom: 3.5rem;
+    @media (max-width: 992px) {
+      font-size: 2.2857rem;
+    }
+    @media (max-width: 768px) {
+      font-size: 1.7142rem;
+    }
+    @media (max-width: 576px) {
+      font-size: 1.4285rem;
+    }
   }
 `;
 
@@ -68,6 +77,17 @@ export const H2 = styled("h2")`
   }
   @media (max-width: 440px) {
     margin-bottom: 1rem;
+  }
+`;
+
+export const H3 = styled("h2")`
+  line-height: normal;
+  font-size: 1.7142rem;
+  @media (max-width: 768px) {
+    font-size: 1.4285rem;
+  }
+  @media (max-width: 576px) {
+    font-size: 1.2857rem;
   }
 `;
 
