@@ -83,15 +83,11 @@ class Msp extends PureComponent {
               <li>Город, в котором собирается открывать или развивать бизнес</li>
               <li>Одну из 103 отраслевых концепций бизнеса из каталога сервиса</li>
             </UnorderedList>
-            <UnorderedList aria-label="Сначала пользователь должен выбрать:" />
-            <Paragraph>
-              Карта привлекательности районов города для открытия малого бизнеса покажет начинающим
-              предпринимателям, в каком районе, какой вид бизнеса более востребован.
-            </Paragraph>
+            <Paragraph>Для некоторых видов бизнеса доступен выбор франшизы.</Paragraph>
           </Article>
         </Section>
         <Section className={styles.selectorSection}>
-          <Scrollbar>
+          <Scrollbar className={styles.selectorSectionScrollbar}>
             <Selector
               className={styles.selectorContainer}
               items={videos}
@@ -110,7 +106,9 @@ class Msp extends PureComponent {
         </Section>
         <Section withoutPaddingBottom>
           <Article>
-            <VideoContainer>{/*<InViewVideo source={step2Video} />*/}</VideoContainer>
+            <VideoContainer>
+              <InViewVideo source={step2Video} />
+            </VideoContainer>
             <Step>
               <span>Шаг 2</span>Выбор месторасположения бизнеса по параметрам
             </Step>
@@ -123,7 +121,9 @@ class Msp extends PureComponent {
         </Section>
         <Section withoutPaddingBottom>
           <Article>
-            <VideoContainer>{/*<InViewVideo source={step3Video} />*/}</VideoContainer>
+            <VideoContainer>
+              <InViewVideo source={step3Video} />
+            </VideoContainer>
             <Step>
               <span>Шаг 3</span>Расчет зон влияния и конкуренции
             </Step>
@@ -142,7 +142,9 @@ class Msp extends PureComponent {
         </Section>
         <Section withoutPaddingBottom>
           <Article>
-            <VideoContainer>{/*<InViewVideo source={step4Video} />*/}</VideoContainer>
+            <VideoContainer>
+              <InViewVideo source={step4Video} />
+            </VideoContainer>
             <Step>
               <span>Шаг 4</span>Изучение характеристик рыночной ниши
             </Step>
@@ -159,7 +161,9 @@ class Msp extends PureComponent {
         </Section>
         <Section>
           <Article>
-            <VideoContainer>{/*<InViewVideo source={step5Video} />*/}</VideoContainer>
+            <VideoContainer>
+              <InViewVideo source={step5Video} />
+            </VideoContainer>
             <Step>
               <span>Шаг 5</span>Расчёт бизнес-плана
             </Step>

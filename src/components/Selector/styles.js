@@ -1,8 +1,7 @@
 import styled from "astroturf";
 
 export const SelectorContainer = styled("div")`
-  display: flex;
-  align-items: flex-start;
+  display: inline-flex;
 `;
 
 export const SelectorItem = styled("div")`

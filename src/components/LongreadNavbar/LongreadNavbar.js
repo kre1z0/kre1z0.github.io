@@ -11,10 +11,11 @@ import styles, { LongreadNavbarContainer } from "./styles";
 
 export const getLongreadNavbarHeight = () => {
   const viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-  if (viewportWidth <= 992) {
-    return 66;
-  } else if (viewportWidth <= 576) {
+
+  if (viewportWidth <= 576) {
     return 56;
+  } else if (viewportWidth <= 992) {
+    return 66;
   } else {
     return 80;
   }

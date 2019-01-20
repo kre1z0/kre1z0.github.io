@@ -1,11 +1,13 @@
 import React, { PureComponent } from "react";
 
+import { ResponsiveSvg } from "../../components/Atoms/ResponsiveSvg";
 import { ReactComponent as Loyalty } from "../../img/icons/loyalty.svg";
 import { ReactComponent as Badge } from "../../img/portfolio/msp/tagline-awards-badge.svg";
 import {
   TaglineAwardsContainer,
   TaglineAwardsBlock,
   TaglineAwardsLeftBlock,
+  LoyaltyContainer,
   TaglineAwardsLeftText,
   TaglineAwardsCenterBlock,
   TaglineAwardsRightBlock,
@@ -17,7 +19,11 @@ export class TaglineAwards extends PureComponent {
       <TaglineAwardsContainer>
         <TaglineAwardsBlock>
           <TaglineAwardsLeftBlock>
-            <Loyalty />
+            <LoyaltyContainer>
+              <ResponsiveSvg>
+                <Loyalty />
+              </ResponsiveSvg>
+            </LoyaltyContainer>
             <TaglineAwardsLeftText>
               <span>Бронза</span>
               <span>Tagline Awards 2018</span>
@@ -28,8 +34,12 @@ export class TaglineAwards extends PureComponent {
             <span>Лучший инновационный сервис</span>
           </TaglineAwardsCenterBlock>
           <TaglineAwardsRightBlock>
-            <Badge />
-            <Badge />
+            <ResponsiveSvg>
+              <Badge />
+            </ResponsiveSvg>
+            <ResponsiveSvg>
+              <Badge />
+            </ResponsiveSvg>
           </TaglineAwardsRightBlock>
         </TaglineAwardsBlock>
       </TaglineAwardsContainer>

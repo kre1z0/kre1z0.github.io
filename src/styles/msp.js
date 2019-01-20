@@ -35,15 +35,22 @@ export const Step = styled(H3)`
 `;
 
 const styles = css`
+  .selectorSection {
+    padding: 0;
+  }
+  .selectorSectionScrollbar {
+    :global .scroll-content {
+      > div {
+        display: flex;
+      }
+    }
+  }
   .selectorContainer {
-    justify-content: center;
-    padding: 1.2rem 0;
+    margin: 0 auto;
+    padding: 1.2rem 1.4285rem;
   }
   .analyticSection {
     background-color: #ebf1f9;
-  }
-  .selectorSection {
-    padding: 0;
   }
 `;
 

@@ -25,6 +25,9 @@ export const LayersBlock = styled("div")`
         animation-duration: 400ms;
         animation-delay: 800ms;
       }
+      @media (max-width: 440px) {
+        left: -1.46vw;
+      }
     }
   }
 `;
@@ -43,6 +46,9 @@ export const CardsBlock = styled("div")`
     width: 100%;
     height: auto;
     max-width: none;
+  }
+  @media (max-width: 440px) {
+    height: calc(100vw / 2.18);
   }
 `;
 

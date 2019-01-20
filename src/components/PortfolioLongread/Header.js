@@ -5,7 +5,8 @@ import cn from "classnames";
 import animation from "../../components/Transition/animation";
 import { ScrollDownButton } from "../../components/Buttons/ScrollDownButton";
 import { OutsideLink } from "../../components/OutsideLink/OutsideLink";
-
+import { getLongreadNavbarHeight } from "../../components/LongreadNavbar/LongreadNavbar";
+import { ScrollbarConsumer } from "../ScrollbarProvider/ScrollbarProvider";
 import styles, {
   HeaderContainer,
   HeaderBlock,
@@ -16,7 +17,6 @@ import styles, {
   Title,
   Description,
 } from "./styles";
-import { ScrollbarConsumer } from "../ScrollbarProvider/ScrollbarProvider";
 
 export class HeaderBase extends Component {
   static propTypes = {
@@ -38,7 +38,7 @@ export class HeaderBase extends Component {
 
     const viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 
-    scrollbar.scrollTo(0, viewportHeight, 400);
+    scrollbar.scrollTo(0, viewportHeight - getLongreadNavbarHeight(), 400);
   };
 
   render() {
