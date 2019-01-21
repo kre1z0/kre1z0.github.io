@@ -5,6 +5,8 @@ import PropTypes from "prop-types";
 
 import { Scrollbar } from "../../components/Scrollbar/Scrollbar";
 
+import "../ScrollbarProvider/plugins/disableScrollByDirection";
+
 const ScrollBarContext = React.createContext();
 
 export class ScrollbarProvider extends Component {
@@ -44,6 +46,9 @@ export class ScrollbarProvider extends Component {
           onScrollbarRef={this.onScrollBarRef}
           onScroll={this.onScroll}
           className={className}
+          plugins={{
+            disableScrollByDirection: { direction: { x: true, y: false } },
+          }}
         >
           {children}
         </Scrollbar>

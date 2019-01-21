@@ -55,7 +55,23 @@ const styles = css`
   .analyticSection {
     background-color: #ebf1f9;
     article {
+      position: relative;
       max-width: 39.2857rem;
+      @media (max-width: 650px) {
+        margin: 0;
+        max-width: 25rem;
+        padding: 4.4rem 0;
+        > p {
+          margin-bottom: 0;
+        }
+      }
+    }
+    @media (max-width: 440px) {
+      max-width: 100vw;
+      article {
+        padding: 0;
+        max-width: none;
+      }
     }
   }
 `;

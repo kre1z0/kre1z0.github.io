@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 import cn from "classnames";
 import { Transition, TransitionGroup } from "react-transition-group";
 
-import { VideoContainer } from "../../components/LongreadAtoms/VideoContainer";
+import { VideoContainer } from "../../LongreadAtoms/VideoContainer";
 import { transition, VideoTransition, slideLeft } from "./styles";
-import { fade } from "../Transition/animation";
-import { InViewVideo } from "../Video/InViewVideo";
+import { fade } from "../../Transition/animation";
+import { InViewVideo } from "../../Video/InViewVideo";
 
 export class MspVideo extends PureComponent {
   static propTypes = {

@@ -2,14 +2,14 @@ import React, { PureComponent } from "react";
 
 import { Scrollbar } from "../../components/Scrollbar/Scrollbar";
 import { OutsideLink } from "../../components/OutsideLink/OutsideLink";
-import { MspRightSide } from "../../components/MspRightSide/MspRightSide";
+import { MspRightSide } from "../../components/MspLongread/MspRightSide/MspRightSide";
 import { Header } from "../../components/PortfolioLongread/Header";
 import { Paragraph } from "../../components/PortfolioLongread/Paragraph";
 import { getProject } from "../../routes";
 import { Section, Article, H1 } from "../../components/LongreadAtoms/Longread";
 import { TaglineAwards } from "../../components/TaglineAwards/TaglineAwards";
-import { MspRegionMap } from "../../components/MspRegionMap/MspRegionMap";
-import { MspVideo } from "../../components/MspVideo/MspVideo";
+import { MspRegionMap } from "../../components/MspLongread/MspRegionMap/MspRegionMap";
+import { MspVideo } from "../../components/MspLongread/MspVideo/MspVideo";
 import { VideoContainer } from "../../components/LongreadAtoms/VideoContainer";
 import { InViewVideo } from "../../components/Video/InViewVideo";
 import { UnorderedList } from "../../components/LongreadAtoms/UnorderedList";
@@ -18,6 +18,7 @@ import step2Video from "../../videos/msp/2.webm";
 import step3Video from "../../videos/msp/3.webm";
 import step4Video from "../../videos/msp/4.webm";
 import step5Video from "../../videos/msp/5.webm";
+import { MspAnalyticsSection } from "../../components/MspLongread/MspAnalyticsSection/MspAnalyticsSection";
 
 import styles, { Step } from "../../styles/msp";
 
@@ -175,17 +176,167 @@ class Msp extends PureComponent {
             </Paragraph>
           </Article>
         </Section>
-        <Section className={styles.analyticSection}>
-          <Article>
-            <Step withoutMarginTop>Аналитика «Бизнес-навигатора МСП»</Step>
-            <Paragraph>
-              Пользователь может ознакомиться с подробной аналитикой товаров и услуг по регионам и
-              отраслям. Аналитика представлена в виде простых графиков и диаграмм, отражающих данные
-              панельных и маркетинговых исследований потребительских предпочтений по 1 200 товарам и
-              293 услугам в разных территориальных разрезах.
-            </Paragraph>
-          </Article>
-        </Section>
+        <MspAnalyticsSection />
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
+          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
+          maiores molestias officiis qui, repudiandae suscipit vel?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
+          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
+          maiores molestias officiis qui, repudiandae suscipit vel?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
+          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
+          maiores molestias officiis qui, repudiandae suscipit vel?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
+          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
+          maiores molestias officiis qui, repudiandae suscipit vel?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
+          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
+          maiores molestias officiis qui, repudiandae suscipit vel?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
+          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
+          maiores molestias officiis qui, repudiandae suscipit vel?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
+          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
+          maiores molestias officiis qui, repudiandae suscipit vel?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
+          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
+          maiores molestias officiis qui, repudiandae suscipit vel?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
+          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
+          maiores molestias officiis qui, repudiandae suscipit vel?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
+          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
+          maiores molestias officiis qui, repudiandae suscipit vel?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
+          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
+          maiores molestias officiis qui, repudiandae suscipit vel?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
+          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
+          maiores molestias officiis qui, repudiandae suscipit vel?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
+          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
+          maiores molestias officiis qui, repudiandae suscipit vel?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
+          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
+          maiores molestias officiis qui, repudiandae suscipit vel?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
+          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
+          maiores molestias officiis qui, repudiandae suscipit vel?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
+          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
+          maiores molestias officiis qui, repudiandae suscipit vel?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
+          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
+          maiores molestias officiis qui, repudiandae suscipit vel?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
+          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
+          maiores molestias officiis qui, repudiandae suscipit vel?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
+          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
+          maiores molestias officiis qui, repudiandae suscipit vel?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
+          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
+          maiores molestias officiis qui, repudiandae suscipit vel?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
+          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
+          maiores molestias officiis qui, repudiandae suscipit vel?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
+          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
+          maiores molestias officiis qui, repudiandae suscipit vel?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
+          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
+          maiores molestias officiis qui, repudiandae suscipit vel?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
+          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
+          maiores molestias officiis qui, repudiandae suscipit vel?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
+          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
+          maiores molestias officiis qui, repudiandae suscipit vel?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
+          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
+          maiores molestias officiis qui, repudiandae suscipit vel?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
+          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
+          maiores molestias officiis qui, repudiandae suscipit vel?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
+          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
+          maiores molestias officiis qui, repudiandae suscipit vel?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
+          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
+          maiores molestias officiis qui, repudiandae suscipit vel?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
+          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
+          maiores molestias officiis qui, repudiandae suscipit vel?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
+          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
+          maiores molestias officiis qui, repudiandae suscipit vel?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
+          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
+          maiores molestias officiis qui, repudiandae suscipit vel?
+        </p>
       </div>
     );
   }

@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Paragraph } from "../../components/LongreadAtoms/Longread";
+import { Paragraph } from "../../LongreadAtoms/Longread";
 import { Map } from "./Map";
 
 import { MspRegionMapContainer, Achievement, AchievementContainer } from "./styles";

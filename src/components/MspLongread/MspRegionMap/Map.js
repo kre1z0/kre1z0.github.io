@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-import { getLongreadNavbarHeight } from "../../components/LongreadNavbar/LongreadNavbar";
-import { ScrollbarConsumer } from "../../components/ScrollbarProvider/ScrollbarProvider";
-import { ReactComponent as SvgMap } from "../../img/portfolio/msp/RegionMapforBN.svg";
+import { getLongreadNavbarHeight } from "../../LongreadNavbar/LongreadNavbar";
+import { ScrollbarConsumer } from "../../ScrollbarProvider/ScrollbarProvider";
+import { ReactComponent as SvgMap } from "../../../img/portfolio/msp/RegionMapforBN.svg";
 import styles, { MapWraper } from "./styles";
 
 export class MapComponent extends Component {
