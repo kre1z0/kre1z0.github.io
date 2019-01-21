@@ -12,6 +12,21 @@ export const MspRegionMapContainer = styled("div")`
     width: 100%;
     height: 100%;
   }
+  @media (max-width: 992px) {
+    height: 32.5714rem;
+    margin: 6.4rem 0;
+  }
+  @media (max-width: 768px) {
+    height: 34.5714rem;
+    margin: 4rem 0;
+  }
+  @media (max-width: 576px) {
+    height: 26.5714rem;
+  }
+  @media (max-width: 420px) {
+    height: auto;
+    margin: 2rem 0;
+  }
 `;
 
 export const AchievementContainer = styled("div")`
@@ -23,6 +38,13 @@ export const AchievementContainer = styled("div")`
   left: 0;
   width: 100%;
   height: 100%;
+  @media (max-width: 992px) {
+    justify-content: center;
+    padding: 0;
+  }
+  @media (max-width: 420px) {
+    position: static;
+  }
 `;
 
 export const Achievement = styled("div")`
@@ -44,6 +66,7 @@ export const Achievement = styled("div")`
     margin-bottom: 0.4142rem;
   }
   > p {
+    line-height: normal;
     padding: 0 1.4rem;
     font-size: 1.1428rem;
     text-align: center;
@@ -53,11 +76,71 @@ export const Achievement = styled("div")`
     padding-bottom: 1rem;
     align-self: flex-start;
   }
+  @media (max-width: 992px) {
+    justify-content: flex-start;
+    height: 11.1428rem;
+    width: 40%;
+    padding-bottom: 0;
+    align-self: flex-start;
+    &:nth-child(even) {
+      margin-left: 1rem;
+    }
+    &:nth-child(odd) {
+      margin-right: 1rem;
+    }
+    &:nth-child(n + 4) {
+      align-self: flex-start;
+      padding-bottom: 0;
+    }
+    > p {
+      width: 20rem;
+    }
+  }
+  @media (max-width: 768px) {
+    > p {
+      font-size: 1rem;
+    }
+  }
+  @media (max-width: 700px) {
+    > span {
+      font-size: 2.8571rem;
+    }
+    > p {
+      width: auto;
+    }
+  }
+  @media (max-width: 576px) {
+    width: 50%;
+    height: auto;
+    &:nth-child(even) {
+      margin-left: 0;
+    }
+    &:nth-child(odd) {
+      margin-right: 0;
+    }
+    > p {
+      padding: 0 0.8rem;
+      font-size: 0.8571rem;
+    }
+    > span {
+      height: 3rem;
+      margin-bottom: 1.4285rem;
+    }
+  }
+  @media (max-width: 420px) {
+    width: 100%;
+    padding-bottom: 2.8571rem;
+    &:nth-child(n + 4) {
+      padding-bottom: 2.8571rem;
+    }
+  }
 `;
 
 export const MapWraper = styled("div")`
   width: 100%;
   height: 84.4%;
+  display: flex;
+  align-items: center;
   svg {
     width: 100%;
     height: auto;
@@ -65,6 +148,19 @@ export const MapWraper = styled("div")`
   path {
     fill: #f0f4f7;
     stroke: #fff;
+  }
+  @media (max-width: 992px) {
+    width: 112%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  @media (max-width: 576px) {
+    width: 100vw;
+  }
+  @media (max-width: 420px) {
+    display: none;
   }
 `;
 

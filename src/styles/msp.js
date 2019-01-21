@@ -32,6 +32,9 @@ export const Step = styled(H3)`
       font-size: 2.2857rem;
     }
   }
+  &.withoutMarginTop {
+    margin-top: 0;
+  }
 `;
 
 const styles = css`
@@ -51,6 +54,9 @@ const styles = css`
   }
   .analyticSection {
     background-color: #ebf1f9;
+    article {
+      max-width: 39.2857rem;
+    }
   }
 `;
 

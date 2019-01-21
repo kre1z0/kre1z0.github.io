@@ -176,7 +176,15 @@ class Msp extends PureComponent {
           </Article>
         </Section>
         <Section className={styles.analyticSection}>
-          <Article>ggwp</Article>
+          <Article>
+            <Step withoutMarginTop>Аналитика «Бизнес-навигатора МСП»</Step>
+            <Paragraph>
+              Пользователь может ознакомиться с подробной аналитикой товаров и услуг по регионам и
+              отраслям. Аналитика представлена в виде простых графиков и диаграмм, отражающих данные
+              панельных и маркетинговых исследований потребительских предпочтений по 1 200 товарам и
+              293 услугам в разных территориальных разрезах.
+            </Paragraph>
+          </Article>
         </Section>
       </div>
     );

@@ -116,6 +116,18 @@ export class MainLayoutProviderComponent extends Component {
     return sliderIdArray;
   };
 
+  getSelectedSectionIndexFromLocalstorage = currentRoute => {
+    const { id } = currentRoute;
+    if (id === "portfolio") {
+      const selectedSectionIndex = localStorage.getItem(id);
+      localStorage.removeItem(id);
+
+      return +selectedSectionIndex || 0;
+    } else {
+      return 0;
+    }
+  };
+
   setCurrentRoute = () => {
     const { location } = this.props;
     const currentRoute = getRouteByLocation(location);
@@ -127,10 +139,15 @@ export class MainLayoutProviderComponent extends Component {
         slider || scrollable || news
           ? {
               sliderDirection: 1,
+              selectedSectionIndex: this.getSelectedSectionIndexFromLocalstorage(currentRoute),
               sections:
                 slider || scrollable ? this.sectionsFromAdditionalMenu(additionalMenu) : news || [],
             }
-          : { selectedSectionIndex: 0, sections: [], sliderDirection: 1 };
+          : {
+              selectedSectionIndex: 0,
+              sections: [],
+              sliderDirection: 1,
+            };
 
       this.setState({ currentRoute, coloredNav: false, ...sliderState });
     } else {
