@@ -20,24 +20,28 @@ export const Step = styled(H3)`
   margin-bottom: 2.4rem;
   > span {
     position: absolute;
+    top: 0;
     left: 0;
-    bottom: 0;
+    transform: translateY(-60%);
     color: rgba(38, 44, 55, 0.05);
     font-size: 4.5714rem;
   }
   @media (max-width: 768px) {
+    margin-top: 4.6rem;
     margin-bottom: 2rem;
     > span {
       font-size: 4rem;
     }
   }
   @media (max-width: 576px) {
+    margin-top: 3.4rem;
     margin-bottom: 1.4rem;
     > span {
       font-size: 2.8571rem;
     }
   }
   @media (max-width: 440px) {
+    margin-top: 3.1rem;
     > span {
       font-size: 2.2857rem;
     }
