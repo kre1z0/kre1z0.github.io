@@ -1,7 +1,7 @@
 import styled from "astroturf";
 
 export const Section = styled("section")`
-  width: 100vw;
+  width: 100%;
   padding: 8.4rem 8.1428rem 9rem 8.1428rem;
   @media (max-width: 992px) {
     padding: 6rem 7.8571rem 6.4rem 7.8571rem;
@@ -15,11 +15,11 @@ export const Section = styled("section")`
   @media (max-width: 440px) {
     padding: 2rem 1.4285rem 2.4rem 1.4285rem;
   }
-  
+
   &.withoutPaddingTop {
     padding-top: 0;
   }
-  
+
   &.withoutPaddingBottom {
     padding-bottom: 0;
   }
@@ -53,7 +53,6 @@ export const H1 = styled("h1")`
   }
   &.portfolio {
     font-size: 2.5714rem;
-    margin-bottom: 3.5rem;
     @media (max-width: 992px) {
       font-size: 2.2857rem;
     }

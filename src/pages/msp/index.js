@@ -19,8 +19,9 @@ import step3Video from "../../videos/msp/3.webm";
 import step4Video from "../../videos/msp/4.webm";
 import step5Video from "../../videos/msp/5.webm";
 import { MspAnalyticsSection } from "../../components/MspLongread/MspAnalyticsSection/MspAnalyticsSection";
+import { MspFooter } from "../../components/MspLongread/MspFooter/MspFooter";
 
-import styles, { Step } from "../../styles/msp";
+import styles, { MspLongreadContainer, Step } from "../../styles/msp";
 
 class Msp extends PureComponent {
   state = {
@@ -33,7 +34,7 @@ class Msp extends PureComponent {
     const { link, achievements, videos } = msp;
 
     return (
-      <div>
+      <MspLongreadContainer>
         <Header {...msp} rightSide={<MspRightSide />} />
         <Section withoutPaddingBottom>
           <Article>
@@ -177,167 +178,14 @@ class Msp extends PureComponent {
           </Article>
         </Section>
         <MspAnalyticsSection />
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
-          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
-          maiores molestias officiis qui, repudiandae suscipit vel?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
-          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
-          maiores molestias officiis qui, repudiandae suscipit vel?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
-          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
-          maiores molestias officiis qui, repudiandae suscipit vel?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
-          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
-          maiores molestias officiis qui, repudiandae suscipit vel?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
-          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
-          maiores molestias officiis qui, repudiandae suscipit vel?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
-          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
-          maiores molestias officiis qui, repudiandae suscipit vel?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
-          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
-          maiores molestias officiis qui, repudiandae suscipit vel?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
-          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
-          maiores molestias officiis qui, repudiandae suscipit vel?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
-          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
-          maiores molestias officiis qui, repudiandae suscipit vel?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
-          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
-          maiores molestias officiis qui, repudiandae suscipit vel?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
-          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
-          maiores molestias officiis qui, repudiandae suscipit vel?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
-          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
-          maiores molestias officiis qui, repudiandae suscipit vel?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
-          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
-          maiores molestias officiis qui, repudiandae suscipit vel?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
-          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
-          maiores molestias officiis qui, repudiandae suscipit vel?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
-          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
-          maiores molestias officiis qui, repudiandae suscipit vel?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
-          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
-          maiores molestias officiis qui, repudiandae suscipit vel?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
-          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
-          maiores molestias officiis qui, repudiandae suscipit vel?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
-          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
-          maiores molestias officiis qui, repudiandae suscipit vel?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
-          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
-          maiores molestias officiis qui, repudiandae suscipit vel?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
-          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
-          maiores molestias officiis qui, repudiandae suscipit vel?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
-          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
-          maiores molestias officiis qui, repudiandae suscipit vel?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
-          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
-          maiores molestias officiis qui, repudiandae suscipit vel?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
-          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
-          maiores molestias officiis qui, repudiandae suscipit vel?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
-          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
-          maiores molestias officiis qui, repudiandae suscipit vel?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
-          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
-          maiores molestias officiis qui, repudiandae suscipit vel?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
-          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
-          maiores molestias officiis qui, repudiandae suscipit vel?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
-          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
-          maiores molestias officiis qui, repudiandae suscipit vel?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
-          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
-          maiores molestias officiis qui, repudiandae suscipit vel?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
-          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
-          maiores molestias officiis qui, repudiandae suscipit vel?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
-          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
-          maiores molestias officiis qui, repudiandae suscipit vel?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
-          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
-          maiores molestias officiis qui, repudiandae suscipit vel?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet aperiam debitis
-          ducimus eum, eveniet molestias obcaecati pariatur quaerat ratione. Excepturi iste magni
-          maiores molestias officiis qui, repudiandae suscipit vel?
-        </p>
-      </div>
+        <Section className={styles.calculateBusinessPlanRightNow}>
+          <Article>
+            <Step>Рассчитайте бизнес-план прямо-сейчас!</Step>
+            <OutsideLink href={link}>{link}</OutsideLink>
+          </Article>
+        </Section>
+        <MspFooter />
+      </MspLongreadContainer>
     );
   }
 }

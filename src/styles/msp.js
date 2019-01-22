@@ -2,7 +2,17 @@ import styled, { css } from "astroturf";
 
 import { H3 } from "../components/LongreadAtoms/Longread";
 
-export const MspContainer = styled("div")``;
+export const MspLongreadContainer = styled("div")`
+  h1 {
+    margin-bottom: 3.5rem;
+    @media (max-width: 768px) {
+      margin-bottom: 2.5rem;
+    }
+    @media (max-width: 576px) {
+      margin-bottom: 1.5rem;
+    }
+  }
+`;
 
 export const Step = styled(H3)`
   position: relative;
@@ -53,25 +63,53 @@ const styles = css`
     padding: 1.2rem 1.4285rem;
   }
   .analyticSection {
+    display: flex;
+    align-items: center;
     background-color: #ebf1f9;
+    min-height: 32.9285rem;
     article {
       position: relative;
       max-width: 39.2857rem;
-      @media (max-width: 650px) {
+      > p {
+        margin-bottom: 0;
+      }
+    }
+    @media (max-width: 768px) {
+      min-height: 31.7142rem;
+    }
+    @media (max-width: 650px) {
+      min-height: 28rem;
+      article {
         margin: 0;
         max-width: 25rem;
-        padding: 4.4rem 0;
-        > p {
-          margin-bottom: 0;
-        }
       }
     }
     @media (max-width: 440px) {
       max-width: 100vw;
+      min-height: auto;
+      padding-bottom: 6.5rem;
       article {
         padding: 0;
         max-width: none;
       }
+    }
+  }
+  .calculateBusinessPlanRightNow {
+    text-align: center;
+    h2 {
+      margin-top: 0;
+    }
+    a {
+      font-size: 1.7142rem;
+      @media (max-width: 768px) {
+        font-size: 1.4285rem;
+      }
+      @media (max-width: 576px) {
+        font-size: 1.2857rem;
+      }
+    }
+    @media (max-width: 440px) {
+      margin-top: 5rem;
     }
   }
 `;

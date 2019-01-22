@@ -38,7 +38,6 @@ export default {
             "Бесплатный сервис для предпринимателей. Найдите лучшее место для открытия бизнеса и получите готовый бизнес-план.",
           screenshot: msp,
           link: "navigator.smbn.ru",
-          linkText: "",
           achievements: [
             {
               amount: "172",
