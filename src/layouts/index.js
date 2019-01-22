@@ -1,11 +1,10 @@
 import React, { Component } from "react";
-import Helmet from "react-helmet";
 
+import { Helmet } from "../components/Helmet/Helmet";
 import LongreadLayout from "./longread";
 import { MainLayoutProvider } from "../components/MainLayoutProvider/MainLayoutProvider";
 import { injectGlobals } from "../components/injectGlobals";
 import { PageTransition } from "../components/Transition/PageTransition";
-import favicon from "../img/favicon.png";
 import { Navbar } from "../components/Navbar/Navbar";
 
 injectGlobals();
@@ -16,10 +15,7 @@ class Layout extends Component {
 
     return (
       <MainLayoutProvider>
-        <Helmet
-          title="Everpoint"
-          link={[{ rel: "shortcut icon", type: "image/png", href: `${favicon}` }]}
-        />
+        <Helmet />
         <Navbar location={location} />
         <PageTransition location={location}>{children}</PageTransition>
       </MainLayoutProvider>

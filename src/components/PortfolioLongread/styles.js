@@ -47,8 +47,9 @@ const Section = styled("section")`
 export const LeftSide = styled(Section)`
   color: #fff;
   @media (max-width: 440px) {
+    z-index: 1;
     order: 2;
-    padding-bottom: 3rem;
+    margin-bottom: 3rem;
   }
 `;
 
@@ -115,8 +116,15 @@ const styles = css`
     @media (max-width: 576px) {
       font-size: 0.8571rem;
     }
+    @media (hover: hover) {
+      &:hover {
+        color: #fff;
+        text-decoration: none;
+      }
+    }
   }
   .scrollDownButton {
+    z-index: 4;
     font-weight: 500;
     position: absolute;
     bottom: 2rem;

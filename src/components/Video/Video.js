@@ -13,13 +13,26 @@ export class Video extends Component {
 
   video = null;
 
+  componentDidMount() {
+    this.update();
+  }
+
   shouldComponentUpdate({ video: prevVideo, play: prevPlay }) {
     const { video, play } = this.props;
     return prevVideo !== video || prevPlay !== play;
   }
 
+  update() {
+    if (this.video) {
+      this.video.setAttribute("muted", "1");
+      this.video.setAttribute("playsinline", "1");
+      this.video.setAttribute("autoplay", "1");
+    }
+  }
+
   componentDidUpdate({ video: prevVideo, play: prevPlay }) {
     const { play, video } = this.props;
+    this.update();
 
     if (this.video) {
       if (prevVideo !== video) {
@@ -47,8 +60,17 @@ export class Video extends Component {
     const { video, play, className, ...props } = this.props;
 
     return (
-      <video autoPlay={play} muted loop ref={this.onVideoRef} className={className} {...props}>
-        <source src={video} type="video/mp4" />
+      <video
+        volume={0}
+        playsInline
+        autoPlay={play}
+        muted
+        loop
+        ref={this.onVideoRef}
+        className={className}
+        {...props}
+      >
+        <source src={video} type="video/webm" />
       </video>
     );
   }

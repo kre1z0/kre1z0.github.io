@@ -5,6 +5,12 @@ import PropTypes from "prop-types";
 const Link = styled("a")`
   color: #387bc7;
   text-decoration: none;
+  transition: color 200ms linear;
+  @media (hover: hover) {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 `;
 
 const openWindow = href => e => {

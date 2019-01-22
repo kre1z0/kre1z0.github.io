@@ -16,8 +16,8 @@ export const VideoContainer = styled("div")`
     position: absolute;
     top: 0;
     left: 0;
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    height: 100%;
     box-shadow: 0 2.2857rem 2.2857rem 0 rgba(10, 18, 33, 0.15);
   }
   @media (max-width: 992px) {
