@@ -4,25 +4,28 @@ export const LayersBlock = styled("div")`
   width: 100%;
   height: 100%;
   > img {
+    display: block;
     width: 129%;
     max-width: none;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    height: auto;
+    left: -0.7vw;
     &:first-child {
-      opacity: 0;
+      position: relative;
     }
     &:not(:first-child) {
-      opacity: 0;
-      animation-fill-mode: forwards;
       position: absolute;
       top: 50%;
-      left: -0.7vw;
       transform: translateY(-50%);
-      height: auto;
+      animation-duration: 400ms;
+      &:nth-child(2) {
+        transition: opacity 400ms ease-in;
+      }
       &:nth-child(3) {
-        animation-duration: 400ms;
         animation-delay: 400ms;
       }
       &:nth-child(4) {
-        animation-duration: 400ms;
         animation-delay: 800ms;
       }
       @media (max-width: 440px) {
@@ -122,6 +125,9 @@ const styles = css`
   }
   .fakeLayer {
     visibility: hidden;
+  }
+  .isVisible {
+    opacity: 1 !important;
   }
 `;
 

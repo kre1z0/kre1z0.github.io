@@ -1,4 +1,5 @@
 import React, { PureComponent } from "react";
+import cn from "classnames";
 
 import layer1 from "../../../img/portfolio/msp/layer-1.png";
 import animation from "../../Transition/animation";
@@ -18,12 +19,24 @@ import cardRight4 from "../../../img/portfolio/msp/cards/Right-4@2x.png";
 import styles, { LayersBlock, CardsBlock, LeftCol, RightCol } from "./styles";
 
 export class MspRightSide extends PureComponent {
+  state = {
+    isVisible: false,
+  };
+
+  componentDidMount() {
+    requestAnimationFrame(() => {
+      this.setState({ isVisible: true });
+    });
+  }
+
   render() {
+    const { isVisible } = this.state;
+
     return (
       <>
         <LayersBlock>
           <img src={layer1} alt="fake-layer" className={styles.fakeLayer} />
-          <img src={layer1} alt="layer1" className={animation.fadeIn} />
+          <img src={layer1} alt="layer1" className={cn({ [styles.isVisible]: isVisible })} />
           <img src={layer2} alt="layer2" className={animation.fadeIn} />
           <img src={layer3} alt="layer3" className={animation.fadeIn} />
         </LayersBlock>

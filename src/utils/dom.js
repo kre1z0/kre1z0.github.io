@@ -17,13 +17,13 @@ export const getElementWidthAndHeight = element => {
   };
 };
 
-export const isElementInViewport = ({ el, offset = 0 }) => {
+export const isElementInViewport = ({ el, offsetY = 0, offsetTop = 0 }) => {
   const { top, left, bottom, right } = el.getBoundingClientRect();
 
   return (
-    top + offset >= 0 &&
+    top + offsetY - offsetTop >= 0 &&
     left >= 0 &&
-    bottom - offset <= (window.innerHeight || document.documentElement.clientHeight) &&
+    bottom - offsetY <= (window.innerHeight || document.documentElement.clientHeight) &&
     right <= (window.innerWidth || document.documentElement.clientWidth)
   );
 };

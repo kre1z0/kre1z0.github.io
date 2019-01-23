@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import cn from "classnames";
 
 import animation from "../../components/Transition/animation";
 import { ScrollDownButton } from "../../components/Buttons/ScrollDownButton";
@@ -47,7 +46,7 @@ export class HeaderBase extends Component {
     return (
       <HeaderContainer style={{ backgroundColor: bgColor }}>
         <HeaderBlock>
-          <LeftSide className={cn(animation.fadeIn, styles.leftSide)}>
+          <LeftSide className={animation.fadeIn}>
             <LeftSideContent>
               <Badge>{type}</Badge>
               <Title>{text}</Title>

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
+import { getElementWidthAndHeight, isElementInViewport } from "../../utils/dom";
 import { getLongreadNavbarHeight } from "../../components/LongreadNavbar/LongreadNavbar";
 import { ScrollbarConsumer } from "../../components/ScrollbarProvider/ScrollbarProvider";
 import { Video } from "./Video";
@@ -11,7 +12,6 @@ class InViewBase extends Component {
   static propTypes = {
     source: PropTypes.string,
     scrollTop: PropTypes.number,
-    offset: PropTypes.number,
   };
 
   state = {
@@ -32,7 +32,7 @@ class InViewBase extends Component {
 
   checkInView = () => {
     const { play } = this.state;
-    const offset = this.props.offset || getLongreadNavbarHeight();
+    const offsetTop = getLongreadNavbarHeight();
     const container = this.container;
 
     if (container) {
@@ -41,9 +41,10 @@ class InViewBase extends Component {
         window.innerHeight || 0,
       );
 
-      const { bottom, height, top } = container.getBoundingClientRect();
-      const videoFullInView = top <= height && top > offset;
-      const videoOnTop = bottom < height / 2 + offset;
+      const { height } = getElementWidthAndHeight(container);
+      const { bottom } = container.getBoundingClientRect();
+      const videoFullInView = isElementInViewport({ el: container, offsetTop });
+      const videoOnTop = bottom < height / 2 + offsetTop;
       const videoOnBottom = bottom - viewportHeight > height / 2;
 
       if (videoFullInView && !play && !videoOnTop) {

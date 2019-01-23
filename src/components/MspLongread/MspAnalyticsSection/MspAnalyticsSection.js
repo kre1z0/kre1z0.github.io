@@ -33,7 +33,7 @@ export class MspAnalyticsSectionBase extends Component {
     if (prevScrollTop !== scrollTop) {
       const isVisible = isElementInViewport({
         el: this.container,
-        offset: this.container.getBoundingClientRect().height / 2,
+        offsetY: this.container.getBoundingClientRect().height / 2,
       });
 
       if (isVisible) {

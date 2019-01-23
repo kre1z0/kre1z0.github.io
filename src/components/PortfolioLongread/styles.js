@@ -46,6 +46,10 @@ const Section = styled("section")`
 
 export const LeftSide = styled(Section)`
   color: #fff;
+  opacity: 0;
+  animation-duration: 400ms;
+  animation-delay: 400ms;
+  animation-fill-mode: forwards;
   @media (max-width: 440px) {
     z-index: 1;
     order: 2;
@@ -103,9 +107,6 @@ export const Badge = styled("div")`
 
 const styles = css`
   .leftSide {
-    opacity: 0;
-    animation-delay: 200ms;
-    animation-fill-mode: forwards;
   }
   .projectLink {
     font-size: 1.2857rem;
