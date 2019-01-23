@@ -121,7 +121,7 @@ const styles = css`
     }
   }
   .fakeLayer {
-    opacity: 0;
+    visibility: hidden;
   }
 `;
 

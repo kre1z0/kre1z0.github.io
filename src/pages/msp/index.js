@@ -14,10 +14,14 @@ import { VideoContainer } from "../../components/LongreadAtoms/VideoContainer";
 import { InViewVideo } from "../../components/Video/InViewVideo";
 import { UnorderedList } from "../../components/LongreadAtoms/UnorderedList";
 import { Selector } from "../../components/Selector/Selector";
-import step2Video from "../../videos/msp/2.webm";
-import step3Video from "../../videos/msp/3.webm";
-import step4Video from "../../videos/msp/4.webm";
-import step5Video from "../../videos/msp/5.webm";
+import step2Video from "../../videos/msp/2.mp4";
+import step2VideoPoster from "../../videos/msp/posters/2_000.jpg";
+import step3Video from "../../videos/msp/3.mp4";
+import step3VideoPoster from "../../videos/msp/posters/3_000.jpg";
+import step4Video from "../../videos/msp/4.mp4";
+import step4VideoPoster from "../../videos/msp/posters/4_000.jpg";
+import step5Video from "../../videos/msp/5.mp4";
+import step5VideoPoster from "../../videos/msp/posters/5_000.jpg";
 import { MspAnalyticsSection } from "../../components/MspLongread/MspAnalyticsSection/MspAnalyticsSection";
 import { MspFooter } from "../../components/MspLongread/MspFooter/MspFooter";
 
@@ -109,7 +113,7 @@ class Msp extends PureComponent {
         <Section withoutPaddingBottom>
           <Article>
             <VideoContainer>
-              <InViewVideo source={step2Video} />
+              <InViewVideo source={step2Video} poster={step2VideoPoster} />
             </VideoContainer>
             <Step>
               <span>Шаг 2</span>Выбор месторасположения бизнеса по параметрам
@@ -124,7 +128,7 @@ class Msp extends PureComponent {
         <Section withoutPaddingBottom>
           <Article>
             <VideoContainer>
-              <InViewVideo source={step3Video} />
+              <InViewVideo source={step3Video} poster={step3VideoPoster} />
             </VideoContainer>
             <Step>
               <span>Шаг 3</span>Расчет зон влияния и конкуренции
@@ -145,7 +149,7 @@ class Msp extends PureComponent {
         <Section withoutPaddingBottom>
           <Article>
             <VideoContainer>
-              <InViewVideo source={step4Video} />
+              <InViewVideo source={step4Video} poster={step4VideoPoster} />
             </VideoContainer>
             <Step>
               <span>Шаг 4</span>Изучение характеристик рыночной ниши
@@ -164,7 +168,7 @@ class Msp extends PureComponent {
         <Section>
           <Article>
             <VideoContainer>
-              <InViewVideo source={step5Video} />
+              <InViewVideo source={step5Video} poster={step5VideoPoster} />
             </VideoContainer>
             <Step>
               <span>Шаг 5</span>Расчёт бизнес-плана

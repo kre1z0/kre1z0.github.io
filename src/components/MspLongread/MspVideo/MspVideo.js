@@ -16,7 +16,7 @@ export class MspVideo extends PureComponent {
 
   render() {
     const { videos, selectedVideoIndex } = this.props;
-    const { source } = videos[selectedVideoIndex];
+    const { source, poster } = videos[selectedVideoIndex];
 
     return (
       <VideoContainer>
@@ -30,7 +30,7 @@ export class MspVideo extends PureComponent {
           >
             {status => (
               <VideoTransition className={cn(slideLeft[status], fade[status], transition[status])}>
-                <InViewVideo video={source} />
+                <InViewVideo video={source} poster={poster} />
               </VideoTransition>
             )}
           </Transition>

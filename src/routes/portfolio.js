@@ -5,9 +5,12 @@ import mobileMsp2 from "../img/portfolio/mobileMsp/mobile-2.png";
 import mobileMsp3 from "../img/portfolio/mobileMsp/mobile-3.png";
 import rrIcon from "../img/portfolio/msp/rr.svg";
 import bankIcon from "../img/portfolio/msp/bank.svg";
-import mspVideo1 from "../videos/msp/1_1.webm";
-import mspVideo2 from "../videos/msp/1_2.webm";
-import mspVideo3 from "../videos/msp/1_3.webm";
+import mspVideo1 from "../videos/msp/1_1.mp4";
+import mspVideo1Poster from "../videos/msp/posters/1_1_000.jpg";
+import mspVideo2 from "../videos/msp/1_2.mp4";
+import mspVideo2Poster from "../videos/msp/posters/1_2_000.jpg";
+import mspVideo3 from "../videos/msp/1_3.mp4";
+import mspVideo3Poster from "../videos/msp/posters/1_3_000.jpg";
 
 export default {
   id: "portfolio",
@@ -50,9 +53,13 @@ export default {
             { icon: bankIcon, text: "Бизнес-планы принимаются банками-партнёрами Корпорации МСП" },
           ],
           videos: [
-            { title: "Новичок", source: mspVideo1 },
-            { title: "Предприниматель со стартовым капиталом", source: mspVideo2 },
-            { title: "Опытный предприниматель", source: mspVideo3 },
+            { title: "Новичок", source: mspVideo1, poster: mspVideo1Poster },
+            {
+              title: "Предприниматель со стартовым капиталом",
+              source: mspVideo2,
+              poster: mspVideo2Poster,
+            },
+            { title: "Опытный предприниматель", source: mspVideo3, poster: mspVideo3Poster },
           ],
         },
         {

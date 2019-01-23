@@ -47,8 +47,8 @@ export class Video extends Component {
     const { video, play, className, ...props } = this.props;
 
     return (
-      <video autoPlay={play} muted loop ref={this.onVideoRef} className={className} {...props}>
-        <source src={video} type="video/webm" />
+      <video playsInline muted loop ref={this.onVideoRef} className={className} {...props}>
+        <source src={video} type="video/mp4" />
       </video>
     );
   }

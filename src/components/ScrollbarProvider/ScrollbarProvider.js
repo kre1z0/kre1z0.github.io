@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 // https://github.com/idiotWu/react-smooth-scrollbar
 // API https://github.com/idiotWu/smooth-scrollbar/blob/develop/docs/api.md
 
+import { Swiper } from "../../components/Swiper/Swiper";
 import { Scrollbar } from "../../components/Scrollbar/Scrollbar";
 
 import "../ScrollbarProvider/plugins/disableScrollByDirection";
@@ -42,16 +43,18 @@ export class ScrollbarProvider extends Component {
 
     return (
       <ScrollBarContext.Provider value={{ scrollTop, scrollbar }}>
-        <Scrollbar
-          onScrollbarRef={this.onScrollBarRef}
-          onScroll={this.onScroll}
-          className={className}
-          plugins={{
-            disableScrollByDirection: { direction: { x: true, y: false } },
-          }}
-        >
-          {children}
-        </Scrollbar>
+        <Swiper preventDefaultTouchmoveEvent={true}>
+          <Scrollbar
+            onScrollbarRef={this.onScrollBarRef}
+            onScroll={this.onScroll}
+            className={className}
+            plugins={{
+              disableScrollByDirection: { direction: { x: true, y: false } },
+            }}
+          >
+            {children}
+          </Scrollbar>
+        </Swiper>
       </ScrollBarContext.Provider>
     );
   }

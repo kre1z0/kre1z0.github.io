@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import { Swiper } from "../../components/Swiper/Swiper";
 import { Location } from "@reach/router";
 import debounce from "lodash/debounce";
 import throttle from "lodash/throttle";
 
 import { ScrollBar } from "./styles";
+import { Swiper } from "../../components/Swiper/Swiper";
 import { mobileMenu } from "../../components/Navbar/styles";
 import { navigateTo, getRouteByLocation, getRouteById, routes } from "../../routes";
 
