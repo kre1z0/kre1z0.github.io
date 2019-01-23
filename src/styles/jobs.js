@@ -74,6 +74,7 @@ const styles = css`
         > div {
           width: 100%;
           height: calc(100vh - 4rem);
+          height: calc(var(--vh, 1vh) * 100 - 4rem);
         }
       }
     }

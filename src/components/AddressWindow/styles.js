@@ -1,4 +1,4 @@
-import styled, { css } from "astroturf";
+import styled from "astroturf";
 
 import { Hamburger } from "../Buttons/IconButtons";
 import { Link } from "../../styles/contacts";
@@ -49,7 +49,3 @@ export const AddressBtnContainer = styled("div")`
     }
   }
 `;
-
-const styles = css``;
-
-export default styles;

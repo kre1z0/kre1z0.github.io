@@ -4,7 +4,7 @@ import { Portal } from "../../components/Portal/Portal";
 import { H2 } from "../../components/Atoms/Atoms";
 import { AddressBtn } from "../AddressBtn/AddressBtn";
 import animation from "../../components/Transition/animation";
-import styles, {
+import {
   AddressWindowContainer,
   ModalLink,
   CloseBtn,

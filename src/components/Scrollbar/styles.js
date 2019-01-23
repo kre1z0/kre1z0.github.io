@@ -1,4 +1,4 @@
-import styled from "astroturf";
+import styled, { css } from "astroturf";
 import Scrollbar from "react-smooth-scrollbar";
 
 export const ScrollBarContainer = styled(Scrollbar)`
@@ -17,7 +17,10 @@ export const ScrollBarContainer = styled(Scrollbar)`
       }
     }
   }
-  &.isMobile {
+`;
+
+const styles = css`
+  .isMobile {
     > div {
       &:nth-child(2) {
         height: 4px;
@@ -34,3 +37,5 @@ export const ScrollBarContainer = styled(Scrollbar)`
     }
   }
 `;
+
+export default styles;
