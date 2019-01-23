@@ -81,10 +81,10 @@ class Msp extends PureComponent {
         </Section>
         <Section withoutPaddingBottom>
           <Article>
-            <MspVideo selectedVideoIndex={selectedVideoIndex} videos={videos} />
             <Step>
               <span>Шаг 1</span>Выбор территории для ведения бизнеса
             </Step>
+            <MspVideo selectedVideoIndex={selectedVideoIndex} videos={videos} />
             <UnorderedList aria-label="Сначала пользователь должен выбрать:">
               <li>Город, в котором собирается открывать или развивать бизнес</li>
               <li>Одну из 103 отраслевых концепций бизнеса из каталога сервиса</li>
@@ -112,12 +112,12 @@ class Msp extends PureComponent {
         </Section>
         <Section withoutPaddingBottom>
           <Article>
-            <VideoContainer>
-              <InViewVideo source={step2Video} poster={step2VideoPoster} />
-            </VideoContainer>
             <Step>
               <span>Шаг 2</span>Выбор месторасположения бизнеса по параметрам
             </Step>
+            <VideoContainer>
+              <InViewVideo source={step2Video} poster={step2VideoPoster} />
+            </VideoContainer>
             <Paragraph>Следующий шаг - выбор месторасположения бизнеса.</Paragraph>
             <Paragraph>
               Пользователь может посмотреть на карте потенциальных конкурентов, предложения по
@@ -127,12 +127,12 @@ class Msp extends PureComponent {
         </Section>
         <Section withoutPaddingBottom>
           <Article>
-            <VideoContainer>
-              <InViewVideo source={step3Video} poster={step3VideoPoster} />
-            </VideoContainer>
             <Step>
               <span>Шаг 3</span>Расчет зон влияния и конкуренции
             </Step>
+            <VideoContainer>
+              <InViewVideo source={step3Video} poster={step3VideoPoster} />
+            </VideoContainer>
             <Paragraph>
               Пользователь выбирает зинтересовавшие его место на карте, оценивает территорию.
             </Paragraph>
@@ -148,12 +148,12 @@ class Msp extends PureComponent {
         </Section>
         <Section withoutPaddingBottom>
           <Article>
-            <VideoContainer>
-              <InViewVideo source={step4Video} poster={step4VideoPoster} />
-            </VideoContainer>
             <Step>
               <span>Шаг 4</span>Изучение характеристик рыночной ниши
             </Step>
+            <VideoContainer>
+              <InViewVideo source={step4Video} poster={step4VideoPoster} />
+            </VideoContainer>
             <Paragraph>
               "Бизнес-навигатор МСП" позволяет изучить характеристики рыночной ниши в выбранной
               локации: структуру постоянно проживающего населения и дневного пешего потока (офисные
@@ -167,12 +167,12 @@ class Msp extends PureComponent {
         </Section>
         <Section>
           <Article>
-            <VideoContainer>
-              <InViewVideo source={step5Video} poster={step5VideoPoster} />
-            </VideoContainer>
             <Step>
               <span>Шаг 5</span>Расчёт бизнес-плана
             </Step>
+            <VideoContainer>
+              <InViewVideo source={step5Video} poster={step5VideoPoster} />
+            </VideoContainer>
             <Paragraph>
               На этом шаге сервис автоматически формирует детальный типовой бизнес-план открытия
               бизнеса в выбранном месте. Его можно скачат в PDF и Excel. Полученный документ в PDF

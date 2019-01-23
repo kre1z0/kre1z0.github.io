@@ -13,6 +13,7 @@ const ScrollBarContext = React.createContext();
 export class ScrollbarProvider extends Component {
   static propTypes = {
     className: PropTypes.string,
+    withScrollbar: PropTypes.bool,
   };
 
   state = {
@@ -39,12 +40,13 @@ export class ScrollbarProvider extends Component {
 
   render() {
     const { scrollTop, scrollbar } = this.state;
-    const { children, className } = this.props;
+    const { children, className, withScrollbar } = this.props;
 
     return (
       <ScrollBarContext.Provider value={{ scrollTop, scrollbar }}>
         <Swiper preventDefaultTouchmoveEvent={true}>
           <Scrollbar
+            withScrollbar={withScrollbar}
             onScrollbarRef={this.onScrollBarRef}
             onScroll={this.onScroll}
             className={className}
