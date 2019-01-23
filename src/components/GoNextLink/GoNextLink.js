@@ -15,11 +15,21 @@ const styles = css`
     color: #90c53d;
     font-weight: 600;
     white-space: nowrap;
+    transition: color 200ms linear;
     > svg {
+      transition: fill 200ms linear;
       margin-left: 0.7142rem;
       fill: #90c53d;
       width: 0.85714rem;
       height: 0.7428rem;
+    }
+    @media (hover: hover) {
+      &:hover {
+        color: #749e31;
+        svg {
+          fill: #749e31;
+        }
+      }
     }
   }
 `;

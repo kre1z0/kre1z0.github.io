@@ -86,4 +86,9 @@ export const HowWeAreWorkingLink = styled(GLink)`
     align-self: flex-start;
     font-size: 0.7142rem;
   }
+  @media (hover: hover) {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 `;

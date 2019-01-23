@@ -94,6 +94,14 @@ const styles = css`
     svg {
       fill: rgba(38, 44, 55, 0.5);
     }
+    @media (hover: hover) {
+      &:hover {
+        color: #387bc7;
+        svg {
+          fill: #387bc7;
+        }
+      }
+    }
   }
 `;
 
