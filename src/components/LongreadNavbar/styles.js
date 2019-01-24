@@ -1,6 +1,6 @@
 import styled, { css } from "astroturf";
 
-export const LongreadNavbarContainer = styled("header")`
+export const LongreadNavbarContainer = styled("nav")`
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -29,11 +29,30 @@ const styles = css`
   .longreadCloseBtn {
     width: 1.1428571rem;
     height: 1.1428571rem;
+    svg path {
+      transition: stroke 200ms linear, opacity 200ms linear;
+    }
+    @media (hover: hover) {
+      &:hover {
+        path {
+          opacity: 1;
+          stroke: #183e6b;
+        }
+      }
+    }
   }
   .withBg {
     path {
       stroke: #262c37;
       opacity: 1;
+    }
+    @media (hover: hover) {
+      &:hover {
+        path {
+          opacity: 1;
+          stroke: #90c53d;
+        }
+      }
     }
   }
 `;

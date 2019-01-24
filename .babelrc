@@ -4,9 +4,9 @@
       "babel-preset-gatsby",
       {
         "targets": {
-          "browsers": [">0.25%", "not dead"]
+          "browsers": ["last 4 versions", "safari >= 8", "ie >= 11"]
         },
-        "useBuiltIns": "usage"
+        "useBuiltIns": "entry"
       }
     ]
   ]

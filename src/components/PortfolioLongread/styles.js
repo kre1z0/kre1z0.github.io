@@ -36,7 +36,6 @@ export const HeaderBlock = styled("div")`
 const Section = styled("section")`
   display: flex;
   justify-content: center;
-  align-items: flex-end;
   flex-direction: column;
   width: 50%;
   @media (max-width: 440px) {
@@ -46,29 +45,27 @@ const Section = styled("section")`
 `;
 
 export const LeftSide = styled(Section)`
+  display: flex;
+  align-items: flex-start;
   color: #fff;
   opacity: 0;
   animation-duration: 400ms;
   animation-delay: 400ms;
   animation-fill-mode: forwards;
-  @media (max-width: 440px) {
-    z-index: 1;
-    order: 2;
-    margin-bottom: 3rem;
-  }
-`;
-
-export const LeftSideContent = styled("div")`
   margin-right: 4rem;
   @media (max-width: 992px) {
     margin-right: 3rem;
   }
   @media (max-width: 440px) {
+    z-index: 1;
+    order: 2;
     margin-right: 0;
+    margin-bottom: 3rem;
   }
 `;
 
 export const RightSide = styled(Section)`
+  align-items: flex-end;
   position: relative;
   @media (max-width: 440px) {
     flex-shrink: 0;
@@ -89,7 +86,8 @@ export const Description = styled(Paragraph)`
   }
 `;
 
-export const Badge = styled("div")`
+export const Badge = styled("label")`
+  color: #fff;
   display: inline-block;
   padding: 0.4285rem 1.5rem;
   text-transform: uppercase;
@@ -107,8 +105,6 @@ export const Badge = styled("div")`
 `;
 
 const styles = css`
-  .leftSide {
-  }
   .projectLink {
     font-size: 1.2857rem;
     color: rgba(255, 255, 255, 0.5);
@@ -132,6 +128,10 @@ const styles = css`
     bottom: 2rem;
     left: 50%;
     transform: translateX(-50%);
+    transition: 200ms linear;
+    svg path {
+      transition: stroke 200ms linear, opacity 200ms linear;
+    }
     @media (max-width: 992px) {
       bottom: 1.4rem;
     }
@@ -140,6 +140,19 @@ const styles = css`
     }
     @media (max-width: 440px) {
       bottom: 0.4rem;
+    }
+    @media (hover: hover) {
+      &:hover {
+        svg path {
+          opacity: 1;
+          stroke: #183e6b;
+        }
+      }
+    }
+  }
+  .lightNavy {
+    svg path {
+      stroke: rgba(24, 62, 107, 0.5);
     }
   }
 `;

@@ -14,12 +14,22 @@ export class ScrollbarProvider extends Component {
   static propTypes = {
     className: PropTypes.string,
     withScrollbar: PropTypes.bool,
+    location: PropTypes.object,
   };
 
   state = {
     scrollTop: 0,
     scrollbar: null,
   };
+
+  componentDidUpdate({ location: prevLocation }, prevState) {
+    const { scrollbar } = this.state;
+    const { location } = this.props;
+
+    if (prevLocation.pathname !== location.pathname && scrollbar) {
+      scrollbar.scrollTo(0, 0, 0);
+    }
+  }
 
   onScroll = e => {
     const { offset } = e;

@@ -14,6 +14,10 @@ export const Link = styled(ContactLink)`
   }
 `;
 
+export const AddressLink = styled(Link)`
+  margin-bottom: 1.4285rem;
+`;
+
 export const SocialBlock = styled("div")``;
 
 export const BtnGroup = styled("div")`

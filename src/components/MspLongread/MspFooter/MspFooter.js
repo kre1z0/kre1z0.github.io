@@ -1,14 +1,23 @@
 import React, { PureComponent } from "react";
+import PropTypes from "prop-types";
 
 import { Article, H1 } from "../../LongreadAtoms/Longread";
 import { GoNextLink } from "../../GoNextLink/GoNextLink";
 import { AndroidStoreLink, IosStoreLink } from "../../StoreLinks/StoreLinks";
-import phones from "../../../img/portfolio/msp/phones.jpg";
+import phones from "../../../img/portfolio/mobileMsp/phones.jpg";
 
 import styles, { PhonesContainer, Phones, Footer, Content, StoreContainer } from "./styles";
 
 export class MspFooter extends PureComponent {
+  static propTypes = {
+    ios: PropTypes.string,
+    android: PropTypes.string,
+    id: PropTypes.string,
+  };
+
   render() {
+    const { ios, android, id } = this.props;
+
     return (
       <Footer as="footer">
         <Article>
@@ -16,18 +25,12 @@ export class MspFooter extends PureComponent {
             <H1 portfolio>
               Бизнес-навигатор МСП <br /> в вашем телефоне!
             </H1>
-            <GoNextLink to="/mobileMsp" gatsby className={styles.goToMobileMspLink}>
+            <GoNextLink to={`/${id}`} gatsby className={styles.goToMobileMspLink}>
               Подробнее
             </GoNextLink>
             <StoreContainer>
-              <IosStoreLink
-                href="https://itunes.apple.com/ru/developer/корпорация-мсп/id1253348895?mt=8"
-                target="_blank"
-              />
-              <AndroidStoreLink
-                href="https://play.google.com/store/apps/developer?id=АО+«Корпорация+«МСП»"
-                target="_blank"
-              />
+              <IosStoreLink href={ios} target="_blank" />
+              <AndroidStoreLink href={android} target="_blank" />
             </StoreContainer>
           </Content>
         </Article>

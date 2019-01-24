@@ -2,6 +2,7 @@ import React, { PureComponent } from "react";
 import cn from "classnames";
 import Responsive from "react-responsive";
 
+import { isMobile } from '../../utils/browser';
 import { fade, transition } from "../../components/Transition/animation";
 import { MainLayoutConsumer } from "../../components/MainLayoutProvider/MainLayoutProvider";
 import { Portal } from "../../components/Portal/Portal";
@@ -11,7 +12,7 @@ import { Button } from "../../components/Buttons/Buttons";
 import { MainAnimation } from "../../components/MainAnimation/MainAnimation";
 import { H2 } from "../../components/Atoms/Atoms";
 import { socials } from "../../assets/social";
-import { AddressWindow } from "../../components/AddressWindow/AddressWindow";
+import { AddressLink } from "../../components/AddressLink/AddressLink";
 
 import styles, {
   SocialBlock,
@@ -64,9 +65,7 @@ class Contacts extends PureComponent {
             <Link as="address" className={styles.address}>
               127051, Россия, <br /> г. Москва, ул. Трубная, д. 25 к. 1
             </Link>
-            <Responsive maxWidth={1000}>
-              <AddressWindow />
-            </Responsive>
+            {isMobile() && <AddressLink isActive>Открыть адрес на карте</AddressLink>}
             <Link href="tel:+74955060774">+7 (495) 506-07-74</Link>
             <Link href="mailto:info@everpoint.ru">info@everpoint.ru</Link>
             <SocialBlock>
@@ -104,7 +103,12 @@ class Contacts extends PureComponent {
           </>
         }
       >
-        <TelegramButton as="a" className={styles.telegramBtn} target="_blank" href="https://telegram.me/redditr" />
+        <TelegramButton
+          as="a"
+          className={styles.telegramBtn}
+          target="_blank"
+          href="https://telegram.me/redditr"
+        />
       </MainAnimation>
     );
   }

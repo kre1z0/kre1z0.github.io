@@ -27,3 +27,15 @@ export const isElementInViewport = ({ el, offsetY = 0, offsetTop = 0 }) => {
     right <= (window.innerWidth || document.documentElement.clientWidth)
   );
 };
+
+
+export const setVhProperty = () => {
+  if (typeof window !== "object") {
+    return;
+  }
+
+  const viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+
+  const vh = viewportHeight * 0.01;
+  document.documentElement.style.setProperty("--vh", `${vh}px`);
+};

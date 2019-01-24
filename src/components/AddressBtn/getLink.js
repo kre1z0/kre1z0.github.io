@@ -3,7 +3,7 @@ import { browser } from "../../utils/browser";
 export const iOSurl = (name, lat, lng) => {
   switch (name) {
     case "yandex":
-      return `yandexmaps://maps.yandex.ru/?ll=${lat},${lng}`;
+      return `yandexmaps://maps.yandex.ru/?ll=${lng},${lat}`;
     case "google":
       return `comgooglemaps://?q=${lat},${lng}`;
     case "gis":
@@ -16,7 +16,7 @@ export const iOSurl = (name, lat, lng) => {
 export const androidUrl = (name, lat, lng) => {
   switch (name) {
     case "yandex":
-      return `yandexmaps://maps.yandex.ru/?ll=${lat},${lng}`;
+      return `yandexmaps://maps.yandex.ru/?ll=${lng},${lat}`;
     case "google":
       return `geo:${lat},${lng}`;
     case "gis":

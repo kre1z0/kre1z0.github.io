@@ -72,6 +72,8 @@ export default {
           screenshot: [mobileMsp1, mobileMsp2, mobileMsp3],
           description:
             "Приложение для расчёта бизнес-планов и справочник мер поддержки предпринимателей",
+          ios: "https://itunes.apple.com/ru/developer/корпорация-мсп/id1253348895?mt=8",
+          android: "https://play.google.com/store/apps/developer?id=АО+«Корпорация+«МСП»",
         },
         {
           title: "Геомониторинг недвижимости",

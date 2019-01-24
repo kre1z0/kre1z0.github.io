@@ -28,18 +28,25 @@ import { MspFooter } from "../../components/MspLongread/MspFooter/MspFooter";
 import styles, { MspLongreadContainer, Step } from "../../styles/msp";
 
 class Msp extends PureComponent {
+  static defaultProps = {
+    projectId: "msp",
+  };
+
   state = {
     selectedVideoIndex: 0,
   };
 
   render() {
+    const { location, projectId } = this.props;
     const { selectedVideoIndex } = this.state;
-    const msp = getProject({ projectId: "msp" });
+    const msp = getProject({ projectId });
+    const mobileMsp = getProject({ projectId: "mobileMsp" });
+    const { ios, android, id } = mobileMsp;
     const { link, achievements, videos } = msp;
 
     return (
       <MspLongreadContainer>
-        <Header {...msp} rightSide={<MspRightSide />} />
+        <Header location={location} {...msp} rightSide={<MspRightSide />} />
         <Section withoutPaddingBottom>
           <Article>
             <H1 portfolio>Предыстория</H1>
@@ -51,7 +58,7 @@ class Msp extends PureComponent {
             </Paragraph>
             <Paragraph>
               В 2018 году сервис получил премию{" "}
-              <OutsideLink href="https://tagline.ru/cases/razrabotka-veb-servisa-dlya-poiska-mesta-dlya-biznesa-i-rascheta-biznes-plana--biznes-navigator-msp/">
+              <OutsideLink href="tagline.ru/cases/razrabotka-veb-servisa-dlya-poiska-mesta-dlya-biznesa-i-rascheta-biznes-plana--biznes-navigator-msp/">
                 Tagline Awards
               </OutsideLink>{" "}
               - 3 место в категории лучший инновационный сервис и лучший сервис для
@@ -188,7 +195,7 @@ class Msp extends PureComponent {
             <OutsideLink href={link}>{link}</OutsideLink>
           </Article>
         </Section>
-        <MspFooter />
+        <MspFooter ios={ios} android={android} id={id} />
       </MspLongreadContainer>
     );
   }

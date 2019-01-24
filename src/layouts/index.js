@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 
+import { setVhProperty } from "../utils/dom";
 import { Helmet } from "../components/Helmet/Helmet";
 import LongreadLayout from "./longread";
 import { MainLayoutProvider } from "../components/MainLayoutProvider/MainLayoutProvider";
@@ -10,6 +11,19 @@ import { Navbar } from "../components/Navbar/Navbar";
 injectGlobals();
 
 class Layout extends Component {
+  componentDidMount() {
+    window.addEventListener("resize", this.onResize);
+    this.onResize();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.onResize);
+  }
+
+  onResize = () => {
+    setVhProperty();
+  };
+
   render() {
     const { children, location } = this.props;
 

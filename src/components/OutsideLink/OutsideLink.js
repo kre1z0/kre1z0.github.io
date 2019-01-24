@@ -19,8 +19,19 @@ const openWindow = href => e => {
   window.open(`//${href}`, "new");
 };
 
+const getUrl = value => {
+  if (!value) {
+    return;
+  }
+
+  const isHttp = value.toString().indexOf("http") === 0;
+  const isWww = value.toString().indexOf("www") === 0;
+
+  return isWww || isHttp ? value : `http://${value}`;
+};
+
 export const OutsideLink = ({ href, children, ...props }) => (
-  <Link href={href} onClick={openWindow(href)} target="_blank" {...props}>
+  <Link href={getUrl(href)} onClick={openWindow(href)} target="_blank" {...props}>
     {children}
   </Link>
 );
