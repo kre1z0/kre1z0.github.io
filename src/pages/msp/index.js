@@ -32,13 +32,8 @@ class Msp extends PureComponent {
     projectId: "msp",
   };
 
-  state = {
-    selectedVideoIndex: 0,
-  };
-
   render() {
     const { location, projectId } = this.props;
-    const { selectedVideoIndex } = this.state;
     const msp = getProject({ projectId });
     const mobileMsp = getProject({ projectId: "mobileMsp" });
     const { ios, android, id } = mobileMsp;
@@ -86,34 +81,16 @@ class Msp extends PureComponent {
             </Paragraph>
           </Article>
         </Section>
-        <Section withoutPaddingBottom>
+        <MspVideo videos={videos} />
+        <Section withoutPaddingBottom withoutPaddingTop>
           <Article>
-            <Step>
-              <span>Шаг 1</span>Выбор территории для ведения бизнеса
-            </Step>
-            <MspVideo selectedVideoIndex={selectedVideoIndex} videos={videos} />
             <UnorderedList aria-label="Сначала пользователь должен выбрать:">
               <li>Город, в котором собирается открывать или развивать бизнес</li>
               <li>Одну из 103 отраслевых концепций бизнеса из каталога сервиса</li>
             </UnorderedList>
-            <Paragraph>Для некоторых видов бизнеса доступен выбор франшизы.</Paragraph>
-          </Article>
-        </Section>
-        <Section className={styles.selectorSection}>
-          <Scrollbar className={styles.selectorSectionScrollbar}>
-            <Selector
-              className={styles.selectorContainer}
-              items={videos}
-              selectedIndex={selectedVideoIndex}
-              onChange={index => this.setState({ selectedVideoIndex: index })}
-            />
-          </Scrollbar>
-        </Section>
-        <Section withoutPaddingTop withoutPaddingBottom>
-          <Article>
             <Paragraph>
-              Карта привлекательности районов города для открытия малого бизнеса покажет начинающим
-              предпринимателям, в каком районе, какой вид бизнеса более востребован.
+              Карта привлекательности территории города для открытия бизнеса и каталог отраслевых
+              концепций подскажут, где и какой бизнес открывать, какие вложения потребуются
             </Paragraph>
           </Article>
         </Section>

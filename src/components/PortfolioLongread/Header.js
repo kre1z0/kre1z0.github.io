@@ -52,6 +52,7 @@ export class HeaderBase extends Component {
 
   render() {
     const {
+      children,
       bgColor,
       type,
       text,
@@ -59,6 +60,7 @@ export class HeaderBase extends Component {
       link,
       rightSide,
       leftSideClassName,
+      rightSideClassName,
       location,
       scrollTop,
       containerClassName,
@@ -83,12 +85,13 @@ export class HeaderBase extends Component {
             </OutsideLink>
             {leftSide}
           </LeftSide>
-          <RightSide>{rightSide}</RightSide>
+          <RightSide className={rightSideClassName}>{rightSide}</RightSide>
           <ScrollDownButton
             className={cn(styles.scrollDownButton, { [styles.lightNavy]: lightNavy })}
             onClick={this.onScrollDown}
           />
         </HeaderBlock>
+        {children}
       </HeaderContainer>
     );
   }

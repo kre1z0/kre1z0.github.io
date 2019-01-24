@@ -16,7 +16,7 @@ export const MspLongreadContainer = styled("div")`
 
 export const Step = styled(H3)`
   position: relative;
-  margin-top: 5rem;
+  margin-top: 4rem;
   margin-bottom: 2.4rem;
   > span {
     position: absolute;
@@ -53,7 +53,7 @@ export const Step = styled(H3)`
 
 const styles = css`
   .selectorSection {
-    padding: 0;
+    padding: 0 0 1rem 0;
   }
   .selectorSectionScrollbar {
     :global .scroll-content {
