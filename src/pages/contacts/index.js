@@ -39,12 +39,17 @@ export const ButtonGroup = ({ stope, onClickBus, onClickMetro }) => {
 class Contacts extends PureComponent {
   state = {
     stope: true,
+    isMobile: false,
   };
+
+  componentDidMount() {
+    this.setState({ isMobile: isMobile() });
+  }
 
   render() {
     const { status, location } = this.props;
     const { text } = getRouteByLocation(location);
-    const { stope } = this.state;
+    const { stope, isMobile } = this.state;
 
     const btnGroupProps = {
       stope,
@@ -65,7 +70,7 @@ class Contacts extends PureComponent {
             <Link as="address" className={styles.address}>
               127051, Россия, <br /> г. Москва, ул. Трубная, д. 25 к. 1
             </Link>
-            {isMobile() && <AddressLink isActive>Открыть адрес на карте</AddressLink>}
+            {isMobile&& <AddressLink>Открыть адрес на карте</AddressLink>}
             <Link href="tel:+74955060774">+7 (495) 506-07-74</Link>
             <Link href="mailto:info@everpoint.ru">info@everpoint.ru</Link>
             <SocialBlock>

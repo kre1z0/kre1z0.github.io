@@ -3,35 +3,20 @@ import React, { PureComponent } from "react";
 import { Header } from "../../components/PortfolioLongread/Header";
 import { getProject } from "../../routes";
 
-import styles, { MobileMspContainer, MobileMspStoreContainer } from "../../styles/mobileMsp";
-import { AndroidStoreLink, IosStoreLink } from "../../components/StoreLinks/StoreLinks";
+import { GeomonitoringContainer } from "../../styles/geomonitoring";
 
-class MobileMsp extends PureComponent {
+class Geomonitoring extends PureComponent {
   static defaultProps = {
-    projectId: "mobileMsp",
+    projectId: "geomonitoring",
   };
 
   render() {
     const { location, projectId } = this.props;
-    const mobileMsp = getProject({ projectId });
-    const { ios, android } = mobileMsp;
+    const geomonitoring = getProject({ projectId });
 
     return (
-      <MobileMspContainer>
-        <Header
-          projectId={projectId}
-          location={location}
-          {...mobileMsp}
-          lightNavy
-          containerClassName={styles.mobileMspContainer}
-          leftSideClassName={styles.mobileMspLeftSide}
-          leftSide={
-            <MobileMspStoreContainer>
-              <IosStoreLink href={ios} target="_blank" />
-              <AndroidStoreLink href={android} target="_blank" />
-            </MobileMspStoreContainer>
-          }
-        />
+      <GeomonitoringContainer>
+        <Header projectId={projectId} location={location} {...geomonitoring} />
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
           consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
@@ -52,9 +37,9 @@ class MobileMsp extends PureComponent {
           consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
           perferendis quae rem saepe sequi sit veniam, vero, vitae.
         </p>
-      </MobileMspContainer>
+      </GeomonitoringContainer>
     );
   }
 }
 
-export default MobileMsp;
+export default Geomonitoring;

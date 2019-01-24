@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import cn from "classnames";
-
 import { Link } from "gatsby";
+
+import { ScrollbarConsumer } from "../ScrollbarProvider/ScrollbarProvider";
 import { getBackRouteByLocationPathName } from "../../routes";
 import { CloseButton } from "../Buttons/CloseButton";
 
@@ -28,13 +29,14 @@ export class LongreadNavbar extends Component {
   };
 
   render() {
-    const { pathname, scrollTop, className } = this.props;
+    const { pathname, scrollTop, className, children } = this.props;
 
     const transform = `translateY(${scrollTop}px)`;
     const withBg = scrollTop > 0;
 
     return (
       <LongreadNavbarContainer className={className} style={{ transform }} withBg={withBg}>
+        {children}
         <Link to={getBackRouteByLocationPathName(pathname)}>
           <CloseButton className={cn(styles.longreadCloseBtn, { [styles.withBg]: withBg })} />
         </Link>
@@ -42,3 +44,9 @@ export class LongreadNavbar extends Component {
     );
   }
 }
+
+export const LongreadNavbarWithScrollbar = props => (
+  <ScrollbarConsumer>
+    {({ scrollTop }) => <LongreadNavbar scrollTop={scrollTop} {...props} />}
+  </ScrollbarConsumer>
+);

@@ -46,7 +46,7 @@ class Msp extends PureComponent {
 
     return (
       <MspLongreadContainer>
-        <Header location={location} {...msp} rightSide={<MspRightSide />} />
+        <Header projectId={projectId} location={location} {...msp} rightSide={<MspRightSide />} />
         <Section withoutPaddingBottom>
           <Article>
             <H1 portfolio>Предыстория</H1>

@@ -28,7 +28,6 @@ export const isElementInViewport = ({ el, offsetY = 0, offsetTop = 0 }) => {
   );
 };
 
-
 export const setVhProperty = () => {
   if (typeof window !== "object") {
     return;

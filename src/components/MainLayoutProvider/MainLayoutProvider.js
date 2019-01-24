@@ -116,13 +116,14 @@ export class MainLayoutProviderComponent extends Component {
     return sliderIdArray;
   };
 
-  getSelectedSectionIndexFromLocalstorage = currentRoute => {
+  getSelectedSectionIndexFromLocalstorage = (currentRoute, sections) => {
     const { id } = currentRoute;
     if (id === "portfolio") {
-      const selectedSectionIndex = localStorage.getItem(id);
+      const idFromLocalstorage = localStorage.getItem(id);
+      const selectedSectionIndex = sections.findIndex(section => section.id === idFromLocalstorage);
       localStorage.removeItem(id);
 
-      return +selectedSectionIndex || 0;
+      return Math.max(+selectedSectionIndex, 0);
     } else {
       return 0;
     }
@@ -134,14 +135,18 @@ export class MainLayoutProviderComponent extends Component {
 
     if (currentRoute) {
       const { slider, additionalMenu, scrollable, news } = currentRoute;
+      const sections = this.sectionsFromAdditionalMenu(additionalMenu);
+      const selectedSectionIndex = this.getSelectedSectionIndexFromLocalstorage(
+        currentRoute,
+        sections,
+      );
 
       const sliderState =
         slider || scrollable || news
           ? {
               sliderDirection: 1,
-              selectedSectionIndex: this.getSelectedSectionIndexFromLocalstorage(currentRoute),
-              sections:
-                slider || scrollable ? this.sectionsFromAdditionalMenu(additionalMenu) : news || [],
+              selectedSectionIndex,
+              sections: slider || scrollable ? sections : news || [],
             }
           : {
               selectedSectionIndex: 0,

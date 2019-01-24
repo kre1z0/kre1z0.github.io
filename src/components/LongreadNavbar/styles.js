@@ -27,6 +27,7 @@ export const LongreadNavbarContainer = styled("nav")`
 
 const styles = css`
   .longreadCloseBtn {
+    background: none;
     width: 1.1428571rem;
     height: 1.1428571rem;
     svg path {

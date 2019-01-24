@@ -48,7 +48,6 @@ class Portfolio extends PureComponent {
                   selectedSectionIndex={selectedSectionIndex}
                   onSectionChange={onSectionChange}
                   navigate={navigate}
-                  currentRouteId={currentRoute && currentRoute.id}
                   {...section}
                 />
               }

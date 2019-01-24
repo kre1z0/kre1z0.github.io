@@ -31,7 +31,6 @@ export class PortfolioSlide extends PureComponent {
     parentTitle: PropTypes.string,
     sectionDirection: PropTypes.number,
     navigate: PropTypes.func,
-    currentRouteId: PropTypes.string,
   };
 
   state = {
@@ -70,15 +69,13 @@ export class PortfolioSlide extends PureComponent {
   };
 
   goToLongread = () => {
-    const { navigate, id, currentRouteId, selectedSectionIndex } = this.props;
+    const { navigate, id } = this.props;
     this.setState(
       {
         goToLongread: true,
       },
       () => {
         setTimeout(() => {
-          localStorage.setItem(currentRouteId, selectedSectionIndex);
-
           navigate(`/${id}`);
         }, 200);
       },

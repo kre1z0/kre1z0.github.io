@@ -3,35 +3,20 @@ import React, { PureComponent } from "react";
 import { Header } from "../../components/PortfolioLongread/Header";
 import { getProject } from "../../routes";
 
-import styles, { MobileMspContainer, MobileMspStoreContainer } from "../../styles/mobileMsp";
-import { AndroidStoreLink, IosStoreLink } from "../../components/StoreLinks/StoreLinks";
+import { EvergisContainer } from "../../styles/evergis";
 
-class MobileMsp extends PureComponent {
+class Evergis extends PureComponent {
   static defaultProps = {
-    projectId: "mobileMsp",
+    projectId: "evergis",
   };
 
   render() {
     const { location, projectId } = this.props;
-    const mobileMsp = getProject({ projectId });
-    const { ios, android } = mobileMsp;
+    const evergis = getProject({ projectId });
 
     return (
-      <MobileMspContainer>
-        <Header
-          projectId={projectId}
-          location={location}
-          {...mobileMsp}
-          lightNavy
-          containerClassName={styles.mobileMspContainer}
-          leftSideClassName={styles.mobileMspLeftSide}
-          leftSide={
-            <MobileMspStoreContainer>
-              <IosStoreLink href={ios} target="_blank" />
-              <AndroidStoreLink href={android} target="_blank" />
-            </MobileMspStoreContainer>
-          }
-        />
+      <EvergisContainer>
+        <Header projectId={projectId} location={location} {...evergis} />
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
           consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
@@ -52,9 +37,9 @@ class MobileMsp extends PureComponent {
           consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
           perferendis quae rem saepe sequi sit veniam, vero, vitae.
         </p>
-      </MobileMspContainer>
+      </EvergisContainer>
     );
   }
 }
 
-export default MobileMsp;
+export default Evergis;

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import cn from "classnames";
 
+import { getBackRouteByLocationPathName } from "../../routes";
 import animation from "../../components/Transition/animation";
 import { ScrollDownButton } from "../../components/Buttons/ScrollDownButton";
 import { OutsideLink } from "../../components/OutsideLink/OutsideLink";
@@ -32,7 +33,14 @@ export class HeaderBase extends Component {
     containerClassName: PropTypes.string,
     lightNavy: PropTypes.bool,
     leftSide: PropTypes.element,
+    projectId: PropTypes.string,
   };
+
+  componentDidMount() {
+    const { location, projectId } = this.props;
+    const replacedSlash = getBackRouteByLocationPathName(location.pathname).replace(/\//g, "");
+    localStorage.setItem(replacedSlash, projectId);
+  }
 
   onScrollDown = () => {
     const { scrollbar } = this.props;
@@ -53,7 +61,6 @@ export class HeaderBase extends Component {
       leftSideClassName,
       location,
       scrollTop,
-      projectId,
       containerClassName,
       lightNavy,
       leftSide,
@@ -63,7 +70,6 @@ export class HeaderBase extends Component {
       <HeaderContainer className={containerClassName} style={{ backgroundColor: bgColor }}>
         <LongreadNavbar
           className={cn({ [styles.lightNavy]: lightNavy })}
-          projectId={projectId}
           pathname={location.pathname}
           scrollTop={scrollTop}
         />

@@ -78,7 +78,7 @@ export default {
         {
           title: "Геомониторинг недвижимости",
           text: "Банковский сектор",
-          id: "bankingSector",
+          id: "geomonitoring",
           bgColor: "#45aac3",
           screenshot: bank,
           description:

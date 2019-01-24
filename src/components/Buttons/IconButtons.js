@@ -1,6 +1,5 @@
 import React from "react";
-import cn from "classnames";
-import styled, { css } from "astroturf";
+import styled from "astroturf";
 
 import { Button } from "./Buttons";
 
@@ -21,16 +20,6 @@ export const Hamburger = styled(IconButton)`
   }
 `;
 
-const styles = css`
-  .iconBtn {
-    background: none;
-  }
-`;
-
-export const IconBtn = ({ children, className, ...props }) => {
-  return (
-    <Button className={cn(styles.iconBtn, className)} {...props}>
-      {children}
-    </Button>
-  );
+export const IconBtn = ({ children, ...props }) => {
+  return <Button {...props}>{children}</Button>;
 };

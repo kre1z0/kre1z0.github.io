@@ -1,7 +1,18 @@
 const { createFilePath } = require("gatsby-source-filesystem");
 const { fmImagesToRelative } = require("gatsby-remark-relative-images");
 
-const longreadPages = ["news", "work", "company", "debug", "msp", "mobileMsp"];
+const longreadPages = [
+  "news",
+  "work",
+  "company",
+  "debug",
+  "msp",
+  "mobileMsp",
+  "evergis",
+  "geomonitoring",
+  "evertrack",
+  "evergisOnline",
+];
 
 exports.onCreatePage = ({ page, actions }) => {
   const { createPage } = actions;
