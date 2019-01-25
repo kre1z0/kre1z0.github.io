@@ -51,7 +51,7 @@ export const SocialLink = styled("a")`
 
 const styles = css`
   .willChangeContactsLeftSideClassName {
-    @media (max-width: 1000px) {
+    @media (max-width: 940px) {
       flex-shrink: 1;
     }
     @media (max-width: 767px) {

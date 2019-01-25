@@ -6,19 +6,22 @@ import noVacancy from "../../img/vacancy/no-vacancy.svg";
 import { NoVacancyDescription } from "./styles";
 import { GoNextLink } from "../GoNextLink/GoNextLink";
 
+import styles from "./styles";
+
 export const NoVacancyCard = ({ height }) => {
   return (
     <TeamMemberCard
+      className={styles.noVacancyCard}
       height={height}
       id="noVacancies"
       avatar={noVacancy}
       name="В настоящее время вакансий нет"
       control={
         <NoVacancyDescription>
-          Но если вы отличный специалист, напишите нам в{" "}
+          <span>Но если вы отличный специалист, напишите нам в</span>{" "}
           <GoNextLink withArrow={false}>чат</GoNextLink>.<br />
           <br />
-          Возможно, мы еще не знаем, что вы нам нужны!
+          <span>Возможно, мы еще не знаем, что вы нам нужны!</span>
         </NoVacancyDescription>
       }
     />
@@ -26,5 +29,6 @@ export const NoVacancyCard = ({ height }) => {
 };
 
 NoVacancyCard.propTypes = {
+  className:  PropTypes.string,
   cardHeight: PropTypes.number,
 };

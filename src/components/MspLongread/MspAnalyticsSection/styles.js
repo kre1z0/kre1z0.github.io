@@ -68,7 +68,7 @@ export const MspAnalyticsCardsRightSide = styled(Block)`
       }
     }
   }
-  @media (max-width: 440px) {
+  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
     flex-wrap: nowrap;
     top: auto;
     bottom: 0;

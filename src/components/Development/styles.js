@@ -9,7 +9,7 @@ export const DevelopmentContainer = styled("div")`
   @media (max-width: 768px) {
     margin-bottom: 3.6rem;
   }
-  @media (max-width: 576px) {
+  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
     margin-bottom: 2rem;
   }
 `;
@@ -38,7 +38,7 @@ export const DevelopmentTitle = styled("div")`
   border-radius: 0.8571rem;
   margin-bottom: 1.4285rem;
   margin-right: 2.1428rem;
-  @media (max-width: 576px) {
+  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
     height: 1.5rem;
     font-size: 0.7142rem;
     padding: 0 0.925rem;
@@ -58,7 +58,7 @@ export const DevelopmentDescription = styled("p")`
   @media (max-width: 768px) {
     font-size: 0.8571rem;
   }
-  @media (max-width: 576px) {
+  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
     font-size: 0.7142rem;
   }
 `;

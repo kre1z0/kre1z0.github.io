@@ -12,7 +12,7 @@ const StoreLink = styled("a")`
     width: 10.4285rem;
     height: 3rem;
   }
-  @media (max-width: 440px) {
+  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
     width: 9.3571rem;
     height: 2.7142rem;
   }

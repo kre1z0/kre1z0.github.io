@@ -55,10 +55,14 @@ export class TeamMembers extends Component {
     window.removeEventListener("resize", this.onResize);
   }
 
-  shouldComponentUpdate({ selectedId: nextSelectedId }, nextState) {
+  shouldComponentUpdate({ selectedId: nextSelectedId }, { cardHeight: nextCardHeight }) {
+    const { cardHeight } = this.state;
     const { selectedId, id } = this.props;
 
-    return selectedId !== nextSelectedId && (nextSelectedId === id || selectedId === id);
+    return (
+      (selectedId !== nextSelectedId && (nextSelectedId === id || selectedId === id)) ||
+      cardHeight !== nextCardHeight
+    );
   }
 
   static defaultProps = {
@@ -67,7 +71,7 @@ export class TeamMembers extends Component {
 
   onResize = () => {
     const viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-    if (viewportWidth <= 1024) {
+    if (viewportWidth <= 992) {
       this.setState({ cardHeight: 297 });
     } else {
       this.setState({ cardHeight: 320 });
@@ -104,7 +108,7 @@ export class TeamMembers extends Component {
         style={{ height: containerHeight + "px" }}
       >
         {noVacancies ? (
-          <NoVacancyCard height={cardHeight * 1.1718} />
+          <NoVacancyCard />
         ) : (
           data.map((item, index) => {
             if (isPhoto) {

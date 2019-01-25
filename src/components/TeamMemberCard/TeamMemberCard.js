@@ -28,7 +28,7 @@ export const TeamMemberCard = ({
         }}
       />
       {control}
-      <Position>{position}</Position>
+      {position && <Position>{position}</Position>}
       <Description>{descrition}</Description>
     </TeamMemberCardContainer>
   );

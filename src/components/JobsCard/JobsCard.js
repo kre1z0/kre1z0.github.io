@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { TransitionCard } from "./TransitionCard";
 import { Bullets } from "../../components/Bullets/Bullets";
 import { BackendComponent } from "../../components/Backend/Backend";
-import styles, { JobsCardSwiper } from "./styles";
+import { JobsCardSwiper } from "./styles";
 
 const flattenItems = sections => {
   const array = [];
@@ -158,7 +158,6 @@ export class JobsCard extends Component {
         />
         <BackendComponent sections={items} selectedSectionIndex={selectedItemsIndex} />
         <Bullets
-          className={styles.jobsCardBullets}
           sections={items}
           selectedSectionIndex={selectedItemsIndex}
         />

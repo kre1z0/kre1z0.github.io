@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import styled from "astroturf";
 
 const Container = styled("div")`
+  flex-shrink: 0;
   max-width: 6.8571rem;
   max-height: 6.8571rem;
   width: 100%;
@@ -10,6 +11,10 @@ const Container = styled("div")`
   border-radius: 50%;
   overflow: hidden;
   background-color: rgba(33, 34, 36, 0.1);
+  @media (max-height: 300px) {
+    max-width: 6rem;
+    max-height: 6rem;
+  }
 `;
 
 const Img = styled("img")`

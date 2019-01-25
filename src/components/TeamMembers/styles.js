@@ -1,4 +1,4 @@
-import styled from "astroturf";
+import styled, { css } from "astroturf";
 
 export const TeamMembersContainer = styled("div")`
   position: relative;
@@ -13,10 +13,10 @@ export const TeamMembersContainer = styled("div")`
   opacity: 0;
   pointer-events: none;
   transition: opacity 200ms linear;
-  @media (max-width: 1024px) {
+  @media (max-width: 1084px) {
     width: calc(20rem * 2 + 2.1428rem);
   }
-  @media (max-width: 1000px) {
+  @media (max-width: 940px) {
     display: none;
   }
   &.isVisible {
@@ -39,14 +39,15 @@ export const TeamMembersContainer = styled("div")`
 export const NoVacancyDescription = styled("p")`
   font-size: 0.8571rem;
   font-weight: 500;
-  @media (max-height: 440px) {
-    br {
-      display: none;
-    }
+  margin-top: 1.4rem;
+  margin-bottom: 0;
+  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+    margin-top: 0;
+    font-size: 0.7142rem;
   }
-  @media (max-height: 360px) {
-    br {
-      display: block;
+  @media (max-height: 340px) {
+    span:last-child {
+      display: none;
     }
   }
 `;
@@ -58,9 +59,6 @@ export const PhotoContainer = styled("div")`
   width: 100%;
   max-width: 21.4285rem;
   line-height: normal;
-  @media (max-width: 1024px) {
-    max-width: 20rem;
-  }
   &:first-child {
     margin-right: 2.1428rem;
   }
@@ -69,29 +67,42 @@ export const PhotoContainer = styled("div")`
     width: auto;
     height: 100%;
   }
-  @media (max-width: 1000px) {
+  @media (max-width: 1084px) {
+    width: calc(50% - 2.1428rem / 2);
+    max-width: none;
+  }
+  @media (max-width: 940px) {
     will-change: opacity, transform;
+    width: 100%;
+    height: 100%;
     border-radius: 0.1428rem;
     box-shadow: 0 0.8571rem 0.8571rem 0 rgba(10, 18, 33, 0.1);
-    &:first-child {
-      margin-right: 0;
-    }
-    > img {
-      height: 21.2142rem;
-      @media (max-width: 440px) {
-        height: 18rem;
-      }
-      @media (max-height: 440px) {
-        height: 18rem;
-      }
-      @media (max-height: 360px) {
-        height: calc(100vh - 4.5rem);
-        height: calc(var(--vh, 1vh) * 100 - 4.5rem);
-      }
-    }
-  }
-  @media (max-height: 360px) {
-    max-width: none;
-    background: #fff;
   }
 `;
+
+const styles = css`
+  .noVacancyCard {
+    @media (max-height: 300px) {
+      > div:nth-child(2) {
+        font-size: 0.8rem;
+      }
+    }
+    @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+      > div:nth-child(2) {
+        margin-bottom: 0;
+      }
+      p {
+        margin-top: 0.6rem;
+      }
+    }
+  }
+  .vacancyCard {
+    @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+  }
+`;
+
+export default styles;

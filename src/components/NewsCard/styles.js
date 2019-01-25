@@ -11,6 +11,7 @@ export const AboutCardContainer = styled(Blank)`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  overflow: hidden;
   @media (max-height: 344px) {
     padding: 1rem;
   }
@@ -21,7 +22,7 @@ export const Title = styled("h4")`
   color: #90c53d;
   font-weight: 600;
   margin-bottom: 0.8rem;
-  @media (max-width: 1000px) {
+  @media (max-width: 940px) {
     font-size: 1.1428rem;
     margin-bottom: 0.4rem;
   }
@@ -33,14 +34,14 @@ export const Title = styled("h4")`
 export const Date = styled("span")`
   font-weight: 500;
   color: rgba(38, 44, 55, 0.25);
-  @media (max-width: 1000px) {
+  @media (max-width: 940px) {
     font-size: 0.8571rem;
   }
 `;
 
 export const Description = styled("p")`
   margin: 1.74rem 0;
-  @media (max-width: 1000px) {
+  @media (max-width: 940px) {
     font-size: 0.8571rem;
     margin: 0.8rem 0;
   }

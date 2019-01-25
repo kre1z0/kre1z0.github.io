@@ -35,7 +35,7 @@ export const Footer = styled(Section)`
       }
     }
   }
-  @media (max-width: 440px) {
+  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
     height: 17.1428rem;
   }
 `;
@@ -63,7 +63,7 @@ export const Phones = styled("img")`
     left: -18.8vw;
     width: 104vw;
   }
-  @media (max-width: 440px) {
+  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
     margin-top: -1rem;
     left: -11rem;
     width: 42rem;

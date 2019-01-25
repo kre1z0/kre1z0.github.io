@@ -53,7 +53,7 @@ export class Jobs extends PureComponent {
               }
               rightSide={
                 <CenterBlock ref={onScrollableRef}>
-                  <Responsive minWidth={1001}>
+                  <Responsive minWidth={941}>
                     <ScrollableTeamMembers
                       sections={sections}
                       transitionEnd={transitionEnd}
@@ -63,7 +63,7 @@ export class Jobs extends PureComponent {
                       onSectionChange={onSectionChange}
                     />
                   </Responsive>
-                  <Responsive maxWidth={1000}>
+                  <Responsive maxWidth={940}>
                     <JobsCard
                       isSwipeEvent={isSwipeEvent}
                       sections={sections}

@@ -8,7 +8,7 @@ export const MspLongreadContainer = styled("div")`
     @media (max-width: 768px) {
       margin-bottom: 2.5rem;
     }
-    @media (max-width: 576px) {
+    @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
       margin-bottom: 1.5rem;
     }
   }
@@ -33,14 +33,14 @@ export const Step = styled(H3)`
       font-size: 4rem;
     }
   }
-  @media (max-width: 576px) {
+  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
     margin-top: 3.4rem;
     margin-bottom: 1.4rem;
     > span {
       font-size: 2.8571rem;
     }
   }
-  @media (max-width: 440px) {
+  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
     margin-top: 3.1rem;
     > span {
       font-size: 2.2857rem;
@@ -88,7 +88,7 @@ const styles = css`
         max-width: 25rem;
       }
     }
-    @media (max-width: 440px) {
+    @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
       max-width: 100vw;
       min-height: auto;
       padding-bottom: 6.5rem;
@@ -108,11 +108,11 @@ const styles = css`
       @media (max-width: 768px) {
         font-size: 1.4285rem;
       }
-      @media (max-width: 576px) {
+      @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
         font-size: 1.2857rem;
       }
     }
-    @media (max-width: 440px) {
+    @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
       margin-top: 5rem;
     }
   }

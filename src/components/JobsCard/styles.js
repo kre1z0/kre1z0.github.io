@@ -19,15 +19,6 @@ export const JobsCardSwiper = styled(Swiper)`
   height: 100%;
 `;
 
-const styles = css`
-  .jobsCardBullets {
-    max-width: 20rem;
-    display: flex;
-    flex-wrap: wrap;
-    @media (max-height: 360px) {
-      display: none;
-    }
-  }
-`;
+const styles = css``;
 
 export default styles;

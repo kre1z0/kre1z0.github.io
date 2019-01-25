@@ -13,6 +13,8 @@ import "../ScrollbarProvider/plugins/determineScrollingPlugin";
 
 const ScrollContext = React.createContext();
 
+const mobileMenuWidth = +mobileMenu.replace("px", "");
+
 export class MainLayoutProviderComponent extends Component {
   constructor(props) {
     super(props);
@@ -83,7 +85,6 @@ export class MainLayoutProviderComponent extends Component {
   onResize = () => {
     const { currentRoute, selectedSectionIndex } = this.state;
     const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-    const mobileMenuWidth = +mobileMenu.replace("px", "");
 
     if (vw > mobileMenuWidth) {
       this.setState({ mobileMenuIsOpen: false });
@@ -268,7 +269,7 @@ export class MainLayoutProviderComponent extends Component {
     const { y: offsetY } = offset;
     const { y: limitY } = limit;
 
-    if (vw <= 1000 && currentRoute && currentRoute.scrollable) {
+    if (vw <= mobileMenuWidth && currentRoute && currentRoute.scrollable) {
       return;
     }
 
@@ -444,7 +445,7 @@ export class MainLayoutProviderComponent extends Component {
 
       const sectionDirection = selectedSectionIndex > nextValue ? -1 : 1;
 
-      if (currentRoute.scrollable && isClickEvent && vw >= 1000) {
+      if (currentRoute.scrollable && isClickEvent && vw >= mobileMenuWidth) {
         this.scrollToBlock(nextValue);
       }
 

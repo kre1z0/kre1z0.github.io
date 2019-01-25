@@ -9,10 +9,10 @@ export const Section = styled("section")`
   @media (max-width: 768px) {
     padding: 4.7rem 3.1428rem 5.1rem 3.1428rem;
   }
-  @media (max-width: 576px) {
+  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
     padding: 3.2rem 1.4285rem 3.6rem 1.4285rem;
   }
-  @media (max-width: 440px) {
+  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
     padding: 2rem 1.4285rem 2.4rem 1.4285rem;
   }
 
@@ -47,7 +47,7 @@ export const H1 = styled("h1")`
     margin-bottom: 1.2rem;
   }
 
-  @media (max-width: 576px) {
+  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
     font-size: 1.4285rem;
     margin-bottom: 1rem;
   }
@@ -59,7 +59,7 @@ export const H1 = styled("h1")`
     @media (max-width: 768px) {
       font-size: 1.7142rem;
     }
-    @media (max-width: 576px) {
+    @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
       font-size: 1.4285rem;
     }
   }
@@ -76,10 +76,10 @@ export const H2 = styled("h2")`
     font-size: 1.7142rem;
     margin-bottom: 1.8428rem;
   }
-  @media (max-width: 576px) {
+  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
     font-size: 1.42857rem;
   }
-  @media (max-width: 440px) {
+  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
     margin-bottom: 1rem;
   }
 `;
@@ -90,7 +90,7 @@ export const H3 = styled("h2")`
   @media (max-width: 768px) {
     font-size: 1.4285rem;
   }
-  @media (max-width: 576px) {
+  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
     font-size: 1.2857rem;
   }
 `;
@@ -108,7 +108,7 @@ export const Paragraph = styled("p")`
     line-height: 1.43;
     margin-bottom: 1.64rem;
   }
-  @media (max-width: 576px) {
+  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
     font-size: 0.8571rem;
     line-height: 1.5;
     margin-bottom: 1rem;

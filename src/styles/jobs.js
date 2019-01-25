@@ -5,29 +5,6 @@ const styles = css`
     > section:first-child {
       flex-shrink: 1;
       padding-right: 4rem;
-      @media (max-width: 1024px) {
-        a,
-        h2 {
-          white-space: nowrap;
-        }
-      }
-      @media (max-width: 1000px) {
-        width: 16rem;
-        padding-right: 0;
-        h2 {
-          white-space: nowrap;
-        }
-        ul {
-          padding-right: 0;
-          margin-right: 0;
-        }
-      }
-      @media (max-height: 360px) {
-        width: 14rem;
-        h2 {
-          white-space: normal;
-        }
-      }
     }
     > section:last-child {
       height: 24rem;
@@ -35,51 +12,105 @@ const styles = css`
       > div {
         height: 100%;
       }
-      @media (max-width: 1316px) {
-        height: 28.8571rem;
+    }
+    @media (max-width: 1084px) {
+      justify-content: flex-start;
+      > section:first-child {
+        padding-right: 2rem;
+        ul {
+          margin-right: 0;
+        }
       }
-      @media (max-width: 1024px) {
-        height: 22.8571rem;
-      }
-      @media (max-width: 1000px) {
+      > section:last-child {
+        display: flex;
         justify-content: center;
         flex-grow: 1;
-        display: flex;
-        height: auto;
-        > div {
-          width: 20rem;
-          height: 21.2142rem;
-        }
+        padding: 0;
       }
-      @media (max-width: 480px) {
-        width: 100%;
-        height: auto;
-        margin-bottom: 3.4rem;
-        > div {
-          width: 19.4285rem;
-          height: 18rem;
-        }
-      }
-      @media (max-height: 440px) {
-        width: 100%;
-        height: auto;
-        margin-bottom: 3.4rem;
-        > div {
-          width: 19.4285rem;
-          height: 18rem;
-        }
-      }
-      @media (max-height: 360px) {
-        margin-bottom: 0;
+    }
+
+    @media (max-width: 940px) {
+      > section:last-child {
+        max-height: 22.4285rem;
         > div {
           width: 100%;
-          height: calc(100vh - 4rem);
-          height: calc(var(--vh, 1vh) * 100 - 4rem);
+          max-width: 22rem;
         }
       }
     }
-    @media (max-width: 480px) {
+
+    @media (max-width: 767px) {
+      > section:first-child {
+        h2 {
+          font-size: 1.2857rem;
+          margin-bottom: 1rem;
+        }
+        ul {
+          &:first-child {
+            margin-bottom: 1.8rem;
+          }
+          li {
+            margin-bottom: 0.4rem;
+            a {
+              font-size: 0.8571rem;
+            }
+          }
+        }
+      }
+    }
+
+    @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+      justify-content: space-between;
+      > section:last-child {
+        height: calc(100% - 6rem);
+        max-height: none;
+        > div {
+          align-self: center;
+          max-height: 17.4rem;
+          max-width: 17.1428rem;
+        }
+      }
+    }
+    @media (max-height: 390px) {
+      > section:first-child {
+        padding-bottom: 3rem;
+      }
+      > section:last-child {
+        height: calc(100% - 3rem);
+        align-self: flex-start;
+        > div {
+          max-height: none;
+          max-width: 16.1428rem;
+        }
+      }
+    }
+    @media (max-height: 340px) {
+      > section:first-child {
+        h2 {
+          font-size: 0.8571rem;
+          margin-bottom: 0;
+        }
+        ul {
+          &:first-child {
+            margin-bottom: 1rem;
+          }
+          li {
+            margin-bottom: 0;
+            a {
+              font-size: 0.7142rem;
+            }
+          }
+        }
+      }
+      > section:last-child {
+        > div {
+          max-width: 18.1428rem;
+        }
+      }
+    }
+    @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
       flex-direction: column;
+      justify-content: space-between;
       > section:first-child {
         position: relative;
         width: calc(100% + 1.7142rem * 2);
@@ -87,18 +118,23 @@ const styles = css`
         overflow-x: auto;
         align-self: flex-start;
         menu {
-          margin: 0.6rem 1.7142rem 0 1.7142rem;
+          margin: 0 1.7142rem 0 1.7142rem;
           display: flex;
           @media (max-height: 500px) {
             margin-top: 0;
           }
           > ul {
             h2 {
+              white-space: nowrap;
               margin-bottom: 0.4rem;
             }
-            a {
-              white-space: nowrap;
+            li {
+              margin-bottom: 0;
+              a {
+                white-space: nowrap;
+              }
             }
+
             &:first-child {
               margin-bottom: 0;
               margin-right: 2.8571rem;
@@ -110,28 +146,11 @@ const styles = css`
         }
       }
       > section:last-child {
+        width: 100%;
         flex-grow: 0;
-      }
-    }
-    @media (max-height: 360px) {
-      margin: 2rem auto 0 auto;
-      width: 100%;
-      height: calc(100% - 2rem);
-      overflow: hidden;
-      > section:first-child {
-        padding-right: 2rem;
-        menu {
-          h2 {
-            margin-bottom: 1rem;
-          }
-          ul {
-            &:first-child {
-              margin-bottom: 1.4571rem;
-            }
-            li {
-              margin-bottom: 0.4rem;
-            }
-          }
+        padding-bottom: 3rem;
+        > div {
+          max-width: none;
         }
       }
     }

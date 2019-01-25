@@ -20,7 +20,7 @@ export const LongreadNavbarContainer = styled("nav")`
   @media (max-width: 992px) {
     height: 4.7142rem;
   }
-  @media (max-width: 576px) {
+  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
     height: 4rem;
   }
 `;

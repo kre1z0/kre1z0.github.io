@@ -26,7 +26,7 @@ export const SelectorItem = styled("div")`
   @media (max-width: 768px) {
     font-size: 0.8571rem;
   }
-  @media (max-width: 576px) {
+  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
     margin-right: 0.7142rem;
     font-size: 0.7142rem;
   }

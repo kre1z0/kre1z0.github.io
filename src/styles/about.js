@@ -4,23 +4,19 @@ export const NewsContainer = styled("div")`
   width: 28.5714rem;
   height: 26rem;
   position: relative;
-  @media (max-width: 1000px) {
+  max-height: calc(100vh - 14rem);
+  max-height: calc(var(--vh, 1vh) * 100 - 14rem);
+  @media screen and (min-width: 320px) and (max-width: 991px) {
     width: 22.8571rem;
     height: 24.3571rem;
   }
-  @media (max-width: 767px) {
-    width: 19.4285rem;
-    height: 15.9285rem;
+  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+    width: 100%;
+    max-height: 18.0714rem;
   }
-  @media (max-width: 480px) {
-    width: calc(100vw - 1.7857rem * 2);
-  }
-  @media (max-height: 440px) {
-    width: 24rem;
-  }
-  @media (max-height: 344px) {
+  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
     height: 100%;
-    width: 54vw;
+    max-height: 18.0714rem;
   }
 `;
 
@@ -47,26 +43,36 @@ const styles = css`
     }
     > section:last-child {
       max-height: calc(100% - 4rem);
-      @media (max-height: 344px) {
-        max-height: calc(100% - 1.4rem);
-        height: 100%;
-        > div {
-          height: 100%;
-        }
-      }
     }
-    @media (max-width: 480px) {
+    @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
       flex-direction: column;
       align-items: flex-start;
       > section:last-child {
         margin-bottom: 3.4rem;
+        width: 100%;
       }
     }
-    @media (max-height: 440px) {
-      margin: 4.4rem auto 0 auto;
+    @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+      padding-bottom: 1.2rem;
+      > section:last-child {
+        height: 100%;
+        > div {
+          display: flex;
+          align-items: center;
+          height: 100%;
+        }
+      }
     }
-    @media (max-height: 344px) {
-      margin: 3rem auto 0 auto;
+    @media screen and (min-width: 320px) and (max-width: 767px) and (max-height: 320px) and (orientation: landscape) {
+      > section:first-child {
+        margin-bottom: 3.4rem;
+      }
+      > section:last-child {
+        max-height: calc(100% - 1rem);
+        margin-bottom: 3.4rem;
+        > div {
+        }
+      }
     }
   }
   .isAboutSlide {

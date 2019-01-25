@@ -9,7 +9,7 @@ export const Paragraph = styled("p")`
     line-height: 1.43;
     margin-bottom: 1.6rem;
   }
-  @media (max-width: 576px) {
+  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
     font-size: 0.8571rem;
     line-height: 1.5;
   }

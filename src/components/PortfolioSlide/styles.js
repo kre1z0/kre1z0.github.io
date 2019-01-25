@@ -35,7 +35,7 @@ export const SliderBackground = styled("div")`
       }
     }
   }
-  @media (max-width: 1000px) {
+  @media (max-width: 940px) {
     border-radius: 0.2857rem;
   }
 `;
@@ -190,7 +190,7 @@ export const Screenshot = styled("img")`
     right: 0;
     margin: auto 0;
     width: 48vw;
-    @media (max-width: 576px) {
+    @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
       width: 51vw;
     }
   }

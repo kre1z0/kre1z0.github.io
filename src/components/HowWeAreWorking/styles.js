@@ -4,7 +4,7 @@ import { Link as GLink } from "gatsby";
 export const HowWeAreWorkingContainer = styled("div")`
   display: flex;
   flex-direction: column;
-  @media (max-width: 1000px) {
+  @media (max-width: 940px) {
     will-change: opacity, transform;
     padding: 1.7142rem;
     width: 100%;
@@ -13,7 +13,7 @@ export const HowWeAreWorkingContainer = styled("div")`
     box-shadow: 0 0.8571rem 0.8571rem 0 rgba(10, 18, 33, 0.1);
     background-color: #fff;
   }
-  @media (max-height: 360px) {
+  @media (max-width: 767px) {
     padding: 1.2rem;
   }
 `;
@@ -21,13 +21,19 @@ export const HowWeAreWorkingContainer = styled("div")`
 export const Title = styled("h4")`
   font-size: 1.2857rem;
   font-weight: 600;
-  @media (max-width: 1000px) {
+  @media (max-width: 940px) {
     font-size: 1.1428rem;
     &:nth-child(4) {
       display: none;
     }
   }
-  @media (max-height: 360px) {
+  @media (max-width: 767px) {
+    font-size: 0.8571rem;
+  }
+  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+    font-size: 0.7142rem;
+  }
+  @media (max-height: 300px) {
     margin-bottom: 0.8rem;
   }
 `;
@@ -35,14 +41,17 @@ export const Title = styled("h4")`
 export const Paragraph = styled("p")`
   font-size: 1.1428rem;
   line-height: normal;
-  @media (max-width: 1000px) {
+  @media (max-width: 940px) {
     font-size: 0.7142rem;
     margin-bottom: 0.8rem;
     ~ br {
       display: none;
     }
   }
-  @media (max-height: 360px) {
+  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+    font-size: 0.5714rem;
+  }
+  @media (max-height: 300px) {
     margin-bottom: 0.4rem;
   }
 `;
@@ -60,7 +69,11 @@ export const Principle = styled("section")`
   width: calc(100% / 4);
   height: 9.4285rem;
   > span {
+    text-align: center;
     white-space: nowrap;
+    @media (max-width: 1000px) {
+      white-space: normal;
+    }
   }
 `;
 
@@ -82,7 +95,7 @@ export const HowWeAreWorkingLink = styled(GLink)`
   font-size: 1.1428rem;
   font-weight: 500;
   color: #90c53d;
-  @media (max-width: 1000px) {
+  @media (max-width: 940px) {
     align-self: flex-start;
     font-size: 0.7142rem;
   }

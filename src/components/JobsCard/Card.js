@@ -1,10 +1,11 @@
 import React from "react";
+import cn from "classnames";
 
 import { NoVacancyCard } from "../../components/TeamMembers/NoVacancyCard";
 import { getVacancyAvatarByType } from "../../components/TeamMembers/getVacancyAvatarByType";
 import { HowWeAreWorking } from "../../components/HowWeAreWorking/HowWeAreWorking";
 import { TeamMemberCard } from "../../components/TeamMemberCard/TeamMemberCard";
-import { PhotoContainer } from "../../components/TeamMembers/styles";
+import styles, { PhotoContainer } from "../../components/TeamMembers/styles";
 import { GoNextLink } from "../GoNextLink/GoNextLink";
 
 export const Card = props => {
@@ -21,7 +22,7 @@ export const Card = props => {
       return (
         <TeamMemberCard
           {...card}
-          className={className}
+          className={cn(className, { [styles.vacancyCard]: id === "vacancy" })}
           control={id === "vacancy" ? <GoNextLink>Описание вакансии</GoNextLink> : null}
           avatar={type ? getVacancyAvatarByType(type) : avatar}
         />

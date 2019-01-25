@@ -13,10 +13,10 @@ export const HeaderContainer = styled("header")`
   @media (max-width: 992px) {
     padding: 0 4.4rem 0 3.1428rem;
   }
-  @media (max-width: 576px) {
+  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
     padding: 0 2rem 0 1.7142rem;
   }
-  @media (max-width: 440px) {
+  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
     padding: 0 2.2rem 0 1.7142rem;
   }
 `;
@@ -28,7 +28,7 @@ export const HeaderBlock = styled("div")`
   justify-content: space-between;
   width: 100%;
   max-width: 114.2857rem;
-  @media (max-width: 440px) {
+  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
     flex-direction: column;
   }
 `;
@@ -38,7 +38,7 @@ const Section = styled("section")`
   justify-content: center;
   flex-direction: column;
   width: 50%;
-  @media (max-width: 440px) {
+  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
     width: 100%;
     align-items: flex-start;
   }
@@ -56,7 +56,7 @@ export const LeftSide = styled(Section)`
   @media (max-width: 992px) {
     margin-right: 3rem;
   }
-  @media (max-width: 440px) {
+  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
     z-index: 1;
     order: 2;
     margin-right: 0;
@@ -67,7 +67,7 @@ export const LeftSide = styled(Section)`
 export const RightSide = styled(Section)`
   align-items: flex-end;
   position: relative;
-  @media (max-width: 440px) {
+  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
     flex-shrink: 0;
     flex-grow: 1;
   }
@@ -75,13 +75,13 @@ export const RightSide = styled(Section)`
 
 export const Title = styled(H1)`
   margin-top: 1rem;
-  @media (max-width: 440px) {
+  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
     margin: 0.6rem 0 0.4rem 0;
   }
 `;
 
 export const Description = styled(Paragraph)`
-  @media (max-width: 440px) {
+  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
     display: none;
   }
 `;
@@ -98,7 +98,7 @@ export const Badge = styled("label")`
     padding: 0.1428rem 0.66rem;
     font-size: 0.8571rem;
   }
-  @media (max-width: 440px) {
+  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
     padding: 0 0.44rem;
     font-size: 0.7142rem;
   }
@@ -111,7 +111,7 @@ const styles = css`
     @media (max-width: 768px) {
       font-size: 1rem;
     }
-    @media (max-width: 576px) {
+    @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
       font-size: 0.8571rem;
     }
     @media (hover: hover) {
@@ -138,7 +138,7 @@ const styles = css`
     @media (max-width: 768px) {
       bottom: 1rem;
     }
-    @media (max-width: 440px) {
+    @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
       bottom: 0.4rem;
     }
     @media (hover: hover) {

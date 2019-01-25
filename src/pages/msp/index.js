@@ -1,6 +1,5 @@
 import React, { PureComponent } from "react";
 
-import { Scrollbar } from "../../components/Scrollbar/Scrollbar";
 import { OutsideLink } from "../../components/OutsideLink/OutsideLink";
 import { MspRightSide } from "../../components/MspLongread/MspRightSide/MspRightSide";
 import { Header } from "../../components/PortfolioLongread/Header";
@@ -13,7 +12,6 @@ import { MspVideo } from "../../components/MspLongread/MspVideo/MspVideo";
 import { VideoContainer } from "../../components/LongreadAtoms/VideoContainer";
 import { InViewVideo } from "../../components/Video/InViewVideo";
 import { UnorderedList } from "../../components/LongreadAtoms/UnorderedList";
-import { Selector } from "../../components/Selector/Selector";
 import step2Video from "../../videos/msp/2.mp4";
 import step2VideoPoster from "../../videos/msp/posters/2_000.jpg";
 import step3Video from "../../videos/msp/3.mp4";
