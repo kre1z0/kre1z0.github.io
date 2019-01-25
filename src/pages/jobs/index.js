@@ -1,5 +1,4 @@
 import React, { PureComponent } from "react";
-import Responsive from "react-responsive";
 
 import { MainLayoutConsumer } from "../../components/MainLayoutProvider/MainLayoutProvider";
 import { CenterBlock } from "../../components/CenterBlock/CenterBlock";
@@ -53,25 +52,21 @@ export class Jobs extends PureComponent {
               }
               rightSide={
                 <CenterBlock ref={onScrollableRef}>
-                  <Responsive minWidth={941}>
-                    <ScrollableTeamMembers
-                      sections={sections}
-                      transitionEnd={transitionEnd}
-                      selectedSectionIndex={selectedSectionIndex}
-                      scrollToBlock={scrollToBlock}
-                      selectedId={selectedId}
-                      onSectionChange={onSectionChange}
-                    />
-                  </Responsive>
-                  <Responsive maxWidth={940}>
-                    <JobsCard
-                      isSwipeEvent={isSwipeEvent}
-                      sections={sections}
-                      selectedSectionIndex={selectedSectionIndex}
-                      onSectionChange={onSectionChange}
-                      sectionDirection={sectionDirection}
-                    />
-                  </Responsive>
+                  <ScrollableTeamMembers
+                    sections={sections}
+                    transitionEnd={transitionEnd}
+                    selectedSectionIndex={selectedSectionIndex}
+                    scrollToBlock={scrollToBlock}
+                    selectedId={selectedId}
+                    onSectionChange={onSectionChange}
+                  />
+                  <JobsCard
+                    isSwipeEvent={isSwipeEvent}
+                    sections={sections}
+                    selectedSectionIndex={selectedSectionIndex}
+                    onSectionChange={onSectionChange}
+                    sectionDirection={sectionDirection}
+                  />
                 </CenterBlock>
               }
             />

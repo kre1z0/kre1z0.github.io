@@ -157,10 +157,7 @@ export class JobsCard extends Component {
           isSwipeEvent={isSwipeEvent}
         />
         <BackendComponent sections={items} selectedSectionIndex={selectedItemsIndex} />
-        <Bullets
-          sections={items}
-          selectedSectionIndex={selectedItemsIndex}
-        />
+        <Bullets sections={items} selectedSectionIndex={selectedItemsIndex} />
       </JobsCardSwiper>
     );
   }
