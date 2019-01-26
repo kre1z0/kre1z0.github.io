@@ -13,10 +13,10 @@ export const TeamMembersContainer = styled("div")`
   opacity: 0;
   pointer-events: none;
   transition: opacity 200ms linear;
-  @media (max-width: 1084px) {
+  @media (max-width: 1199px) {
     width: calc(20rem * 2 + 2.1428rem);
   }
-  @media (max-width: 940px) {
+  @media (max-width: 991px) {
     display: none;
   }
   &.isVisible {
@@ -41,7 +41,7 @@ export const NoVacancyDescription = styled("p")`
   font-weight: 500;
   margin-top: 1.4rem;
   margin-bottom: 0;
-  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+  @media (max-width: 767px) and (orientation: landscape) {
     margin-top: 0;
     font-size: 0.7142rem;
   }
@@ -67,11 +67,11 @@ export const PhotoContainer = styled("div")`
     width: auto;
     height: 100%;
   }
-  @media (max-width: 1084px) {
+  @media (max-width: 1199px) {
     width: calc(50% - 2.1428rem / 2);
     max-width: none;
   }
-  @media (max-width: 940px) {
+  @media (max-width: 991px) {
     will-change: opacity, transform;
     width: 100%;
     height: 100%;
@@ -87,7 +87,7 @@ const styles = css`
         font-size: 0.8rem;
       }
     }
-    @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+    @media (max-width: 767px) and (orientation: portrait) {
       > div:nth-child(2) {
         margin-bottom: 0;
       }
@@ -97,7 +97,7 @@ const styles = css`
     }
   }
   .vacancyCard {
-    @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+    @media (max-width: 767px) and (orientation: portrait) {
       display: flex;
       justify-content: center;
       flex-direction: column;

@@ -5,15 +5,13 @@ import throttle from "lodash/throttle";
 
 import { ScrollBar } from "./styles";
 import { Swiper } from "../../components/Swiper/Swiper";
-import { mobileMenu } from "../../components/Navbar/styles";
+import { mobileMenu as mobileMenuWidth } from "../../components/Navbar/styles";
 import { navigateTo, getRouteByLocation, getRouteById, routes } from "../../routes";
 
 import "../ScrollbarProvider/plugins/disableScrollByDirection";
 import "../ScrollbarProvider/plugins/determineScrollingPlugin";
 
 const ScrollContext = React.createContext();
-
-const mobileMenuWidth = +mobileMenu.replace("px", "");
 
 export class MainLayoutProviderComponent extends Component {
   constructor(props) {

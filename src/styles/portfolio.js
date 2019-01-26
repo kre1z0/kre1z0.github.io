@@ -27,7 +27,7 @@ const styles = css`
         max-width: 48vw;
         max-height: 14.3571rem;
       }
-      @media screen and (min-width: 320px) and (max-width: 840px) and (orientation: landscape) {
+      @media (max-width: 840px) and (orientation: landscape) {
         max-width: 48vw;
         max-height: 14.3571rem;
       }
@@ -50,7 +50,7 @@ const styles = css`
         width: 100%;
       }
     }
-    @media screen and (min-width: 320px) and (max-width: 840px) and (orientation: landscape) {
+    @media (max-width: 840px) and (orientation: landscape) {
       > div {
         width: 100%;
         > menu {

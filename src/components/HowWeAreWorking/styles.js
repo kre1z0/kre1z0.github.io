@@ -30,7 +30,7 @@ export const Title = styled("h4")`
   @media (max-width: 767px) {
     font-size: 0.8571rem;
   }
-  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+  @media (max-width: 767px) and (orientation: landscape) {
     font-size: 0.7142rem;
   }
   @media (max-height: 300px) {
@@ -48,7 +48,7 @@ export const Paragraph = styled("p")`
       display: none;
     }
   }
-  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+  @media (max-width: 767px) and (orientation: landscape) {
     font-size: 0.5714rem;
   }
   @media (max-height: 300px) {

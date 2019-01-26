@@ -8,11 +8,11 @@ const StoreLink = styled("a")`
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  @media (max-width: 768px) {
+  @media (max-width: 991px) {
     width: 10.4285rem;
     height: 3rem;
   }
-  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+  @media (max-width: 767px) and (orientation: portrait) {
     width: 9.3571rem;
     height: 2.7142rem;
   }

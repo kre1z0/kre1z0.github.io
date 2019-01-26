@@ -21,25 +21,25 @@ export const VideoContainer = styled("div")`
     height: 100%;
     box-shadow: 0 2.2857rem 2.2857rem 0 rgba(10, 18, 33, 0.15);
   }
-  @media (max-width: 992px) {
+  @media (max-width: 1199px) {
     width: calc(100vw - ${breakpoint992} * 2);
     height: calc((100vw - ${breakpoint992} * 2) / ${ratio});
   }
-  @media (max-width: 768px) {
+  @media (max-width: 991px) {
     width: calc(100vw - ${breakpoint768} * 2);
     height: calc((100vw - ${breakpoint768} * 2) / ${ratio});
     video {
       box-shadow: 0 1.7142rem 1.7142rem 0 rgba(10, 18, 33, 0.15);
     }
   }
-  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+  @media (max-width: 767px) and (orientation: landscape) {
     width: calc(100vw - ${breakpoint576} * 2);
     height: calc((100vw - ${breakpoint576} * 2) / ${ratio});
     video {
       box-shadow: 0 1.1428rem 1.1428rem 0 rgba(10, 18, 33, 0.15);
     }
   }
-  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+  @media (max-width: 767px) and (orientation: portrait) {
     width: 100vw;
     height: calc(100vw / ${ratio});
     margin-left: -${breakpoint576};

@@ -18,7 +18,7 @@ export const JobsCardSwiper = styled(Swiper)`
   width: 100%;
   height: 100%;
   display: none;
-  @media (max-width: 940px) {
+  @media (max-width: 991px) {
     display: block;
   }
 `;

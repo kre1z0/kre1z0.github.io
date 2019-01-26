@@ -1,11 +1,12 @@
 import React, { PureComponent } from "react";
 
-import { SectionWithIcon } from "../../components/MobileMspLongread/SectionWithIcon";
+import { getPixelRatioPropName } from "../../utils/utils";
+import { SectionWithIcon, msp } from "../../components/MobileMspLongread/SectionWithIcon";
 import phones from "../../img/portfolio/mobileMsp/phones.jpg";
 import animation from "../../components/Transition/animation";
 import { Header } from "../../components/PortfolioLongread/Header";
 import { getProject } from "../../routes";
-import { Section, Article, H2, Paragraph } from "../../components/LongreadAtoms/Longread";
+import { Section, Article, H1, H2, Paragraph } from "../../components/LongreadAtoms/Longread";
 import { AndroidStoreLink, IosStoreLink } from "../../components/StoreLinks/StoreLinks";
 import { OutsideLink } from "../../components/OutsideLink/OutsideLink";
 import styles, {
@@ -19,7 +20,16 @@ class MobileMsp extends PureComponent {
     projectId: "mobileMsp",
   };
 
+  state = {
+    ratio: "x1",
+  };
+
+  componentDidMount() {
+    this.setState({ ratio: getPixelRatioPropName() });
+  }
+
   render() {
+    const { ratio } = this.state;
     const { location, projectId } = this.props;
     const mobileMsp = getProject({ projectId });
     const { ios, android } = mobileMsp;
@@ -31,9 +41,9 @@ class MobileMsp extends PureComponent {
           location={location}
           {...mobileMsp}
           lightNavy
-          containerClassName={styles.mobileMspContainer}
-          leftSideClassName={styles.mobileMspLeftSide}
-          rightSideClassName={styles.mobileMspRightSide}
+          containerClassName={styles.mobileMspHeader}
+          leftSideClassName={styles.mobileMspHeaderLeftSide}
+          rightSideClassName={styles.mobileMspHeaderRightSide}
           leftSide={
             <MobileMspStoreContainer>
               <IosStoreLink href={ios} target="_blank" />
@@ -43,7 +53,7 @@ class MobileMsp extends PureComponent {
         >
           <Phones src={phones} className={animation.fadeIn} />
         </Header>
-        <Section>
+        <Section withoutPaddingBottom>
           <Article>
             <H2>Мобильный бизнес-навигатор</H2>
             <Paragraph>
@@ -53,7 +63,21 @@ class MobileMsp extends PureComponent {
               <OutsideLink href="https://mobileup.ru/business-navigator">MobileUp</OutsideLink> по
               заказу Корпорации по развитию малого и среднего предпринимательства.
             </Paragraph>
-            <SectionWithIcon />
+            <SectionWithIcon ratio={ratio} />
+          </Article>
+        </Section>
+        <Section className={styles.bnSection}>
+          <Article>
+            <img src={msp[ratio]} alt="bn logo" />
+            <figure>
+              <H1 portfolio>Бизнес-навигатор МСП</H1>
+              <Paragraph>
+                В основе расчетов лежит гигантский массив данных: это опыт 5000 успешных компаний
+                малого бизнеса (а это 103 вида бизнеса) из 172 городов России, а также реальные
+                сведения о потреблении определенных товаров и услуг. Вся информация регулярно
+                обновляется.
+              </Paragraph>
+            </figure>
           </Article>
         </Section>
       </MobileMspContainer>

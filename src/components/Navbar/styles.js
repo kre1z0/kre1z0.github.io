@@ -1,11 +1,7 @@
 import styled, { css } from "astroturf";
 import { Link as GatsbyLink } from "gatsby";
 
-export const mobileMenu = "940px";
-
-const mobileMenuMiddle = "576px";
-
-const mobileMenuLittle = "320px";
+export const mobileMenu = 991;
 
 export const NavbarContainer = styled("nav")`
   z-index: 4;
@@ -24,10 +20,10 @@ export const Nav = styled("div")`
   display: flex;
   align-items: flex-start;
   padding: 1.6rem 0;
-  @media (max-width: 1024px) {
+  @media (max-width: 1199px) {
     padding: 1.6rem 0;
   }
-  @media (max-width: ${mobileMenu}) {
+  @media (max-width: ${mobileMenu}px) {
     &.mobileMenuIsOpen {
       top: 0;
       left: 0;
@@ -39,7 +35,7 @@ export const Nav = styled("div")`
       flex-direction: column;
     }
   }
-  @media (max-width: ${mobileMenuMiddle}) {
+  @media (max-width: 767px) {
     padding: 1rem 0;
   }
   @media (max-height: 344px) {
@@ -56,7 +52,7 @@ export const LeftSide = styled("div")`
   height: 2.5421rem;
   display: flex;
   align-items: center;
-  @media (max-width: ${mobileMenu}) {
+  @media (max-width: ${mobileMenu}px) {
     width: 100%;
   }
   @media (max-height: 480px) {
@@ -69,7 +65,7 @@ export const LogoLink = styled(GatsbyLink)`
   max-width: 10.7142rem;
   display: flex;
   align-items: center;
-  @media (max-width: ${mobileMenuMiddle}) {
+  @media (max-width: 767px) {
     max-width: 7.1428rem;
   }
 `;
@@ -78,7 +74,7 @@ export const Logo = styled("img")`
   min-width: 10.7142rem;
   width: 100%;
   height: auto;
-  @media (max-width: ${mobileMenuMiddle}) {
+  @media (max-width: 767px) {
     min-width: 7.1428rem;
   }
   @media (max-height: 344px) {
@@ -113,7 +109,7 @@ export const Menu = styled("ul")`
   display: flex;
   padding: 0.4457rem 0 0 0;
   margin: 0 0 0 auto;
-  @media (max-width: ${mobileMenu}) {
+  @media (max-width: ${mobileMenu}px) {
     display: none;
   }
   > li {
@@ -146,10 +142,10 @@ export const MobileMenu = styled("ul")`
   flex-shrink: 0;
   flex-grow: 1;
   width: 100%;
-  @media (max-width: ${mobileMenuMiddle}) {
+  @media (max-width: 767px) and (orientation: landscape) {
     padding: 1rem 0 0 0;
   }
-  @media (min-width: 1001px) {
+  @media (min-width: 992px) {
     display: none;
   }
 `;
@@ -165,7 +161,7 @@ export const LinkContainer = styled("li")`
     font-weight: 600;
     font-size: 1rem;
   }
-  @media (max-width: ${mobileMenu}) {
+  @media (max-width: ${mobileMenu}px) {
     align-self: center;
     margin: 0 0 2.8571rem 0;
     > a {
@@ -176,13 +172,13 @@ export const LinkContainer = styled("li")`
       margin: 0;
     }
   }
-  @media (max-width: ${mobileMenuMiddle}) {
+  @media (max-width: 767px) and (orientation: landscape) {
     margin: 0 0 1.4285rem 0;
     > a {
       font-size: 1.1428rem;
     }
   }
-  @media (max-width: ${mobileMenuLittle}) {
+  @media (max-width: 767px) and (orientation: portrait) {
     margin: 0 0 2.1428rem 0;
     > a {
       font-size: 1.2857rem;
@@ -251,7 +247,7 @@ const styles = css`
   .hamburger {
     margin-left: auto;
     display: none;
-    @media (max-width: ${mobileMenu}) {
+    @media (max-width: ${mobileMenu}px) {
       display: block;
     }
   }

@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
+import PropTypes from 'prop-types';
 
-import { getPixelRatioPropName } from "../../utils/utils";
 
 import msp1x from "../../img/portfolio/mobileMsp/msp/460-x-0-w-1.png";
 import msp2x from "../../img/portfolio/mobileMsp/msp/460-x-0-w-1@2x.png";
@@ -13,21 +13,17 @@ import support3 from "../../img/portfolio/mobileMsp/support/460-x-0-w-1@3x.png";
 import { Description, Title } from "../LongreadAtoms/Longread";
 import { SectionWithIconContainer, Section, Content } from "./styles";
 
-const msp = { x1: msp1x, x2: msp2x, x3: msp3x };
+export const msp = { x1: msp1x, x2: msp2x, x3: msp3x };
 
-const support = { x1: support1, x2: support2, x3: support3 };
+export const support = { x1: support1, x2: support2, x3: support3 };
 
 export class SectionWithIcon extends PureComponent {
-  state = {
-    ratio: "x1",
+  static propTypes = {
+    ratio: PropTypes.string,
   };
 
-  componentDidMount() {
-    this.setState({ ratio: getPixelRatioPropName() });
-  }
-
   render() {
-    const { ratio } = this.state;
+    const { ratio } = this.props;
 
     return (
       <SectionWithIconContainer>

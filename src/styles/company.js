@@ -13,10 +13,10 @@ export const Footer = styled(Section)`
   background-repeat: no-repeat;
   background-size: contain;
   color: #fff;
-  @media (max-width: 992px) {
+  @media (max-width: 1199px) {
     padding-top: 4.2857rem;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 991px) {
     padding-top: 2.1428rem;
     padding-bottom: 1.4428rem;
   }
@@ -31,11 +31,11 @@ export const ChatRow = styled("div")`
     padding: 0;
     margin: 0;
   }
-  @media (max-width: 1200px) {
+  @media (max-width: 1199px) {
     position: relative;
     left: 4rem;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 991px) {
     padding-top: 2rem;
     left: auto;
   }
@@ -51,13 +51,13 @@ const styles = css`
   }
   .ourClients {
     padding-bottom: 3.5714rem;
-    @media (max-width: 992px) {
+    @media (max-width: 1199px) {
       padding-bottom: 2.4285rem;
     }
-    @media (max-width: 768px) {
+    @media (max-width: 991px) {
       padding-bottom: 2.1428rem;
     }
-    @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+    @media (max-width: 767px) and (orientation: landscape) {
       padding-bottom: 1.4285rem;
     }
   }
@@ -71,7 +71,7 @@ const styles = css`
     h2 {
       margin-bottom: 4.2857rem;
     }
-    @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+    @media (max-width: 767px) and (orientation: landscape) {
       h2 {
         margin-bottom: 2rem;
       }

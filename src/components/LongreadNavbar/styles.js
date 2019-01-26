@@ -88,7 +88,7 @@ export const LongreadNavbarContainer = styled("nav")`
   @media (max-width: 767px) {
     height: 3.2857rem;
   }
-  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+  @media (max-width: 767px) and (orientation: landscape) {
     a {
       font-size: 0.8571rem;
     }
@@ -130,7 +130,7 @@ const styles = css`
     }
   }
 
-  @media (max-width: 992px) {
+  @media (max-width: 1199px) {
     .leftArrowBtn {
       left: 1.8rem;
     }
@@ -139,18 +139,7 @@ const styles = css`
     }
   }
 
-  @media (max-width: 767px) {
-    .leftArrowBtn {
-      svg {
-      }
-    }
-    .rightArrowBtn {
-      svg {
-      }
-    }
-  }
-
-  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+  @media (max-width: 767px) and (orientation: portrait) {
     a.arrowBtn {
       font-size: 0;
     }

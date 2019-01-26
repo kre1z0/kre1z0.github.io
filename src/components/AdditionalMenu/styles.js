@@ -36,7 +36,7 @@ export const Menu = styled("menu")`
         @media (max-width: 940px) {
           font-size: 1rem;
         }
-        @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+        @media (max-width: 767px) and (orientation: landscape) {
           font-size: 0.8571rem;
         }
       }

@@ -2,7 +2,7 @@ import styled from "astroturf";
 
 export const BulletsContainer = styled("div")`
   display: none;
-  @media screen and (min-width: 320px) and (max-width: 991px) {
+  @media (max-width: 991px) {
     font-weight: 600;
     padding: 0 1rem;
     justify-content: center;
@@ -16,7 +16,7 @@ export const BulletsContainer = styled("div")`
     bottom: 0;
     color: rgba(38, 44, 55, 0.35);
   }
-  @media screen and (max-width: 767px) {
+  @media (max-width: 767px) {
     font-size: 0.7142rem;
   }
 `;

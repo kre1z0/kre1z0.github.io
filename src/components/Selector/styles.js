@@ -23,10 +23,10 @@ export const SelectorItem = styled("div")`
   &:last-child {
     margin-right: 0;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 991px) {
     font-size: 0.8571rem;
   }
-  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+  @media (max-width: 767px) and (orientation: landscape) {
     margin-right: 0.7142rem;
     font-size: 0.7142rem;
   }

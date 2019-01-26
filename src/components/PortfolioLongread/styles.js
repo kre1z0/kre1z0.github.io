@@ -10,13 +10,13 @@ export const HeaderContainer = styled("header")`
   height: calc(var(--vh, 1vh) * 100);
   padding: 0 6rem;
   overflow: hidden;
-  @media (max-width: 992px) {
+  @media (max-width: 1199px) {
     padding: 0 4.4rem 0 3.1428rem;
   }
-  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+  @media (max-width: 767px) and (orientation: landscape) {
     padding: 0 2rem 0 1.7142rem;
   }
-  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+  @media (max-width: 767px) and (orientation: portrait) {
     padding: 0 2.2rem 0 1.7142rem;
   }
 `;
@@ -28,7 +28,7 @@ export const HeaderBlock = styled("div")`
   justify-content: space-between;
   width: 100%;
   max-width: 97.5714rem;
-  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+  @media (max-width: 767px) and (orientation: portrait) {
     flex-direction: column;
   }
 `;
@@ -38,7 +38,7 @@ const Section = styled("section")`
   justify-content: center;
   flex-direction: column;
   width: 50%;
-  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+  @media (max-width: 767px) and (orientation: portrait) {
     width: 100%;
     align-items: flex-start;
   }
@@ -54,10 +54,10 @@ export const LeftSide = styled(Section)`
   animation-delay: 400ms;
   animation-fill-mode: forwards;
   margin-right: 4rem;
-  @media (max-width: 992px) {
+  @media (max-width: 1199px) {
     margin-right: 3rem;
   }
-  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+  @media (max-width: 767px) and (orientation: portrait) {
     z-index: 1;
     order: 2;
     margin-right: 0;
@@ -68,7 +68,7 @@ export const LeftSide = styled(Section)`
 export const RightSide = styled(Section)`
   align-items: flex-end;
   position: relative;
-  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+  @media (max-width: 767px) and (orientation: portrait) {
     flex-shrink: 0;
     flex-grow: 1;
   }
@@ -76,13 +76,13 @@ export const RightSide = styled(Section)`
 
 export const Title = styled(H1)`
   margin-top: 1rem;
-  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+  @media (max-width: 767px) and (orientation: portrait) {
     margin: 0.6rem 0 0.4rem 0;
   }
 `;
 
 export const Description = styled(Paragraph)`
-  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+  @media (max-width: 767px) and (orientation: portrait) {
     display: none;
   }
 `;
@@ -95,11 +95,11 @@ export const Badge = styled("label")`
   font-weight: 500;
   border-radius: 0.2857rem;
   background-color: rgba(255, 255, 255, 0.25);
-  @media (max-width: 768px) {
+  @media (max-width: 991px) {
     padding: 0.1428rem 0.66rem;
     font-size: 0.8571rem;
   }
-  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+  @media (max-width: 767px) and (orientation: portrait) {
     padding: 0 0.44rem;
     font-size: 0.7142rem;
   }
@@ -118,13 +118,13 @@ const styles = css`
       fill: none;
       transition: stroke 200ms linear, opacity 200ms linear;
     }
-    @media (max-width: 992px) {
+    @media (max-width: 1199px) {
       bottom: 1.4rem;
     }
-    @media (max-width: 768px) {
+    @media (max-width: 991px) {
       bottom: 1rem;
     }
-    @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+    @media (max-width: 767px) and (orientation: portrait) {
       bottom: 0.4rem;
     }
     @media (hover: hover) {
@@ -139,10 +139,10 @@ const styles = css`
   a.projectLink {
     font-size: 1.2857rem;
     color: rgba(255, 255, 255, 0.5);
-    @media (max-width: 768px) {
+    @media (max-width: 991px) {
       font-size: 1rem;
     }
-    @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+    @media (max-width: 767px) and (orientation: landscape) {
       font-size: 0.8571rem;
     }
     @media (hover: hover) {

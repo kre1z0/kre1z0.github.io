@@ -5,10 +5,10 @@ import { H3 } from "../components/LongreadAtoms/Longread";
 export const MspLongreadContainer = styled("div")`
   h1 {
     margin-bottom: 3.5rem;
-    @media (max-width: 768px) {
+    @media (max-width: 991px) {
       margin-bottom: 2.5rem;
     }
-    @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+    @media (max-width: 767px) and (orientation: landscape) {
       margin-bottom: 1.5rem;
     }
   }
@@ -26,21 +26,21 @@ export const Step = styled(H3)`
     color: rgba(38, 44, 55, 0.05);
     font-size: 4.5714rem;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 991px) {
     margin-top: 4.6rem;
     margin-bottom: 2rem;
     > span {
       font-size: 4rem;
     }
   }
-  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+  @media (max-width: 767px) and (orientation: landscape) {
     margin-top: 3.4rem;
     margin-bottom: 1.4rem;
     > span {
       font-size: 2.8571rem;
     }
   }
-  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+  @media (max-width: 767px) and (orientation: portrait) {
     margin-top: 3.1rem;
     > span {
       font-size: 2.2857rem;
@@ -78,7 +78,7 @@ const styles = css`
         margin-bottom: 0;
       }
     }
-    @media (max-width: 768px) {
+    @media (max-width: 991px) {
       min-height: 31.7142rem;
     }
     @media (max-width: 650px) {
@@ -88,7 +88,7 @@ const styles = css`
         max-width: 25rem;
       }
     }
-    @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+    @media (max-width: 767px) and (orientation: portrait) {
       max-width: 100vw;
       min-height: auto;
       padding-bottom: 6.5rem;
@@ -105,14 +105,14 @@ const styles = css`
     }
     a {
       font-size: 1.7142rem;
-      @media (max-width: 768px) {
+      @media (max-width: 991px) {
         font-size: 1.4285rem;
       }
-      @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+      @media (max-width: 767px) and (orientation: landscape) {
         font-size: 1.2857rem;
       }
     }
-    @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+    @media (max-width: 767px) and (orientation: portrait) {
       margin-top: 5rem;
     }
   }

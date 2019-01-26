@@ -6,15 +6,15 @@ export const NewsContainer = styled("div")`
   position: relative;
   max-height: calc(100vh - 14rem);
   max-height: calc(var(--vh, 1vh) * 100 - 14rem);
-  @media screen and (min-width: 320px) and (max-width: 991px) {
+  @media (max-width: 991px) {
     width: 22.8571rem;
     height: 24.3571rem;
   }
-  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+  @media (max-width: 767px) and (orientation: portrait) {
     width: 100%;
     max-height: 18.0714rem;
   }
-  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+  @media (max-width: 767px) and (orientation: landscape) {
     height: 100%;
     max-height: 18.0714rem;
   }
@@ -44,7 +44,7 @@ const styles = css`
     > section:last-child {
       max-height: calc(100% - 4rem);
     }
-    @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+    @media (max-width: 767px) and (orientation: portrait) {
       flex-direction: column;
       align-items: flex-start;
       > section:last-child {
@@ -52,7 +52,7 @@ const styles = css`
         width: 100%;
       }
     }
-    @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+    @media (max-width: 767px) and (orientation: landscape) {
       padding-bottom: 1.2rem;
       > section:last-child {
         height: 100%;
@@ -63,7 +63,7 @@ const styles = css`
         }
       }
     }
-    @media screen and (min-width: 320px) and (max-width: 767px) and (max-height: 320px) and (orientation: landscape) {
+    @media (max-width: 767px) and (max-height: 320px) and (orientation: landscape) {
       > section:first-child {
         margin-bottom: 3.4rem;
       }

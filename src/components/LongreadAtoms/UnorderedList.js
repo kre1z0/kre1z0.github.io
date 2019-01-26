@@ -20,10 +20,10 @@ export const UnorderedList = styled("ul")`
       background-color: #387bc7;
       border-radius: 50%;
     }
-    @media (max-width: 768px) {
+    @media (max-width: 991px) {
       font-size: 0.8571rem;
     }
-    @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+    @media (max-width: 767px) and (orientation: landscape) {
       font-size: 0.7142rem;
       &:before {
         top: 0.3rem;
@@ -38,16 +38,13 @@ export const UnorderedList = styled("ul")`
     font-size: 1.1428rem;
     line-height: 1.5;
     margin-bottom: 1.2rem;
-    @media (max-width: 768px) {
+    @media (max-width: 991px) {
       font-size: 1rem;
       line-height: 1.43;
     }
-    @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+    @media (max-width: 767px) {
       font-size: 0.8571rem;
       line-height: 1.5;
-      margin-bottom: 1rem;
-    }
-    @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
       margin-bottom: 0.6rem;
     }
   }

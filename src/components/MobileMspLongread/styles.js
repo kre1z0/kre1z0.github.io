@@ -1,14 +1,14 @@
 import styled from "astroturf";
 
 export const SectionWithIconContainer = styled("div")`
-  padding-top: 2.4rem;
+  padding: 2.4rem 0;
   display: flex;
   justify-content: space-around;
   align-items: stretch;
   @media (max-width: 991px) {
     padding-top: 1.4rem;
   }
-  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+  @media (max-width: 767px) and (orientation: portrait) {
     flex-direction: column;
     padding-top: 0;
     > section {
@@ -23,7 +23,6 @@ export const SectionWithIconContainer = styled("div")`
 `;
 
 export const Content = styled("div")`
-  display: -ms-flexbox;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -70,7 +69,7 @@ export const Section = styled("section")`
       white-space: normal;
     }
   }
-  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+  @media (max-width: 767px) and (orientation: landscape) {
     p {
       flex-shrink: 0;
       flex-grow: 1;

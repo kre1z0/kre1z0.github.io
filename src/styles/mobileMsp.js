@@ -9,7 +9,7 @@ export const MobileMspStoreContainer = styled("div")`
       margin-right: 1rem;
     }
   }
-  @media screen and (min-width: 320px) and (max-width: 767px) {
+  @media (max-width: 767px) {
     a {
       width: 7.5rem;
       height: 2.0714rem;
@@ -36,13 +36,13 @@ export const Phones = styled("img")`
   @media (max-width: 1100px) {
     left: calc(50% + 13rem);
   }
-  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+  @media (max-width: 767px) and (orientation: landscape) {
     width: 44rem;
     left: calc(44rem / 1.64);
     min-width: auto;
     top: calc(44rem / 3.2);
   }
-  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+  @media (max-width: 767px) and (orientation: portrait) {
     width: 44rem;
     left: calc(44rem / 2.86);
     min-width: auto;
@@ -51,23 +51,23 @@ export const Phones = styled("img")`
 `;
 
 const styles = css`
-  .mobileMspContainer {
+  .mobileMspHeader {
     position: relative;
-    .mobileMspLeftSide {
+    .mobileMspHeaderLeftSide {
       width: 34.4rem;
       animation-delay: 0ms;
       z-index: 4;
       color: #0a2342;
       align-self: flex-end;
       padding-bottom: 6rem;
-      @media (max-width: 992px) {
+      @media (max-width: 1199px) {
         padding-bottom: 4.4rem;
       }
-      @media (max-width: 768px) {
+      @media (max-width: 991px) {
         width: 26rem;
         padding-bottom: 8.5714rem;
       }
-      @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+      @media (max-width: 767px) and (orientation: landscape) {
         width: 17rem;
         margin-right: 0;
         padding-bottom: 1.7142rem;
@@ -78,7 +78,7 @@ const styles = css`
       label {
         background-color: rgba(67, 127, 163, 0.25);
       }
-      @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+      @media (max-width: 767px) and (orientation: portrait) {
         width: auto;
         align-self: flex-start;
         padding-bottom: 1.7142rem;
@@ -87,15 +87,31 @@ const styles = css`
         }
       }
     }
-    .mobileMspRightSide {
+    .mobileMspHeaderRightSide {
       position: absolute;
       top: 0;
       left: 0;
       width: 100vw;
       height: 100%;
     }
-    @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+    @media (max-width: 767px) and (orientation: portrait) {
       align-items: flex-end;
+    }
+  }
+  .bnSection {
+    article {
+      display: flex;
+      img {
+        width: 4.6rem;
+        height: 4.6rem;
+        margin-right: 2.2857rem;
+      }
+      h1 {
+        display: flex;
+        align-items: center;
+        height: 4.6rem;
+        margin-bottom: 0;
+      }
     }
   }
 `;

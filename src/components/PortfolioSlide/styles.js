@@ -35,7 +35,7 @@ export const SliderBackground = styled("div")`
       }
     }
   }
-  @media (max-width: 940px) {
+  @media (max-width: 991px) {
     border-radius: 0.2857rem;
   }
 `;
@@ -64,7 +64,7 @@ export const Content = styled("div")`
   @media all and (max-height: 777px), (max-width: 1144px) {
     padding: 0 2.1428rem 2.1428rem 2.1428rem;
   }
-  @media screen and (min-width: 320px) and (max-width: 840px) and (orientation: landscape) {
+  @media (max-width: 840px) and (orientation: landscape) {
     display: flex;
     width: 100%;
     height: 100%;
@@ -157,7 +157,7 @@ export const ScreenshotTransitionGroup = styled(TransitionGroup)`
   left: 0;
   width: 100%;
   height: 100%;
-  @media screen and (min-width: 320px) and (max-width: 840px) and (orientation: landscape) {
+  @media (max-width: 840px) and (orientation: landscape) {
     display: flex;
     align-items: center;
     width: 100%;
@@ -186,11 +186,11 @@ export const Screenshot = styled("img")`
     right: 2.8571rem;
     width: 26.2857rem;
   }
-  @media screen and (min-width: 320px) and (max-width: 840px) and (orientation: landscape) {
+  @media (max-width: 840px) and (orientation: landscape) {
     right: 0;
     margin: auto 0;
     width: 48vw;
-    @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+    @media (max-width: 767px) and (orientation: landscape) {
       width: 51vw;
     }
   }

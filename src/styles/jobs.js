@@ -13,7 +13,7 @@ const styles = css`
         height: 100%;
       }
     }
-    @media (max-width: 1084px) {
+    @media (max-width: 1199px) {
       justify-content: flex-start;
       > section:first-child {
         padding-right: 2rem;
@@ -29,7 +29,7 @@ const styles = css`
       }
     }
 
-    @media (max-width: 940px) {
+    @media (max-width: 991px) {
       > section:last-child {
         max-height: 22.4285rem;
         > div {
@@ -59,7 +59,7 @@ const styles = css`
       }
     }
 
-    @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+    @media (max-width: 767px) and (orientation: landscape) {
       justify-content: space-between;
       > section:last-child {
         height: calc(100% - 6rem);
@@ -108,7 +108,7 @@ const styles = css`
         }
       }
     }
-    @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+    @media (max-width: 767px) and (orientation: portrait) {
       flex-direction: column;
       justify-content: space-between;
       > section:first-child {
@@ -117,6 +117,7 @@ const styles = css`
         left: -1.7142rem;
         overflow-x: auto;
         align-self: flex-start;
+        padding-right: 0;
         menu {
           margin: 0 1.7142rem 0 1.7142rem;
           display: flex;

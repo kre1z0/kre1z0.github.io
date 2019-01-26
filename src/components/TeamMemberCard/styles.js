@@ -7,15 +7,15 @@ export const TeamMemberCardContainer = styled(Blank)`
   max-width: 21.4285rem;
   text-align: center;
   line-height: normal;
-  @media (max-width: 1084px) {
+  @media (max-width: 1199px) {
     width: calc(50% - 2.1428rem / 2);
     max-width: none;
   }
-  @media (max-width: 940px) {
+  @media (max-width: 991px) {
     width: 100%;
     height: 100%;
   }
-  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+  @media (max-width: 767px) and (orientation: landscape) {
     display: flex;
     flex-direction: column;
     justify-content: center;

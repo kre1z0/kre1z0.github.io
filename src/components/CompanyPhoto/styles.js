@@ -8,11 +8,11 @@ export const CompanyPhotoBlockTransitionGroup = styled("div")`
   justify-content: center;
   width: calc(100vw / 5);
   height: calc(100vw / 5);
-  @media (max-width: 768px) {
+  @media (max-width: 991px) {
     width: calc(100vw / 4);
     height: calc(100vw / 4);
   }
-  @media (max-width: 440px) {
+  @media (max-width: 767px) {
     width: calc(100vw / 2);
     height: calc(100vw / 2);
   }
@@ -52,26 +52,26 @@ export const CompanyHeader = styled("header")`
     font-size: 4.5714rem;
     line-height: 100%;
     margin: 0 0 2.4571rem 0;
-    @media (max-width: 992px) {
+    @media (max-width: 1199px) {
       font-size: 3.4285rem;
       margin: 0 0 2rem 0;
     }
-    @media (max-width: 768px) {
+    @media (max-width: 991px) {
       font-size: 2.5714rem;
     }
-    @media (max-width: 576px) {
+    @media (max-width: 767px) and (orientation: landscape) {
       font-size: 2.2857rem;
       margin: 0 0 1.4571rem 0;
     }
-    @media (max-width: 440px) {
+    @media (max-width: 767px) and (orientation: portrait) {
       font-size: 1.7142rem;
     }
   }
-  @media (max-width: 768px) {
+  @media (max-width: 991px) {
     top: calc(100vw / 4 * 2);
     left: calc(100vw / 4 / 2);
   }
-  @media (max-width: 440px) {
+  @media (max-width: 767px) and (orientation: portrait) {
     top: calc(100vw / 2 * 2);
     left: 1.7142rem;
     h1 {
