@@ -134,6 +134,11 @@ export const Achievement = styled("div")`
       padding-bottom: 2.8571rem;
     }
   }
+  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+    &:nth-child(odd) {
+      margin-right: 0;
+    }
+  }
 `;
 
 export const MapWraper = styled("div")`

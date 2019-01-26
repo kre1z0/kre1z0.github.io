@@ -1,15 +1,18 @@
 import React, { PureComponent } from "react";
 
+import { SectionWithIcon } from "../../components/MobileMspLongread/SectionWithIcon";
 import phones from "../../img/portfolio/mobileMsp/phones.jpg";
 import animation from "../../components/Transition/animation";
 import { Header } from "../../components/PortfolioLongread/Header";
 import { getProject } from "../../routes";
+import { Section, Article, H2, Paragraph } from "../../components/LongreadAtoms/Longread";
+import { AndroidStoreLink, IosStoreLink } from "../../components/StoreLinks/StoreLinks";
+import { OutsideLink } from "../../components/OutsideLink/OutsideLink";
 import styles, {
   MobileMspContainer,
   MobileMspStoreContainer,
   Phones,
 } from "../../styles/mobileMsp";
-import { AndroidStoreLink, IosStoreLink } from "../../components/StoreLinks/StoreLinks";
 
 class MobileMsp extends PureComponent {
   static defaultProps = {
@@ -40,326 +43,19 @@ class MobileMsp extends PureComponent {
         >
           <Phones src={phones} className={animation.fadeIn} />
         </Header>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
+        <Section>
+          <Article>
+            <H2>Мобильный бизнес-навигатор</H2>
+            <Paragraph>
+              Когда нужно срочно предоставить краткую информацию о запланированном бизнесе
+              потенциальным бизнес-партнерам и инвесторам, на помощь придут мобильные приложения,
+              разработанные Everpoint совместно с{" "}
+              <OutsideLink href="https://mobileup.ru/business-navigator">MobileUp</OutsideLink> по
+              заказу Корпорации по развитию малого и среднего предпринимательства.
+            </Paragraph>
+            <SectionWithIcon />
+          </Article>
+        </Section>
       </MobileMspContainer>
     );
   }

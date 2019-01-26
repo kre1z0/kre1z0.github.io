@@ -11,6 +11,7 @@ export class Scrollbar extends Component {
   static propTypes = {
     onScrollbarRef: PropTypes.func,
     className: PropTypes.string,
+    withScrollbarY: PropTypes.bool,
   };
 
   state = {
@@ -23,11 +24,12 @@ export class Scrollbar extends Component {
 
   render() {
     const { isMobile } = this.state;
-    const { children, className, onScrollbarRef, ...props } = this.props;
+    const { children, className, onScrollbarRef, withScrollbarY, ...props } = this.props;
 
     return (
       <ScrollBarContainer
         className={cn({ [styles.isMobile]: isMobile }, className)}
+        withScrollbarY={withScrollbarY}
         {...props}
         ref={onScrollbarRef}
       >

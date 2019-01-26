@@ -1,6 +1,5 @@
 import React, { PureComponent } from "react";
 
-import { LongreadNavbarWithScrollbar } from "../../components/LongreadNavbar/LongreadNavbar";
 import { getPixelRatioPropName } from "../../utils/utils";
 import { TelegramButton } from "../../components/Buttons/TelegramButton";
 import { H2, Section, Article, Paragraph } from "../../components/LongreadAtoms/Longread";
@@ -15,11 +14,8 @@ import styles, { CompanyContainer, Footer, ChatRow } from "../../styles/company"
 
 class Company extends PureComponent {
   render() {
-    const { location } = this.props;
-
     return (
       <CompanyContainer>
-        <LongreadNavbarWithScrollbar pathname={location.pathname} />
         <CompanyPhoto
           title="Everpoint - это мы!"
           // add designer photo

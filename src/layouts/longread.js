@@ -1,14 +1,29 @@
 import React, { Component } from "react";
 
+import { getProject, getBackRouteByLocationPathName } from "../routes";
 import { setVhProperty } from "../utils/dom";
 import { Helmet } from "../components/Helmet/Helmet";
 import { ScrollbarProvider } from "../components/ScrollbarProvider/ScrollbarProvider";
 import styles from "../styles/longread";
+import { LongreadNavbar } from "../components/LongreadNavbar/LongreadNavbar";
 
 class LongredLayout extends Component {
+  state = {
+    projects: null,
+  };
+
   componentDidMount() {
+    const { location } = this.props;
+
     window.addEventListener("resize", this.onResize);
     this.onResize();
+
+    const prevPage = getBackRouteByLocationPathName(location.pathname);
+
+    if (prevPage.includes("portfolio")) {
+      const projects = getProject({ allProject: true }).map(({ id }) => id);
+      this.setState({ projects });
+    }
   }
 
   componentWillUnmount() {
@@ -20,11 +35,17 @@ class LongredLayout extends Component {
   };
 
   render() {
+    const { projects } = this.state;
     const { children, location } = this.props;
 
     return (
-      <ScrollbarProvider location={location} className={styles.scrollbar} withScrollbar>
+      <ScrollbarProvider location={location} className={styles.scrollbar} withScrollbarY>
         <Helmet />
+        <LongreadNavbar
+          projects={projects}
+          lightNavy={location.pathname.includes("mobileMsp")}
+          pathname={location.pathname}
+        />
         {children}
       </ScrollbarProvider>
     );

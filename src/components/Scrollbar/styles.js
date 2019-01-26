@@ -10,9 +10,12 @@ export const ScrollBarContainer = styled(Scrollbar)`
       display: none !important;
     }
   }
-  &.withScrollbar {
+  &.withScrollbarY {
     > div {
-      &:not(:first-child) {
+      &:nth-child(2) {
+        display: none !important;
+      }
+      &:last-child {
         display: block !important;
       }
     }

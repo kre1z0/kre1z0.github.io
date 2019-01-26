@@ -4,9 +4,9 @@ export const getPixelRatioPropName = () => {
   }
 
   const ratio = window.devicePixelRatio;
-  if (ratio >= 3) {
+  if (ratio > 2) {
     return "x3";
-  } else if (ratio >= 2) {
+  } else if (ratio > 1) {
     return "x2";
   } else {
     return "x1";

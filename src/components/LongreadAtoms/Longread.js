@@ -114,3 +114,27 @@ export const Paragraph = styled("p")`
     margin-bottom: 1rem;
   }
 `;
+
+export const Title = styled("h4")`
+  font-size: 1.2857rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  line-height: normal;
+  @media (max-width: 768px) {
+    font-size: 1.1428rem;
+  }
+  @media (max-width: 767px) {
+    font-size: 1rem;
+  }
+`;
+
+export const Description = styled("p")`
+  font-size: 1.1428rem;
+  @media (max-width: 992px) {
+    font-size: 1rem;
+    line-height: normal;
+  }
+  @media (max-width: 767px) {
+    font-size: 0.8571rem;
+  }
+`;

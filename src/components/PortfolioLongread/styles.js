@@ -27,7 +27,7 @@ export const HeaderBlock = styled("div")`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  max-width: 114.2857rem;
+  max-width: 97.5714rem;
   @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
     flex-direction: column;
   }
@@ -45,6 +45,7 @@ const Section = styled("section")`
 `;
 
 export const LeftSide = styled(Section)`
+  max-width: 40rem;
   display: flex;
   align-items: flex-start;
   color: #fff;
@@ -105,23 +106,7 @@ export const Badge = styled("label")`
 `;
 
 const styles = css`
-  .projectLink {
-    font-size: 1.2857rem;
-    color: rgba(255, 255, 255, 0.5);
-    @media (max-width: 768px) {
-      font-size: 1rem;
-    }
-    @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
-      font-size: 0.8571rem;
-    }
-    @media (hover: hover) {
-      &:hover {
-        color: #fff;
-        text-decoration: none;
-      }
-    }
-  }
-  .scrollDownButton {
+  button.scrollDownButton {
     z-index: 4;
     font-weight: 500;
     position: absolute;
@@ -130,6 +115,7 @@ const styles = css`
     transform: translateX(-50%);
     transition: 200ms linear;
     svg path {
+      fill: none;
       transition: stroke 200ms linear, opacity 200ms linear;
     }
     @media (max-width: 992px) {
@@ -147,6 +133,22 @@ const styles = css`
           opacity: 1;
           stroke: #183e6b;
         }
+      }
+    }
+  }
+  a.projectLink {
+    font-size: 1.2857rem;
+    color: rgba(255, 255, 255, 0.5);
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+    @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+      font-size: 0.8571rem;
+    }
+    @media (hover: hover) {
+      &:hover {
+        color: #fff;
+        text-decoration: none;
       }
     }
   }

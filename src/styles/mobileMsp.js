@@ -37,9 +37,10 @@ export const Phones = styled("img")`
     left: calc(50% + 13rem);
   }
   @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
-    width: 110%;
+    width: 44rem;
+    left: calc(44rem / 1.64);
     min-width: auto;
-    left: calc(50% + 6rem);
+    top: calc(44rem / 3.2);
   }
   @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
     width: 44rem;

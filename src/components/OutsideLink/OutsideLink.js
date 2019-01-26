@@ -13,12 +13,6 @@ const Link = styled("a")`
   }
 `;
 
-const openWindow = href => e => {
-  e.preventDefault();
-  e.stopPropagation();
-  window.open(`//${href}`, "new");
-};
-
 const getUrl = value => {
   if (!value) {
     return;
@@ -27,11 +21,11 @@ const getUrl = value => {
   const isHttp = value.toString().indexOf("http") === 0;
   const isWww = value.toString().indexOf("www") === 0;
 
-  return isWww || isHttp ? value : `http://${value}`;
+  return isWww || isHttp ? value : `https://${value}`;
 };
 
 export const OutsideLink = ({ href, children, ...props }) => (
-  <Link href={getUrl(href)} onClick={openWindow(href)} target="_blank" {...props}>
+  <Link href={getUrl(href)} target="_blank" {...props}>
     {children}
   </Link>
 );
