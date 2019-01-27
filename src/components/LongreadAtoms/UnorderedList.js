@@ -9,7 +9,7 @@ export const UnorderedList = styled("ul")`
     position: relative;
     list-style-type: none;
     &:before {
-      top: 0.4rem;
+      top: 0.5rem;
       display: inline-block;
       position: relative;
       content: "";
@@ -46,6 +46,13 @@ export const UnorderedList = styled("ul")`
       font-size: 0.8571rem;
       line-height: 1.5;
       margin-bottom: 0.6rem;
+    }
+  }
+  &.lightGreyBlue {
+    li {
+      &:before {
+        background-color: #90b7c9;
+      }
     }
   }
 `;

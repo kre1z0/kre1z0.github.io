@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import styled from "astroturf";
 
 import { Video } from "../../components/Video/Video";
-import mobileVideo from "../../videos/mobileMsp/BN_mobile_2.webm";
+import mobileVideo from "../../videos/mobileMsp/BN_mobile_3.mp4";
 
 const DebugContainer = styled("div")`
   padding-top: 4rem;

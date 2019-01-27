@@ -98,22 +98,6 @@ const styles = css`
       align-items: flex-end;
     }
   }
-  .bnSection {
-    article {
-      display: flex;
-      img {
-        width: 4.6rem;
-        height: 4.6rem;
-        margin-right: 2.2857rem;
-      }
-      h1 {
-        display: flex;
-        align-items: center;
-        height: 4.6rem;
-        margin-bottom: 0;
-      }
-    }
-  }
 `;
 
 export default styles;

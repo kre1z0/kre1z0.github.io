@@ -79,6 +79,18 @@ export const H2 = styled("h2")`
     font-size: 1.42857rem;
     margin-bottom: 1rem;
   }
+  &.small {
+    font-size: 2.5714rem;
+    @media (max-width: 1199px) {
+      font-size: 2.2857rem;
+    }
+    @media (max-width: 991px) {
+      font-size: 1.4285rem;
+    }
+    @media (max-width: 767px) {
+      font-size: 1.2857rem;
+    }
+  }
 `;
 
 export const H3 = styled("h3")`
@@ -109,6 +121,19 @@ export const Paragraph = styled("p")`
     font-size: 0.8571rem;
     line-height: 1.5;
     margin-bottom: 1rem;
+  }
+  &.small {
+    font-size: 1.1428rem;
+    line-height: 1.5;
+    margin-bottom: 1.44rem;
+    @media (max-width: 991px) {
+      font-size: 1rem;
+      line-height: 1.43;
+    }
+    @media (max-width: 767px) {
+      font-size: 0.8571rem;
+      line-height: 1.5;
+    }
   }
 `;
 
