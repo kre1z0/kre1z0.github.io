@@ -75,7 +75,7 @@ class IconsParallaxBase extends Component {
       <IconsParallaxContainer ref={this.onRefContainer} className={className}>
         {icons.map((Icon, index) => (
           <Icon
-            style={{ transitionDelay: `${100 * index}ms` }}
+            style={{ transitionDelay: `${44 * index}ms` }}
             key={`bn-icon-${index}`}
             className={cn({ [styles.isVisible]: index <= iconIndex })}
           />

@@ -14,6 +14,9 @@ export const BnBlock = styled("div")`
     height: 4.6rem;
     margin-bottom: 0;
   }
+  @media (max-width: 1199px) {
+    margin-bottom: 0;
+  }
   @media (max-width: 991px) {
     img {
       width: 3.8rem;
@@ -48,25 +51,27 @@ export const WithVideoContent = styled("div")`
       margin-bottom: 11%;
     }
   }
+  @media (max-width: 1199px) {
+    max-width: 26rem;
+    p,
+    ul {
+      &:last-child {
+        margin-bottom: 14%;
+      }
+    }
+  }
 `;
 
 const styles = css`
   .bnWithVideo {
-    @media (min-width: 1200px) {
-      padding: 0 5.7142rem 0 5.7142rem;
-    }
     article {
       display: flex;
       align-items: center;
+      justify-content: space-around;
       max-width: 86.2857rem;
     }
     &.bnWithVideoLeft {
       article {
-        > div {
-          &:first-child {
-            margin-right: 9rem;
-          }
-        }
         padding: 3.4rem 0 6rem 0;
       }
     }
@@ -74,10 +79,41 @@ const styles = css`
       article {
         > div {
           &:first-child {
-            margin-right: 8rem;
+            margin-right: 2.4rem;
           }
         }
         padding: 6rem 0 0 4.4rem;
+      }
+    }
+    @media (min-width: 1200px) {
+      padding: 0 5.7142rem 0 5.7142rem;
+    }
+    @media (max-width: 1199px) {
+      padding-top: 0;
+      padding-bottom: 0;
+      &.bnWithVideoLeft,
+      &.bnWithVideoRight {
+        article {
+          justify-content: space-between;
+          padding: 1.6rem 0 0 0;
+        }
+      }
+    }
+    @media (max-width: 991px) {
+      &.bnWithVideoLeft,
+      &.bnWithVideoRight {
+        article {
+          padding: 0;
+        }
+      }
+    }
+  }
+  .top1Section {
+    article {
+      p:last-child {
+        @media (max-width: 991px) {
+          padding-bottom: 3rem;
+        }
       }
     }
   }

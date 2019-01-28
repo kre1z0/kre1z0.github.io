@@ -2,10 +2,11 @@ import { css } from "astroturf";
 
 const styles = css`
   .bnIconsParallax {
-    //background-color: rgba(44, 44, 44, 0.4);
     max-width: 38.5714rem;
     height: 90.8%;
     transform: translate(-50%, -50.4%);
+    margin-left: 6vh;
+    margin-left: calc(var(--vh, 1vh) * 6);
     svg {
       position: absolute;
       width: 2.8571rem;
@@ -62,6 +63,21 @@ const styles = css`
         right: 68.5%;
         top: 76%;
       }
+    }
+    @media (max-width: 1199px) {
+      height: 92.8%;
+      max-width: 22.5714rem;
+      margin-left: 2vh;
+      margin-left: calc(var(--vh, 1vh) * 2);
+      svg {
+        width: 2.1428rem;
+        height: 2.1428rem;
+      }
+    }
+    @media (max-width: 991px) {
+      height: 82.8%;
+      max-width: 23.5714rem;
+      margin-left: -1vh;
     }
   }
 `;

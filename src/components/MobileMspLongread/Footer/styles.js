@@ -4,6 +4,7 @@ export const FooterContainer = styled("div")`
   overflow: hidden;
   position: relative;
   > article:first-child {
+    text-align: center;
     pointer-events: none;
     width: 100%;
     top: 0;
@@ -18,6 +19,25 @@ export const FooterContainer = styled("div")`
       transform: translateY(-50%);
     }
   }
+  @media (max-width: 1199px) {
+    margin-top: 4.4rem;
+    > article:first-child {
+      max-width: 54rem;
+    }
+  }
+  @media (max-width: 991px) {
+    > article:first-child {
+      max-width: 48rem;
+      height: 12.8571rem;
+    }
+  }
+  @media (max-width: 767px) {
+    > article:first-child {
+      p {
+        padding: 0 1.4285rem;
+      }
+    }
+  }
 `;
 
 export const Mobiles = styled("div")`
@@ -28,6 +48,15 @@ export const Store = styled("div")`
   display: flex;
   > a:first-child {
     margin-right: 1rem;
+  }
+  @media (max-width: 767px) {
+    a {
+      width: 7.2142rem;
+      height: 2.0714rem;
+      &:first-child {
+        margin-right: 0.4rem;
+      }
+    }
   }
 `;
 
@@ -46,6 +75,9 @@ const Side = styled("div")`
     width: 100%;
     margin: 0;
     max-width: 42.8571rem;
+    h3 {
+      text-align: center;
+    }
     img {
       position: absolute;
       bottom: 0;
@@ -57,6 +89,35 @@ const Side = styled("div")`
   @media (hover: hover) {
     &:hover {
       background-color: #d2e6ed;
+    }
+  }
+  @media (max-width: 1199px) {
+    > article {
+      h3 {
+        font-size: 1.4285rem;
+      }
+    }
+    height: calc(37.7142rem + 17.8571rem);
+  }
+  @media (max-width: 991px) {
+    > article {
+      padding-top: 12.8571rem;
+      h3 {
+        display: flex;
+        align-items: center;
+        height: 3.4rem;
+      }
+      img {
+        max-width: 19.5714rem;
+      }
+    }
+    height: calc(26.7142rem + 17.8571rem);
+  }
+  @media (max-width: 767px) {
+    > article {
+      h3 {
+        font-size: 1.2857rem;
+      }
     }
   }
 `;
@@ -73,6 +134,19 @@ export const LeftSide = styled(Side)`
       }
     }
   }
+  @media (max-width: 991px) {
+    img {
+      transform: translate(-50%, 0);
+    }
+    &:hover {
+      img {
+        transform: translate(-50%, 0);
+      }
+    }
+  }
+  &.isMobilePlatform {
+    background-color: #e0f0f6;
+  }
 `;
 
 export const RightSide = styled(Side)`
@@ -86,5 +160,16 @@ export const RightSide = styled(Side)`
         transform: translate(-50%, calc(59% - 5.7142rem));
       }
     }
+  }
+  @media (max-width: 991px) {
+    h3 {
+      max-width: 17rem;
+    }
+    img {
+      transform: translate(-50%, calc(59% - 5.7142rem));
+    }
+  }
+  &.isMobilePlatform {
+    background-color: #d2e6ed;
   }
 `;

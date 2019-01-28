@@ -25,7 +25,7 @@ export class BnSection extends Component {
 
     return (
       <>
-        <Section withoutPaddingBottom>
+        <Section withoutPaddingBottom className={styles.top1Section}>
           <Article>
             <BnBlock>
               <img src={msp[ratio]} alt="bn logo" />

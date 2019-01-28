@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react";
 
 import { getPixelRatioPropName } from "../../utils/utils";
+import { isMobile } from "../../utils/browser";
 import { SectionWithIcon } from "../../components/MobileMspLongread/SectionWithIcon/SectionWithIcon";
 import phones from "../../img/portfolio/mobileMsp/phones.jpg";
 import animation from "../../components/Transition/animation";
@@ -24,14 +25,15 @@ class MobileMsp extends PureComponent {
 
   state = {
     ratio: "x1",
+    mobilePlatform: false,
   };
 
   componentDidMount() {
-    this.setState({ ratio: getPixelRatioPropName() });
+    this.setState({ ratio: getPixelRatioPropName(), mobilePlatform: isMobile() });
   }
 
   render() {
-    const { ratio } = this.state;
+    const { ratio, mobilePlatform } = this.state;
     const { location, projectId } = this.props;
     const mobileMsp = getProject({ projectId });
     const { ios, android } = mobileMsp;
@@ -69,7 +71,7 @@ class MobileMsp extends PureComponent {
           </Article>
         </Section>
         <BnSection ratio={ratio} />
-        <Footer ratio={ratio} />
+        <Footer ratio={ratio} mobilePlatform={mobilePlatform} />
       </MobileMspContainer>
     );
   }

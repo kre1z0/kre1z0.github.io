@@ -10,10 +10,11 @@ import { FooterContainer, Store, Mobiles, LeftSide, RightSide } from "./styles";
 export class Footer extends PureComponent {
   static propTypes = {
     ratio: PropTypes.string,
+    mobilePlatform: PropTypes.bool,
   };
 
   render() {
-    const { ratio } = this.props;
+    const { ratio, mobilePlatform } = this.props;
 
     return (
       <FooterContainer>
@@ -26,7 +27,7 @@ export class Footer extends PureComponent {
           </Paragraph>
         </Article>
         <Mobiles>
-          <LeftSide>
+          <LeftSide isMobilePlatform={mobilePlatform}>
             <Article>
               <H3>Бизнес-навигатор МСП</H3>
               <Store>
@@ -36,7 +37,7 @@ export class Footer extends PureComponent {
               <img src={halfPhone[ratio]} alt="phone-left" />
             </Article>
           </LeftSide>
-          <RightSide>
+          <RightSide isMobilePlatform={mobilePlatform}>
             <Article>
               <H3>НавигаторМСП. Меры поддержки</H3>
               <Store>
