@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import cn from "classnames";
 
 import { isElementInViewport } from "../../../utils/dom";
 import { ScrollbarConsumer } from "../../ScrollbarProvider/ScrollbarProvider";
-import { IconsParallaxContainer } from "./styles";
+import styles, { IconsParallaxContainer } from "./styles";
 
 class IconsParallaxBase extends Component {
   static propTypes = {
@@ -18,7 +19,7 @@ class IconsParallaxBase extends Component {
 
   state = {
     animationOver: false,
-    iconIndex: 0,
+    iconIndex: null,
   };
 
   shouldComponentUpdate(nextProps, { animationOver }) {
@@ -31,7 +32,7 @@ class IconsParallaxBase extends Component {
     }
   }
 
-  componentDidUpdate({ scrollTop: prevScrollTop }, prevState) {
+  componentDidUpdate({ scrollTop: prevScrollTop }, { iconIndex: prevIconIndex }) {
     const { scrollTop } = this.props;
 
     if (prevScrollTop !== scrollTop && this.container) {
@@ -40,9 +41,18 @@ class IconsParallaxBase extends Component {
       const { bottom } = this.container.getBoundingClientRect();
       const animationOver = bottom - viewportHeight <= 0;
 
+      let index = null;
+
       for (let i = 0; i < children.length; i++) {
         if (isElementInViewport({ el: children[i] })) {
+          index = i;
         }
+      }
+
+      if (prevIconIndex !== index) {
+        requestAnimationFrame(() => {
+          this.setState({ iconIndex: index });
+        });
       }
 
       if (animationOver) {
@@ -58,12 +68,17 @@ class IconsParallaxBase extends Component {
   };
 
   render() {
+    const { iconIndex } = this.state;
     const { className, icons } = this.props;
 
     return (
       <IconsParallaxContainer ref={this.onRefContainer} className={className}>
         {icons.map((Icon, index) => (
-          <Icon key={`bn-icon-${index}`} />
+          <Icon
+            style={{ transitionDelay: `${100 * index}ms` }}
+            key={`bn-icon-${index}`}
+            className={cn({ [styles.isVisible]: index <= iconIndex })}
+          />
         ))}
       </IconsParallaxContainer>
     );
