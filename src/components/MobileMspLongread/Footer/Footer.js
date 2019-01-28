@@ -2,7 +2,7 @@ import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 
 import { IosStoreLink, AndroidStoreLink } from "../../../components/StoreLinks/StoreLinks";
-import { Section, Article, H3, Paragraph } from "../../../components/LongreadAtoms/Longread";
+import { Article, H3, Paragraph } from "../../../components/LongreadAtoms/Longread";
 import { halfPhone, phoneRight } from "../images";
 
 import { FooterContainer, Store, Mobiles, LeftSide, RightSide } from "./styles";

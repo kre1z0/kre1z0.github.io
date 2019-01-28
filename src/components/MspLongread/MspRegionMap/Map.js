@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
+import { childrenElementsInViewport } from "../../../utils/dom";
 import { getLongreadNavbarHeight } from "../../LongreadNavbar/LongreadNavbar";
 import { ScrollbarConsumer } from "../../ScrollbarProvider/ScrollbarProvider";
 import { ReactComponent as SvgMap } from "../../../img/portfolio/msp/RegionMapforBN.svg";
@@ -38,28 +39,19 @@ export class MapComponent extends Component {
     if (wrapper) {
       const navbarHeight = getLongreadNavbarHeight();
       const svg = wrapper.firstElementChild || wrapper.firstChild;
-      const { bottom, height } = svg.getBoundingClientRect();
       const paths = svg.getElementsByTagName("path");
 
       const viewportHeight = Math.max(
         document.documentElement.clientHeight,
         window.innerHeight || 0,
       );
-      const mapInViewport = bottom - viewportHeight <= 0;
 
-      let regions = 0;
-
-      if (mapInViewport) {
-        const totalAmount = viewportHeight - navbarHeight - height;
-        const scrolled = Math.abs(bottom - viewportHeight);
-        const diff = totalAmount - scrolled;
-        const percentageOfTotalAmount = Math.max(100 - (diff * 100) / totalAmount);
-        const percent = percentageOfTotalAmount > 100 ? 100 : percentageOfTotalAmount;
-
-        regions = Math.round((paths.length * percent) / 100);
-      } else {
-        regions = 0;
-      }
+      const regions = childrenElementsInViewport({
+        containerElement: svg,
+        items: paths.length,
+        offsetY: navbarHeight,
+        viewportHeight,
+      });
 
       if (this.regions !== regions) {
         const prevPath = paths[this.regions];
@@ -85,6 +77,7 @@ export class MapComponent extends Component {
   };
 
   render() {
+
     return (
       <MapWraper ref={this.onMapRef}>
         <SvgMap />

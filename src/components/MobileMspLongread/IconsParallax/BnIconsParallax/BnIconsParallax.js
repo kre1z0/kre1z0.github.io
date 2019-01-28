@@ -9,7 +9,7 @@ import { ReactComponent as Ic5 } from "../../../../img/portfolio/mobileMsp/paral
 import { ReactComponent as Ic7 } from "../../../../img/portfolio/mobileMsp/parallaxIcons/bn/ic-7.svg";
 import { ReactComponent as Ic8 } from "../../../../img/portfolio/mobileMsp/parallaxIcons/bn/ic-8.svg";
 import { ReactComponent as Ic9 } from "../../../../img/portfolio/mobileMsp/parallaxIcons/bn/ic-9.svg";
-import styles from './styles';
+import styles from "./styles";
 import { ParallaxContainer } from "../styles";
 
 const icons = [Ic1, Ic2, Ic3, Ic4, Ic5, Ic1, Ic2, Ic3, Ic7, Ic5, Ic8, Ic9, Ic4];
@@ -20,11 +20,7 @@ export class BnIconsParallax extends Component {
 
     return (
       <ParallaxContainer>
-        <IconsParallax className={styles.bnIconsParallax}>
-          {icons.map((Icon, index) => (
-            <Icon key={`bn-icon-${index}`} />
-          ))}
-        </IconsParallax>
+        <IconsParallax className={styles.bnIconsParallax} icons={icons} />
         {children}
       </ParallaxContainer>
     );

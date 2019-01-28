@@ -51,7 +51,14 @@ export class BnSection extends Component {
           </Article>
         </Section>
         <BnIconsParallax>
-          <Section className={cn(styles.bnWithVideo, styles.bnWithVideoLeft)}>
+          <Section
+            className={cn(
+              styles.bnWithVideo,
+              styles.bnWithVideoLeft,
+              styles.gradient,
+              styles.gradientToTop,
+            )}
+          >
             <Article>
               <WithVideoContent>
                 <H3>Минимум исходных данных</H3>
@@ -82,7 +89,14 @@ export class BnSection extends Component {
               />
             </Article>
           </Section>
-          <Section className={cn(styles.bnWithVideo, styles.bnWithVideoRight)}>
+          <Section
+            className={cn(
+              styles.bnWithVideo,
+              styles.bnWithVideoRight,
+              styles.gradient,
+              styles.gradientToBottom,
+            )}
+          >
             <Article>
               <VideoInMobileMockup
                 ratio={ratio}
