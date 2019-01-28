@@ -45,28 +45,34 @@ export const WithVideoContent = styled("div")`
 `;
 
 const styles = css`
-  .bnWithVideoFirst {
+  .bnWithVideo {
     @media (min-width: 1200px) {
       padding: 0 5.7142rem 0 5.7142rem;
     }
     article {
-      padding: 3.4rem 0 6rem 0;
       display: flex;
-      justify-content: space-between;
       align-items: center;
       max-width: 86.2857rem;
     }
-  }
-  .bnWithVideoSecond {
-    @media (min-width: 1200px) {
-      padding: 0 5.7142rem 0 5.7142rem;
+    &.bnWithVideoLeft {
+      article {
+        > div {
+          &:first-child {
+            margin-right: 9rem;
+          }
+        }
+        padding: 3.4rem 0 6rem 0;
+      }
     }
-    article {
-      padding: 6rem 0 0 4.4rem;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      max-width: 86.2857rem;
+    &.bnWithVideoRight {
+      article {
+        > div {
+          &:first-child {
+            margin-right: 8rem;
+          }
+        }
+        padding: 6rem 0 0 4.4rem;
+      }
     }
   }
 `;

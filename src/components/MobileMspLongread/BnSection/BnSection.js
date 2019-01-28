@@ -1,12 +1,15 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import cn from "classnames";
 
+import { BnIconsParallax } from "../../../components/MobileMspLongread/IconsParallax/BnIconsParallax/BnIconsParallax";
+import { SupportIconsParallax } from "../../../components/MobileMspLongread/IconsParallax/SupportIconsParallax/SupportIconsParallax";
 import { VideoInMobileMockup } from "../VideoInMobileMockup/VideoInMobileMockup";
 import bnMobileTestVideo from "../../../videos/mobileMsp/BN_mobile_3.mp4";
 import { OutsideLink } from "../../../components/OutsideLink/OutsideLink";
 import { Article, H2, H3, Paragraph, Section } from "../../LongreadAtoms/Longread";
 import { UnorderedList } from "../../../components/LongreadAtoms/UnorderedList";
-import { msp } from "../SectionWithIcon/SectionWithIcon";
+import { msp, support } from "../SectionWithIcon/SectionWithIcon";
 import { Top1 } from "../Top1/Top1";
 
 import styles, { BnBlock, WithVideoContent } from "./styles";
@@ -46,66 +49,130 @@ export class BnSection extends Component {
             </Paragraph>
           </Article>
         </Section>
-        <Section className={styles.bnWithVideoFirst}>
+        <BnIconsParallax>
+          <Section className={cn(styles.bnWithVideo, styles.bnWithVideoLeft)}>
+            <Article>
+              <WithVideoContent>
+                <H3>Минимум исходных данных</H3>
+                <Paragraph small>
+                  Чтобы рассчитать в приложении примерный бизнес-план, достаточно выбрать вид
+                  бизнеса, место на карте и указать несколько дополнительных параметров:
+                </Paragraph>
+                <UnorderedList lightGreyBlue>
+                  <li>рыночную нишу,</li>
+                  <li>потребность в кредите,</li>
+                  <li>организационно-правовую форму будущего бизнеса,</li>
+                  <li>систему налогообложения.</li>
+                </UnorderedList>
+                <Paragraph small>
+                  Приложение оценит спрос и существующее предложение в выбранном месте.
+                  Предприниматель сможет увидеть на карте потенциальных конкурентов, а также сможет
+                  подобрать подходящее помещение в зависимости от масштаба бизнеса.
+                </Paragraph>
+                <Paragraph small>
+                  Понравившуюся недвижимость можно сохранить в избранное, дополнить фотографиями и
+                  комментариями.
+                </Paragraph>
+              </WithVideoContent>
+              <VideoInMobileMockup ratio={ratio} video={bnMobileTestVideo} />
+            </Article>
+          </Section>
+          <Section className={cn(styles.bnWithVideo, styles.bnWithVideoRight)}>
+            <Article>
+              <VideoInMobileMockup ratio={ratio} video={bnMobileTestVideo} />
+              <WithVideoContent>
+                <H3>Детальный бизнес-план</H3>
+                <Paragraph small>
+                  Результатом работы, как и в веб-версии системы «Бизнес-навигатор МСП», станет
+                  типовой бизнес-план. Приложение само расчитает бизнес-план на основе индикаторов
+                  рынка и практики ведения бизнеса.
+                </Paragraph>
+                <Paragraph small>
+                  В один документ приложение соберет все характеристики бизнеса:
+                </Paragraph>
+                <UnorderedList lightGreyBlue>
+                  <li>срок окупаемости,</li>
+                  <li>объем вложений,</li>
+                  <li>примерные доходы,</li>
+                  <li>информацию о кредите (если он необходим),</li>
+                  <li>адрес бизнес-точки,</li>
+                  <li>сведения о потенциальных покупателях.</li>
+                </UnorderedList>
+                <Paragraph small>
+                  Приложение также предложит концепцию бизнеса: ассортимент, режим работы,
+                  бизнес-модель и ключевой фактор успеха.
+                </Paragraph>
+                <Paragraph small>
+                  Бизнес-план можно сохранить в личном кабинете, скачать в PDF и поделиться им.
+                  Такой бизнес-план принимают для рассмотрения заявок на кредит банки — партнеры
+                  Корпорации МСП.
+                </Paragraph>
+              </WithVideoContent>
+            </Article>
+          </Section>
+        </BnIconsParallax>
+        <Section withoutPaddingBottom>
           <Article>
-            <WithVideoContent>
-              <H3>Минимум исходных данных</H3>
-              <Paragraph small>
-                Чтобы рассчитать в приложении примерный бизнес-план, достаточно выбрать вид бизнеса,
-                место на карте и указать несколько дополнительных параметров:
-              </Paragraph>
-              <UnorderedList lightGreyBlue>
-                <li>рыночную нишу,</li>
-                <li>потребность в кредите,</li>
-                <li>организационно-правовую форму будущего бизнеса,</li>
-                <li>систему налогообложения.</li>
-              </UnorderedList>
-              <Paragraph small>
-                Приложение оценит спрос и существующее предложение в выбранном месте.
-                Предприниматель сможет увидеть на карте потенциальных конкурентов, а также сможет
-                подобрать подходящее помещение в зависимости от масштаба бизнеса.
-              </Paragraph>
-              <Paragraph small>
-                Понравившуюся недвижимость можно сохранить в избранное, дополнить фотографиями и
-                комментариями.
-              </Paragraph>
-            </WithVideoContent>
-            <VideoInMobileMockup ratio={ratio} video={bnMobileTestVideo} />
+            <BnBlock>
+              <img src={support[ratio]} alt="support logo" />
+              <figure>
+                <H2 small>Навигатор МСП. Меры поддержки</H2>
+                <Paragraph small>
+                  Приложение «Навигатор МСП. Меры поддержки» рассчитано на опытных предпринимателей,
+                  которые хотят расширить свой бизнес. Оно помогает найти сведения о финансовой и об
+                  информационно-маркетинговой поддержке, а также о франшизах — нужно только выбрать
+                  в приложении город. Вся информация регулярно обновляется.
+                </Paragraph>
+              </figure>
+            </BnBlock>
           </Article>
         </Section>
-        <Section className={styles.bnWithVideoSecond}>
-          <Article>
-            <VideoInMobileMockup ratio={ratio} video={bnMobileTestVideo} />
-            <WithVideoContent>
-              <H3>Детальный бизнес-план</H3>
-              <Paragraph small>
-                Результатом работы, как и в веб-версии системы «Бизнес-навигатор МСП», станет
-                типовой бизнес-план. Приложение само расчитает бизнес-план на основе индикаторов
-                рынка и практики ведения бизнеса.
-              </Paragraph>
-              <Paragraph small>
-                В один документ приложение соберет все характеристики бизнеса:
-              </Paragraph>
-              <UnorderedList lightGreyBlue>
-                <li>срок окупаемости,</li>
-                <li>объем вложений,</li>
-                <li>примерные доходы,</li>
-                <li>информацию о кредите (если он необходим),</li>
-                <li>адрес бизнес-точки,</li>
-                <li>сведения о потенциальных покупателях.</li>
-              </UnorderedList>
-              <Paragraph small>
-                Приложение также предложит концепцию бизнеса: ассортимент, режим работы,
-                бизнес-модель и ключевой фактор успеха.
-              </Paragraph>
-              <Paragraph small>
-                Бизнес-план можно сохранить в личном кабинете, скачать в PDF и поделиться им. Такой
-                бизнес-план принимают для рассмотрения заявок на кредит банки — партнеры Корпорации
-                МСП.
-              </Paragraph>
-            </WithVideoContent>
-          </Article>
-        </Section>
+        <SupportIconsParallax>
+          <Section className={cn(styles.bnWithVideo, styles.bnWithVideoRight)}>
+            <Article>
+              <WithVideoContent>
+                <H3>Меры поддержки</H3>
+                <Paragraph small>
+                  Приложение покажет, есть ли в выбранном городе лизинговые и микрофинансовые
+                  организации, гарантийные фонды, предложит доступные для малого бизнеса программы
+                  кредитования от разных банков.
+                </Paragraph>
+                <Paragraph small>
+                  Также предприниматели смогут узнать об инфраструктуре поддержки малого бизнеса:
+                </Paragraph>
+                <UnorderedList lightGreyBlue>
+                  <li>
+                    консультационной, в т.ч. центрах поддержки сельского хозяйства, инноваций и
+                    других отраслей,
+                  </li>
+                  <li>имущественной, например технопарки, коворкинги, бизнес-инкубаторы,</li>
+                  <li>ближайших экспортных центрах,</li>
+                  <li>центрах оказания госуслуг.</li>
+                </UnorderedList>
+              </WithVideoContent>
+              <VideoInMobileMockup ratio={ratio} video={bnMobileTestVideo} />
+            </Article>
+          </Section>
+          <Section className={cn(styles.bnWithVideo, styles.bnWithVideoLeft)}>
+            <Article>
+              <VideoInMobileMockup ratio={ratio} video={bnMobileTestVideo} />
+              <WithVideoContent>
+                <H3>Каталог франшиз</H3>
+                <Paragraph small>
+                  Для предпринимателей, которые хотят открыть бизнес по франшизе, в приложении есть
+                  каталог с базовыми характеристиками:
+                </Paragraph>
+                <UnorderedList lightGreyBlue>
+                  <li>сумма инвестиций,</li>
+                  <li>срок окупаемости,</li>
+                  <li>роялти,</li>
+                  <li>количестве точек,</li>
+                  <li>минимально необходимая площадь.</li>
+                </UnorderedList>
+              </WithVideoContent>
+            </Article>
+          </Section>
+        </SupportIconsParallax>
       </>
     );
   }

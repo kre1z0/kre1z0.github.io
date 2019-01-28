@@ -10,6 +10,7 @@ import { Section, Article, H2, Paragraph } from "../../components/LongreadAtoms/
 import { AndroidStoreLink, IosStoreLink } from "../../components/StoreLinks/StoreLinks";
 import { OutsideLink } from "../../components/OutsideLink/OutsideLink";
 import { BnSection } from "../../components/MobileMspLongread/BnSection/BnSection";
+import { Footer } from "../../components/MobileMspLongread/Footer/Footer";
 import styles, {
   MobileMspContainer,
   MobileMspStoreContainer,
@@ -68,6 +69,7 @@ class MobileMsp extends PureComponent {
           </Article>
         </Section>
         <BnSection ratio={ratio} />
+        <Footer ratio={ratio} />
       </MobileMspContainer>
     );
   }

@@ -12,12 +12,9 @@ import { ReactComponent as Right2 } from "../../../img/portfolio/mobileMsp/icons
 import { ReactComponent as Right3 } from "../../../img/portfolio/mobileMsp/icons/right-3.svg";
 import { ReactComponent as Right4 } from "../../../img/portfolio/mobileMsp/icons/right-4.svg";
 import { ReactComponent as Badge } from "../../../img/portfolio/mobileMsp/badge.svg";
-import halfPhoneX1 from "../../../img/portfolio/mobileMsp/msp/half-phone.png";
-import halfPhoneX2 from "../../../img/portfolio/mobileMsp/msp/half-phone@2x.png";
-import halfPhoneX3 from "../../../img/portfolio/mobileMsp/msp/half-phone@3x.png";
+import { halfPhone } from '../images';
 import { isElementInViewport } from "../../../utils/dom";
 
-const halfPhone = { x1: halfPhoneX1, x2: halfPhoneX2, x3: halfPhoneX3 };
 
 class Top1Base extends Component {
   static propTypes = {

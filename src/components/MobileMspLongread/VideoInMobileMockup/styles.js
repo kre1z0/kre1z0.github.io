@@ -2,7 +2,6 @@ import styled from "astroturf";
 
 export const Container = styled("div")`
   position: relative;
-  margin-right: 8rem;
   video {
     border-radius: 0.2857rem;
     top: 4.4%;
