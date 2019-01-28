@@ -42,6 +42,12 @@ export const BnBlock = styled("div")`
 
 export const WithVideoContent = styled("div")`
   max-width: 38.5714rem;
+  p,
+  ul {
+    &:last-child {
+      margin-bottom: 11%;
+    }
+  }
 `;
 
 const styles = css`

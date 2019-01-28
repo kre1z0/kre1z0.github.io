@@ -1,10 +1,32 @@
 import React, { Component } from "react";
 
-const icons = [];
+import { IconsParallax } from "../IconsParallax";
+import { ReactComponent as Ic1 } from "../../../../img/portfolio/mobileMsp/parallaxIcons/bn/ic-1.svg";
+import { ReactComponent as Ic2 } from "../../../../img/portfolio/mobileMsp/parallaxIcons/bn/ic-2.svg";
+import { ReactComponent as Ic3 } from "../../../../img/portfolio/mobileMsp/parallaxIcons/bn/ic-3.svg";
+import { ReactComponent as Ic4 } from "../../../../img/portfolio/mobileMsp/parallaxIcons/bn/ic-4.svg";
+import { ReactComponent as Ic5 } from "../../../../img/portfolio/mobileMsp/parallaxIcons/bn/ic-5.svg";
+import { ReactComponent as Ic7 } from "../../../../img/portfolio/mobileMsp/parallaxIcons/bn/ic-7.svg";
+import { ReactComponent as Ic8 } from "../../../../img/portfolio/mobileMsp/parallaxIcons/bn/ic-8.svg";
+import { ReactComponent as Ic9 } from "../../../../img/portfolio/mobileMsp/parallaxIcons/bn/ic-9.svg";
+import styles from './styles';
+import { ParallaxContainer } from "../styles";
+
+const icons = [Ic1, Ic2, Ic3, Ic4, Ic5, Ic1, Ic2, Ic3, Ic7, Ic5, Ic8, Ic9, Ic4];
 
 export class BnIconsParallax extends Component {
   render() {
     const { children } = this.props;
-    return <div>{children}</div>;
+
+    return (
+      <ParallaxContainer>
+        <IconsParallax className={styles.bnIconsParallax}>
+          {icons.map((Icon, index) => (
+            <Icon key={`bn-icon-${index}`} />
+          ))}
+        </IconsParallax>
+        {children}
+      </ParallaxContainer>
+    );
   }
 }

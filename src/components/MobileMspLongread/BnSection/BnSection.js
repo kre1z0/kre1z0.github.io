@@ -6,6 +6,7 @@ import { BnIconsParallax } from "../../../components/MobileMspLongread/IconsPara
 import { SupportIconsParallax } from "../../../components/MobileMspLongread/IconsParallax/SupportIconsParallax/SupportIconsParallax";
 import { VideoInMobileMockup } from "../VideoInMobileMockup/VideoInMobileMockup";
 import bnMobileTestVideo from "../../../videos/mobileMsp/BN_mobile_3.mp4";
+import bnMobileTestVideoPoster from "../../../videos/mobileMsp/posters/BN_mobile_3_000.jpg";
 import { OutsideLink } from "../../../components/OutsideLink/OutsideLink";
 import { Article, H2, H3, Paragraph, Section } from "../../LongreadAtoms/Longread";
 import { UnorderedList } from "../../../components/LongreadAtoms/UnorderedList";
@@ -74,12 +75,20 @@ export class BnSection extends Component {
                   комментариями.
                 </Paragraph>
               </WithVideoContent>
-              <VideoInMobileMockup ratio={ratio} video={bnMobileTestVideo} />
+              <VideoInMobileMockup
+                ratio={ratio}
+                video={bnMobileTestVideo}
+                poster={bnMobileTestVideoPoster}
+              />
             </Article>
           </Section>
           <Section className={cn(styles.bnWithVideo, styles.bnWithVideoRight)}>
             <Article>
-              <VideoInMobileMockup ratio={ratio} video={bnMobileTestVideo} />
+              <VideoInMobileMockup
+                ratio={ratio}
+                video={bnMobileTestVideo}
+                poster={bnMobileTestVideoPoster}
+              />
               <WithVideoContent>
                 <H3>Детальный бизнес-план</H3>
                 <Paragraph small>
@@ -150,12 +159,20 @@ export class BnSection extends Component {
                   <li>центрах оказания госуслуг.</li>
                 </UnorderedList>
               </WithVideoContent>
-              <VideoInMobileMockup ratio={ratio} video={bnMobileTestVideo} />
+              <VideoInMobileMockup
+                ratio={ratio}
+                video={bnMobileTestVideo}
+                poster={bnMobileTestVideoPoster}
+              />
             </Article>
           </Section>
           <Section className={cn(styles.bnWithVideo, styles.bnWithVideoLeft)}>
             <Article>
-              <VideoInMobileMockup ratio={ratio} video={bnMobileTestVideo} />
+              <VideoInMobileMockup
+                ratio={ratio}
+                video={bnMobileTestVideo}
+                poster={bnMobileTestVideoPoster}
+              />
               <WithVideoContent>
                 <H3>Каталог франшиз</H3>
                 <Paragraph small>

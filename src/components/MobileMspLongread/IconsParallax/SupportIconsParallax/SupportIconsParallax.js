@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 
+
 export class SupportIconsParallax extends Component {
   render() {
     const { children } = this.props;

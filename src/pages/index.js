@@ -14,7 +14,7 @@ export class IndexPage extends PureComponent {
           <>
             <HorizontalRule />
             <BigH1>
-              Новый взгляд на <br /> работу с геоданными
+              Геосервисы для <br /> принятия решений
             </BigH1>
             <GatsbyLink to="/company">Подробнее о нас</GatsbyLink>
           </>

@@ -2,10 +2,12 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 import { ScrollbarConsumer } from "../../ScrollbarProvider/ScrollbarProvider";
+import { IconsParallaxContainer } from "./styles";
 
 class IconsParallaxBase extends Component {
   static propTypes = {
     scrollTop: PropTypes.number,
+    className: PropTypes.string,
   };
 
   componentDidUpdate({ scrollTop: prevScrollTop }, prevState) {
@@ -22,9 +24,13 @@ class IconsParallaxBase extends Component {
   };
 
   render() {
-    const { children } = this.props;
+    const { children, className } = this.props;
 
-    return <div ref={this.onRef}>{children}</div>;
+    return (
+      <IconsParallaxContainer ref={this.onRef} className={className}>
+        {children}
+      </IconsParallaxContainer>
+    );
   }
 }
 

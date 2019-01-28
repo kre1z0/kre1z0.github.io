@@ -28,6 +28,6 @@ export const MockUp = styled("img")`
   width: auto;
   height: 100%;
   z-index: 8;
-  max-height: 94vh;
+  max-height: 93.5vh;
   max-height: calc(var(--vh, 1vh) * 93.5);
 `;
