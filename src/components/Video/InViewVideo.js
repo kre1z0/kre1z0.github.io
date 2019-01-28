@@ -6,8 +6,6 @@ import { getLongreadNavbarHeight } from "../../components/LongreadNavbar/Longrea
 import { ScrollbarConsumer } from "../../components/ScrollbarProvider/ScrollbarProvider";
 import { Video } from "./Video";
 
-import { InViewContainer } from "./styles";
-
 class InViewBase extends Component {
   static propTypes = {
     source: PropTypes.string,
@@ -33,17 +31,17 @@ class InViewBase extends Component {
   checkInView = () => {
     const { play } = this.state;
     const offsetTop = getLongreadNavbarHeight();
-    const container = this.container;
+    const video = this.video;
 
-    if (container) {
+    if (video) {
       const viewportHeight = Math.max(
         document.documentElement.clientHeight,
         window.innerHeight || 0,
       );
 
-      const { height } = getElementWidthAndHeight(container);
-      const { bottom } = container.getBoundingClientRect();
-      const videoFullInView = isElementInViewport({ el: container, offsetTop });
+      const { height } = getElementWidthAndHeight(video);
+      const { bottom } = video.getBoundingClientRect();
+      const videoFullInView = isElementInViewport({ el: video, offsetTop });
       const videoOnTop = bottom < height / 2 + offsetTop;
       const videoOnBottom = bottom - viewportHeight > height / 2;
 
@@ -61,7 +59,7 @@ class InViewBase extends Component {
 
   onRef = ref => {
     if (ref) {
-      this.container = ref;
+      this.video = ref;
     }
   };
 
@@ -69,11 +67,7 @@ class InViewBase extends Component {
     const { play } = this.state;
     const { scrollTop, source, ...props } = this.props;
 
-    return (
-      <InViewContainer ref={this.onRef}>
-        <Video play={play} video={source} {...props} />
-      </InViewContainer>
-    );
+    return <Video play={play} video={source} onVideoRef={this.onRef} {...props} />;
   }
 }
 

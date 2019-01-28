@@ -45,13 +45,26 @@ export const WithVideoContent = styled("div")`
 `;
 
 const styles = css`
-  .withVideo {
+  .bnWithVideoFirst {
     @media (min-width: 1200px) {
-      padding: 3.4rem 5.7142rem 0 5.7142rem;
+      padding: 0 5.7142rem 0 5.7142rem;
     }
     article {
+      padding: 3.4rem 0 6rem 0;
       display: flex;
       justify-content: space-between;
+      align-items: center;
+      max-width: 86.2857rem;
+    }
+  }
+  .bnWithVideoSecond {
+    @media (min-width: 1200px) {
+      padding: 0 5.7142rem 0 5.7142rem;
+    }
+    article {
+      padding: 6rem 0 0 4.4rem;
+      display: flex;
+      justify-content: flex-start;
       align-items: center;
       max-width: 86.2857rem;
     }

@@ -46,7 +46,7 @@ export class BnSection extends Component {
             </Paragraph>
           </Article>
         </Section>
-        <Section className={styles.withVideo}>
+        <Section className={styles.bnWithVideoFirst}>
           <Article>
             <WithVideoContent>
               <H3>Минимум исходных данных</H3>
@@ -71,6 +71,39 @@ export class BnSection extends Component {
               </Paragraph>
             </WithVideoContent>
             <VideoInMobileMockup ratio={ratio} video={bnMobileTestVideo} />
+          </Article>
+        </Section>
+        <Section className={styles.bnWithVideoSecond}>
+          <Article>
+            <VideoInMobileMockup ratio={ratio} video={bnMobileTestVideo} />
+            <WithVideoContent>
+              <H3>Детальный бизнес-план</H3>
+              <Paragraph small>
+                Результатом работы, как и в веб-версии системы «Бизнес-навигатор МСП», станет
+                типовой бизнес-план. Приложение само расчитает бизнес-план на основе индикаторов
+                рынка и практики ведения бизнеса.
+              </Paragraph>
+              <Paragraph small>
+                В один документ приложение соберет все характеристики бизнеса:
+              </Paragraph>
+              <UnorderedList lightGreyBlue>
+                <li>срок окупаемости,</li>
+                <li>объем вложений,</li>
+                <li>примерные доходы,</li>
+                <li>информацию о кредите (если он необходим),</li>
+                <li>адрес бизнес-точки,</li>
+                <li>сведения о потенциальных покупателях.</li>
+              </UnorderedList>
+              <Paragraph small>
+                Приложение также предложит концепцию бизнеса: ассортимент, режим работы,
+                бизнес-модель и ключевой фактор успеха.
+              </Paragraph>
+              <Paragraph small>
+                Бизнес-план можно сохранить в личном кабинете, скачать в PDF и поделиться им. Такой
+                бизнес-план принимают для рассмотрения заявок на кредит банки — партнеры Корпорации
+                МСП.
+              </Paragraph>
+            </WithVideoContent>
           </Article>
         </Section>
       </>

@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 export class Video extends Component {
   static propTypes = {
     video: PropTypes.string,
+    onVideoRef: PropTypes.func,
   };
 
   static defaultProps = {
@@ -38,13 +39,15 @@ export class Video extends Component {
   }
 
   onVideoRef = ref => {
+    const { onVideoRef } = this.props;
     if (ref) {
       this.video = ref;
+      onVideoRef && onVideoRef(ref);
     }
   };
 
   render() {
-    const { video, play, className, ...props } = this.props;
+    const { video, play, onVideoRef, className, ...props } = this.props;
 
     return (
       <video playsInline muted loop ref={this.onVideoRef} className={className} {...props}>

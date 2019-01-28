@@ -12,7 +12,7 @@ export const VideoContainer = styled("div")`
   max-height: 500px;
   width: calc(100vw - ${breakpoint1366} * 2);
   height: calc((100vw - ${breakpoint1366} * 2) / ${ratio});
-  margin-bottom: 1.4rem;
+  margin-bottom: 2.8rem;
   video {
     position: absolute;
     top: 0;

@@ -55,6 +55,9 @@ const styles = css`
   .selectorSection {
     padding: 0 0 1rem 0;
   }
+  .mspVideoContainer {
+    margin-bottom: 1.4rem;
+  }
   .selectorSectionScrollbar {
     :global .scroll-content {
       > div {
