@@ -179,9 +179,11 @@ export const LeftSide = styled(Side)`
     img {
       transform: translate(-50%, 0);
     }
-    &:hover {
-      img {
-        transform: translate(-50%, 0);
+    @media (hover: hover) {
+      &:hover {
+        img {
+          transform: translate(-50%, 0);
+        }
       }
     }
   }
