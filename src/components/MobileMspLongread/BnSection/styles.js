@@ -41,6 +41,16 @@ export const BnBlock = styled("div")`
       height: 3rem;
     }
   }
+  @media (max-width: 767px) and (orientation: portrait) {
+    margin-bottom: 1rem;
+    figure {
+      h2 {
+        height: auto;
+        max-width: 16rem;
+        margin: 0.7rem 0 1rem 0;
+      }
+    }
+  }
 `;
 
 export const WithVideoContent = styled("div")`
@@ -60,6 +70,20 @@ export const WithVideoContent = styled("div")`
       }
     }
   }
+  @media (max-width: 767px) and (orientation: portrait) {
+    h3 {
+      display: none;
+    }
+    > p:nth-child(2) {
+      margin-top: -1rem;
+    }
+    p,
+    ul {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
 `;
 
 const styles = css`
@@ -69,6 +93,9 @@ const styles = css`
       align-items: center;
       justify-content: space-around;
       max-width: 86.2857rem;
+      > h3:first-child {
+        display: none;
+      }
     }
     &.bnWithVideoLeft {
       article {
@@ -129,14 +156,20 @@ const styles = css`
       }
     }
     @media (max-width: 767px) and (orientation: portrait) {
+      padding-bottom: 2.6rem;
       > article {
         flex-direction: column;
+        > h3:first-child {
+          display: block;
+          align-self: flex-start;
+          margin-bottom: 0.7rem;
+        }
       }
       &.bnWithVideoRight {
         article {
           > div {
             &:first-child {
-              margin-right: 1rem;
+              margin-right: 0;
             }
           }
         }
@@ -175,6 +208,16 @@ const styles = css`
   .gradientToBottom {
     &:before {
       background-image: linear-gradient(to bottom, #e0f0f6, #fff);
+    }
+  }
+  .mobilePortraitOrder1 {
+    @media (max-width: 767px) and (orientation: portrait) {
+      order: 1;
+    }
+  }
+  .mobilePortraitOrder2 {
+    @media (max-width: 767px) and (orientation: portrait) {
+      order: 2;
     }
   }
 `;

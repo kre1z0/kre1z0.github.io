@@ -8,10 +8,16 @@ export const Container = styled("div")`
     z-index: -1;
     border-radius: 0.2857rem;
     top: 4.4%;
-    right: 8.5%;
+    right: 8.6%;
     position: absolute;
     max-height: 80vh;
     max-height: calc(var(--vh, 1vh) * 80);
+  }
+  &.mockUpLeft {
+    video {
+      top: 4.4%;
+      right: 15.5%;
+    }
   }
   @media (max-width: 991px) {
     video {
@@ -23,9 +29,20 @@ export const Container = styled("div")`
   @media (max-width: 767px) and (orientation: landscape) {
     max-height: 74vh;
     max-height: calc(var(--vh, 1vh) * 74);
+    &.mockUpLeft {
+      margin-right: 1.4rem;
+    }
+    &:not(.mockUpLeft) {
+      margin-left: 1.4rem;
+    }
   }
   @media (max-width: 767px) and (orientation: portrait) {
-    margin-right: 1rem;
+    &.mockUpLeft {
+      margin-left: 0.8rem;
+    }
+    &:not(.mockUpLeft) {
+      margin-right: 0.8rem;
+    }
   }
 `;
 

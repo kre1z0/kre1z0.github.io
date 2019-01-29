@@ -44,6 +44,7 @@ export const FooterContainer = styled("div")`
     }
   }
   @media (max-width: 767px) and (orientation: portrait) {
+    margin-top: 0.4rem;
     > article:first-child {
       top: 0;
       left: 0;
@@ -233,7 +234,7 @@ export const RightSide = styled(Side)`
     > article {
       padding-top: 2rem;
       img {
-        transform: translate(-50%, calc(66% - 5.7142rem));
+        transform: translate(calc(-50% - 0.8rem), calc(66% - 5.7142rem));
       }
     }
   }

@@ -60,7 +60,8 @@ export class BnSection extends Component {
             )}
           >
             <Article>
-              <WithVideoContent>
+              <H3>Минимум исходных данных</H3>
+              <WithVideoContent className={styles.mobilePortraitOrder2}>
                 <H3>Минимум исходных данных</H3>
                 <Paragraph small>
                   Чтобы рассчитать в приложении примерный бизнес-план, достаточно выбрать вид
@@ -83,6 +84,7 @@ export class BnSection extends Component {
                 </Paragraph>
               </WithVideoContent>
               <VideoInMobileMockup
+                className={styles.mobilePortraitOrder1}
                 ratio={ratio}
                 video={bnMobileTestVideo}
                 poster={bnMobileTestVideoPoster}
@@ -98,7 +100,9 @@ export class BnSection extends Component {
             )}
           >
             <Article>
+              <H3>Детальный бизнес-план</H3>
               <VideoInMobileMockup
+                mockUpLeft
                 ratio={ratio}
                 video={bnMobileTestVideo}
                 poster={bnMobileTestVideoPoster}
@@ -153,7 +157,8 @@ export class BnSection extends Component {
         <SupportIconsParallax>
           <Section className={cn(styles.bnWithVideo, styles.bnWithVideoRight)}>
             <Article>
-              <WithVideoContent>
+              <H3>Меры поддержки</H3>
+              <WithVideoContent className={styles.mobilePortraitOrder2}>
                 <H3>Меры поддержки</H3>
                 <Paragraph small>
                   Приложение покажет, есть ли в выбранном городе лизинговые и микрофинансовые
@@ -174,14 +179,17 @@ export class BnSection extends Component {
                 </UnorderedList>
               </WithVideoContent>
               <VideoInMobileMockup
+                mockUpLeft
                 ratio={ratio}
                 video={bnMobileTestVideo}
                 poster={bnMobileTestVideoPoster}
+                className={styles.mobilePortraitOrder1}
               />
             </Article>
           </Section>
           <Section className={cn(styles.bnWithVideo, styles.bnWithVideoLeft)}>
             <Article>
+              <H3>Каталог франшиз</H3>
               <VideoInMobileMockup
                 ratio={ratio}
                 video={bnMobileTestVideo}

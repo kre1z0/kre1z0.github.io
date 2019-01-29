@@ -20,13 +20,16 @@ export const UnorderedList = styled("ul")`
       background-color: #387bc7;
       border-radius: 50%;
     }
+    &:last-child {
+      margin-bottom: 0;
+    }
     @media (max-width: 991px) {
       font-size: 0.8571rem;
     }
-    @media (max-width: 767px) and (orientation: landscape) {
+    @media (max-width: 767px) {
       font-size: 0.7142rem;
       &:before {
-        top: 0.3rem;
+        top: 0.4rem;
         width: 4px;
         height: 4px;
       }

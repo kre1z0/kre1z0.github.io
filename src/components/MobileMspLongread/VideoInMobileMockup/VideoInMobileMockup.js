@@ -1,22 +1,25 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-import mockUp from "../../../img/portfolio/mobileMsp/mockUp-test.png";
+import leftMockUp from "../../../img/portfolio/mobileMsp/mockUp/mockUp-Left.png";
+import rightMockUp from "../../../img/portfolio/mobileMsp/mockUp/mockUp-Right.png";
 import { InViewVideo } from "../../../components/Video/InViewVideo";
 import { Container, MockUp } from "./styles";
 
 export class VideoInMobileMockup extends Component {
   static propTypes = {
     ratio: PropTypes.string,
+    mockUpLeft: PropTypes.bool,
+    className: PropTypes.string,
   };
 
   render() {
-    const { ratio, ...props } = this.props;
+    const { ratio, className, mockUpLeft, ...props } = this.props;
 
     return (
-      <Container>
+      <Container mockUpLeft={mockUpLeft} className={className}>
         <InViewVideo {...props} />
-        <MockUp src={mockUp} alt="mockUp" />
+        <MockUp src={mockUpLeft ? leftMockUp : rightMockUp} alt="mockUp" />
       </Container>
     );
   }
