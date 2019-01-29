@@ -4,9 +4,9 @@
       "babel-preset-gatsby",
       {
         "targets": {
-          "browsers": ["last 4 versions", "safari >= 8", "ie >= 11"]
+          "browsers": ["safari >= 8", "ie >= 11", "firefox >= 45", "chrome >= 44", "edge >= 14"]
         },
-        "useBuiltIns": "entry"
+        "useBuiltIns": "@babel/polyfill"
       }
     ]
   ]
