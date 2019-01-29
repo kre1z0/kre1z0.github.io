@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import cn from "classnames";
 
-import { isElementInViewport } from "../../../utils/dom";
+import { isElementInViewport, fillElementsInViewport } from "../../../utils/dom";
 import { ScrollbarConsumer } from "../../ScrollbarProvider/ScrollbarProvider";
 import styles, { IconsParallaxContainer } from "./styles";
 
@@ -15,6 +15,7 @@ class IconsParallaxBase extends Component {
 
   static defaultProps = {
     icons: [],
+    fill: false,
   };
 
   state = {
@@ -33,7 +34,7 @@ class IconsParallaxBase extends Component {
   }
 
   componentDidUpdate({ scrollTop: prevScrollTop }, { iconIndex: prevIconIndex }) {
-    const { scrollTop } = this.props;
+    const { scrollTop, fill } = this.props;
 
     if (prevScrollTop !== scrollTop && this.container) {
       const children = this.container.children;
@@ -43,9 +44,18 @@ class IconsParallaxBase extends Component {
 
       let index = null;
 
-      for (let i = 0; i < children.length; i++) {
-        if (isElementInViewport({ el: children[i] })) {
-          index = i;
+      if (fill) {
+        index = fillElementsInViewport({
+          containerElement: this.container,
+          items: children.length,
+          viewportHeight,
+          inViewportOff: true,
+        });
+      } else {
+        for (let i = 0; i < children.length; i++) {
+          if (isElementInViewport({ el: children[i] })) {
+            index = i;
+          }
         }
       }
 

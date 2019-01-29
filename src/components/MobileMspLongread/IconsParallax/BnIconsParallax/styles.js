@@ -8,7 +8,6 @@ const styles = css`
     margin-left: 6vh;
     margin-left: calc(var(--vh, 1vh) * 6);
     svg {
-      position: absolute;
       width: 2.8571rem;
       height: 2.8571rem;
       &:nth-child(1) {

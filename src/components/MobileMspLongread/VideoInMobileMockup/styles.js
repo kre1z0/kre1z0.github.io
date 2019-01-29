@@ -6,7 +6,7 @@ export const Container = styled("div")`
   z-index: 8;
   video {
     z-index: -1;
-    border-radius: 0.2857rem;
+    border-radius: 0.4rem;
     top: 4.4%;
     right: 8.6%;
     position: absolute;
@@ -16,7 +16,7 @@ export const Container = styled("div")`
   &.mockUpLeft {
     video {
       top: 4.4%;
-      right: 15.5%;
+      right: 15.4%;
     }
   }
   @media (max-width: 991px) {
@@ -47,6 +47,7 @@ export const Container = styled("div")`
 `;
 
 export const MockUp = styled("img")`
+  padding-top: 0.5px;
   position: relative;
   width: auto;
   height: 100%;

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-import { childrenElementsInViewport } from "../../../utils/dom";
+import { fillElementsInViewport } from "../../../utils/dom";
 import { getLongreadNavbarHeight } from "../../LongreadNavbar/LongreadNavbar";
 import { ScrollbarConsumer } from "../../ScrollbarProvider/ScrollbarProvider";
 import { ReactComponent as SvgMap } from "../../../img/portfolio/msp/RegionMapforBN.svg";
@@ -46,7 +46,7 @@ export class MapComponent extends Component {
         window.innerHeight || 0,
       );
 
-      const regions = childrenElementsInViewport({
+      const regions = fillElementsInViewport({
         containerElement: svg,
         items: paths.length,
         offsetY: navbarHeight,

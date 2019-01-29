@@ -154,43 +154,43 @@ export class BnSection extends Component {
             </BnBlock>
           </Article>
         </Section>
-        <SupportIconsParallax>
-          <Section className={cn(styles.bnWithVideo, styles.bnWithVideoRight)}>
-            <Article>
+        <Section className={cn(styles.bnWithVideo, styles.bnWithVideoRight)}>
+          <Article>
+            <H3>Меры поддержки</H3>
+            <WithVideoContent className={styles.mobilePortraitOrder2}>
               <H3>Меры поддержки</H3>
-              <WithVideoContent className={styles.mobilePortraitOrder2}>
-                <H3>Меры поддержки</H3>
-                <Paragraph small>
-                  Приложение покажет, есть ли в выбранном городе лизинговые и микрофинансовые
-                  организации, гарантийные фонды, предложит доступные для малого бизнеса программы
-                  кредитования от разных банков.
-                </Paragraph>
-                <Paragraph small>
-                  Также предприниматели смогут узнать об инфраструктуре поддержки малого бизнеса:
-                </Paragraph>
-                <UnorderedList lightGreyBlue>
-                  <li>
-                    консультационной, в т.ч. центрах поддержки сельского хозяйства, инноваций и
-                    других отраслей,
-                  </li>
-                  <li>имущественной, например технопарки, коворкинги, бизнес-инкубаторы,</li>
-                  <li>ближайших экспортных центрах,</li>
-                  <li>центрах оказания госуслуг.</li>
-                </UnorderedList>
-              </WithVideoContent>
-              <VideoInMobileMockup
-                mockUpLeft
-                ratio={ratio}
-                video={bnMobileTestVideo}
-                poster={bnMobileTestVideoPoster}
-                className={styles.mobilePortraitOrder1}
-              />
-            </Article>
-          </Section>
+              <Paragraph small>
+                Приложение покажет, есть ли в выбранном городе лизинговые и микрофинансовые
+                организации, гарантийные фонды, предложит доступные для малого бизнеса программы
+                кредитования от разных банков.
+              </Paragraph>
+              <Paragraph small>
+                Также предприниматели смогут узнать об инфраструктуре поддержки малого бизнеса:
+              </Paragraph>
+              <UnorderedList lightGreyBlue>
+                <li>
+                  консультационной, в т.ч. центрах поддержки сельского хозяйства, инноваций и других
+                  отраслей,
+                </li>
+                <li>имущественной, например технопарки, коворкинги, бизнес-инкубаторы,</li>
+                <li>ближайших экспортных центрах,</li>
+                <li>центрах оказания госуслуг.</li>
+              </UnorderedList>
+            </WithVideoContent>
+            <VideoInMobileMockup
+              ratio={ratio}
+              video={bnMobileTestVideo}
+              poster={bnMobileTestVideoPoster}
+              className={styles.mobilePortraitOrder1}
+            />
+          </Article>
+        </Section>
+        <SupportIconsParallax>
           <Section className={cn(styles.bnWithVideo, styles.bnWithVideoLeft)}>
             <Article>
               <H3>Каталог франшиз</H3>
               <VideoInMobileMockup
+                mockUpLeft
                 ratio={ratio}
                 video={bnMobileTestVideo}
                 poster={bnMobileTestVideoPoster}

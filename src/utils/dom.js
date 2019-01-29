@@ -38,26 +38,32 @@ export const setVhProperty = () => {
   document.documentElement.style.setProperty("--vh", `${vh}px`);
 };
 
-export const childrenElementsInViewport = ({
+export const fillElementsInViewport = ({
   containerElement,
   items,
-  offsetY,
+  offsetY = 0,
   viewportHeight,
+  inViewportOff = false,
 }) => {
   const { bottom, height } = containerElement.getBoundingClientRect();
+
   let itemsInViewPort = 0;
 
   const inViewport = bottom - viewportHeight <= 0;
 
-  if (inViewport) {
-    const totalAmount = viewportHeight - offsetY - height;
+  if (inViewport || inViewportOff) {
+    const totalAmount = inViewportOff ? height : viewportHeight - offsetY - height;
+
     const scrolled = Math.abs(bottom - viewportHeight);
     const diff = totalAmount - scrolled;
     const percentageOfTotalAmount = Math.max(100 - (diff * 100) / totalAmount);
     const percent = percentageOfTotalAmount > 100 ? 100 : percentageOfTotalAmount;
-    itemsInViewPort = Math.round((items * percent) / 100);
+    itemsInViewPort = inViewportOff
+      ? items - Math.round((items * percent) / 100)
+      : Math.round((items * percent) / 100);
   } else {
     itemsInViewPort = 0;
   }
+
   return itemsInViewPort;
 };

@@ -11,6 +11,7 @@ export const IconsParallaxContainer = styled("div")`
   transform: translate(-50%, -50%);
   width: 100%;
   svg {
+    position: absolute;
     opacity: 0;
     will-change: opacity;
     transition: opacity 200ms ease-in;
