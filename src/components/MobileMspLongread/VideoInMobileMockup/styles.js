@@ -20,6 +20,13 @@ export const Container = styled("div")`
       max-width: 76%;
     }
   }
+  @media (max-width: 767px) and (orientation: landscape) {
+    max-height: 74vh;
+    max-height: calc(var(--vh, 1vh) * 74);
+  }
+  @media (max-width: 767px) and (orientation: portrait) {
+    margin-right: 1rem;
+  }
 `;
 
 export const MockUp = styled("img")`
@@ -29,7 +36,15 @@ export const MockUp = styled("img")`
   max-height: 93.5vh;
   max-height: calc(var(--vh, 1vh) * 93.5);
   @media (max-width: 991px) {
-    max-width: 264px;
+    max-width: 18.8571rem;
     height: auto;
+  }
+  @media (max-width: 767px) and (orientation: landscape) {
+    max-height: 87.5vh;
+    max-height: calc(var(--vh, 1vh) * 87.5);
+  }
+
+  @media (max-width: 767px) and (orientation: portrait) {
+    max-width: 13.4rem;
   }
 `;

@@ -15,6 +15,9 @@ export const IconsParallaxContainer = styled("div")`
     will-change: opacity;
     transition: opacity 200ms ease-in;
   }
+  @media (max-width: 767px) and (orientation: portrait) {
+    display: none;
+  }
 `;
 
 const styles = css`

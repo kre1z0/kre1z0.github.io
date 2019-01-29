@@ -79,6 +79,16 @@ const styles = css`
       max-width: 23.5714rem;
       margin-left: -1vh;
     }
+    @media (max-width: 767px) and (orientation: landscape) {
+      top: 4rem;
+      transform: translate(-50%, 0);
+      height: 72.8%;
+      margin-left: 0;
+      svg {
+        width: 1.7857rem;
+        height: 1.7857rem;
+      }
+    }
   }
 `;
 

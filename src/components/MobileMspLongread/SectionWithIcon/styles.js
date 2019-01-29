@@ -21,6 +21,9 @@ export const SectionWithIconContainer = styled("div")`
       }
     }
   }
+  @media (max-width: 767px) and (orientation: landscape) {
+    padding-bottom: 0;
+  }
 `;
 
 export const Content = styled("div")`

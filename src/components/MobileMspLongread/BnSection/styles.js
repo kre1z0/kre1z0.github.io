@@ -107,14 +107,49 @@ const styles = css`
         }
       }
     }
-  }
-  .top1Section {
-    article {
-      p:last-child {
-        @media (max-width: 991px) {
-          padding-bottom: 3rem;
+    @media (max-width: 767px) and (orientation: landscape) {
+      padding-top: 2.2rem;
+      article {
+        align-items: flex-start;
+      }
+      &.bnWithVideoLeft {
+        article {
+          > div:last-child {
+            margin-left: 2rem;
+          }
         }
       }
+
+      &.bnWithVideoRight {
+        article {
+          > div:last-child {
+            margin-right: 2rem;
+          }
+        }
+      }
+    }
+    @media (max-width: 767px) and (orientation: portrait) {
+      > article {
+        flex-direction: column;
+      }
+      &.bnWithVideoRight {
+        article {
+          > div {
+            &:first-child {
+              margin-right: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  .top1Paragraph {
+    @media (max-width: 991px) {
+      padding-bottom: 3rem;
+    }
+    @media (max-width: 767px) and (orientation: landscape) {
+      padding-bottom: 0;
+      margin-bottom: 1.44rem;
     }
   }
   .gradient {

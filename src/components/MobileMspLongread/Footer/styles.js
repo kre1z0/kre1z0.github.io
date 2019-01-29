@@ -38,10 +38,26 @@ export const FooterContainer = styled("div")`
       }
     }
   }
+  @media (max-width: 767px) and (orientation: landscape) {
+    > article:first-child {
+      height: 9rem;
+    }
+  }
+  @media (max-width: 767px) and (orientation: portrait) {
+    > article:first-child {
+      top: 0;
+      left: 0;
+      transform: none;
+      height: 12.8571rem;
+    }
+  }
 `;
 
 export const Mobiles = styled("div")`
   display: flex;
+  @media (max-width: 767px) and (orientation: portrait) {
+    flex-direction: column;
+  }
 `;
 
 export const Store = styled("div")`
@@ -57,6 +73,9 @@ export const Store = styled("div")`
         margin-right: 0.4rem;
       }
     }
+  }
+  @media (max-width: 767px) and (orientation: portrait) {
+    margin-bottom: 2rem;
   }
 `;
 
@@ -120,6 +139,27 @@ const Side = styled("div")`
       }
     }
   }
+  @media (max-width: 767px) {
+    > article {
+      img {
+        max-width: 13.4rem;
+      }
+    }
+  }
+  @media (max-width: 767px) and (orientation: landscape) {
+    > article {
+      padding-top: 9rem;
+    }
+    height: calc(25rem + 9rem);
+  }
+  @media (max-width: 767px) and (orientation: portrait) {
+    width: 100%;
+    > article {
+      h3 {
+        height: auto;
+      }
+    }
+  }
 `;
 
 export const LeftSide = styled(Side)`
@@ -147,6 +187,17 @@ export const LeftSide = styled(Side)`
   &.isMobilePlatform {
     background-color: #e0f0f6;
   }
+  @media (max-width: 767px) and (orientation: portrait) {
+    > article {
+      padding-top: 0;
+      justify-content: flex-end;
+      img {
+        position: static;
+        transform: none;
+      }
+    }
+    height: 36rem;
+  }
 `;
 
 export const RightSide = styled(Side)`
@@ -171,5 +222,19 @@ export const RightSide = styled(Side)`
   }
   &.isMobilePlatform {
     background-color: #d2e6ed;
+  }
+  @media (max-width: 767px) {
+    img {
+      transform: translate(-50%, calc(66% - 5.7142rem));
+    }
+  }
+  @media (max-width: 767px) and (orientation: portrait) {
+    height: 24.4rem;
+    > article {
+      padding-top: 2rem;
+      img {
+        transform: translate(-50%, calc(66% - 5.7142rem));
+      }
+    }
   }
 `;

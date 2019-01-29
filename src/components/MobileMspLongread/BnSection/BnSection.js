@@ -25,7 +25,7 @@ export class BnSection extends Component {
 
     return (
       <>
-        <Section withoutPaddingBottom className={styles.top1Section}>
+        <Section withoutPaddingBottom>
           <Article>
             <BnBlock>
               <img src={msp[ratio]} alt="bn logo" />
@@ -40,7 +40,7 @@ export class BnSection extends Component {
               </figure>
             </BnBlock>
             <Top1 ratio={ratio} />
-            <Paragraph small>
+            <Paragraph small className={styles.top1Paragraph}>
               Приложение «Бизнес-навигатор МСП» в{" "}
               <OutsideLink href="http://2017.goldensite.ru/work/best-app-for-business-b2b/4459">
                 конкурсе GoldenApp 2017
