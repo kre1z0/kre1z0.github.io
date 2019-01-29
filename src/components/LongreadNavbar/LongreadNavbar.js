@@ -7,6 +7,7 @@ import { ReactComponent as Close } from "../../img/icons/close.svg";
 import { ReactComponent as Arrow } from "../../img/icons/arrow.svg";
 import { ScrollbarConsumer } from "../ScrollbarProvider/ScrollbarProvider";
 import { getBackRouteByLocationPathName } from "../../routes";
+import { getColorById } from "./getColorById";
 import styles, { LongreadNavbarContainer } from "./styles";
 
 export const getLongreadNavbarHeight = () => {
@@ -26,27 +27,24 @@ export class LongreadNavbarBase extends Component {
     pathname: PropTypes.string,
     scrollTop: PropTypes.number,
     className: PropTypes.string,
-    lightNavy: PropTypes.bool,
     projects: PropTypes.arrayOf(PropTypes.string),
   };
 
   render() {
-    const { pathname, scrollTop, className, children, lightNavy, projects } = this.props;
+    const { pathname, scrollTop, className, children, projects } = this.props;
     const transform = `translateY(${scrollTop}px)`;
     const fixed = scrollTop > 0;
     const arrowControl = !!projects;
     const currentPageIndex =
       projects && projects.findIndex(id => id === pathname.replace(/\//g, ""));
+    const currentProject = projects && projects[currentPageIndex];
     const prevProjectPage = projects && projects[currentPageIndex - 1];
     const nextProjectPage = projects && projects[currentPageIndex + 1];
 
+    const color = getColorById(currentProject, fixed);
+
     return (
-      <LongreadNavbarContainer
-        lightNavy={lightNavy}
-        className={className}
-        style={{ transform }}
-        fixed={fixed}
-      >
+      <LongreadNavbarContainer className={cn(className, color)} style={{ transform }} fixed={fixed}>
         {children}
         {arrowControl && prevProjectPage && (
           <Link to={`/${prevProjectPage}`} className={cn(styles.arrowBtn, styles.leftArrowBtn)}>

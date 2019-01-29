@@ -10,17 +10,6 @@ export const LongreadNavbarContainer = styled("nav")`
   height: 5.7142rem;
   will-change: transform;
   transition: background 200ms linear;
-  &.lightNavy {
-    a {
-      color: rgba(24, 62, 107, 0.5);
-      svg {
-        path {
-          stroke: rgba(24, 62, 107, 0.5);
-          fill: rgba(24, 62, 107, 0.5);
-        }
-      }
-    }
-  }
   a {
     padding: 0.4rem;
     position: absolute;
@@ -28,7 +17,6 @@ export const LongreadNavbarContainer = styled("nav")`
     align-items: center;
     justify-content: center;
     background: none;
-    color: rgba(255, 255, 255, 0.5);
     transition: color 200ms linear;
     font-weight: 600;
     text-decoration: none;
@@ -39,21 +27,6 @@ export const LongreadNavbarContainer = styled("nav")`
       max-height: 1.1428rem;
       path {
         transition: all 200ms linear;
-        stroke: rgba(255, 255, 255, 0.5);
-        fill: rgba(255, 255, 255, 0.5);
-        opacity: 1;
-      }
-    }
-    @media (hover: hover) {
-      &:hover {
-        color: #183e6b;
-        svg {
-          path {
-            opacity: 1;
-            fill: #183e6b;
-            stroke: #183e6b;
-          }
-        }
       }
     }
   }
@@ -61,24 +34,6 @@ export const LongreadNavbarContainer = styled("nav")`
   &.fixed {
     box-shadow: 0 0.5714rem 0.5714rem 0 rgba(10, 18, 33, 0.05);
     background-color: #fff;
-    a {
-      color: #262c37;
-      svg path {
-        stroke: #262c37;
-        fill: #262c37;
-      }
-      @media (hover: hover) {
-        &:hover {
-          color: #90c53d;
-          svg {
-            path {
-              fill: #90c53d;
-              stroke: #90c53d;
-            }
-          }
-        }
-      }
-    }
   }
 
   @media (max-width: 991px) {

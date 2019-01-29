@@ -4,8 +4,8 @@ import { getProject, getBackRouteByLocationPathName } from "../routes";
 import { setVhProperty } from "../utils/dom";
 import { Helmet } from "../components/Helmet/Helmet";
 import { ScrollbarProvider } from "../components/ScrollbarProvider/ScrollbarProvider";
-import styles from "../styles/longread";
 import { LongreadNavbar } from "../components/LongreadNavbar/LongreadNavbar";
+import styles from "../styles/longread";
 
 class LongredLayout extends Component {
   state = {
@@ -41,11 +41,7 @@ class LongredLayout extends Component {
     return (
       <ScrollbarProvider location={location} className={styles.scrollbar} withScrollbarY>
         <Helmet />
-        <LongreadNavbar
-          projects={projects}
-          lightNavy={location.pathname.includes("mobileMsp")}
-          pathname={location.pathname}
-        />
+        <LongreadNavbar projects={projects} pathname={location.pathname} />
         {children}
       </ScrollbarProvider>
     );
