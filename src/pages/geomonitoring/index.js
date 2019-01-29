@@ -23,6 +23,7 @@ class Geomonitoring extends PureComponent {
           projectId={projectId}
           location={location}
           leftSideClassName={styles.headerLeftSide}
+          rightSideClassName={styles.headerRightSide}
           rightSide={<HeaderRightSide />}
           {...geomonitoring}
         />
