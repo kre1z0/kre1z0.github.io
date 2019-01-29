@@ -82,6 +82,7 @@ export const Title = styled(H1)`
 `;
 
 export const Description = styled(Paragraph)`
+  font-weight: 500;
   @media (max-width: 767px) and (orientation: portrait) {
     display: none;
   }

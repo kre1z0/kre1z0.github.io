@@ -3,6 +3,7 @@ import cn from "classnames";
 
 import layer1 from "../../../img/portfolio/msp/layer-1.png";
 import animation from "../../Transition/animation";
+import styles from "../../Transition/portfolio";
 import layer2 from "../../../img/portfolio/msp/layer-2.png";
 import layer3 from "../../../img/portfolio/msp/layer-3.png";
 
@@ -16,7 +17,7 @@ import cardRight2 from "../../../img/portfolio/msp/cards/Right-2@2x.png";
 import cardRight3 from "../../../img/portfolio/msp/cards/Right-3@2x.png";
 import cardRight4 from "../../../img/portfolio/msp/cards/Right-4@2x.png";
 
-import styles, { LayersBlock, CardsBlock, LeftCol, RightCol } from "./styles";
+import { LayersBlock, CardsBlock, LeftCol, RightCol } from "./styles";
 
 export class MspRightSide extends PureComponent {
   state = {

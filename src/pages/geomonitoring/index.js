@@ -1,9 +1,12 @@
 import React, { PureComponent } from "react";
 
+import { HeaderRightSide } from "../../components/GeomonitoringLongread/HeaderRightSide/HeaderRightSide";
+import { LocalLink } from "../../components/LocalLink/LocalLink";
+import { Section, Article, H1, Paragraph } from "../../components/LongreadAtoms/Longread";
 import { Header } from "../../components/PortfolioLongread/Header";
 import { getProject } from "../../routes";
 
-import { GeomonitoringContainer } from "../../styles/geomonitoring";
+import styles, { GeomonitoringContainer } from "../../styles/geomonitoring";
 
 class Geomonitoring extends PureComponent {
   static defaultProps = {
@@ -16,27 +19,29 @@ class Geomonitoring extends PureComponent {
 
     return (
       <GeomonitoringContainer>
-        <Header projectId={projectId} location={location} {...geomonitoring} />
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto blanditiis
-          consectetur consequuntur cupiditate deleniti dolorum itaque laudantium, nulla pariatur
-          perferendis quae rem saepe sequi sit veniam, vero, vitae.
-        </p>
+        <Header
+          projectId={projectId}
+          location={location}
+          leftSideClassName={styles.headerLeftSide}
+          rightSide={<HeaderRightSide />}
+          {...geomonitoring}
+        />
+        <Section>
+          <Article>
+            <H1 portfolio>Задачи геомониторинга</H1>
+            <Paragraph small>
+              Кредитование - одна из самых востребованных банковских услуг. С ростом числа кредитов
+              увеличивается и объем залогового имущества, отслеживать состояние заложенной
+              недвижимости и проводить переоценку ее стоимости становится все сложнее.
+            </Paragraph>
+            <Paragraph small>
+              Помочь банкам в этом деле может корпоративное геоинформационное веб-приложение
+              «Геомониторинг недвижимости». Эта аналитическая система управления залоговым
+              имуществом разработана на базе нашей собственной{" "}
+              <LocalLink to="evergis">ГИС-платформы EverGIS</LocalLink>.
+            </Paragraph>
+          </Article>
+        </Section>
       </GeomonitoringContainer>
     );
   }

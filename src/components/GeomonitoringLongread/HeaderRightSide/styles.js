@@ -10,7 +10,7 @@ export const LayersBlock = styled("div")`
     opacity: 0;
     animation-fill-mode: forwards;
     height: auto;
-    left: -0.7vw;
+    left: -12%;
     &:first-child {
       position: relative;
     }
@@ -25,67 +25,51 @@ export const LayersBlock = styled("div")`
       &:nth-child(3) {
         animation-delay: 400ms;
       }
-      &:nth-child(4) {
-        animation-delay: 800ms;
-      }
       @media (max-width: 767px) and (orientation: portrait) {
-        left: -1.46vw;
+        width: 124%;
+        left: -9%;
       }
     }
   }
 `;
 
 export const CardsBlock = styled("div")`
-  top: 50.8%;
+  top: 48.4%;
   transform: translateY(-50%);
-  display: flex;
-  left: 7.2%;
-  width: 93.7%;
-  height: 41%;
+  left: -0.4%;
+  width: 101%;
+  height: 42%;
   position: absolute;
-  align-items: flex-start;
-  justify-content: space-between;
   img {
-    width: 100%;
+    position: absolute;
     height: auto;
-    max-width: none;
-  }
-  @media (max-width: 767px) and (orientation: portrait) {
-    height: calc(100vw / 2.18);
-  }
-`;
-
-const Col = styled("div")`
-  top: 4%;
-  left: 1.4%;
-  width: 36%;
-  position: relative;
-  height: 100%;
-  > img {
+    animation-delay: 800ms;
     opacity: 0;
     animation-fill-mode: forwards;
-    vertical-align: top;
     &:nth-child(1) {
-      animation-delay: 1200ms;
+      width: 28%;
+      top: 11%;
+      left: -6%;
     }
     &:nth-child(2) {
-      animation-delay: 1400ms;
+      top: 2%;
+      width: 34%;
+      right: -4%;
     }
     &:nth-child(3) {
-      animation-delay: 1600ms;
-    }
-    &:nth-child(4) {
-      animation-delay: 1800ms;
+      left: 0;
+      bottom: -19%;
     }
   }
-`;
-
-export const LeftCol = styled(Col)``;
-
-export const RightCol = styled(Col)`
-  left: 0.68%;
-  margin-top: -16.44%;
-  display: flex;
-  justify-content: flex-end;
-  flex-direction: column-reverse;
+  @media (max-width: 767px) and (orientation: portrait) {
+    top: 50%;
+    left: 2.6%;
+    width: 97%;
+    height: calc(100vw / 2.2);
+    img {
+      &:nth-child(3) {
+        bottom: -16%;
+      }
+    }
+  }
 `;

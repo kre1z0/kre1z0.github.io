@@ -1,5 +1,5 @@
 import msp from "../img/portfolio/msp/msp-screen.png";
-import bank from "../img/portfolio/bank.png";
+import bank from "../img/portfolio/geomonitoring/bank.png";
 import mobileMsp1 from "../img/portfolio/mobileMsp/mobile-1.png";
 import mobileMsp2 from "../img/portfolio/mobileMsp/mobile-2.png";
 import mobileMsp3 from "../img/portfolio/mobileMsp/mobile-3.png";
@@ -77,9 +77,10 @@ export default {
         },
         {
           title: "Геомониторинг недвижимости",
+          type: "Банковский сектор",
           text: "Банковский сектор",
           id: "geomonitoring",
-          bgColor: "#45aac3",
+          bgColor: "#009AEB",
           screenshot: bank,
           description:
             "Аналитическая система управления залоговым имуществом банка. Планирование выездных проверок и оценка стоимости объектов.",

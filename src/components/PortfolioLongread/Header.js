@@ -22,6 +22,7 @@ export class HeaderBase extends Component {
   static propTypes = {
     bgColor: PropTypes.string,
     type: PropTypes.string,
+    title: PropTypes.string,
     text: PropTypes.string,
     rightSide: PropTypes.element,
     scrollbar: PropTypes.object,
@@ -58,6 +59,7 @@ export class HeaderBase extends Component {
       bgColor,
       type,
       text,
+      title,
       description,
       link,
       rightSide,
@@ -73,7 +75,7 @@ export class HeaderBase extends Component {
         <HeaderBlock>
           <LeftSide className={cn(animation.fadeIn, leftSideClassName)}>
             {type && <Badge>{type}</Badge>}
-            <Title>{text}</Title>
+            <Title>{title || text}</Title>
             <Description>{description}</Description>
             {link && (
               <OutsideLink className={styles.projectLink} href={link}>
