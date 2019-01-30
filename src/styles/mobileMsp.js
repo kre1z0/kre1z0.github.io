@@ -23,9 +23,10 @@ export const MobileMspStoreContainer = styled("div")`
 export const Phones = styled("img")`
   position: absolute;
   opacity: 0;
-  animation-duration: 400ms;
-  animation-delay: 0ms;
-  animation-fill-mode: forwards;
+  transition-duration: 400ms;
+  transition-delay: 400ms;
+  transition-property: opacity;
+  transition-timing-function: ease-in;
   width: 124%;
   height: auto;
   max-width: 140rem;
@@ -47,6 +48,9 @@ export const Phones = styled("img")`
     left: calc(44rem / 2.86);
     min-width: auto;
     top: calc(44rem / 2.86);
+  }
+  &.animate {
+    opacity: 1;
   }
 `;
 

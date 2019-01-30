@@ -23,14 +23,47 @@ import step5VideoPoster from "../../videos/msp/posters/5_000.jpg";
 import { MspAnalyticsSection } from "../../components/MspLongread/MspAnalyticsSection/MspAnalyticsSection";
 import { MspFooter } from "../../components/MspLongread/MspFooter/MspFooter";
 
+import layer1 from "../../img/portfolio/msp/layer-1.png";
+import layer2 from "../../img/portfolio/msp/layer-2.png";
+import layer3 from "../../img/portfolio/msp/layer-3.png";
+
+import cardLeft1 from "../../img/portfolio/msp/cards/Left-1@2x.png";
+import cardLeft2 from "../../img/portfolio/msp/cards/Left-2@2x.png";
+import cardLeft3 from "../../img/portfolio/msp/cards/Left-3@2x.png";
+import cardLeft4 from "../../img/portfolio/msp/cards/Left-4@2x.png";
+
+import cardRight1 from "../../img/portfolio/msp/cards/Right-1@2x.png";
+import cardRight2 from "../../img/portfolio/msp/cards/Right-2@2x.png";
+import cardRight3 from "../../img/portfolio/msp/cards/Right-3@2x.png";
+import cardRight4 from "../../img/portfolio/msp/cards/Right-4@2x.png";
+
 import styles, { MspLongreadContainer, Step } from "../../styles/msp";
+
+const images = [
+  layer1,
+  layer2,
+  layer3,
+  cardLeft1,
+  cardLeft2,
+  cardLeft3,
+  cardLeft4,
+  cardRight1,
+  cardRight2,
+  cardRight3,
+  cardRight4,
+];
 
 class Msp extends PureComponent {
   static defaultProps = {
     projectId: "msp",
   };
 
+  state = {
+    animate: false,
+  };
+
   render() {
+    const { animate } = this.state;
     const { location, projectId } = this.props;
     const msp = getProject({ projectId });
     const mobileMsp = getProject({ projectId: "mobileMsp" });
@@ -40,11 +73,14 @@ class Msp extends PureComponent {
     return (
       <>
         <Header
+          animate={animate}
+          images={images}
+          onLoad={() => this.setState({ animate: true })}
           projectId={projectId}
           leftSideClassName={styles.headerLeftSide}
           location={location}
           {...msp}
-          rightSide={<MspRightSide />}
+          rightSide={<MspRightSide animate={animate} images={images} />}
         />
         <MspLongreadContainer>
           <Section withoutPaddingBottom>

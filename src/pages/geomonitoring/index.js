@@ -22,7 +22,6 @@ import cardRight from "../../img/portfolio/geomonitoring/cards/rightCard.png";
 import cardBottom from "../../img/portfolio/geomonitoring/cards/bottomCard.png";
 
 import styles, { GeomonitoringContainer, Screenshot, Footer } from "../../styles/geomonitoring";
-import { ImagesDownloadListener } from "../../components/ImagesDownloadListener/ImagesDownloadListener";
 
 const images = [layer1, layer2, cardLeft, cardRight, cardBottom];
 
@@ -42,9 +41,9 @@ class Geomonitoring extends PureComponent {
 
     return (
       <>
-        <ImagesDownloadListener images={images} onLoad={() => this.setState({ animate: true })} />
         <Header
           images={images}
+          onLoad={() => this.setState({ animate: true })}
           animate={animate}
           projectId={projectId}
           location={location}

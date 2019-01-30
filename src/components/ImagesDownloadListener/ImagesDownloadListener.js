@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 export class ImagesDownloadListener extends Component {
   static propTypes = {
-    images: PropTypes.arrayOf(PropTypes.string).isRequired,
+    images: PropTypes.arrayOf(PropTypes.string),
     onLoad: PropTypes.func,
     onError: PropTypes.func,
   };
@@ -38,6 +38,11 @@ export class ImagesDownloadListener extends Component {
   loadImages() {
     const { images, onLoad, onError } = this.props;
     const promises = [];
+
+    if (!images) {
+      onLoad && onLoad();
+      return;
+    }
 
     images.forEach(imageSrc => promises.push(this.loadEachImage(imageSrc)));
 

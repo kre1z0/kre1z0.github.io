@@ -7,8 +7,6 @@ export const LayersBlock = styled("div")`
     display: block;
     width: 129%;
     max-width: none;
-    opacity: 0;
-    animation-fill-mode: forwards;
     height: auto;
     left: -0.7vw;
     &:first-child {
@@ -18,19 +16,24 @@ export const LayersBlock = styled("div")`
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      animation-duration: 400ms;
-      &:nth-child(2) {
-        transition: opacity 400ms ease-in;
-      }
+      transition-duration: 400ms;
+      transition-property: opacity;
+      transition-timing-function: ease-in;
+      opacity: 0;
       &:nth-child(3) {
-        animation-delay: 400ms;
+        transition-delay: 400ms;
       }
       &:nth-child(4) {
-        animation-delay: 800ms;
+        transition-delay: 800ms;
       }
       @media (max-width: 767px) and (orientation: portrait) {
         left: -1.46vw;
       }
+    }
+  }
+  &.animate {
+    img {
+      opacity: 1;
     }
   }
 `;
@@ -62,25 +65,37 @@ const Col = styled("div")`
   position: relative;
   height: 100%;
   > img {
+    transition-duration: 200ms;
+    transition-property: opacity, transform;
+    transition-timing-function: ease-in;
     opacity: 0;
-    animation-fill-mode: forwards;
     vertical-align: top;
     &:nth-child(1) {
-      animation-delay: 1200ms;
+      transition-delay: 1200ms;
     }
     &:nth-child(2) {
-      animation-delay: 1400ms;
+      transition-delay: 1400ms;
     }
     &:nth-child(3) {
-      animation-delay: 1600ms;
+      transition-delay: 1600ms;
     }
     &:nth-child(4) {
-      animation-delay: 1800ms;
+      transition-delay: 1800ms;
     }
   }
 `;
 
-export const LeftCol = styled(Col)``;
+export const LeftCol = styled(Col)`
+  > img {
+    transform: translateY(50%);
+  }
+  &.animate {
+    > img {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+  }
+`;
 
 export const RightCol = styled(Col)`
   left: 0.68%;
@@ -88,4 +103,13 @@ export const RightCol = styled(Col)`
   display: flex;
   justify-content: flex-end;
   flex-direction: column-reverse;
+  > img {
+    transform: translateY(-50%);
+  }
+  &.animate {
+    > img {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+  }
 `;

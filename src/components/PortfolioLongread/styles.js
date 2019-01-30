@@ -51,9 +51,12 @@ export const LeftSide = styled(Section)`
   color: #fff;
   opacity: 0;
   transition-duration: 400ms;
+  animation-duration: 400ms;
   transition-delay: 400ms;
   transition-property: opacity;
   transition-timing-function: ease-in;
+  animation-delay: 400ms;
+  animation-fill-mode: forwards;
   margin-right: 4rem;
   @media (max-width: 1199px) {
     margin-right: 3rem;

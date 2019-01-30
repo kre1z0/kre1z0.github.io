@@ -4,7 +4,6 @@ import { getPixelRatioPropName } from "../../utils/utils";
 import { isMobile } from "../../utils/browser";
 import { SectionWithIcon } from "../../components/MobileMspLongread/SectionWithIcon/SectionWithIcon";
 import phones from "../../img/portfolio/mobileMsp/phones.jpg";
-import animation from "../../components/Transition/animation";
 import { Header } from "../../components/PortfolioLongread/Header";
 import { getProject } from "../../routes";
 import { Section, Article, H2, Paragraph } from "../../components/LongreadAtoms/Longread";
@@ -18,6 +17,8 @@ import styles, {
   Phones,
 } from "../../styles/mobileMsp";
 
+const images = [phones];
+
 class MobileMsp extends PureComponent {
   static defaultProps = {
     projectId: "mobileMsp",
@@ -26,6 +27,7 @@ class MobileMsp extends PureComponent {
   state = {
     ratio: "x1",
     mobilePlatform: false,
+    animate: false,
   };
 
   componentDidMount() {
@@ -33,7 +35,7 @@ class MobileMsp extends PureComponent {
   }
 
   render() {
-    const { ratio, mobilePlatform } = this.state;
+    const { ratio, mobilePlatform, animate } = this.state;
     const { location, projectId } = this.props;
     const mobileMsp = getProject({ projectId });
     const { ios, android } = mobileMsp;
@@ -41,6 +43,9 @@ class MobileMsp extends PureComponent {
     return (
       <MobileMspContainer>
         <Header
+          images={images}
+          animate={animate}
+          onLoad={() => this.setState({ animate: true })}
           projectId={projectId}
           location={location}
           {...mobileMsp}
@@ -55,7 +60,7 @@ class MobileMsp extends PureComponent {
             </MobileMspStoreContainer>
           }
         >
-          <Phones src={phones} className={animation.fadeIn} />
+          <Phones animate={animate} src={phones} />
         </Header>
         <Section withoutPaddingBottom>
           <Article>

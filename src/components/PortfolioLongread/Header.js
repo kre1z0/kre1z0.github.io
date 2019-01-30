@@ -7,6 +7,7 @@ import { getBackRouteByLocationPathName } from "../../routes";
 import { ScrollDownButton } from "../../components/Buttons/ScrollDownButton";
 import { getLongreadNavbarHeight } from "../../components/LongreadNavbar/LongreadNavbar";
 import { ScrollbarConsumer } from "../ScrollbarProvider/ScrollbarProvider";
+import animation from "../../styles/animation";
 import styles, {
   HeaderContainer,
   HeaderBlock,
@@ -16,6 +17,7 @@ import styles, {
   Title,
   Description,
 } from "./styles";
+import { ImagesDownloadListener } from "../ImagesDownloadListener/ImagesDownloadListener";
 
 export class HeaderBase extends Component {
   static propTypes = {
@@ -30,8 +32,9 @@ export class HeaderBase extends Component {
     lightNavy: PropTypes.bool,
     leftSide: PropTypes.element,
     projectId: PropTypes.string,
-    images: PropTypes.arrayOf(PropTypes.string),
     animate: PropTypes.bool,
+    onLoad: PropTypes.func,
+    images: PropTypes.arrayOf(PropTypes.string),
   };
 
   componentDidMount() {
@@ -70,12 +73,18 @@ export class HeaderBase extends Component {
       lightNavy,
       leftSide,
       animate,
+      onLoad,
+      images,
     } = this.props;
 
     return (
       <HeaderContainer className={containerClassName} style={{ backgroundColor: bgColor }}>
+        <ImagesDownloadListener images={images} onLoad={onLoad} />
         <HeaderBlock>
-          <LeftSide animate={animate} className={leftSideClassName}>
+          <LeftSide
+            animate={animate}
+            className={cn({ [animation.fadeIn]: !images }, leftSideClassName)}
+          >
             {type && <Badge>{type}</Badge>}
             <Title>{title || text}</Title>
             <Description big>{description}</Description>
