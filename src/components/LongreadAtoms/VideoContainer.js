@@ -8,8 +8,8 @@ const breakpoint576 = "1.4285rem";
 
 export const VideoContainer = styled("div")`
   position: relative;
-  max-width: 900px;
-  max-height: 500px;
+  max-width: 64.2857rem;
+  max-height: 35.7142rem;
   width: calc(100vw - ${breakpoint1366} * 2);
   height: calc((100vw - ${breakpoint1366} * 2) / ${ratio});
   margin-bottom: 2.8rem;
@@ -45,6 +45,18 @@ export const VideoContainer = styled("div")`
     margin-left: -${breakpoint576};
     video {
       box-shadow: 0 0.5714rem 0.5714rem 0 rgba(10, 18, 33, 0.15);
+    }
+  }
+  @media (max-height: 700px) and (min-width: 1199px) and (orientation: landscape) {
+    margin-top: -1.4rem;
+    max-height: calc(100vh - 13.4rem);
+    max-height: calc(var(--vh, 1vh) * 100 - 13.4rem);
+    video {
+      position: static;
+      width: auto;
+      height: 100%;
+      max-height: calc(100vh - 13.4rem);
+      max-height: calc(var(--vh, 1vh) * 100 - 13.4rem);
     }
   }
 `;

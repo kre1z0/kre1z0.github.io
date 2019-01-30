@@ -54,9 +54,20 @@ export const Step = styled(H3)`
 const styles = css`
   .selectorSection {
     padding: 0 0 1rem 0;
+    @media (max-height: 700px) and (min-width: 1199px) and (orientation: landscape) {
+      margin-top: -1rem;
+    }
   }
-  .mspVideoContainer {
+  .mspVideoWithControl {
     margin-bottom: 1.4rem;
+    @media (max-height: 700px) and (min-width: 1199px) and (orientation: landscape) {
+      max-height: calc(100vh - 17rem);
+      max-height: calc(var(--vh, 1vh) * 100 - 17rem);
+      video {
+        max-height: calc(100vh - 17rem);
+        max-height: calc(var(--vh, 1vh) * 100 - 17rem);
+      }
+    }
   }
   .selectorSectionScrollbar {
     :global .scroll-content {
