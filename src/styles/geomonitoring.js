@@ -61,6 +61,11 @@ export const Screenshot = styled("img")`
     width: 100vw;
     margin: 0 0 1.4rem -1.4285rem;
   }
+  @media (max-height: 700px) and (min-width: 1200px) and (orientation: landscape) {
+    margin-top: 0;
+    max-height: calc(100vh - 12rem);
+    max-height: calc(var(--vh, 1vh) * 100 - 12rem);
+  }
 `;
 
 export const Footer = styled("footer")`
