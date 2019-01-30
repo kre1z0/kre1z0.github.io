@@ -15,25 +15,42 @@ import screenshot4 from "../../img/portfolio/geomonitoring/bank-4.png";
 import screenshot5 from "../../img/portfolio/geomonitoring/bank-5.png";
 import screenshot6 from "../../img/portfolio/geomonitoring/bank-6.png";
 
+import layer1 from "../../img/portfolio/geomonitoring/map.png";
+import layer2 from "../../img/portfolio/geomonitoring/app.png";
+import cardLeft from "../../img/portfolio/geomonitoring/cards/leftCard.png";
+import cardRight from "../../img/portfolio/geomonitoring/cards/rightCard.png";
+import cardBottom from "../../img/portfolio/geomonitoring/cards/bottomCard.png";
+
 import styles, { GeomonitoringContainer, Screenshot, Footer } from "../../styles/geomonitoring";
+import { ImagesDownloadListener } from "../../components/ImagesDownloadListener/ImagesDownloadListener";
+
+const images = [layer1, layer2, cardLeft, cardRight, cardBottom];
 
 class Geomonitoring extends PureComponent {
   static defaultProps = {
     projectId: "geomonitoring",
   };
 
+  state = {
+    animate: false,
+  };
+
   render() {
+    const { animate } = this.state;
     const { location, projectId } = this.props;
     const geomonitoring = getProject({ projectId });
 
     return (
       <>
+        <ImagesDownloadListener images={images} onLoad={() => this.setState({ animate: true })} />
         <Header
+          images={images}
+          animate={animate}
           projectId={projectId}
           location={location}
           leftSideClassName={styles.headerLeftSide}
           rightSideClassName={styles.headerRightSide}
-          rightSide={<HeaderRightSide />}
+          rightSide={<HeaderRightSide animate={animate} images={images} />}
           {...geomonitoring}
         />
         <GeomonitoringContainer>

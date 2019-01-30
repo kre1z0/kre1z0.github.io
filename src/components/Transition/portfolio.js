@@ -65,7 +65,7 @@ const styles = css`
       }
     }
   }
-  .fakeLayer {
+  .hidden {
     visibility: hidden;
   }
   .isVisible {

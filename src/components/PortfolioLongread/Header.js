@@ -4,7 +4,6 @@ import cn from "classnames";
 
 import { OutsideLink } from "../../components/OutsideLink/OutsideLink";
 import { getBackRouteByLocationPathName } from "../../routes";
-import animation from "../../components/Transition/animation";
 import { ScrollDownButton } from "../../components/Buttons/ScrollDownButton";
 import { getLongreadNavbarHeight } from "../../components/LongreadNavbar/LongreadNavbar";
 import { ScrollbarConsumer } from "../ScrollbarProvider/ScrollbarProvider";
@@ -31,6 +30,8 @@ export class HeaderBase extends Component {
     lightNavy: PropTypes.bool,
     leftSide: PropTypes.element,
     projectId: PropTypes.string,
+    images: PropTypes.arrayOf(PropTypes.string),
+    animate: PropTypes.bool,
   };
 
   componentDidMount() {
@@ -39,10 +40,10 @@ export class HeaderBase extends Component {
     localStorage.setItem(replacedSlash, projectId);
   }
 
-  shouldComponentUpdate({ scrollbar: nextScrollbar }, nextState) {
-    const { scrollbar } = this.props;
+  shouldComponentUpdate({ scrollbar: nextScrollbar, animate: nextAnimate }, nextState) {
+    const { scrollbar, animate } = this.props;
 
-    return scrollbar !== nextScrollbar;
+    return scrollbar !== nextScrollbar || animate !== nextAnimate;
   }
 
   onScrollDown = () => {
@@ -68,12 +69,13 @@ export class HeaderBase extends Component {
       containerClassName,
       lightNavy,
       leftSide,
+      animate,
     } = this.props;
 
     return (
       <HeaderContainer className={containerClassName} style={{ backgroundColor: bgColor }}>
         <HeaderBlock>
-          <LeftSide className={cn(animation.fadeIn, leftSideClassName)}>
+          <LeftSide animate={animate} className={leftSideClassName}>
             {type && <Badge>{type}</Badge>}
             <Title>{title || text}</Title>
             <Description big>{description}</Description>
