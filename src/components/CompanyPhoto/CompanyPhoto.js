@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import throttle from "lodash/throttle";
 import random from "lodash/random";
 
+import { ImagesDownloadListener } from "../../components/ImagesDownloadListener/ImagesDownloadListener";
 import { HorizontalRule } from "../../components/Atoms/Atoms";
 import { CompanyPhotoTransition } from "./CompanyPhotoTransition";
 import { CompanyPhotoContainer, CompanyHeader } from "./styles";
@@ -23,14 +24,6 @@ export class CompanyPhoto extends PureComponent {
     hiddenItems: [],
     item: null,
   };
-
-  componentDidMount() {
-    const { items } = this.props;
-    window.addEventListener("resize", this.onResize);
-
-    this.setState({ ...this.getRandomElements(items) });
-    this.interval = setInterval(() => this.updatePhoto(), 2000);
-  }
 
   componentWillUnmount() {
     window.removeEventListener("resize", this.onResize);
@@ -91,12 +84,24 @@ export class CompanyPhoto extends PureComponent {
     this.setState({ ...this.getRandomElements(items) });
   };
 
+  onAllAvatarsLoaded = () => {
+    const { items } = this.props;
+
+    window.addEventListener("resize", this.onResize);
+
+    this.setState({ ...this.getRandomElements(items) });
+    this.interval = setInterval(() => this.updatePhoto(), 2000);
+  };
+
   render() {
     const { visibleItems, item } = this.state;
-    const { title } = this.props;
+    const { title, items } = this.props;
+
+    const avatars = items.map(({ avatar }) => avatar);
 
     return (
       <CompanyPhotoContainer>
+        <ImagesDownloadListener images={avatars} onLoad={this.onAllAvatarsLoaded} />
         {title && (
           <CompanyHeader>
             <HorizontalRule />
