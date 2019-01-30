@@ -4,9 +4,20 @@ export const GeomonitoringContainer = styled("div")`
   h1 {
     margin-bottom: 3.4rem;
   }
+  h3 {
+    margin-top: 7.4rem;
+  }
+  @media (max-width: 1199px) {
+    h3 {
+      margin-top: 5rem;
+    }
+  }
   @media (max-width: 991px) {
     h1 {
       margin-bottom: 2.2rem;
+    }
+    h3 {
+      margin-top: 4rem;
     }
   }
   @media (max-width: 767px) {
@@ -14,31 +25,41 @@ export const GeomonitoringContainer = styled("div")`
       margin-bottom: 1.4rem;
     }
   }
+  @media (max-width: 767px) and (orientation: landscape) {
+    h3 {
+      margin-top: 2rem;
+    }
+  }
+  @media (max-width: 767px) and (orientation: portrait) {
+    h3 {
+      margin-top: 1rem;
+    }
+  }
 `;
 
 export const Screenshot = styled("img")`
-  margin: 7.4rem 0 5.2857rem 0;
+  margin: 1.4rem 0 5.2857rem 0;
   box-shadow: 0 2.2857rem 2.2857rem 0 rgba(10, 18, 33, 0.15);
   @media (max-width: 1199px) {
     max-width: none;
-    margin: 5rem 0 4.4rem -4.5714rem;
+    margin: 0 0 4.4rem -4.5714rem;
     width: calc(100% + 4.5714rem * 2);
   }
   @media (max-width: 991px) {
     max-width: 100%;
     width: 100%;
-    margin: 4rem 0;
+    margin: 0 0 4rem 0;
     box-shadow: 0 1.7142rem 1.7142rem 0 rgba(10, 18, 33, 0.15);
   }
   @media (max-width: 767px) and (orientation: landscape) {
-    margin: 2rem 0;
+    margin: 0 0 2rem 0;
     box-shadow: 0 1.1428rem 1.1428rem 0 rgba(10, 18, 33, 0.15);
   }
   @media (max-width: 767px) and (orientation: portrait) {
     max-width: none;
     box-shadow: 0 0.5714rem 0.5714rem 0 rgba(10, 18, 33, 0.15);
     width: 100vw;
-    margin: 1rem 0 1.4rem -1.4285rem;
+    margin: 0 0 1.4rem -1.4285rem;
   }
 `;
 
