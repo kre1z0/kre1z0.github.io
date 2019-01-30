@@ -3,7 +3,7 @@ import styled from "astroturf";
 export const Blank = styled("article")`
   padding: 2.8571rem;
   border-radius: 0.1428rem;
-  box-shadow: 0 32px 32px 0 rgba(10, 18, 33, 0.15);
+  box-shadow: 0 2.2857rem 2.2857rem 0 rgba(10, 18, 33, 0.15);
   background-color: #fff;
   @media (max-width: 991px) {
     padding: 2.1428rem;

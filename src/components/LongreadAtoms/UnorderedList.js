@@ -58,4 +58,11 @@ export const UnorderedList = styled("ul")`
       }
     }
   }
+  &.azure {
+    li {
+      &:before {
+        background-color: #009aeb;
+      }
+    }
+  }
 `;
