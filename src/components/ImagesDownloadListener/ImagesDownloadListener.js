@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 export class ImagesDownloadListener extends Component {
   static propTypes = {
-    images: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]).isRequired,
+    images: PropTypes.arrayOf(PropTypes.string).isRequired,
     onLoad: PropTypes.func,
     onError: PropTypes.func,
   };
@@ -30,7 +30,7 @@ export class ImagesDownloadListener extends Component {
         resolve(value);
       };
       img.onerror = () => {
-        console.error('failed to load ', value);
+        console.error("failed to load ", value);
       };
     });
   }
