@@ -23,7 +23,15 @@ export default {
       title: "Продукты",
       children: [
         { text: "EverGIS", id: "evergis", bgColor: "#f8a717", screenshot: msp },
-        { text: "EverGIS Online", id: "evergisOnline", bgColor: "#6c30d7", screenshot: bank },
+        {
+          text: "EverGIS Online",
+          id: "evergisOnline",
+          bgColor: "#35343c",
+          screenshot: bank,
+          link: "public.everpoint.ru",
+          description:
+            "Картографический сервис, который позволяет оценить местность по различным параметрам",
+        },
         { text: "EverTrack", id: "evertrack", bgColor: "#0fa5f6", screenshot: msp },
       ],
     },

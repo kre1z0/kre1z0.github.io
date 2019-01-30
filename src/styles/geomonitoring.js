@@ -43,6 +43,7 @@ export const Screenshot = styled("img")`
 `;
 
 export const Footer = styled("footer")`
+  position: relative;
   background-color: rgba(38, 44, 55, 0.1);
   padding: 5.2857rem 0;
   text-align: center;

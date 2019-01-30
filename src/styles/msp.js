@@ -119,6 +119,13 @@ const styles = css`
       margin-top: 5rem;
     }
   }
+  .headerLeftSide {
+    @media (max-width: 767px) and (orientation: portrait) {
+      p {
+        display: none;
+      }
+    }
+  }
 `;
 
 export default styles;

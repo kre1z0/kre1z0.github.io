@@ -39,7 +39,13 @@ class Msp extends PureComponent {
 
     return (
       <>
-        <Header projectId={projectId} location={location} {...msp} rightSide={<MspRightSide />} />
+        <Header
+          projectId={projectId}
+          leftSideClassName={styles.headerLeftSide}
+          location={location}
+          {...msp}
+          rightSide={<MspRightSide />}
+        />
         <MspLongreadContainer>
           <Section withoutPaddingBottom>
             <Article>

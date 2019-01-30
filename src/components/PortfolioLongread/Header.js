@@ -76,7 +76,7 @@ export class HeaderBase extends Component {
           <LeftSide className={cn(animation.fadeIn, leftSideClassName)}>
             {type && <Badge>{type}</Badge>}
             <Title>{title || text}</Title>
-            <Description>{description}</Description>
+            <Description big>{description}</Description>
             {link && (
               <OutsideLink className={styles.projectLink} href={link}>
                 {link}
