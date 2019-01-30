@@ -98,9 +98,10 @@ export class DesktopMenu extends Component {
               </Link>
               {additionalMenuIsOpenId === id && (
                 <AdditionalMenu
-                  onSectionChange={({ id: sectionId }) =>
-                    onSectionChange({ pageId: id, id: sectionId, isClickEvent: true })
-                  }
+                  onSectionChange={({ id: sectionId }) => {
+                    onCloseAdditionalMenu();
+                    onSectionChange({ pageId: id, id: sectionId, isClickEvent: true });
+                  }}
                   selectedId={selectedId}
                   fadeIn
                   additionalMenuIsOpenId={additionalMenuIsOpenId}

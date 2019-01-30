@@ -42,7 +42,7 @@ export default {
         {
           id: "msp",
           type: "Малый бизнес",
-          groupName: "Малый бизнес",
+          // groupName: "Малый бизнес",
           text: "Бизнес-навигатор МСП",
           bgColor: "#387bc7",
           description:
@@ -73,7 +73,7 @@ export default {
         {
           id: "mobileMsp",
           type: "Малый бизнес",
-          groupName: "Малый бизнес",
+          // groupName: "Малый бизнес",
           text: "Мобильный бизнес-навигатор",
           bgColor: "#e0f0f6",
           textColor: "#0a2342",

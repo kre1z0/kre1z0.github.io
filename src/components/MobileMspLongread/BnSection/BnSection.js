@@ -40,7 +40,7 @@ export class BnSection extends Component {
               </figure>
             </BnBlock>
             <Top1 ratio={ratio} />
-            <Paragraph small className={styles.top1Paragraph}>
+            <Paragraph className={styles.top1Paragraph}>
               Приложение «Бизнес-навигатор МСП» в{" "}
               <OutsideLink href="http://2017.goldensite.ru/work/best-app-for-business-b2b/4459">
                 конкурсе GoldenApp 2017

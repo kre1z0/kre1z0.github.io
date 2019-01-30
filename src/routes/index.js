@@ -85,7 +85,7 @@ export const routes = [
     scrollable: true,
   },
   { id: "contacts", text: "Контакты", route: "/contacts" },
-  { text: "Блог", outsideLink: "http://everpoint.ru" },
+  { text: "Блог", outsideLink: "https://medium.com/everpoint " },
 ];
 
 export const navigateTo = ({ navigate, pathname, direction }) => {
