@@ -46,25 +46,11 @@ const styles = css`
   }
 `;
 
-export const GoNextLink = ({
-  children,
-  withArrow = true,
-  gatsby = false,
-  className,
-  white,
-  mobileMsp,
-  ...props
-}) => {
+export const GoNextLink = ({ children, withArrow = true, gatsby = false, className, ...props }) => {
   const Container = gatsby ? GatsbyLink : NativeLink;
 
   return (
-    <Container
-      className={cn(styles.goNextLink, className, {
-        [styles.white]: white,
-        [styles.mobileMsp]: mobileMsp,
-      })}
-      {...props}
-    >
+    <Container className={cn(className, styles.goNextLink)} {...props}>
       {children}
       {withArrow && <ArrowNext />}
     </Container>

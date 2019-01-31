@@ -298,7 +298,7 @@ export const slideRight = css`
 `;
 
 const styles = css`
-  .white {
+  a.white {
     color: rgba(255, 255, 255, 0.5);
     > svg {
       fill: rgba(255, 255, 255, 0.5);
@@ -312,7 +312,7 @@ const styles = css`
       }
     }
   }
-  .mobileMsp {
+  a.mobileMsp {
     color: rgba(10, 35, 66, 0.5);
     > svg {
       fill: rgba(10, 35, 66, 0.5);
