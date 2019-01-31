@@ -6,8 +6,16 @@ import { UnorderedList } from "../../components/LongreadAtoms/UnorderedList";
 import { Section, Article, H1, H3, Paragraph } from "../../components/LongreadAtoms/Longread";
 import { TelegramButton } from "../../components/Buttons/TelegramButton";
 import { Header } from "../../components/PortfolioLongread/Header";
-import { TasksIconsBlock } from "../../components/GeomonitoringLongread/TasksIconsBlock/TasksIconsBlock";
+import { Figures } from "../../components/Figures/Figures";
 import { getProject } from "../../routes";
+
+import { ReactComponent as Ic1 } from "../../img/portfolio/geomonitoring/icons/ic-1.svg";
+import { ReactComponent as Ic2 } from "../../img/portfolio/geomonitoring/icons/ic-2.svg";
+import { ReactComponent as Ic3 } from "../../img/portfolio/geomonitoring/icons/ic-3.svg";
+import { ReactComponent as Ic4 } from "../../img/portfolio/geomonitoring/icons/ic-4.svg";
+import { ReactComponent as Ic5 } from "../../img/portfolio/geomonitoring/icons/ic-5.svg";
+import { ReactComponent as Ic6 } from "../../img/portfolio/geomonitoring/icons/ic-6.svg";
+
 import screenshot1 from "../../img/portfolio/geomonitoring/bank-1.png";
 import screenshot2 from "../../img/portfolio/geomonitoring/bank-2.png";
 import screenshot3 from "../../img/portfolio/geomonitoring/bank-3.png";
@@ -24,6 +32,15 @@ import cardBottom from "../../img/portfolio/geomonitoring/cards/bottomCard.png";
 import styles, { GeomonitoringContainer, Screenshot, Footer } from "../../styles/geomonitoring";
 
 const images = [layer1, layer2, cardLeft, cardRight, cardBottom];
+
+const tasks = [
+  { Icon: Ic1, text: "Оценка стоимости с помощью подбора аналогов" },
+  { Icon: Ic2, text: "Планирование выездного мониторинга с учётом местоположения объектов" },
+  { Icon: Ic3, text: "Интерактивная карта объектов со статусами проверок" },
+  { Icon: Ic4, text: "Простые формы проверки объектов через планшет" },
+  { Icon: Ic5, text: "Контроль работы сотрудников в онлайн-режиме" },
+  { Icon: Ic6, text: "Аналитика по залоговому портфелю" },
+];
 
 class Geomonitoring extends PureComponent {
   static defaultProps = {
@@ -71,7 +88,7 @@ class Geomonitoring extends PureComponent {
           </Section>
           <Section withoutPaddingBottom>
             <Article>
-              <TasksIconsBlock />
+              <Figures figures={tasks} />
             </Article>
           </Section>
           <Section>

@@ -1,6 +1,6 @@
 import styled from "astroturf";
 
-export const TasksIconsBlockContainer = styled("section")`
+export const FiguresSection = styled("section")`
   display: flex;
   flex-wrap: wrap;
   margin: 1rem 0;
@@ -18,7 +18,7 @@ export const TasksIconsBlockContainer = styled("section")`
   }
 `;
 
-export const Task = styled("div")`
+export const Figure = styled("figure")`
   display: flex;
   align-items: center;
   flex-direction: column;

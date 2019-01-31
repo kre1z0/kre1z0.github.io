@@ -25,6 +25,14 @@ export class CompanyPhoto extends PureComponent {
     item: null,
   };
 
+  componentDidMount() {
+    const { items } = this.props;
+
+    window.addEventListener("resize", this.onResize);
+
+    this.setState({ ...this.getRandomElements(items) });
+  }
+
   componentWillUnmount() {
     window.removeEventListener("resize", this.onResize);
     clearInterval(this.interval);
@@ -85,11 +93,6 @@ export class CompanyPhoto extends PureComponent {
   };
 
   onAllAvatarsLoaded = () => {
-    const { items } = this.props;
-
-    window.addEventListener("resize", this.onResize);
-
-    this.setState({ ...this.getRandomElements(items) });
     this.interval = setInterval(() => this.updatePhoto(), 2000);
   };
 
