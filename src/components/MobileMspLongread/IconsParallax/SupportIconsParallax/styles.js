@@ -103,6 +103,7 @@ const styles = css`
       }
     }
     @media (max-width: 991px) {
+      max-width: 44.2857rem;
       svg {
         width: 1.0285rem;
         height: 1.0285rem;

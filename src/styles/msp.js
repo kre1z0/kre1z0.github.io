@@ -79,6 +79,11 @@ const styles = css`
   .selectorContainer {
     margin: 0 auto;
     padding: 1.2rem 1.4285rem;
+    @media (max-height: 700px) and (min-width: 1200px) and (orientation: landscape) {
+      max-width: 64.2857rem;
+      width: 100%;
+      padding-left: 0;
+    }
   }
   .analyticSection {
     display: flex;
