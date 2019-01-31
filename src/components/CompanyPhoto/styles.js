@@ -38,6 +38,13 @@ export const CompanyPhotoContainer = styled("section")`
   flex-wrap: wrap;
   width: 100vw;
   background-color: rgba(38, 44, 55, 0.7);
+  min-height: calc(100vw / 5 * 3);
+  @media (max-width: 991px) {
+    min-height: calc(100vw / 4 * 3);
+  }
+  @media (max-width: 767px) {
+    min-height: calc(100vw / 2 * 3);
+  }
 `;
 
 export const CompanyHeader = styled("header")`
