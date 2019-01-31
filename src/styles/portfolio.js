@@ -6,7 +6,7 @@ const styles = css`
       width: 100%;
       max-width: 42.1428rem;
       max-height: 51.1428rem;
-      height: calc(100% - 4rem);
+      height: calc(100% - 7rem);
       > div {
         width: 100%;
         height: 100%;
@@ -15,29 +15,38 @@ const styles = css`
           height: 100%;
         }
       }
-      @media all and (max-height: 777px), (max-width: 1144px) {
+      @media (max-width: 1199px) {
         max-width: 32.1428rem;
         max-height: 33.7857rem;
       }
-      @media all and (max-height: 600px), (max-width: 1000px) {
+      @media (max-height: 700px) and (min-width: 1200px) and (orientation: landscape) {
+        max-width: 34.1428rem;
+      }
+      @media (max-width: 991px) {
         max-width: 26.2857rem;
         max-height: 30.4857rem;
       }
-      @media (max-width: 767px) {
-        max-width: 48vw;
-        max-height: 14.3571rem;
+      @media (max-width: 767px) and (orientation: landscape) {
+        flex-shrink: 0;
+        max-width: 20rem;
+        height: 14.2857rem;
+        max-height: calc(100vh - 11rem);
       }
-      @media (max-width: 840px) and (orientation: landscape) {
-        max-width: 48vw;
-        max-height: 14.3571rem;
+      @media (max-width: 767px) and (orientation: landscape) and (max-height: 320px) {
+        max-width: 20rem;
+        align-items: flex-start;
+        max-height: calc(100vh - 6.4rem);
       }
-      @media (max-width: 480px) {
-        left: 1.7857rem;
-        position: absolute;
-        width: calc(100vw - 1.7857rem * 2);
-        max-width: none;
-        max-height: 16.0714rem;
-        bottom: 2.8571rem;
+    }
+    @media (max-width: 767px) and (orientation: landscape) and (max-height: 320px) {
+      align-items: flex-start;
+    }
+    @media (max-width: 767px) and (orientation: portrait) {
+      flex-direction: column;
+      > section:last-child {
+        max-height: 16.1428rem;
+        height: 100%;
+        margin-bottom: 3.4rem;
       }
     }
   }
@@ -50,13 +59,16 @@ const styles = css`
         width: 100%;
       }
     }
-    @media (max-width: 840px) and (orientation: landscape) {
+    @media (max-width: 767px) and (orientation: landscape) {
       > div {
         width: 100%;
         > menu {
           display: none !important;
         }
       }
+    }
+    @media (max-width: 767px) and (orientation: portrait) {
+      height: auto;
     }
   }
 `;

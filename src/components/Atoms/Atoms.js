@@ -146,15 +146,3 @@ export const GatsbyLink = styled(GLink)`
     font-size: 0.8571rem;
   }
 `;
-
-export const Text = styled("p")`
-  line-height: normal;
-  margin: 0;
-  font-size: 1.1428rem;
-  @media (max-width: 1199px) {
-    font-size: 1rem;
-  }
-  @media (max-width: 991px) {
-    font-size: 0.85714rem;
-  }
-`;

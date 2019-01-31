@@ -1,10 +1,9 @@
-import styled from "astroturf";
-import { Link as GLink } from "gatsby";
+import styled, { css } from "astroturf";
 
 export const HowWeAreWorkingContainer = styled("div")`
   display: flex;
   flex-direction: column;
-  @media (max-width: 940px) {
+  @media (max-width: 991px) {
     will-change: opacity, transform;
     padding: 1.7142rem;
     width: 100%;
@@ -21,7 +20,7 @@ export const HowWeAreWorkingContainer = styled("div")`
 export const Title = styled("h4")`
   font-size: 1.2857rem;
   font-weight: 600;
-  @media (max-width: 940px) {
+  @media (max-width: 991px) {
     font-size: 1.1428rem;
     &:nth-child(4) {
       display: none;
@@ -41,7 +40,7 @@ export const Title = styled("h4")`
 export const Paragraph = styled("p")`
   font-size: 1.1428rem;
   line-height: normal;
-  @media (max-width: 940px) {
+  @media (max-width: 991px) {
     font-size: 0.7142rem;
     margin-bottom: 0.8rem;
     ~ br {
@@ -89,19 +88,13 @@ export const Badge = styled("div")`
   margin-bottom: 0.5rem;
 `;
 
-export const HowWeAreWorkingLink = styled(GLink)`
-  text-decoration: none;
-  align-self: flex-end;
-  font-size: 1.1428rem;
-  font-weight: 500;
-  color: #90c53d;
-  @media (max-width: 940px) {
-    align-self: flex-start;
-    font-size: 0.7142rem;
-  }
-  @media (hover: hover) {
-    &:hover {
-      text-decoration: underline;
+const styles = css`
+  .howWeAreWorkingLink {
+    align-self: flex-end;
+    @media (max-width: 940px) {
+      align-self: flex-start;
     }
   }
 `;
+
+export default styles;

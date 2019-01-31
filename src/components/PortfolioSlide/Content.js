@@ -3,7 +3,8 @@ import PropTypes from "prop-types";
 import { Transition, TransitionGroup } from "react-transition-group";
 import cn from "classnames";
 
-import { Content as ContentBlock, Description, slideDown, slideUp, Title } from "./styles";
+import { GoNextLink } from "../../components/GoNextLink/GoNextLink";
+import styles, { Content as ContentBlock, Description, slideDown, slideUp, Title } from "./styles";
 import { fade } from "../Transition/animation";
 
 import { transition } from "./styles";
@@ -12,7 +13,9 @@ export class Crutch extends PureComponent {
   render() {
     const { status, direction, description, title, text, id } = this.props;
 
-    const color = id === "mobileMsp" ? "#0a2342" : "#fff";
+    const isMobileMsp = id === "mobileMsp";
+
+    const color = isMobileMsp ? "#0a2342" : "#fff";
 
     return (
       <ContentBlock
@@ -29,6 +32,9 @@ export class Crutch extends PureComponent {
           {description ||
             "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam eaque eligendi iusto labore nisi quas. Lorem ipsum dolor sit amet. Consectetur adi. "}
         </Description>
+        <GoNextLink className={cn(isMobileMsp ? styles.mobileMsp : styles.white)}>
+          Подробнее
+        </GoNextLink>
       </ContentBlock>
     );
   }

@@ -2,105 +2,102 @@ import React, { PureComponent } from "react";
 import styled from "astroturf";
 
 const MultiScreenshotsContainer = styled("div")`
-  will-change: opacity, transform;
-  top: 6.4%;
-  left: -22%;
-  position: absolute;
-  width: 100%;
-  height: 100%;
+  display: flex;
+  align-items: center;
   > img {
+    position: relative;
+    margin-top: 14%;
     height: auto;
-    position: absolute;
     &:nth-child(1) {
-      width: 50%;
       z-index: 3;
+      max-height: 54vh;
+      max-height: calc(var(--vh, 1vh) * 54);
     }
     &:nth-child(2) {
+      transform: translateX(-101%);
       z-index: 2;
-      width: 40%;
-      top: 6%;
-      left: 1%;
+      max-height: calc(54vh - 5rem);
+      max-height: calc(var(--vh, 1vh) * 54 - 5rem);
     }
     &:nth-child(3) {
+      max-height: calc(54vh - 7rem);
+      max-height: calc(var(--vh, 1vh) * 54 - 7rem);
       z-index: 1;
-      width: 38%;
-      top: 7%;
-      left: 0;
+      transform: translateX(-217%);
     }
   }
   &.transitionEnd {
     > img {
-      transition: left 500ms cubic-bezier(0.2, 1, 0.6, 1) 0s;
+      transition: transform 500ms cubic-bezier(0.2, 1, 0.6, 1) 0s;
       &:nth-child(2) {
-        left: 38%;
+        transform: translateX(-30%);
       }
       &:nth-child(3) {
-        left: 64.4%;
+        transform: translateX(-68%);
       }
-      @media all and (max-height: 777px), (max-width: 1144px) {
+    }
+  }
+  @media (max-width: 1199px) {
+    > img {
+      &:nth-child(1) {
+        max-width: 38%;
+      }
+      &:nth-child(2) {
+        max-width: calc(38% - 2rem);
+      }
+      &:nth-child(3) {
+        max-width: calc(38% - 3rem);
+      }
+    }
+  }
+  @media (max-width: 991px) {
+    > img {
+      margin-top: 7rem;
+      &:nth-child(1) {
+        max-width: 44%;
+      }
+      &:nth-child(2) {
+        max-width: calc(44% - 2rem);
+      }
+      &:nth-child(3) {
+        max-width: calc(44% - 3rem);
+      }
+    }
+  }
+  @media (max-width: 767px) and (orientation: landscape) {
+    margin-top: 4%;
+    width: 100%;
+    height: 100%;
+    flex-direction: row-reverse;
+    > img {
+      &:nth-child(-n + 3) {
+        margin-top: 0;
+        width: 100%;
+        max-height: none;
+        left: 5%;
+      }
+      &:nth-child(1) {
+        max-width: 40%;
+      }
+      &:nth-child(2) {
+        transform: translateX(101%);
+      }
+      &:nth-child(3) {
+        transform: translateX(217%);
+      }
+    }
+    &.transitionEnd {
+      > img {
+        transition: transform 500ms cubic-bezier(0.2, 1, 0.6, 1) 0s;
+        &:nth-child(1) {
+          transform: translateX(0);
+        }
         &:nth-child(2) {
-          left: 33%;
+          transform: translateX(30%);
         }
         &:nth-child(3) {
-          left: 55%;
+          transform: translateX(64%);
         }
-      }
-    }
-  }
-  @media all and (max-height: 777px), (max-width: 1144px) {
-    top: 4%;
-    left: -14%;
-    > img {
-      &:nth-child(1) {
-        width: 42%;
-      }
-      &:nth-child(2) {
-        width: 34%;
-        top: 7%;
-      }
-      &:nth-child(3) {
-        width: 30%;
-        top: 10%;
-      }
-    }
-  }
-  @media (max-height: 600px), (max-width: 1000px) {
-    top: 8%;
-  }
-  @media (max-width: 840px) and (orientation: landscape) {
-    left: auto;
-    right: -10vw;
-    top: 5%;
-    margin: auto 0;
-    width: 50vw;
-    > img {
-      &:nth-child(2) {
-        top: 10%;
-      }
-      &:nth-child(3) {
-        top: 13%;
-      }
-    }
-  }
-  @media (max-width: 480px) {
-    top: auto;
-    left: 1.4vw;
-    right: auto;
-    bottom: 8rem;
-    margin: 0;
-    width: 100vw;
-    > img {
-      &:nth-child(1) {
-        top: auto;
-        bottom: 0;
-      }
-      &:nth-child(2) {
-        top: auto;
-        bottom: 1.2rem;
-      }
-      &:nth-child(3) {
-        top: auto;
-        bottom: 1.75rem;
       }
     }
   }

@@ -18,6 +18,8 @@ export const Background = styled("div")`
     transform: translate(-50%, -50%);
   }
   &.disableTransition {
+    opacity: 1;
     transition: none !important;
+    transform: none;
   }
 `;

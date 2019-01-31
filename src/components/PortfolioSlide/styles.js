@@ -1,14 +1,13 @@
 import styled, { css } from "astroturf";
 import { TransitionGroup } from "react-transition-group";
 
-import { Title as H2, Text } from "../../components/Atoms/Atoms";
+import { Title as H2 } from "../../components/Atoms/Atoms";
 import { Button } from "../../components/Buttons/Buttons";
 
 export const PortfolioSlideContainer = styled("div")`
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   width: 100%;
   height: 100%;
 `;
@@ -22,17 +21,10 @@ export const SliderBackground = styled("div")`
   will-change: top, background-color;
   transition: all 200ms ease;
   @media (hover: hover) {
-    @media (min-width: 769px) {
-      &.hovered {
-        top: -1.1428rem;
-        width: calc(100% + 1.1428rem);
-        height: calc(100% + 1.1428rem * 2);
-        @media all and (max-height: 777px), (max-width: 1144px) {
-          top: -0.9rem;
-          width: calc(100% + 0.9rem);
-          height: calc(100% + 0.9em * 2);
-        }
-      }
+    &.hovered {
+      top: -1.1428rem;
+      width: calc(100% + 1.1428rem);
+      height: calc(100% + 1.1428rem * 2);
     }
   }
   @media (max-width: 991px) {
@@ -45,11 +37,19 @@ export const Title = styled(H2)`
   margin-bottom: 0.84rem;
 `;
 
-export const Description = styled(Text)`
+export const Description = styled("p")`
   color: #fff;
-  @media all and (max-height: 600px) {
-    max-height: 5.4rem;
-    overflow: hidden;
+  margin-bottom: 1rem;
+  line-height: normal;
+  font-size: 1.1428rem;
+  @media (max-width: 1199px) {
+    font-size: 1rem;
+  }
+  @media (max-width: 991px) {
+    font-size: 0.85714rem;
+  }
+  @media (max-width: 767px) {
+    margin-bottom: 0.4rem;
   }
 `;
 
@@ -61,25 +61,28 @@ export const Content = styled("div")`
   left: 0;
   right: 0;
   bottom: 0;
-  @media all and (max-height: 777px), (max-width: 1144px) {
-    padding: 0 2.1428rem 2.1428rem 2.1428rem;
+  @media (max-height: 700px) and (min-width: 1200px) and (orientation: landscape) {
+    padding: 0 2rem 2rem 2rem;
   }
-  @media (max-width: 840px) and (orientation: landscape) {
+  @media (max-width: 991px) {
+    padding: 0 2rem 2rem 2rem;
+  }
+  @media (max-width: 767px) {
+    padding: 0 1.4285rem 0 2.4285rem;
+    h2 {
+      font-size: 1rem;
+    }
+  }
+  @media (max-width: 767px) and (orientation: landscape) {
     display: flex;
     width: 100%;
     height: 100%;
     flex-direction: column;
     justify-content: center;
-    padding: 0 2vw 0 7vw;
-    h2 {
-      font-size: 1rem;
-    }
+    padding: 0 1rem 0 3.5714rem;
   }
-  @media (max-width: 480px) {
-    padding: 0 1.4285rem 1.4285rem 1.4285rem;
-    h2 {
-      font-size: 1rem;
-    }
+  @media (max-width: 767px) and (orientation: portrait) {
+    padding: 1rem;
   }
 `;
 
@@ -90,8 +93,8 @@ export const ControlBlock = styled("div")`
   right: 0;
   bottom: -1rem;
   transform: translate(1.1428rem, 1.1428rem);
-  @media all and (max-height: 777px), (max-width: 1144px) {
-    bottom: -2rem;
+  @media (max-width: 991px) {
+    display: none;
   }
 `;
 
@@ -100,6 +103,9 @@ export const MobileTitle = styled("h1")`
   font-size: 1.2857rem;
   margin: 0;
   left: 0;
+  @media (max-width: 767px) and (orientation: landscape) and (max-height: 320px) {
+    margin-top: -1rem;
+  }
 `;
 
 const ControlBtn = styled(Button)`
@@ -135,7 +141,7 @@ const ControlBtn = styled(Button)`
       opacity: 0.25;
     }
   }
-  @media all and (max-height: 777px), (max-width: 1144px) {
+  @media (max-width: 1199px) {
     width: 2.8571rem;
     height: 2.8571rem;
   }
@@ -152,54 +158,62 @@ export const NextBtn = styled(ControlBtn)`
 `;
 
 export const ScreenshotTransitionGroup = styled(TransitionGroup)`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  @media (max-width: 840px) and (orientation: landscape) {
+  display: flex;
+  align-items: center;
+  position: relative;
+  left: -7.1428rem;
+  flex-grow: 1;
+  flex-shrink: 0;
+  max-height: calc(100% - 14.2857rem);
+  @media (max-width: 991px) {
+    left: -3.4rem;
+  }
+  @media (max-width: 767px) and (orientation: landscape) {
+    top: 50%;
+    left: -17.4rem;
     display: flex;
     align-items: center;
     width: 100%;
     height: 100%;
-    transform: translateX(calc(-100% + 4vw));
+    transform: translate(0, -50%);
+    max-height: calc(100% - 2rem);
+  }
+  @media (max-width: 767px) and (orientation: portrait) {
+    width: calc(100% + 1rem);
+    height: 100%;
+    max-height: none;
+    left: 1rem;
+    transform: translateY(calc(-100% + 5rem));
   }
 `;
 
 export const Screenshot = styled("img")`
   will-change: opacity, transform;
   position: absolute;
+  top: 16%;
   border-radius: 0.1428rem;
-  margin-top: 7.1428rem;
-  width: 46.4285rem;
+  max-width: 46.4285rem;
+  max-height: 41vh;
   height: auto;
-  max-width: none;
-  right: 3.125rem;
   box-shadow: 1.1428rem 1.1428rem 2.2857rem 0 rgba(50, 57, 69, 0.25);
-  @media all and (max-height: 777px), (max-width: 1144px) {
-    margin-top: 2.1428rem;
-    width: 37.1428rem;
-    right: 2.1428rem;
+  @media (max-height: 700px) and (min-width: 1200px) and (orientation: landscape) {
+    top: 10%;
   }
-  @media all and (max-height: 600px), (max-width: 1000px) {
-    margin-top: 4.2857rem;
-    right: 2.8571rem;
-    width: 26.2857rem;
+  @media (max-width: 1199px) {
+    max-width: 100%;
   }
-  @media (max-width: 840px) and (orientation: landscape) {
+  @media (max-width: 991px) {
+    top: 18%;
+  }
+  @media (max-width: 767px) and (orientation: landscape) {
+    top: 0;
     right: 0;
-    margin: auto 0;
-    width: 48vw;
-    @media (max-width: 767px) and (orientation: landscape) {
-      width: 51vw;
-    }
+    height: 100%;
+    max-height: none;
   }
-  @media (max-width: 480px) {
-    left: 6.4vw;
-    right: auto;
-    bottom: 9.5714rem;
-    margin: 0;
-    width: 100vw;
+  @media (max-width: 767px) and (orientation: portrait) {
+    top: auto;
+    bottom: 0;
   }
 `;
 
@@ -282,3 +296,36 @@ export const slideRight = css`
     transform: translateX(20%);
   }
 `;
+
+const styles = css`
+  .white {
+    color: rgba(255, 255, 255, 0.5);
+    > svg {
+      fill: rgba(255, 255, 255, 0.5);
+    }
+    @media (hover: hover) {
+      &:hover {
+        color: rgba(255, 255, 255, 1);
+        svg {
+          fill: rgba(255, 255, 255, 1);
+        }
+      }
+    }
+  }
+  .mobileMsp {
+    color: rgba(10, 35, 66, 0.5);
+    > svg {
+      fill: rgba(10, 35, 66, 0.5);
+    }
+    @media (hover: hover) {
+      &:hover {
+        color: #0a2342;
+        svg {
+          fill: #0a2342;
+        }
+      }
+    }
+  }
+`;
+
+export default styles;

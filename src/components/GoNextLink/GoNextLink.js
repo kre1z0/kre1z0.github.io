@@ -1,16 +1,20 @@
 import React from "react";
+import PropTypes from "prop-types";
 import cn from "classnames";
 import styled, { css } from "astroturf";
 import { Link as GatsbyLink } from "gatsby";
 
 import { ReactComponent as ArrowNext } from "../../img/icons/arrow-next-more.svg";
 
-const NativeLink = styled("a")``;
+const NativeLink = styled("a")`
+  transition: color 200ms ease-in;
+`;
 
 const styles = css`
   .goNextLink {
+    display: inline-block;
+    line-height: normal;
     text-decoration: none;
-    margin-top: 1rem;
     cursor: pointer;
     color: #90c53d;
     font-weight: 600;
@@ -21,7 +25,6 @@ const styles = css`
       margin-left: 0.7142rem;
       fill: #90c53d;
       width: 0.85714rem;
-      height: 0.7428rem;
     }
     @media (hover: hover) {
       &:hover {
@@ -31,16 +34,45 @@ const styles = css`
         }
       }
     }
+    @media (max-width: 991px) {
+      font-size: 0.9285rem;
+    }
+    @media (max-width: 767px) {
+      font-size: 0.7857rem;
+      svg {
+        width: 0.71428rem;
+      }
+    }
   }
 `;
 
-export const GoNextLink = ({ children, withArrow = true, gatsby = false, className, ...props }) => {
+export const GoNextLink = ({
+  children,
+  withArrow = true,
+  gatsby = false,
+  className,
+  white,
+  mobileMsp,
+  ...props
+}) => {
   const Container = gatsby ? GatsbyLink : NativeLink;
 
   return (
-    <Container className={cn(styles.goNextLink, className)} {...props}>
+    <Container
+      className={cn(styles.goNextLink, className, {
+        [styles.white]: white,
+        [styles.mobileMsp]: mobileMsp,
+      })}
+      {...props}
+    >
       {children}
       {withArrow && <ArrowNext />}
     </Container>
   );
+};
+
+GoNextLink.propTypes = {
+  withArrow: PropTypes.bool,
+  gatsby: PropTypes.bool,
+  className: PropTypes.string,
 };

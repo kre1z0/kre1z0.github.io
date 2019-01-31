@@ -1,7 +1,8 @@
 import React, { PureComponent } from "react";
 
+import { GoNextLink } from "../components/GoNextLink/GoNextLink";
 import { MainAnimation } from "../components/MainAnimation/MainAnimation";
-import { HorizontalRule, GatsbyLink } from "../components/Atoms/Atoms";
+import { HorizontalRule } from "../components/Atoms/Atoms";
 import { BigH1 } from "../components/Atoms/Atoms";
 
 export class IndexPage extends PureComponent {
@@ -16,7 +17,9 @@ export class IndexPage extends PureComponent {
             <BigH1>
               Геосервисы для <br /> принятия решений
             </BigH1>
-            <GatsbyLink to="/company">Подробнее о нас</GatsbyLink>
+            <GoNextLink to="/company" gatsby>
+              О компании
+            </GoNextLink>
           </>
         }
       />

@@ -1,14 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import {
+import { GoNextLink } from "../../components/GoNextLink/GoNextLink";
+import styles, {
   HowWeAreWorkingContainer,
   Title,
   Paragraph,
   PrinciplesContainer,
   Principle,
   Badge,
-  HowWeAreWorkingLink,
 } from "./styles";
 
 export const HowWeAreWorking = ({ items, className }) => {
@@ -38,7 +38,9 @@ export const HowWeAreWorking = ({ items, className }) => {
           ))}
         </PrinciplesContainer>
       )}
-      <HowWeAreWorkingLink to="/work">Подробнее о работе в Everpoint</HowWeAreWorkingLink>
+      <GoNextLink to="/work" gatsby className={styles.howWeAreWorkingLink}>
+        Подробнее о работе в Everpoint
+      </GoNextLink>
     </HowWeAreWorkingContainer>
   );
 };

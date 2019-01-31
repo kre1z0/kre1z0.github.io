@@ -19,4 +19,7 @@ export const BulletsContainer = styled("div")`
   @media (max-width: 767px) {
     font-size: 0.7142rem;
   }
+  @media (max-width: 767px) and (orientation: landscape) and (max-height: 320px) {
+    transform: translate(-50%, calc(100% + 0.2rem));
+  }
 `;

@@ -16,7 +16,7 @@ const ScrollContext = React.createContext();
 export class MainLayoutProviderComponent extends Component {
   constructor(props) {
     super(props);
-    this.onDebouncedNavigateTo = debounce(this.onNavigateTo, 400);
+    this.onDebouncedNavigateTo = debounce(this.onNavigateTo, 100);
     this.onResize = debounce(this.onResize, 200);
     this.checkBlockIsCenter = throttle(this.checkBlockIsCenter, 100);
     this.checkNavbarIntoContent = throttle(this.checkNavbarIntoContent, 100);
@@ -547,7 +547,10 @@ export class MainLayoutProviderComponent extends Component {
             disableHover={disableHover || !transitionEnd}
             plugins={{
               disableScrollByDirection: {
-                direction: { x: true, y: mobileMenuIsOpen },
+                direction: {
+                  x: true,
+                  y: mobileMenuIsOpen || (currentRoute && !currentRoute.scrollable),
+                },
               },
               determineScrollingEvent: { callback: this.determineScrollingEvent },
             }}

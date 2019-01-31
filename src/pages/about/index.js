@@ -1,11 +1,12 @@
 import React, { PureComponent } from "react";
 import cn from "classnames";
 
+import { GoNextLink } from "../../components/GoNextLink/GoNextLink";
 import { BackendComponent } from "../../components/Backend/Backend";
 import { Bullets } from "../../components/Bullets/Bullets";
 import { NewsCard } from "../../components/NewsCard/NewsCard";
 import { MainAnimation } from "../../components/MainAnimation/MainAnimation";
-import { H2, GatsbyLink } from "../../components/Atoms/Atoms";
+import { H2 } from "../../components/Atoms/Atoms";
 import { MainLayoutConsumer } from "../../components/MainLayoutProvider/MainLayoutProvider";
 import { ConstellationPoints } from "../../components/ConstellationPoints/ConstellationPoints";
 import { fade, slideUp, transition } from "../../components/Transition/animation";
@@ -48,7 +49,9 @@ export class About extends PureComponent {
               leftSide={
                 <>
                   <H2 as="h1">{text}</H2>
-                  <GatsbyLink to="/news">Все комментарии</GatsbyLink>
+                  <GoNextLink to="/news" gatsby>
+                    Все комментарии
+                  </GoNextLink>
                 </>
               }
               containerClassName={styles.aboutContainer}
