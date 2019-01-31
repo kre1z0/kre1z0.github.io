@@ -20,6 +20,7 @@ export class MainLayoutProviderComponent extends Component {
     this.onResize = debounce(this.onResize, 200);
     this.checkBlockIsCenter = throttle(this.checkBlockIsCenter, 100);
     this.checkNavbarIntoContent = throttle(this.checkNavbarIntoContent, 100);
+    this.scrollToBlock = debounce(this.scrollToBlock, 100);
   }
 
   state = {
@@ -28,12 +29,13 @@ export class MainLayoutProviderComponent extends Component {
     coloredNav: false,
     currentRoute: null,
     direction: 1,
-    transitionEnd: false,
+    transitionEnd: true,
     disableHover: false,
     mobileMenuIsOpen: false,
     damping: 0.1,
     thresholdIsActive: false,
     preventDefaultTouchmoveEvent: true,
+    disableTransition: true,
 
     // sections
     isSwipeEvent: false,
@@ -221,6 +223,7 @@ export class MainLayoutProviderComponent extends Component {
     if (slider && !up && !down && !routeSwipeUpAndDown) {
       const sectionDirection = selectedSectionIndex > nextIndex ? -1 : 1;
       this.setState({
+        disableTransition: false,
         sectionDirection,
         selectedSectionIndex: nextIndex,
       });
@@ -229,6 +232,7 @@ export class MainLayoutProviderComponent extends Component {
 
       if (jumped) {
         this.setState({
+          disableTransition: false,
           selectedSectionIndex: 0,
           transitionEnd: false,
           direction,
@@ -358,6 +362,7 @@ export class MainLayoutProviderComponent extends Component {
 
     this.setState(
       {
+        disableTransition: false,
         selectedSectionIndex: selectedSectionIndex || 0,
         direction,
         transitionEnd,
@@ -440,6 +445,7 @@ export class MainLayoutProviderComponent extends Component {
         isSwipeEvent,
         selectedSectionIndex: index,
         transitionEnd: false,
+        disableTransition: false,
         id: pageId,
         navigate,
       });
@@ -455,6 +461,7 @@ export class MainLayoutProviderComponent extends Component {
       this.setState({
         isSwipeEvent,
         sectionDirection,
+        disableTransition: false,
         selectedSectionIndex: nextValue,
       });
     }
@@ -492,6 +499,7 @@ export class MainLayoutProviderComponent extends Component {
       mobileMenuIsOpen,
       damping,
       preventDefaultTouchmoveEvent,
+      disableTransition,
 
       // sections
       isSwipeEvent,
@@ -533,11 +541,14 @@ export class MainLayoutProviderComponent extends Component {
           onSwiped={this.onSwiped}
         >
           <ScrollBar
+            disableTransition={disableTransition}
             ref={this.onScrollBarRef}
             damping={damping}
             disableHover={disableHover || !transitionEnd}
             plugins={{
-              disableScrollByDirection: { direction: { x: true, y: mobileMenuIsOpen } },
+              disableScrollByDirection: {
+                direction: { x: true, y: mobileMenuIsOpen },
+              },
               determineScrollingEvent: { callback: this.determineScrollingEvent },
             }}
             onScroll={this.onScroll}

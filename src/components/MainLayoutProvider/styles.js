@@ -28,4 +28,9 @@ export const ScrollBar = styled(Scrollbar)`
       pointer-events: none;
     }
   }
+  &.disableTransition {
+    * {
+      transition: none !important;
+    }
+  }
 `;
