@@ -17,6 +17,7 @@ export class RightSide extends Component {
     x: PropTypes.number,
     y: PropTypes.number,
     base64styles: PropTypes.string,
+    disableTransition: PropTypes.bool,
   };
 
   shouldComponentUpdate(
@@ -27,10 +28,19 @@ export class RightSide extends Component {
       x: nextX,
       y: nextY,
       base64styles: nextBase64styles,
+      disableTransition: nextDisableTransition,
     },
     nextState,
   ) {
-    const { status, selectedSectionIndex, transitionEnd, x, y, base64styles } = this.props;
+    const {
+      status,
+      selectedSectionIndex,
+      transitionEnd,
+      x,
+      y,
+      base64styles,
+      disableTransition,
+    } = this.props;
 
     return (
       status !== nextStatus ||
@@ -38,7 +48,8 @@ export class RightSide extends Component {
       transitionEnd !== nextTransitionEnd ||
       x !== nextX ||
       y !== nextY ||
-      base64styles !== nextBase64styles
+      base64styles !== nextBase64styles ||
+      disableTransition !== nextDisableTransition
     );
   }
 
@@ -49,11 +60,13 @@ export class RightSide extends Component {
       rightSideClassName,
       withRightSideAnimation,
       children,
+      disableTransition,
     } = this.props;
 
     return (
       <WillChange className={willChangeRightSideClassName}>
         <RightSideBlock
+          disableTransition={disableTransition}
           className={cn(
             rightSideClassName,
             withRightSideAnimation && slideUp[status],

@@ -533,6 +533,7 @@ export class MainLayoutProviderComponent extends Component {
           selectedSectionIndex,
           sections,
           sectionDirection,
+          disableTransition,
         }}
       >
         <Swiper
@@ -541,7 +542,6 @@ export class MainLayoutProviderComponent extends Component {
           onSwiped={this.onSwiped}
         >
           <ScrollBar
-            disableTransition={disableTransition}
             ref={this.onScrollBarRef}
             damping={damping}
             disableHover={disableHover || !transitionEnd}

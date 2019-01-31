@@ -17,4 +17,7 @@ export const Background = styled("div")`
     left: 50%;
     transform: translate(-50%, -50%);
   }
+  &.disableTransition {
+    transition: none !important;
+  }
 `;

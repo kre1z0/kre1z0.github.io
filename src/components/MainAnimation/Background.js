@@ -14,14 +14,27 @@ export class Background extends Component {
     y: PropTypes.number,
     direction: PropTypes.number,
     base64styles: PropTypes.string,
+    disableTransition: PropTypes.bool,
   };
 
   shouldComponentUpdate(
-    { status: nextStatus, x: nextX, y: nextY, base64styles: nextBase64styles },
+    {
+      status: nextStatus,
+      x: nextX,
+      y: nextY,
+      base64styles: nextBase64styles,
+      disableTransition: nextDisableTransition,
+    },
     nextState,
   ) {
-    const { status, x, y, base64styles } = this.props;
-    return status !== nextStatus || x !== nextX || y !== nextY || base64styles !== nextBase64styles;
+    const { status, x, y, base64styles, disableTransition } = this.props;
+    return (
+      status !== nextStatus ||
+      x !== nextX ||
+      y !== nextY ||
+      base64styles !== nextBase64styles ||
+      disableTransition !== nextDisableTransition
+    );
   }
 
   render() {
@@ -35,6 +48,7 @@ export class Background extends Component {
       status,
       backgroundClassName,
       base64styles,
+      disableTransition,
       ...props
     } = this.props;
     // about page slider
@@ -54,6 +68,7 @@ export class Background extends Component {
             style={{
               ...aboutBgStyle,
             }}
+            disableTransition={disableTransition}
             onTransitionEnd={onTransitionEnd}
             className={cn(
               direction > 0 ? scaleIn[status] : scaleOut[status],

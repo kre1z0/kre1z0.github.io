@@ -30,6 +30,7 @@ class MainAnimationBase extends PureComponent {
     backgroundClassName: PropTypes.string,
     withRightSideAnimation: PropTypes.bool,
     onLeftSideSectionRef: PropTypes.func,
+    disableTransition: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -52,6 +53,7 @@ class MainAnimationBase extends PureComponent {
       onLeftSideSectionRef,
       x,
       y,
+      disableTransition,
     } = this.props;
 
     return (
@@ -73,6 +75,7 @@ class MainAnimationBase extends PureComponent {
                   {...this.props}
                   transitionEnd={transitionEnd}
                   onTransitionEnd={onTransitionEnd}
+                  disableTransition={disableTransition}
                   direction={direction}
                 />
               </WillChange>
@@ -83,6 +86,7 @@ class MainAnimationBase extends PureComponent {
                   style={{ transform, willChange: transitionEnd && "transform" }}
                 >
                   <LeftSide
+                    disableTransition={disableTransition}
                     ref={onLeftSideSectionRef}
                     className={cn(
                       leftSideClassName,
@@ -97,6 +101,7 @@ class MainAnimationBase extends PureComponent {
 
                 {rightSide && (
                   <RightSide
+                    disableTransition={disableTransition}
                     base64styles={base64styles}
                     x={x}
                     y={y}

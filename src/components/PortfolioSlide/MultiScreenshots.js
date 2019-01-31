@@ -19,7 +19,7 @@ const MultiScreenshotsContainer = styled("div")`
       z-index: 2;
       width: 40%;
       top: 6%;
-      left: 0;
+      left: 1%;
     }
     &:nth-child(3) {
       z-index: 1;

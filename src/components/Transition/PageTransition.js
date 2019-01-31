@@ -11,7 +11,7 @@ export class PageTransition extends PureComponent {
 
     return (
       <MainLayoutConsumer>
-        {({ onExited }) => (
+        {({ onExited, disableTransition }) => (
           <TransitionGroup appear>
             <ReactTransition
               key={location.pathname}
@@ -23,7 +23,7 @@ export class PageTransition extends PureComponent {
             >
               {status => (
                 <MainTransitionContainer>
-                  {React.cloneElement(children, { status, location })}
+                  {React.cloneElement(children, { status, location, disableTransition })}
                 </MainTransitionContainer>
               )}
             </ReactTransition>
