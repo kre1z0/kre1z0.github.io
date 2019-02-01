@@ -36,7 +36,7 @@ const styles = css`
     > section:first-child {
       z-index: 1;
       h1 {
-        @media (max-width: 480px) {
+        @media (max-width: 767px) {
           margin-bottom: 0.4rem;
         }
       }
@@ -65,13 +65,11 @@ const styles = css`
     }
     @media (max-width: 767px) and (max-height: 320px) and (orientation: landscape) {
       > section:first-child {
-        margin-bottom: 3.4rem;
+        margin-bottom: 2rem;
       }
       > section:last-child {
-        max-height: calc(100% - 1rem);
-        margin-bottom: 3.4rem;
-        > div {
-        }
+        max-height: 100%;
+        margin-bottom: 2rem;
       }
     }
   }
@@ -82,17 +80,23 @@ const styles = css`
     top: -13rem;
     left: 0;
     height: calc(100% + 26rem);
-    @media (max-width: 1100px) {
+    @media (max-width: 1199px) {
       top: -20rem;
       left: -82rem;
       width: calc(100% + 100rem);
       height: calc(100% + 51rem);
     }
-    @media (max-width: 480px) {
+    @media (max-width: 767px) and (orientation: portrait) {
       top: -43rem;
       left: -84rem;
       width: calc(100% + 93rem);
       height: calc(100% + 79rem);
+    }
+    @media (max-width: 767px) and (orientation: landscape) {
+      top: -21rem;
+      left: -79rem;
+      width: calc(100% + 90rem);
+      height: calc(100% + 44rem);
     }
   }
 `;

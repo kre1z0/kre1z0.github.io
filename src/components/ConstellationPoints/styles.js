@@ -10,10 +10,10 @@ export const ConstellationPointsContainer = styled("div")`
   @media (max-width: 1250px) {
     width: 30vw;
   }
-  @media (max-width: 1100px) {
+  @media (max-width: 1199px) {
     width: 100vw;
   }
-  @media (max-width: 480px) {
+  @media (max-width: 767px) and (orientation: portrait) {
     width: 400vw;
     left: 50%;
     transform: translate(-50%, calc(-100% - 2rem));
@@ -47,7 +47,7 @@ export const FakePoint = styled(PointMain)`
   top: 50%;
   right: 0;
   transform: translate(calc(-50% - 1.8rem), -50%);
-  @media (max-width: 480px) {
+  @media (max-width: 767px) and (orientation: portrait) {
     top: auto;
     right: auto;
     left: 50%;
@@ -64,60 +64,82 @@ export const Point = styled(PointMain)`
     top: 50%;
     right: 0;
     transform: translate(calc(-50% - 1.8rem), -50%);
-    @media (max-width: 480px) {
+  }
+  &:nth-child(2) {
+    top: 8%;
+    left: 76%;
+  }
+  &:nth-child(3) {
+    top: 32%;
+    left: 40%;
+  }
+  &:nth-child(4) {
+    top: 83%;
+    left: 75%;
+  }
+  &:nth-child(5) {
+    top: 93%;
+    left: 30%;
+  }
+  @media (max-width: 1199px) {
+    &:nth-child(2) {
+      top: 136%;
+      left: 58%;
+    }
+    &:nth-child(3) {
+      top: 30%;
+      left: 49%;
+    }
+    &:nth-child(4) {
+      top: 151%;
+      left: 19%;
+    }
+    &:nth-child(5) {
+      top: 98%;
+      left: 4%;
+    }
+  }
+  @media (max-width: 767px) and (orientation: portrait) {
+    &:nth-child(1) {
       top: auto;
       right: auto;
       left: 50%;
       bottom: 0;
       transform: translate(-50%, 0);
     }
-  }
-  &:nth-child(2) {
-    top: 8%;
-    left: 76%;
-    @media (max-width: 1100px) {
-      top: 93%;
-      left: 63%;
-    }
-    @media (max-width: 480px) {
+    &:nth-child(2) {
       top: 5%;
       left: 31%;
     }
-  }
-  &:nth-child(3) {
-    top: 32%;
-    left: 40%;
-    @media (max-width: 1100px) {
-      top: 30%;
-      left: 49%;
-    }
-    @media (max-width: 480px) {
+    &:nth-child(3) {
       top: 89%;
       left: 20%;
     }
-  }
-  &:nth-child(4) {
-    top: 83%;
-    left: 75%;
-    @media (max-width: 1100px) {
-      top: 42%;
-      left: 25%;
-    }
-    @media (max-width: 480px) {
+    &:nth-child(4) {
       top: 15%;
       left: 10%;
     }
-  }
-  &:nth-child(5) {
-    top: 93%;
-    left: 30%;
-    @media (max-width: 1100px) {
-      top: 98%;
+    &:nth-child(5) {
+      top: 144%;
       left: 4%;
     }
-    @media (max-width: 480px) {
-      top: 88%;
-      left: 4%;
+  }
+  @media (max-width: 767px) and (orientation: landscape) {
+    &:nth-child(2) {
+      top: 119%;
+      left: 56%;
+    }
+    &:nth-child(3) {
+      top: 16%;
+      left: 20%;
+    }
+    &:nth-child(4) {
+      top: 101%;
+      left: -16%;
+    }
+    &:nth-child(5) {
+      top: 174%;
+      left: 17%;
     }
   }
   &.isActive {

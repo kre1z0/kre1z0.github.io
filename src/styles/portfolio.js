@@ -3,6 +3,7 @@ import { css } from "astroturf";
 const styles = css`
   .portfolioContainer {
     > section:last-child {
+      position: relative;
       width: 100%;
       max-width: 42.1428rem;
       max-height: 51.1428rem;
@@ -47,6 +48,9 @@ const styles = css`
         max-height: 16.1428rem;
         height: 100%;
         margin-bottom: 3.4rem;
+        @media (max-height: 490px) {
+          margin-bottom: 2.4rem;
+        }
       }
     }
   }
