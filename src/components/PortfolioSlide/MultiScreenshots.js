@@ -1,5 +1,7 @@
-import React, { PureComponent } from "react";
+import React, { Component } from "react";
 import styled from "astroturf";
+
+import { ImagesDownloadListener } from "../../components/ImagesDownloadListener/ImagesDownloadListener";
 
 const MultiScreenshotsContainer = styled("div")`
   display: flex;
@@ -26,7 +28,8 @@ const MultiScreenshotsContainer = styled("div")`
       transform: translateX(-217%);
     }
   }
-  &.transitionEnd {
+  &.startAnimation,
+  &.disableTransition {
     > img {
       transition: transform 500ms cubic-bezier(0.2, 1, 0.6, 1) 0s;
       &:nth-child(2) {
@@ -86,7 +89,8 @@ const MultiScreenshotsContainer = styled("div")`
         transform: translateX(217%);
       }
     }
-    &.transitionEnd {
+    &.startAnimation,
+    &.disableTransition {
       > img {
         transition: transform 500ms cubic-bezier(0.2, 1, 0.6, 1) 0s;
         &:nth-child(1) {
@@ -108,26 +112,38 @@ const MultiScreenshotsContainer = styled("div")`
       }
     }
   }
+  &.disableTransition {
+    transition: none;
+    > img {
+      transition: none;
+    }
+  }
 `;
 
-export class MultiScreenshots extends PureComponent {
+export class MultiScreenshots extends Component {
   state = {
-    transitionEnd: false,
+    imagesIsLoaded: false,
+    startAnimation: false,
   };
 
   render() {
-    const { transitionEnd } = this.state;
+    const { imagesIsLoaded, startAnimation } = this.state;
     const { screenshot } = this.props;
 
     return (
       <MultiScreenshotsContainer
         {...this.props}
-        transitionEnd={transitionEnd}
-        onTransitionEnd={() => this.setState({ transitionEnd: true })}
+        startAnimation={startAnimation}
+        onTransitionEnd={() => this.setState({ startAnimation: true })}
       >
-        {screenshot.map((img, index) => (
-          <img key={`img-${index}`} src={img} alt={`img-${index}`} />
-        ))}
+        <ImagesDownloadListener
+          images={screenshot}
+          onLoad={() => this.setState({ imagesIsLoaded: true })}
+        />
+        {imagesIsLoaded &&
+          screenshot.map((img, index) => (
+            <img key={`img-${index}`} src={img} alt={`img-${index}`} />
+          ))}
       </MultiScreenshotsContainer>
     );
   }

@@ -10,6 +10,7 @@ export const HeaderContainer = styled("header")`
   height: calc(var(--vh, 1vh) * 100);
   padding: 0 6rem;
   overflow: hidden;
+  transition: background 200ms ease-in;
   @media (max-width: 1199px) {
     padding: 0 4.4rem 0 3.1428rem;
   }

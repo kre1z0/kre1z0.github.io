@@ -18,8 +18,8 @@ export const SliderBackground = styled("div")`
   right: 0;
   width: 100%;
   height: 100%;
-  will-change: top, background-color;
-  transition: all 200ms ease;
+  will-change: top, background;
+  transition: all 200ms ease-in;
   @media (hover: hover) {
     &.hovered {
       top: -1.1428rem;
@@ -83,6 +83,9 @@ export const Content = styled("div")`
   }
   @media (max-width: 767px) and (orientation: portrait) {
     padding: 1rem;
+  }
+  &.disableTransition {
+    transition: none;
   }
 `;
 
@@ -218,6 +221,9 @@ export const Screenshot = styled("img")`
   @media (max-width: 767px) and (orientation: portrait) {
     top: auto;
     bottom: 0;
+  }
+  &.disableTransition {
+    transition: none;
   }
 `;
 

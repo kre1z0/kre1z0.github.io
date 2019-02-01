@@ -26,7 +26,8 @@ export default {
         {
           text: "EverGIS Online",
           id: "evergisOnline",
-          projectBackgroundColor: "#35343c",
+          projectBackgroundColor:
+            "linear-gradient(to bottom, #1c1f30, #323747), linear-gradient(to bottom, #282c3d, #282c3d)",
           screenshot: bank,
           link: "public.everpoint.ru",
           description:

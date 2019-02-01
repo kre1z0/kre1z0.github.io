@@ -11,7 +11,7 @@ import { transition } from "./styles";
 
 export class Crutch extends PureComponent {
   render() {
-    const { status, direction, description, title, text, id } = this.props;
+    const { status, direction, description, title, text, id, disableTransition } = this.props;
 
     const isMobileMsp = id === "mobileMsp";
 
@@ -19,6 +19,7 @@ export class Crutch extends PureComponent {
 
     return (
       <ContentBlock
+        disableTransition={disableTransition}
         className={cn(
           direction > 0 ? slideUp[status] : slideDown[status],
           fade[status],

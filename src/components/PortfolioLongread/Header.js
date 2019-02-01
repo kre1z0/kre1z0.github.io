@@ -78,7 +78,10 @@ export class HeaderBase extends Component {
     } = this.props;
 
     return (
-      <HeaderContainer className={containerClassName} style={{ backgroundColor: projectBackgroundColor }}>
+      <HeaderContainer
+        className={containerClassName}
+        style={{ background: projectBackgroundColor }}
+      >
         <ImagesDownloadListener images={images} onLoad={onLoad} />
         <HeaderBlock>
           <LeftSide

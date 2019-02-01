@@ -10,7 +10,7 @@ import { MobileTitle } from "../../components/PortfolioSlide/styles";
 
 class Portfolio extends PureComponent {
   render() {
-    const { location, navigate } = this.props;
+    const { location, navigate, disableTransition } = this.props;
     const currentRoute = getRouteByLocation(location);
     const sections = sectionsFromAdditionalMenu(currentRoute.additionalMenu);
 
@@ -22,6 +22,7 @@ class Portfolio extends PureComponent {
           return (
             <MainAnimation
               {...this.props}
+              disableTransition={disableTransition}
               willChangeLeftSideClassName={styles.portfolioLeftSide}
               leftSide={
                 <>
@@ -39,6 +40,7 @@ class Portfolio extends PureComponent {
               containerClassName={styles.portfolioContainer}
               rightSide={
                 <PortfolioSlide
+                  disableTransition={disableTransition}
                   sectionDirection={sectionDirection}
                   sections={sections}
                   selectedSectionIndex={selectedSectionIndex}

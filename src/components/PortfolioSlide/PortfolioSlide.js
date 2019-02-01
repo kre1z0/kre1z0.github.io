@@ -30,6 +30,7 @@ export class PortfolioSlide extends PureComponent {
     parentTitle: PropTypes.string,
     sectionDirection: PropTypes.number,
     navigate: PropTypes.func,
+    disableTransition: PropTypes.bool,
   };
 
   state = {
@@ -100,6 +101,7 @@ export class PortfolioSlide extends PureComponent {
       title,
       screenshot,
       sectionDirection,
+      disableTransition,
     } = this.props;
 
     return (
@@ -110,9 +112,16 @@ export class PortfolioSlide extends PureComponent {
           onMouseOut={() => this.setState({ hovered: false })}
         >
           <BackendComponent sections={sections} selectedSectionIndex={selectedSectionIndex} />
-          <SliderBackground hovered={hovered} style={{ backgroundColor: projectBackgroundColor }} />
-          <Screenshot direction={sectionDirection} id={id} text={text} screenshot={screenshot} />
+          <SliderBackground hovered={hovered} style={{ background: projectBackgroundColor }} />
+          <Screenshot
+            disableTransition={disableTransition}
+            direction={sectionDirection}
+            id={id}
+            text={text}
+            screenshot={screenshot}
+          />
           <Content
+            disableTransition={disableTransition}
             direction={sectionDirection}
             id={id}
             title={title}
