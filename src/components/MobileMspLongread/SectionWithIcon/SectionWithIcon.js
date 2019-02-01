@@ -1,6 +1,5 @@
 import React, { PureComponent } from "react";
-import PropTypes from 'prop-types';
-
+import PropTypes from "prop-types";
 
 import msp1x from "../../../img/portfolio/mobileMsp/msp/460-x-0-w-1.png";
 import msp2x from "../../../img/portfolio/mobileMsp/msp/460-x-0-w-1@2x.png";
@@ -10,8 +9,7 @@ import support1 from "../../../img/portfolio/mobileMsp/support/460-x-0-w-1.png";
 import support2 from "../../../img/portfolio/mobileMsp/support/460-x-0-w-1@2x.png";
 import support3 from "../../../img/portfolio/mobileMsp/support/460-x-0-w-1@3x.png";
 
-import { Description, Title } from "../../Typography/Headlines";
-import { SectionWithIconContainer, Section, Content } from "./styles";
+import { SectionWithIconContainer, Section, Title, Content, Description } from "./styles";
 
 export const msp = { x1: msp1x, x2: msp2x, x3: msp3x };
 

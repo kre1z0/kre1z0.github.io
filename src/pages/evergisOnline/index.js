@@ -5,7 +5,8 @@ import { getProject } from "../../routes";
 import { OutsideLink } from "../../components/OutsideLink/OutsideLink";
 import { Section } from '../../components/Elements/Section';
 import { Article } from '../../components/Elements/Article';
-import { Paragraph, H1, H3 } from "../../components/Typography/Headlines";
+import { H1, H3 } from "../../components/Typography/Headlines";
+import { Paragraph } from '../../components/Typography/Paragraph';
 import { Figures } from "../../components/Figures/Figures";
 import { Footer } from "../../components/EvergisOnlineLongread/Footer/Footer";
 

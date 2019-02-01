@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Paragraph } from "../../Typography/Headlines";
+import { Paragraph } from '../../Typography/Paragraph';
 import { Map } from "./Map";
 
 import { MspRegionMapContainer, Achievement, AchievementContainer } from "./styles";

@@ -8,9 +8,10 @@ import { VideoInMobileMockup } from "../VideoInMobileMockup/VideoInMobileMockup"
 import bnMobileTestVideo from "../../../videos/mobileMsp/BN_mobile_3.mp4";
 import bnMobileTestVideoPoster from "../../../videos/mobileMsp/posters/BN_mobile_3_000.jpg";
 import { OutsideLink } from "../../../components/OutsideLink/OutsideLink";
-import { Article } from '../../../components/Elements/Article';
-import { Section } from '../../../components/Elements/Section';
-import { H2, H3, Paragraph } from "../../Typography/Headlines";
+import { Article } from "../../../components/Elements/Article";
+import { Section } from "../../../components/Elements/Section";
+import { H2, H3 } from "../../Typography/Headlines";
+import { Paragraph } from "../../Typography/Paragraph";
 import { UnorderedList } from "../../Typography/UnorderedList";
 import { msp, support } from "../SectionWithIcon/SectionWithIcon";
 import { Top1 } from "../Top1/Top1";

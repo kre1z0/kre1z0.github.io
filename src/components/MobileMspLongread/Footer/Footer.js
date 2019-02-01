@@ -3,7 +3,8 @@ import PropTypes from "prop-types";
 
 import { IosStoreLink, AndroidStoreLink } from "../../../components/StoreLinks/StoreLinks";
 import { Article } from '../../../components/Elements/Article';
-import {  H3, Paragraph } from "../../../components/Typography/Headlines";
+import {  H3 } from "../../../components/Typography/Headlines";
+import { Paragraph } from '../../../components/Typography/Paragraph';
 import { halfPhone, phoneRight } from "../images";
 
 import { FooterContainer, Store, Mobiles, LeftSide, RightSide } from "./styles";
