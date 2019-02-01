@@ -50,6 +50,9 @@ const styles = css`
       > section:last-child {
         margin-bottom: 3.4rem;
         width: 100%;
+        @media (max-height: 490px) {
+          margin-bottom: 2.4rem;
+        }
       }
     }
     @media (max-width: 767px) and (orientation: landscape) {
@@ -91,6 +94,9 @@ const styles = css`
       left: -84rem;
       width: calc(100% + 93rem);
       height: calc(100% + 79rem);
+      @media (max-height: 490px) {
+        top: -53rem;
+      }
     }
     @media (max-width: 767px) and (orientation: landscape) {
       top: -21rem;

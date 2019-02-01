@@ -7,6 +7,7 @@ const styles = css`
       padding-right: 4rem;
     }
     > section:last-child {
+      position: relative;
       height: 24rem;
       flex-shrink: 1;
       > div {
@@ -150,6 +151,9 @@ const styles = css`
         width: 100%;
         flex-grow: 0;
         padding-bottom: 3rem;
+        @media (max-height: 490px) {
+          padding-bottom: 2.4rem;
+        }
         > div {
           max-width: none;
         }
