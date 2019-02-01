@@ -1,6 +1,5 @@
 import React, { PureComponent } from "react";
 import cn from "classnames";
-import Responsive from "react-responsive";
 
 import { isMobile } from "../../utils/browser";
 import { fade, transition } from "../../components/Transition/animation";
@@ -88,24 +87,20 @@ class Contacts extends PureComponent {
         }
         rightSide={
           <>
-            <Responsive minWidth={666}>
-              <ButtonGroup {...btnGroupProps} />
-            </Responsive>
-            <Responsive maxWidth={665}>
-              <MainLayoutConsumer>
-                {({ mobileMenuIsOpen }) => (
-                  <>
-                    {!mobileMenuIsOpen && (
-                      <Portal>
-                        <BtnGroup className={cn(fade[status], transition[status])}>
-                          <ButtonGroup {...btnGroupProps} />
-                        </BtnGroup>
-                      </Portal>
-                    )}
-                  </>
-                )}
-              </MainLayoutConsumer>
-            </Responsive>
+            <ButtonGroup {...btnGroupProps} />
+            <MainLayoutConsumer>
+              {({ mobileMenuIsOpen }) => (
+                <>
+                  {!mobileMenuIsOpen && (
+                    <Portal>
+                      <BtnGroup className={cn(fade[status], transition[status])}>
+                        <ButtonGroup {...btnGroupProps} />
+                      </BtnGroup>
+                    </Portal>
+                  )}
+                </>
+              )}
+            </MainLayoutConsumer>
           </>
         }
       >

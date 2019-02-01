@@ -106,11 +106,6 @@ const MultiScreenshotsContainer = styled("div")`
       &:nth-child(-n + 3) {
         margin-top: 24%;
       }
-      @media (max-height: 490px) {
-        &:nth-child(-n + 3) {
-          margin-top: 40%;
-        }
-      }
     }
   }
 `;

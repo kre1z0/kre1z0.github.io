@@ -39,7 +39,6 @@ const ControlBtn = styled(Button)`
     }
   }
   &.disabled {
-    pointer-events: none;
     path {
       fill: rgba(38, 44, 55, 0.15);
       stroke: rgba(38, 44, 55, 0.15);

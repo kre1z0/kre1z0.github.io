@@ -151,6 +151,7 @@ const styles = css`
         width: 100%;
         flex-grow: 0;
         margin-bottom: 3rem;
+        max-height: 18.4444rem;
         @media (max-height: 490px) {
           margin-bottom: 2.4rem;
         }

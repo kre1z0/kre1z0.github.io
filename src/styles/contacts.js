@@ -27,6 +27,12 @@ export const BtnGroup = styled("div")`
       margin-right: 0.7142rem;
     }
   }
+  @media (min-width: 768px) {
+    display: none;
+  }
+  @media (max-width: 767px) and (max-height: 280px) and (orientation: landscape) {
+    top: 3.4rem;
+  }
 `;
 
 export const SocialLink = styled("a")`
@@ -40,7 +46,7 @@ export const SocialLink = styled("a")`
   &:last-child {
     margin-right: 0;
   }
-  @media (max-width: 1024px) and (min-width: 769px) {
+  @media (max-width: 1199px) {
     width: 1.14285rem;
     height: 1.14285rem;
   }
@@ -70,6 +76,9 @@ const styles = css`
       &:first-child {
         margin-right: 0.7142rem;
       }
+    }
+    @media (max-width: 767px) {
+      display: none;
     }
   }
   .contactsRightSide {
