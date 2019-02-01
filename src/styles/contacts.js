@@ -16,6 +16,12 @@ export const Link = styled(ContactLink)`
 
 export const SocialBlock = styled("div")``;
 
+export const TelegramBtnContainer = styled("div")`
+  &.disableTransition {
+    transition: none;
+  }
+`;
+
 export const BtnGroup = styled("div")`
   display: flex;
   position: absolute;

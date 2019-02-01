@@ -22,6 +22,7 @@ import styles, {
   Link,
   ContactsLeftSide,
   BtnGroup,
+  TelegramBtnContainer,
 } from "../../styles/contacts";
 import { getRouteByLocation } from "../../routes";
 
@@ -50,7 +51,7 @@ class Contacts extends PureComponent {
   }
 
   render() {
-    const { status, location } = this.props;
+    const { status, location, disableTransition } = this.props;
     const { text } = getRouteByLocation(location);
     const { stope, isMobile, backgroundsIsLoaded } = this.state;
 
@@ -69,6 +70,7 @@ class Contacts extends PureComponent {
         />
         <MainAnimation
           {...this.props}
+          disableTransition={disableTransition}
           base64styles={!stope ? bg.metro : !backgroundsIsLoaded ? bg.busPngPreview : ""}
           rightSideClassName={styles.contactsRightSide}
           willChangeLeftSideClassName={styles.willChangeContactsLeftSideClassName}
@@ -113,14 +115,17 @@ class Contacts extends PureComponent {
             </>
           }
         >
-          <div className={cn(fade[status], transition[status])}>
+          <TelegramBtnContainer
+            disableTransition={disableTransition}
+            className={cn(fade[status], transition[status])}
+          >
             <TelegramButton
               as="a"
               className={styles.telegramBtn}
               target="_blank"
               href="https://telegram.me/redditr"
             />
-          </div>
+          </TelegramBtnContainer>
         </MainAnimation>
       </>
     );
