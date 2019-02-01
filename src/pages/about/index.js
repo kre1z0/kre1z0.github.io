@@ -25,7 +25,7 @@ export class About extends PureComponent {
     const { location } = this.props;
     const { news, text } = getRouteByLocation(location);
 
-    const { status } = this.props;
+    const { status, disableTransition } = this.props;
     const { x, y } = this.state;
 
     return (
@@ -42,6 +42,7 @@ export class About extends PureComponent {
           return (
             <MainAnimation
               {...this.props}
+              disableTransition={disableTransition}
               withRightSideAnimation={false}
               x={x}
               y={y}
@@ -58,6 +59,7 @@ export class About extends PureComponent {
               rightSide={
                 <NewsContainer>
                   <ConstellationPoints
+                    disableTransition={disableTransition}
                     transitionEnd={transitionEnd}
                     status={status}
                     x={x}
@@ -65,9 +67,13 @@ export class About extends PureComponent {
                     onTransform={this.onTransform}
                     selectedSectionIndex={selectedSectionIndex}
                   />
-                  <WillChangeNews className={cn(slideUp[status], fade[status], transition[status])}>
+                  <WillChangeNews
+                    disableTransition={disableTransition}
+                    className={cn(slideUp[status], fade[status], transition[status])}
+                  >
                     <BackendComponent sections={news} selectedSectionIndex={selectedSectionIndex} />
                     <NewsCard
+                      disableTransition={disableTransition}
                       isSwipeEvent={isSwipeEvent}
                       onSectionChange={onSectionChange}
                       direction={sectionDirection}

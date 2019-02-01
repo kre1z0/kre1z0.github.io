@@ -10,7 +10,7 @@ import { fade } from "../../components/Transition/animation";
 
 export class Crutch extends PureComponent {
   render() {
-    const { status, direction, description, title, date, logo, isSwipeEvent } = this.props;
+    const { status, direction, disableTransition, description, title, date, logo, isSwipeEvent } = this.props;
 
     const animation = isSwipeEvent
       ? direction > 0
@@ -21,7 +21,7 @@ export class Crutch extends PureComponent {
         : slideDown[status];
 
     return (
-      <AboutCardContainer className={cn(animation, fade[status], transition[status])}>
+      <AboutCardContainer disableTransition={disableTransition} className={cn(animation, fade[status], transition[status])}>
         <Title>{title}</Title>
         <Date>{date}</Date>
         <Description>
@@ -42,6 +42,7 @@ export class NewsCard extends PureComponent {
     id: PropTypes.string,
     direction: PropTypes.number,
     isSwipeEvent: PropTypes.bool,
+    disableTransition: PropTypes.bool,
   };
 
   onSwiped = ({ isLeft, isRight, xRatio }) => {
