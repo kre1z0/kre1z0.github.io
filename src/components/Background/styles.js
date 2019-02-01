@@ -25,6 +25,10 @@ const styles = css`
   .moscow {
     background-image: url(../../img/main-slides/moscow.svg);
   }
+  .busPngPreview {
+    background-position: 75% center;
+    background-image: url(../../img/main-slides/bus.png);
+  }
   .bus {
     background-position: 75% center;
     background-image: url(../../img/main-slides/bus.svg);
