@@ -25,7 +25,7 @@ export class BackendComponent extends Component {
       <BackendContainer>
         <div
           style={{
-            backgroundColor:
+            background:
               first && (first.projectBackgroundColor ? first.projectBackgroundColor : "#fff"),
             boxShadow:
               first &&
@@ -36,7 +36,7 @@ export class BackendComponent extends Component {
         />
         <div
           style={{
-            backgroundColor:
+            background:
               second && (second.projectBackgroundColor ? second.projectBackgroundColor : "#fff"),
             boxShadow:
               second &&

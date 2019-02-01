@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import styled from "astroturf";
 
 import { ImagesDownloadListener } from "../../components/ImagesDownloadListener/ImagesDownloadListener";
@@ -121,6 +122,10 @@ const MultiScreenshotsContainer = styled("div")`
 `;
 
 export class MultiScreenshots extends Component {
+  static propTypes = {
+    screenshots: PropTypes.arrayOf(PropTypes.string),
+  };
+
   state = {
     imagesIsLoaded: false,
     startAnimation: false,
@@ -128,7 +133,7 @@ export class MultiScreenshots extends Component {
 
   render() {
     const { imagesIsLoaded, startAnimation } = this.state;
-    const { screenshot } = this.props;
+    const { screenshots } = this.props;
 
     return (
       <MultiScreenshotsContainer
@@ -137,11 +142,11 @@ export class MultiScreenshots extends Component {
         onTransitionEnd={() => this.setState({ startAnimation: true })}
       >
         <ImagesDownloadListener
-          images={screenshot}
+          images={screenshots}
           onLoad={() => this.setState({ imagesIsLoaded: true })}
         />
         {imagesIsLoaded &&
-          screenshot.map((img, index) => (
+          screenshots.map((img, index) => (
             <img key={`img-${index}`} src={img} alt={`img-${index}`} />
           ))}
       </MultiScreenshotsContainer>

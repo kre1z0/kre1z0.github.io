@@ -1,8 +1,23 @@
-import msp from "../img/portfolio/msp/msp-screen.png";
-import bank from "../img/portfolio/geomonitoring/bank.png";
-import mobileMsp1 from "../img/portfolio/mobileMsp/mobile-1.png";
-import mobileMsp2 from "../img/portfolio/mobileMsp/mobile-2.png";
-import mobileMsp3 from "../img/portfolio/mobileMsp/mobile-3.png";
+// portfolio screenshots
+import mspX1 from "../img/portfolio/slide-screenshots/msp/bitmap.png";
+import mspX2 from "../img/portfolio/slide-screenshots/msp/bitmap@2x.png";
+import mspX3 from "../img/portfolio/slide-screenshots/msp/bitmap@3x.png";
+import geomonitoringX1 from "../img/portfolio/slide-screenshots/geomonitoring/bitmap.png";
+import geomonitoringX2 from "../img/portfolio/slide-screenshots/geomonitoring/bitmap@2x.png";
+import geomonitoringX3 from "../img/portfolio/slide-screenshots/geomonitoring/bitmap@3x.png";
+import evergisOnlineX1 from "../img/portfolio/slide-screenshots/evergisOnline/1-ec-header.png";
+import evergisOnlineX2 from "../img/portfolio/slide-screenshots/evergisOnline/1-ec-header@2x.png";
+import evergisOnlineX3 from "../img/portfolio/slide-screenshots/evergisOnline/1-ec-header@3x.png";
+import mobileFirstX1 from "../img/portfolio/slide-screenshots/mobileMsp/bitmap.png";
+import mobileFirstX2 from "../img/portfolio/slide-screenshots/mobileMsp/bitmap@2x.png";
+import mobileFirstX3 from "../img/portfolio/slide-screenshots/mobileMsp/bitmap@3x.png";
+import mobileSecondX1 from "../img/portfolio/slide-screenshots/mobileMsp/screen-2.png";
+import mobileSecondX2 from "../img/portfolio/slide-screenshots/mobileMsp/screen-2@2x.png";
+import mobileSecondX3 from "../img/portfolio/slide-screenshots/mobileMsp/screen-2@3x.png";
+import mobileThirdX1 from "../img/portfolio/slide-screenshots/mobileMsp/screen-3.png";
+import mobileThirdX2 from "../img/portfolio/slide-screenshots/mobileMsp/screen-3@2x.png";
+import mobileThirdX3 from "../img/portfolio/slide-screenshots/mobileMsp/screen-3@3x.png";
+
 import rrIcon from "../img/portfolio/msp/rr.svg";
 import bankIcon from "../img/portfolio/msp/bank.svg";
 import mspVideo1 from "../videos/msp/1_1.mp4";
@@ -22,18 +37,40 @@ export default {
       id: "products",
       title: "Продукты",
       children: [
-        { text: "EverGIS", id: "evergis", projectBackgroundColor: "#f8a717", screenshot: msp },
+        {
+          text: "EverGIS",
+          id: "evergis",
+          projectBackgroundColor: "#f8a717",
+          screenshots: {
+            x1: mspX1,
+            x2: mspX2,
+            x3: mspX3,
+          },
+        },
         {
           text: "EverGIS Online",
           id: "evergisOnline",
           projectBackgroundColor:
             "linear-gradient(to bottom, #1c1f30, #323747), linear-gradient(to bottom, #282c3d, #282c3d)",
-          screenshot: bank,
+          screenshots: {
+            x1: evergisOnlineX1,
+            x2: evergisOnlineX2,
+            x3: evergisOnlineX3,
+          },
           link: "public.everpoint.ru",
           description:
             "Картографический сервис, который позволяет оценить местность по различным параметрам",
         },
-        { text: "EverTrack", id: "evertrack", projectBackgroundColor: "#0fa5f6", screenshot: msp },
+        {
+          text: "EverTrack",
+          id: "evertrack",
+          projectBackgroundColor: "#0fa5f6",
+          screenshots: {
+            x1: geomonitoringX1,
+            x2: geomonitoringX2,
+            x3: geomonitoringX3,
+          },
+        },
       ],
     },
     {
@@ -48,7 +85,11 @@ export default {
           projectBackgroundColor: "#387bc7",
           description:
             "Бесплатный сервис для предпринимателей. Найдите лучшее место для открытия бизнеса и получите готовый бизнес-план.",
-          screenshot: msp,
+          screenshots: {
+            x1: mspX1,
+            x2: mspX2,
+            x3: mspX3,
+          },
           link: "navigator.smbn.ru",
           achievements: [
             {
@@ -78,7 +119,23 @@ export default {
           text: "Мобильный бизнес-навигатор",
           projectBackgroundColor: "#e0f0f6",
           textColor: "#0a2342",
-          screenshot: [mobileMsp1, mobileMsp2, mobileMsp3],
+          screenshots: [
+            {
+              x1: mobileFirstX1,
+              x2: mobileFirstX2,
+              x3: mobileFirstX3,
+            },
+            {
+              x1: mobileSecondX1,
+              x2: mobileSecondX2,
+              x3: mobileSecondX3,
+            },
+            {
+              x1: mobileThirdX1,
+              x2: mobileThirdX2,
+              x3: mobileThirdX3,
+            },
+          ],
           description:
             "Приложение для расчёта бизнес-планов и справочник мер поддержки предпринимателей",
           ios: "https://itunes.apple.com/ru/developer/корпорация-мсп/id1253348895?mt=8",
@@ -90,7 +147,11 @@ export default {
           text: "Банковский сектор",
           id: "geomonitoring",
           projectBackgroundColor: "#009AEB",
-          screenshot: bank,
+          screenshots: {
+            x1: geomonitoringX1,
+            x2: geomonitoringX2,
+            x3: geomonitoringX3,
+          },
           description:
             "Аналитическая система управления залоговым имуществом банка. Планирование выездных проверок и оценка стоимости объектов.",
         },

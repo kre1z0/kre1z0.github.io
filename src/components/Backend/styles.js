@@ -10,8 +10,8 @@ export const BackendContainer = styled("div")`
     display: none;
   }
   > div {
-    will-change: background-color;
-    transition: background-color 200ms ease, box-shadow 200ms ease;
+    will-change: background;
+    transition: background 200ms ease, box-shadow 200ms ease;
     border-radius: 0.2857rem;
     position: absolute;
     width: 100%;

@@ -1,6 +1,8 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 
+import { getPixelRatioPropName } from "../../utils/utils";
+import { ImagesDownloadListener } from "../../components/ImagesDownloadListener/ImagesDownloadListener";
 import { Swiper } from "../../components/Swiper/Swiper";
 import {
   PortfolioSlideContainer,
@@ -21,7 +23,7 @@ export class PortfolioSlide extends PureComponent {
     projectBackgroundColor: PropTypes.string,
     text: PropTypes.string,
     description: PropTypes.string,
-    screenshot: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.string), PropTypes.string]),
+    screenshots: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.object), PropTypes.object]),
     id: PropTypes.string,
     onSectionChange: PropTypes.func,
     selectedSectionIndex: PropTypes.number,
@@ -99,13 +101,14 @@ export class PortfolioSlide extends PureComponent {
       sections,
       id,
       title,
-      screenshot,
+      screenshots,
       sectionDirection,
       disableTransition,
     } = this.props;
 
     return (
       <Swiper onSwiped={this.onSwiped} onClick={this.goToLongread}>
+        <ImagesDownloadListener images={[]} />
         <PortfolioSlideContainer
           ref={this.onContainerRef}
           onMouseOver={() => this.setState({ hovered: true })}
@@ -118,7 +121,11 @@ export class PortfolioSlide extends PureComponent {
             direction={sectionDirection}
             id={id}
             text={text}
-            screenshot={screenshot}
+            screenshots={
+              Array.isArray(screenshots)
+                ? screenshots.map(img => img[getPixelRatioPropName()])
+                : screenshots[getPixelRatioPropName()]
+            }
           />
           <Content
             disableTransition={disableTransition}

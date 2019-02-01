@@ -202,7 +202,6 @@ export const Screenshot = styled("img")`
   max-width: 46.4285rem;
   max-height: 41vh;
   height: auto;
-  box-shadow: 1.1428rem 1.1428rem 2.2857rem 0 rgba(50, 57, 69, 0.25);
   @media (max-height: 700px) and (min-width: 1200px) and (orientation: landscape) {
     top: 10%;
   }
