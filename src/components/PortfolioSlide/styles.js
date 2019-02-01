@@ -103,8 +103,12 @@ export const MobileTitle = styled("h1")`
   font-size: 1.2857rem;
   margin: 0;
   left: 0;
-  @media (max-width: 767px) and (orientation: landscape) and (max-height: 320px) {
-    margin-top: -1rem;
+  display: none;
+  @media (max-width: 767px) {
+    display: block;
+    @media (max-height: 320px) {
+      margin-top: -1rem;
+    }
   }
 `;
 

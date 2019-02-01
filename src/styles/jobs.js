@@ -74,7 +74,7 @@ const styles = css`
     }
     @media (max-height: 390px) {
       > section:first-child {
-        padding-bottom: 3rem;
+        margin-bottom: 3rem;
       }
       > section:last-child {
         height: calc(100% - 3rem);
@@ -150,9 +150,9 @@ const styles = css`
       > section:last-child {
         width: 100%;
         flex-grow: 0;
-        padding-bottom: 3rem;
+        margin-bottom: 3rem;
         @media (max-height: 490px) {
-          padding-bottom: 2.4rem;
+          margin-bottom: 2.4rem;
         }
         > div {
           max-width: none;

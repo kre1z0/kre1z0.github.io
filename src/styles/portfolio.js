@@ -66,13 +66,17 @@ const styles = css`
     @media (max-width: 767px) and (orientation: landscape) {
       > div {
         width: 100%;
-        > menu {
-          display: none !important;
-        }
       }
     }
     @media (max-width: 767px) and (orientation: portrait) {
       height: auto;
+    }
+    @media (max-width: 767px) {
+      > div {
+        .menu {
+          display: none;
+        }
+      }
     }
   }
 `;

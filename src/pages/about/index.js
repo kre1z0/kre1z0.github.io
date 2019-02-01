@@ -73,7 +73,12 @@ export class About extends PureComponent {
                       direction={sectionDirection}
                       {...section}
                     />
-                    <Bullets sections={news} selectedSectionIndex={selectedSectionIndex} />
+                    <Bullets
+                      sections={news}
+                      selectedSectionIndex={selectedSectionIndex}
+                      goPrev={() => onSectionChange({ value: -1, isSwipeEvent: true })}
+                      goNext={() => onSectionChange({ value: 1, isSwipeEvent: true })}
+                    />
                   </WillChangeNews>
                 </NewsContainer>
               }

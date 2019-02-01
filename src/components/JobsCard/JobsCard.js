@@ -157,7 +157,12 @@ export class JobsCard extends Component {
           isSwipeEvent={isSwipeEvent}
         />
         <BackendComponent sections={items} selectedSectionIndex={selectedItemsIndex} />
-        <Bullets sections={items} selectedSectionIndex={selectedItemsIndex} />
+        <Bullets
+          sections={items}
+          selectedSectionIndex={selectedItemsIndex}
+          goPrev={() => this.onSwiped({ isRight: true, xRatio: 100 })}
+          goNext={() => this.onSwiped({ isLeft: true, xRatio: 100 })}
+        />
       </JobsCardSwiper>
     );
   }

@@ -1,5 +1,4 @@
 import React, { PureComponent } from "react";
-import Responsive from "react-responsive";
 
 import { MainLayoutConsumer } from "../../components/MainLayoutProvider/MainLayoutProvider";
 import { MainAnimation } from "../../components/MainAnimation/MainAnimation";
@@ -26,18 +25,15 @@ class Portfolio extends PureComponent {
               willChangeLeftSideClassName={styles.portfolioLeftSide}
               leftSide={
                 <>
-                  <Responsive maxWidth={767}>
-                    <MobileTitle>{section && section.parentTitle}</MobileTitle>
-                  </Responsive>
-                  <Responsive minWidth={577}>
-                    <AdditionalMenu
-                      selectedId={section && section.id}
-                      onSectionChange={onSectionChange}
-                      leftSide
-                      additionalMenu={currentRoute.additionalMenu}
-                      isOpen={true}
-                    />
-                  </Responsive>
+                  <MobileTitle>{section && section.parentTitle}</MobileTitle>
+                  <AdditionalMenu
+                    className={styles.menu}
+                    selectedId={section && section.id}
+                    onSectionChange={onSectionChange}
+                    leftSide
+                    additionalMenu={currentRoute.additionalMenu}
+                    isOpen={true}
+                  />
                 </>
               }
               containerClassName={styles.portfolioContainer}

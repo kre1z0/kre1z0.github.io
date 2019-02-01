@@ -138,7 +138,18 @@ export class PortfolioSlide extends PureComponent {
               }}
             />
           </ControlBlock>
-          <Bullets sections={sections} selectedSectionIndex={selectedSectionIndex} />
+          <Bullets
+            sections={sections}
+            selectedSectionIndex={selectedSectionIndex}
+            goPrev={e => {
+              e.stopPropagation();
+              onSectionChange({ value: -1, isSwipeEvent: true });
+            }}
+            goNext={e => {
+              e.stopPropagation();
+              onSectionChange({ value: 1, isSwipeEvent: true });
+            }}
+          />
         </PortfolioSlideContainer>
         {typeof window === "object" && (
           <Portal>

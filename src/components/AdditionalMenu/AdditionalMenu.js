@@ -15,13 +15,15 @@ export class AdditionalMenu extends PureComponent {
     fadeIn: PropTypes.bool,
     selectedId: PropTypes.string,
     onSectionChange: PropTypes.func,
+    className: PropTypes.string,
+    leftSide: PropTypes.bool,
   };
 
   render() {
-    const { additionalMenu, leftSide, fadeIn, selectedId, onSectionChange } = this.props;
+    const { additionalMenu, className, leftSide, fadeIn, selectedId, onSectionChange } = this.props;
 
     return (
-      <Menu leftSide={leftSide} className={cn({ [animation.fadeIn]: fadeIn })}>
+      <Menu leftSide={leftSide} className={cn(className, { [animation.fadeIn]: fadeIn })}>
         {additionalMenu &&
           additionalMenu.map(({ title, id, children }) => {
             const grouped = groupBy(children, "groupName");
