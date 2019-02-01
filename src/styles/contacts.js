@@ -59,17 +59,22 @@ const styles = css`
       padding-bottom: 1rem;
     }
   }
-  .contactsRightSide {
-    position: relative;
-    z-index: 2;
+  .willChangeRightSideClassName {
     display: flex;
+    flex-grow: 1;
+    flex-shrink: 0;
+    justify-content: flex-end;
+    z-index: 2;
     height: 15rem;
-    align-items: flex-end;
     button {
       &:first-child {
         margin-right: 0.7142rem;
       }
     }
+  }
+  .contactsRightSide {
+    display: flex;
+    align-items: flex-end;
   }
   .address {
     cursor: default;

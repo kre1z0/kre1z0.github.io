@@ -22,17 +22,17 @@ export default {
       id: "products",
       title: "Продукты",
       children: [
-        { text: "EverGIS", id: "evergis", bgColor: "#f8a717", screenshot: msp },
+        { text: "EverGIS", id: "evergis", projectBackgroundColor: "#f8a717", screenshot: msp },
         {
           text: "EverGIS Online",
           id: "evergisOnline",
-          bgColor: "#35343c",
+          projectBackgroundColor: "#35343c",
           screenshot: bank,
           link: "public.everpoint.ru",
           description:
             "Картографический сервис, который позволяет оценить местность по различным параметрам",
         },
-        { text: "EverTrack", id: "evertrack", bgColor: "#0fa5f6", screenshot: msp },
+        { text: "EverTrack", id: "evertrack", projectBackgroundColor: "#0fa5f6", screenshot: msp },
       ],
     },
     {
@@ -44,7 +44,7 @@ export default {
           type: "Малый бизнес",
           // groupName: "Малый бизнес",
           text: "Бизнес-навигатор МСП",
-          bgColor: "#387bc7",
+          projectBackgroundColor: "#387bc7",
           description:
             "Бесплатный сервис для предпринимателей. Найдите лучшее место для открытия бизнеса и получите готовый бизнес-план.",
           screenshot: msp,
@@ -75,7 +75,7 @@ export default {
           type: "Малый бизнес",
           // groupName: "Малый бизнес",
           text: "Мобильный бизнес-навигатор",
-          bgColor: "#e0f0f6",
+          projectBackgroundColor: "#e0f0f6",
           textColor: "#0a2342",
           screenshot: [mobileMsp1, mobileMsp2, mobileMsp3],
           description:
@@ -88,7 +88,7 @@ export default {
           type: "Банковский сектор",
           text: "Банковский сектор",
           id: "geomonitoring",
-          bgColor: "#009AEB",
+          projectBackgroundColor: "#009AEB",
           screenshot: bank,
           description:
             "Аналитическая система управления залоговым имуществом банка. Планирование выездных проверок и оценка стоимости объектов.",

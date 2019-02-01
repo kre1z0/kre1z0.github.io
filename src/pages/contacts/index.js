@@ -64,6 +64,7 @@ class Contacts extends PureComponent {
         base64styles={!stope ? bg.metro : ""}
         rightSideClassName={styles.contactsRightSide}
         willChangeLeftSideClassName={styles.willChangeContactsLeftSideClassName}
+        willChangeRightSideClassName={styles.willChangeRightSideClassName}
         leftSide={
           <ContactsLeftSide>
             <H2 as="h1">{text}</H2>

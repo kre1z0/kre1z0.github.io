@@ -21,7 +21,7 @@ import { ImagesDownloadListener } from "../ImagesDownloadListener/ImagesDownload
 
 export class HeaderBase extends Component {
   static propTypes = {
-    bgColor: PropTypes.string,
+    projectBackgroundColor: PropTypes.string,
     type: PropTypes.string,
     title: PropTypes.string,
     text: PropTypes.string,
@@ -60,7 +60,7 @@ export class HeaderBase extends Component {
   render() {
     const {
       children,
-      bgColor,
+      projectBackgroundColor,
       type,
       text,
       title,
@@ -78,7 +78,7 @@ export class HeaderBase extends Component {
     } = this.props;
 
     return (
-      <HeaderContainer className={containerClassName} style={{ backgroundColor: bgColor }}>
+      <HeaderContainer className={containerClassName} style={{ backgroundColor: projectBackgroundColor }}>
         <ImagesDownloadListener images={images} onLoad={onLoad} />
         <HeaderBlock>
           <LeftSide

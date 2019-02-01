@@ -28,21 +28,21 @@ export class BackendComponent extends Component {
           <BackendContainer>
             <div
               style={{
-                backgroundColor: first && (first.bgColor ? first.bgColor : "#fff"),
+                backgroundColor: first && (first.projectBackgroundColor ? first.projectBackgroundColor : "#fff"),
                 boxShadow:
                   first &&
-                  (first.bgColor
-                    ? `0 8px 8px 0 ${hexToRGB(first && first.bgColor, 0.1)}`
+                  (first.projectBackgroundColor
+                    ? `0 8px 8px 0 ${hexToRGB(first && first.projectBackgroundColor, 0.1)}`
                     : "0 8px 8px 0 rgba(10, 18, 33, 0.1)"),
               }}
             />
             <div
               style={{
-                backgroundColor: second && (second.bgColor ? second.bgColor : "#fff"),
+                backgroundColor: second && (second.projectBackgroundColor ? second.projectBackgroundColor : "#fff"),
                 boxShadow:
                   second &&
-                  (second.bgColor
-                    ? `0 8px 8px 0 ${hexToRGB(second && second.bgColor, 0.1)}`
+                  (second.projectBackgroundColor
+                    ? `0 8px 8px 0 ${hexToRGB(second && second.projectBackgroundColor, 0.1)}`
                     : "0 8px 8px 0 rgba(10, 18, 33, 0.1)"),
               }}
             />

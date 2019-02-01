@@ -18,7 +18,7 @@ import { Portal } from "../../components/Portal/Portal";
 
 export class PortfolioSlide extends PureComponent {
   static propTypes = {
-    bgColor: PropTypes.string,
+    projectBackgroundColor: PropTypes.string,
     text: PropTypes.string,
     description: PropTypes.string,
     screenshot: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.string), PropTypes.string]),
@@ -90,7 +90,7 @@ export class PortfolioSlide extends PureComponent {
   render() {
     const { hovered, top, left, width, height, goToLongread } = this.state;
     const {
-      bgColor,
+      projectBackgroundColor,
       text,
       description,
       onSectionChange,
@@ -110,7 +110,7 @@ export class PortfolioSlide extends PureComponent {
           onMouseOut={() => this.setState({ hovered: false })}
         >
           <BackendComponent sections={sections} selectedSectionIndex={selectedSectionIndex} />
-          <SliderBackground hovered={hovered} style={{ backgroundColor: bgColor }} />
+          <SliderBackground hovered={hovered} style={{ backgroundColor: projectBackgroundColor }} />
           <Screenshot direction={sectionDirection} id={id} text={text} screenshot={screenshot} />
           <Content
             direction={sectionDirection}
@@ -145,7 +145,7 @@ export class PortfolioSlide extends PureComponent {
             <LongreadBackground
               goToLongread={goToLongread}
               style={{
-                backgroundColor: bgColor,
+                backgroundColor: projectBackgroundColor,
                 top: goToLongread ? 0 : top,
                 left: goToLongread ? 0 : left,
                 width: goToLongread ? "100vw" : width,

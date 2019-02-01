@@ -33,6 +33,13 @@ const styles = css`
     background-position: 75% center;
     background-image: url(../../img/main-slides/metro.svg);
   }
+  .bus,
+  .metro {
+    @media (max-width: 767px) and (orientation: landscape) {
+      background-position: 74% 24%;
+      background-size: 130%;
+    }
+  }
 `;
 
 export default styles;

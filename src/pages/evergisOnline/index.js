@@ -5,6 +5,7 @@ import { getProject } from "../../routes";
 import { OutsideLink } from "../../components/OutsideLink/OutsideLink";
 import { Section, Article, Paragraph } from "../../components/LongreadAtoms/Longread";
 import { Figures } from "../../components/Figures/Figures";
+import { Footer } from "../../components/EvergisOnlineLongread/Footer/Footer";
 
 import { ReactComponent as Ic1 } from "../../img/portfolio/evergis-online/features-icons/ic-1.svg";
 import { ReactComponent as Ic2 } from "../../img/portfolio/evergis-online/features-icons/ic-2.svg";
@@ -55,6 +56,7 @@ class EvergisOnline extends PureComponent {
               <Figures figures={justDoIt} />
             </Article>
           </Section>
+          <Footer />
         </EvergisOnlineContainer>
       </>
     );
