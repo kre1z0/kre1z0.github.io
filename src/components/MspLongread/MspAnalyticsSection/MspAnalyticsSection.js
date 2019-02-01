@@ -14,7 +14,8 @@ import right4 from "../../../img/portfolio/msp/analytics/right-4@2x.png";
 import { isElementInViewport } from "../../../utils/dom";
 import styles, { Step } from "../../../styles/msp";
 import { MspAnalyticsCardsLeftSide, MspAnalyticsCardsRightSide } from "./styles";
-import { Article, Section } from "../../Typography/Headlines";
+import { Article } from "../../../components/Elements/Article";
+import { Section } from "../../../components/Elements/Section";
 import { Paragraph } from "../../PortfolioLongread/Paragraph";
 import { ScrollbarConsumer } from "../../ScrollbarProvider/ScrollbarProvider";
 

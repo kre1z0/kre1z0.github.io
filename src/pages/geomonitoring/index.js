@@ -4,7 +4,9 @@ import { HeaderRightSide } from "../../components/GeomonitoringLongread/HeaderRi
 import { LocalLink } from "../../components/LocalLink/LocalLink";
 import { UnorderedList } from "../../components/Typography/UnorderedList";
 import { ImageWithTitle } from "../../components/Multimedia/ImageWithTitle";
-import { Section, Article, H1, H3, Paragraph } from "../../components/Typography/Headlines";
+import { Section } from "../../components/Elements/Section";
+import { Article } from "../../components/Elements/Article";
+import { H1, H3, Paragraph } from "../../components/Typography/Headlines";
 import { TelegramButton } from "../../components/Buttons/TelegramButton";
 import { Header } from "../../components/PortfolioLongread/Header";
 import { Figures } from "../../components/Figures/Figures";

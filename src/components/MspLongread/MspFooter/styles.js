@@ -1,5 +1,6 @@
 import styled, { css } from "astroturf";
-import { Section } from "../../Typography/Headlines";
+
+import { Section } from "../../../components/Elements/Section";
 
 export const Footer = styled(Section)`
   position: relative;

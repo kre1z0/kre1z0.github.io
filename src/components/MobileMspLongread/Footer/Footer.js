@@ -2,7 +2,8 @@ import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 
 import { IosStoreLink, AndroidStoreLink } from "../../../components/StoreLinks/StoreLinks";
-import { Article, H3, Paragraph } from "../../../components/Typography/Headlines";
+import { Article } from '../../../components/Elements/Article';
+import {  H3, Paragraph } from "../../../components/Typography/Headlines";
 import { halfPhone, phoneRight } from "../images";
 
 import { FooterContainer, Store, Mobiles, LeftSide, RightSide } from "./styles";

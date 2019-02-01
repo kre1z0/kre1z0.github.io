@@ -3,7 +3,9 @@ import React, { PureComponent } from "react";
 import { Header } from "../../components/PortfolioLongread/Header";
 import { getProject } from "../../routes";
 import { OutsideLink } from "../../components/OutsideLink/OutsideLink";
-import { Section, Article, Paragraph, H1, H3 } from "../../components/Typography/Headlines";
+import { Section } from '../../components/Elements/Section';
+import { Article } from '../../components/Elements/Article';
+import { Paragraph, H1, H3 } from "../../components/Typography/Headlines";
 import { Figures } from "../../components/Figures/Figures";
 import { Footer } from "../../components/EvergisOnlineLongread/Footer/Footer";
 

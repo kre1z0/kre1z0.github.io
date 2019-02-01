@@ -5,11 +5,13 @@ import { isMobile } from "../../utils/browser";
 import { SectionWithIcon } from "../../components/MobileMspLongread/SectionWithIcon/SectionWithIcon";
 import phones from "../../img/portfolio/mobileMsp/phones.jpg";
 import { Header } from "../../components/PortfolioLongread/Header";
-import { getProject } from "../../routes";
-import { Section, Article, H2, Paragraph } from "../../components/Typography/Headlines";
+import { Section } from '../../components/Elements/Section';
+import { Article } from '../../components/Elements/Article';
+import { H2, Paragraph } from "../../components/Typography/Headlines";
 import { AndroidStoreLink, IosStoreLink } from "../../components/StoreLinks/StoreLinks";
 import { OutsideLink } from "../../components/OutsideLink/OutsideLink";
 import { BnSection } from "../../components/MobileMspLongread/BnSection/BnSection";
+import { getProject } from "../../routes";
 import { Footer } from "../../components/MobileMspLongread/Footer/Footer";
 import styles, {
   MobileMspContainer,
