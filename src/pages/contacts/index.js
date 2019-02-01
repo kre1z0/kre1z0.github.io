@@ -91,7 +91,7 @@ class Contacts extends PureComponent {
             <MainLayoutConsumer>
               {({ mobileMenuIsOpen }) => (
                 <>
-                  {!mobileMenuIsOpen && (
+                  {!mobileMenuIsOpen && isMobile && (
                     <Portal>
                       <BtnGroup className={cn(fade[status], transition[status])}>
                         <ButtonGroup {...btnGroupProps} />
