@@ -1,6 +1,6 @@
 import styled, { css } from "astroturf";
 
-import { Section } from "../components/LongreadAtoms/Longread";
+import { Section } from "../components/Typography/Headlines";
 
 export const CompanyContainer = styled("main")``;
 

@@ -10,7 +10,7 @@ import support1 from "../../../img/portfolio/mobileMsp/support/460-x-0-w-1.png";
 import support2 from "../../../img/portfolio/mobileMsp/support/460-x-0-w-1@2x.png";
 import support3 from "../../../img/portfolio/mobileMsp/support/460-x-0-w-1@3x.png";
 
-import { Description, Title } from "../../LongreadAtoms/Longread";
+import { Description, Title } from "../../Typography/Headlines";
 import { SectionWithIconContainer, Section, Content } from "./styles";
 
 export const msp = { x1: msp1x, x2: msp2x, x3: msp3x };

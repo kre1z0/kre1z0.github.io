@@ -2,7 +2,7 @@ import React, { PureComponent } from "react";
 
 import { getPixelRatioPropName } from "../../utils/utils";
 import { TelegramButton } from "../../components/Buttons/TelegramButton";
-import { H2, Section, Article, Paragraph } from "../../components/LongreadAtoms/Longread";
+import { H2, Section, Article, Paragraph } from "../../components/Typography/Headlines";
 import { CompanyPhoto } from "../../components/CompanyPhoto/CompanyPhoto";
 import employees from "../../assets/employees";
 import { OurClients } from "../../components/OurClients/OurClients";

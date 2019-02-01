@@ -5,13 +5,13 @@ import { MspRightSide } from "../../components/MspLongread/MspRightSide/MspRight
 import { Header } from "../../components/PortfolioLongread/Header";
 import { Paragraph } from "../../components/PortfolioLongread/Paragraph";
 import { getProject } from "../../routes";
-import { Section, Article, H1 } from "../../components/LongreadAtoms/Longread";
+import { Section, Article, H1 } from "../../components/Typography/Headlines";
 import { TaglineAwards } from "../../components/TaglineAwards/TaglineAwards";
 import { MspRegionMap } from "../../components/MspLongread/MspRegionMap/MspRegionMap";
 import { MspVideo } from "../../components/MspLongread/MspVideo/MspVideo";
 import { VideoContainer } from "../../components/LongreadAtoms/VideoContainer";
 import { InViewVideo } from "../../components/Video/InViewVideo";
-import { UnorderedList } from "../../components/LongreadAtoms/UnorderedList";
+import { UnorderedList } from "../../components/Typography/UnorderedList";
 import step2Video from "../../videos/msp/2.mp4";
 import step2VideoPoster from "../../videos/msp/posters/2_000.jpg";
 import step3Video from "../../videos/msp/3.mp4";

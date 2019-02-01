@@ -1,6 +1,6 @@
 import styled, { css } from "astroturf";
 
-import { H3 } from "../components/LongreadAtoms/Longread";
+import { H3 } from "../components/Typography/Headlines";
 
 export const MspLongreadContainer = styled("div")`
   h1 {

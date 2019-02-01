@@ -1,6 +1,6 @@
 import styled, { css } from "astroturf";
 
-import { H1, Paragraph } from "../../components/LongreadAtoms/Longread";
+import { H1, Paragraph } from "../../components/Typography/Headlines";
 
 export const HeaderContainer = styled("header")`
   display: flex;

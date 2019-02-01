@@ -2,8 +2,9 @@ import React, { PureComponent } from "react";
 
 import { HeaderRightSide } from "../../components/GeomonitoringLongread/HeaderRightSide/HeaderRightSide";
 import { LocalLink } from "../../components/LocalLink/LocalLink";
-import { UnorderedList } from "../../components/LongreadAtoms/UnorderedList";
-import { Section, Article, H1, H3, Paragraph } from "../../components/LongreadAtoms/Longread";
+import { UnorderedList } from "../../components/Typography/UnorderedList";
+import { ImageWithTitle } from "../../components/Multimedia/ImageWithTitle";
+import { Section, Article, H1, H3, Paragraph } from "../../components/Typography/Headlines";
 import { TelegramButton } from "../../components/Buttons/TelegramButton";
 import { Header } from "../../components/PortfolioLongread/Header";
 import { Figures } from "../../components/Figures/Figures";
@@ -29,7 +30,7 @@ import cardLeft from "../../img/portfolio/geomonitoring/cards/leftCard.png";
 import cardRight from "../../img/portfolio/geomonitoring/cards/rightCard.png";
 import cardBottom from "../../img/portfolio/geomonitoring/cards/bottomCard.png";
 
-import styles, { GeomonitoringContainer, Screenshot, Footer } from "../../styles/geomonitoring";
+import styles, { GeomonitoringContainer, Footer } from "../../styles/geomonitoring";
 
 const images = [layer1, layer2, cardLeft, cardRight, cardBottom];
 
@@ -102,8 +103,7 @@ class Geomonitoring extends PureComponent {
                 руководству оперативно принимать решения, например, о клиентах, у которых возникли
                 проблемы с выплатой кредита.
               </Paragraph>
-              <H3>Планирование выездных проверок</H3>
-              <Screenshot src={screenshot1} alt="screenshot-1" />
+              <ImageWithTitle title="Планирование выездных проверок" src={screenshot1} />
               <Paragraph>
                 За несколько секунд система автоматически составляет план выездных проверок,
                 учитывая множество факторов:
@@ -119,8 +119,11 @@ class Geomonitoring extends PureComponent {
                 Руководство банка получает перечень задач для сотрудников, включая маршруты движения
                 между объектами залога, а также сводный график работ с указанием ответственных.
               </Paragraph>
-              <H3>Мониторинг объектов и сотрудников</H3>
-              <Screenshot style={{ borderRadius: "1.4rem" }} src={screenshot2} alt="screenshot-2" />
+              <ImageWithTitle
+                title="Мониторинг объектов и сотрудников"
+                src={screenshot2}
+                style={{ borderRadius: "1.4rem" }}
+              />
               <Paragraph>
                 Система позволяет руководителям следить онлайн за тем, как сотрудники банка
                 соблюдают предложенный системой график: они должны отмечать свои передвижения в
@@ -129,8 +132,7 @@ class Geomonitoring extends PureComponent {
                 требованиями к эксплуатации объектов залога. Также результаты мониторинга сотрудник
                 может дополнить фотографиями объекта и своими комментариями.
               </Paragraph>
-              <H3>Оценка стоимости имущества</H3>
-              <Screenshot src={screenshot3} alt="screenshot-3" />
+              <ImageWithTitle title="Оценка стоимости имущества" src={screenshot3} />
               <Paragraph>
                 Оценить стоимость имущества поможет функция системы по поиску объектов-аналогов и
                 сравнению их с объектом залога. Система ищет аналоги в соответствии с
@@ -143,8 +145,7 @@ class Geomonitoring extends PureComponent {
                 потенциальную залоговую стоимость. Результаты оценки сохраняются в карточку
                 мониторинга объекта и обновляются в базе залогов банка.
               </Paragraph>
-              <H3>Все залоги на одной карте</H3>
-              <Screenshot src={screenshot4} alt="screenshot-4" />
+              <ImageWithTitle title="Все залоги на одной карте" src={screenshot4} />
               <Paragraph>
                 В приложении все залоги банка представлены на интерактивной карте. На карте наглядно
                 показаны результаты последнего мониторинга по каждому объекту нежвижимости: можно
@@ -153,8 +154,7 @@ class Geomonitoring extends PureComponent {
                 различных видов недвижимости в залоговом портфеле. Информацию по объектам залога
                 можно посмотреть и в виде онлайн-таблицы.
               </Paragraph>
-              <H3>Аналитика и отчёты</H3>
-              <Screenshot src={screenshot5} alt="screenshot-5" />
+              <ImageWithTitle title="Аналитика и отчёты" src={screenshot5} />
               <Paragraph>
                 Накапливаемые в системе данные анализируются в различных разрезах, результаты
                 анализа можно представить в виде диаграмм и графиков, а также выгрузить в виде
@@ -176,7 +176,7 @@ class Geomonitoring extends PureComponent {
                 для нее занимает на несколько часов меньше. И конечно, у банка появилась возможность
                 контролировать перемещения сотрудников.
               </Paragraph>
-              <Screenshot src={screenshot6} alt="screenshot-6" />
+              <ImageWithTitle src={screenshot6} />
             </Article>
           </Section>
           <Section className={styles.whatIsHeDoing}>

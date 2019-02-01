@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Paragraph } from "../../components/LongreadAtoms/Longread";
+import { Paragraph } from "../../components/Typography/Headlines";
 import { FiguresSection, Figure } from "./styles";
 
 export const Figures = ({ figures, className }) => {

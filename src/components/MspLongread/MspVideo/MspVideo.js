@@ -7,7 +7,7 @@ import { VideoContainer } from "../../LongreadAtoms/VideoContainer";
 import { transition, VideoTransition, slideLeft } from "./styles";
 import { fade } from "../../Transition/animation";
 import { InViewVideo } from "../../Video/InViewVideo";
-import { Article, Section } from "../../LongreadAtoms/Longread";
+import { Article, Section } from "../../Typography/Headlines";
 import styles, { Step } from "../../../styles/msp";
 import { Scrollbar } from "../../Scrollbar/Scrollbar";
 import { Selector } from "../../Selector/Selector";

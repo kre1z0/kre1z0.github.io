@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 
-import { Article, H1 } from "../../LongreadAtoms/Longread";
+import { Article, H1 } from "../../Typography/Headlines";
 import { GoNextLink } from "../../GoNextLink/GoNextLink";
 import { AndroidStoreLink, IosStoreLink } from "../../StoreLinks/StoreLinks";
 import phones from "../../../img/portfolio/mobileMsp/phones.jpg";

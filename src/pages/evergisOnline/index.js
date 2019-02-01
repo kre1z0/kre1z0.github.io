@@ -3,16 +3,16 @@ import React, { PureComponent } from "react";
 import { Header } from "../../components/PortfolioLongread/Header";
 import { getProject } from "../../routes";
 import { OutsideLink } from "../../components/OutsideLink/OutsideLink";
-import { Section, Article, Paragraph } from "../../components/LongreadAtoms/Longread";
+import { Section, Article, Paragraph, H1, H3 } from "../../components/Typography/Headlines";
 import { Figures } from "../../components/Figures/Figures";
 import { Footer } from "../../components/EvergisOnlineLongread/Footer/Footer";
 
-import { ReactComponent as Ic1 } from "../../img/portfolio/evergis-online/features-icons/ic-1.svg";
-import { ReactComponent as Ic2 } from "../../img/portfolio/evergis-online/features-icons/ic-2.svg";
-import { ReactComponent as Ic3 } from "../../img/portfolio/evergis-online/features-icons/ic-3.svg";
-import { ReactComponent as Ic4 } from "../../img/portfolio/evergis-online/features-icons/ic-4.svg";
-import { ReactComponent as Ic5 } from "../../img/portfolio/evergis-online/features-icons/ic-5.svg";
-import { ReactComponent as Ic6 } from "../../img/portfolio/evergis-online/features-icons/ic-6.svg";
+import { ReactComponent as Ic1 } from "../../img/portfolio/evergisOnline/features-icons/ic-1.svg";
+import { ReactComponent as Ic2 } from "../../img/portfolio/evergisOnline/features-icons/ic-2.svg";
+import { ReactComponent as Ic3 } from "../../img/portfolio/evergisOnline/features-icons/ic-3.svg";
+import { ReactComponent as Ic4 } from "../../img/portfolio/evergisOnline/features-icons/ic-4.svg";
+import { ReactComponent as Ic5 } from "../../img/portfolio/evergisOnline/features-icons/ic-5.svg";
+import { ReactComponent as Ic6 } from "../../img/portfolio/evergisOnline/features-icons/ic-6.svg";
 
 import { EvergisOnlineContainer, FiguresTitle } from "../../styles/evergisOnline";
 
@@ -54,6 +54,12 @@ class EvergisOnline extends PureComponent {
                 Как использовать возможности карты в сервисе EverGIS Online — решать только вам!
               </FiguresTitle>
               <Figures figures={justDoIt} />
+            </Article>
+          </Section>
+          <Section withoutPaddingTop>
+            <Article>
+              <H1>Как работать с EverGIS Online</H1>
+              <H3>Удобно и просто</H3>
             </Article>
           </Section>
           <Footer />

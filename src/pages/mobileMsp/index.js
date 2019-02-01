@@ -6,7 +6,7 @@ import { SectionWithIcon } from "../../components/MobileMspLongread/SectionWithI
 import phones from "../../img/portfolio/mobileMsp/phones.jpg";
 import { Header } from "../../components/PortfolioLongread/Header";
 import { getProject } from "../../routes";
-import { Section, Article, H2, Paragraph } from "../../components/LongreadAtoms/Longread";
+import { Section, Article, H2, Paragraph } from "../../components/Typography/Headlines";
 import { AndroidStoreLink, IosStoreLink } from "../../components/StoreLinks/StoreLinks";
 import { OutsideLink } from "../../components/OutsideLink/OutsideLink";
 import { BnSection } from "../../components/MobileMspLongread/BnSection/BnSection";
