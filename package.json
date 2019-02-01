@@ -47,8 +47,6 @@
     "rimraf": "^2.6.2",
     "uuid": "^3.2.1"
   },
-  "browserslist": "last 2 versions",
-
   "presets": [
     [
       "babel-preset-gatsby",
