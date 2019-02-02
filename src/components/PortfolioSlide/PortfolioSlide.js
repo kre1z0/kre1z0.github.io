@@ -172,7 +172,7 @@ export class PortfolioSlide extends PureComponent {
             <LongreadBackground
               goToLongread={goToLongread}
               style={{
-                backgroundColor: projectBackgroundColor,
+                background: projectBackgroundColor,
                 top: goToLongread ? 0 : top,
                 left: goToLongread ? 0 : left,
                 width: goToLongread ? "100vw" : width,

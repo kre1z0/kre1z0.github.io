@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React, { Component } from "react";
 
 import { Header } from "../../components/PortfolioLongread/Header";
 import { getProject } from "../../routes";
@@ -10,6 +10,17 @@ import { Paragraph } from "../../components/Typography/Paragraph";
 import { ImageWithTitle } from "../../components/Multimedia/ImageWithTitle";
 import { Figures } from "../../components/Figures/Figures";
 import { Footer } from "../../components/EvergisOnlineLongread/Footer/Footer";
+import { HeaderRightSide } from "../../components/EvergisOnlineLongread/HeaderRightSide/HeaderRightSide";
+import { getPixelRatioPropName } from "../../utils/utils";
+
+import screen from "../../img/portfolio/evergisOnline/header/1_app@2x.png";
+import leftCard1 from "../../img/portfolio/evergisOnline/header/2_leftCard-1@2x.png";
+import leftCard2 from "../../img/portfolio/evergisOnline/header/3_leftCard-2@2x.png";
+import leftCard3 from "../../img/portfolio/evergisOnline/header/4_leftCard-3@2x.png";
+import leftCard4 from "../../img/portfolio/evergisOnline/header/5_leftCard-4@2x.png";
+import leftCard5 from "../../img/portfolio/evergisOnline/header/6_leftCard-5@2x.png";
+import rightCard from "../../img/portfolio/evergisOnline/header/7_rightCard@2x.png";
+import point from "../../img/portfolio/evergisOnline/header/8_point@2x.png";
 
 import { ReactComponent as Ic1 } from "../../img/portfolio/evergisOnline/features-icons/ic-1.svg";
 import { ReactComponent as Ic2 } from "../../img/portfolio/evergisOnline/features-icons/ic-2.svg";
@@ -19,7 +30,8 @@ import { ReactComponent as Ic5 } from "../../img/portfolio/evergisOnline/feature
 import { ReactComponent as Ic6 } from "../../img/portfolio/evergisOnline/features-icons/ic-6.svg";
 
 import styles, { EvergisOnlineContainer, FiguresTitle } from "../../styles/evergisOnline";
-import { getPixelRatioPropName } from "../../utils/utils";
+
+const images = [screen, leftCard1, leftCard2, leftCard3, leftCard4, leftCard5, rightCard, point];
 
 const justDoIt = [
   { Icon: Ic1, text: "Создавайте веб-карты" },
@@ -30,13 +42,14 @@ const justDoIt = [
   { Icon: Ic6, text: "Не требует специальных навыков" },
 ];
 
-class EvergisOnline extends PureComponent {
+class EvergisOnline extends Component {
   static defaultProps = {
     projectId: "evergisOnline",
   };
 
   state = {
     ratio: "x1",
+    animate: false,
   };
 
   componentDidMount() {
@@ -44,14 +57,27 @@ class EvergisOnline extends PureComponent {
   }
 
   render() {
-    const { ratio } = this.state;
+    const { ratio, animate } = this.state;
     const { location, projectId } = this.props;
     const evergisOnline = getProject({ projectId });
     const { longreadImages } = evergisOnline;
 
     return (
       <>
-        <Header projectId={projectId} location={location} {...evergisOnline} />
+        <Header
+          images={images}
+          onLoad={() => this.setState({ animate: true })}
+          animate={animate}
+          rightSide={
+            <HeaderRightSide
+              animate={animate}
+              images={images}
+            />
+          }
+          projectId={projectId}
+          location={location}
+          {...evergisOnline}
+        />
         <EvergisOnlineContainer>
           <Section>
             <Article>

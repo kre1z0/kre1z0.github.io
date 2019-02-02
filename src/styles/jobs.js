@@ -30,12 +30,21 @@ const styles = css`
       }
     }
 
+    @media (min-width: 1024px) and (max-width: 1024px) {
+      h2 {
+        max-width: 14rem;
+      }
+      > section:last-child {
+        justify-content: flex-end;
+      }
+    }
+
     @media (max-width: 991px) {
       > section:last-child {
         max-height: 22.4285rem;
         > div {
           width: 100%;
-          max-width: 22rem;
+          max-width: 20rem;
         }
       }
     }
