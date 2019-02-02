@@ -12,6 +12,30 @@ export const FiguresTitle = styled("h4")`
   }
 `;
 
-const styles = css``;
+const styles = css`
+  .mainTitle {
+    margin-bottom: 7rem;
+  }
+  .sectionWithScreenshots {
+    p {
+      margin-bottom: 9rem;
+      @media (max-width: 1199px) {
+        margin-bottom: 5rem;
+      }
+      @media (max-width: 991px) {
+        margin-bottom: 4rem;
+      }
+      @media (max-width: 991px) {
+        margin-bottom: 4rem;
+      }
+      @media (max-width: 767px) and (orientation: landscape) {
+        margin-bottom: 3rem;
+      }
+      @media (max-width: 767px) and (orientation: portrait) {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+`;
 
 export default styles;

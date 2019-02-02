@@ -3,10 +3,11 @@ import React, { PureComponent } from "react";
 import { Header } from "../../components/PortfolioLongread/Header";
 import { getProject } from "../../routes";
 import { OutsideLink } from "../../components/OutsideLink/OutsideLink";
-import { Section } from '../../components/Elements/Section';
-import { Article } from '../../components/Elements/Article';
-import { H1, H3 } from "../../components/Typography/Headlines";
-import { Paragraph } from '../../components/Typography/Paragraph';
+import { Section } from "../../components/Elements/Section";
+import { Article } from "../../components/Elements/Article";
+import { H1 } from "../../components/Typography/Headlines";
+import { Paragraph } from "../../components/Typography/Paragraph";
+import { ImageWithTitle } from "../../components/Multimedia/ImageWithTitle";
 import { Figures } from "../../components/Figures/Figures";
 import { Footer } from "../../components/EvergisOnlineLongread/Footer/Footer";
 
@@ -17,7 +18,8 @@ import { ReactComponent as Ic4 } from "../../img/portfolio/evergisOnline/feature
 import { ReactComponent as Ic5 } from "../../img/portfolio/evergisOnline/features-icons/ic-5.svg";
 import { ReactComponent as Ic6 } from "../../img/portfolio/evergisOnline/features-icons/ic-6.svg";
 
-import { EvergisOnlineContainer, FiguresTitle } from "../../styles/evergisOnline";
+import styles, { EvergisOnlineContainer, FiguresTitle } from "../../styles/evergisOnline";
+import { getPixelRatioPropName } from "../../utils/utils";
 
 const justDoIt = [
   { Icon: Ic1, text: "Создавайте веб-карты" },
@@ -33,9 +35,19 @@ class EvergisOnline extends PureComponent {
     projectId: "evergisOnline",
   };
 
+  state = {
+    ratio: "x1",
+  };
+
+  componentDidMount() {
+    this.setState({ ratio: getPixelRatioPropName() });
+  }
+
   render() {
+    const { ratio } = this.state;
     const { location, projectId } = this.props;
     const evergisOnline = getProject({ projectId });
+    const { longreadImages } = evergisOnline;
 
     return (
       <>
@@ -59,10 +71,43 @@ class EvergisOnline extends PureComponent {
               <Figures figures={justDoIt} />
             </Article>
           </Section>
-          <Section withoutPaddingTop>
+          <Section withoutPaddingTop className={styles.sectionWithScreenshots}>
             <Article>
-              <H1>Как работать с EverGIS Online</H1>
-              <H3>Удобно и просто</H3>
+              <H1 className={styles.mainTitle}>Как работать с EverGIS Online</H1>
+              <ImageWithTitle title="Удобно и просто" src={longreadImages[0][ratio]} />
+              <Paragraph>
+                Сервис прост и удобен в использовании. Он работает онлайн в любом браузере, не нужно
+                устанавливать дополнительные программы и приложения. Специальные навыки работы в
+                ГИС-системах не требуются. Доступ к сервису бесплатный. Нужно только пройти по
+                ссылке и зарегистрироваться. В личном каталоге пользователя есть три вида ресурсов:
+                данные, слои и карты. Карта - основная рабочая область пользователя, его проект.
+              </Paragraph>
+              <ImageWithTitle title="Все для создания карт" src={longreadImages[1][ratio]} />
+              <Paragraph>
+                Базовые инструменты сервиса — загрузка данных, создание и редактирование геобъектов,
+                оформление данных, управление видимостью слоёв, измерение длин, площадей и
+                периметров. В настройки оформления входит выбор готовых символов для объектов из
+                библиотеки, загрузка изображений для создания новых символов, настройка цвета,
+                размера и других параметров символов. Этого достаточно, чтобы создать красивую
+                интерактивную карту.
+              </Paragraph>
+              <ImageWithTitle title="Анализ и геообработка данных" src={longreadImages[2][ratio]} />
+              <Paragraph>
+                В EverGIS Online можно строить буферные зоны, настраивать сложные классификации
+                объектов в зависимости от их свойств и применять к классам готовые шаблоны
+                оформления. Ориентироваться в большом объёме геоданных помогут функции
+                пространственного поиска и фильтры на карте.
+              </Paragraph>
+              <ImageWithTitle
+                title="Публикация, экспорт и совместная работа"
+                src={longreadImages[1][ratio]}
+              />
+              <Paragraph>
+                Готовыми интерактивными картами EverGIS Online можно поделиться в социальных сетях,
+                отправить другу или коллеге по почте, разрешить копирование другим пользователям
+                сервиса. А если вам нужна печатная карта, вы можете легко сохранить изображение в
+                нужном разрешении.
+              </Paragraph>
             </Article>
           </Section>
           <Footer />
