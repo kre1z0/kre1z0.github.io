@@ -16,7 +16,7 @@ import styles, { Step } from "../../../styles/msp";
 import { MspAnalyticsCardsLeftSide, MspAnalyticsCardsRightSide } from "./styles";
 import { Article } from "../../../components/Elements/Article";
 import { Section } from "../../../components/Elements/Section";
-import { Paragraph } from "../../PortfolioLongread/Paragraph";
+import { Paragraph } from "../../Typography/Paragraph";
 import { ScrollbarConsumer } from "../../ScrollbarProvider/ScrollbarProvider";
 
 export class MspAnalyticsSectionBase extends Component {

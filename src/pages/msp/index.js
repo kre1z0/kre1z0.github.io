@@ -3,7 +3,7 @@ import React, { PureComponent } from "react";
 import { OutsideLink } from "../../components/OutsideLink/OutsideLink";
 import { MspRightSide } from "../../components/MspLongread/MspRightSide/MspRightSide";
 import { Header } from "../../components/PortfolioLongread/Header";
-import { Paragraph } from "../../components/PortfolioLongread/Paragraph";
+import { Paragraph } from "../../components/Typography/Paragraph";
 import { Section } from "../../components/Elements/Section";
 import { Article } from "../../components/Elements/Article";
 import { H1 } from "../../components/Typography/Headlines";
