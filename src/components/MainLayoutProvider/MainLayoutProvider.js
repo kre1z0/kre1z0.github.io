@@ -84,15 +84,16 @@ export class MainLayoutProviderComponent extends Component {
 
   onResize = () => {
     const { currentRoute, selectedSectionIndex } = this.state;
-    const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    const {
+      container: { width },
+    } = this.scrollbar.getSize();
 
-    if (vw > mobileMenuWidth) {
+    if (width > mobileMenuWidth) {
       this.setState({ mobileMenuIsOpen: false });
     }
 
     if (currentRoute && currentRoute.scrollable) {
-      const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-      if (vw <= mobileMenuWidth) {
+      if (width <= mobileMenuWidth) {
         this.setState(
           {
             scrollTop: 0,
@@ -196,7 +197,10 @@ export class MainLayoutProviderComponent extends Component {
   };
 
   onNavigateTo = (direction, routeSwipeUpAndDown = false) => {
-    const vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    const {
+      container: { height },
+    } = this.scrollbar.getSize();
+
     const { navigate, location } = this.props;
     const { pathname } = location;
     const { currentRoute, scrollTop, limitY, selectedSectionIndex, sections } = this.state;
@@ -204,7 +208,7 @@ export class MainLayoutProviderComponent extends Component {
     const scrollable = currentRoute && currentRoute.scrollable;
 
     if (scrollable && (scrollTop === 0 || limitY === scrollTop) && !routeSwipeUpAndDown) {
-      const ratio = vh / 3;
+      const ratio = height / 3;
 
       if (Math.abs(this.threshold) < ratio) {
         return;
@@ -249,19 +253,21 @@ export class MainLayoutProviderComponent extends Component {
     const currentBlock = this.scrollable && this.scrollable.children[value];
 
     if (currentBlock) {
-      const vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+      const {
+        container: { height },
+      } = this.scrollbar.getSize();
 
       const { top, bottom } = currentBlock.getBoundingClientRect();
 
       if (direction > 0) {
-        const blockIsCenter = top < vh / divider;
+        const blockIsCenter = top < height / divider;
         if (blockIsCenter) {
           this.onSectionChange({ value: 1 });
         }
       }
 
       if (direction < 0) {
-        const blockIsCenter = bottom > vh / divider;
+        const blockIsCenter = bottom > height / divider;
         if (blockIsCenter) {
           this.onSectionChange({ value: -1 });
         }
@@ -270,13 +276,16 @@ export class MainLayoutProviderComponent extends Component {
   };
 
   onScroll = e => {
-    const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    const {
+      container: { width },
+    } = this.scrollbar.getSize();
+
     const { disableHover, scrollTop, currentRoute } = this.state;
     const { offset, limit } = e;
     const { y: offsetY } = offset;
     const { y: limitY } = limit;
 
-    if (vw <= mobileMenuWidth && currentRoute && currentRoute.scrollable) {
+    if (width <= mobileMenuWidth && currentRoute && currentRoute.scrollable) {
       return;
     }
 
@@ -404,8 +413,11 @@ export class MainLayoutProviderComponent extends Component {
 
   scrollToBlock = (index, onlyScrollIfNeeded = false) => {
     if (this.scrollable && this.scrollable.children[index]) {
-      const vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-      let offsetTop = vh / 2;
+      const {
+        container: { height },
+      } = this.scrollbar.getSize();
+
+      let offsetTop = height / 2;
 
       if (this.lefsideSection) {
         offsetTop = this.lefsideSection.getBoundingClientRect().top;
@@ -426,7 +438,9 @@ export class MainLayoutProviderComponent extends Component {
   };
 
   onSectionChange = ({ value, id, pageId, isSwipeEvent = false, isClickEvent = false }) => {
-    const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    const {
+      container: { width },
+    } = this.scrollbar.getSize();
     const { navigate } = this.props;
     const { selectedSectionIndex, sections, currentRoute } = this.state;
 
@@ -454,7 +468,7 @@ export class MainLayoutProviderComponent extends Component {
 
       const sectionDirection = selectedSectionIndex > nextValue ? -1 : 1;
 
-      if (currentRoute.scrollable && isClickEvent && vw >= mobileMenuWidth) {
+      if (currentRoute.scrollable && isClickEvent && width >= mobileMenuWidth) {
         this.scrollToBlock(nextValue);
       }
 

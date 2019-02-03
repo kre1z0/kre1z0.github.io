@@ -17,7 +17,10 @@ export const Footer = () => {
         <figure>
           Хотите узнать больше о возможностях сервиса и протестировать его на ваших реальных
           задачах? Нет ничего проще. Зарегистрируйтесь по{" "}
-          <a href="http://public.everpoint.ru">ссылке</a> и начните работу уже сегодня.
+          <a href="http://public.everpoint.ru" target="_blank" rel="noopener noreferrer">
+            ссылке
+          </a>{" "}
+          и начните работу уже сегодня.
         </figure>
       </RightSide>
     </FooterContainer>

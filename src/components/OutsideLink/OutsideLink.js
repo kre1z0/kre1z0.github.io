@@ -25,7 +25,7 @@ const getUrl = value => {
 };
 
 export const OutsideLink = ({ href, children, ...props }) => (
-  <Link href={getUrl(href)} target="_blank" {...props}>
+  <Link href={getUrl(href)} target="_blank" rel="noopener noreferrer" {...props}>
     {children}
   </Link>
 );
