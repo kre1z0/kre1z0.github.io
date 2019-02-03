@@ -17,6 +17,7 @@
     "react-smooth-scrollbar": "^8.0.6",
     "react-swipeable": "^4.3.1",
     "react-transition-group": "^2.5.0",
+    "recompose": "^0.30.0",
     "smooth-scrollbar": "^8.3.1"
   },
   "devDependencies": {
@@ -63,7 +64,7 @@
       }
     ]
   ],
-"keywords": [
+  "keywords": [
     "gatsby"
   ],
   "license": "MIT",

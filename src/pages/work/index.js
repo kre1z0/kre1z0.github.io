@@ -1,18 +1,41 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React, { Component } from "react";
 
-import { InDevelop } from "../../components/InDevelop/InDevelop";
+import { Separate } from "../../components/Work/Separate/Separate";
+import { Section } from "../../components/Elements/Section";
+import { Article } from "../../components/Elements/Article";
+import { H2 } from "../../components/Typography/Headlines";
 
-export const Work = () => {
+import styles from "../../styles/work";
+
+const LoremIpsum = () => {
   return (
-    <div>
-      <InDevelop to="jobs" />
-    </div>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. A autem dolore eligendi labore minus
+      placeat quis quo sed voluptas voluptates. Asperiores dicta enim maxime quaerat quia suscipit
+      vero voluptate voluptatem.
+    </p>
   );
 };
 
-Work.propTypes = {
-  component: PropTypes.bool,
-};
+class Work extends Component {
+  render() {
+    return (
+      <>
+        <Section>
+          <Article>
+            <H2>Наши принципы</H2>
+            {/*{Array.from({ length: 44 }, (_, index) => (*/}
+            {/*<LoremIpsum key={index} />*/}
+            {/*))}*/}
+            <Separate />
+            {Array.from({ length: 44 }, (_, index) => (
+              <LoremIpsum key={index} />
+            ))}
+          </Article>
+        </Section>
+      </>
+    );
+  }
+}
 
 export default Work;
