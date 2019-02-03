@@ -24,9 +24,9 @@ class Work extends Component {
         <Section>
           <Article>
             <H2>Наши принципы</H2>
-            {/*{Array.from({ length: 44 }, (_, index) => (*/}
-            {/*<LoremIpsum key={index} />*/}
-            {/*))}*/}
+            {Array.from({ length: 22 }, (_, index) => (
+              <LoremIpsum key={index} />
+            ))}
             <Separate />
             {Array.from({ length: 44 }, (_, index) => (
               <LoremIpsum key={index} />

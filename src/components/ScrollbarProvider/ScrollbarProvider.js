@@ -7,6 +7,7 @@ import { Swiper } from "../../components/Swiper/Swiper";
 import { Scrollbar } from "../../components/Scrollbar/Scrollbar";
 
 import "../ScrollbarProvider/plugins/disableScrollByDirection";
+import { getLongreadNavbarHeight } from "../LongreadNavbar/LongreadNavbar";
 
 const ScrollBarContext = React.createContext();
 
@@ -48,12 +49,30 @@ export class ScrollbarProvider extends Component {
     }
   };
 
+  elementYPosition = ({ element, percent = true }) => {
+    const { scrollbar } = this.state;
+
+    const { bottom, height: elementHeight } = element.getBoundingClientRect();
+    const {
+      container: { height },
+    } = scrollbar.getSize();
+
+    const value = bottom - height - elementHeight;
+    const diff = value < -height ? -height : value > 0 ? 0 : value;
+
+    return percent
+      ? Math.min((Math.abs(diff) * 100) / (height - getLongreadNavbarHeight()), 100)
+      : Math.abs(diff);
+  };
+
   render() {
     const { scrollTop, scrollbar } = this.state;
     const { children, className, withScrollbarY } = this.props;
 
     return (
-      <ScrollBarContext.Provider value={{ scrollTop, scrollbar }}>
+      <ScrollBarContext.Provider
+        value={{ scrollTop, scrollbar, elementYPosition: this.elementYPosition }}
+      >
         <Swiper preventDefaultTouchmoveEvent={true}>
           <Scrollbar
             withScrollbarY={withScrollbarY}
