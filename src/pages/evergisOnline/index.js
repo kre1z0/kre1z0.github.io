@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { Header } from "../../components/PortfolioLongread/Header";
+import { Header } from "../../components/PortfolioLongreadHeader/Header";
 import { getProject } from "../../routes";
 import { OutsideLink } from "../../components/OutsideLink/OutsideLink";
 import { Section } from "../../components/Elements/Section";
@@ -68,12 +68,8 @@ class EvergisOnline extends Component {
           images={images}
           onLoad={() => this.setState({ animate: true })}
           animate={animate}
-          rightSide={
-            <HeaderRightSide
-              animate={animate}
-              images={images}
-            />
-          }
+          rightSide={<HeaderRightSide animate={animate} images={images} />}
+          leftSideClassName={styles.headerLeftSide}
           projectId={projectId}
           location={location}
           {...evergisOnline}

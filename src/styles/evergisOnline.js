@@ -36,6 +36,9 @@ const styles = css`
       }
     }
   }
+  .headerLeftSide {
+    transition-delay: 0ms;
+  }
 `;
 
 export default styles;

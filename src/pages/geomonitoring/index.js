@@ -9,7 +9,7 @@ import { Article } from "../../components/Elements/Article";
 import { H1, H3 } from "../../components/Typography/Headlines";
 import { Paragraph } from '../../components/Typography/Paragraph';
 import { TelegramButton } from "../../components/Buttons/TelegramButton";
-import { Header } from "../../components/PortfolioLongread/Header";
+import { Header } from "../../components/PortfolioLongreadHeader/Header";
 import { Figures } from "../../components/Figures/Figures";
 import { getProject } from "../../routes";
 

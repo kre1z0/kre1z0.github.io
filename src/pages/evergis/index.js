@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
 
-import { Header } from "../../components/PortfolioLongread/Header";
+import { Header } from "../../components/PortfolioLongreadHeader/Header";
 import { getProject } from "../../routes";
 
 import { EvergisContainer } from "../../styles/evergis";

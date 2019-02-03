@@ -4,7 +4,7 @@ import { getPixelRatioPropName } from "../../utils/utils";
 import { isMobile } from "../../utils/browser";
 import { SectionWithIcon } from "../../components/MobileMspLongread/SectionWithIcon/SectionWithIcon";
 import phones from "../../img/portfolio/mobileMsp/phones.jpg";
-import { Header } from "../../components/PortfolioLongread/Header";
+import { Header } from "../../components/PortfolioLongreadHeader/Header";
 import { Section } from '../../components/Elements/Section';
 import { Article } from '../../components/Elements/Article';
 import { H2 } from "../../components/Typography/Headlines";
