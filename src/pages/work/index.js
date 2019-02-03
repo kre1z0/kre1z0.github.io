@@ -5,7 +5,7 @@ import { Section } from "../../components/Elements/Section";
 import { Article } from "../../components/Elements/Article";
 import { H2 } from "../../components/Typography/Headlines";
 
-import styles from "../../styles/work";
+// import styles from "../../styles/work";
 
 const LoremIpsum = () => {
   return (
