@@ -33,10 +33,10 @@ export const BtnGroup = styled("div")`
       margin-right: 0.7142rem;
     }
   }
-  @media (min-width: 813px) {
+  @media (min-width: 768px) {
     display: none;
   }
-  @media (max-width: 812px) and (max-height: 280px) and (orientation: landscape) {
+  @media (max-width: 767px) and (max-height: 280px) and (orientation: landscape) {
     top: 3.4rem;
   }
 `;
@@ -66,7 +66,7 @@ const styles = css`
     @media (max-width: 940px) {
       flex-shrink: 1;
     }
-    @media (max-width: 812px) {
+    @media (max-width: 767px) {
       align-self: flex-end;
       padding-bottom: 1rem;
     }
@@ -83,7 +83,7 @@ const styles = css`
         margin-right: 0.7142rem;
       }
     }
-    @media (max-width: 812px) {
+    @media (max-width: 767px) {
       display: none;
     }
   }
@@ -113,7 +113,7 @@ const styles = css`
     @media (max-width: 1024px) {
       right: 3.5714rem;
     }
-    @media (max-width: 812px) {
+    @media (max-width: 767px) {
       right: 1.7857rem;
       bottom: 1.4142rem;
     }

@@ -137,7 +137,7 @@ const styles = css`
         }
       }
     }
-    @media (max-width: 812px) and (orientation: landscape) {
+    @media (max-width: 767px) and (orientation: landscape) {
       svg {
         width: 0.7785rem;
         height: 0.7785rem;

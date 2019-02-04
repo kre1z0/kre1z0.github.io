@@ -44,15 +44,15 @@ export const LongreadNavbarContainer = styled("nav")`
     height: 4.7142rem;
   }
 
-  @media (max-width: 812px) {
+  @media (max-width: 767px) {
     height: 3.2857rem;
   }
-  @media (max-width: 812px) and (orientation: landscape) {
+  @media (max-width: 767px) and (orientation: landscape) {
     a {
       font-size: 0.8571rem;
     }
   }
-  @media (max-width: 812px) {
+  @media (max-width: 767px) {
     height: 4rem;
     a {
       svg {
@@ -98,7 +98,7 @@ const styles = css`
     }
   }
 
-  @media (max-width: 812px) and (orientation: portrait) {
+  @media (max-width: 767px) and (orientation: portrait) {
     a.arrowBtn {
       font-size: 0;
     }

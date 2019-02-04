@@ -9,7 +9,7 @@ export const common = css`
       padding-left: 3.2857rem;
       padding-right: 3.2857rem;
     }
-    @media (max-width: 812px) {
+    @media (max-width: 767px) {
       padding-left: 1.7142rem;
       padding-right: 1.7142rem;
     }

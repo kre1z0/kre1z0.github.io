@@ -56,7 +56,7 @@ const styles = css`
       }
     }
 
-    @media (max-width: 812px) {
+    @media (max-width: 767px) {
       > section:first-child {
         h2 {
           font-size: 1.2857rem;
@@ -76,7 +76,7 @@ const styles = css`
       }
     }
 
-    @media (max-width: 812px) and (orientation: landscape) {
+    @media (max-width: 767px) and (orientation: landscape) {
       justify-content: space-between;
       > section:last-child {
         height: calc(100% - 6rem);
@@ -125,7 +125,7 @@ const styles = css`
         }
       }
     }
-    @media (max-width: 812px) and (orientation: portrait) {
+    @media (max-width: 767px) and (orientation: portrait) {
       flex-direction: column;
       justify-content: space-between;
       > section:first-child {

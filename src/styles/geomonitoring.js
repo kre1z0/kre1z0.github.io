@@ -20,17 +20,17 @@ export const GeomonitoringContainer = styled("div")`
       margin-top: 4rem;
     }
   }
-  @media (max-width: 812px) {
+  @media (max-width: 767px) {
     h1 {
       margin-bottom: 1.4rem;
     }
   }
-  @media (max-width: 812px) and (orientation: landscape) {
+  @media (max-width: 767px) and (orientation: landscape) {
     h3 {
       margin-top: 2rem;
     }
   }
-  @media (max-width: 812px) and (orientation: portrait) {
+  @media (max-width: 767px) and (orientation: portrait) {
     h3 {
       margin-top: 1rem;
     }
@@ -58,14 +58,14 @@ export const Footer = styled("footer")`
       font-size: 1.2857rem;
     }
   }
-  @media (max-width: 812px) and (orientation: landscape) {
+  @media (max-width: 767px) and (orientation: landscape) {
     padding: 2.2857rem 0;
     h3 {
       max-width: 28rem;
       font-size: 1rem;
     }
   }
-  @media (max-width: 812px) and (orientation: portrait) {
+  @media (max-width: 767px) and (orientation: portrait) {
     padding: 1.7142rem 2.8rem;
     h3 {
       max-width: none;
@@ -76,7 +76,7 @@ export const Footer = styled("footer")`
 
 const styles = css`
   .headerRightSide {
-    @media (max-width: 812px) and (orientation: portrait) and (max-height: 524px) {
+    @media (max-width: 767px) and (orientation: portrait) and (max-height: 524px) {
       flex-shrink: 1;
       flex-grow: 1;
     }
@@ -88,7 +88,7 @@ const styles = css`
       display: block;
       margin-bottom: 0;
     }
-    @media (max-width: 812px) and (orientation: portrait) and (max-height: 524px) {
+    @media (max-width: 767px) and (orientation: portrait) and (max-height: 524px) {
       p {
         margin-bottom: 2rem;
       }
@@ -130,7 +130,7 @@ const styles = css`
         height: 1rem;
       }
     }
-    @media (max-width: 812px) {
+    @media (max-width: 767px) {
       width: 1.7142rem;
       height: 1.7142rem;
       svg {
@@ -138,7 +138,7 @@ const styles = css`
         height: 0.8rem;
       }
     }
-    @media (max-width: 812px) and (orientation: portrait) {
+    @media (max-width: 767px) and (orientation: portrait) {
       right: 0.6rem;
       bottom: 0.6rem;
     }

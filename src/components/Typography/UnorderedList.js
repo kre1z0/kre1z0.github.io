@@ -26,7 +26,7 @@ export const UnorderedList = styled("ul")`
     @media (max-width: 991px) {
       font-size: 0.8571rem;
     }
-    @media (max-width: 812px) {
+    @media (max-width: 767px) {
       font-size: 0.7142rem;
       &:before {
         top: 0.4rem;
@@ -45,7 +45,7 @@ export const UnorderedList = styled("ul")`
       font-size: 1rem;
       line-height: 1.43;
     }
-    @media (max-width: 812px) {
+    @media (max-width: 767px) {
       font-size: 0.8571rem;
       line-height: 1.5;
       margin-bottom: 0.6rem;

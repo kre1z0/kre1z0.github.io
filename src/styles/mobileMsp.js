@@ -9,7 +9,7 @@ export const MobileMspStoreContainer = styled("div")`
       margin-right: 1rem;
     }
   }
-  @media (max-width: 812px) {
+  @media (max-width: 767px) {
     a {
       width: 7.5rem;
       height: 2.0714rem;
@@ -37,13 +37,13 @@ export const Phones = styled("img")`
   @media (max-width: 1100px) {
     left: calc(50% + 13rem);
   }
-  @media (max-width: 812px) and (orientation: landscape) {
+  @media (max-width: 767px) and (orientation: landscape) {
     width: 44rem;
     left: calc(44rem / 1.64);
     min-width: auto;
     top: calc(44rem / 3.2);
   }
-  @media (max-width: 812px) and (orientation: portrait) {
+  @media (max-width: 767px) and (orientation: portrait) {
     width: 44rem;
     left: calc(44rem / 2.86);
     min-width: auto;
@@ -71,7 +71,7 @@ const styles = css`
         width: 26rem;
         padding-bottom: 8.5714rem;
       }
-      @media (max-width: 812px) and (orientation: landscape) {
+      @media (max-width: 767px) and (orientation: landscape) {
         width: 17rem;
         margin-right: 0;
         padding-bottom: 1.7142rem;
@@ -82,7 +82,7 @@ const styles = css`
       label {
         background-color: rgba(67, 127, 163, 0.25);
       }
-      @media (max-width: 812px) and (orientation: portrait) {
+      @media (max-width: 767px) and (orientation: portrait) {
         width: auto;
         align-self: flex-start;
         padding-bottom: 1.7142rem;
@@ -98,7 +98,7 @@ const styles = css`
       width: 100vw;
       height: 100%;
     }
-    @media (max-width: 812px) and (orientation: portrait) {
+    @media (max-width: 767px) and (orientation: portrait) {
       align-items: flex-end;
     }
   }

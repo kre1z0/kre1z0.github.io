@@ -68,7 +68,7 @@ const MultiScreenshotsContainer = styled("div")`
       }
     }
   }
-  @media (max-width: 812px) and (orientation: landscape) {
+  @media (max-width: 767px) and (orientation: landscape) {
     margin-top: 4%;
     width: 100%;
     height: 100%;
@@ -106,7 +106,7 @@ const MultiScreenshotsContainer = styled("div")`
       }
     }
   }
-  @media (max-width: 812px) and (orientation: portrait) {
+  @media (max-width: 767px) and (orientation: portrait) {
     > img {
       &:nth-child(-n + 3) {
         margin-top: 24%;
@@ -119,7 +119,7 @@ const MultiScreenshotsContainer = styled("div")`
       transition: none;
     }
   }
-  @media (max-width: 812px) and (max-height: 460px) and (orientation: portrait) {
+  @media (max-width: 767px) and (max-height: 460px) and (orientation: portrait) {
     > img {
       &:nth-child(-n + 3) {
         margin-top: 40%;

@@ -78,7 +78,7 @@ const styles = css`
       max-width: 23.5714rem;
       margin-left: -1vh;
     }
-    @media (max-width: 812px) and (orientation: landscape) {
+    @media (max-width: 767px) and (orientation: landscape) {
       top: 4rem;
       transform: translate(-50%, 0);
       height: 72.8%;

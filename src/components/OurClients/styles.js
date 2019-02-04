@@ -13,10 +13,10 @@ export const OurClientsContainer = styled("div")`
   @media (max-width: 991px) {
     height: 12rem;
   }
-  @media (max-width: 812px) and (orientation: landscape) {
+  @media (max-width: 767px) and (orientation: landscape) {
     height: 10.1428rem;
   }
-  @media (max-width: 812px) and (orientation: portrait) {
+  @media (max-width: 767px) and (orientation: portrait) {
     padding: 1.4rem 0;
     height: 16rem;
   }
@@ -33,7 +33,7 @@ export const OurClientsItem = styled("div")`
   @media (max-width: 1199px) {
     background-size: 60%;
   }
-  @media (max-width: 812px) and (orientation: portrait) {
+  @media (max-width: 767px) and (orientation: portrait) {
     width: calc(100% / 3);
     height: 25%;
     background-size: 55%;

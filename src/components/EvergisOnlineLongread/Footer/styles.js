@@ -9,7 +9,7 @@ export const FooterContainer = styled("footer")`
   @media (max-width: 991px) {
     height: 26rem;
   }
-  @media (max-width: 812px) {
+  @media (max-width: 767px) {
     flex-direction: column;
     height: auto;
   }
@@ -34,14 +34,14 @@ const Section = styled("section")`
   @media (max-width: 991px) {
     font-size: 1.2857rem;
   }
-  @media (max-width: 812px) {
+  @media (max-width: 767px) {
     width: 100%;
     padding: 3.1428rem 2.4285rem;
     > figure {
       max-width: none;
     }
   }
-  @media (max-width: 812px) and (orientation: portrait) {
+  @media (max-width: 767px) and (orientation: portrait) {
     padding: 2.1428rem 1.7142rem;
     font-size: 1.1428rem;
   }

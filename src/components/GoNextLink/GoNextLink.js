@@ -37,7 +37,7 @@ const styles = css`
     @media (max-width: 991px) {
       font-size: 0.9285rem;
     }
-    @media (max-width: 812px) {
+    @media (max-width: 767px) {
       font-size: 0.7857rem;
       svg {
         width: 0.71428rem;

@@ -31,19 +31,19 @@ export const FooterContainer = styled("div")`
       height: 12.8571rem;
     }
   }
-  @media (max-width: 812px) {
+  @media (max-width: 767px) {
     > article:first-child {
       p {
         padding: 0 1.4285rem;
       }
     }
   }
-  @media (max-width: 812px) and (orientation: landscape) {
+  @media (max-width: 767px) and (orientation: landscape) {
     > article:first-child {
       height: 9rem;
     }
   }
-  @media (max-width: 812px) and (orientation: portrait) {
+  @media (max-width: 767px) and (orientation: portrait) {
     margin-top: 0.4rem;
     > article:first-child {
       top: 0;
@@ -56,7 +56,7 @@ export const FooterContainer = styled("div")`
 
 export const Mobiles = styled("div")`
   display: flex;
-  @media (max-width: 812px) and (orientation: portrait) {
+  @media (max-width: 767px) and (orientation: portrait) {
     flex-direction: column;
   }
 `;
@@ -66,7 +66,7 @@ export const Store = styled("div")`
   > a:first-child {
     margin-right: 1rem;
   }
-  @media (max-width: 812px) {
+  @media (max-width: 767px) {
     a {
       width: 7.2142rem;
       height: 2.0714rem;
@@ -75,7 +75,7 @@ export const Store = styled("div")`
       }
     }
   }
-  @media (max-width: 812px) and (orientation: portrait) {
+  @media (max-width: 767px) and (orientation: portrait) {
     margin-bottom: 2rem;
   }
 `;
@@ -133,27 +133,27 @@ const Side = styled("div")`
     }
     height: calc(26.7142rem + 17.8571rem);
   }
-  @media (max-width: 812px) {
+  @media (max-width: 767px) {
     > article {
       h3 {
         font-size: 1.2857rem;
       }
     }
   }
-  @media (max-width: 812px) {
+  @media (max-width: 767px) {
     > article {
       img {
         max-width: 13.4rem;
       }
     }
   }
-  @media (max-width: 812px) and (orientation: landscape) {
+  @media (max-width: 767px) and (orientation: landscape) {
     > article {
       padding-top: 9rem;
     }
     height: calc(25rem + 9rem);
   }
-  @media (max-width: 812px) and (orientation: portrait) {
+  @media (max-width: 767px) and (orientation: portrait) {
     width: 100%;
     > article {
       h3 {
@@ -190,7 +190,7 @@ export const LeftSide = styled(Side)`
   &.isMobilePlatform {
     background-color: #e0f0f6;
   }
-  @media (max-width: 812px) and (orientation: portrait) {
+  @media (max-width: 767px) and (orientation: portrait) {
     > article {
       padding-top: 0;
       justify-content: flex-end;
@@ -226,12 +226,12 @@ export const RightSide = styled(Side)`
   &.isMobilePlatform {
     background-color: #d2e6ed;
   }
-  @media (max-width: 812px) {
+  @media (max-width: 767px) {
     img {
       transform: translate(-50%, calc(66% - 5.7142rem));
     }
   }
-  @media (max-width: 812px) and (orientation: portrait) {
+  @media (max-width: 767px) and (orientation: portrait) {
     height: 24.4rem;
     > article {
       padding-top: 2rem;

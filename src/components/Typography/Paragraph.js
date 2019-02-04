@@ -8,7 +8,7 @@ export const Paragraph = styled("p")`
     font-size: 1rem;
     line-height: 1.43;
   }
-  @media (max-width: 812px) {
+  @media (max-width: 767px) {
     font-size: 0.8571rem;
     line-height: 1.5;
   }
@@ -25,7 +25,7 @@ export const Paragraph = styled("p")`
       line-height: 1.43;
       margin-bottom: 1.64rem;
     }
-    @media (max-width: 812px) {
+    @media (max-width: 767px) {
       font-size: 0.8571rem;
       line-height: 1.5;
       margin-bottom: 1rem;

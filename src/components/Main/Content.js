@@ -8,7 +8,7 @@ export const Content = styled("main")`
   width: 100%;
   height: calc(100% - 5.7971rem);
   justify-content: space-between;
-  @media (max-width: 812px) {
+  @media (max-width: 767px) {
     margin: 4.5971rem auto 0 auto;
     height: calc(100% - 4.5971rem);
   }

@@ -32,14 +32,14 @@ export const VideoContainer = styled("div")`
       box-shadow: 0 1.7142rem 1.7142rem 0 rgba(10, 18, 33, 0.15);
     }
   }
-  @media (max-width: 812px) and (orientation: landscape) {
+  @media (max-width: 767px) and (orientation: landscape) {
     width: calc(100vw - ${breakpoint576} * 2);
     height: calc((100vw - ${breakpoint576} * 2) / ${ratio});
     video {
       box-shadow: 0 1.1428rem 1.1428rem 0 rgba(10, 18, 33, 0.15);
     }
   }
-  @media (max-width: 812px) and (orientation: portrait) {
+  @media (max-width: 767px) and (orientation: portrait) {
     width: 100vw;
     height: calc(100vw / ${ratio});
     margin-left: -${breakpoint576};

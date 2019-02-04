@@ -57,7 +57,7 @@ export const Description = styled("p")`
   @media (max-width: 991px) {
     font-size: 0.85714rem;
   }
-  @media (max-width: 812px) {
+  @media (max-width: 767px) {
     margin-bottom: 0.4rem;
   }
 `;
@@ -79,13 +79,13 @@ export const Content = styled("div")`
   @media (max-width: 991px) {
     padding: 0 2rem 2rem 2rem;
   }
-  @media (max-width: 812px) {
+  @media (max-width: 767px) {
     padding: 0 1.4285rem 0 2.4285rem;
     h2 {
       font-size: 1rem;
     }
   }
-  @media (max-width: 812px) and (orientation: landscape) {
+  @media (max-width: 767px) and (orientation: landscape) {
     display: flex;
     width: 100%;
     height: 100%;
@@ -93,7 +93,7 @@ export const Content = styled("div")`
     justify-content: center;
     padding: 0 1rem 0 3.5714rem;
   }
-  @media (max-width: 812px) and (orientation: portrait) {
+  @media (max-width: 767px) and (orientation: portrait) {
     padding: 1rem;
   }
   &.disableTransition {
@@ -122,7 +122,7 @@ export const MobileTitle = styled("h1")`
   margin: 0;
   left: 0;
   display: none;
-  @media (max-width: 812px) {
+  @media (max-width: 767px) {
     display: block;
     @media (max-height: 320px) {
       margin-top: -1rem;
@@ -190,7 +190,7 @@ export const ScreenshotTransitionGroup = styled(TransitionGroup)`
   @media (max-width: 991px) {
     left: -3.4rem;
   }
-  @media (max-width: 812px) and (orientation: landscape) {
+  @media (max-width: 767px) and (orientation: landscape) {
     top: 50%;
     left: -17.4rem;
     display: flex;
@@ -200,7 +200,7 @@ export const ScreenshotTransitionGroup = styled(TransitionGroup)`
     transform: translate(0, -50%);
     max-height: calc(100% - 2rem);
   }
-  @media (max-width: 812px) and (orientation: portrait) {
+  @media (max-width: 767px) and (orientation: portrait) {
     width: calc(100% + 1rem);
     height: 100%;
     max-height: none;
@@ -227,13 +227,13 @@ export const Screenshot = styled("img")`
   @media (max-width: 991px) {
     top: 18%;
   }
-  @media (max-width: 812px) and (orientation: landscape) {
+  @media (max-width: 767px) and (orientation: landscape) {
     top: 0;
     right: 0;
     height: 100%;
     max-height: none;
   }
-  @media (max-width: 812px) and (orientation: portrait) {
+  @media (max-width: 767px) and (orientation: portrait) {
     top: auto;
     bottom: 0;
   }

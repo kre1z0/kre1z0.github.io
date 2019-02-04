@@ -7,7 +7,7 @@ export const FiguresTitle = styled("h4")`
   font-size: 1.1428rem;
   font-weight: 600;
   line-height: 1.5;
-  @media (max-width: 812px) {
+  @media (max-width: 767px) {
     font-size: 0.8571rem;
   }
 `;
@@ -21,10 +21,10 @@ const styles = css`
     @media (max-width: 991px) {
       margin-bottom: 3.8571rem;
     }
-    @media (max-width: 812px) and (orientation: landscape) {
+    @media (max-width: 767px) and (orientation: landscape) {
       margin-bottom: 2.5714rem;
     }
-    @media (max-width: 812px) and (orientation: portrait) {
+    @media (max-width: 767px) and (orientation: portrait) {
       margin-bottom: 2rem;
     }
   }
@@ -40,10 +40,10 @@ const styles = css`
       @media (max-width: 991px) {
         margin-bottom: 4rem;
       }
-      @media (max-width: 812px) and (orientation: landscape) {
+      @media (max-width: 767px) and (orientation: landscape) {
         margin-bottom: 3rem;
       }
-      @media (max-width: 812px) and (orientation: portrait) {
+      @media (max-width: 767px) and (orientation: portrait) {
         margin-bottom: 2rem;
       }
     }

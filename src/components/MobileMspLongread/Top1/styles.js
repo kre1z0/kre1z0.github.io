@@ -35,7 +35,7 @@ export const Top1Container = styled("div")`
       height: 9.2857rem;
     }
   }
-  @media (max-width: 812px) {
+  @media (max-width: 767px) {
     width: calc(30.5714rem * 0.49);
     height: calc(32.1428rem * 0.49);
     margin: 0 auto 2rem auto;
@@ -84,7 +84,7 @@ const Side = styled("div")`
       height: 2rem;
     }
   }
-  @media (max-width: 812px) {
+  @media (max-width: 767px) {
     width: calc(8.5714rem * 0.49);
     svg {
       width: 1.4285rem;
@@ -125,7 +125,7 @@ export const LeftSide = styled(Side)`
   @media (max-width: 991px) {
     transform: translateX(calc(-100% + 4rem * 0.7));
   }
-  @media (max-width: 812px) {
+  @media (max-width: 767px) {
     transform: translateX(calc(-100% + 4rem * 0.49));
   }
 `;
@@ -163,7 +163,7 @@ export const RightSide = styled(Side)`
   @media (max-width: 991px) {
     transform: translateX(calc(100% - 4rem * 0.7));
   }
-  @media (max-width: 812px) {
+  @media (max-width: 767px) {
     transform: translateX(calc(100% - 4rem * 0.49));
   }
 `;

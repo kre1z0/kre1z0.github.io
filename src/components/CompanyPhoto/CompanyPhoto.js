@@ -41,7 +41,7 @@ export class CompanyPhoto extends PureComponent {
   getNeededElements = () => {
     const viewportWidth = document.documentElement.clientWidth;
 
-    if (viewportWidth <= 812) {
+    if (viewportWidth <= 767) {
       return 6;
     } else if (viewportWidth <= 991) {
       return 12;
