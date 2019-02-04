@@ -40,7 +40,7 @@ export const LayersBlock = styled("section")`
     }
     &:nth-child(9) {
       transition-duration: 200ms;
-      transform: translateY(-40%);
+      transform: translateY(-1.7142rem);
       transition-delay: 1.2s;
     }
   }
