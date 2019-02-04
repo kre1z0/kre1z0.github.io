@@ -33,17 +33,34 @@ const Image = styled("img")`
     max-height: calc(100vh - 12rem);
     max-height: calc(var(--vh, 1vh) * 100 - 12rem);
   }
+  &.doubleBoxShadow {
+    box-shadow: 0 2.2857rem 2.2857rem 0 rgba(10, 18, 33, 0.15),
+      0 0 0.2857rem 0 rgba(10, 18, 33, 0.1);
+    @media (max-width: 991px) {
+      box-shadow: 0 1.7142rem 1.7142rem 0 rgba(10, 18, 33, 0.15),
+        0 0 0.2857rem 0 rgba(10, 18, 33, 0.1);
+    }
+    @media (max-width: 767px) and (orientation: landscape) {
+      box-shadow: 0 1.1428rem 1.1428rem 0 rgba(10, 18, 33, 0.15),
+        0 0 0.2857rem 0 rgba(10, 18, 33, 0.1);
+    }
+    @media (max-width: 767px) and (orientation: portrait) {
+      box-shadow: 0 0.5714rem 0.5714rem 0 rgba(10, 18, 33, 0.15),
+        0 0 0.2857rem 0 rgba(10, 18, 33, 0.1);
+    }
+  }
 `;
 
-export const ImageWithTitle = ({ title, ...props }) => {
+export const ImageWithTitle = ({ title, doubleBoxShadow, ...props }) => {
   return (
     <>
       {title && <H3>{title}</H3>}
-      <Image alt={title} {...props} />
+      <Image alt={title} doubleBoxShadow={doubleBoxShadow} {...props} />
     </>
   );
 };
 
 ImageWithTitle.propTypes = {
   title: PropTypes.string,
+  doubleBoxShadow: PropTypes.bool,
 };

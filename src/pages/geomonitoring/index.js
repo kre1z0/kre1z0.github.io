@@ -7,7 +7,7 @@ import { ImageWithTitle } from "../../components/Multimedia/ImageWithTitle";
 import { Section } from "../../components/Elements/Section";
 import { Article } from "../../components/Elements/Article";
 import { H1, H3 } from "../../components/Typography/Headlines";
-import { Paragraph } from '../../components/Typography/Paragraph';
+import { Paragraph } from "../../components/Typography/Paragraph";
 import { TelegramButton } from "../../components/Buttons/TelegramButton";
 import { Header } from "../../components/PortfolioLongreadHeader/Header";
 import { Figures } from "../../components/Figures/Figures";
@@ -126,6 +126,7 @@ class Geomonitoring extends PureComponent {
                 title="Мониторинг объектов и сотрудников"
                 src={screenshot2}
                 style={{ borderRadius: "1.4rem" }}
+                doubleBoxShadow
               />
               <Paragraph>
                 Система позволяет руководителям следить онлайн за тем, как сотрудники банка

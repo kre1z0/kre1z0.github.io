@@ -127,7 +127,11 @@ class EvergisOnline extends Component {
           <Section withoutPaddingTop className={styles.sectionWithScreenshots}>
             <Article>
               <H1 className={styles.mainTitle}>Как работать с EverGIS Online</H1>
-              <ImageWithTitle title="Удобно и просто" src={longreadImages[0][ratio]} />
+              <ImageWithTitle
+                title="Удобно и просто"
+                src={longreadImages[0][ratio]}
+                doubleBoxShadow
+              />
               <Paragraph>
                 Сервис прост и удобен в использовании. Он работает онлайн в любом браузере, не нужно
                 устанавливать дополнительные программы и приложения. Специальные навыки работы в

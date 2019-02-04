@@ -27,6 +27,15 @@ export const SliderBackground = styled("div")`
       height: calc(100% + 1.1428rem * 2);
     }
   }
+  @media (max-width: 1199px) {
+    @media (hover: hover) {
+      &.hovered {
+        top: -0.8rem;
+        width: calc(100% + 0.8rem);
+        height: calc(100% + 0.8rem * 2);
+      }
+    }
+  }
   @media (max-width: 991px) {
     border-radius: 0.2857rem;
   }
@@ -99,6 +108,9 @@ export const ControlBlock = styled("div")`
   right: 0;
   bottom: -1rem;
   transform: translate(1.1428rem, 1.1428rem);
+  @media (max-width: 1199px) {
+    bottom: -1.4rem;
+  }
   @media (max-width: 991px) {
     display: none;
   }
