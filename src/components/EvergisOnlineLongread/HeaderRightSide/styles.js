@@ -1,6 +1,7 @@
 import styled from "astroturf";
 
 export const LayersBlock = styled("section")`
+  position: relative;
   width: 100%;
   height: 100%;
   > img {
@@ -34,10 +35,10 @@ export const LayersBlock = styled("section")`
       top: 20%;
     }
     &:nth-child(8) {
-      transition-delay: 800ms;
+      transition-delay: 1s;
     }
     &:nth-child(9) {
-      transition-delay: 800ms;
+      transition-delay: 1s;
     }
   }
   &.animate {

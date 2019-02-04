@@ -36,6 +36,20 @@ const styles = css`
       }
     }
   }
+  .header {
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url(../img/portfolio/evergisOnline/header/pattern.png);
+      background-position: top;
+      background-size: contain;
+    }
+  }
   .headerLeftSide {
     transition-delay: 0ms;
   }

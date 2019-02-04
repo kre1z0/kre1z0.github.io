@@ -14,6 +14,11 @@ const styles = css`
         height: 100%;
       }
     }
+    @media (max-width: 1314px) {
+      > section:last-child {
+        height: 27.4rem;
+      }
+    }
     @media (max-width: 1199px) {
       justify-content: flex-start;
       > section:first-child {
@@ -23,6 +28,7 @@ const styles = css`
         }
       }
       > section:last-child {
+        height: 22rem;
         display: flex;
         justify-content: center;
         flex-grow: 1;
@@ -41,6 +47,7 @@ const styles = css`
 
     @media (max-width: 991px) {
       > section:last-child {
+        height: 100%;
         max-height: 22.4285rem;
         > div {
           width: 100%;

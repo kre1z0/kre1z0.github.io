@@ -64,6 +64,9 @@ export const Content = styled("div")`
   @media (max-height: 700px) and (min-width: 1200px) and (orientation: landscape) {
     padding: 0 2rem 2rem 2rem;
   }
+  @media (max-width: 1199px) {
+    padding: 0 2.8rem 2.8rem 2.8rem;
+  }
   @media (max-width: 991px) {
     padding: 0 2rem 2rem 2rem;
   }
@@ -198,16 +201,16 @@ export const Screenshot = styled("img")`
   will-change: opacity, transform;
   position: absolute;
   top: 16%;
-  border-radius: 0.1428rem;
   max-width: 46.4285rem;
   max-height: 41vh;
   height: auto;
   box-shadow: 1.1428rem 1.1428rem 2.2857rem 0 rgba(50, 57, 69, 0.25);
-  @media (max-height: 700px) and (min-width: 1200px) and (orientation: landscape) {
-    top: 10%;
-  }
+  border-radius: 0.2857rem;
   @media (max-width: 1199px) {
     max-width: 100%;
+  }
+  @media (min-width: 1024px) and (max-width: 1024px) {
+    top: 14%;
   }
   @media (max-width: 991px) {
     top: 18%;

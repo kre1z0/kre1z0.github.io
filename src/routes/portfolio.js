@@ -1,10 +1,10 @@
 // portfolio screenshots
-import mspX1 from "../img/portfolio/slide-screenshots/msp/bitmap.png";
-import mspX2 from "../img/portfolio/slide-screenshots/msp/bitmap@2x.png";
-import mspX3 from "../img/portfolio/slide-screenshots/msp/bitmap@3x.png";
-import geomonitoringX1 from "../img/portfolio/slide-screenshots/geomonitoring/bitmap.png";
-import geomonitoringX2 from "../img/portfolio/slide-screenshots/geomonitoring/bitmap@2x.png";
-import geomonitoringX3 from "../img/portfolio/slide-screenshots/geomonitoring/bitmap@3x.png";
+import mspX1 from "../img/portfolio/slide-screenshots/msp/msp.png";
+import mspX2 from "../img/portfolio/slide-screenshots/msp/msp@2x.png";
+import mspX3 from "../img/portfolio/slide-screenshots/msp/msp@3x.png";
+import geomonitoringX1 from "../img/portfolio/slide-screenshots/geomonitoring/bank.png";
+import geomonitoringX2 from "../img/portfolio/slide-screenshots/geomonitoring/bank@2x.png";
+import geomonitoringX3 from "../img/portfolio/slide-screenshots/geomonitoring/bank@3x.png";
 import evergisOnlineX1 from "../img/portfolio/slide-screenshots/evergisOnline/1-ec-header.png";
 import evergisOnlineX2 from "../img/portfolio/slide-screenshots/evergisOnline/1-ec-header@2x.png";
 import evergisOnlineX3 from "../img/portfolio/slide-screenshots/evergisOnline/1-ec-header@3x.png";
@@ -96,7 +96,8 @@ export default {
             },
           ],
           link: "public.everpoint.ru",
-          description: "Картографический сервис для анализа геоданных и создания интерактивных карт",
+          description:
+            "Картографический сервис для анализа геоданных и создания интерактивных карт",
         },
         {
           text: "EverTrack",

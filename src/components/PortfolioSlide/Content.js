@@ -31,7 +31,7 @@ export class Crutch extends PureComponent {
         </Title>
         <Description style={{ color }}>
           {description ||
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam eaque eligendi iusto labore nisi quas. Lorem ipsum dolor sit amet. Consectetur adi. "}
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam eaque eligendi iusto labore nisi quas."}
         </Description>
         <GoNextLink className={cn(isMobileMsp ? styles.mobileMsp : styles.white)}>
           Подробнее

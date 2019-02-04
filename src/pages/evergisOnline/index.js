@@ -13,14 +13,31 @@ import { Footer } from "../../components/EvergisOnlineLongread/Footer/Footer";
 import { HeaderRightSide } from "../../components/EvergisOnlineLongread/HeaderRightSide/HeaderRightSide";
 import { getPixelRatioPropName } from "../../utils/utils";
 
-import screen from "../../img/portfolio/evergisOnline/header/1_app@2x.png";
-import leftCard1 from "../../img/portfolio/evergisOnline/header/2_leftCard-1@2x.png";
-import leftCard2 from "../../img/portfolio/evergisOnline/header/3_leftCard-2@2x.png";
-import leftCard3 from "../../img/portfolio/evergisOnline/header/4_leftCard-3@2x.png";
-import leftCard4 from "../../img/portfolio/evergisOnline/header/5_leftCard-4@2x.png";
-import leftCard5 from "../../img/portfolio/evergisOnline/header/6_leftCard-5@2x.png";
-import rightCard from "../../img/portfolio/evergisOnline/header/7_rightCard@2x.png";
-import point from "../../img/portfolio/evergisOnline/header/8_point@2x.png";
+import patternImg from '../../img/portfolio/evergisOnline/header/pattern.png';
+import appX1 from "../../img/portfolio/evergisOnline/header/app/app.png";
+import appX2 from "../../img/portfolio/evergisOnline/header/app/app@2x.png";
+import appX3 from "../../img/portfolio/evergisOnline/header/app/app@3x.png";
+import leftCard1X1 from "../../img/portfolio/evergisOnline/header/leftCard-1/leftCard-1.png";
+import leftCard1X2 from "../../img/portfolio/evergisOnline/header/leftCard-1/leftCard-1@2x.png";
+import leftCard1X3 from "../../img/portfolio/evergisOnline/header/leftCard-1/leftCard-1@3x.png";
+import leftCard2X1 from "../../img/portfolio/evergisOnline/header/leftCard-2/leftCard-2.png";
+import leftCard2X2 from "../../img/portfolio/evergisOnline/header/leftCard-2/leftCard-2@2x.png";
+import leftCard2X3 from "../../img/portfolio/evergisOnline/header/leftCard-2/leftCard-2@3x.png";
+import leftCard3X1 from "../../img/portfolio/evergisOnline/header/leftCard-3/leftCard-3.png";
+import leftCard3X2 from "../../img/portfolio/evergisOnline/header/leftCard-3/leftCard-3@2x.png";
+import leftCard3X3 from "../../img/portfolio/evergisOnline/header/leftCard-3/leftCard-3@3x.png";
+import leftCard4X1 from "../../img/portfolio/evergisOnline/header/leftCard-4/leftCard-4.png";
+import leftCard4X2 from "../../img/portfolio/evergisOnline/header/leftCard-4/leftCard-4@2x.png";
+import leftCard4X3 from "../../img/portfolio/evergisOnline/header/leftCard-4/leftCard-4@3x.png";
+import leftCard5X1 from "../../img/portfolio/evergisOnline/header/leftCard-5/leftCard-5.png";
+import leftCard5X2 from "../../img/portfolio/evergisOnline/header/leftCard-5/leftCard-5@2x.png";
+import leftCard5X3 from "../../img/portfolio/evergisOnline/header/leftCard-5/leftCard-5@3x.png";
+import rightCardX1 from "../../img/portfolio/evergisOnline/header/rightCard/rightCard.png";
+import rightCardX2 from "../../img/portfolio/evergisOnline/header/rightCard/rightCard@2x.png";
+import rightCardX3 from "../../img/portfolio/evergisOnline/header/rightCard/rightCard@3x.png";
+import pointX1 from "../../img/portfolio/evergisOnline/header/point/point.png";
+import pointX2 from "../../img/portfolio/evergisOnline/header/point/point@2x.png";
+import pointX3 from "../../img/portfolio/evergisOnline/header/point/point@3x.png";
 
 import { ReactComponent as Ic1 } from "../../img/portfolio/evergisOnline/features-icons/ic-1.svg";
 import { ReactComponent as Ic2 } from "../../img/portfolio/evergisOnline/features-icons/ic-2.svg";
@@ -31,7 +48,16 @@ import { ReactComponent as Ic6 } from "../../img/portfolio/evergisOnline/feature
 
 import styles, { EvergisOnlineContainer, FiguresTitle } from "../../styles/evergisOnline";
 
-const images = [screen, leftCard1, leftCard2, leftCard3, leftCard4, leftCard5, rightCard, point];
+const images = [
+  { x1: appX1, x2: appX2, x3: appX3 },
+  { x1: leftCard1X1, x2: leftCard1X2, x3: leftCard1X3 },
+  { x1: leftCard2X1, x2: leftCard2X2, x3: leftCard2X3 },
+  { x1: leftCard3X1, x2: leftCard3X2, x3: leftCard3X3 },
+  { x1: leftCard4X1, x2: leftCard4X2, x3: leftCard4X3 },
+  { x1: leftCard5X1, x2: leftCard5X2, x3: leftCard5X3 },
+  { x1: rightCardX1, x2: rightCardX2, x3: rightCardX3 },
+  { x1: pointX1, x2: pointX2, x3: pointX3 },
+];
 
 const justDoIt = [
   { Icon: Ic1, text: "Создавайте веб-карты" },
@@ -59,16 +85,21 @@ class EvergisOnline extends Component {
   render() {
     const { ratio, animate } = this.state;
     const { location, projectId } = this.props;
+
     const evergisOnline = getProject({ projectId });
     const { longreadImages } = evergisOnline;
+
+    const imagesWithRatio = images.map(img => img[ratio]);
 
     return (
       <>
         <Header
-          images={images}
+          images={imagesWithRatio}
           onLoad={() => this.setState({ animate: true })}
           animate={animate}
-          rightSide={<HeaderRightSide animate={animate} images={images} />}
+          rightSide={<HeaderRightSide animate={animate} images={imagesWithRatio} />}
+          containerClassName={styles.header}
+          backgroundImage={`url(${patternImg})`}
           leftSideClassName={styles.headerLeftSide}
           projectId={projectId}
           location={location}
