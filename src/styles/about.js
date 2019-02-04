@@ -10,11 +10,11 @@ export const NewsContainer = styled("div")`
     width: 22.8571rem;
     height: 24.3571rem;
   }
-  @media (max-width: 767px) and (orientation: portrait) {
+  @media (max-width: 812px) and (orientation: portrait) {
     width: 100%;
     max-height: 18.0714rem;
   }
-  @media (max-width: 767px) and (orientation: landscape) {
+  @media (max-width: 812px) and (orientation: landscape) {
     height: 100%;
     max-height: 18.0714rem;
   }
@@ -39,7 +39,7 @@ const styles = css`
     > section:first-child {
       z-index: 1;
       h1 {
-        @media (max-width: 767px) {
+        @media (max-width: 812px) {
           margin-bottom: 0.4rem;
         }
       }
@@ -47,7 +47,7 @@ const styles = css`
     > section:last-child {
       max-height: calc(100% - 4rem);
     }
-    @media (max-width: 767px) and (orientation: portrait) {
+    @media (max-width: 812px) and (orientation: portrait) {
       flex-direction: column;
       align-items: flex-start;
       > section:last-child {
@@ -58,7 +58,7 @@ const styles = css`
         }
       }
     }
-    @media (max-width: 767px) and (orientation: landscape) {
+    @media (max-width: 812px) and (orientation: landscape) {
       padding-bottom: 1.2rem;
       > section:last-child {
         height: 100%;
@@ -69,7 +69,7 @@ const styles = css`
         }
       }
     }
-    @media (max-width: 767px) and (max-height: 320px) and (orientation: landscape) {
+    @media (max-width: 812px) and (max-height: 320px) and (orientation: landscape) {
       > section:first-child {
         margin-bottom: 2rem;
       }
@@ -92,7 +92,7 @@ const styles = css`
       width: calc(100% + 100rem);
       height: calc(100% + 51rem);
     }
-    @media (max-width: 767px) and (orientation: portrait) {
+    @media (max-width: 812px) and (orientation: portrait) {
       top: -43rem;
       left: -84rem;
       width: calc(100% + 93rem);
@@ -101,7 +101,7 @@ const styles = css`
         top: -53rem;
       }
     }
-    @media (max-width: 767px) and (orientation: landscape) {
+    @media (max-width: 812px) and (orientation: landscape) {
       top: -21rem;
       left: -79rem;
       width: calc(100% + 90rem);

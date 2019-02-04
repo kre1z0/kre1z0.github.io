@@ -27,7 +27,7 @@ export const BnBlock = styled("div")`
       height: 3.8rem;
     }
   }
-  @media (max-width: 767px) {
+  @media (max-width: 812px) {
     margin-bottom: 0;
     img {
       width: 3rem;
@@ -41,7 +41,7 @@ export const BnBlock = styled("div")`
       height: 3rem;
     }
   }
-  @media (max-width: 767px) and (orientation: portrait) {
+  @media (max-width: 812px) and (orientation: portrait) {
     margin-bottom: 1rem;
     figure {
       h2 {
@@ -70,7 +70,7 @@ export const WithVideoContent = styled("div")`
       }
     }
   }
-  @media (max-width: 767px) and (orientation: portrait) {
+  @media (max-width: 812px) and (orientation: portrait) {
     h3 {
       display: none;
     }
@@ -134,7 +134,7 @@ const styles = css`
         }
       }
     }
-    @media (max-width: 767px) and (orientation: landscape) {
+    @media (max-width: 812px) and (orientation: landscape) {
       padding-top: 2.2rem;
       article {
         align-items: flex-start;
@@ -155,7 +155,7 @@ const styles = css`
         }
       }
     }
-    @media (max-width: 767px) and (orientation: portrait) {
+    @media (max-width: 812px) and (orientation: portrait) {
       padding-bottom: 2.6rem;
       > article {
         flex-direction: column;
@@ -180,7 +180,7 @@ const styles = css`
     @media (max-width: 991px) {
       padding-bottom: 3rem;
     }
-    @media (max-width: 767px) and (orientation: landscape) {
+    @media (max-width: 812px) and (orientation: landscape) {
       padding-bottom: 0;
       margin-bottom: 1.44rem;
     }
@@ -211,12 +211,12 @@ const styles = css`
     }
   }
   .mobilePortraitOrder1 {
-    @media (max-width: 767px) and (orientation: portrait) {
+    @media (max-width: 812px) and (orientation: portrait) {
       order: 1;
     }
   }
   .mobilePortraitOrder2 {
-    @media (max-width: 767px) and (orientation: portrait) {
+    @media (max-width: 812px) and (orientation: portrait) {
       order: 2;
     }
   }

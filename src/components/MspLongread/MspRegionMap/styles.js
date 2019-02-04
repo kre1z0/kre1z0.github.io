@@ -20,7 +20,7 @@ export const MspRegionMapContainer = styled("div")`
     height: 34.5714rem;
     margin: 4rem 0;
   }
-  @media (max-width: 767px) and (orientation: landscape) {
+  @media (max-width: 812px) and (orientation: landscape) {
     height: 26.5714rem;
   }
   @media (max-width: 420px) {
@@ -109,7 +109,7 @@ export const Achievement = styled("div")`
       width: auto;
     }
   }
-  @media (max-width: 767px) and (orientation: landscape) {
+  @media (max-width: 812px) and (orientation: landscape) {
     width: 50%;
     height: auto;
     &:nth-child(even) {
@@ -134,7 +134,7 @@ export const Achievement = styled("div")`
       padding-bottom: 2.8571rem;
     }
   }
-  @media (max-width: 767px) and (orientation: portrait) {
+  @media (max-width: 812px) and (orientation: portrait) {
     &:nth-child(odd) {
       margin-right: 0;
     }
@@ -161,7 +161,7 @@ export const MapWraper = styled("div")`
     left: 50%;
     transform: translate(-50%, -50%);
   }
-  @media (max-width: 767px) and (orientation: landscape) {
+  @media (max-width: 812px) and (orientation: landscape) {
     width: 100vw;
   }
   @media (max-width: 420px) {

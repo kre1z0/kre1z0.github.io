@@ -18,11 +18,11 @@ const Image = styled("img")`
     margin: 0 0 1.5rem 0;
     box-shadow: 0 1.7142rem 1.7142rem 0 rgba(10, 18, 33, 0.15);
   }
-  @media (max-width: 767px) and (orientation: landscape) {
+  @media (max-width: 812px) and (orientation: landscape) {
     margin: 0 0 1.2rem 0;
     box-shadow: 0 1.1428rem 1.1428rem 0 rgba(10, 18, 33, 0.15);
   }
-  @media (max-width: 767px) and (orientation: portrait) {
+  @media (max-width: 812px) and (orientation: portrait) {
     max-width: none;
     box-shadow: 0 0.5714rem 0.5714rem 0 rgba(10, 18, 33, 0.15);
     width: 100vw;
@@ -40,11 +40,11 @@ const Image = styled("img")`
       box-shadow: 0 1.7142rem 1.7142rem 0 rgba(10, 18, 33, 0.15),
         0 0 0.2857rem 0 rgba(10, 18, 33, 0.1);
     }
-    @media (max-width: 767px) and (orientation: landscape) {
+    @media (max-width: 812px) and (orientation: landscape) {
       box-shadow: 0 1.1428rem 1.1428rem 0 rgba(10, 18, 33, 0.15),
         0 0 0.2857rem 0 rgba(10, 18, 33, 0.1);
     }
-    @media (max-width: 767px) and (orientation: portrait) {
+    @media (max-width: 812px) and (orientation: portrait) {
       box-shadow: 0 0.5714rem 0.5714rem 0 rgba(10, 18, 33, 0.15),
         0 0 0.2857rem 0 rgba(10, 18, 33, 0.1);
     }

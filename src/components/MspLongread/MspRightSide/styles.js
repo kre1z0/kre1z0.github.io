@@ -26,7 +26,7 @@ export const LayersBlock = styled("div")`
       &:nth-child(4) {
         transition-delay: 800ms;
       }
-      @media (max-width: 767px) and (orientation: portrait) {
+      @media (max-width: 812px) and (orientation: portrait) {
         left: -1.46vw;
       }
     }
@@ -53,7 +53,7 @@ export const CardsBlock = styled("div")`
     height: auto;
     max-width: none;
   }
-  @media (max-width: 767px) and (orientation: portrait) {
+  @media (max-width: 812px) and (orientation: portrait) {
     height: calc(100vw / 2.18);
   }
 `;

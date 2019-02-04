@@ -9,10 +9,10 @@ export const Blank = styled("article")`
     padding: 2.1428rem;
     box-shadow: 0 0.8571rem 0.8571rem 0 rgba(10, 18, 33, 0.1);
   }
-  @media (max-width: 767px) {
+  @media (max-width: 812px) {
     padding: 1.4285rem;
   }
-  @media (max-width: 767px) and (orientation: landscape) {
+  @media (max-width: 812px) and (orientation: landscape) {
     padding: 1rem;
   }
 `;

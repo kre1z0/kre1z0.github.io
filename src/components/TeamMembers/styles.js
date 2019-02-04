@@ -41,7 +41,7 @@ export const NoVacancyDescription = styled("p")`
   font-weight: 500;
   margin-top: 1.4rem;
   margin-bottom: 0;
-  @media (max-width: 767px) and (orientation: landscape) {
+  @media (max-width: 812px) and (orientation: landscape) {
     margin-top: 0;
     font-size: 0.7142rem;
   }
@@ -87,7 +87,7 @@ const styles = css`
         font-size: 0.8rem;
       }
     }
-    @media (max-width: 767px) and (orientation: portrait) {
+    @media (max-width: 812px) and (orientation: portrait) {
       > div:nth-child(2) {
         margin-bottom: 0;
       }
@@ -97,7 +97,7 @@ const styles = css`
     }
   }
   .vacancyCard {
-    @media (max-width: 767px) and (orientation: portrait) {
+    @media (max-width: 812px) and (orientation: portrait) {
       display: flex;
       justify-content: center;
       flex-direction: column;

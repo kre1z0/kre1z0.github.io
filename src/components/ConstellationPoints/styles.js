@@ -13,7 +13,7 @@ export const ConstellationPointsContainer = styled("div")`
   @media (max-width: 1199px) {
     width: 100vw;
   }
-  @media (max-width: 767px) and (orientation: portrait) {
+  @media (max-width: 812px) and (orientation: portrait) {
     width: 400vw;
     left: 50%;
     transform: translate(-50%, calc(-100% - 2rem));
@@ -50,7 +50,7 @@ export const FakePoint = styled(PointMain)`
   top: 50%;
   right: 0;
   transform: translate(calc(-50% - 1.8rem), -50%);
-  @media (max-width: 767px) and (orientation: portrait) {
+  @media (max-width: 812px) and (orientation: portrait) {
     top: auto;
     right: auto;
     left: 50%;
@@ -102,7 +102,7 @@ export const Point = styled(PointMain)`
       left: 4%;
     }
   }
-  @media (max-width: 767px) and (orientation: portrait) {
+  @media (max-width: 812px) and (orientation: portrait) {
     &:nth-child(1) {
       top: auto;
       right: auto;
@@ -127,7 +127,7 @@ export const Point = styled(PointMain)`
       left: 4%;
     }
   }
-  @media (max-width: 767px) and (orientation: landscape) {
+  @media (max-width: 812px) and (orientation: landscape) {
     &:nth-child(2) {
       top: 119%;
       left: 56%;

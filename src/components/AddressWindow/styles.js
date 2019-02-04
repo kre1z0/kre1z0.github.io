@@ -40,7 +40,7 @@ export const AddressBtnContainer = styled("div")`
     &:last-child {
       margin-right: 0;
     }
-    @media (max-width: 767px) {
+    @media (max-width: 812px) {
       margin-right: 1.4rem;
       a {
         width: 4rem;

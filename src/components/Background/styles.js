@@ -39,7 +39,7 @@ const styles = css`
   }
   .bus,
   .metro {
-    @media (max-width: 767px) and (orientation: landscape) {
+    @media (max-width: 812px) and (orientation: landscape) {
       background-position: 74% 24%;
       background-size: 130%;
     }
