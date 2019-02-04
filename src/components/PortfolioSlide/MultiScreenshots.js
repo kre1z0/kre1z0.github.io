@@ -119,6 +119,13 @@ const MultiScreenshotsContainer = styled("div")`
       transition: none;
     }
   }
+  @media (max-width: 767px) and (max-height: 460px) and (orientation: portrait) {
+    > img {
+      &:nth-child(-n + 3) {
+        margin-top: 40%;
+      }
+    }
+  }
 `;
 
 export class MultiScreenshots extends Component {
