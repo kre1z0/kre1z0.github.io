@@ -78,7 +78,10 @@ export class ConstellationPoints extends PureComponent {
     const { selectedSectionIndex, pointsAmount, x, y, status, disableTransition } = this.props;
 
     return (
-      <ConstellationPointsContainer disableTransition={disableTransition} className={cn(fade[status], transition[status])}>
+      <ConstellationPointsContainer
+        disableTransition={disableTransition}
+        className={cn(fade[status], transition[status])}
+      >
         <FakePoint ref={this.onFakePointRef} />
         <TransformContainer style={{ transform: `translate(${x}px, ${y}px)` }}>
           {Array.from({ length: pointsAmount }, (_, index) => (

@@ -33,8 +33,8 @@ export const setVhProperty = () => {
     return;
   }
 
-  const viewportHeight = window.innerHeight || document.documentElement.clientHeight || 0;
-  const vh = viewportHeight * 0.01;
+  const vh = window.innerHeight * 0.01;
+
   document.documentElement.style.setProperty("--vh", `${vh}px`);
 };
 
