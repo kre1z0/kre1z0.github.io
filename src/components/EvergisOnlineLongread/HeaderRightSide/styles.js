@@ -35,16 +35,22 @@ export const LayersBlock = styled("section")`
       top: 20%;
     }
     &:nth-child(8) {
+      transition-duration: 200ms;
       transition-delay: 1s;
     }
     &:nth-child(9) {
-      transition-delay: 1s;
+      transition-duration: 200ms;
+      transform: translateY(-40%);
+      transition-delay: 1.2s;
     }
   }
   &.animate {
     > img {
       opacity: 1;
       &:nth-child(n + 3):nth-child(-n + 7) {
+        transform: translateY(0);
+      }
+      &:nth-child(9) {
         transform: translateY(0);
       }
     }

@@ -13,7 +13,7 @@ import { Footer } from "../../components/EvergisOnlineLongread/Footer/Footer";
 import { HeaderRightSide } from "../../components/EvergisOnlineLongread/HeaderRightSide/HeaderRightSide";
 import { getPixelRatioPropName } from "../../utils/utils";
 
-import patternImg from '../../img/portfolio/evergisOnline/header/pattern.png';
+import patternImg from "../../img/portfolio/evergisOnline/header/pattern.png";
 import appX1 from "../../img/portfolio/evergisOnline/header/app/app.png";
 import appX2 from "../../img/portfolio/evergisOnline/header/app/app@2x.png";
 import appX3 from "../../img/portfolio/evergisOnline/header/app/app@3x.png";
@@ -55,8 +55,8 @@ const images = [
   { x1: leftCard3X1, x2: leftCard3X2, x3: leftCard3X3 },
   { x1: leftCard4X1, x2: leftCard4X2, x3: leftCard4X3 },
   { x1: leftCard5X1, x2: leftCard5X2, x3: leftCard5X3 },
-  { x1: rightCardX1, x2: rightCardX2, x3: rightCardX3 },
   { x1: pointX1, x2: pointX2, x3: pointX3 },
+  { x1: rightCardX1, x2: rightCardX2, x3: rightCardX3 },
 ];
 
 const justDoIt = [

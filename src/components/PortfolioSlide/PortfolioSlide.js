@@ -42,11 +42,13 @@ export class PortfolioSlide extends PureComponent {
     left: 0,
     width: 0,
     height: 0,
+    ratio: "x1",
   };
 
   componentDidMount() {
     this.onResize();
     window.addEventListener("resize", this.onResize);
+    this.setState({ ratio: getPixelRatioPropName() });
   }
 
   componentWillUnmount() {
@@ -91,7 +93,7 @@ export class PortfolioSlide extends PureComponent {
   };
 
   render() {
-    const { hovered, top, left, width, height, goToLongread } = this.state;
+    const { hovered, top, left, width, height, goToLongread, ratio } = this.state;
     const {
       projectBackgroundColor,
       text,
@@ -106,9 +108,13 @@ export class PortfolioSlide extends PureComponent {
       disableTransition,
     } = this.props;
 
+    const images = Array.isArray(screenshots)
+      ? screenshots.map(img => img[ratio])
+      : screenshots[ratio];
+
     return (
       <Swiper onSwiped={this.onSwiped} onClick={this.goToLongread}>
-        <ImagesDownloadListener images={[]} />
+        <ImagesDownloadListener images={images} />
         <PortfolioSlideContainer
           ref={this.onContainerRef}
           onMouseOver={() => this.setState({ hovered: true })}
@@ -121,11 +127,7 @@ export class PortfolioSlide extends PureComponent {
             direction={sectionDirection}
             id={id}
             text={text}
-            screenshots={
-              Array.isArray(screenshots)
-                ? screenshots.map(img => img[getPixelRatioPropName()])
-                : screenshots[getPixelRatioPropName()]
-            }
+            screenshots={images}
           />
           <Content
             disableTransition={disableTransition}

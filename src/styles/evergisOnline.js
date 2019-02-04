@@ -14,7 +14,19 @@ export const FiguresTitle = styled("h4")`
 
 const styles = css`
   .mainTitle {
-    margin-bottom: 7rem;
+    margin-bottom: 6.8571rem;
+    @media (max-width: 1199px) {
+      margin-bottom: 5.1428rem;
+    }
+    @media (max-width: 991px) {
+      margin-bottom: 3.8571rem;
+    }
+    @media (max-width: 767px) and (orientation: landscape) {
+      margin-bottom: 2.5714rem;
+    }
+    @media (max-width: 767px) and (orientation: portrait) {
+      margin-bottom: 2rem;
+    }
   }
   .sectionWithScreenshots {
     p {
@@ -43,11 +55,13 @@ const styles = css`
       position: absolute;
       top: 0;
       left: 0;
+      right: 0;
+      bottom: 0;
       width: 100%;
       height: 100%;
       background-image: url(../img/portfolio/evergisOnline/header/pattern.png);
       background-position: top;
-      background-size: contain;
+      background-size: cover;
     }
   }
   .headerLeftSide {
