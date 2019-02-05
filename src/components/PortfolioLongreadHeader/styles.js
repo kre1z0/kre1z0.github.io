@@ -63,7 +63,7 @@ export const LeftSide = styled(Section)`
   @media (max-width: 1199px) {
     margin-right: 3rem;
   }
-  @media (max-width: 991px) {
+  @media (max-width: 991px) and (min-width: 768px) {
     width: 40%;
     margin-right: 2rem;
   }
@@ -85,7 +85,7 @@ export const RightSide = styled(Section)`
     flex-shrink: 0;
     flex-grow: 1;
   }
-  @media (max-width: 991px) {
+  @media (max-width: 991px) and (min-width: 768px) {
     width: 60%;
   }
   @media (max-width: 812px) and (max-height: 320px) and (orientation: landscape),
