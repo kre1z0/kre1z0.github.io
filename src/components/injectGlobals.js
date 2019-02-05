@@ -11,6 +11,9 @@ export const injectGlobals = () => {
       font-family: "Open Sans", Tahoma, sans-serif;
       color: #262c37;
       overflow: hidden;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      letter-spacing: 0;
     }
     img {
       outline: none;
