@@ -5,7 +5,6 @@ export const LongreadNavbarContainer = styled("nav")`
   width: 100%;
   top: 0;
   left: 0;
-  right: 0;
   position: fixed;
   height: 5.7142rem;
   will-change: transform;

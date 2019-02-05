@@ -40,10 +40,9 @@ const styles = css`
       }
       @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
         max-height: 10rem;
+        align-self: center;
+        margin-bottom: 2rem;
       }
-    }
-    @media (max-width: 812px) and (orientation: landscape) and (max-height: 320px) {
-      align-items: flex-start;
     }
     @media (max-width: 767px) and (orientation: portrait) {
       flex-direction: column;
