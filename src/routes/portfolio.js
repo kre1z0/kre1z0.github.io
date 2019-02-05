@@ -21,15 +21,12 @@ import mobileThirdX3 from "../img/portfolio/slide-screenshots/mobileMsp/screen-3
 import eoPic1X1 from "../img/portfolio/evergisOnline/screenshots/pic-1.png";
 import eoPic1X2 from "../img/portfolio/evergisOnline/screenshots/pic-1@2x.png";
 import eoPic1X3 from "../img/portfolio/evergisOnline/screenshots/pic-1@3x.png";
-
 import eoPic2X1 from "../img/portfolio/evergisOnline/screenshots/pic-2.png";
 import eoPic2X2 from "../img/portfolio/evergisOnline/screenshots/pic-2@2x.png";
 import eoPic2X3 from "../img/portfolio/evergisOnline/screenshots/pic-2@3x.png";
-
 import eoPic3X1 from "../img/portfolio/evergisOnline/screenshots/pic-3.png";
 import eoPic3X2 from "../img/portfolio/evergisOnline/screenshots/pic-3@2x.png";
 import eoPic3X3 from "../img/portfolio/evergisOnline/screenshots/pic-3@3x.png";
-
 import eoPic4X1 from "../img/portfolio/evergisOnline/screenshots/pic-4.png";
 import eoPic4X2 from "../img/portfolio/evergisOnline/screenshots/pic-4@2x.png";
 import eoPic4X3 from "../img/portfolio/evergisOnline/screenshots/pic-4@3x.png";

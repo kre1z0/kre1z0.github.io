@@ -157,7 +157,7 @@ class EvergisOnline extends Component {
               </Paragraph>
               <ImageWithTitle
                 title="Публикация, экспорт и совместная работа"
-                src={longreadImages[1][ratio]}
+                src={longreadImages[3][ratio]}
               />
               <Paragraph>
                 Готовыми интерактивными картами EverGIS Online можно поделиться в социальных сетях,
