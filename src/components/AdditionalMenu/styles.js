@@ -27,13 +27,13 @@ export const Menu = styled("menu")`
       > a,
       h4 {
         white-space: normal;
-        font-size: 1.2857rem;
+        font-size: 1.4285rem;
         margin-bottom: 0;
         display: inline-block;
-        @media (max-width: 1024px) {
+        @media (max-width: 1199px) {
           font-size: 1.1428rem;
         }
-        @media (max-width: 940px) {
+        @media (max-width: 991px) {
           font-size: 1rem;
         }
         @media (max-width: 812px) and (orientation: landscape) {
@@ -92,8 +92,8 @@ export const SecondLevelMenu = styled("menu")`
 export const ListHeader = styled("h2")`
   text-transform: uppercase;
   color: rgba(38, 44, 55, 0.25);
-  font-size: 0.7142rem;
+  font-size: 0.8571rem;
   margin-bottom: 2rem;
-  font-weight: bold;
+  font-weight: 600;
   line-height: normal;
 `;

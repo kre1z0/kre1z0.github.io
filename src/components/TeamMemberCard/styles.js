@@ -33,7 +33,7 @@ export const Name = styled("div")`
 `;
 
 export const Position = styled("div")`
-  font-weight: 500;
+  font-weight: 400;
   font-size: 0.8571rem;
   color: rgba(33, 34, 36, 0.25);
   margin-bottom: 1rem;
@@ -44,7 +44,7 @@ export const Position = styled("div")`
 `;
 
 export const Description = styled("div")`
-  font-weight: 500;
+  font-weight: 400;
   @media (max-width: 812px) and (orientation: landscape),
     (max-width: 767px) and (orientation: portrait) {
     font-size: 0.8571rem;

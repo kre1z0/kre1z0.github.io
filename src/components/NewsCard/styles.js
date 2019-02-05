@@ -44,7 +44,7 @@ export const Title = styled("h4")`
 
 export const Date = styled("span")`
   line-height: normal;
-  font-weight: 500;
+  font-weight: 400;
   color: rgba(38, 44, 55, 0.25);
   @media (max-width: 991px) {
     font-size: 0.8571rem;

@@ -96,7 +96,7 @@ export const Title = styled(H1)`
 `;
 
 export const Description = styled(Paragraph)`
-  font-weight: 500;
+  font-weight: 400;
 `;
 
 export const Badge = styled("label")`
@@ -104,7 +104,7 @@ export const Badge = styled("label")`
   display: inline-block;
   padding: 0.4285rem 1.5rem;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 400;
   border-radius: 0.2857rem;
   background-color: rgba(255, 255, 255, 0.25);
   @media (max-width: 991px) {
@@ -124,7 +124,7 @@ export const Badge = styled("label")`
 const styles = css`
   button.scrollDownButton {
     z-index: 4;
-    font-weight: 500;
+    font-weight: 400;
     position: absolute;
     bottom: 2rem;
     left: 50%;

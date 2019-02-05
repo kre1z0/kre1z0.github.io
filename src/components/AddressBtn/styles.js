@@ -48,7 +48,7 @@ export const AdressLink = styled("a")`
 
 export const AdressLinkTitle = styled("h6")`
   font-size: 0.8571rem;
-  font-weight: 500;
+  font-weight: 400;
   margin-bottom: 0;
 `;
 

@@ -163,6 +163,9 @@ export const LinkContainer = styled("li")`
     display: inline-block;
     font-weight: 600;
     font-size: 1rem;
+    @media (min-width: 1200px) {
+      font-size: 1.0714rem;
+    }
   }
   @media (max-width: ${mobileMenu}px) {
     align-self: center;

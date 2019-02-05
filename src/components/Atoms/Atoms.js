@@ -3,7 +3,7 @@ import { Link as GLink } from "gatsby";
 
 export const Title = styled("a")`
   font-size: 1.2857rem;
-  font-weight: 500;
+  font-weight: 400;
   font-style: normal;
   text-decoration: none;
   line-height: normal;
@@ -127,7 +127,7 @@ export const Link = styled(Title)`
 
 export const GatsbyLink = styled(GLink)`
   font-size: 1.2857rem;
-  font-weight: 500;
+  font-weight: 400;
   font-style: normal;
   text-decoration: none;
   color: #262c37;

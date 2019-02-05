@@ -44,11 +44,11 @@ export const SliderBackground = styled("div")`
 export const Title = styled(H2)`
   font-weight: 600;
   margin-bottom: 0.84rem;
-  @media (max-width: 812px) and (max-height: 275px) and (orientation: landscape), only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 568px)
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: landscape) {
+  @media (min-width: 1200px) {
+    font-size: 1.4285rem;
+  }
+  @media (max-width: 812px) and (max-height: 275px) and (orientation: landscape),
+    only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -60,7 +60,7 @@ export const Description = styled("p")`
   color: #fff;
   margin-bottom: 1rem;
   line-height: normal;
-  font-size: 1.1428rem;
+  font-size: 1.2857rem;
   @media (max-width: 1199px) {
     font-size: 1rem;
   }
@@ -81,13 +81,15 @@ export const Content = styled("div")`
   left: 0;
   right: 0;
   bottom: 0;
-  @media (max-height: 700px) and (orientation: landscape) {
-    padding: 0 2rem 2rem 2rem;
+  @media (min-width: 1200px) {
+    a {
+      font-size: 1.1428rem;
+    }
   }
   @media (max-width: 1199px) {
     padding: 0 2.8rem 2.8rem 2.8rem;
   }
-  @media (max-width: 991px) {
+  @media (max-width: 991px), (max-height: 760px) and (orientation: landscape) {
     padding: 0 2rem 2rem 2rem;
   }
   @media (max-width: 812px) and (orientation: landscape),
@@ -108,11 +110,8 @@ export const Content = styled("div")`
   @media (max-width: 767px) and (orientation: portrait) {
     padding: 1rem;
   }
-  @media (max-width: 812px) and (max-height: 275px) and (orientation: landscape), only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 568px)
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: landscape) {
+  @media (max-width: 812px) and (max-height: 275px) and (orientation: landscape),
+    only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
     padding: 0 0.8rem 0 3rem;
   }
   &.disableTransition {
@@ -256,6 +255,9 @@ export const Screenshot = styled("img")`
   @media (max-width: 767px) and (orientation: portrait) {
     top: auto;
     bottom: 0;
+  }
+  @media (max-height: 700px) and (min-width: 1200px) and (orientation: landscape) {
+    top: 8%;
   }
   &.disableTransition {
     transition: none;

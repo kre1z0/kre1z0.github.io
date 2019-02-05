@@ -38,7 +38,7 @@ export const TeamMembersContainer = styled("div")`
 
 export const NoVacancyDescription = styled("p")`
   font-size: 0.8571rem;
-  font-weight: 500;
+  font-weight: 400;
   margin-top: 1.4rem;
   margin-bottom: 0;
   @media (max-width: 812px) and (orientation: landscape) {

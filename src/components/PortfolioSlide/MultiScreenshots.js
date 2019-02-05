@@ -113,6 +113,11 @@ const MultiScreenshotsContainer = styled("div")`
       }
     }
   }
+  @media (max-height: 700px) and (min-width: 1200px) and (orientation: landscape) {
+    > img {
+      margin-top: 4%;
+    }
+  }
   &.disableTransition {
     transition: none;
     > img {

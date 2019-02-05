@@ -9,7 +9,7 @@ export const SelectorItem = styled("div")`
   cursor: pointer;
   margin-right: 1.4285rem;
   padding: 0.4rem 1rem;
-  font-weight: 500;
+  font-weight: 400;
   display: flex;
   background-color: rgba(56, 123, 199, 0.1);
   color: #387bc7;
