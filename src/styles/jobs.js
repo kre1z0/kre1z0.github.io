@@ -56,7 +56,8 @@ const styles = css`
       }
     }
 
-    @media (max-width: 767px) {
+    @media (max-width: 812px) and (orientation: landscape),
+      (max-width: 767px) and (orientation: portrait) {
       > section:first-child {
         h2 {
           font-size: 1.2857rem;
@@ -76,7 +77,7 @@ const styles = css`
       }
     }
 
-    @media (max-width: 767px) and (orientation: landscape) {
+    @media (max-width: 812px) and (orientation: landscape) {
       justify-content: space-between;
       > section:last-child {
         height: calc(100% - 6rem);
@@ -168,6 +169,7 @@ const styles = css`
         flex-grow: 0;
         margin-bottom: 3rem;
         max-height: 18.4444rem;
+        max-width: 20.1428rem;
         @media (max-height: 490px) {
           margin-bottom: 2.4rem;
         }

@@ -16,7 +16,8 @@ export const WillChange = styled("section")`
     @media (max-width: 1199px) {
       padding-right: 3.5714rem;
     }
-    @media (max-width: 767px) {
+    @media (max-width: 812px) and (orientation: landscape),
+    (max-width: 767px) and (orientation: portrait) {
       flex-shrink: 1;
       padding-right: 1.7857rem;
     }

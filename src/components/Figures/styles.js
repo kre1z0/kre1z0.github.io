@@ -10,7 +10,8 @@ export const FiguresSection = styled("section")`
   @media (max-width: 991px) {
     padding: 0 2.4rem;
   }
-  @media (max-width: 767px) {
+  @media (max-width: 812px) and (orientation: landscape),
+    (max-width: 767px) and (orientation: portrait) {
     padding: 0;
   }
   @media (max-width: 767px) and (orientation: portrait) {
@@ -46,7 +47,7 @@ export const Figure = styled("figure")`
   @media (max-width: 991px) {
     width: 50%;
   }
-  @media (max-width: 767px) and (orientation: landscape) {
+  @media (max-width: 812px) and (orientation: landscape) {
     margin: 1.71425rem auto 0.6rem auto;
   }
   @media (max-width: 767px) and (orientation: portrait) {

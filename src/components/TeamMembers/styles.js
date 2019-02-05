@@ -41,7 +41,7 @@ export const NoVacancyDescription = styled("p")`
   font-weight: 500;
   margin-top: 1.4rem;
   margin-bottom: 0;
-  @media (max-width: 767px) and (orientation: landscape) {
+  @media (max-width: 812px) and (orientation: landscape) {
     margin-top: 0;
     font-size: 0.7142rem;
   }

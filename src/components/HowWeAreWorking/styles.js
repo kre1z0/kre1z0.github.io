@@ -12,7 +12,8 @@ export const HowWeAreWorkingContainer = styled("div")`
     box-shadow: 0 0.8571rem 0.8571rem 0 rgba(10, 18, 33, 0.1);
     background-color: #fff;
   }
-  @media (max-width: 767px) {
+  @media (max-width: 812px) and (orientation: landscape),
+    (max-width: 767px) and (orientation: portrait) {
     padding: 1.2rem;
   }
 `;
@@ -26,10 +27,11 @@ export const Title = styled("h4")`
       display: none;
     }
   }
-  @media (max-width: 767px) {
+  @media (max-width: 812px) and (orientation: landscape),
+    (max-width: 767px) and (orientation: portrait) {
     font-size: 0.8571rem;
   }
-  @media (max-width: 767px) and (orientation: landscape) {
+  @media (max-width: 812px) and (orientation: landscape) {
     font-size: 0.7142rem;
   }
   @media (max-height: 300px) {
@@ -47,7 +49,7 @@ export const Paragraph = styled("p")`
       display: none;
     }
   }
-  @media (max-width: 767px) and (orientation: landscape) {
+  @media (max-width: 812px) and (orientation: landscape) {
     font-size: 0.5714rem;
   }
   @media (max-height: 300px) {

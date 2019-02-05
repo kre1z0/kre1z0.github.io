@@ -31,14 +31,15 @@ export const FooterContainer = styled("div")`
       height: 12.8571rem;
     }
   }
-  @media (max-width: 767px) {
+  @media (max-width: 812px) and (orientation: landscape),
+    (max-width: 767px) and (orientation: portrait) {
     > article:first-child {
       p {
         padding: 0 1.4285rem;
       }
     }
   }
-  @media (max-width: 767px) and (orientation: landscape) {
+  @media (max-width: 812px) and (orientation: landscape) {
     > article:first-child {
       height: 9rem;
     }
@@ -66,7 +67,8 @@ export const Store = styled("div")`
   > a:first-child {
     margin-right: 1rem;
   }
-  @media (max-width: 767px) {
+  @media (max-width: 812px) and (orientation: landscape),
+    (max-width: 767px) and (orientation: portrait) {
     a {
       width: 7.2142rem;
       height: 2.0714rem;
@@ -133,21 +135,23 @@ const Side = styled("div")`
     }
     height: calc(26.7142rem + 17.8571rem);
   }
-  @media (max-width: 767px) {
+  @media (max-width: 812px) and (orientation: landscape),
+    (max-width: 767px) and (orientation: portrait) {
     > article {
       h3 {
         font-size: 1.2857rem;
       }
     }
   }
-  @media (max-width: 767px) {
+  @media (max-width: 812px) and (orientation: landscape),
+    (max-width: 767px) and (orientation: portrait) {
     > article {
       img {
         max-width: 13.4rem;
       }
     }
   }
-  @media (max-width: 767px) and (orientation: landscape) {
+  @media (max-width: 812px) and (orientation: landscape) {
     > article {
       padding-top: 9rem;
     }
@@ -226,7 +230,8 @@ export const RightSide = styled(Side)`
   &.isMobilePlatform {
     background-color: #d2e6ed;
   }
-  @media (max-width: 767px) {
+  @media (max-width: 812px) and (orientation: landscape),
+    (max-width: 767px) and (orientation: portrait) {
     img {
       transform: translate(-50%, calc(66% - 5.7142rem));
     }

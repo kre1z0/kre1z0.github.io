@@ -26,7 +26,7 @@ export const Container = styled("div")`
       max-width: 76%;
     }
   }
-  @media (max-width: 767px) and (orientation: landscape) {
+  @media (max-width: 812px) and (orientation: landscape) {
     max-height: 74vh;
     max-height: calc(var(--vh, 1vh) * 74);
     &.mockUpLeft {
@@ -57,7 +57,7 @@ export const MockUp = styled("img")`
     max-width: 18.8571rem;
     height: auto;
   }
-  @media (max-width: 767px) and (orientation: landscape) {
+  @media (max-width: 812px) and (orientation: landscape) {
     max-height: 87.5vh;
     max-height: calc(var(--vh, 1vh) * 87.5);
   }

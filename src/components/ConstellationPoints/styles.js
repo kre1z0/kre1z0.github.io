@@ -127,7 +127,7 @@ export const Point = styled(PointMain)`
       left: 4%;
     }
   }
-  @media (max-width: 767px) and (orientation: landscape) {
+  @media (max-width: 812px) and (orientation: landscape) {
     &:nth-child(2) {
       top: 119%;
       left: 56%;

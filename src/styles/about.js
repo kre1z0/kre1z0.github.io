@@ -14,7 +14,7 @@ export const NewsContainer = styled("div")`
     width: 100%;
     max-height: 18.0714rem;
   }
-  @media (max-width: 767px) and (orientation: landscape) {
+  @media (max-width: 812px) and (orientation: landscape) {
     height: 100%;
     max-height: 18.0714rem;
   }
@@ -39,7 +39,8 @@ const styles = css`
     > section:first-child {
       z-index: 1;
       h1 {
-        @media (max-width: 767px) {
+        @media (max-width: 812px) and (orientation: landscape),
+          (max-width: 767px) and (orientation: portrait) {
           margin-bottom: 0.4rem;
         }
       }
@@ -51,14 +52,16 @@ const styles = css`
       flex-direction: column;
       align-items: flex-start;
       > section:last-child {
+        align-self: center;
         margin-bottom: 3.4rem;
         width: 100%;
+        max-width: 20.1428rem;
         @media (max-height: 490px) {
           margin-bottom: 2.4rem;
         }
       }
     }
-    @media (max-width: 767px) and (orientation: landscape) {
+    @media (max-width: 812px) and (orientation: landscape) {
       padding-bottom: 1.2rem;
       > section:last-child {
         height: 100%;
@@ -101,7 +104,7 @@ const styles = css`
         top: -53rem;
       }
     }
-    @media (max-width: 767px) and (orientation: landscape) {
+    @media (max-width: 812px) and (orientation: landscape) {
       top: -21rem;
       left: -79rem;
       width: calc(100% + 90rem);

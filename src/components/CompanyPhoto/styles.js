@@ -12,7 +12,8 @@ export const CompanyPhotoBlockTransitionGroup = styled("div")`
     width: calc(100vw / 4);
     height: calc(100vw / 4);
   }
-  @media (max-width: 767px) {
+  @media (max-width: 812px) and (orientation: landscape),
+    (max-width: 767px) and (orientation: portrait) {
     width: calc(100vw / 2);
     height: calc(100vw / 2);
   }
@@ -42,7 +43,8 @@ export const CompanyPhotoContainer = styled("section")`
   @media (max-width: 991px) {
     min-height: calc(100vw / 4 * 3);
   }
-  @media (max-width: 767px) {
+  @media (max-width: 812px) and (orientation: landscape),
+    (max-width: 767px) and (orientation: portrait) {
     min-height: calc(100vw / 2 * 3);
   }
 `;
@@ -66,7 +68,7 @@ export const CompanyHeader = styled("header")`
     @media (max-width: 991px) {
       font-size: 2.5714rem;
     }
-    @media (max-width: 767px) and (orientation: landscape) {
+    @media (max-width: 812px) and (orientation: landscape) {
       font-size: 2.2857rem;
       margin: 0 0 1.4571rem 0;
     }

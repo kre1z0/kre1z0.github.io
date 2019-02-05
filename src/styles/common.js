@@ -9,7 +9,8 @@ export const common = css`
       padding-left: 3.2857rem;
       padding-right: 3.2857rem;
     }
-    @media (max-width: 767px) {
+    @media (max-width: 812px) and (orientation: landscape),
+    (max-width: 767px) and (orientation: portrait) {
       padding-left: 1.7142rem;
       padding-right: 1.7142rem;
     }

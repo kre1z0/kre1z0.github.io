@@ -21,7 +21,7 @@ export const SectionWithIconContainer = styled("div")`
       }
     }
   }
-  @media (max-width: 767px) and (orientation: landscape) {
+  @media (max-width: 812px) and (orientation: landscape) {
     padding-bottom: 0;
   }
 `;
@@ -63,7 +63,8 @@ export const Section = styled("section")`
       max-width: 6rem;
     }
   }
-  @media (max-width: 767px) {
+  @media (max-width: 812px) and (orientation: landscape),
+    (max-width: 767px) and (orientation: portrait) {
     img {
       max-width: 4.5rem;
     }
@@ -73,7 +74,7 @@ export const Section = styled("section")`
       white-space: normal;
     }
   }
-  @media (max-width: 767px) and (orientation: landscape) {
+  @media (max-width: 812px) and (orientation: landscape) {
     p {
       flex-shrink: 0;
       flex-grow: 1;
@@ -87,7 +88,8 @@ export const Description = styled("p")`
     font-size: 1rem;
     line-height: normal;
   }
-  @media (max-width: 767px) {
+  @media (max-width: 812px) and (orientation: landscape),
+    (max-width: 767px) and (orientation: portrait) {
     font-size: 0.8571rem;
   }
 `;
@@ -100,7 +102,8 @@ export const Title = styled("h4")`
   @media (max-width: 991px) {
     font-size: 1.1428rem;
   }
-  @media (max-width: 767px) {
+  @media (max-width: 812px) and (orientation: landscape),
+    (max-width: 767px) and (orientation: portrait) {
     font-size: 1rem;
   }
 `;

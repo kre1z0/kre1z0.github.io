@@ -9,7 +9,8 @@ export const MobileMspStoreContainer = styled("div")`
       margin-right: 1rem;
     }
   }
-  @media (max-width: 767px) {
+  @media (max-width: 812px) and (orientation: landscape),
+    (max-width: 767px) and (orientation: portrait) {
     a {
       width: 7.5rem;
       height: 2.0714rem;
@@ -37,7 +38,7 @@ export const Phones = styled("img")`
   @media (max-width: 1100px) {
     left: calc(50% + 13rem);
   }
-  @media (max-width: 767px) and (orientation: landscape) {
+  @media (max-width: 812px) and (orientation: landscape) {
     width: 44rem;
     left: calc(44rem / 1.64);
     min-width: auto;
@@ -71,7 +72,7 @@ const styles = css`
         width: 26rem;
         padding-bottom: 8.5714rem;
       }
-      @media (max-width: 767px) and (orientation: landscape) {
+      @media (max-width: 812px) and (orientation: landscape) {
         width: 17rem;
         margin-right: 0;
         padding-bottom: 1.7142rem;

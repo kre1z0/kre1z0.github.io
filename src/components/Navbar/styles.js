@@ -35,7 +35,8 @@ export const Nav = styled("div")`
       flex-direction: column;
     }
   }
-  @media (max-width: 767px) {
+  @media (max-width: 812px) and (orientation: landscape),
+    (max-width: 767px) and (orientation: portrait) {
     padding: 1rem 0;
   }
   @media (max-height: 344px) {
@@ -65,7 +66,8 @@ export const LogoLink = styled(GatsbyLink)`
   max-width: 10.7142rem;
   display: flex;
   align-items: center;
-  @media (max-width: 767px) {
+  @media (max-width: 812px) and (orientation: landscape),
+    (max-width: 767px) and (orientation: portrait) {
     max-width: 7.1428rem;
   }
 `;
@@ -74,7 +76,8 @@ export const Logo = styled("img")`
   min-width: 10.7142rem;
   width: 100%;
   height: auto;
-  @media (max-width: 767px) {
+  @media (max-width: 812px) and (orientation: landscape),
+    (max-width: 767px) and (orientation: portrait) {
     min-width: 7.1428rem;
   }
   @media (max-height: 344px) {
@@ -142,7 +145,7 @@ export const MobileMenu = styled("ul")`
   flex-shrink: 0;
   flex-grow: 1;
   width: 100%;
-  @media (max-width: 767px) and (orientation: landscape) {
+  @media (max-width: 812px) and (orientation: landscape) {
     padding: 1rem 0 0 0;
   }
   @media (min-width: 992px) {
@@ -172,7 +175,7 @@ export const LinkContainer = styled("li")`
       margin: 0;
     }
   }
-  @media (max-width: 767px) and (orientation: landscape) {
+  @media (max-width: 812px) and (orientation: landscape) {
     margin: 0 0 1.4285rem 0;
     > a {
       font-size: 1.1428rem;

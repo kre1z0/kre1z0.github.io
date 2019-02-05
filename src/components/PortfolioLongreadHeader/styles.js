@@ -15,7 +15,7 @@ export const HeaderContainer = styled("header")`
   @media (max-width: 1199px) {
     padding: 0 4.4rem 0 3.1428rem;
   }
-  @media (max-width: 767px) and (orientation: landscape) {
+  @media (max-width: 812px) and (orientation: landscape) {
     padding: 0 2rem 0 1.7142rem;
   }
   @media (max-width: 767px) and (orientation: portrait) {
@@ -149,7 +149,7 @@ const styles = css`
     @media (max-width: 991px) {
       font-size: 1rem;
     }
-    @media (max-width: 767px) and (orientation: landscape) {
+    @media (max-width: 812px) and (orientation: landscape) {
       font-size: 0.8571rem;
     }
     @media (hover: hover) {

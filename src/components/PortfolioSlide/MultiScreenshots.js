@@ -68,7 +68,7 @@ const MultiScreenshotsContainer = styled("div")`
       }
     }
   }
-  @media (max-width: 767px) and (orientation: landscape) {
+  @media (max-width: 812px) and (orientation: landscape) {
     margin-top: 4%;
     width: 100%;
     height: 100%;

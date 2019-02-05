@@ -16,7 +16,7 @@ export const BulletsContainer = styled("div")`
     position: absolute;
     bottom: 0;
   }
-  @media (max-width: 767px) and (orientation: landscape) and (max-height: 320px) {
+  @media (max-width: 812px) and (orientation: landscape) and (max-height: 340px) {
     transform: translate(-50%, calc(100% + 0.2rem));
   }
   @media (max-width: 767px) and (orientation: portrait) and (max-height: 490px) {
@@ -60,7 +60,8 @@ export const Amount = styled("span")`
   font-weight: 600;
   color: rgba(38, 44, 55, 0.35);
   font-size: 0.8571rem;
-  @media (max-width: 767px) {
+  @media (max-width: 812px) and (orientation: landscape),
+    (max-width: 767px) and (orientation: portrait) {
     width: 2.5714rem;
     font-size: 0.7142rem;
   }

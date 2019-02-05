@@ -259,7 +259,8 @@ h3 {
   text-rendering: optimizeLegibility;
   font-size: 1.38316rem;
   line-height: 1.1;
-  @media (max-width: 767px) {
+  @media (max-width: 812px) and (orientation: landscape),
+    (max-width: 767px) and (orientation: portrait) {
     margin-bottom: 1rem;
   }
 }

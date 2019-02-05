@@ -9,7 +9,7 @@ export const Section = styled("section")`
   @media (max-width: 991px) {
     padding: 4.7rem 3.1428rem 5.1rem 3.1428rem;
   }
-  @media (max-width: 767px) and (orientation: landscape) {
+  @media (max-width: 812px) and (orientation: landscape) {
     padding: 3.2rem 1.4285rem 3.6rem 1.4285rem;
   }
   @media (max-width: 767px) and (orientation: portrait) {

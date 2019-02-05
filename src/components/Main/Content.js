@@ -8,7 +8,8 @@ export const Content = styled("main")`
   width: 100%;
   height: calc(100% - 5.7971rem);
   justify-content: space-between;
-  @media (max-width: 767px) {
+  @media (max-width: 767px) and (orientation: portrait),
+    (max-width: 812px) and (orientation: landscape) {
     margin: 4.5971rem auto 0 auto;
     height: calc(100% - 4.5971rem);
   }

@@ -27,7 +27,8 @@ export const BnBlock = styled("div")`
       height: 3.8rem;
     }
   }
-  @media (max-width: 767px) {
+  @media (max-width: 812px) and (orientation: landscape),
+    (max-width: 767px) and (orientation: portrait) {
     margin-bottom: 0;
     img {
       width: 3rem;
@@ -134,7 +135,7 @@ const styles = css`
         }
       }
     }
-    @media (max-width: 767px) and (orientation: landscape) {
+    @media (max-width: 812px) and (orientation: landscape) {
       padding-top: 2.2rem;
       article {
         align-items: flex-start;
@@ -180,7 +181,7 @@ const styles = css`
     @media (max-width: 991px) {
       padding-bottom: 3rem;
     }
-    @media (max-width: 767px) and (orientation: landscape) {
+    @media (max-width: 812px) and (orientation: landscape) {
       padding-bottom: 0;
       margin-bottom: 1.44rem;
     }

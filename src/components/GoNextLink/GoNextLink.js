@@ -37,7 +37,8 @@ const styles = css`
     @media (max-width: 991px) {
       font-size: 0.9285rem;
     }
-    @media (max-width: 767px) {
+    @media (max-width: 812px) and (orientation: landscape),
+    (max-width: 767px) and (orientation: portrait) {
       font-size: 0.7857rem;
       svg {
         width: 0.71428rem;

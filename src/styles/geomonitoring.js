@@ -20,12 +20,13 @@ export const GeomonitoringContainer = styled("div")`
       margin-top: 4rem;
     }
   }
-  @media (max-width: 767px) {
+  @media (max-width: 812px) and (orientation: landscape),
+    (max-width: 767px) and (orientation: portrait) {
     h1 {
       margin-bottom: 1.4rem;
     }
   }
-  @media (max-width: 767px) and (orientation: landscape) {
+  @media (max-width: 812px) and (orientation: landscape) {
     h3 {
       margin-top: 2rem;
     }
@@ -58,7 +59,7 @@ export const Footer = styled("footer")`
       font-size: 1.2857rem;
     }
   }
-  @media (max-width: 767px) and (orientation: landscape) {
+  @media (max-width: 812px) and (orientation: landscape) {
     padding: 2.2857rem 0;
     h3 {
       max-width: 28rem;
@@ -130,7 +131,8 @@ const styles = css`
         height: 1rem;
       }
     }
-    @media (max-width: 767px) {
+    @media (max-width: 812px) and (orientation: landscape),
+    (max-width: 767px) and (orientation: portrait) {
       width: 1.7142rem;
       height: 1.7142rem;
       svg {

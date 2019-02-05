@@ -13,7 +13,8 @@ export const Title = styled("a")`
   @media (max-width: 991px) {
     font-size: 1rem;
   }
-  @media (max-width: 767px) {
+  @media (max-width: 812px) and (orientation: landscape),
+    (max-width: 767px) and (orientation: portrait) {
     font-size: 0.8571rem;
   }
 `;
@@ -29,7 +30,8 @@ export const H2 = styled("h2")`
   @media (max-width: 991px) {
     font-size: 1.7142rem;
   }
-  @media (max-width: 767px) {
+  @media (max-width: 812px) and (orientation: landscape),
+    (max-width: 767px) and (orientation: portrait) {
     font-size: 1.2857rem;
     margin-bottom: 1.4rem;
   }
@@ -49,10 +51,11 @@ export const BigH1 = styled("h1")`
     font-size: 2.5714rem;
     margin-bottom: 2rem;
   }
-  @media (max-width: 767px) {
+  @media (max-width: 812px) and (orientation: landscape),
+    (max-width: 767px) and (orientation: portrait) {
     margin-bottom: 1rem;
   }
-  @media (max-width: 767px) and (orientation: landscape) {
+  @media (max-width: 812px) and (orientation: landscape) {
     font-size: 2.2857rem;
   }
   @media (max-width: 767px) and (orientation: portrait) {
@@ -70,7 +73,8 @@ export const HorizontalRule = styled("hr")`
     height: 0.5714rem;
     margin-bottom: calc(2rem - 0.5714rem);
   }
-  @media (max-width: 767px) {
+  @media (max-width: 812px) and (orientation: landscape),
+    (max-width: 767px) and (orientation: portrait) {
     height: 0.2857rem;
     margin-bottom: calc(1.4571rem - 0.2857rem);
   }
@@ -142,7 +146,8 @@ export const GatsbyLink = styled(GLink)`
   @media (max-width: 991px) {
     font-size: 1rem;
   }
-  @media (max-width: 767px) {
+  @media (max-width: 812px) and (orientation: landscape),
+    (max-width: 767px) and (orientation: portrait) {
     font-size: 0.8571rem;
   }
 `;

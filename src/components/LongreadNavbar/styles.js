@@ -44,15 +44,17 @@ export const LongreadNavbarContainer = styled("nav")`
     height: 4.7142rem;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 812px) and (orientation: landscape),
+    (max-width: 767px) and (orientation: portrait) {
     height: 3.2857rem;
   }
-  @media (max-width: 767px) and (orientation: landscape) {
+  @media (max-width: 812px) and (orientation: landscape) {
     a {
       font-size: 0.8571rem;
     }
   }
-  @media (max-width: 767px) {
+  @media (max-width: 812px) and (orientation: landscape),
+    (max-width: 767px) and (orientation: portrait) {
     height: 4rem;
     a {
       svg {

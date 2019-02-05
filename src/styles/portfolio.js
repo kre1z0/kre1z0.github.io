@@ -27,19 +27,19 @@ const styles = css`
         max-width: 26.2857rem;
         max-height: 30.4857rem;
       }
-      @media (max-width: 767px) and (orientation: landscape) {
+      @media (max-width: 812px) and (orientation: landscape) {
         flex-shrink: 0;
         max-width: 20rem;
         height: 14.2857rem;
         max-height: calc(100vh - 11rem);
       }
-      @media (max-width: 767px) and (orientation: landscape) and (max-height: 320px) {
+      @media (max-width: 812px) and (orientation: landscape) and (max-height: 320px) {
         max-width: 20rem;
         align-items: flex-start;
         max-height: calc(100vh - 6.4rem);
       }
     }
-    @media (max-width: 767px) and (orientation: landscape) and (max-height: 320px) {
+    @media (max-width: 812px) and (orientation: landscape) and (max-height: 320px) {
       align-items: flex-start;
     }
     @media (max-width: 767px) and (orientation: portrait) {
@@ -55,7 +55,8 @@ const styles = css`
     }
   }
   .portfolioLeftSide {
-    @media (max-width: 767px) {
+    @media (max-width: 812px) and (orientation: landscape),
+      (max-width: 767px) and (orientation: portrait) {
       width: 100%;
       height: 100%;
       align-self: flex-end;
@@ -63,7 +64,7 @@ const styles = css`
         width: 100%;
       }
     }
-    @media (max-width: 767px) and (orientation: landscape) {
+    @media (max-width: 812px) and (orientation: landscape) {
       > div {
         width: 100%;
       }
@@ -71,7 +72,8 @@ const styles = css`
     @media (max-width: 767px) and (orientation: portrait) {
       height: auto;
     }
-    @media (max-width: 767px) {
+    @media (max-width: 812px) and (orientation: landscape),
+      (max-width: 767px) and (orientation: portrait) {
       > div {
         .menu {
           display: none;
