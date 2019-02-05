@@ -60,6 +60,7 @@ export class Navbar extends Component {
                 [styles.coloredNav]: coloredNav || additionalMenuIsOpenId,
               })}
               onMouseLeave={this.onCloseAdditionalMenu}
+              mobileMenuIsOpen={mobileMenuIsOpen}
             >
               <Nav className={common.container} mobileMenuIsOpen={mobileMenuIsOpen}>
                 <LeftSide>

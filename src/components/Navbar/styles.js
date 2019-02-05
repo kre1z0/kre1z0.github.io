@@ -12,6 +12,9 @@ export const NavbarContainer = styled("nav")`
   will-change: transform, background;
   background: rgba(255, 255, 255, 0);
   transition: background 500ms linear;
+  &.mobileMenuIsOpen {
+    height: 100%;
+  }
 `;
 
 export const Nav = styled("div")`
@@ -27,9 +30,8 @@ export const Nav = styled("div")`
     &.mobileMenuIsOpen {
       top: 0;
       left: 0;
-      width: 100vw;
-      height: 100vh;
-      height: calc(var(--vh, 1vh) * 100);
+      width: 100%;
+      height: 100%;
       position: fixed;
       background-color: #fff;
       flex-direction: column;
