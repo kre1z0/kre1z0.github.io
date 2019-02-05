@@ -23,6 +23,7 @@ const Image = styled("img")`
     height: 100%;
     margin: 0 0 1.2rem 0;
     box-shadow: 0 1.1428rem 1.1428rem 0 rgba(10, 18, 33, 0.15);
+    max-width: none;
   }
   @media (max-width: 767px) and (orientation: portrait) {
     max-width: none;
