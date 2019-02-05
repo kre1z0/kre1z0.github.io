@@ -63,6 +63,10 @@ export const LeftSide = styled(Section)`
   @media (max-width: 1199px) {
     margin-right: 3rem;
   }
+  @media (max-width: 991px) {
+    width: 40%;
+    margin-right: 2rem;
+  }
   @media (max-width: 767px) and (orientation: portrait) {
     z-index: 1;
     order: 2;
@@ -80,6 +84,9 @@ export const RightSide = styled(Section)`
   @media (max-width: 767px) and (orientation: portrait) {
     flex-shrink: 0;
     flex-grow: 1;
+  }
+  @media (max-width: 991px) {
+    width: 60%;
   }
   @media (max-width: 812px) and (max-height: 320px) and (orientation: landscape),
     only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {

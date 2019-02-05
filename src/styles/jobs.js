@@ -11,6 +11,7 @@ const styles = css`
       height: 24rem;
       flex-shrink: 1;
       > div {
+        position: relative;
         height: 100%;
       }
     }
@@ -190,9 +191,6 @@ const styles = css`
       > section:last-child {
         align-self: flex-end;
         margin-bottom: 2rem;
-        > div {
-          position: relative;
-        }
       }
     }
   }
