@@ -1,8 +1,7 @@
 import styled from "astroturf";
 
 export const LayersBlock = styled("div")`
-  width: 100%;
-  height: 100%;
+  position: relative;
   > img {
     display: block;
     width: 129%;
