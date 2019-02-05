@@ -7,6 +7,9 @@ import { Link } from "../../styles/contacts";
 const AddressLinkStyled = styled(Link)`
   color: #90c53d !important;
   margin-bottom: 1.4285rem;
+  @media (max-width: 812px) and (max-height: 275px) and (orientation: landscape) {
+    margin-bottom: 1rem;
+  }
 `;
 
 export const AddressLink = ({ children, ...props }) => {

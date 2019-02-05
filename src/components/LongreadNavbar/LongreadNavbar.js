@@ -16,10 +16,7 @@ export const getLongreadNavbarHeight = () => {
 
   if (viewportWidth <= 767) {
     return 46;
-  } else if (
-    viewportWidth <= 991 ||
-    (viewportHeight >= 700 && viewportWidth > viewportHeight && viewportWidth >= 1200)
-  ) {
+  } else if (viewportWidth <= 991 || (viewportHeight <= 700 && viewportWidth > viewportHeight)) {
     return 66;
   } else {
     return 80;

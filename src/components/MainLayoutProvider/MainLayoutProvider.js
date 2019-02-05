@@ -522,7 +522,7 @@ export class MainLayoutProviderComponent extends Component {
       sectionDirection,
     } = this.state;
     const { children } = this.props;
-    console.info("--> ggwp 4444", mobileMenuIsOpen || (currentRoute && !currentRoute.scrollable));
+
     return (
       <ScrollContext.Provider
         value={{

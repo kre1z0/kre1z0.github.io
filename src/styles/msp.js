@@ -34,14 +34,14 @@ export const Step = styled(H3)`
     }
   }
   @media (max-width: 812px) and (orientation: landscape) {
-    margin-top: 3.4rem;
+    margin-top: 1.4rem;
     margin-bottom: 1.4rem;
     > span {
       font-size: 2.8571rem;
     }
   }
   @media (max-width: 767px) and (orientation: portrait) {
-    margin-top: 3.1rem;
+    margin-top: 2.1rem;
     > span {
       font-size: 2.2857rem;
     }
@@ -66,6 +66,15 @@ const styles = css`
       video {
         max-height: calc(100vh - 17rem);
         max-height: calc(var(--vh, 1vh) * 100 - 17rem);
+      }
+    }
+    @media (max-width: 812px) and (max-height: 320px) and (orientation: landscape) {
+      margin-bottom: 0.4rem;
+      max-height: calc(100vh - 12rem);
+      max-height: calc(var(--vh, 1vh) * 100 - 12rem);
+      video {
+        max-height: calc(100vh - 12rem);
+        max-height: calc(var(--vh, 1vh) * 100 - 12rem);
       }
     }
   }

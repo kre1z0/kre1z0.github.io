@@ -180,10 +180,18 @@ const styles = css`
       }
     }
     @media (max-width: 812px) and (max-height: 275px) and (orientation: landscape) {
-      margin: 1rem auto 0;
+      margin: 0;
       height: 100%;
+      padding-top: 1rem;
       > section:first-child {
-        margin-bottom: 1rem;
+        margin-bottom: 0;
+      }
+      > section:last-child {
+        align-self: flex-end;
+        margin-bottom: 2rem;
+        > div {
+          position: relative;
+        }
       }
     }
   }

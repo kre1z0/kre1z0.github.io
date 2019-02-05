@@ -47,7 +47,7 @@ export const VideoContainer = styled("div")`
       box-shadow: 0 0.5714rem 0.5714rem 0 rgba(10, 18, 33, 0.15);
     }
   }
-  @media (max-height: 700px) and (min-width: 1200px) and (orientation: landscape) {
+  @media (max-height: 700px) and (orientation: landscape) {
     margin-top: -1.4rem;
     max-height: calc(100vh - 13.4rem);
     max-height: calc(var(--vh, 1vh) * 100 - 13.4rem);
@@ -57,6 +57,15 @@ export const VideoContainer = styled("div")`
       height: 100%;
       max-height: calc(100vh - 13.4rem);
       max-height: calc(var(--vh, 1vh) * 100 - 13.4rem);
+    }
+  }
+  @media (max-height: 320px) and (orientation: landscape) {
+    margin-top: -0.8rem;
+    max-height: calc(100vh - 8rem);
+    max-height: calc(var(--vh, 1vh) * 100 - 8rem);
+    video {
+      max-height: calc(100vh - 8rem);
+      max-height: calc(var(--vh, 1vh) * 100 - 8rem);
     }
   }
 `;

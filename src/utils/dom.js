@@ -35,13 +35,15 @@ export const setVhProperty = () => {
     return;
   }
 
-  const vh = window.innerHeight * 0.01;
-  const axis = Math.abs(window.orientation);
   const {
     parsedResult: {
       browser: { name },
     },
   } = browser();
+
+  const vh =
+    name !== "Safari" ? document.documentElement.clientHeight * 0.01 : window.innerHeight * 0.01;
+  const axis = Math.abs(window.orientation);
 
   if (axis === 90 && name === "Safari") {
     window.scrollTo(0, 1);

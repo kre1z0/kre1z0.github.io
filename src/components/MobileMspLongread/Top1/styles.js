@@ -47,6 +47,10 @@ export const Top1Container = styled("div")`
       height: 6.2857rem;
     }
   }
+  @media (max-width: 812px) and (max-height: 275px) and (orientation: landscape) {
+    width: calc(22.5714rem * 0.49);
+    height: calc(24.1428rem * 0.49);
+  }
 `;
 
 const Side = styled("div")`

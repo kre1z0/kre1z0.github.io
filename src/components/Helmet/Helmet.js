@@ -9,7 +9,11 @@ export const Helmet = () => {
       title="Everpoint"
       link={[{ rel: "shortcut icon", type: "image/png", href: `${favicon}` }]}
       meta={[
-        { name: "viewport", content: "width=device-width, initial-scale=1" },
+        {
+          name: "viewport",
+          content:
+            "width=device-width, height=device-height, initial-scale=1.0, initial-scale=1.0, minimum-scale=1.0",
+        },
         { name: "apple-mobile-web-app-capable", content: "yes" },
       ]}
     />

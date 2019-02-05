@@ -20,7 +20,7 @@ const styles = css`
         max-width: 32.1428rem;
         max-height: 33.7857rem;
       }
-      @media (max-height: 700px) and (min-width: 1200px) and (orientation: landscape) {
+      @media (max-height: 700px) and (orientation: landscape) {
         max-width: 34.1428rem;
       }
       @media (max-width: 991px) {

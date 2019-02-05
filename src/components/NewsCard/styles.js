@@ -33,9 +33,13 @@ export const Title = styled("h4")`
     (max-width: 767px) and (orientation: portrait) {
     font-size: 0.8571rem;
   }
+  @media (max-width: 812px) and (max-height: 275px) and (orientation: landscape) {
+    margin-bottom: 0.2rem;
+  }
 `;
 
 export const Date = styled("span")`
+  line-height: normal;
   font-weight: 500;
   color: rgba(38, 44, 55, 0.25);
   @media (max-width: 991px) {
@@ -53,6 +57,9 @@ export const Description = styled("p")`
     (max-width: 767px) and (orientation: portrait) {
     font-size: 0.7142rem;
     line-height: 1.4;
+  }
+  @media (max-width: 812px) and (max-height: 275px) and (orientation: landscape) {
+    margin: 0.4rem 0;
   }
 `;
 

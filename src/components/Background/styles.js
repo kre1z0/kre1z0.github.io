@@ -43,6 +43,10 @@ const styles = css`
       background-position: 74% 24%;
       background-size: 130%;
     }
+    @media (max-width: 812px) and (max-height: 275px) and (orientation: landscape) {
+      background-position: 53% 28%;
+      background-size: 107%;
+    }
   }
 `;
 

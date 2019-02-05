@@ -44,6 +44,12 @@ export const SliderBackground = styled("div")`
 export const Title = styled(H2)`
   font-weight: 600;
   margin-bottom: 0.84rem;
+  @media (max-width: 812px) and (max-height: 275px) and (orientation: landscape) {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-bottom: 0.4rem;
+  }
 `;
 
 export const Description = styled("p")`
@@ -71,7 +77,7 @@ export const Content = styled("div")`
   left: 0;
   right: 0;
   bottom: 0;
-  @media (max-height: 700px) and (min-width: 1200px) and (orientation: landscape) {
+  @media (max-height: 700px) and (orientation: landscape) {
     padding: 0 2rem 2rem 2rem;
   }
   @media (max-width: 1199px) {
@@ -97,6 +103,9 @@ export const Content = styled("div")`
   }
   @media (max-width: 767px) and (orientation: portrait) {
     padding: 1rem;
+  }
+  @media (max-width: 812px) and (max-height: 275px) and (orientation: landscape) {
+    padding: 0 0.8rem 0 3rem;
   }
   &.disableTransition {
     transition: none;

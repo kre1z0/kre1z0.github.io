@@ -81,6 +81,9 @@ const styles = css`
         margin-bottom: 2rem;
       }
     }
+    @media (max-width: 812px) and (max-height: 275px) and (orientation: landscape) {
+      padding-bottom: 0.9rem;
+    }
   }
   .isAboutSlide {
     will-change: transform;

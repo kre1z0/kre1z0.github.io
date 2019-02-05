@@ -6,6 +6,11 @@ export const ContactsLeftSide = styled("div")`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  @media (max-width: 812px) and (max-height: 275px) and (orientation: landscape) {
+    h1 {
+      margin-bottom: 0.8rem;
+    }
+  }
 `;
 
 export const Link = styled(ContactLink)`
@@ -14,7 +19,13 @@ export const Link = styled(ContactLink)`
   }
 `;
 
-export const SocialBlock = styled("div")``;
+export const SocialBlock = styled("div")`
+  @media (max-width: 812px) and (max-height: 275px) and (orientation: landscape) {
+    a {
+      margin-top: 1rem;
+    }
+  }
+`;
 
 export const TelegramBtnContainer = styled("div")`
   &.disableTransition {
@@ -67,7 +78,7 @@ const styles = css`
       flex-shrink: 1;
     }
     @media (max-width: 812px) and (orientation: landscape),
-    (max-width: 767px) and (orientation: portrait) {
+      (max-width: 767px) and (orientation: portrait) {
       align-self: flex-end;
       padding-bottom: 1rem;
     }
@@ -85,7 +96,7 @@ const styles = css`
       }
     }
     @media (max-width: 812px) and (orientation: landscape),
-    (max-width: 767px) and (orientation: portrait) {
+      (max-width: 767px) and (orientation: portrait) {
       display: none;
     }
   }
@@ -116,7 +127,7 @@ const styles = css`
       right: 3.5714rem;
     }
     @media (max-width: 812px) and (orientation: landscape),
-    (max-width: 767px) and (orientation: portrait) {
+      (max-width: 767px) and (orientation: portrait) {
       right: 1.7857rem;
       bottom: 1.4142rem;
     }

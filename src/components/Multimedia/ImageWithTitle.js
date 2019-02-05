@@ -19,6 +19,8 @@ const Image = styled("img")`
     box-shadow: 0 1.7142rem 1.7142rem 0 rgba(10, 18, 33, 0.15);
   }
   @media (max-width: 812px) and (orientation: landscape) {
+    width: auto;
+    height: 100%;
     margin: 0 0 1.2rem 0;
     box-shadow: 0 1.1428rem 1.1428rem 0 rgba(10, 18, 33, 0.15);
   }
@@ -28,10 +30,14 @@ const Image = styled("img")`
     width: 100vw;
     margin: 0 0 0.9rem -1.4285rem;
   }
-  @media (max-height: 700px) and (min-width: 1200px) and (orientation: landscape) {
+  @media (max-height: 700px) and (orientation: landscape) {
     margin-top: 0;
     max-height: calc(100vh - 12rem);
     max-height: calc(var(--vh, 1vh) * 100 - 12rem);
+  }
+  @media (max-height: 320px) and (orientation: landscape) {
+    max-height: calc(100vh - 8rem);
+    max-height: calc(var(--vh, 1vh) * 100 - 8rem);
   }
   &.doubleBoxShadow {
     box-shadow: 0 2.2857rem 2.2857rem 0 rgba(10, 18, 33, 0.15),

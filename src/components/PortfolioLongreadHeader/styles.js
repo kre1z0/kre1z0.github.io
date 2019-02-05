@@ -81,6 +81,10 @@ export const RightSide = styled(Section)`
     flex-shrink: 0;
     flex-grow: 1;
   }
+  @media (max-width: 812px) and (max-height: 275px) and (orientation: landscape) {
+    margin-top: 2rem;
+    width: 34%;
+  }
 `;
 
 export const Title = styled(H1)`
@@ -109,6 +113,9 @@ export const Badge = styled("label")`
   @media (max-width: 767px) and (orientation: portrait) {
     padding: 0 0.44rem;
     font-size: 0.7142rem;
+  }
+  @media (max-width: 812px) and (max-height: 275px) and (orientation: landscape) {
+    display: none;
   }
 `;
 
