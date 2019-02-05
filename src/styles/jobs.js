@@ -197,6 +197,7 @@ const styles = css`
       > section:last-child {
         align-self: flex-end;
         margin-bottom: 2rem;
+        margin-right: 1.4rem;
       }
     }
   }
