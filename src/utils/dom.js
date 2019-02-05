@@ -1,3 +1,5 @@
+import { browser } from "./browser";
+
 // cross-browser
 export const getElementWidthAndHeight = element => {
   if (!element) {
@@ -34,8 +36,19 @@ export const setVhProperty = () => {
   }
 
   const vh = window.innerHeight * 0.01;
+  const axis = Math.abs(window.orientation);
+  const {
+    parsedResult: {
+      browser: { name },
+    },
+  } = browser();
 
-  document.documentElement.style.setProperty("--vh", `${vh}px`);
+  if (axis === 90 && name === "Safari") {
+    window.scrollTo(0, 1);
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+  } else {
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+  }
 };
 
 export const fillElementsInViewport = ({

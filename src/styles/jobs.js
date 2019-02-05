@@ -121,6 +121,7 @@ const styles = css`
         }
       }
       > section:last-child {
+        position: relative;
         > div {
           max-width: 18.1428rem;
         }
@@ -176,6 +177,13 @@ const styles = css`
         > div {
           max-width: none;
         }
+      }
+    }
+    @media (max-width: 812px) and (max-height: 275px) and (orientation: landscape) {
+      margin: 1rem auto 0;
+      height: 100%;
+      > section:first-child {
+        margin-bottom: 1rem;
       }
     }
   }

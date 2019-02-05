@@ -8,7 +8,10 @@ export const Helmet = () => {
     <ReactHelmet
       title="Everpoint"
       link={[{ rel: "shortcut icon", type: "image/png", href: `${favicon}` }]}
-      meta={[{ name: "viewport", content: "width=device-width, initial-scale=1" }]}
+      meta={[
+        { name: "viewport", content: "width=device-width, initial-scale=1" },
+        { name: "apple-mobile-web-app-capable", content: "yes" },
+      ]}
     />
   );
 };
