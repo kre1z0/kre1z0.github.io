@@ -2,8 +2,6 @@ import styled from "astroturf";
 
 export const LayersBlock = styled("section")`
   position: relative;
-  width: 100%;
-  height: 100%;
   > img {
     top: 0;
     left: 0;
