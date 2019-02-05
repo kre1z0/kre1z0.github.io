@@ -4,6 +4,7 @@ import { Link as GatsbyLink } from "gatsby";
 export const mobileMenu = 991;
 
 export const NavbarContainer = styled("nav")`
+  width: 100%;
   z-index: 4;
   position: fixed;
   top: 0;
