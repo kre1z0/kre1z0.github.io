@@ -193,7 +193,8 @@ export const LinkContainer = styled("li")`
       font-size: 1.1428rem;
     }
   }
-  @media (max-height: 270px) {
+  @media (max-height: 270px),
+    only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
     margin: 0 0 0.4rem 0;
     > a {
       font-size: 1rem;

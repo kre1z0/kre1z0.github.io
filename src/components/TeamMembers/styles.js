@@ -82,7 +82,8 @@ export const PhotoContainer = styled("div")`
 
 const styles = css`
   .noVacancyCard {
-    @media (max-height: 300px) {
+    @media (max-height: 300px),
+      only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
       > div:nth-child(2) {
         font-size: 0.8rem;
       }

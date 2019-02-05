@@ -33,7 +33,11 @@ export const Title = styled("h4")`
     (max-width: 767px) and (orientation: portrait) {
     font-size: 0.8571rem;
   }
-  @media (max-width: 812px) and (max-height: 275px) and (orientation: landscape) {
+  @media (max-width: 812px) and (max-height: 275px) and (orientation: landscape), only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
     margin-bottom: 0.2rem;
   }
 `;
@@ -58,7 +62,11 @@ export const Description = styled("p")`
     font-size: 0.7142rem;
     line-height: 1.4;
   }
-  @media (max-width: 812px) and (max-height: 275px) and (orientation: landscape) {
+  @media (max-width: 812px) and (max-height: 275px) and (orientation: landscape), only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
     margin: 0.4rem 0;
   }
 `;

@@ -99,16 +99,16 @@ export default {
           description:
             "Картографический сервис для анализа геоданных и создания интерактивных карт",
         },
-        {
-          text: "EverTrack",
-          id: "evertrack",
-          projectBackgroundColor: "#0fa5f6",
-          screenshots: {
-            x1: geomonitoringX1,
-            x2: geomonitoringX2,
-            x3: geomonitoringX3,
-          },
-        },
+        // {
+        //   text: "EverTrack",
+        //   id: "evertrack",
+        //   projectBackgroundColor: "#0fa5f6",
+        //   screenshots: {
+        //     x1: geomonitoringX1,
+        //     x2: geomonitoringX2,
+        //     x3: geomonitoringX3,
+        //   },
+        // },
       ],
     },
     {

@@ -179,7 +179,8 @@ const styles = css`
         }
       }
     }
-    @media (max-width: 812px) and (max-height: 275px) and (orientation: landscape) {
+    @media (max-width: 812px) and (max-height: 275px) and (orientation: landscape),
+      only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
       margin: 0;
       height: 100%;
       padding-top: 1rem;

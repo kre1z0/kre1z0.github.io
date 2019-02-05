@@ -6,7 +6,8 @@ export const ContactsLeftSide = styled("div")`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  @media (max-width: 812px) and (max-height: 275px) and (orientation: landscape) {
+  @media (max-width: 812px) and (max-height: 275px) and (orientation: landscape),
+    only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
     h1 {
       margin-bottom: 0.8rem;
     }
@@ -20,7 +21,8 @@ export const Link = styled(ContactLink)`
 `;
 
 export const SocialBlock = styled("div")`
-  @media (max-width: 812px) and (max-height: 275px) and (orientation: landscape) {
+  @media (max-width: 812px) and (max-height: 275px) and (orientation: landscape),
+    only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
     a {
       margin-top: 1rem;
     }
@@ -47,7 +49,8 @@ export const BtnGroup = styled("div")`
   @media (min-width: 768px) {
     display: none;
   }
-  @media (max-width: 767px) and (max-height: 280px) and (orientation: landscape) {
+  @media (max-width: 767px) and (max-height: 275px) and (orientation: landscape),
+    only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
     top: 3.4rem;
   }
 `;
