@@ -38,16 +38,14 @@ const styles = css`
     background-image: url(../../img/main-slides/metro.svg);
   }
   .bus,
-  .metro {
+  .metro,
+  .busPngPreview {
     @media (max-width: 812px) and (orientation: landscape) {
       background-position: 74% 24%;
       background-size: 130%;
     }
-    @media (max-width: 812px) and (max-height: 275px) and (orientation: landscape), only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 568px)
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: landscape) {
+    @media (max-width: 812px) and (max-height: 275px) and (orientation: landscape),
+      only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
       background-position: 53% 28%;
       background-size: 107%;
     }

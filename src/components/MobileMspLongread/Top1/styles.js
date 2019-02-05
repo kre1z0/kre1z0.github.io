@@ -47,11 +47,8 @@ export const Top1Container = styled("div")`
       height: 6.2857rem;
     }
   }
-  @media (max-width: 812px) and (max-height: 275px) and (orientation: landscape), only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 568px)
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: landscape) {
+  @media (max-width: 812px) and (max-height: 275px) and (orientation: landscape),
+    only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
     width: calc(22.5714rem * 0.49);
     height: calc(24.1428rem * 0.49);
   }
