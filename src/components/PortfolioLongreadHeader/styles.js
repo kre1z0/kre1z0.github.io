@@ -81,7 +81,8 @@ export const LeftSide = styled(Section)`
 export const RightSide = styled(Section)`
   align-items: flex-end;
   position: relative;
-  @media (max-width: 767px) and (orientation: portrait) {
+  @media (max-width: 767px) and (orientation: portrait),
+    (max-width: 812px) and (orientation: landscape) {
     flex-shrink: 0;
     flex-grow: 1;
   }
