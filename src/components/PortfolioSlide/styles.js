@@ -1,7 +1,6 @@
 import styled, { css } from "astroturf";
 import { TransitionGroup } from "react-transition-group";
 
-import { Title as H2 } from "../../components/Atoms/Atoms";
 import { Button } from "../../components/Buttons/Buttons";
 
 export const PortfolioSlideContainer = styled("div")`
@@ -41,11 +40,20 @@ export const SliderBackground = styled("div")`
   }
 `;
 
-export const Title = styled(H2)`
+export const Title = styled("h2")`
+  font-size: 1.4285rem;
   font-weight: 600;
   margin-bottom: 0.84rem;
-  @media (min-width: 1200px) {
-    font-size: 1.4285rem;
+  line-height: normal;
+  @media (max-width: 1199px) {
+    font-size: 1.2857rem;
+  }
+  @media (max-width: 991px) {
+    font-size: 1.1428rem;
+  }
+  @media (max-width: 812px) and (orientation: landscape),
+    (max-width: 767px) and (orientation: portrait) {
+    font-size: 1rem;
   }
   @media (max-width: 812px) and (max-height: 275px) and (orientation: landscape),
     only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
