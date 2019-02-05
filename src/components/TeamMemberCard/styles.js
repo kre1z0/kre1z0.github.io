@@ -58,8 +58,13 @@ const styles = css`
   .avatarBlock {
     margin: 1.5rem auto;
     @media (max-width: 812px) and (orientation: landscape),
-    (max-width: 767px) and (orientation: portrait) {
+      (max-width: 767px) and (orientation: portrait) {
       margin: 0 auto 0.6rem auto;
+    }
+    @media (max-width: 812px) and (max-height: 275px) and (orientation: landscape),
+      only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+      max-width: 5.4rem;
+      max-height: 5.4rem;
     }
   }
 `;

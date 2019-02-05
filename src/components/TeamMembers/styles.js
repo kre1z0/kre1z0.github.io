@@ -59,6 +59,7 @@ export const PhotoContainer = styled("div")`
   width: 100%;
   max-width: 21.4285rem;
   line-height: normal;
+  background-color: #fff;
   &:first-child {
     margin-right: 2.1428rem;
   }

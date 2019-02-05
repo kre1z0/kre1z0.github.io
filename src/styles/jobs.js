@@ -125,6 +125,9 @@ const styles = css`
         position: relative;
         > div {
           max-width: 18.1428rem;
+          @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+            max-width: 21.1428rem;
+          }
         }
       }
     }
@@ -138,6 +141,9 @@ const styles = css`
         overflow-x: auto;
         align-self: flex-start;
         padding-right: 0;
+        &::-webkit-scrollbar {
+          display: none;
+        }
         menu {
           margin: 0 1.7142rem 0 1.7142rem;
           display: flex;

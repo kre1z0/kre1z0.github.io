@@ -38,6 +38,9 @@ const styles = css`
         align-items: flex-start;
         max-height: calc(100vh - 6.4rem);
       }
+      @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+        max-height: 10rem;
+      }
     }
     @media (max-width: 812px) and (orientation: landscape) and (max-height: 320px) {
       align-items: flex-start;

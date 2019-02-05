@@ -24,6 +24,10 @@ const styles = css`
   }
   .moscow {
     background-image: url(../../img/main-slides/moscow.svg);
+    @media (max-width: 812px) and (orientation: portrait) {
+      background-size: 344%;
+      background-position: 51% 51%;
+    }
   }
   .busPngPreview {
     background-position: 75% center;

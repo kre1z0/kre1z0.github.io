@@ -9,7 +9,7 @@ export const ContactsLeftSide = styled("div")`
   @media (max-width: 812px) and (max-height: 275px) and (orientation: landscape),
     only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
     h1 {
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.4rem;
     }
   }
 `;
@@ -24,7 +24,7 @@ export const SocialBlock = styled("div")`
   @media (max-width: 812px) and (max-height: 275px) and (orientation: landscape),
     only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
     a {
-      margin-top: 1rem;
+      margin-top: 0.4rem;
     }
   }
 `;
