@@ -109,7 +109,7 @@ const MultiScreenshotsContainer = styled("div")`
   @media (max-width: 767px) and (orientation: portrait) {
     > img {
       &:nth-child(-n + 3) {
-        margin-top: 24%;
+        margin-top: 14%;
       }
     }
   }
@@ -127,7 +127,10 @@ const MultiScreenshotsContainer = styled("div")`
   @media (max-width: 767px) and (max-height: 460px) and (orientation: portrait) {
     > img {
       &:nth-child(-n + 3) {
-        margin-top: 40%;
+        margin-top: 34%;
+      }
+      &:nth-child(1) {
+        max-width: 40%;
       }
     }
   }
