@@ -15,16 +15,10 @@ export const openFullscreen = () => {
   }
 };
 
-export const isFullscreenMode = () =>
-  document.fullscreenElement ||
-  document.mozFullScreenElement ||
-  document.webkitFullscreenElement ||
-  document.msFullscreenElement;
+export const isFullscreenMode = () => Math.abs(window.screen.width - window.innerWidth) < 10;
 
 /* Close fullscreen */
 export const closeFullscreen = () => {
-  const elem = document.documentElement;
-
   if (document.exitFullscreen) {
     document.exitFullscreen();
   } else if (document.mozCancelFullScreen) {
