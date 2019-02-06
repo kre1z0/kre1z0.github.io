@@ -3,8 +3,6 @@ import PropTypes from "prop-types";
 // https://github.com/idiotWu/react-smooth-scrollbar
 // API https://github.com/idiotWu/smooth-scrollbar/blob/develop/docs/api.md
 
-import { isMobile } from "../../utils/browser";
-import { openFullscreen, isFullscreenMode, closeFullscreen } from "../../utils/scroll";
 import { Swiper } from "../../components/Swiper/Swiper";
 import { Scrollbar } from "../../components/Scrollbar/Scrollbar";
 
@@ -66,16 +64,6 @@ export class ScrollbarProvider extends Component {
       ? Math.min((Math.abs(diff) * 100) / (height - getLongreadNavbarHeight()), 100)
       : Math.abs(diff);
   };
-
-  onSwipingUp() {
-    openFullscreen();
-    console.log("isFullscreenMode ggwp... open", isFullscreenMode());
-  }
-
-  onSwipingDown() {
-    closeFullscreen();
-    console.log("isFullscreenMode ggwp... close", isFullscreenMode());
-  }
 
   render() {
     const { scrollTop, scrollbar } = this.state;

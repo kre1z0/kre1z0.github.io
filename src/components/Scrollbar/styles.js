@@ -2,6 +2,7 @@ import styled, { css } from "astroturf";
 import Scrollbar from "react-smooth-scrollbar";
 
 export const ScrollBarContainer = styled(Scrollbar)`
+  background-color: #fff;
   > div {
     :global(.scroll-content) {
       will-change: transform;
