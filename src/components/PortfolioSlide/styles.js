@@ -214,7 +214,7 @@ export const ScreenshotTransitionGroup = styled(TransitionGroup)`
   flex-grow: 1;
   flex-shrink: 0;
   max-height: calc(100% - 14.2857rem);
-  @media (max-width: 991px) {
+  @media (max-width: 1199px) {
     left: -3.4rem;
   }
   @media (max-width: 812px) and (orientation: landscape) {
@@ -247,9 +247,7 @@ export const Screenshot = styled("img")`
   border-radius: 0.2857rem;
   @media (max-width: 1199px) {
     max-width: 100%;
-  }
-  @media (min-width: 1024px) and (max-width: 1024px) {
-    top: 14%;
+    top: 12%;
   }
   @media (max-width: 991px) {
     top: 18%;

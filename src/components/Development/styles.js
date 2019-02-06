@@ -25,31 +25,41 @@ export const DevelopmentHeader = styled("header")`
 `;
 
 export const DevelopmentTitle = styled("div")`
-  background-color: rgba(144,197,61, 0.25);
-  color: #90c53d;
+  font-size: 1.7142rem;
   height: 1.7142rem;
   display: flex;
   justify-content: center;
   align-items: center;
   line-height: normal;
   white-space: nowrap;
-  padding: 0.145rem 0.925rem;
+  padding: 0.145rem 0.925rem 0.145rem 0;
   font-weight: bold;
   border-radius: 0.8571rem;
   margin-bottom: 1.4285rem;
-  margin-right: 2.1428rem;
   @media (max-width: 812px) and (orientation: landscape) {
     height: 1.5rem;
-    font-size: 0.7142rem;
-    padding: 0 0.925rem;
+    font-size: 1.4285rem;
+    padding: 0 0.925rem 0.145rem 0;
   }
 `;
 
+export const Year = styled("span")`
+  color: rgba(38, 44, 55, 0.25);
+  &:after {
+    content: " ";
+    white-space: pre;
+  }
+`;
+
+export const Month = styled("span")`
+  color: rgba(38, 44, 55, 0.1);
+`;
+
 export const HorizontalRule = styled("hr")`
-  margin-top: 0.8rem;
+  margin-top: 0.9rem;
   height: 0.1428rem;
   width: 100%;
-  background-color: #f3f4f7;
+  background-color: rgba(38, 44, 55, 0.1);
 `;
 
 export const DevelopmentDescription = styled("p")`

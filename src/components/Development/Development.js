@@ -7,6 +7,8 @@ import {
   DevelopmentItem,
   DevelopmentHeader,
   DevelopmentTitle,
+  Year,
+  Month,
   HorizontalRule,
   DevelopmentDescription,
 } from "./styles";
@@ -73,13 +75,13 @@ export class Development extends Component {
     return (
       <Scrollbar onScrollbarRef={this.onScrollbarRef}>
         <DevelopmentContainer style={{ width: items.length * sectionWidth + padding }}>
-          {items.map(({ title, description }, index) => {
+          {items.map(({ year, month, description }, index) => {
             const firstChild = index === 0;
             const additional = firstChild ? padding : 0;
 
             return (
               <DevelopmentItem
-                key={`${title}-${index}`}
+                key={`${year}-${index}-${month}`}
                 style={{
                   width: sectionWidth + additional,
                   paddingRight: padding,
@@ -87,7 +89,9 @@ export class Development extends Component {
                 }}
               >
                 <DevelopmentHeader>
-                  <DevelopmentTitle>{title}</DevelopmentTitle>
+                  <DevelopmentTitle>
+                    <Year>{year}</Year> <Month>{month}</Month>
+                  </DevelopmentTitle>
                   <HorizontalRule />
                 </DevelopmentHeader>
                 <DevelopmentDescription>{description}</DevelopmentDescription>
