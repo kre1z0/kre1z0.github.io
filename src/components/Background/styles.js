@@ -24,7 +24,7 @@ const styles = css`
   }
   .moscow {
     background-image: url(../../img/main-slides/moscow.svg);
-    @media (max-width: 812px) and (orientation: portrait) {
+    @media (max-width: 767px) and (orientation: portrait) {
       background-size: 344%;
       background-position: 51% 51%;
     }

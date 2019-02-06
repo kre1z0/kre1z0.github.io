@@ -57,6 +57,9 @@ const styles = css`
     @media (max-height: 700px) and (min-width: 1200px) and (orientation: landscape) {
       margin-top: -1rem;
     }
+    @media (max-width: 767px) {
+      padding: 0;
+    }
   }
   .mspVideoWithControl {
     margin-bottom: 1.4rem;
@@ -77,6 +80,9 @@ const styles = css`
         max-height: calc(var(--vh, 1vh) * 100 - 12rem);
       }
     }
+    @media (max-width: 767px) {
+      margin-bottom: 0;
+    }
   }
   .selectorSectionScrollbar {
     :global .scroll-content {
@@ -92,6 +98,9 @@ const styles = css`
       max-width: 64.2857rem;
       width: 100%;
       padding-left: 0;
+    }
+    @media (max-width: 767px) {
+      margin: 0;
     }
   }
   .analyticSection {
