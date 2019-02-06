@@ -27,9 +27,6 @@ export const MspAnalyticsCardsLeftSide = styled(Block)`
       margin-right: 1.4285rem;
     }
   }
-  @media (max-width: 650px) {
-    display: none;
-  }
   &.isVisible {
     img {
       opacity: 1;
@@ -45,6 +42,9 @@ export const MspAnalyticsCardsLeftSide = styled(Block)`
       }
     }
   }
+  @media (max-width: 812px) and (orientation: landscape) {
+    display: none;
+  }
 `;
 
 export const MspAnalyticsCardsRightSide = styled(Block)`
@@ -55,18 +55,6 @@ export const MspAnalyticsCardsRightSide = styled(Block)`
     transform: translateX(-20%);
     &:nth-child(even) {
       margin-left: 1.4285rem;
-    }
-    @media (max-width: 650px) {
-      transform: translateY(-40%);
-    }
-  }
-  @media (max-width: 650px) {
-    right: -3rem;
-    img {
-      &:nth-child(1),
-      &:nth-child(4) {
-        display: none;
-      }
     }
   }
   @media (max-width: 767px) and (orientation: portrait) {
@@ -87,6 +75,19 @@ export const MspAnalyticsCardsRightSide = styled(Block)`
       &:nth-child(3) {
         margin-left: 0.71425rem;
         margin-bottom: 0;
+      }
+    }
+  }
+  @media (max-width: 812px) and (orientation: landscape) {
+    right: -3rem;
+    img {
+      transform: translateY(-40%);
+      &:nth-child(3),
+      &:nth-child(4) {
+        display: none;
+      }
+      &:nth-child(2) {
+        margin-left: 0;
       }
     }
   }

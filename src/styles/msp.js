@@ -118,7 +118,7 @@ const styles = css`
     @media (max-width: 991px) {
       min-height: 31.7142rem;
     }
-    @media (max-width: 650px) {
+    @media (max-width: 812px) and (orientation: landscape) {
       min-height: 28rem;
       article {
         margin: 0;

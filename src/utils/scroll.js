@@ -2,16 +2,16 @@ export const openFullscreen = () => {
   const elem = document.documentElement;
 
   if (elem.requestFullscreen) {
-    elem.requestFullscreen();
+    elem.requestFullscreen().catch(error => console.error(error));
   } else if (elem.mozRequestFullScreen) {
     /* Firefox */
-    elem.mozRequestFullScreen();
+    elem.mozRequestFullScreen().catch(error => console.error(error));
   } else if (elem.webkitRequestFullscreen) {
     /* Chrome, Safari and Opera */
-    elem.webkitRequestFullscreen();
+    elem.webkitRequestFullscreen().catch(error => console.error(error));
   } else if (elem.msRequestFullscreen) {
     /* IE/Edge */
-    elem.msRequestFullscreen();
+    elem.msRequestFullscreen().catch(error => console.error(error));
   }
 };
 
@@ -19,16 +19,18 @@ export const isFullscreenMode = () => Math.abs(window.screen.width - window.inne
 
 /* Close fullscreen */
 export const closeFullscreen = () => {
-  if (document.exitFullscreen) {
-    document.exitFullscreen();
-  } else if (document.mozCancelFullScreen) {
+  const elem = document.documentElement;
+
+  if (elem.exitFullscreen) {
+    elem.exitFullscreen().catch(error => console.error(error));
+  } else if (elem.mozCancelFullScreen) {
     /* Firefox */
-    document.mozCancelFullScreen();
-  } else if (document.webkitExitFullscreen) {
+    elem.mozCancelFullScreen().catch(error => console.error(error));
+  } else if (elem.webkitExitFullscreen) {
     /* Chrome, Safari and Opera */
-    document.webkitExitFullscreen();
-  } else if (document.msExitFullscreen) {
+    elem.webkitExitFullscreen().catch(error => console.error(error));
+  } else if (elem.msExitFullscreen) {
     /* IE/Edge */
-    document.msExitFullscreen();
+    elem.msExitFullscreen().catch(error => console.error(error));
   }
 };
