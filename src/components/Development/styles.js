@@ -8,9 +8,15 @@ export const DevelopmentContainer = styled("div")`
   }
   @media (max-width: 991px) {
     margin-bottom: 3.6rem;
+    margin-left: 0.9rem;
   }
   @media (max-width: 812px) and (orientation: landscape) {
     margin-bottom: 2rem;
+    margin-left: 1.2rem;
+  }
+  @media (max-width: 767px) and (orientation: portrait) {
+    margin-left: -0.8rem;
+    margin-bottom: 1.8rem;
   }
 `;
 
@@ -36,10 +42,15 @@ export const DevelopmentTitle = styled("div")`
   font-weight: bold;
   border-radius: 0.8571rem;
   margin-bottom: 1.4285rem;
-  @media (max-width: 812px) and (orientation: landscape) {
+  @media (max-width: 991px) {
     height: 1.5rem;
     font-size: 1.4285rem;
     padding: 0 0.925rem 0.145rem 0;
+    margin-bottom: 0.8rem;
+  }
+  @media (max-width: 812px) and (orientation: landscape),
+    (max-width: 767px) and (orientation: portrait) {
+    font-size: 1.1428rem;
   }
 `;
 
@@ -68,7 +79,8 @@ export const DevelopmentDescription = styled("p")`
   @media (max-width: 991px) {
     font-size: 0.8571rem;
   }
-  @media (max-width: 812px) and (orientation: landscape) {
+  @media (max-width: 812px) and (orientation: landscape),
+    (max-width: 767px) and (orientation: portrait) {
     font-size: 0.7142rem;
   }
 `;

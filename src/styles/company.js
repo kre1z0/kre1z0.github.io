@@ -71,9 +71,23 @@ const styles = css`
     h2 {
       margin-bottom: 4.2857rem;
     }
-    @media (max-width: 812px) and (orientation: landscape) {
+    @media (max-width: 991px) {
       h2 {
-        margin-bottom: 2rem;
+        margin-bottom: 2.4rem;
+      }
+    }
+    @media (max-width: 812px) and (orientation: landscape) {
+      padding-top: 2rem;
+      h2 {
+        margin-left: 2rem;
+        margin-bottom: 1rem;
+      }
+    }
+    @media (max-width: 767px) and (orientation: portrait) {
+      padding-top: 1.4rem;
+      padding-bottom: 0;
+      h2 {
+        margin-bottom: 1.2rem;
       }
     }
   }
