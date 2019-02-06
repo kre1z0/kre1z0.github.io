@@ -557,6 +557,7 @@ export class MainLayoutProviderComponent extends Component {
         >
           <ScrollBar
             ref={this.onScrollBarRef}
+            renderByPixels={false}
             damping={damping}
             disableHover={disableHover || !transitionEnd}
             plugins={{

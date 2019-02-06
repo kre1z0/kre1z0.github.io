@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 // https://github.com/idiotWu/react-smooth-scrollbar
 // API https://github.com/idiotWu/smooth-scrollbar/blob/develop/docs/api.md
 
+import { openFullscreen, isFullscreenMode } from "../../utils/scroll";
 import { Swiper } from "../../components/Swiper/Swiper";
 import { Scrollbar } from "../../components/Scrollbar/Scrollbar";
 
@@ -65,6 +66,10 @@ export class ScrollbarProvider extends Component {
       : Math.abs(diff);
   };
 
+  onSwipingUp() {
+    console.log("isFullscreenMode ggwp...", isFullscreenMode());
+  }
+
   render() {
     const { scrollTop, scrollbar } = this.state;
     const { children, className, withScrollbarY } = this.props;
@@ -73,8 +78,9 @@ export class ScrollbarProvider extends Component {
       <ScrollBarContext.Provider
         value={{ scrollTop, scrollbar, elementYPosition: this.elementYPosition }}
       >
-        <Swiper preventDefaultTouchmoveEvent={true}>
+        <Swiper preventDefaultTouchmoveEvent={true} onSwipingUp={this.onSwipingUp}>
           <Scrollbar
+            renderByPixels={false}
             withScrollbarY={withScrollbarY}
             onScrollbarRef={this.onScrollBarRef}
             onScroll={this.onScroll}

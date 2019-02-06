@@ -63,7 +63,8 @@ export const MspAnalyticsCardsRightSide = styled(Block)`
   @media (max-width: 650px) {
     right: -3rem;
     img {
-      &:nth-child(even) {
+      &:nth-child(1),
+      &:nth-child(4) {
         display: none;
       }
     }
@@ -79,8 +80,12 @@ export const MspAnalyticsCardsRightSide = styled(Block)`
       transform: translateX(-20%);
       max-width: none;
       height: 7.5rem;
-      &:first-child {
-        margin-right: 1.4285rem;
+      &:nth-child(2) {
+        margin-right: 0.71425rem;
+        margin-bottom: 0;
+      }
+      &:nth-child(3) {
+        margin-left: 0.71425rem;
         margin-bottom: 0;
       }
     }

@@ -15,6 +15,12 @@ export const openFullscreen = () => {
   }
 };
 
+export const isFullscreenMode = () =>
+  document.fullscreenElement ||
+  document.mozFullScreenElement ||
+  document.webkitFullscreenElement ||
+  document.msFullscreenElement;
+
 /* Close fullscreen */
 export const closeFullscreen = () => {
   const elem = document.documentElement;
@@ -31,4 +37,4 @@ export const closeFullscreen = () => {
     /* IE/Edge */
     document.msExitFullscreen();
   }
-}
+};
