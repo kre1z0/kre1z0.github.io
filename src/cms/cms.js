@@ -1,5 +1,9 @@
 import CMS from "netlify-cms";
 
-import { PortfoliotPreview } from "./preview-templates/PortfolioPagePreview";
+import AboutPreview from "./preview-templates/AboutPagePreview";
 
-CMS.registerPreviewTemplate("portfolio", PortfoliotPreview);
+import { injectGlobals } from "../components/injectGlobals";
+
+injectGlobals();
+
+CMS.registerPreviewTemplate("about", AboutPreview);

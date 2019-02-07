@@ -1,31 +1,48 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
+import cn from "classnames";
 import { Transition, TransitionGroup } from "react-transition-group";
 
+import { format } from "../../utils/date";
 import { Swiper } from "../../components/Swiper/Swiper";
-import { AboutCardContainer, Title, Date, Description, Logo, Read } from "./styles";
-import cn from "classnames";
+import { AboutCardContainer, Title, Date as DateBlock, Description, Logo, Read } from "./styles";
 import { slideDown, slideLeft, slideRight, slideUp, transition } from "../PortfolioSlide/styles";
 import { fade } from "../../components/Transition/animation";
 
-export class Crutch extends PureComponent {
+export class News extends PureComponent {
   render() {
-    const { status, direction, disableTransition, description, title, date, logo, isSwipeEvent } = this.props;
+    const {
+      status,
+      direction,
+      disableTransition,
+      description,
+      title,
+      date,
+      logo,
+      isSwipeEvent,
+      link,
+    } = this.props;
 
     const animation = isSwipeEvent
       ? direction > 0
         ? slideLeft[status]
         : slideRight[status]
       : direction > 0
-        ? slideUp[status]
-        : slideDown[status];
+      ? slideUp[status]
+      : slideDown[status];
 
     return (
-      <AboutCardContainer disableTransition={disableTransition} className={cn(animation, fade[status], transition[status])}>
+      <AboutCardContainer
+        disableTransition={disableTransition}
+        className={cn(animation, fade[status], transition[status])}
+      >
         <Title>{title}</Title>
-        <Date>{date}</Date>
+        <DateBlock>{format(date)}</DateBlock>
         <Description>
-          {description} <Read>Читать</Read>
+          {description}{" "}
+          <Read href={link} target="_blank">
+            Читать
+          </Read>
         </Description>
         <Logo src={logo} alt="logo" />
       </AboutCardContainer>
@@ -36,7 +53,7 @@ export class Crutch extends PureComponent {
 export class NewsCard extends PureComponent {
   static propTypes = {
     title: PropTypes.string,
-    date: PropTypes.string,
+    date: PropTypes.instanceOf(Date),
     description: PropTypes.string,
     logo: PropTypes.string,
     id: PropTypes.string,
@@ -69,7 +86,7 @@ export class NewsCard extends PureComponent {
             }}
           >
             {status => (
-              <Crutch
+              <News
                 {...this.props}
                 status={status}
                 date={date}

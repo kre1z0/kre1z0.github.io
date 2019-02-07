@@ -41,7 +41,7 @@ export const Title = styled("h4")`
 
 export const Date = styled("span")`
   line-height: normal;
-  font-weight: 400;
+  font-weight: 600;
   color: rgba(38, 44, 55, 0.25);
   @media (max-width: 991px) {
     font-size: 0.8571rem;
@@ -73,6 +73,12 @@ export const Description = styled("p")`
 export const Read = styled("a")`
   cursor: pointer;
   color: #90c53d;
+  text-decoration: none;
+  @media (hover: hover) {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 `;
 
 export const Logo = styled("img")`
