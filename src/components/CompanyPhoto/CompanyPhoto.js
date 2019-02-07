@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import throttle from "lodash/throttle";
 import random from "lodash/random";
 
+import { isMobile } from "../../utils/browser";
 import { ImagesDownloadListener } from "../../components/ImagesDownloadListener/ImagesDownloadListener";
 import { HorizontalRule } from "../../components/Atoms/Atoms";
 import { CompanyPhotoTransition } from "./CompanyPhotoTransition";
@@ -26,15 +27,21 @@ export class CompanyPhoto extends PureComponent {
   };
 
   componentDidMount() {
-    const { items } = this.props;
+    if (isMobile()) {
+      window.addEventListener("orientationchange", this.onResize);
+    } else {
+      window.addEventListener("resize", this.onResize);
+    }
 
-    window.addEventListener("resize", this.onResize);
-
-    this.setState({ ...this.getRandomElements(items) });
+    this.onResize();
   }
 
   componentWillUnmount() {
-    window.removeEventListener("resize", this.onResize);
+    if (isMobile()) {
+      window.removeEventListener("orientationchange", this.onResize);
+    } else {
+      window.removeEventListener("resize", this.onResize);
+    }
     clearInterval(this.interval);
   }
 

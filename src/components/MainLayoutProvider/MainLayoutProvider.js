@@ -97,6 +97,7 @@ export class MainLayoutProviderComponent extends Component {
         this.setState(
           {
             scrollTop: 0,
+            coloredNav: false,
           },
           () => {
             this.scrollbar.scrollTo(0, 0, 0);

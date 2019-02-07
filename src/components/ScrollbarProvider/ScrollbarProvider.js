@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 // https://github.com/idiotWu/react-smooth-scrollbar
 // API https://github.com/idiotWu/smooth-scrollbar/blob/develop/docs/api.md
 
+import { NativeScrollbar } from "./NativeScrollbar";
 import { Swiper } from "../../components/Swiper/Swiper";
 import { Scrollbar } from "../../components/Scrollbar/Scrollbar";
 
@@ -18,17 +19,41 @@ export class ScrollbarProvider extends Component {
     location: PropTypes.object,
   };
 
+  static defaultProps = {
+    native: false,
+  };
+
   state = {
     scrollTop: 0,
     scrollbar: null,
   };
+
+  componentDidMount() {
+    const { native } = this.props;
+
+    if (native) {
+      window.addEventListener("scroll", this.onNativeScroll);
+    }
+  }
+
+  componentWillUnmount() {
+    const { native } = this.props;
+
+    if (native) {
+      window.removeEventListener("scroll", this.onNativeScroll);
+    }
+  }
 
   componentDidUpdate({ location: prevLocation }, prevState) {
     const { scrollbar } = this.state;
     const { location } = this.props;
 
     if (prevLocation.pathname !== location.pathname && scrollbar) {
-      scrollbar.scrollTo(0, 0, 0);
+      if (scrollbar) {
+        scrollbar.scrollTo(0, 0, 0);
+      } else {
+        window.scrollTo(0, 0, 0);
+      }
     }
   }
 
@@ -50,12 +75,8 @@ export class ScrollbarProvider extends Component {
   };
 
   elementYPosition = ({ element, percent = true }) => {
-    const { scrollbar } = this.state;
-
     const { bottom, height: elementHeight } = element.getBoundingClientRect();
-    const {
-      container: { height },
-    } = scrollbar.getSize();
+    const height = window.innerHeight;
 
     const value = bottom - height - elementHeight;
     const diff = value < -height ? -height : value > 0 ? 0 : value;
@@ -65,31 +86,33 @@ export class ScrollbarProvider extends Component {
       : Math.abs(diff);
   };
 
+  onNativeScroll = () => this.setState({ scrollTop: window.scrollY });
+
   render() {
     const { scrollTop, scrollbar } = this.state;
-    const { children, className, withScrollbarY } = this.props;
+    const { children, className, withScrollbarY, native } = this.props;
 
     return (
       <ScrollBarContext.Provider
-        value={{ scrollTop, scrollbar, elementYPosition: this.elementYPosition }}
+        value={{ scrollTop, scrollbar, elementYPosition: this.elementYPosition, native }}
       >
-        <Swiper
-          preventDefaultTouchmoveEvent={true}
-          onSwipingDown={this.onSwipingDown}
-          onSwipingUp={this.onSwipingUp}
-        >
-          <Scrollbar
-            renderByPixels={false}
-            withScrollbarY={withScrollbarY}
-            onScrollbarRef={this.onScrollBarRef}
-            onScroll={this.onScroll}
-            className={className}
-            plugins={{
-              disableScrollByDirection: { direction: { x: true, y: false } },
-            }}
-          >
-            {children}
-          </Scrollbar>
+        <Swiper preventDefaultTouchmoveEvent={!native}>
+          {native ? (
+            <NativeScrollbar onScroll={this.onNativeScroll}>{children}</NativeScrollbar>
+          ) : (
+            <Scrollbar
+              renderByPixels={false}
+              withScrollbarY={withScrollbarY}
+              onScrollbarRef={this.onScrollBarRef}
+              onScroll={this.onScroll}
+              className={className}
+              plugins={{
+                disableScrollByDirection: { direction: { x: true, y: false } },
+              }}
+            >
+              {children}
+            </Scrollbar>
+          )}
         </Swiper>
       </ScrollBarContext.Provider>
     );

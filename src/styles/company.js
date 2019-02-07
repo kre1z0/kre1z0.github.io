@@ -28,7 +28,7 @@ export const ChatRow = styled("div")`
   align-items: center;
   justify-content: flex-end;
   p {
-    padding: 0;
+    padding: 0 1.4285rem 0 0;
     margin: 0;
   }
   @media (max-width: 1199px) {
@@ -91,10 +91,9 @@ const styles = css`
       }
     }
   }
-  .companyTelegramBtn {
+  button.companyTelegramBtn {
     flex-shrink: 0;
     background-color: #fff;
-    margin-left: 1.4285rem;
     svg {
       path {
         fill: #90c53d;

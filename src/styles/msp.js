@@ -41,7 +41,8 @@ export const Step = styled(H3)`
     }
   }
   @media (max-width: 767px) and (orientation: portrait) {
-    margin-top: 2.1rem;
+    margin-top: 1.6rem;
+    margin-bottom: 1.4rem;
     > span {
       font-size: 2.2857rem;
     }
@@ -62,6 +63,7 @@ const styles = css`
     }
   }
   .mspVideoWithControl {
+    z-index: 1;
     margin-bottom: 1.4rem;
     @media (max-height: 700px) and (min-width: 1200px) and (orientation: landscape) {
       max-height: calc(100vh - 17rem);
@@ -150,7 +152,8 @@ const styles = css`
       }
     }
     @media (max-width: 767px) and (orientation: portrait) {
-      margin-top: 5rem;
+      margin-top: 1.8rem;
+      padding-bottom: 3.4rem;
     }
   }
   .headerLeftSide {

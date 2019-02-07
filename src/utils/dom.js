@@ -1,5 +1,3 @@
-import { browser } from "./browser";
-
 // cross-browser
 export const getElementWidthAndHeight = element => {
   if (!element) {
@@ -35,22 +33,9 @@ export const setVhProperty = () => {
     return;
   }
 
-  const {
-    parsedResult: {
-      browser: { name },
-    },
-  } = browser();
+  const vh = window.innerHeight * 0.01;
 
-  const vh =
-    name !== "Safari" ? document.documentElement.clientHeight * 0.01 : window.innerHeight * 0.01;
-  const axis = Math.abs(window.orientation);
-
-  if (axis === 90 && name === "Safari") {
-    window.scrollTo(0, 1);
-    document.documentElement.style.setProperty("--vh", `${vh}px`);
-  } else {
-    document.documentElement.style.setProperty("--vh", `${vh}px`);
-  }
+  document.documentElement.style.setProperty("--vh", `${vh}px`);
 };
 
 export const fillElementsInViewport = ({

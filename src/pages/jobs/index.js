@@ -27,6 +27,7 @@ export class Jobs extends PureComponent {
           isSwipeEvent,
           sectionDirection,
           setPreventDefaultTouchmoveEvent,
+          disableTransition,
         }) => {
           const section = sections[selectedSectionIndex];
           const selectedId = section && section.id;
@@ -61,6 +62,7 @@ export class Jobs extends PureComponent {
                     onSectionChange={onSectionChange}
                   />
                   <JobsCard
+                    disableTransition={disableTransition}
                     isSwipeEvent={isSwipeEvent}
                     sections={sections}
                     selectedSectionIndex={selectedSectionIndex}

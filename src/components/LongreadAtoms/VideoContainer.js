@@ -46,6 +46,7 @@ export const VideoContainer = styled("div")`
     video {
       box-shadow: 0 0.5714rem 0.5714rem 0 rgba(10, 18, 33, 0.15);
     }
+    margin-bottom: 1.4rem;
   }
   @media (max-height: 700px) and (orientation: landscape) {
     margin-top: -1.4rem;

@@ -73,6 +73,7 @@ const color = css`
           color: #4a90e2;
           svg {
             path {
+              opacity: 1;
               fill: #4a90e2;
               stroke: #4a90e2;
             }
@@ -117,6 +118,7 @@ const color = css`
       svg path {
         fill: rgba(10, 35, 66, 0.5);
         stroke: rgba(10, 35, 66, 0.5);
+        opacity: 1;
       }
       @media (hover: hover) {
         &:hover {

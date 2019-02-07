@@ -10,10 +10,15 @@ export const injectGlobals = () => {
       font-size: 14px;
       font-family: "Open Sans", Tahoma, sans-serif;
       color: #262c37;
-      overflow: hidden;
       text-rendering: optimizeLegibility;
       -webkit-font-smoothing: antialiased;
       letter-spacing: 0;
+    }
+    body {
+      overflow: hidden;
+    }
+    html {
+      overflow-y: auto;
     }
     img {
       outline: none;

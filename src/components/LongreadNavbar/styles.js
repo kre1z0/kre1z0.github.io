@@ -54,7 +54,7 @@ export const LongreadNavbarContainer = styled("nav")`
   }
   @media (max-width: 812px) and (orientation: landscape),
     (max-width: 767px) and (orientation: portrait) {
-    height: 4rem;
+    height: 3.5rem;
     a {
       svg {
         max-width: 0.8rem;

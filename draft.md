@@ -8,3 +8,5 @@
 
 **display the average FPS:**
 `+UI.panels.timeline._flameChart._model._frameModel._frames.slice(1).map(f => 1000 / f.duration).reduce((avg, fps, i) => (avg*i + fps) / (i+1), 0).toFixed(1)`
+
+`react-transition-group` - https://reactcommunity.org/react-transition-group/

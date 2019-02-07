@@ -43,18 +43,26 @@ export class HeaderBase extends Component {
     localStorage.setItem(replacedSlash, projectId);
   }
 
-  shouldComponentUpdate({ scrollbar: nextScrollbar, animate: nextAnimate }, nextState) {
-    const { scrollbar, animate } = this.props;
+  shouldComponentUpdate(
+    { scrollbar: nextScrollbar, animate: nextAnimate, native: nextNative },
+    nextState,
+  ) {
+    const { scrollbar, animate, native } = this.props;
 
-    return scrollbar !== nextScrollbar || animate !== nextAnimate;
+    return scrollbar !== nextScrollbar || animate !== nextAnimate || native !== nextNative;
   }
 
   onScrollDown = () => {
-    const { scrollbar } = this.props;
+    const { scrollbar, native } = this.props;
 
     const viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    const y = viewportHeight - getLongreadNavbarHeight();
 
-    scrollbar.scrollTo(0, viewportHeight - getLongreadNavbarHeight(), 400);
+    if (native) {
+      window.scrollTo({ top: y, behavior: "smooth" });
+    } else if (scrollbar) {
+      scrollbar.scrollTo(0, y, 400);
+    }
   };
 
   render() {
@@ -112,6 +120,6 @@ export class HeaderBase extends Component {
 
 export const Header = props => (
   <ScrollbarConsumer>
-    {({ scrollbar }) => <HeaderBase scrollbar={scrollbar} {...props} />}
+    {({ scrollbar, native }) => <HeaderBase scrollbar={scrollbar} native={native} {...props} />}
   </ScrollbarConsumer>
 );

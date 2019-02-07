@@ -14,8 +14,11 @@ export const getLongreadNavbarHeight = () => {
   const viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
   const viewportHeight = document.documentElement.clientHeight || window.innerHeight || 0;
 
-  if (viewportWidth <= 767) {
-    return 46;
+  if (
+    (viewportWidth <= 767 && window.innerHeight > window.innerWidth) ||
+    (viewportWidth <= 812 && window.innerHeight < window.innerWidth)
+  ) {
+    return 49;
   } else if (viewportWidth <= 991 || (viewportHeight <= 700 && viewportWidth > viewportHeight)) {
     return 66;
   } else {
@@ -29,11 +32,12 @@ export class LongreadNavbarBase extends Component {
     scrollTop: PropTypes.number,
     className: PropTypes.string,
     projects: PropTypes.arrayOf(PropTypes.string),
+    native: PropTypes.bool,
   };
 
   render() {
-    const { pathname, scrollTop, className, children, projects } = this.props;
-    const transform = `translateY(${scrollTop}px)`;
+    const { pathname, scrollTop, className, children, projects, native } = this.props;
+    const transform = `translateY(${native ? 0 : scrollTop}px)`;
     const fixed = scrollTop > 0;
     const arrowControl = !!projects;
     const currentPageIndex =
