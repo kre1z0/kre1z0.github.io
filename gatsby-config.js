@@ -1,5 +1,4 @@
 module.exports = {
-  pathPrefix: "/kre1z0.github.io",
   siteMetadata: {
     title: "Everpoint-side",
   },
