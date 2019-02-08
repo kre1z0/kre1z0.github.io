@@ -60,7 +60,7 @@ const styles = css`
       bottom: 0;
       width: 100%;
       height: 100%;
-      background-image: url(../img/portfolio/evergisOnline/header/pattern.png);
+      background-image: url(../assets/img/portfolio/evergisOnline/header/pattern.png);
       background-position: top;
       background-size: cover;
     }

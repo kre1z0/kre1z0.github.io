@@ -1,6 +1,6 @@
-import facebook from "../img/icons/fb.svg";
-import vc from "../img/icons/vc.svg";
-import insta from "../img/icons/insta.svg";
+import facebook from "./img/icons/fb.svg";
+import vc from "./img/icons/vc.svg";
+import insta from "./img/icons/insta.svg";
 
 export const socials = [
   {

@@ -8,7 +8,7 @@ export const Footer = styled(Section)`
   padding-top: 5.3571rem;
   padding-bottom: 3.1428rem;
   background-color: #90c53d;
-  background-image: url(../img/backgrounds/companyFooter.png);
+  background-image: url(../assets/img/backgrounds/companyFooter.png);
   background-position: top;
   background-repeat: no-repeat;
   background-size: contain;
@@ -44,7 +44,7 @@ export const ChatRow = styled("div")`
 const styles = css`
   .whatAreWeDoing {
     color: #fff;
-    background: url(../img/backgrounds/whatAreWeDoing.png) top no-repeat,
+    background: url(../assets/img/backgrounds/whatAreWeDoing.png) top no-repeat,
       linear-gradient(to bottom, #19191d, #3c3b41),
       linear-gradient(to bottom, rgba(0, 170, 255, 0.05), rgba(0, 170, 255, 0.05));
     background-size: contain;

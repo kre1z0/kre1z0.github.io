@@ -4,7 +4,6 @@ import cn from "classnames";
 import { Transition, TransitionGroup } from "react-transition-group";
 
 import { OutsideLink } from "../../components/OutsideLink/OutsideLink";
-import { format } from "../../utils/date";
 import { Swiper } from "../../components/Swiper/Swiper";
 import styles, { AboutCardContainer, Title, Date as DateBlock, Description, Logo } from "./styles";
 import { slideDown, slideLeft, slideRight, slideUp, transition } from "../PortfolioSlide/styles";
@@ -38,14 +37,16 @@ export class News extends PureComponent {
         className={cn(animation, fade[status], transition[status])}
       >
         <Title>{title}</Title>
-        <DateBlock>{format(date)}</DateBlock>
+        <DateBlock>{date}</DateBlock>
         <Description>
           {description}{" "}
-          <OutsideLink href={link} className={styles.read}>
-            Читать
-          </OutsideLink>
+          {link && (
+            <OutsideLink href={link} className={styles.read}>
+              Читать
+            </OutsideLink>
+          )}
         </Description>
-        <Logo src={logo} alt="logo" />
+        {logo && <Logo src={logo} alt="logo" />}
       </AboutCardContainer>
     );
   }
@@ -54,12 +55,13 @@ export class News extends PureComponent {
 export class NewsCard extends PureComponent {
   static propTypes = {
     title: PropTypes.string,
-    date: PropTypes.instanceOf(Date),
+    date: PropTypes.string,
     description: PropTypes.string,
     logo: PropTypes.string,
     id: PropTypes.string,
     direction: PropTypes.number,
     isSwipeEvent: PropTypes.bool,
+    selectedSectionIndex: PropTypes.number,
     disableTransition: PropTypes.bool,
   };
 
@@ -74,13 +76,13 @@ export class NewsCard extends PureComponent {
   };
 
   render() {
-    const { direction, title, date, description, logo, id } = this.props;
+    const { direction, title, date, description, logo, selectedSectionIndex } = this.props;
 
     return (
       <Swiper onSwiped={this.onSwiped}>
         <TransitionGroup appear>
           <Transition
-            key={`${id}-news-${direction}`}
+            key={`${selectedSectionIndex}-news-${direction}`}
             timeout={{
               enter: 100,
               exit: 200,

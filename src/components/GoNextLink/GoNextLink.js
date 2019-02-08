@@ -4,7 +4,7 @@ import cn from "classnames";
 import styled, { css } from "astroturf";
 import { Link as GatsbyLink } from "gatsby";
 
-import { ReactComponent as ArrowNext } from "../../img/icons/arrow-next-more.svg";
+import { ReactComponent as ArrowNext } from "../../assets/img/icons/arrow-next-more.svg";
 
 const NativeLink = styled("a")`
   transition: color 200ms ease-in;

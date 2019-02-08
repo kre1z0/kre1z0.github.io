@@ -19,6 +19,9 @@ export const SliderBackground = styled("div")`
   height: 100%;
   will-change: top, background;
   transition: all 200ms ease-in;
+  &.disableTransition {
+    transition: none;
+  }
   @media (hover: hover) {
     &.hovered {
       top: -1.1428rem;
@@ -174,7 +177,7 @@ const ControlBtn = styled(Button)`
     background-size: 34% 34%;
     background-repeat: no-repeat;
     background-position: center center;
-    background-image: url("../../img/icons/arrow.svg");
+    background-image: url("../../assets/img/icons/arrow.svg");
   }
 
   @media (hover: hover) {

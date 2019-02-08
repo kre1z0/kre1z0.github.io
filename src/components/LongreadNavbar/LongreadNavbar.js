@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import cn from "classnames";
 import { Link } from "gatsby";
 
-import { ReactComponent as Close } from "../../img/icons/close.svg";
-import { ReactComponent as Arrow } from "../../img/icons/arrow.svg";
+import { ReactComponent as Close } from "../../assets/img/icons/close.svg";
+import { ReactComponent as Arrow } from "../../assets/img/icons/arrow.svg";
 import { ScrollbarConsumer } from "../ScrollbarProvider/ScrollbarProvider";
 import { getBackRouteByLocationPathName } from "../../routes";
 import { getColorById } from "./getColorById";

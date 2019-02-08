@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import cn from "classnames";
 
 import { MainLayoutConsumer } from "../MainLayoutProvider/MainLayoutProvider";
-import logo from "../../img/assets/logo.svg";
+import logo from "../../assets/img/assets/logo.svg";
 import { Hamburger } from "../../components/Buttons/IconButtons";
 import styles, {
   NavbarContainer,

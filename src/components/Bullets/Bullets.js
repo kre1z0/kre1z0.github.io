@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-import { ReactComponent as Arrow } from "../../img/icons/arrow.svg";
+import { ReactComponent as Arrow } from "../../assets/img/icons/arrow.svg";
 import { BulletsContainer, PrevBtn, NextBtn, Amount } from "./styles";
 
 export class Bullets extends Component {

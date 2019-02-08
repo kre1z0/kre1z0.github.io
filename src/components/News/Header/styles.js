@@ -11,7 +11,7 @@ export const Container = styled("header")`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url(../../../img/backgrounds/news-img.jpg);
+  background-image: url(../../../assets/img/backgrounds/news-img.jpg);
   @media (max-width: 767px) and (orientation: portrait) {
     background-position: left center;
   }

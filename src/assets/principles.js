@@ -1,11 +1,11 @@
-import interest from "../img/principles/interest.svg";
-import informality from "../img/principles/informality.svg";
-import feedback from "../img/principles/feedback.svg";
-import politeness from "../img/principles/politeness.svg";
-import winwin from "../img/principles/win-win.svg";
-import atmosphere from "../img/principles/atmosphere.svg";
-import help from "../img/principles/help.svg";
-import development from "../img/principles/development.svg";
+import interest from "./img/principles/interest.svg";
+import informality from "./img/principles/informality.svg";
+import feedback from "./img/principles/feedback.svg";
+import politeness from "./img/principles/politeness.svg";
+import winwin from "./img/principles/win-win.svg";
+import atmosphere from "./img/principles/atmosphere.svg";
+import help from "./img/principles/help.svg";
+import development from "./img/principles/development.svg";
 
 export default [
   {

@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { TeamMemberCard } from "../TeamMemberCard/TeamMemberCard";
-import noVacancy from "../../img/vacancy/no-vacancy.svg";
+import noVacancy from "../../assets/img/vacancy/no-vacancy.svg";
 import { NoVacancyDescription } from "./styles";
 import { GoNextLink } from "../GoNextLink/GoNextLink";
 

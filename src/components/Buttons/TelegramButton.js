@@ -3,7 +3,7 @@ import { css } from "astroturf";
 import cn from "classnames";
 
 import { IconBtn } from "./IconButtons";
-import { ReactComponent as Telegram } from "../../img/icons/telegram.svg";
+import { ReactComponent as Telegram } from "../../assets/img/icons/telegram.svg";
 
 const styles = css`
   .telegramBtn {

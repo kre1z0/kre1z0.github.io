@@ -28,6 +28,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/data`,
+        name: "markdown-pages",
+      },
+    },
+    {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: "gatsby-source-filesystem",
       options: {
@@ -73,6 +80,7 @@ module.exports = {
         ],
       },
     },
+    `gatsby-transformer-remark`,
     {
       resolve: "gatsby-plugin-netlify-cms",
       options: {

@@ -3,31 +3,31 @@ import styled from "astroturf";
 
 const styles = css`
   .yandex {
-    background-image: url(../../img/maps/yandex/yandex.jpg);
+    background-image: url(../../assets/img/maps/yandex/yandex.jpg);
     @media (-webkit-min-device-pixel-ratio: 2) {
-      background-image: url(../../img/maps/yandex/yandex@2x.jpg);
+      background-image: url(../../assets/img/maps/yandex/yandex@2x.jpg);
     }
     @media (-webkit-min-device-pixel-ratio: 3) {
-      background-image: url(../../img/maps/yandex/yandex@3x.jpg);
+      background-image: url(../../assets/img/maps/yandex/yandex@3x.jpg);
     }
   }
   .google {
-    background-image: url(../../img/maps/google/google.jpg);
+    background-image: url(../../assets/img/maps/google/google.jpg);
     @media (-webkit-min-device-pixel-ratio: 2) {
-      background-image: url(../../img/maps/google/google@2x.jpg);
+      background-image: url(../../assets/img/maps/google/google@2x.jpg);
     }
     @media (-webkit-min-device-pixel-ratio: 3) {
-      background-image: url(../../img/maps/google/google@3x.jpg);
+      background-image: url(../../assets/img/maps/google/google@3x.jpg);
     }
   }
 
   .gis {
-    background-image: url(../../img/maps/2gis/2gis.jpg);
+    background-image: url(../../assets/img/maps/2gis/2gis.jpg);
     @media (-webkit-min-device-pixel-ratio: 2) {
-      background-image: url(../../img/maps/2gis/2gis@2x.jpg);
+      background-image: url(../../assets/img/maps/2gis/2gis@2x.jpg);
     }
     @media (-webkit-min-device-pixel-ratio: 3) {
-      background-image: url(../../img/maps/2gis/2gis@3x.jpg);
+      background-image: url(../../assets/img/maps/2gis/2gis@3x.jpg);
     }
   }
 `;

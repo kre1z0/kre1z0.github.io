@@ -1,8 +1,8 @@
 import React from "react";
 import ReactHelmet from "react-helmet";
 
-import ogImage from "../../img/assets/ogImage.png";
-import favicon from "../../img/assets/favicon.png";
+import ogImage from "../../assets/img/assets/ogImage.png";
+import favicon from "../../assets/img/assets/favicon.png";
 
 export const Helmet = props => {
   return (

@@ -1,8 +1,8 @@
 import React, { PureComponent } from "react";
 
 import { ResponsiveSvg } from "../../components/Atoms/ResponsiveSvg";
-import { ReactComponent as Loyalty } from "../../img/icons/loyalty.svg";
-import { ReactComponent as Badge } from "../../img/portfolio/msp/tagline-awards-badge.svg";
+import { ReactComponent as Loyalty } from "../../assets/img/icons/loyalty.svg";
+import { ReactComponent as Badge } from "../../assets/img/portfolio/msp/tagline-awards-badge.svg";
 import {
   TaglineAwardsContainer,
   TaglineAwardsBlock,

@@ -1,13 +1,13 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 
-import msp1x from "../../../img/portfolio/mobileMsp/msp/460-x-0-w-1.png";
-import msp2x from "../../../img/portfolio/mobileMsp/msp/460-x-0-w-1@2x.png";
-import msp3x from "../../../img/portfolio/mobileMsp/msp/460-x-0-w-1@3x.png";
+import msp1x from "../../../assets/img/portfolio/mobileMsp/msp/460-x-0-w-1.png";
+import msp2x from "../../../assets/img/portfolio/mobileMsp/msp/460-x-0-w-1@2x.png";
+import msp3x from "../../../assets/img/portfolio/mobileMsp/msp/460-x-0-w-1@3x.png";
 
-import support1 from "../../../img/portfolio/mobileMsp/support/460-x-0-w-1.png";
-import support2 from "../../../img/portfolio/mobileMsp/support/460-x-0-w-1@2x.png";
-import support3 from "../../../img/portfolio/mobileMsp/support/460-x-0-w-1@3x.png";
+import support1 from "../../../assets/img/portfolio/mobileMsp/support/460-x-0-w-1.png";
+import support2 from "../../../assets/img/portfolio/mobileMsp/support/460-x-0-w-1@2x.png";
+import support3 from "../../../assets/img/portfolio/mobileMsp/support/460-x-0-w-1@3x.png";
 
 import { SectionWithIconContainer, Section, Title, Content, Description } from "./styles";
 

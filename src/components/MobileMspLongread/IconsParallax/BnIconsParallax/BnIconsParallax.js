@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 
 import { IconsParallax } from "../IconsParallax";
-import { ReactComponent as Ic1 } from "../../../../img/portfolio/mobileMsp/parallaxIcons/bn/ic-1.svg";
-import { ReactComponent as Ic2 } from "../../../../img/portfolio/mobileMsp/parallaxIcons/bn/ic-2.svg";
-import { ReactComponent as Ic3 } from "../../../../img/portfolio/mobileMsp/parallaxIcons/bn/ic-3.svg";
-import { ReactComponent as Ic4 } from "../../../../img/portfolio/mobileMsp/parallaxIcons/bn/ic-4.svg";
-import { ReactComponent as Ic5 } from "../../../../img/portfolio/mobileMsp/parallaxIcons/bn/ic-5.svg";
-import { ReactComponent as Ic7 } from "../../../../img/portfolio/mobileMsp/parallaxIcons/bn/ic-7.svg";
-import { ReactComponent as Ic8 } from "../../../../img/portfolio/mobileMsp/parallaxIcons/bn/ic-8.svg";
-import { ReactComponent as Ic9 } from "../../../../img/portfolio/mobileMsp/parallaxIcons/bn/ic-9.svg";
+import { ReactComponent as Ic1 } from "../../../../assets/img/portfolio/mobileMsp/parallaxIcons/bn/ic-1.svg";
+import { ReactComponent as Ic2 } from "../../../../assets/img/portfolio/mobileMsp/parallaxIcons/bn/ic-2.svg";
+import { ReactComponent as Ic3 } from "../../../../assets/img/portfolio/mobileMsp/parallaxIcons/bn/ic-3.svg";
+import { ReactComponent as Ic4 } from "../../../../assets/img/portfolio/mobileMsp/parallaxIcons/bn/ic-4.svg";
+import { ReactComponent as Ic5 } from "../../../../assets/img/portfolio/mobileMsp/parallaxIcons/bn/ic-5.svg";
+import { ReactComponent as Ic7 } from "../../../../assets/img/portfolio/mobileMsp/parallaxIcons/bn/ic-7.svg";
+import { ReactComponent as Ic8 } from "../../../../assets/img/portfolio/mobileMsp/parallaxIcons/bn/ic-8.svg";
+import { ReactComponent as Ic9 } from "../../../../assets/img/portfolio/mobileMsp/parallaxIcons/bn/ic-9.svg";
 import styles from "./styles";
 import { ParallaxContainer } from "../styles";
 

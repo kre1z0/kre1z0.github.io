@@ -13,25 +13,25 @@ import { Header } from "../../components/PortfolioLongreadHeader/Header";
 import { Figures } from "../../components/Figures/Figures";
 import { getProject } from "../../routes";
 
-import { ReactComponent as Ic1 } from "../../img/portfolio/geomonitoring/icons/ic-1.svg";
-import { ReactComponent as Ic2 } from "../../img/portfolio/geomonitoring/icons/ic-2.svg";
-import { ReactComponent as Ic3 } from "../../img/portfolio/geomonitoring/icons/ic-3.svg";
-import { ReactComponent as Ic4 } from "../../img/portfolio/geomonitoring/icons/ic-4.svg";
-import { ReactComponent as Ic5 } from "../../img/portfolio/geomonitoring/icons/ic-5.svg";
-import { ReactComponent as Ic6 } from "../../img/portfolio/geomonitoring/icons/ic-6.svg";
+import { ReactComponent as Ic1 } from "../../assets/img/portfolio/geomonitoring/icons/ic-1.svg";
+import { ReactComponent as Ic2 } from "../../assets/img/portfolio/geomonitoring/icons/ic-2.svg";
+import { ReactComponent as Ic3 } from "../../assets/img/portfolio/geomonitoring/icons/ic-3.svg";
+import { ReactComponent as Ic4 } from "../../assets/img/portfolio/geomonitoring/icons/ic-4.svg";
+import { ReactComponent as Ic5 } from "../../assets/img/portfolio/geomonitoring/icons/ic-5.svg";
+import { ReactComponent as Ic6 } from "../../assets/img/portfolio/geomonitoring/icons/ic-6.svg";
 
-import screenshot1 from "../../img/portfolio/geomonitoring/bank-1.png";
-import screenshot2 from "../../img/portfolio/geomonitoring/bank-2.png";
-import screenshot3 from "../../img/portfolio/geomonitoring/bank-3.png";
-import screenshot4 from "../../img/portfolio/geomonitoring/bank-4.png";
-import screenshot5 from "../../img/portfolio/geomonitoring/bank-5.png";
-import screenshot6 from "../../img/portfolio/geomonitoring/bank-6.png";
+import screenshot1 from "../../assets/img/portfolio/geomonitoring/bank-1.png";
+import screenshot2 from "../../assets/img/portfolio/geomonitoring/bank-2.png";
+import screenshot3 from "../../assets/img/portfolio/geomonitoring/bank-3.png";
+import screenshot4 from "../../assets/img/portfolio/geomonitoring/bank-4.png";
+import screenshot5 from "../../assets/img/portfolio/geomonitoring/bank-5.png";
+import screenshot6 from "../../assets/img/portfolio/geomonitoring/bank-6.png";
 
-import layer1 from "../../img/portfolio/geomonitoring/map.png";
-import layer2 from "../../img/portfolio/geomonitoring/app.png";
-import cardLeft from "../../img/portfolio/geomonitoring/cards/leftCard.png";
-import cardRight from "../../img/portfolio/geomonitoring/cards/rightCard.png";
-import cardBottom from "../../img/portfolio/geomonitoring/cards/bottomCard.png";
+import layer1 from "../../assets/img/portfolio/geomonitoring/map.png";
+import layer2 from "../../assets/img/portfolio/geomonitoring/app.png";
+import cardLeft from "../../assets/img/portfolio/geomonitoring/cards/leftCard.png";
+import cardRight from "../../assets/img/portfolio/geomonitoring/cards/rightCard.png";
+import cardBottom from "../../assets/img/portfolio/geomonitoring/cards/bottomCard.png";
 
 import styles, { GeomonitoringContainer, Footer } from "../../styles/geomonitoring";
 

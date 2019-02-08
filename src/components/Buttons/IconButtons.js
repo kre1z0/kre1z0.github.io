@@ -12,10 +12,10 @@ export const IconButton = styled(Button)`
 `;
 
 export const Hamburger = styled(IconButton)`
-  background: url(../../img/icons/burger-menu.svg) center center no-repeat;
+  background: url(../../assets/img/icons/burger-menu.svg) center center no-repeat;
   background-size: 1.4285rem 1rem;
   &.isOpen {
-    background: url(../../img/icons/close-menu.svg) center center no-repeat;
+    background: url(../../assets/img/icons/close-menu.svg) center center no-repeat;
     background-size: 1.4285rem 1rem;
   }
 `;

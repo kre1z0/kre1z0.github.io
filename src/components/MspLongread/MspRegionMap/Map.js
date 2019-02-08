@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { fillElementsInViewport } from "../../../utils/dom";
 import { getLongreadNavbarHeight } from "../../LongreadNavbar/LongreadNavbar";
 import { ScrollbarConsumer } from "../../ScrollbarProvider/ScrollbarProvider";
-import { ReactComponent as SvgMap } from "../../../img/portfolio/msp/RegionMapforBN.svg";
+import { ReactComponent as SvgMap } from "../../../assets/img/portfolio/msp/RegionMapforBN.svg";
 import styles, { MapWraper } from "./styles";
 
 export class MapComponent extends Component {

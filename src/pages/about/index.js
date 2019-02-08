@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-// import { graphql } from "gatsby";
+import { graphql } from "gatsby";
 import cn from "classnames";
 
 import { GoNextLink } from "../../components/GoNextLink/GoNextLink";
@@ -12,7 +12,6 @@ import { MainLayoutConsumer } from "../../components/MainLayoutProvider/MainLayo
 import { ConstellationPoints } from "../../components/ConstellationPoints/ConstellationPoints";
 import { fade, slideUp, transition } from "../../components/Transition/animation";
 import styles, { NewsContainer, WillChangeNews } from "../../styles/about";
-import { getRouteByLocation } from "../../routes";
 
 export class About extends PureComponent {
   state = {
@@ -23,8 +22,9 @@ export class About extends PureComponent {
   onTransform = coordinates => this.setState(coordinates);
 
   render() {
-    const { location } = this.props;
-    const { news, text } = getRouteByLocation(location);
+    const { data } = this.props;
+
+    const allMarkdownRemark = data.allMarkdownRemark;
 
     const { status, disableTransition } = this.props;
     const { x, y } = this.state;
@@ -38,7 +38,18 @@ export class About extends PureComponent {
           isSwipeEvent,
           transitionEnd,
         }) => {
-          const section = news[selectedSectionIndex];
+          const section =
+            allMarkdownRemark && allMarkdownRemark.edges[selectedSectionIndex]
+              ? allMarkdownRemark.edges[selectedSectionIndex].node.frontmatter
+              : {
+                  title: !allMarkdownRemark ? "Список пуст" : "Пусто",
+                  description: !allMarkdownRemark
+                    ? "Заполните статьи в системе управления содержимым"
+                    : "Заполните статью в системе управления содержимым",
+                };
+
+          const sections =
+            allMarkdownRemark && allMarkdownRemark.edges ? allMarkdownRemark.edges : [];
 
           return (
             <MainAnimation
@@ -50,7 +61,7 @@ export class About extends PureComponent {
               backgroundClassName={styles.isAboutSlide}
               leftSide={
                 <>
-                  <H2 as="h1">{text}</H2>
+                  <H2 as="h1">СМИ о нас</H2>
                   <GoNextLink to="/news" gatsby>
                     Все комментарии
                   </GoNextLink>
@@ -72,8 +83,12 @@ export class About extends PureComponent {
                     disableTransition={disableTransition}
                     className={cn(slideUp[status], fade[status], transition[status])}
                   >
-                    <BackendComponent sections={news} selectedSectionIndex={selectedSectionIndex} />
+                    <BackendComponent
+                      sections={sections}
+                      selectedSectionIndex={selectedSectionIndex}
+                    />
                     <NewsCard
+                      selectedSectionIndex={selectedSectionIndex}
                       disableTransition={disableTransition}
                       isSwipeEvent={isSwipeEvent}
                       onSectionChange={onSectionChange}
@@ -81,7 +96,7 @@ export class About extends PureComponent {
                       {...section}
                     />
                     <Bullets
-                      sections={news}
+                      sections={sections}
                       selectedSectionIndex={selectedSectionIndex}
                       goPrev={() => onSectionChange({ value: -1, isSwipeEvent: true })}
                       goNext={() => onSectionChange({ value: 1, isSwipeEvent: true })}
@@ -99,18 +114,25 @@ export class About extends PureComponent {
 
 export default About;
 
-// export const aboutPageQuery = graphql`
-//   query AboutPage($id: String!) {
-//     markdownRemark(id: { eq: $id }) {
-//       html
-//       frontmatter {
-//         date
-//         link
-//         title
-//         logo
-//         isVisible
-//         description
-//       }
-//     }
-//   }
-// `;
+export const aboutPageQuery = graphql`
+  query AboutPostByID {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___isVisible, frontmatter___date], order: [DESC, DESC] }
+      limit: 5
+    ) {
+      totalCount
+      edges {
+        node {
+          frontmatter {
+            logo
+            title
+            date(formatString: "DD.MM.YYYY")
+            description
+            link
+            isVisible
+          }
+        }
+      }
+    }
+  }
+`;

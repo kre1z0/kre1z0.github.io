@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-import leftMockUp from "../../../img/portfolio/mobileMsp/mockUp/mockUp-Left.png";
-import rightMockUp from "../../../img/portfolio/mobileMsp/mockUp/mockUp-Right.png";
+import leftMockUp from "../../../assets/img/portfolio/mobileMsp/mockUp/mockUp-Left.png";
+import rightMockUp from "../../../assets/img/portfolio/mobileMsp/mockUp/mockUp-Right.png";
 import { InViewVideo } from "../../../components/Video/InViewVideo";
 import { Container, MockUp } from "./styles";
 

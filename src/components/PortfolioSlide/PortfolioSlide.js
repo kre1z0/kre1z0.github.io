@@ -121,7 +121,7 @@ export class PortfolioSlide extends PureComponent {
           onMouseOut={() => this.setState({ hovered: false })}
         >
           <BackendComponent sections={sections} selectedSectionIndex={selectedSectionIndex} />
-          <SliderBackground hovered={hovered} style={{ background: projectBackgroundColor }} />
+          <SliderBackground disableTransition={disableTransition} hovered={hovered} style={{ background: projectBackgroundColor }} />
           <Screenshot
             disableTransition={disableTransition}
             direction={sectionDirection}

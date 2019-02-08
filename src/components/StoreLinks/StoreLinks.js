@@ -19,9 +19,9 @@ const StoreLink = styled("a")`
 `;
 
 export const IosStoreLink = styled(StoreLink)`
-  background-image: url(../../img/icons/ios.svg);
+  background-image: url(../../assets/img/icons/ios.svg);
 `;
 
 export const AndroidStoreLink = styled(StoreLink)`
-  background-image: url(../../img/icons/android.svg);
+  background-image: url(../../assets/img/icons/android.svg);
 `;

@@ -3,7 +3,7 @@ import React, { PureComponent } from "react";
 import { getPixelRatioPropName } from "../../utils/utils";
 import { isMobile } from "../../utils/browser";
 import { SectionWithIcon } from "../../components/MobileMspLongread/SectionWithIcon/SectionWithIcon";
-import phones from "../../img/portfolio/mobileMsp/phones.jpg";
+import phones from "../../assets/img/portfolio/mobileMsp/phones.jpg";
 import { Header } from "../../components/PortfolioLongreadHeader/Header";
 import { Section } from '../../components/Elements/Section';
 import { Article } from '../../components/Elements/Article';

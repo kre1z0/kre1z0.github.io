@@ -133,5 +133,6 @@ export const getProject = ({ projectId, parentId = "portfolio", allProject = fal
 
 export const getBackRouteByLocationPathName = pathname => {
   if (getProject({ allProject: true }).some(({ id }) => pathname.includes(id))) return "/portfolio";
+  else if (pathname.includes("news")) return "/about";
   else return "/";
 };

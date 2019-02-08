@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-import left1 from "../../../img/portfolio/msp/analytics/left-1@2x.png";
-import left2 from "../../../img/portfolio/msp/analytics/left-2@2x.png";
-import left3 from "../../../img/portfolio/msp/analytics/left-3@2x.png";
-import left4 from "../../../img/portfolio/msp/analytics/left-4@2x.png";
+import left1 from "../../../assets/img/portfolio/msp/analytics/left-1@2x.png";
+import left2 from "../../../assets/img/portfolio/msp/analytics/left-2@2x.png";
+import left3 from "../../../assets/img/portfolio/msp/analytics/left-3@2x.png";
+import left4 from "../../../assets/img/portfolio/msp/analytics/left-4@2x.png";
 
-import right1 from "../../../img/portfolio/msp/analytics/right-1@2x.png";
-import right2 from "../../../img/portfolio/msp/analytics/right-2@2x.png";
-import right3 from "../../../img/portfolio/msp/analytics/right-3@2x.png";
-import right4 from "../../../img/portfolio/msp/analytics/right-4@2x.png";
+import right1 from "../../../assets/img/portfolio/msp/analytics/right-1@2x.png";
+import right2 from "../../../assets/img/portfolio/msp/analytics/right-2@2x.png";
+import right3 from "../../../assets/img/portfolio/msp/analytics/right-3@2x.png";
+import right4 from "../../../assets/img/portfolio/msp/analytics/right-4@2x.png";
 
 import { isElementInViewport } from "../../../utils/dom";
 import styles, { Step } from "../../../styles/msp";

@@ -5,7 +5,7 @@ import { Article } from "../../../components/Elements/Article";
 import { H1 } from "../../Typography/Headlines";
 import { GoNextLink } from "../../GoNextLink/GoNextLink";
 import { AndroidStoreLink, IosStoreLink } from "../../StoreLinks/StoreLinks";
-import phones from "../../../img/portfolio/mobileMsp/phones.jpg";
+import phones from "../../../assets/img/portfolio/mobileMsp/phones.jpg";
 
 import styles, { PhonesContainer, Phones, Footer, Content, StoreContainer } from "./styles";
 

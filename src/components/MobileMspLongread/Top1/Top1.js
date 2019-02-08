@@ -3,15 +3,15 @@ import PropTypes from "prop-types";
 
 import { ScrollbarConsumer } from "../../ScrollbarProvider/ScrollbarProvider";
 import { Top1Container, LeftSide, RightSide } from "./styles";
-import { ReactComponent as Left1 } from "../../../img/portfolio/mobileMsp/icons/left-1.svg";
-import { ReactComponent as Left2 } from "../../../img/portfolio/mobileMsp/icons/left-2.svg";
-import { ReactComponent as Left3 } from "../../../img/portfolio/mobileMsp/icons/left-3.svg";
-import { ReactComponent as Left4 } from "../../../img/portfolio/mobileMsp/icons/left-4.svg";
-import { ReactComponent as Right1 } from "../../../img/portfolio/mobileMsp/icons/right-1.svg";
-import { ReactComponent as Right2 } from "../../../img/portfolio/mobileMsp/icons/right-2.svg";
-import { ReactComponent as Right3 } from "../../../img/portfolio/mobileMsp/icons/right-3.svg";
-import { ReactComponent as Right4 } from "../../../img/portfolio/mobileMsp/icons/right-4.svg";
-import { ReactComponent as Badge } from "../../../img/portfolio/mobileMsp/badge.svg";
+import { ReactComponent as Left1 } from "../../../assets/img/portfolio/mobileMsp/icons/left-1.svg";
+import { ReactComponent as Left2 } from "../../../assets/img/portfolio/mobileMsp/icons/left-2.svg";
+import { ReactComponent as Left3 } from "../../../assets/img/portfolio/mobileMsp/icons/left-3.svg";
+import { ReactComponent as Left4 } from "../../../assets/img/portfolio/mobileMsp/icons/left-4.svg";
+import { ReactComponent as Right1 } from "../../../assets/img/portfolio/mobileMsp/icons/right-1.svg";
+import { ReactComponent as Right2 } from "../../../assets/img/portfolio/mobileMsp/icons/right-2.svg";
+import { ReactComponent as Right3 } from "../../../assets/img/portfolio/mobileMsp/icons/right-3.svg";
+import { ReactComponent as Right4 } from "../../../assets/img/portfolio/mobileMsp/icons/right-4.svg";
+import { ReactComponent as Badge } from "../../../assets/img/portfolio/mobileMsp/badge.svg";
 import { halfPhone } from '../images';
 import { isElementInViewport } from "../../../utils/dom";
 

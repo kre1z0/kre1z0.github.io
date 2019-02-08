@@ -1,8 +1,8 @@
 import React, { PureComponent } from "react";
 import cn from "classnames";
 
-import bus from "../../img/main-slides/bus.svg";
-import metro from "../../img/main-slides/metro.svg";
+import bus from "../../assets/img/main-slides/bus.svg";
+import metro from "../../assets/img/main-slides/metro.svg";
 import { ImagesDownloadListener } from "../../components/ImagesDownloadListener/ImagesDownloadListener";
 import { isMobile } from "../../utils/browser";
 import { fade, transition } from "../../components/Transition/animation";

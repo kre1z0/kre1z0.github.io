@@ -36,7 +36,7 @@ export const Background = styled("div")`
   top: 53.74%;
   left: 45.2%;
   transform: translate(-50%, -50%);
-  background-image: url(../../img/portfolio/mobileMsp/mockUp/mockUp-Right.png);
+  background-image: url(../../assets/img/portfolio/mobileMsp/mockUp/mockUp-Right.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100%;
