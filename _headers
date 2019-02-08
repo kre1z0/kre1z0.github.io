@@ -1,0 +1,61 @@
+## Created with gatsby-plugin-netlify
+
+/*
+  X-Frame-Options: DENY
+  X-XSS-Protection: 1; mode=block
+  X-Content-Type-Options: nosniff
+/static/*
+  Cache-Control: public, max-age=31536000, immutable
+/sw.js
+  Cache-Control: no-cache
+/404/
+  Link: </webpack-runtime-03d7accd8a33c8b2c4b0.js>; rel=preload; as=script
+  Link: </component---src-pages-404-js.a3d4175cc71f2be34a93.css>; rel=preload; as=script
+/about/
+  Link: </webpack-runtime-03d7accd8a33c8b2c4b0.js>; rel=preload; as=script
+  Link: </1.27050c22abd2dadd8224.css>; rel=preload; as=script
+/company/
+  Link: </webpack-runtime-03d7accd8a33c8b2c4b0.js>; rel=preload; as=script
+  Link: </component---src-pages-company-index-js.3d3dc3733c8f4a7677e9.css>; rel=preload; as=script
+/contacts/
+  Link: </webpack-runtime-03d7accd8a33c8b2c4b0.js>; rel=preload; as=script
+  Link: </1.27050c22abd2dadd8224.css>; rel=preload; as=script
+/debug/
+  Link: </webpack-runtime-03d7accd8a33c8b2c4b0.js>; rel=preload; as=script
+  Link: </component---src-pages-debug-index-js.2baea9d27a931798f57f.css>; rel=preload; as=script
+/evergis/
+  Link: </webpack-runtime-03d7accd8a33c8b2c4b0.js>; rel=preload; as=script
+  Link: </0.e7fef4de102a1fa6e11c.css>; rel=preload; as=script
+/evergisOnline/
+  Link: </webpack-runtime-03d7accd8a33c8b2c4b0.js>; rel=preload; as=script
+  Link: </0.e7fef4de102a1fa6e11c.css>; rel=preload; as=script
+/evertrack/
+  Link: </webpack-runtime-03d7accd8a33c8b2c4b0.js>; rel=preload; as=script
+  Link: </0.e7fef4de102a1fa6e11c.css>; rel=preload; as=script
+/geomonitoring/
+  Link: </webpack-runtime-03d7accd8a33c8b2c4b0.js>; rel=preload; as=script
+  Link: </0.e7fef4de102a1fa6e11c.css>; rel=preload; as=script
+/
+  Link: </webpack-runtime-03d7accd8a33c8b2c4b0.js>; rel=preload; as=script
+  Link: </1.27050c22abd2dadd8224.css>; rel=preload; as=script
+/jobs/
+  Link: </webpack-runtime-03d7accd8a33c8b2c4b0.js>; rel=preload; as=script
+  Link: </1.27050c22abd2dadd8224.css>; rel=preload; as=script
+/mobileMsp/
+  Link: </webpack-runtime-03d7accd8a33c8b2c4b0.js>; rel=preload; as=script
+  Link: </0.e7fef4de102a1fa6e11c.css>; rel=preload; as=script
+/msp/
+  Link: </webpack-runtime-03d7accd8a33c8b2c4b0.js>; rel=preload; as=script
+  Link: </0.e7fef4de102a1fa6e11c.css>; rel=preload; as=script
+/news/
+  Link: </webpack-runtime-03d7accd8a33c8b2c4b0.js>; rel=preload; as=script
+  Link: </component---src-pages-news-index-js.36369cea72386de1f9b6.css>; rel=preload; as=script
+/portfolio/
+  Link: </webpack-runtime-03d7accd8a33c8b2c4b0.js>; rel=preload; as=script
+  Link: </1.27050c22abd2dadd8224.css>; rel=preload; as=script
+/work/
+  Link: </webpack-runtime-03d7accd8a33c8b2c4b0.js>; rel=preload; as=script
+  Link: </component---src-pages-work-index-js.57c0319e245535604467.css>; rel=preload; as=script
+/404.html
+  Link: </webpack-runtime-03d7accd8a33c8b2c4b0.js>; rel=preload; as=script
+  Link: </component---src-pages-404-js.a3d4175cc71f2be34a93.css>; rel=preload; as=script
