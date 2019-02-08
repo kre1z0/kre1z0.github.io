@@ -1,4 +1,4 @@
-import styled from "astroturf";
+import styled, { css } from "astroturf";
 import { Blank } from "../Blank/Blank";
 
 export const AboutCardContainer = styled(Blank)`
@@ -70,17 +70,6 @@ export const Description = styled("p")`
   }
 `;
 
-export const Read = styled("a")`
-  cursor: pointer;
-  color: #90c53d;
-  text-decoration: none;
-  @media (hover: hover) {
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-`;
-
 export const Logo = styled("img")`
   margin-top: auto;
   width: auto;
@@ -94,3 +83,11 @@ export const Logo = styled("img")`
     height: 0.8rem;
   }
 `;
+
+const styles = css`
+  a.read {
+    color: #90c53d;
+  }
+`;
+
+export default styles;

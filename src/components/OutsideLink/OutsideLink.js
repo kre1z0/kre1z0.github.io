@@ -3,6 +3,7 @@ import styled from "astroturf";
 import PropTypes from "prop-types";
 
 const Link = styled("a")`
+  cursor: pointer;
   color: #387bc7;
   text-decoration: none;
   transition: color 200ms linear;

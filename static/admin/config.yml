@@ -1,5 +1,8 @@
 backend:
-  name: github
+  name: test-repo
+  accept_roles: #optional - accepts all users if left out
+    - admin
+    - editor
   repo: kre1z0/kre1z0.github.io
   branch: master
 
@@ -10,12 +13,13 @@ collections:
   - name: "about"
     label: "About"
     folder: "src/pages/about"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     create: true
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-post"}
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about"}
       - {label: "Заголовок", name: "title", widget: "string"}
-      - {label: "Логотип", name: "logo", widget: image}
-      - {label: "Ссылка", name: "link", widget: "string"}
       - {label: "Дата публикации", name: "date", widget: "datetime"}
       - {label: "Краткое описание", name: "description", widget: "text"}
+      - {label: "Ссылка", name: "link", widget: "string"}
+      - {label: "Логотип", name: "logo", widget: image}
       - {label: "Отображать на главной", name: "isVisible", widget: "boolean", default: false}

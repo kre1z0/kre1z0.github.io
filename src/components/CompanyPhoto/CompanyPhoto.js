@@ -5,7 +5,7 @@ import random from "lodash/random";
 
 import { isMobile } from "../../utils/browser";
 import { ImagesDownloadListener } from "../../components/ImagesDownloadListener/ImagesDownloadListener";
-import { HorizontalRule } from "../../components/Atoms/Atoms";
+import { HorizontalRule } from "../../components/Typography/HorizontalRule";
 import { CompanyPhotoTransition } from "./CompanyPhotoTransition";
 import { CompanyPhotoContainer, CompanyHeader } from "./styles";
 

@@ -3,9 +3,10 @@ import PropTypes from "prop-types";
 import cn from "classnames";
 import { Transition, TransitionGroup } from "react-transition-group";
 
+import { OutsideLink } from "../../components/OutsideLink/OutsideLink";
 import { format } from "../../utils/date";
 import { Swiper } from "../../components/Swiper/Swiper";
-import { AboutCardContainer, Title, Date as DateBlock, Description, Logo, Read } from "./styles";
+import styles, { AboutCardContainer, Title, Date as DateBlock, Description, Logo } from "./styles";
 import { slideDown, slideLeft, slideRight, slideUp, transition } from "../PortfolioSlide/styles";
 import { fade } from "../../components/Transition/animation";
 
@@ -40,9 +41,9 @@ export class News extends PureComponent {
         <DateBlock>{format(date)}</DateBlock>
         <Description>
           {description}{" "}
-          <Read href={link} target="_blank">
+          <OutsideLink href={link} className={styles.read}>
             Читать
-          </Read>
+          </OutsideLink>
         </Description>
         <Logo src={logo} alt="logo" />
       </AboutCardContainer>

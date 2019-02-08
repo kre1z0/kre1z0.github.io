@@ -1,4 +1,5 @@
 import React, { PureComponent } from "react";
+// import { graphql } from "gatsby";
 import cn from "classnames";
 
 import { GoNextLink } from "../../components/GoNextLink/GoNextLink";
@@ -97,3 +98,19 @@ export class About extends PureComponent {
 }
 
 export default About;
+
+// export const aboutPageQuery = graphql`
+//   query AboutPage($id: String!) {
+//     markdownRemark(id: { eq: $id }) {
+//       html
+//       frontmatter {
+//         date
+//         link
+//         title
+//         logo
+//         isVisible
+//         description
+//       }
+//     }
+//   }
+// `;
