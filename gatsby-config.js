@@ -1,6 +1,7 @@
 module.exports = {
+  pathPrefix: "/kre1z0.github.io",
   siteMetadata: {
-    title: "Gatsby + Netlify CMS Starter",
+    title: "Everpoint-side",
   },
   plugins: [
     "gatsby-plugin-react-helmet",
