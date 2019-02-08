@@ -1,4 +1,5 @@
 import React, { PureComponent } from "react";
+import sortBy from "lodash/sortBy";
 import { graphql } from "gatsby";
 import cn from "classnames";
 
@@ -40,7 +41,10 @@ export class About extends PureComponent {
         }) => {
           const section =
             allMarkdownRemark && allMarkdownRemark.edges[selectedSectionIndex]
-              ? allMarkdownRemark.edges[selectedSectionIndex].node.frontmatter
+              ? sortBy(
+                  allMarkdownRemark.edges.map(({ node }) => node.frontmatter),
+                  "date",
+                ).reverse()[selectedSectionIndex]
               : {
                   title: !allMarkdownRemark ? "Список пуст" : "Пусто",
                   description: !allMarkdownRemark
@@ -126,7 +130,7 @@ export const aboutPageQuery = graphql`
           frontmatter {
             logo
             title
-            date(formatString: "DD.MM.YYYY")
+            date
             description
             link
             isVisible

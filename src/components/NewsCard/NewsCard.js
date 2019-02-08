@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import cn from "classnames";
 import { Transition, TransitionGroup } from "react-transition-group";
 
+import { format } from "../../utils/date";
 import { OutsideLink } from "../../components/OutsideLink/OutsideLink";
 import { Swiper } from "../../components/Swiper/Swiper";
 import styles, { AboutCardContainer, Title, Date as DateBlock, Description, Logo } from "./styles";
@@ -37,7 +38,7 @@ export class News extends PureComponent {
         className={cn(animation, fade[status], transition[status])}
       >
         <Title>{title}</Title>
-        <DateBlock>{date}</DateBlock>
+        <DateBlock>{format(date)}</DateBlock>
         <Description>
           {description}{" "}
           {link && (
