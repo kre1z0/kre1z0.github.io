@@ -2,7 +2,6 @@ import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import cn from "classnames";
 import { Transition, TransitionGroup } from "react-transition-group";
-import truncate from "lodash/truncate";
 
 import { format } from "../../utils/date";
 import { OutsideLink } from "../../components/OutsideLink/OutsideLink";
@@ -12,8 +11,6 @@ import { slideDown, slideLeft, slideRight, slideUp, transition } from "../Portfo
 import { fade } from "../../components/Transition/animation";
 
 export class News extends PureComponent {
-  getDescriptionLength = string => {};
-
   render() {
     const {
       status,
@@ -43,10 +40,7 @@ export class News extends PureComponent {
         <Title>{title}</Title>
         <DateBlock>{format(date)}</DateBlock>
         <Description>
-          {truncate(description, {
-            length: 294,
-            separator: " ",
-          })}{" "}
+          {description}{" "}
           {link && (
             <OutsideLink href={link} className={styles.read}>
               Читать
