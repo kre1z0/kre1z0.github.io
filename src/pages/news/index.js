@@ -13,9 +13,10 @@ class News extends Component {
         <Section>
           <Article>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, enim et
-              obcaecati quidem rem reprehenderit tenetur. Aperiam consequuntur culpa, deleniti
-              deserunt impedit natus non nulla, provident quas quisquam tenetur, veniam.
+              Lorem ipsum dolor sit amet. <br />
+              https://vc.ru/ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto,
+              enim et obcaecati quidem rem reprehenderit tenetur. Aperiam consequuntur culpa,
+              deleniti deserunt impedit natus non nulla, provident quas quisquam tenetur, veniam.
             </p>
           </Article>
           <Article>
