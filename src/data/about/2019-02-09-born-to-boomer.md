@@ -9,6 +9,6 @@ description: >-
   фильмам, популярным в 90-е годы.
 link: 'https://github.com/kre1z0'
 logo: /img/born-to-boomer.jpg
-isVisible: false
+isVisible: true
 ---
 
