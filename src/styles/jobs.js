@@ -81,8 +81,16 @@ const styles = css`
     @media (max-width: 812px) and (orientation: landscape) {
       justify-content: space-between;
       > section:last-child {
-        height: calc(100% - 6rem);
-        max-height: none;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 6rem;
+        max-width: 17.1428rem;
+        width: 100%;
+        height: 100%;
+        max-height: 16rem;
+        margin-bottom: 0;
+        align-self: center;
         > div {
           align-self: center;
           max-height: 17.4rem;
@@ -90,47 +98,7 @@ const styles = css`
         }
       }
     }
-    @media (max-height: 390px) {
-      > section:first-child {
-        margin-bottom: 3rem;
-      }
-      > section:last-child {
-        height: calc(100% - 3rem);
-        align-self: flex-start;
-        > div {
-          max-height: none;
-          max-width: 16.1428rem;
-        }
-      }
-    }
-    @media (max-height: 340px) {
-      > section:first-child {
-        h2 {
-          font-size: 0.8571rem;
-          margin-bottom: 0;
-        }
-        ul {
-          &:first-child {
-            margin-bottom: 1rem;
-          }
-          li {
-            margin-bottom: 0;
-            a {
-              font-size: 0.7142rem;
-            }
-          }
-        }
-      }
-      > section:last-child {
-        position: relative;
-        > div {
-          max-width: 18.1428rem;
-          @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
-            max-width: 21.1428rem;
-          }
-        }
-      }
-    }
+
     @media (max-width: 767px) and (orientation: portrait) {
       flex-direction: column;
       justify-content: space-between;
@@ -186,18 +154,29 @@ const styles = css`
         }
       }
     }
-    @media (max-width: 812px) and (max-height: 275px) and (orientation: landscape),
-      only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
-      margin: 0;
-      height: 100%;
-      padding-top: 1rem;
+    @media (max-height: 320px) {
+      position: static;
       > section:first-child {
-        margin-bottom: 0;
+        margin-bottom: 4rem;
+        h2 {
+          font-size: 0.8571rem;
+          margin-bottom: 0;
+        }
+        ul {
+          &:first-child {
+            margin-bottom: 1rem;
+          }
+          li {
+            margin-bottom: 0;
+            a {
+              font-size: 0.7142rem;
+            }
+          }
+        }
       }
       > section:last-child {
-        align-self: flex-end;
-        margin-bottom: 2rem;
-        margin-right: 1.4rem;
+        max-height: calc(100vh - 4rem);
+        max-height: calc(var(--vh, 1vh) * 100 - 4rem);
       }
     }
   }
