@@ -1,4 +1,5 @@
-import React, { PureComponent } from "react";
+import React, { Component } from "react";
+import PropTypes from "prop-types";
 import sortBy from "lodash/sortBy";
 import { graphql } from "gatsby";
 import cn from "classnames";
@@ -14,7 +15,13 @@ import { ConstellationPoints } from "../../components/ConstellationPoints/Conste
 import { fade, slideUp, transition } from "../../components/Transition/animation";
 import styles, { NewsContainer, WillChangeNews } from "../../styles/about";
 
-export class About extends PureComponent {
+export class About extends Component {
+  static propTypes = {
+    data: PropTypes.object.isRequired,
+    status: PropTypes.string,
+    disableTransition: PropTypes.bool,
+  };
+
   state = {
     x: 0,
     y: 0,
@@ -42,7 +49,7 @@ export class About extends PureComponent {
           const section =
             allMarkdownRemark && allMarkdownRemark.edges[selectedSectionIndex]
               ? sortBy(
-                  allMarkdownRemark.edges.map(({ node }) => node.frontmatter),
+                  allMarkdownRemark.edges.map(({ node }) => ({...node.frontmatter, id: node.id})),
                   "date",
                 ).reverse()[selectedSectionIndex]
               : {
@@ -92,7 +99,6 @@ export class About extends PureComponent {
                       selectedSectionIndex={selectedSectionIndex}
                     />
                     <NewsCard
-                      selectedSectionIndex={selectedSectionIndex}
                       disableTransition={disableTransition}
                       isSwipeEvent={isSwipeEvent}
                       onSectionChange={onSectionChange}
@@ -119,7 +125,7 @@ export class About extends PureComponent {
 export default About;
 
 export const aboutPageQuery = graphql`
-  query AboutPostByID {
+  query LimitNews {
     allMarkdownRemark(
       sort: { fields: [frontmatter___isVisible, frontmatter___date], order: [DESC, DESC] }
       limit: 5
@@ -127,6 +133,7 @@ export const aboutPageQuery = graphql`
       totalCount
       edges {
         node {
+          id
           frontmatter {
             logo
             title

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import debounce from 'lodash/debounce';
 
 import { setVhProperty } from "../utils/dom";
 import { Helmet } from "../components/Helmet/Helmet";
@@ -11,6 +12,11 @@ import { Navbar } from "../components/Navbar/Navbar";
 injectGlobals();
 
 class Layout extends Component {
+  constructor(props) {
+    super(props);
+    this.onResize = debounce(this.onResize, 44);
+  }
+
   componentDidMount() {
     window.addEventListener("resize", this.onResize);
     this.onResize();

@@ -62,7 +62,6 @@ export class NewsCard extends PureComponent {
     id: PropTypes.string,
     direction: PropTypes.number,
     isSwipeEvent: PropTypes.bool,
-    selectedSectionIndex: PropTypes.number,
     disableTransition: PropTypes.bool,
   };
 
@@ -77,13 +76,13 @@ export class NewsCard extends PureComponent {
   };
 
   render() {
-    const { direction, title, date, description, logo, selectedSectionIndex } = this.props;
+    const { direction, title, date, description, logo, id } = this.props;
 
     return (
       <Swiper onSwiped={this.onSwiped}>
         <TransitionGroup appear>
           <Transition
-            key={`${selectedSectionIndex}-news-${direction}`}
+            key={`${id}-news-${direction}`}
             timeout={{
               enter: 100,
               exit: 200,

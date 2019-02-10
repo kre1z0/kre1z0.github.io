@@ -14,12 +14,50 @@ const longreadPages = [
   "evergisOnline",
 ];
 
-exports.onCreatePage = ({ page, actions }) => {
-  const { createPage } = actions;
-
+exports.onCreatePage = ({ page, graphql }) => {
   if (longreadPages.some(route => page.path.match(route))) {
     page.context.layout = "longread";
-    createPage(page);
+    if (page.path.match("news")) {
+      // return graphql(`
+      //   query AllNews {
+      //     allMarkdownRemark(sort: { fields: [frontmatter___date], order: [DESC] }) {
+      //       totalCount
+      //       edges {
+      //         node {
+      //           frontmatter {
+      //             logo
+      //             title
+      //             date
+      //             description
+      //             link
+      //           }
+      //         }
+      //       }
+      //     }
+      //   }
+      // `).then(result => {
+      //   if (result.errors) {
+      //     result.errors.forEach(e => console.error(e.toString()));
+      //     return Promise.reject(result.errors);
+      //   }
+      //
+      //   const posts = result.data.allMarkdownRemark.edges;
+      //
+      //   posts.forEach(edge => {
+      //     const id = edge.node.id;
+      //     console.info("--> id ggwp", id);
+      //   });
+      // });
+      // const postsPerPage = 2;
+      // const numPages = Math.ceil(posts.length / postsPerPage);
+      //
+      // Array.from({ length: numPages }).forEach((_, i) => {
+      //   createPage({
+      //     path: i === 0 ? `/` : `/${i + 1}`,
+      //     component: path.resolve("./src/pages/news/index.js")
+      //   });
+      // });
+    }
   }
 };
 

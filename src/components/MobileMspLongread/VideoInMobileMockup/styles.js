@@ -47,7 +47,7 @@ export const Container = styled("div")`
 `;
 
 export const MockUp = styled("img")`
-  padding-top: 0.5px;
+  padding-top: 1.5px;
   position: relative;
   width: auto;
   height: 100%;

@@ -897,12 +897,12 @@
   resolved "https://registry.yarnpkg.com/@types/mkdirp/-/mkdirp-0.3.29.tgz#7f2ad7ec55f914482fc9b1ec4bb1ae6028d46066"
 
 "@types/node@*", "@types/node@^10.11.7":
-  version "10.12.23"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.12.23.tgz#308a3acdc5d1c842aeadc50b867d99c46cfae868"
+  version "10.12.24"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.12.24.tgz#b13564af612a22a20b5d95ca40f1bffb3af315cf"
 
 "@types/node@^7.0.11":
-  version "7.10.2"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-7.10.2.tgz#a98845168012d7a63a84d50e738829da43bdb0de"
+  version "7.10.3"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-7.10.3.tgz#b85d16331cf5ffe434600816593f86e10ccc0e73"
 
 "@types/prop-types@*":
   version "15.5.8"
@@ -1097,6 +1097,12 @@ accepts@^1.3.0, accepts@~1.3.4, accepts@~1.3.5:
     mime-types "~2.1.18"
     negotiator "0.6.1"
 
+acorn-dynamic-import@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/acorn-dynamic-import/-/acorn-dynamic-import-3.0.0.tgz#901ceee4c7faaef7e07ad2a47e890675da50a278"
+  dependencies:
+    acorn "^5.0.0"
+
 acorn-dynamic-import@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/acorn-dynamic-import/-/acorn-dynamic-import-4.0.0.tgz#482210140582a36b83c3e342e1cfebcaa9240948"
@@ -1105,7 +1111,7 @@ acorn-jsx@^5.0.0:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/acorn-jsx/-/acorn-jsx-5.0.1.tgz#32a064fd925429216a09b141102bfdd185fae40e"
 
-acorn@^5.0.0:
+acorn@^5.0.0, acorn@^5.6.2:
   version "5.7.3"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.7.3.tgz#67aa231bf8812974b85235a96771eb6bd07ea279"
 
@@ -1439,16 +1445,16 @@ autoprefixer@^6.3.1:
     postcss "^5.2.16"
     postcss-value-parser "^3.2.3"
 
-autoprefixer@^8.6.5:
-  version "8.6.5"
-  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-8.6.5.tgz#343f3d193ed568b3208e00117a1b96eb691d4ee9"
+autoprefixer@^9.4.3:
+  version "9.4.7"
+  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-9.4.7.tgz#f997994f9a810eae47b38fa6d8a119772051c4ff"
   dependencies:
-    browserslist "^3.2.8"
-    caniuse-lite "^1.0.30000864"
+    browserslist "^4.4.1"
+    caniuse-lite "^1.0.30000932"
     normalize-range "^0.1.2"
     num2fraction "^1.2.2"
-    postcss "^6.0.23"
-    postcss-value-parser "^3.2.3"
+    postcss "^7.0.14"
+    postcss-value-parser "^3.3.1"
 
 aws-sign2@~0.7.0:
   version "0.7.0"
@@ -1524,8 +1530,8 @@ babel-plugin-emotion@^9.2.11:
     touch "^2.0.1"
 
 babel-plugin-macros@^2.0.0, babel-plugin-macros@^2.4.2:
-  version "2.4.5"
-  resolved "https://registry.yarnpkg.com/babel-plugin-macros/-/babel-plugin-macros-2.4.5.tgz#7000a9b1f72d19ceee19a5804f1d23d6daf38c13"
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-macros/-/babel-plugin-macros-2.5.0.tgz#01f4d3b50ed567a67b80a30b9da066e94f4097b6"
   dependencies:
     cosmiconfig "^5.0.5"
     resolve "^1.8.1"
@@ -1667,10 +1673,6 @@ base64-arraybuffer@0.1.5:
 base64-js@^1.0.2:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/base64-js/-/base64-js-1.3.0.tgz#cab1e6118f051095e58b5281aea8c1cd22bfc0e3"
-
-base64-js@0.0.8:
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/base64-js/-/base64-js-0.0.8.tgz#1101e9544f4a76b1bc3b26d452ca96d7a35e7978"
 
 base64id@1.0.0:
   version "1.0.0"
@@ -1957,20 +1959,20 @@ browserslist@^1.3.6, browserslist@^1.5.2, browserslist@^1.7.6:
     caniuse-db "^1.0.30000639"
     electron-to-chromium "^1.2.7"
 
-browserslist@^3.2.8, browserslist@3.2.8:
-  version "3.2.8"
-  resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-3.2.8.tgz#b0005361d6471f0f5952797a76fc985f1f978fc6"
-  dependencies:
-    caniuse-lite "^1.0.30000844"
-    electron-to-chromium "^1.3.47"
-
-browserslist@^4.0.0, browserslist@^4.1.0, browserslist@^4.3.4:
+browserslist@^4.0.0, browserslist@^4.1.0, browserslist@^4.3.4, browserslist@^4.4.1:
   version "4.4.1"
   resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-4.4.1.tgz#42e828954b6b29a7a53e352277be429478a69062"
   dependencies:
     caniuse-lite "^1.0.30000929"
     electron-to-chromium "^1.3.103"
     node-releases "^1.1.3"
+
+browserslist@3.2.8:
+  version "3.2.8"
+  resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-3.2.8.tgz#b0005361d6471f0f5952797a76fc985f1f978fc6"
+  dependencies:
+    caniuse-lite "^1.0.30000844"
+    electron-to-chromium "^1.3.47"
 
 bser@^2.0.0:
   version "2.0.0"
@@ -2013,14 +2015,6 @@ buffer-xor@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/buffer-xor/-/buffer-xor-1.0.3.tgz#26e61ed1422fb70dd42e6e36729ed51d855fe8d9"
 
-buffer@^3.0.1:
-  version "3.6.0"
-  resolved "https://registry.yarnpkg.com/buffer/-/buffer-3.6.0.tgz#a72c936f77b96bf52f5f7e7b467180628551defb"
-  dependencies:
-    base64-js "0.0.8"
-    ieee754 "^1.1.4"
-    isarray "^1.0.0"
-
 buffer@^4.3.0:
   version "4.9.1"
   resolved "https://registry.yarnpkg.com/buffer/-/buffer-4.9.1.tgz#6d1bb601b07a4efced97094132093027c95bc298"
@@ -2028,6 +2022,13 @@ buffer@^4.3.0:
     base64-js "^1.0.2"
     ieee754 "^1.1.4"
     isarray "^1.0.0"
+
+buffer@^5.2.1:
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/buffer/-/buffer-5.2.1.tgz#dd57fa0f109ac59c602479044dca7b8b3d0b71d6"
+  dependencies:
+    base64-js "^1.0.2"
+    ieee754 "^1.1.4"
 
 builtin-modules@^3.0.0:
   version "3.0.0"
@@ -2180,7 +2181,7 @@ caniuse-db@^1.0.30000529, caniuse-db@^1.0.30000634, caniuse-db@^1.0.30000639:
   version "1.0.30000935"
   resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000935.tgz#0b4210ae207013c76bc1a2e0e903b15bec742a08"
 
-caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000844, caniuse-lite@^1.0.30000864, caniuse-lite@^1.0.30000929:
+caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000844, caniuse-lite@^1.0.30000929, caniuse-lite@^1.0.30000932:
   version "1.0.30000935"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000935.tgz#d1b59df00b46f4921bb84a8a34c1d172b346df59"
 
@@ -4571,11 +4572,11 @@ flatten@^1.0.2:
   resolved "https://registry.yarnpkg.com/flatten/-/flatten-1.0.2.tgz#dae46a9d78fbe25292258cc1e780a41d95c03782"
 
 flush-write-stream@^1.0.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/flush-write-stream/-/flush-write-stream-1.1.0.tgz#2e89a8bd5eee42f8ec97e43aae81e3d5099c2ddc"
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/flush-write-stream/-/flush-write-stream-1.1.1.tgz#8dd7d873a1babc207d94ead0c2e0e44276ebf2e8"
   dependencies:
     inherits "^2.0.3"
-    readable-stream "^3.1.1"
+    readable-stream "^2.3.6"
 
 focus-group@^0.3.1:
   version "0.3.1"
@@ -4805,8 +4806,8 @@ gatsby-plugin-netlify-cms@^3.0.0:
     webpack "^4.16.0"
 
 gatsby-plugin-netlify@^2.0.0:
-  version "2.0.9"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-netlify/-/gatsby-plugin-netlify-2.0.9.tgz#32758e29042f1bae7c355557ca2d9e7b33f4de75"
+  version "2.0.10"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-netlify/-/gatsby-plugin-netlify-2.0.10.tgz#34672e74ffd3fada35571e821c9c1390bebd1ce0"
   dependencies:
     "@babel/runtime" "^7.0.0"
     fs-extra "^4.0.2"
@@ -4960,9 +4961,9 @@ gatsby-transformer-sharp@^2.1.1:
     probe-image-size "^4.0.0"
     sharp "^0.21.3"
 
-gatsby@^2.0.0:
-  version "2.0.117"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.117.tgz#df0199e26b7cc7c4ee97c074ca6ef09e766c6fd9"
+gatsby@2.0.118:
+  version "2.0.118"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.118.tgz#abcf280b08a0fe79142b67842eb3fa80f1873a4d"
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/core" "^7.0.0"
@@ -4972,7 +4973,7 @@ gatsby@^2.0.0:
     "@babel/traverse" "^7.0.0"
     "@reach/router" "^1.1.1"
     address "1.0.3"
-    autoprefixer "^8.6.5"
+    autoprefixer "^9.4.3"
     babel-core "7.0.0-bridge.0"
     babel-eslint "^9.0.0"
     babel-loader "^8.0.0"
@@ -5074,7 +5075,7 @@ gatsby@^2.0.0:
     url-loader "^1.0.1"
     uuid "^3.1.0"
     v8-compile-cache "^1.1.0"
-    webpack "^4.12.0"
+    webpack "~4.28.4"
     webpack-dev-middleware "^3.0.1"
     webpack-dev-server "^3.1.14"
     webpack-hot-middleware "^2.21.0"
@@ -5948,7 +5949,7 @@ icss-utils@^2.1.0:
   dependencies:
     postcss "^6.0.1"
 
-ieee754@^1.1.4:
+ieee754@^1.1.4, ieee754@^1.1.6:
   version "1.1.12"
   resolved "https://registry.yarnpkg.com/ieee754/-/ieee754-1.1.12.tgz#50bf24e5b9c8bb98af4964c941cdb0918da7b60b"
 
@@ -7685,16 +7686,16 @@ netlify-cms-backend-bitbucket@^2.1.0:
     js-base64 "^2.4.8"
     semaphore "^1.1.0"
 
-netlify-cms-backend-git-gateway@^2.1.2:
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/netlify-cms-backend-git-gateway/-/netlify-cms-backend-git-gateway-2.1.2.tgz#80f67e2a19ca3da557639f961e44fc511a78714a"
+netlify-cms-backend-git-gateway@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/netlify-cms-backend-git-gateway/-/netlify-cms-backend-git-gateway-2.2.0.tgz#50e82f332aed88f5b2041c2a8a9cc844fbbd747e"
   dependencies:
     gotrue-js "^0.9.22"
     jwt-decode "^2.2.0"
 
-netlify-cms-backend-github@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/netlify-cms-backend-github/-/netlify-cms-backend-github-2.1.0.tgz#42422cba951106da04df0dc2695c5512188a2ecd"
+netlify-cms-backend-github@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/netlify-cms-backend-github/-/netlify-cms-backend-github-2.2.0.tgz#c464d41909b9481735cf7f5553ce92be7e4d8401"
   dependencies:
     common-tags "^1.8.0"
     js-base64 "^2.4.8"
@@ -7713,9 +7714,9 @@ netlify-cms-backend-test@^2.0.6:
   dependencies:
     uuid "^3.3.2"
 
-netlify-cms-core@^2.4.1:
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/netlify-cms-core/-/netlify-cms-core-2.4.1.tgz#ac666cbe430f770740daea0b4d411b42ec4e7257"
+netlify-cms-core@^2.5.1:
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/netlify-cms-core/-/netlify-cms-core-2.5.1.tgz#8db2cc9663fdf87e52d7384c65b978b669b5b80d"
   dependencies:
     ajv "^6.4.0"
     ajv-errors "^1.0.0"
@@ -7734,13 +7735,13 @@ netlify-cms-core@^2.4.1:
     netlify-cms-editor-component-image "^2.2.0"
     netlify-cms-lib-auth "^2.0.5"
     netlify-cms-lib-util "^2.1.1"
-    netlify-cms-ui-default "^2.2.0"
+    netlify-cms-ui-default "^2.3.0"
     node-polyglot "^2.3.0"
     prop-types "^15.5.10"
-    react "^16.4.1"
+    react "^16.8.1"
     react-dnd "^7.0.0"
     react-dnd-html5-backend "^7.0.0"
-    react-dom "^16.0.0"
+    react-dom "^16.8.1"
     react-emotion "^9.2.5"
     react-frame-component "^4.0.2"
     react-hot-loader "^4.0.0"
@@ -7783,13 +7784,13 @@ netlify-cms-lib-util@^2.1.1:
   dependencies:
     localforage "^1.4.2"
 
-netlify-cms-media-library-uploadcare@^0.3.1:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/netlify-cms-media-library-uploadcare/-/netlify-cms-media-library-uploadcare-0.3.1.tgz#bb575f636fd8b1cabfd3c5e596daa59f07b5c9d7"
+netlify-cms-media-library-uploadcare@^0.3.3:
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/netlify-cms-media-library-uploadcare/-/netlify-cms-media-library-uploadcare-0.3.3.tgz#9954fe30914ba4536147cd71c7f756798f953b59"
 
-netlify-cms-ui-default@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/netlify-cms-ui-default/-/netlify-cms-ui-default-2.2.0.tgz#baf2a858c9e122e2910d37f85b4a7e1ebf6df576"
+netlify-cms-ui-default@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/netlify-cms-ui-default/-/netlify-cms-ui-default-2.3.0.tgz#0b7fda3cbb7f7e25289cee57b5395ee998cdc7c5"
   dependencies:
     react-aria-menubutton "^5.1.0"
     react-toggled "^1.1.2"
@@ -7824,16 +7825,22 @@ netlify-cms-widget-image@^2.1.1:
   dependencies:
     netlify-cms-widget-file "^2.2.0"
 
-netlify-cms-widget-list@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/netlify-cms-widget-list/-/netlify-cms-widget-list-2.1.0.tgz#58add2a5f6bb7bb1ed0d1535b34fb24004ee2e92"
+netlify-cms-widget-list@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/netlify-cms-widget-list/-/netlify-cms-widget-list-2.1.1.tgz#3c81a16ba649704e5d52af0ebf4875d948918ab8"
   dependencies:
-    netlify-cms-widget-object "^2.0.5"
+    netlify-cms-widget-object "^2.0.6"
     react-sortable-hoc "^0.6.8"
 
-netlify-cms-widget-markdown@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/netlify-cms-widget-markdown/-/netlify-cms-widget-markdown-2.1.0.tgz#567c12301d7490288f118e36fe66a500f6f928d5"
+netlify-cms-widget-map@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/netlify-cms-widget-map/-/netlify-cms-widget-map-1.1.0.tgz#3478934416669b0fe82f3ca0b2c233e603278369"
+  dependencies:
+    ol "^5.3.0"
+
+netlify-cms-widget-markdown@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/netlify-cms-widget-markdown/-/netlify-cms-widget-markdown-2.1.1.tgz#012662133f74a6b616e37a14570adfbf3b589ad3"
   dependencies:
     is-hotkey "^0.1.1"
     mdast-util-definitions "^1.2.2"
@@ -7854,23 +7861,23 @@ netlify-cms-widget-markdown@^2.1.0:
     unist-builder "^1.0.2"
     unist-util-visit-parents "^1.1.1"
 
-netlify-cms-widget-number@^2.0.5:
-  version "2.0.5"
-  resolved "https://registry.yarnpkg.com/netlify-cms-widget-number/-/netlify-cms-widget-number-2.0.5.tgz#591c44e5850f278bcc33b4cfaace3d2d72c24652"
+netlify-cms-widget-number@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/netlify-cms-widget-number/-/netlify-cms-widget-number-2.1.0.tgz#e505eb174beb4273171c33be27eaf278c5106f8e"
 
-netlify-cms-widget-object@^2.0.5:
-  version "2.0.5"
-  resolved "https://registry.yarnpkg.com/netlify-cms-widget-object/-/netlify-cms-widget-object-2.0.5.tgz#98c78e832fadd0f015b367f04fee8d6994fbb1f1"
+netlify-cms-widget-object@^2.0.6:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/netlify-cms-widget-object/-/netlify-cms-widget-object-2.0.6.tgz#204ee9e35543541f49bb38ebf12ef249e6832618"
 
-netlify-cms-widget-relation@^2.0.5:
-  version "2.0.5"
-  resolved "https://registry.yarnpkg.com/netlify-cms-widget-relation/-/netlify-cms-widget-relation-2.0.5.tgz#c6b93710744fb57132b8180e7a4550d20941b8a3"
+netlify-cms-widget-relation@^2.0.6:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/netlify-cms-widget-relation/-/netlify-cms-widget-relation-2.0.6.tgz#4e557ba60fe7e75c8fd57fcefd738100afc717d2"
   dependencies:
     react-autosuggest "^9.3.2"
 
-netlify-cms-widget-select@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/netlify-cms-widget-select/-/netlify-cms-widget-select-2.1.0.tgz#927fef44a587bb8e4d4bb49721448560a7829fc0"
+netlify-cms-widget-select@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/netlify-cms-widget-select/-/netlify-cms-widget-select-2.1.1.tgz#4cc90ec5cc80ceac9a241c9e7e23f61fd2595935"
   dependencies:
     react-select "^2.1.1"
 
@@ -7885,30 +7892,31 @@ netlify-cms-widget-text@^2.0.6:
     react-textarea-autosize "^7.0.0"
 
 netlify-cms@^2.1.1:
-  version "2.3.3"
-  resolved "https://registry.yarnpkg.com/netlify-cms/-/netlify-cms-2.3.3.tgz#b9ecad7a563eff96001b22d4446c974a2c0e4072"
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/netlify-cms/-/netlify-cms-2.4.1.tgz#4907998c5ab117e30933cb6c42d86f3417e795ee"
   dependencies:
     create-react-class "^15.6.0"
     emotion "^9.2.6"
     netlify-cms-backend-bitbucket "^2.1.0"
-    netlify-cms-backend-git-gateway "^2.1.2"
-    netlify-cms-backend-github "^2.1.0"
+    netlify-cms-backend-git-gateway "^2.2.0"
+    netlify-cms-backend-github "^2.2.0"
     netlify-cms-backend-gitlab "^2.1.1"
     netlify-cms-backend-test "^2.0.6"
-    netlify-cms-core "^2.4.1"
+    netlify-cms-core "^2.5.1"
     netlify-cms-editor-component-image "^2.2.0"
-    netlify-cms-media-library-uploadcare "^0.3.1"
+    netlify-cms-media-library-uploadcare "^0.3.3"
     netlify-cms-widget-boolean "^2.0.5"
     netlify-cms-widget-date "^2.1.0"
     netlify-cms-widget-datetime "^2.0.7"
     netlify-cms-widget-file "^2.2.0"
     netlify-cms-widget-image "^2.1.1"
-    netlify-cms-widget-list "^2.1.0"
-    netlify-cms-widget-markdown "^2.1.0"
-    netlify-cms-widget-number "^2.0.5"
-    netlify-cms-widget-object "^2.0.5"
-    netlify-cms-widget-relation "^2.0.5"
-    netlify-cms-widget-select "^2.1.0"
+    netlify-cms-widget-list "^2.1.1"
+    netlify-cms-widget-map "^1.1.0"
+    netlify-cms-widget-markdown "^2.1.1"
+    netlify-cms-widget-number "^2.1.0"
+    netlify-cms-widget-object "^2.0.6"
+    netlify-cms-widget-relation "^2.0.6"
+    netlify-cms-widget-select "^2.1.1"
     netlify-cms-widget-string "^2.0.4"
     netlify-cms-widget-text "^2.0.6"
 
@@ -8292,6 +8300,14 @@ object.values@^1.0.4:
 obuf@^1.0.0, obuf@^1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/obuf/-/obuf-1.1.2.tgz#09bea3343d41859ebd446292d11c9d4db619084e"
+
+ol@^5.3.0:
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/ol/-/ol-5.3.0.tgz#106b870561fabb9b790b5869b3d93025cb03d389"
+  dependencies:
+    pbf "3.1.0"
+    pixelworks "1.1.0"
+    rbush "2.0.2"
 
 on-finished@~2.3.0:
   version "2.3.0"
@@ -8812,6 +8828,13 @@ path-type@^3.0.0:
   dependencies:
     pify "^3.0.0"
 
+pbf@3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/pbf/-/pbf-3.1.0.tgz#f70004badcb281761eabb1e76c92f179f08189e9"
+  dependencies:
+    ieee754 "^1.1.6"
+    resolve-protobuf-schema "^2.0.0"
+
 pbkdf2@^3.0.3:
   version "3.0.17"
   resolved "https://registry.yarnpkg.com/pbkdf2/-/pbkdf2-3.0.17.tgz#976c206530617b14ebb32114239f7b09336e93a6"
@@ -8865,6 +8888,10 @@ pixelmatch@^4.0.0:
   resolved "https://registry.yarnpkg.com/pixelmatch/-/pixelmatch-4.0.2.tgz#8f47dcec5011b477b67db03c243bc1f3085e8854"
   dependencies:
     pngjs "^3.0.0"
+
+pixelworks@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/pixelworks/-/pixelworks-1.1.0.tgz#1f095ad48dca8bf8a1c8258e0092031a44f22ca5"
 
 pkg-dir@^1.0.0:
   version "1.0.0"
@@ -9429,7 +9456,7 @@ postcss@^6.0.0, postcss@^6.0.1, postcss@^6.0.23:
     source-map "^0.6.1"
     supports-color "^5.4.0"
 
-postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.5, postcss@^7.0.6:
+postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.14, postcss@^7.0.5, postcss@^7.0.6:
   version "7.0.14"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.14.tgz#4527ed6b1ca0d82c53ce5ec1a2041c2346bbd6e5"
   dependencies:
@@ -9594,6 +9621,10 @@ proto-list@~1.2.1:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/proto-list/-/proto-list-1.2.4.tgz#212d5bfe1318306a420f6402b8e26ff39647a849"
 
+protocol-buffers-schema@^3.3.1:
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/protocol-buffers-schema/-/protocol-buffers-schema-3.3.2.tgz#00434f608b4e8df54c59e070efeefc37fb4bb859"
+
 proxy-addr@~2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/proxy-addr/-/proxy-addr-2.0.4.tgz#ecfc733bf22ff8c6f407fa275327b9ab67e48b93"
@@ -9700,6 +9731,10 @@ querystringify@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/querystringify/-/querystringify-2.1.0.tgz#7ded8dfbf7879dcc60d0a644ac6754b283ad17ef"
 
+quickselect@^1.0.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/quickselect/-/quickselect-1.1.1.tgz#852e412ce418f237ad5b660d70cffac647ae94c2"
+
 quote-stream@^1.0.1, quote-stream@~1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/quote-stream/-/quote-stream-1.0.2.tgz#84963f8c9c26b942e153feeb53aae74652b7e0b2"
@@ -9751,6 +9786,12 @@ raw-body@^2.3.2, raw-body@2.3.3:
 raw-loader@^0.5.1:
   version "0.5.1"
   resolved "https://registry.yarnpkg.com/raw-loader/-/raw-loader-0.5.1.tgz#0c3d0beaed8a01c966d9787bf778281252a979aa"
+
+rbush@2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/rbush/-/rbush-2.0.2.tgz#bb6005c2731b7ba1d5a9a035772927d16a614605"
+  dependencies:
+    quickselect "^1.0.1"
 
 rc@^1.0.1, rc@^1.1.6, rc@^1.2.7:
   version "1.2.8"
@@ -9835,7 +9876,7 @@ react-dnd@^7.0.0:
     recompose "^0.30.0"
     shallowequal "^1.1.0"
 
-react-dom@^16.0.0, react-dom@^16.4.1, react-dom@^16.6.3:
+react-dom@^16.4.1, react-dom@^16.6.3, react-dom@^16.8.1:
   version "16.8.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.8.1.tgz#ec860f98853d09d39bafd3a6f1e12389d283dbb4"
   dependencies:
@@ -10092,7 +10133,7 @@ react-waypoint@^8.1.0:
     prop-types "^15.0.0"
     react-is "^16.6.3"
 
-react@^16.2.0, react@^16.4.1, react@^16.6.3:
+react@^16.2.0, react@^16.6.3, react@^16.8.1:
   version "16.8.1"
   resolved "https://registry.yarnpkg.com/react/-/react-16.8.1.tgz#ae11831f6cb2a05d58603a976afc8a558e852c4a"
   dependencies:
@@ -10160,7 +10201,7 @@ readable-stream@^2.0.0, readable-stream@^2.0.1, readable-stream@^2.0.2, readable
     string_decoder "~1.1.1"
     util-deprecate "~1.0.1"
 
-readable-stream@^3.0.6, readable-stream@^3.1.1:
+readable-stream@^3.0.6:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-3.1.1.tgz#ed6bbc6c5ba58b090039ff18ce670515795aeb06"
   dependencies:
@@ -10623,6 +10664,12 @@ resolve-pathname@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/resolve-pathname/-/resolve-pathname-2.2.0.tgz#7e9ae21ed815fd63ab189adeee64dc831eefa879"
 
+resolve-protobuf-schema@^2.0.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/resolve-protobuf-schema/-/resolve-protobuf-schema-2.1.0.tgz#9ca9a9e69cf192bbdaf1006ec1973948aa4a3758"
+  dependencies:
+    protocol-buffers-schema "^3.3.1"
+
 resolve-url@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/resolve-url/-/resolve-url-0.2.1.tgz#2c637fe77c893afd2a663fe21aa9080068e2052a"
@@ -10778,7 +10825,7 @@ scheduler@^0.13.1:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
 
-schema-utils@^0.4.0, schema-utils@^0.4.5:
+schema-utils@^0.4.0, schema-utils@^0.4.4, schema-utils@^0.4.5:
   version "0.4.7"
   resolved "https://registry.yarnpkg.com/schema-utils/-/schema-utils-0.4.7.tgz#ba74f597d2be2ea880131746ee17d0a093c68187"
   dependencies:
@@ -11843,7 +11890,7 @@ text-table@^0.2.0, text-table@0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
 
-through@^2.3.6:
+through@^2.3.6, through@^2.3.8:
   version "2.3.8"
   resolved "https://registry.yarnpkg.com/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
 
@@ -12066,11 +12113,11 @@ uglify-js@3.4.x:
     source-map "~0.6.1"
 
 unbzip2-stream@^1.0.9:
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/unbzip2-stream/-/unbzip2-stream-1.3.2.tgz#73830dd96e68d1ad8a8e1510585f6c7eeb7cf0d3"
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/unbzip2-stream/-/unbzip2-stream-1.3.3.tgz#d156d205e670d8d8c393e1c02ebd506422873f6a"
   dependencies:
-    buffer "^3.0.1"
-    through "^2.3.6"
+    buffer "^5.2.1"
+    through "^2.3.8"
 
 unc-path-regex@^0.1.2:
   version "0.1.2"
@@ -12591,7 +12638,7 @@ webpack-stats-plugin@^0.1.5:
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/webpack-stats-plugin/-/webpack-stats-plugin-0.1.5.tgz#29e5f12ebfd53158d31d656a113ac1f7b86179d9"
 
-webpack@^4.12.0, webpack@^4.16.0:
+webpack@^4.16.0:
   version "4.29.3"
   resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.29.3.tgz#e0b406a7b4201ed5e4fb4f84fd7359f9a7db4647"
   dependencies:
@@ -12615,6 +12662,35 @@ webpack@^4.12.0, webpack@^4.16.0:
     neo-async "^2.5.0"
     node-libs-browser "^2.0.0"
     schema-utils "^1.0.0"
+    tapable "^1.1.0"
+    terser-webpack-plugin "^1.1.0"
+    watchpack "^1.5.0"
+    webpack-sources "^1.3.0"
+
+webpack@~4.28.4:
+  version "4.28.4"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.28.4.tgz#1ddae6c89887d7efb752adf0c3cd32b9b07eacd0"
+  dependencies:
+    "@webassemblyjs/ast" "1.7.11"
+    "@webassemblyjs/helper-module-context" "1.7.11"
+    "@webassemblyjs/wasm-edit" "1.7.11"
+    "@webassemblyjs/wasm-parser" "1.7.11"
+    acorn "^5.6.2"
+    acorn-dynamic-import "^3.0.0"
+    ajv "^6.1.0"
+    ajv-keywords "^3.1.0"
+    chrome-trace-event "^1.0.0"
+    enhanced-resolve "^4.1.0"
+    eslint-scope "^4.0.0"
+    json-parse-better-errors "^1.0.2"
+    loader-runner "^2.3.0"
+    loader-utils "^1.1.0"
+    memory-fs "~0.4.1"
+    micromatch "^3.1.8"
+    mkdirp "~0.5.0"
+    neo-async "^2.5.0"
+    node-libs-browser "^2.0.0"
+    schema-utils "^0.4.4"
     tapable "^1.1.0"
     terser-webpack-plugin "^1.1.0"
     watchpack "^1.5.0"
