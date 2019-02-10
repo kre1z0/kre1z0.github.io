@@ -28,34 +28,6 @@ export const isElementInViewport = ({ el, offsetY = 0, offsetTop = 0 }) => {
   );
 };
 
-const setVhPropertyFromOrientationChanged = () => {
-  const timeout = 120;
-  return new window.Promise(resolve => {
-    const go = (i, height0) => {
-      window.innerHeight !== height0 || i >= timeout
-        ? resolve()
-        : window.requestAnimationFrame(() => go(i + 1, height0));
-    };
-    go(0, window.innerHeight);
-  });
-};
-
-export const setVhProperty = (isMobile = false) => {
-  if (typeof window !== "object") {
-    return;
-  }
-
-  if (isMobile) {
-    setVhPropertyFromOrientationChanged().then(() =>
-      document.documentElement.style.setProperty("--vh", `${window.innerHeight * 0.01}px`),
-    );
-  } else {
-    const vh = window.innerHeight * 0.01;
-
-    document.documentElement.style.setProperty("--vh", `${vh}px`);
-  }
-};
-
 export const fillElementsInViewport = ({
   containerElement,
   items,

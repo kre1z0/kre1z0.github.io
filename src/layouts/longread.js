@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import { isMobile } from "../utils/browser";
 import { getProject, getBackRouteByLocationPathName } from "../routes";
-import { setVhProperty } from "../utils/dom";
+import { ViewportHeight } from "../components/ViewportHeight/ViewportHeight";
 import { Helmet } from "../components/Helmet/Helmet";
 import { ScrollbarProvider } from "../components/ScrollbarProvider/ScrollbarProvider";
 import { LongreadNavbar } from "../components/LongreadNavbar/LongreadNavbar";
@@ -10,11 +10,11 @@ import styles from "../styles/longread";
 
 class LongredLayout extends Component {
   static getDerivedStateFromProps(nextProps, prevState) {
-    const { mobileOnly } = prevState;
+    const { isMobile: prevIsMobile } = prevState;
 
-    if (mobileOnly === null) {
+    if (prevIsMobile === null) {
       return {
-        mobileOnly: isMobile(),
+        isMobile: isMobile(),
       };
     }
 
@@ -23,19 +23,12 @@ class LongredLayout extends Component {
 
   state = {
     projects: null,
-    mobileOnly: null,
+    isMobile: null,
   };
 
   componentDidMount() {
     const { location } = this.props;
-    const { mobileOnly } = this.state;
 
-    if (mobileOnly) {
-      window.addEventListener("orientationchange", this.onResize);
-    } else {
-      window.addEventListener("resize", this.onResize);
-    }
-    this.onResize();
     const prevPage = getBackRouteByLocationPathName(location.pathname);
 
     if (prevPage.includes("portfolio")) {
@@ -44,29 +37,13 @@ class LongredLayout extends Component {
     }
   }
 
-  componentWillUnmount() {
-    const { mobileOnly } = this.state;
-
-    if (mobileOnly) {
-      window.removeEventListener("orientationchange", this.onResize);
-    } else {
-      window.removeEventListener("resize", this.onResize);
-    }
-  }
-
-  onResize = () => {
-    const { isMobile } = this.state;
-
-    setVhProperty(isMobile);
-  };
-
   render() {
-    const { projects, mobileOnly } = this.state;
+    const { projects, isMobile } = this.state;
     const { children, location } = this.props;
 
     return (
       <ScrollbarProvider
-        native={mobileOnly}
+        native={isMobile}
         location={location}
         className={styles.scrollbar}
         withScrollbarY
@@ -76,7 +53,8 @@ class LongredLayout extends Component {
             class: styles.londreadBody,
           }}
         />
-        <LongreadNavbar native={mobileOnly} projects={projects} pathname={location.pathname} />
+        <ViewportHeight />
+        <LongreadNavbar native={isMobile} projects={projects} pathname={location.pathname} />
         {children}
       </ScrollbarProvider>
     );
