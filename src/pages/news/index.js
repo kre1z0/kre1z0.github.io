@@ -17,16 +17,17 @@ class News extends PureComponent {
   render() {
     const { data } = this.props;
     const allMarkdownRemark = data.allMarkdownRemark;
+
     const news = allMarkdownRemark ? allMarkdownRemark.edges : [];
-    console.info("--> ggwp 4444");
-    const ggwp = rowColumns(news, 2);
+    const columns = rowColumns(news, 2);
 
     return (
       <>
         <Header title="СМИ о нас" />
         <Main as="main">
           <Section as="section">
-            {ggwp.map((col, index) => (
+            {!allMarkdownRemark && <H2>Список статей пуст</H2>}
+            {columns.map((col, index) => (
               <Column key={index}>
                 {!allMarkdownRemark && <H2>Список статей пуст</H2>}
                 {col.map(({ node }) => (
@@ -34,7 +35,6 @@ class News extends PureComponent {
                 ))}
               </Column>
             ))}
-            {/*{!allMarkdownRemark && <H2>Список статей пуст</H2>}*/}
             {/*{news.map(({ node }) => (*/}
             {/*<Article key={node.id} {...node.frontmatter} />*/}
             {/*))}*/}

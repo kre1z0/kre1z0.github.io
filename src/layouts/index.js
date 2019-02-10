@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import debounce from 'lodash/debounce';
 
 import { setVhProperty } from "../utils/dom";
 import { Helmet } from "../components/Helmet/Helmet";
@@ -8,26 +7,53 @@ import { MainLayoutProvider } from "../components/MainLayoutProvider/MainLayoutP
 import { injectGlobals } from "../components/injectGlobals";
 import { PageTransition } from "../components/Transition/PageTransition";
 import { Navbar } from "../components/Navbar/Navbar";
+import { isMobile } from "../utils/browser";
 
 injectGlobals();
 
 class Layout extends Component {
-  constructor(props) {
-    super(props);
-    this.onResize = debounce(this.onResize, 44);
+  static getDerivedStateFromProps(nextProps, prevState) {
+    const { mobileOnly } = prevState;
+
+    if (mobileOnly === null) {
+      return {
+        isMobile: isMobile(),
+      };
+    }
+
+    return null;
   }
 
+  state = {
+    isMobile: null,
+  };
+
   componentDidMount() {
-    window.addEventListener("resize", this.onResize);
+    const { isMobile } = this.state;
+
+    if (isMobile) {
+      window.addEventListener("orientationchange", this.onResize);
+    } else {
+      window.addEventListener("resize", this.onResize);
+    }
+
     this.onResize();
   }
 
   componentWillUnmount() {
-    window.removeEventListener("resize", this.onResize);
+    const { isMobile } = this.state;
+
+    if (isMobile) {
+      window.removeEventListener("orientationchange", this.onResize);
+    } else {
+      window.removeEventListener("resize", this.onResize);
+    }
   }
 
   onResize = () => {
-    setVhProperty();
+    const { isMobile } = this.state;
+
+    setVhProperty(isMobile);
   };
 
   render() {

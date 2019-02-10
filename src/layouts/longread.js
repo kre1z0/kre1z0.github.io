@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import debounce from "lodash/debounce";
 
 import { isMobile } from "../utils/browser";
 import { getProject, getBackRouteByLocationPathName } from "../routes";
@@ -10,11 +9,6 @@ import { LongreadNavbar } from "../components/LongreadNavbar/LongreadNavbar";
 import styles from "../styles/longread";
 
 class LongredLayout extends Component {
-  constructor(props) {
-    super(props);
-    this.onResize = debounce(this.onResize, 44);
-  }
-
   static getDerivedStateFromProps(nextProps, prevState) {
     const { mobileOnly } = prevState;
 
@@ -61,7 +55,9 @@ class LongredLayout extends Component {
   }
 
   onResize = () => {
-    setVhProperty();
+    const { isMobile } = this.state;
+
+    setVhProperty(isMobile);
   };
 
   render() {
