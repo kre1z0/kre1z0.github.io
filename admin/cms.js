@@ -4799,7 +4799,6 @@ exports.default = detectPassiveEvents;
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getElementWidthAndHeight", function() { return getElementWidthAndHeight; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isElementInViewport", function() { return isElementInViewport; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setVhProperty", function() { return setVhProperty; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fillElementsInViewport", function() { return fillElementsInViewport; });
 // cross-browser
 var getElementWidthAndHeight = function getElementWidthAndHeight(element) {
@@ -4832,41 +4831,6 @@ var isElementInViewport = function isElementInViewport(_ref) {
       right = _el$getBoundingClient.right;
 
   return top + offsetY - offsetTop >= 0 && left >= 0 && bottom - offsetY <= (window.innerHeight || document.documentElement.clientHeight) && right <= (window.innerWidth || document.documentElement.clientWidth);
-};
-
-var setVhPropertyFromOrientationChanged = function setVhPropertyFromOrientationChanged() {
-  var timeout = 120;
-  return new window.Promise(function (resolve) {
-    var go = function go(i, height0) {
-      window.innerHeight !== height0 || i >= timeout ? resolve() : window.requestAnimationFrame(function () {
-        return go(i + 1, height0);
-      });
-    };
-
-    go(0, window.innerHeight);
-  });
-};
-
-var setVhProperty = function setVhProperty(isMobile) {
-  if (isMobile === void 0) {
-    isMobile = false;
-  }
-
-  if (typeof window !== "object") {
-    return;
-  }
-
-  if (isMobile) {
-    setVhPropertyFromOrientationChanged().then(function () {
-      var viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-      console.info("--> ggwp document.documentElement.clientHeight", document.documentElement.clientHeight);
-      console.info("--> ggwp window.innerHeight", window.innerHeight);
-      document.documentElement.style.setProperty("--vh", window.innerHeight * 0.01 + "px");
-    });
-  } else {
-    var vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty("--vh", vh + "px");
-  }
 };
 var fillElementsInViewport = function fillElementsInViewport(_ref2) {
   var containerElement = _ref2.containerElement,
