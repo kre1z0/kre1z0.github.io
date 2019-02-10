@@ -4858,7 +4858,10 @@ var setVhProperty = function setVhProperty(isMobile) {
 
   if (isMobile) {
     setVhPropertyFromOrientationChanged().then(function () {
-      return document.documentElement.style.setProperty("--vh", window.innerHeight * 0.01 + "px");
+      var viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+      console.info("--> ggwp document.documentElement.clientHeight", document.documentElement.clientHeight);
+      console.info("--> ggwp window.innerHeight", window.innerHeight);
+      document.documentElement.style.setProperty("--vh", window.innerHeight * 0.01 + "px");
     });
   } else {
     var vh = window.innerHeight * 0.01;
