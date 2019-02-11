@@ -44,7 +44,7 @@ class News extends PureComponent {
     const allMarkdownRemark = data.allMarkdownRemark;
 
     const news = allMarkdownRemark ? allMarkdownRemark.edges : [];
-    const columns = rowColumns(news, columnsCount);
+    const columns = rowColumns(news, columnsCount || 2);
 
     return (
       <>

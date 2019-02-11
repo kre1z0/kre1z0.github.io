@@ -32,9 +32,6 @@ export const Page = styled("a")`
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  transition-property: color;
-  transition-timing-function: ease-in;
-  transition-duration: 200ms;
   border-radius: 50%;
   &.selected {
     transition: none;
@@ -45,6 +42,7 @@ export const Page = styled("a")`
   }
   @media (hover: hover) {
     &:hover:not(.selected) {
+      transition: color 200ms ease-in;
       color: #90c53d;
     }
   }
