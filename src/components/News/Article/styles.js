@@ -14,12 +14,33 @@ export const Container = styled("article")`
     top: 0;
     left: 0;
   }
+  @media (max-width: 991px) {
+    margin-bottom: 3.4285rem;
+  }
+  @media (max-width: 767px) and (orientation: portrait) {
+    margin-bottom: 1.7142rem;
+  }
+  @media (max-width: 812px) and (orientation: landscape) {
+    margin-bottom: 2.2857rem;
+  }
 `;
 
 export const Logo = styled("img")`
   width: auto;
   height: 3.4285rem;
-  margin: 2.2857rem 0;
+  margin: 2.8rem 0 1.8rem 0;
+  @media (max-width: 1199px) {
+    height: 2.8571rem;
+  }
+  @media (max-width: 991px) {
+    height: 2.2857rem;
+    margin: 1.8rem 0 1rem 0;
+  }
+  @media (max-width: 812px) and (orientation: landscape),
+    (max-width: 767px) and (orientation: portrait) {
+    height: 1.7142rem;
+    margin: 1.4rem 0 0.7rem 0;
+  }
 `;
 
 export const Title = styled("h2")`

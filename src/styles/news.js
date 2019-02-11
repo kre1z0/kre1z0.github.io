@@ -15,4 +15,8 @@ export const Column = styled("div")`
   &:last-child {
     padding-left: 2.4rem;
   }
+  &.oneColumn {
+    width: 100%;
+    padding: 0;
+  }
 `;
