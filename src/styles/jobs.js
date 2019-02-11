@@ -8,7 +8,7 @@ const styles = css`
     }
     > section:last-child {
       position: relative;
-      height: 24rem;
+      height: 25rem;
       flex-shrink: 1;
       > div {
         position: relative;
