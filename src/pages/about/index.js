@@ -29,6 +29,14 @@ export class About extends Component {
 
   onTransform = coordinates => this.setState(coordinates);
 
+  onPageChange = (page, prevPage, onSectionChange) => {
+    if (page > prevPage) {
+      onSectionChange({ value: 1, isSwipeEvent: true });
+    } else {
+      onSectionChange({ value: -1, isSwipeEvent: true });
+    }
+  };
+
   render() {
     const { data } = this.props;
 
@@ -106,10 +114,11 @@ export class About extends Component {
                       {...section}
                     />
                     <PaginationSimple
-                      sections={sections}
-                      selectedSectionIndex={selectedSectionIndex}
-                      goPrev={() => onSectionChange({ value: -1, isSwipeEvent: true })}
-                      goNext={() => onSectionChange({ value: 1, isSwipeEvent: true })}
+                      pageCount={sections.length}
+                      currentPage={selectedSectionIndex}
+                      onPageChange={page =>
+                        this.onPageChange(page, selectedSectionIndex, onSectionChange)
+                      }
                     />
                   </WillChangeNews>
                 </NewsContainer>

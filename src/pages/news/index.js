@@ -3,13 +3,14 @@ import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 
 import { PaginationFull } from "../../components/Pagination/Full/PaginationFull";
+import { PaginationSimple } from "../../components/Pagination/Simple/PaginationSimple";
 import { browser } from "../../utils/browser";
 import { rowColumns } from "../../utils/array";
 import { H2 } from "../../components/Typography/Headlines";
 import { Section as Main } from "../../components/Elements/Section";
 import { Header } from "../../components/News/Header/Header";
 import { Article } from "../../components/News/Article/Article";
-import { Section, Column } from "../../styles/news";
+import styles, { Section, Column } from "../../styles/news";
 
 const articlesPerPage = 8;
 
@@ -62,10 +63,17 @@ class News extends PureComponent {
             ))}
           </Section>
           <PaginationFull
+            className={styles.paginationFull}
             currentPage={currentPage}
             pageCount={12}
             slots={7}
             onPageChange={page => this.setState({ currentPage: page })}
+          />
+          <PaginationSimple
+            pageCount={12}
+            currentPage={currentPage}
+            onPageChange={page => this.setState({ currentPage: page })}
+            className={styles.paginationSimple}
           />
         </Main>
       </>

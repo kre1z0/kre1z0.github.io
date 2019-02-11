@@ -92,6 +92,15 @@ export class PortfolioSlide extends PureComponent {
     }
   };
 
+  onPageChange = page => {
+    const { selectedSectionIndex, onSectionChange } = this.props;
+    if (page > selectedSectionIndex) {
+      onSectionChange({ value: 1, isSwipeEvent: true });
+    } else {
+      onSectionChange({ value: -1, isSwipeEvent: true });
+    }
+  };
+
   render() {
     const { hovered, top, left, width, height, goToLongread, ratio } = this.state;
     const {
@@ -113,15 +122,20 @@ export class PortfolioSlide extends PureComponent {
       : screenshots[ratio];
 
     return (
-      <Swiper onSwiped={this.onSwiped} onClick={this.goToLongread}>
+      <Swiper onSwiped={this.onSwiped}>
         <ImagesDownloadListener images={images} />
         <PortfolioSlideContainer
+          onClick={this.goToLongread}
           ref={this.onContainerRef}
           onMouseOver={() => this.setState({ hovered: true })}
           onMouseOut={() => this.setState({ hovered: false })}
         >
           <BackendComponent sections={sections} selectedSectionIndex={selectedSectionIndex} />
-          <SliderBackground disableTransition={disableTransition} hovered={hovered} style={{ background: projectBackgroundColor }} />
+          <SliderBackground
+            disableTransition={disableTransition}
+            hovered={hovered}
+            style={{ background: projectBackgroundColor }}
+          />
           <Screenshot
             disableTransition={disableTransition}
             direction={sectionDirection}
@@ -156,19 +170,12 @@ export class PortfolioSlide extends PureComponent {
               }}
             />
           </ControlBlock>
-          <PaginationSimple
-            sections={sections}
-            selectedSectionIndex={selectedSectionIndex}
-            goPrev={e => {
-              e.stopPropagation();
-              onSectionChange({ value: -1, isSwipeEvent: true });
-            }}
-            goNext={e => {
-              e.stopPropagation();
-              onSectionChange({ value: 1, isSwipeEvent: true });
-            }}
-          />
         </PortfolioSlideContainer>
+        <PaginationSimple
+          pageCount={sections.length}
+          currentPage={selectedSectionIndex}
+          onPageChange={this.onPageChange}
+        />
         {typeof window === "object" && (
           <Portal>
             <LongreadBackground

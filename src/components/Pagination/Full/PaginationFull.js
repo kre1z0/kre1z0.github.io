@@ -12,7 +12,7 @@ const MIDBLOCK_MIN_PAGE_COUNT = 4;
 export class PaginationFull extends Component {
   static propTypes = {
     slots: PropTypes.number,
-    onPageChange: PropTypes.func,
+    onPageChange: PropTypes.func.isRequired,
     currentPage: PropTypes.number,
     pageCount: PropTypes.number,
   };

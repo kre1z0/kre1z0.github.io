@@ -142,6 +142,16 @@ export class JobsCard extends Component {
     }
   };
 
+  onPageChange = page => {
+    const { selectedItemsIndex } = this.state;
+
+    if (page > selectedItemsIndex) {
+      this.onSwiped({ isLeft: true, xRatio: 100 });
+    } else {
+      this.onSwiped({ isRight: true, xRatio: 100 });
+    }
+  };
+
   render() {
     const { items, selectedItemsIndex, direction } = this.state;
     const { sections, selectedSectionIndex, isSwipeEvent } = this.props;
@@ -158,10 +168,9 @@ export class JobsCard extends Component {
         />
         <BackendComponent sections={items} selectedSectionIndex={selectedItemsIndex} />
         <PaginationSimple
-          sections={items}
-          selectedSectionIndex={selectedItemsIndex}
-          goPrev={() => this.onSwiped({ isRight: true, xRatio: 100 })}
-          goNext={() => this.onSwiped({ isLeft: true, xRatio: 100 })}
+          pageCount={items.length}
+          currentPage={selectedItemsIndex}
+          onPageChange={this.onPageChange}
         />
       </JobsCardSwiper>
     );

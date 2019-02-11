@@ -2,36 +2,38 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 import { ReactComponent as Arrow } from "../../../assets/img/icons/arrow.svg";
-import { BulletsContainer, PrevBtn, NextBtn, Amount } from "./styles";
+import { Container, PrevBtn, NextBtn, Amount } from "./styles";
 
 export class PaginationSimple extends Component {
   static propTypes = {
     className: PropTypes.string,
-    selectedSectionIndex: PropTypes.number,
-    sections: PropTypes.arrayOf(PropTypes.object),
-    goPrev: PropTypes.func,
-    goNext: PropTypes.func,
+    currentPage: PropTypes.number,
+    pageCount: PropTypes.number,
+    onPageChange: PropTypes.func.isRequired,
   };
 
-  shouldComponentUpdate({ selectedSectionIndex: nextSelectedSectionIndex }, nextState) {
-    const { selectedSectionIndex } = this.props;
+  shouldComponentUpdate({ currentPage: nextCurrentPage }) {
+    const { currentPage } = this.props;
 
-    return selectedSectionIndex !== nextSelectedSectionIndex;
+    return currentPage !== nextCurrentPage;
   }
 
   render() {
-    const { sections, selectedSectionIndex, className, goPrev, goNext } = this.props;
+    const { pageCount, currentPage, className, onPageChange } = this.props;
 
     return (
-      <BulletsContainer className={className}>
-        <PrevBtn onClick={goPrev} disabled={selectedSectionIndex < 1}>
+      <Container className={className}>
+        <PrevBtn onClick={e => onPageChange(currentPage - 1, e)} disabled={currentPage < 1}>
           <Arrow />
         </PrevBtn>
-        <Amount>{`${selectedSectionIndex + 1}/${sections.length}`}</Amount>
-        <NextBtn onClick={goNext} disabled={selectedSectionIndex + 1 === sections.length}>
+        <Amount>{`${currentPage + 1} / ${pageCount}`}</Amount>
+        <NextBtn
+          onClick={e => onPageChange(currentPage + 1, e)}
+          disabled={currentPage + 1 === pageCount}
+        >
           <Arrow />
         </NextBtn>
-      </BulletsContainer>
+      </Container>
     );
   }
 }

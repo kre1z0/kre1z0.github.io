@@ -2,13 +2,12 @@ import styled from "astroturf";
 
 import { Button } from "../../../components/Buttons/Buttons";
 
-export const BulletsContainer = styled("div")`
+export const Container = styled("nav")`
   display: none;
   @media (max-width: 991px) {
     padding: 0 1rem;
     justify-content: center;
     flex-wrap: wrap;
-    width: 100%;
     display: flex;
     align-items: center;
     left: 50%;
@@ -50,6 +49,7 @@ const ControlBtn = styled(Button)`
   }
 
   &.disabled {
+    pointer-events: none;
     cursor: default;
     svg {
       path {
@@ -67,6 +67,7 @@ export const NextBtn = styled(ControlBtn)`
 `;
 
 export const Amount = styled("span")`
+  white-space: nowrap;
   text-align: center;
   display: block;
   width: 3.6428rem;
