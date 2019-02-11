@@ -1,15 +1,14 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-import { ReactComponent as Arrow } from "../../assets/img/icons/arrow.svg";
+import { ReactComponent as Arrow } from "../../../assets/img/icons/arrow.svg";
 import { BulletsContainer, PrevBtn, NextBtn, Amount } from "./styles";
 
-export class Bullets extends Component {
+export class PaginationSimple extends Component {
   static propTypes = {
     className: PropTypes.string,
     selectedSectionIndex: PropTypes.number,
     sections: PropTypes.arrayOf(PropTypes.object),
-    maxWidth: PropTypes.number,
     goPrev: PropTypes.func,
     goNext: PropTypes.func,
   };

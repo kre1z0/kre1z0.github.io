@@ -6,7 +6,7 @@ import cn from "classnames";
 
 import { GoNextLink } from "../../components/GoNextLink/GoNextLink";
 import { BackendComponent } from "../../components/Backend/Backend";
-import { Bullets } from "../../components/Bullets/Bullets";
+import { PaginationSimple } from "../../components/Pagination/Simple/PaginationSimple";
 import { NewsCard } from "../../components/NewsCard/NewsCard";
 import { MainAnimation } from "../../components/MainAnimation/MainAnimation";
 import { H2 } from "../../components/Atoms/Atoms";
@@ -49,7 +49,7 @@ export class About extends Component {
           const section =
             allMarkdownRemark && allMarkdownRemark.edges[selectedSectionIndex]
               ? sortBy(
-                  allMarkdownRemark.edges.map(({ node }) => ({...node.frontmatter, id: node.id})),
+                  allMarkdownRemark.edges.map(({ node }) => ({ ...node.frontmatter, id: node.id })),
                   "date",
                 ).reverse()[selectedSectionIndex]
               : {
@@ -105,7 +105,7 @@ export class About extends Component {
                       direction={sectionDirection}
                       {...section}
                     />
-                    <Bullets
+                    <PaginationSimple
                       sections={sections}
                       selectedSectionIndex={selectedSectionIndex}
                       goPrev={() => onSectionChange({ value: -1, isSwipeEvent: true })}

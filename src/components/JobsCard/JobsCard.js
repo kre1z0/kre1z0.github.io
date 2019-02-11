@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 import { TransitionCard } from "./TransitionCard";
-import { Bullets } from "../../components/Bullets/Bullets";
+import { PaginationSimple } from "../../components/Pagination/Simple/PaginationSimple";
 import { BackendComponent } from "../../components/Backend/Backend";
 import { JobsCardSwiper } from "./styles";
 
@@ -157,7 +157,7 @@ export class JobsCard extends Component {
           isSwipeEvent={isSwipeEvent}
         />
         <BackendComponent sections={items} selectedSectionIndex={selectedItemsIndex} />
-        <Bullets
+        <PaginationSimple
           sections={items}
           selectedSectionIndex={selectedItemsIndex}
           goPrev={() => this.onSwiped({ isRight: true, xRatio: 100 })}

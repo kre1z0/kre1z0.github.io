@@ -2,6 +2,7 @@ import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 
+import { PaginationFull } from "../../components/Pagination/Full/PaginationFull";
 import { browser } from "../../utils/browser";
 import { rowColumns } from "../../utils/array";
 import { H2 } from "../../components/Typography/Headlines";
@@ -9,6 +10,8 @@ import { Section as Main } from "../../components/Elements/Section";
 import { Header } from "../../components/News/Header/Header";
 import { Article } from "../../components/News/Article/Article";
 import { Section, Column } from "../../styles/news";
+
+const articlesPerPage = 8;
 
 class News extends PureComponent {
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -32,10 +35,11 @@ class News extends PureComponent {
 
   state = {
     columnsCount: null,
+    currentPage: 1,
   };
 
   render() {
-    const { columnsCount } = this.state;
+    const { columnsCount, currentPage } = this.state;
     const { data } = this.props;
     const allMarkdownRemark = data.allMarkdownRemark;
 
@@ -45,7 +49,7 @@ class News extends PureComponent {
     return (
       <>
         <Header title="СМИ о нас" />
-        <Main as="main">
+        <Main as="main" withoutPaddingBottom>
           <Section as="section">
             {!allMarkdownRemark && <H2>Список статей пуст</H2>}
             {columns.map((col, index) => (
@@ -57,6 +61,12 @@ class News extends PureComponent {
               </Column>
             ))}
           </Section>
+          <PaginationFull
+            currentPage={currentPage}
+            pageCount={12}
+            slots={7}
+            onPageChange={page => this.setState({ currentPage: page })}
+          />
         </Main>
       </>
     );

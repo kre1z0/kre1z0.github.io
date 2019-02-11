@@ -1,6 +1,6 @@
 import styled from "astroturf";
 
-import { Button } from "../../components/Buttons/Buttons";
+import { Button } from "../../../components/Buttons/Buttons";
 
 export const BulletsContainer = styled("div")`
   display: none;
@@ -38,10 +38,24 @@ const ControlBtn = styled(Button)`
       stroke: rgba(38, 44, 55, 0.35);
     }
   }
+
+  &.dark {
+    svg {
+      height: 0.9rem;
+      path {
+        fill: rgba(38, 44, 55, 1);
+        stroke: rgba(38, 44, 55, 1);
+      }
+    }
+  }
+
   &.disabled {
-    path {
-      fill: rgba(38, 44, 55, 0.15);
-      stroke: rgba(38, 44, 55, 0.15);
+    cursor: default;
+    svg {
+      path {
+        fill: rgba(38, 44, 55, 0.15);
+        stroke: rgba(38, 44, 55, 0.15);
+      }
     }
   }
 `;

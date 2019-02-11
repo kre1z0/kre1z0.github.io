@@ -9,6 +9,7 @@ export const Section = styled(Article)`
 
 export const Column = styled("div")`
   width: 50%;
+  margin-bottom: 3.4rem;
   &:first-child {
     padding-right: 2.4rem;
   }
@@ -18,5 +19,11 @@ export const Column = styled("div")`
   &.oneColumn {
     width: 100%;
     padding: 0;
+  }
+  @media (max-width: 991px) {
+    margin-bottom: 1.4rem;
+  }
+  @media (max-width: 812px) and (orientation: landscape) {
+    margin-bottom: 1rem;
   }
 `;

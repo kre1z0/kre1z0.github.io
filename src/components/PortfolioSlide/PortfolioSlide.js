@@ -15,7 +15,7 @@ import {
 import { Content } from "./Content";
 import { Screenshot } from "./Screenshot";
 import { BackendComponent } from "../Backend/Backend";
-import { Bullets } from "../Bullets/Bullets";
+import { PaginationSimple } from "../../components/Pagination/Simple/PaginationSimple";
 import { Portal } from "../../components/Portal/Portal";
 
 export class PortfolioSlide extends PureComponent {
@@ -156,7 +156,7 @@ export class PortfolioSlide extends PureComponent {
               }}
             />
           </ControlBlock>
-          <Bullets
+          <PaginationSimple
             sections={sections}
             selectedSectionIndex={selectedSectionIndex}
             goPrev={e => {
