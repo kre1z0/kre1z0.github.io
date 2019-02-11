@@ -169,7 +169,7 @@ export class JobsCard extends Component {
         <BackendComponent sections={items} selectedSectionIndex={selectedItemsIndex} />
         <PaginationSimple
           pageCount={items.length}
-          currentPage={selectedItemsIndex}
+          currentPage={selectedItemsIndex + 1}
           onPageChange={this.onPageChange}
         />
       </JobsCardSwiper>

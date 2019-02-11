@@ -23,13 +23,13 @@ export class PaginationSimple extends Component {
 
     return (
       <Container className={className}>
-        <PrevBtn onClick={e => onPageChange(currentPage - 1, e)} disabled={currentPage < 1}>
+        <PrevBtn onClick={e => onPageChange(currentPage - 1, e)} disabled={currentPage === 1}>
           <Arrow />
         </PrevBtn>
-        <Amount>{`${currentPage + 1} / ${pageCount}`}</Amount>
+        <Amount>{`${currentPage} / ${pageCount}`}</Amount>
         <NextBtn
           onClick={e => onPageChange(currentPage + 1, e)}
-          disabled={currentPage + 1 === pageCount}
+          disabled={currentPage === pageCount}
         >
           <Arrow />
         </NextBtn>

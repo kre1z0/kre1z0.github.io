@@ -173,7 +173,7 @@ export class PortfolioSlide extends PureComponent {
         </PortfolioSlideContainer>
         <PaginationSimple
           pageCount={sections.length}
-          currentPage={selectedSectionIndex}
+          currentPage={selectedSectionIndex + 1}
           onPageChange={this.onPageChange}
         />
         {typeof window === "object" && (

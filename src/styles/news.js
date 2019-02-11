@@ -45,6 +45,7 @@ const styles = css`
       bottom: auto;
       margin-bottom: 3rem;
       > span {
+        width: 3.4rem;
         color: #000;
         font-size: 1rem;
         font-weight: 600;

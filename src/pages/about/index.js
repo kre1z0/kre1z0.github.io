@@ -115,7 +115,7 @@ export class About extends Component {
                     />
                     <PaginationSimple
                       pageCount={sections.length}
-                      currentPage={selectedSectionIndex}
+                      currentPage={selectedSectionIndex + 1}
                       onPageChange={page =>
                         this.onPageChange(page, selectedSectionIndex, onSectionChange)
                       }

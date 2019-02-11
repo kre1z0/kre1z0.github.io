@@ -46,7 +46,7 @@ class News extends PureComponent {
 
     const news = allMarkdownRemark ? allMarkdownRemark.edges : [];
     const columns = rowColumns(news, columnsCount || 2);
-
+    console.info("--> currentPage ggwp", currentPage);
     return (
       <>
         <Header title="СМИ о нас" />
