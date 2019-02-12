@@ -15,38 +15,64 @@ import styles, { Section, Column } from "../../styles/news";
 const articlesPerPage = 8;
 
 class News extends PureComponent {
-  static getDerivedStateFromProps(nextProps, prevState) {
-    const { columnsCount } = prevState;
-
-    if (columnsCount === null && typeof window === "object") {
-      const { parsedResult } = browser();
-      const {
-        platform: { type },
-      } = parsedResult;
-      return {
-        columnsCount: type === "mobile" ? 1 : 2,
-      };
-    }
-
-    return null;
-  }
   static propTypes = {
     data: PropTypes.object.isRequired,
   };
 
   state = {
-    columnsCount: null,
+    columnsCount: 2,
     currentPage: 1,
+    columns: [],
+    pageCount: 0,
+  };
+
+  componentDidMount() {
+    this.init();
+  }
+
+  init = () => {
+    const { parsedResult } = browser();
+    const {
+      platform: { type },
+    } = parsedResult;
+    const columnsCount = type === "mobile" ? 1 : 2;
+    const { currentPage } = this.state;
+    const { data } = this.props;
+    const allMarkdownRemark = data.allMarkdownRemark;
+    const AllNews = allMarkdownRemark ? allMarkdownRemark.edges : [];
+
+    const news = this.pagination(currentPage);
+    const pageCount = Math.ceil(AllNews.length / articlesPerPage);
+    const columns = rowColumns(news, columnsCount);
+
+    this.setState({ pageCount, columns, columnsCount });
+  };
+
+  pagination = page => {
+    const { data } = this.props;
+    const allMarkdownRemark = data.allMarkdownRemark;
+    const AllNews = allMarkdownRemark ? allMarkdownRemark.edges : [];
+
+    const from = articlesPerPage * (page - 1);
+    const to = from + articlesPerPage;
+
+    return AllNews.slice(from, to);
+  };
+
+  onPageChange = currentPage => {
+    const { columnsCount } = this.state;
+
+    const items = this.pagination(currentPage);
+    const columns = rowColumns(items, columnsCount);
+
+    this.setState({ currentPage, columns });
   };
 
   render() {
-    const { columnsCount, currentPage } = this.state;
+    const { columnsCount, columns, currentPage, pageCount } = this.state;
     const { data } = this.props;
     const allMarkdownRemark = data.allMarkdownRemark;
 
-    const news = allMarkdownRemark ? allMarkdownRemark.edges : [];
-    const columns = rowColumns(news, columnsCount || 2);
-    console.info("--> currentPage ggwp", currentPage);
     return (
       <>
         <Header title="СМИ о нас" />
@@ -65,14 +91,14 @@ class News extends PureComponent {
           <PaginationFull
             className={styles.paginationFull}
             currentPage={currentPage}
-            pageCount={12}
+            pageCount={pageCount}
             slots={7}
-            onPageChange={page => this.setState({ currentPage: page })}
+            onPageChange={this.onPageChange}
           />
           <PaginationSimple
-            pageCount={12}
+            pageCount={pageCount}
             currentPage={currentPage}
-            onPageChange={page => this.setState({ currentPage: page })}
+            onPageChange={this.onPageChange}
             className={styles.paginationSimple}
           />
         </Main>

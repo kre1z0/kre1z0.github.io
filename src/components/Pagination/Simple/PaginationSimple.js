@@ -12,10 +12,10 @@ export class PaginationSimple extends Component {
     onPageChange: PropTypes.func.isRequired,
   };
 
-  shouldComponentUpdate({ currentPage: nextCurrentPage }) {
-    const { currentPage } = this.props;
+  shouldComponentUpdate({ currentPage: nextCurrentPage, pageCount: nextPageCount }) {
+    const { currentPage, pageCount } = this.props;
 
-    return currentPage !== nextCurrentPage;
+    return currentPage !== nextCurrentPage || pageCount !== nextPageCount;
   }
 
   render() {
