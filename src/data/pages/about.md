@@ -1,5 +1,5 @@
 ---
-templateKey: about
+templateKey: pages
 title: СМИ о нас
 ---
 
