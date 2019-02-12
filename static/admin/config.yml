@@ -28,5 +28,5 @@ collections:
         label: "Сми о нас"
         name: "about"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about"}
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "pages"}
           - {label: "Title", name: "Имя блока", widget: "string"}
