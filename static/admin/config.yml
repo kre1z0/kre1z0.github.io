@@ -8,7 +8,8 @@ public_folder: /img
 
 collections:
   - name: "about"
-    label: "About"
+    label: "Сми о нас"
+    widget: "string"
     folder: "src/data/about"
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     create: true
@@ -20,3 +21,12 @@ collections:
       - {label: "Ссылка", name: "link", widget: "string"}
       - {label: "Логотип", name: "logo", widget: image}
       - {label: "Отображать на главной", name: "isVisible", widget: "boolean", default: false}
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "src/data/pages/about.md"
+        label: "Сми о нас"
+        name: "about"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about"}
+          - {label: "Title", name: "Имя блока", widget: "string"}
