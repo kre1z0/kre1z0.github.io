@@ -12,19 +12,23 @@ export class MobileMenu extends PureComponent {
     location: PropTypes.object,
     onNavLinkClick: PropTypes.func,
     routes: PropTypes.array,
+    data: PropTypes.arrayOf(PropTypes.object),
   };
 
   render() {
-    const { routes, onNavLinkClick, location } = this.props;
+    const { routes, onNavLinkClick, location, data } = this.props;
 
     return (
       <MobileMenuList className={animation.fadeIn}>
         {routes.map(({ text, id, route, outsideLink }) => {
+          const item = data.find(item => item.id === id);
+          const title = item ? item.title : text;
+
           if (outsideLink)
             return (
               <LinkContainer key={outsideLink}>
                 <OutsideLink href={outsideLink} target="_blank">
-                  {text}
+                  {title}
                 </OutsideLink>
               </LinkContainer>
             );
@@ -45,7 +49,7 @@ export class MobileMenu extends PureComponent {
                   })
                 }
               >
-                {text}
+                {title}
               </Link>
             </LinkContainer>
           );

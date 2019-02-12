@@ -1,4 +1,5 @@
 ---
 templateKey: contact-page
-title: Контакты ggwp
+title: Контакты
+id: contacts
 ---

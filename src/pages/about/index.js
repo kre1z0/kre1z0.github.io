@@ -54,21 +54,23 @@ export class About extends Component {
           isSwipeEvent,
           transitionEnd,
         }) => {
-          const section =
-            allMarkdownRemark && allMarkdownRemark.edges[selectedSectionIndex]
+          const sections =
+            allMarkdownRemark && allMarkdownRemark.edges
               ? sortBy(
                   allMarkdownRemark.edges.map(({ node }) => ({ ...node.frontmatter, id: node.id })),
                   "date",
-                ).reverse()[selectedSectionIndex]
+                ).reverse()
+              : [];
+
+          const section =
+            allMarkdownRemark && allMarkdownRemark.edges[selectedSectionIndex]
+              ? sections[selectedSectionIndex]
               : {
                   title: !allMarkdownRemark ? "Список пуст" : "Пусто",
                   description: !allMarkdownRemark
                     ? "Заполните статьи в системе управления содержимым"
                     : "Заполните статью в системе управления содержимым",
                 };
-
-          const sections =
-            allMarkdownRemark && allMarkdownRemark.edges ? allMarkdownRemark.edges : [];
 
           const markdownRemark = data.markdownRemark;
 

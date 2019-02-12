@@ -13,13 +13,13 @@ injectGlobals();
 
 class Layout extends Component {
   render() {
-    const { children, location } = this.props;
+    const { children, location, allMarkdownRemark } = this.props;
 
     return (
       <MainLayoutProvider>
         <Helmet />
         <ViewportHeight />
-        <Navbar location={location} />
+        <Navbar location={location} data={allMarkdownRemark ? allMarkdownRemark.edges : []} />
         <PageTransition location={location}>{children}</PageTransition>
       </MainLayoutProvider>
     );
@@ -34,9 +34,17 @@ export default ({ children, pageContext, ...props }) => {
     <StaticQuery
       query={graphql`
         query Pages {
-          markdownRemark(frontmatter: { templateKey: { eq: "about-page" } }) {
-            frontmatter {
-              title
+          allMarkdownRemark(
+            filter: { frontmatter: { templateKey: { in: ["about-page", "contact-page"] } } }
+          ) {
+            edges {
+              node {
+                id
+                frontmatter {
+                  title
+                  id
+                }
+              }
             }
           }
         }

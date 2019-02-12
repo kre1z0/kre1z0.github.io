@@ -18,6 +18,7 @@ export class DesktopMenu extends Component {
     routes: PropTypes.array,
     selectedId: PropTypes.string,
     transitionEnd: PropTypes.bool,
+    data: PropTypes.arrayOf(PropTypes.object),
   };
 
   shouldComponentUpdate(
@@ -49,16 +50,20 @@ export class DesktopMenu extends Component {
       onNavLinkClick,
       onSectionChange,
       transitionEnd,
+      data,
     } = this.props;
 
     return (
       <Menu>
         {routes.map(({ text, id, route, outsideLink, additionalMenu, additionalMenuWidth }) => {
+          const item = data.find(item => item.id === id);
+          const title = item ? item.title : text;
+
           if (outsideLink)
             return (
               <LinkContainer key={outsideLink}>
                 <OutsideLink href={outsideLink} target="_blank" onMouseOver={onCloseAdditionalMenu}>
-                  {text}
+                  {title}
                 </OutsideLink>
               </LinkContainer>
             );
@@ -94,7 +99,7 @@ export class DesktopMenu extends Component {
                   })
                 }
               >
-                <span>{text}</span>
+                <span>{title}</span>
               </Link>
               {additionalMenuIsOpenId === id && (
                 <AdditionalMenu

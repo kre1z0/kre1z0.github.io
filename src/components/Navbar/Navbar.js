@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import cn from "classnames";
 
 import { MainLayoutConsumer } from "../MainLayoutProvider/MainLayoutProvider";
@@ -19,8 +20,26 @@ import { MobileMenu } from "./MobileMenu";
 import { routes } from "../../routes";
 
 export class Navbar extends Component {
+  static getDerivedStateFromProps(nextProps, prevState) {
+    const { data } = nextProps;
+    const { normalizeData } = prevState;
+
+    if (!normalizeData.length) {
+      return {
+        normalizeData: data.map(({ node }) => node.frontmatter),
+      };
+    }
+
+    return null;
+  }
+
+  static propTypes = {
+    data: PropTypes.arrayOf(PropTypes.object),
+  };
+
   state = {
     additionalMenuIsOpenId: null,
+    normalizeData: [],
   };
 
   onOpenAdditionalMenu = id => {
@@ -32,7 +51,7 @@ export class Navbar extends Component {
   };
 
   render() {
-    const { additionalMenuIsOpenId } = this.state;
+    const { additionalMenuIsOpenId, normalizeData } = this.state;
     const { location } = this.props;
 
     return (
@@ -88,9 +107,10 @@ export class Navbar extends Component {
                   />
                 </LeftSide>
                 <DesktopMenu
+                  data={normalizeData}
                   transitionEnd={transitionEnd}
                   routes={routes}
-                  selectedId={section && section.id}
+                  selectedId={typeof section === "object" ? section.id : undefined}
                   location={location}
                   additionalMenuIsOpenId={additionalMenuIsOpenId}
                   currentRoute={currentRoute}
@@ -100,7 +120,12 @@ export class Navbar extends Component {
                   onCloseAdditionalMenu={this.onCloseAdditionalMenu}
                 />
                 {mobileMenuIsOpen && (
-                  <MobileMenu routes={routes} location={location} onNavLinkClick={onNavLinkClick} />
+                  <MobileMenu
+                    data={normalizeData}
+                    routes={routes}
+                    location={location}
+                    onNavLinkClick={onNavLinkClick}
+                  />
                 )}
               </Nav>
             </NavbarContainer>

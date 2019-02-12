@@ -29,10 +29,12 @@ collections:
         name: "about-page"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
+          - {label: "page Id", name: "id", widget: "hidden"}
           - {label: "Новостной блок /about", name: "title", widget: "string"}
       - file: "src/data/pages/contact-page.md"
         label: "Страница контактов, родительский маршрут /contacts"
         name: "contact-page"
         fields:
             - {label: "Template Key", name: "templateKey", widget: "hidden", default: "contact-page"}
+            - {label: "page Id", name: "id", widget: "hidden"}
             - {label: "Заголовок", name: "title", widget: "string"}

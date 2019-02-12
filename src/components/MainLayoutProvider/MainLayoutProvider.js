@@ -142,19 +142,25 @@ export class MainLayoutProviderComponent extends Component {
     const currentRoute = getRouteByLocation(location);
 
     if (currentRoute) {
-      const { slider, additionalMenu, scrollable, news } = currentRoute;
-      const sections = this.sectionsFromAdditionalMenu(additionalMenu);
+      const { slider, additionalMenu, scrollable, id } = currentRoute;
+
+      // todo remove
+      const sections =
+        id === "about"
+          ? Array.from({ length: 5 }, (_, index) => index)
+          : this.sectionsFromAdditionalMenu(additionalMenu);
+
       const selectedSectionIndex = this.getSelectedSectionIndexFromLocalstorage(
         currentRoute,
         sections,
       );
 
       const sliderState =
-        slider || scrollable || news
+        slider || scrollable
           ? {
               sliderDirection: 1,
               selectedSectionIndex,
-              sections: slider || scrollable ? sections : news || [],
+              sections: slider || scrollable ? sections : [],
             }
           : {
               selectedSectionIndex: 0,
@@ -220,7 +226,7 @@ export class MainLayoutProviderComponent extends Component {
       return;
     }
 
-    const slider = currentRoute && (currentRoute.slider || currentRoute.news);
+    const slider = currentRoute && currentRoute.slider;
     const up = selectedSectionIndex === 0 && direction < 0;
     const nextIndex = selectedSectionIndex + direction;
     const down = nextIndex === sections.length;
