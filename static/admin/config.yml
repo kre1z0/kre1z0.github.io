@@ -24,8 +24,8 @@ collections:
   - name: "pages"
     label: "Страницы"
     files:
-      - file: "src/data/pages/about.md"
-        label: "Новостная страница"
+      - file: "src/data/pages/about-page.md"
+        label: "Новостная страница, родительский маршрут /about"
         name: "about-page"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
