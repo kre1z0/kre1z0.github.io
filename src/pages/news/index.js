@@ -2,6 +2,7 @@ import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 
+import { ScrollbarConsumer } from "../../components/ScrollbarProvider/ScrollbarProvider";
 import { PaginationFull } from "../../components/Pagination/Full/PaginationFull";
 import { PaginationSimple } from "../../components/Pagination/Simple/PaginationSimple";
 import { browser } from "../../utils/browser";
@@ -14,7 +15,7 @@ import styles, { Section, Column } from "../../styles/news";
 
 const articlesPerPage = 8;
 
-class News extends PureComponent {
+class NewsBase extends PureComponent {
   static propTypes = {
     data: PropTypes.object.isRequired,
   };
@@ -61,21 +62,35 @@ class News extends PureComponent {
 
   onPageChange = currentPage => {
     const { columnsCount } = this.state;
+    const { scrollbar } = this.props;
 
     const items = this.pagination(currentPage);
     const columns = rowColumns(items, columnsCount);
 
-    this.setState({ currentPage, columns });
+    this.setState(
+      {
+        currentPage,
+        columns,
+      },
+      () => {
+        if (scrollbar) {
+          scrollbar.scrollTo(0, 0, 0);
+        } else {
+          window.scrollTo(0, 0);
+        }
+      },
+    );
   };
 
   render() {
     const { columnsCount, columns, currentPage, pageCount } = this.state;
     const { data } = this.props;
     const allMarkdownRemark = data.allMarkdownRemark;
+    const markdownRemark = data.markdownRemark;
 
     return (
       <>
-        <Header title="СМИ о нас" />
+        <Header title={markdownRemark && markdownRemark.frontmatter.title} />
         <Main as="main" withoutPaddingBottom>
           <Section as="section">
             {!allMarkdownRemark && <H2>Список статей пуст</H2>}
@@ -107,11 +122,20 @@ class News extends PureComponent {
   }
 }
 
+const News = props => (
+  <ScrollbarConsumer>
+    {({ scrollbar }) => <NewsBase scrollbar={scrollbar} {...props} />}
+  </ScrollbarConsumer>
+);
+
 export default News;
 
 export const newsPageQuery = graphql`
   query AllNews {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: [DESC] }) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: [DESC] }
+      filter: { frontmatter: { templateKey: { eq: "about" } } }
+    ) {
       totalCount
       edges {
         node {
@@ -124,6 +148,11 @@ export const newsPageQuery = graphql`
             link
           }
         }
+      }
+    }
+    markdownRemark(frontmatter: { templateKey: { eq: "about-page" } }) {
+      frontmatter {
+        title
       }
     }
   }

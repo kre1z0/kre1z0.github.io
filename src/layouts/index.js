@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { StaticQuery, graphql } from "gatsby";
 
 import { Helmet } from "../components/Helmet/Helmet";
 import LongreadLayout from "./longread";
@@ -29,5 +30,22 @@ export default ({ children, pageContext, ...props }) => {
   if (pageContext.layout === "longread") {
     return <LongreadLayout {...props}>{children}</LongreadLayout>;
   }
-  return <Layout {...props}>{children}</Layout>;
+  return (
+    <StaticQuery
+      query={graphql`
+        query Pages {
+          markdownRemark(frontmatter: { templateKey: { eq: "about-page" } }) {
+            frontmatter {
+              title
+            }
+          }
+        }
+      `}
+      render={data => (
+        <Layout {...data} {...props}>
+          {children}
+        </Layout>
+      )}
+    />
+  );
 };

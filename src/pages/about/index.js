@@ -70,6 +70,8 @@ export class About extends Component {
           const sections =
             allMarkdownRemark && allMarkdownRemark.edges ? allMarkdownRemark.edges : [];
 
+          const markdownRemark = data.markdownRemark;
+
           return (
             <MainAnimation
               {...this.props}
@@ -80,7 +82,7 @@ export class About extends Component {
               backgroundClassName={styles.isAboutSlide}
               leftSide={
                 <>
-                  <H2 as="h1">СМИ о нас</H2>
+                  <H2 as="h1">{markdownRemark && markdownRemark.frontmatter.title}</H2>
                   <GoNextLink to="/news" gatsby>
                     Все комментарии
                   </GoNextLink>
@@ -137,6 +139,7 @@ export const aboutPageQuery = graphql`
   query LimitNews {
     allMarkdownRemark(
       sort: { fields: [frontmatter___isVisible, frontmatter___date], order: [DESC, DESC] }
+      filter: { frontmatter: { templateKey: { eq: "about" } } }
       limit: 5
     ) {
       totalCount
@@ -152,6 +155,11 @@ export const aboutPageQuery = graphql`
             isVisible
           }
         }
+      }
+    }
+    markdownRemark(frontmatter: { templateKey: { eq: "about-page" } }) {
+      frontmatter {
+        title
       }
     }
   }

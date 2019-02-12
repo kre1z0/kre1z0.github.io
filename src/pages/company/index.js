@@ -106,7 +106,7 @@ class Company extends PureComponent {
             </Paragraph>
           </Article>
           <ChatRow>
-            <Paragraph big>Есть задача? Напишите нам в чат, отвечаем быстро!</Paragraph>
+            <Paragraph big withoutMargin>Есть задача? Напишите нам в чат, отвечаем быстро!</Paragraph>
             <TelegramButton className={styles.companyTelegramBtn} />
           </ChatRow>
         </Footer>

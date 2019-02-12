@@ -29,7 +29,6 @@ export const ChatRow = styled("div")`
   justify-content: flex-end;
   p {
     padding: 0 1.4285rem 0 0;
-    margin: 0;
   }
   @media (max-width: 1199px) {
     position: relative;

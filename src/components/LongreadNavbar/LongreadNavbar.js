@@ -37,8 +37,9 @@ export class LongreadNavbarBase extends Component {
 
   render() {
     const { pathname, scrollTop, className, children, projects, native } = this.props;
+
     const transform = `translateY(${native ? 0 : scrollTop}px)`;
-    const fixed = scrollTop > 0;
+    const fixed = Math.floor(scrollTop) > 0;
     const arrowControl = !!projects;
     const currentPageIndex =
       projects && projects.findIndex(id => id === pathname.replace(/\//g, ""));

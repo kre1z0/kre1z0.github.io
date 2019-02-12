@@ -27,10 +27,13 @@ export const Paragraph = styled("p")`
       margin-bottom: 1.64rem;
     }
     @media (max-width: 812px) and (orientation: landscape),
-    (max-width: 767px) and (orientation: portrait) {
+      (max-width: 767px) and (orientation: portrait) {
       font-size: 0.8571rem;
       line-height: 1.5;
       margin-bottom: 1rem;
     }
+  }
+  &.withoutMargin {
+    margin: 0;
   }
 `;
