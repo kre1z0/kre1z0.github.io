@@ -24,9 +24,9 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
-      - file: "src/data/pages/about.md"
-        label: "Сми о нас"
-        name: "about"
+      - file: "src/data/pages/index.md"
+        label: "Имена страниц"
+        name: "pages"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "pages"}
-          - {label: "Title", name: "Имя блока", widget: "string"}
+          - {label: "Новостной блок /about", name: "about", widget: "string"}

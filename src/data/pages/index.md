@@ -1,4 +1,4 @@
 ---
 templateKey: pages
-title: СМИ о нас
+about: СМИ о нас
 ---
