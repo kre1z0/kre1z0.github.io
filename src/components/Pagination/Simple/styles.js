@@ -33,6 +33,7 @@ const ControlBtn = styled(Button)`
     width: 100%;
     height: 0.7rem;
     path {
+      transition: all 200ms ease-in;
       fill: rgba(38, 44, 55, 0.35);
       stroke: rgba(38, 44, 55, 0.35);
     }
@@ -44,6 +45,16 @@ const ControlBtn = styled(Button)`
       path {
         fill: rgba(38, 44, 55, 1);
         stroke: rgba(38, 44, 55, 1);
+      }
+    }
+    @media (hover: hover) {
+      &:hover {
+        svg {
+          path {
+            fill: #90c53d;
+            stroke: #90c53d;
+          }
+        }
       }
     }
   }
