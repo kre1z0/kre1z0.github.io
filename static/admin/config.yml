@@ -22,11 +22,11 @@ collections:
       - {label: "Логотип", name: "logo", widget: image}
       - {label: "Отображать на главной", name: "isVisible", widget: "boolean", default: false}
   - name: "pages"
-    label: "Pages"
+    label: "Страницы"
     files:
-      - file: "src/data/pages/index.md"
-        label: "Имена страниц"
-        name: "pages"
+      - file: "src/data/pages/about.md"
+        label: "Новостная страница"
+        name: "about-page"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "pages"}
-          - {label: "Новостной блок /about", name: "about", widget: "string"}
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
+          - {label: "Новостной блок /about", name: "title", widget: "string"}
