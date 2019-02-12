@@ -1,6 +1,6 @@
 ---
 templateKey: about-page
 id: about
-title: СМИ о нас test
+title: СМИ о нас test4444
 ---
 
