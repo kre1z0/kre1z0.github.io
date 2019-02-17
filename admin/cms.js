@@ -1593,7 +1593,7 @@ module.exports = {"fullViewportContainer":"main-FullViewportContainer-module--fu
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
-module.exports = {"default":"styles-styles-module--default--6oHiY","earth":"styles-styles-module--earth--1p_Tn","europeRussia":"styles-styles-module--europeRussia--1-N5D","moscow":"styles-styles-module--moscow--138H-","busPngPreview":"styles-styles-module--busPngPreview--2bTNI","bus":"styles-styles-module--bus--3mSca","metro":"styles-styles-module--metro---GATn"};
+module.exports = {"default":"styles-styles-module--default--6oHiY","moscow":"styles-styles-module--moscow--138H-","busPngPreview":"styles-styles-module--busPngPreview--2bTNI","bus":"styles-styles-module--bus--3mSca","metro":"styles-styles-module--metro---GATn"};
 
 /***/ }),
 /* 20 */
