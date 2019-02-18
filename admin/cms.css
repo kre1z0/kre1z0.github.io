@@ -434,7 +434,7 @@ a.styles-styles-module--read--3y7pF {
 
 .transition-scrollScreenshotTransitionNext-module--entered--11B6B {
   transition-delay: 400ms;
-  transition-duration: 100ms;
+  transition-duration: 200ms;
   transition-timing-function: ease;
   transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
@@ -442,7 +442,7 @@ a.styles-styles-module--read--3y7pF {
 
 .transition-scrollScreenshotTransitionNext-module--exiting--2SUxg {
   transition-delay: 400ms;
-  transition-duration: 100ms;
+  transition-duration: 200ms;
   transition-timing-function: ease;
   transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
