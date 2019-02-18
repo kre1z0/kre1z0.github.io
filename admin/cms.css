@@ -435,7 +435,7 @@ a.styles-styles-module--read--3y7pF {
 .transition-scrollScreenshotTransitionNext-module--entered--11B6B {
   transition-delay: 400ms;
   transition-duration: 100ms;
-  transition-timing-function: ease-in;
+  transition-timing-function: linear;
   transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
   transition-property: transform, opacity, -webkit-transform; }
@@ -443,7 +443,7 @@ a.styles-styles-module--read--3y7pF {
 .transition-scrollScreenshotTransitionNext-module--exiting--2SUxg {
   transition-delay: 400ms;
   transition-duration: 100ms;
-  transition-timing-function: ease-in;
+  transition-timing-function: linear;
   transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
   transition-property: transform, opacity, -webkit-transform; }
