@@ -1,0 +1,1 @@
+{"version":3,"file":"0.0537494706ae2ba0cf91.hot-update.js","sources":["webpack:///./src/components/injectGlobals.js"],"sourcesContent":["\n\nexport const injectGlobals = () => {\n  return require('./injectGlobals-injectGlobals.module.scss');\n};\n"],"mappings":";;;;;;;;;;;;;AAEA;AACA;AACA;;;;;;;;;;AAFA;;;;;;;;;;;;;;;;A","sourceRoot":""}
