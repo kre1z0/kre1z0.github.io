@@ -504,14 +504,14 @@ a.styles-styles-module--read--3y7pF {
 
 .animation-transition-module--entered--HJr97 {
   transition-duration: 400ms;
-  transition-timing-function: linear;
+  transition-timing-function: ease;
   transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
   transition-property: transform, opacity, -webkit-transform; }
 
 .animation-transition-module--exiting--3wDcc {
   transition-duration: 400ms;
-  transition-timing-function: linear;
+  transition-timing-function: ease;
   transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
   transition-property: transform, opacity, -webkit-transform; }
