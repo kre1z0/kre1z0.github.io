@@ -4554,7 +4554,6 @@ function (_Component) {
 
     _this = _Component.call.apply(_Component, [this].concat(args)) || this;
     _this.swipeableNode = null;
-    _this.onSwiping = void 0;
 
     _this.ratioDistance = function (deltaX, deltaY) {
       if (!_this.swipeableNode) {
@@ -4596,20 +4595,6 @@ function (_Component) {
       }
     };
 
-    _this.swiping = function (event, deltaX, deltaY, isFlick, velocity) {
-      var onSwiping = _this.props.onSwiping;
-
-      _this.ratioDistance(deltaX, deltaY);
-
-      onSwiping && onSwiping(Object.assign({
-        event: event,
-        deltaX: deltaX,
-        deltaY: deltaY,
-        isFlick: isFlick,
-        velocity: velocity
-      }, _this.direction(deltaX, deltaY), _this.ratioDistance(deltaX, deltaY)));
-    };
-
     return _this;
   }
 
@@ -4624,7 +4609,8 @@ function (_Component) {
       isUp: y,
       isDown: !y
     };
-  };
+  } // ratio of percentage
+  ;
 
   _proto.render = function render() {
     var _this$props = this.props,
@@ -4633,8 +4619,7 @@ function (_Component) {
 
     return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(react_swipeable__WEBPACK_IMPORTED_MODULE_5___default.a, Object.assign({}, props, {
       innerRef: this.onSwiperRef,
-      onSwiped: this.swiped,
-      onSwiping: this.swiping
+      onSwiped: this.swiped
     }), children);
   };
 
