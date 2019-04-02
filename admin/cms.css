@@ -184,8 +184,6 @@
     background-size: 251%;
     background-position-y: 54%; } }
 
-.styles-Logo-module--logo--1dulo {
-  width: 7.1428rem; }
 
 .GoNextLink-NativeLink-module--native-link--3_Bwl {
   transition: color 200ms ease-in; }
@@ -1835,14 +1833,12 @@ img {
   display: -webkit-flex;
   display: flex;
   -webkit-align-items: center;
-          align-items: center; }
+          align-items: center;
+  -webkit-flex-shrink: 0;
+          flex-shrink: 0; }
   @media (max-width: 991px) {
     .styles-LeftSide-module--left-side--1yxkm {
       width: 100%; } }
-  @media (max-height: 480px) {
-    .styles-LeftSide-module--left-side--1yxkm {
-      -webkit-flex-shrink: 0;
-              flex-shrink: 0; } }
 
 .styles-LogoLink-module--logo-link--1Yhb2 {
   width: 100%;
@@ -1856,12 +1852,11 @@ img {
       max-width: 7.1428rem; } }
 
 .styles-Logo-module--logo--1pBhi {
-  min-width: 10.7142rem;
-  width: 100%;
-  height: auto; }
+  width: auto;
+  height: 2.1428rem; }
   @media (max-width: 812px) and (orientation: landscape), (max-width: 767px) and (orientation: portrait) {
     .styles-Logo-module--logo--1pBhi {
-      min-width: 7.1428rem; } }
+      height: 1.4428rem; } }
 
 .styles-LanguageSwitch-module--language-switch--4Dp3T {
   padding: 0 1.4285rem; }
