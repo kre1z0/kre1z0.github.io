@@ -763,10 +763,10 @@
       right: 1.7857rem;
       bottom: 1.4142rem; } }
 
-.contacts-styles-module--background--3NEKN {
+div.contacts-styles-module--background--3NEKN {
   background-position: 75% center; }
   @media (max-width: 812px) and (orientation: landscape), (max-width: 767px) and (orientation: portrait) {
-    .contacts-styles-module--background--3NEKN {
+    div.contacts-styles-module--background--3NEKN {
       background-size: 394%;
       background-position: 71% 87%; } }
 
@@ -1829,6 +1829,7 @@ img {
     pointer-events: auto !important; }
 
 .styles-LeftSide-module--left-side--1yxkm {
+  position: relative;
   z-index: 1;
   height: 2.5421rem;
   display: -webkit-flex;
@@ -2014,6 +2015,13 @@ img {
   @media (max-width: 991px) {
     .styles-styles-module--hamburger--3Xx1z {
       display: block; } }
+  @media (max-width: 812px) and (orientation: landscape), (max-width: 767px) and (orientation: portrait) {
+    .styles-styles-module--hamburger--3Xx1z {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%); } }
 
 .Background-BackgroundBlock-module--background-block--pm5cE {
   position: absolute;
