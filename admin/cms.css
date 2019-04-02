@@ -375,6 +375,7 @@
 .styles-CardContainer-module--card-container--3_Y1h {
   overflow-y: hidden;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   display: -webkit-flex;
   display: flex;
   padding: 2rem 0; }
