@@ -1025,6 +1025,8 @@ a.styles-styles-module--read--3y7pF {
   font-size: 1.7142rem;
   line-height: normal;
   margin-bottom: 0; }
+  .vacancy-FooterTitle-module--footer-title--1d23D p:last-of-type {
+    margin-bottom: 0; }
   @media (max-width: 1199px) {
     .vacancy-FooterTitle-module--footer-title--1d23D {
       font-size: 1.4285rem; } }
