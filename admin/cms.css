@@ -2124,6 +2124,9 @@ p.company-styles-module--chatText--3F6bU {
               justify-content: flex-end; }
       .styles-LinkContainer-module--link-container--24bjH:nth-child(4) menu > ul {
         text-align: right; }
+  .styles-LinkContainer-module--link-container--24bjH.styles-LinkContainer-module--outsideLink--2u1JE {
+    padding-left: 1.4rem;
+    border-left: 1px solid rgba(38, 44, 55, 0.2); }
   .styles-LinkContainer-module--link-container--24bjH menu {
     width: 0.0001px; }
 
