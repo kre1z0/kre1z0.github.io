@@ -1949,7 +1949,6 @@ p.company-styles-module--chatText--3F6bU {
 
 .styles-Nav-module--nav--5J117 {
   margin: 0 auto;
-  pointer-events: auto !important;
   display: -webkit-flex;
   display: flex;
   -webkit-align-items: flex-start;
@@ -1970,8 +1969,6 @@ p.company-styles-module--chatText--3F6bU {
     .styles-Nav-module--nav--5J117 {
       padding-top: 0.64rem;
       padding-bottom: 0.64rem; } }
-  .styles-Nav-module--nav--5J117 * {
-    pointer-events: auto !important; }
 
 .styles-LeftSide-module--left-side--1yxkm {
   position: relative;
@@ -2124,9 +2121,32 @@ p.company-styles-module--chatText--3F6bU {
               justify-content: flex-end; }
       .styles-LinkContainer-module--link-container--24bjH:nth-child(4) menu > ul {
         text-align: right; }
-  .styles-LinkContainer-module--link-container--24bjH.styles-LinkContainer-module--outsideLink--2u1JE {
-    padding-left: 1.4rem;
-    border-left: 1px solid rgba(38, 44, 55, 0.2); }
+  .styles-LinkContainer-module--link-container--24bjH.styles-LinkContainer-module--withIcon--3BEWX {
+    position: relative;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+            align-items: center;
+    cursor: pointer;
+    margin-left: 1.2rem; }
+    .styles-LinkContainer-module--link-container--24bjH.styles-LinkContainer-module--withIcon--3BEWX svg {
+      pointer-events: none;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%);
+      width: 1.7142rem;
+      height: 1.7142rem; }
+      .styles-LinkContainer-module--link-container--24bjH.styles-LinkContainer-module--withIcon--3BEWX svg path {
+        transition: fill 200ms ease; }
+    .styles-LinkContainer-module--link-container--24bjH.styles-LinkContainer-module--withIcon--3BEWX a {
+      padding-left: 2.4rem; }
+    @media (hover: hover) {
+      .styles-LinkContainer-module--link-container--24bjH.styles-LinkContainer-module--withIcon--3BEWX:hover a {
+        color: #90c53d; }
+      .styles-LinkContainer-module--link-container--24bjH.styles-LinkContainer-module--withIcon--3BEWX:hover svg path {
+        fill: #90c53d; } }
   .styles-LinkContainer-module--link-container--24bjH menu {
     width: 0.0001px; }
 
